@@ -4,22 +4,22 @@
 # 
 # Translators:
 # Translators:
-# Aline Freitas <aline@alinefreitas.com.br>, 2024
+# Vítor Figueiró <vfigueiro@gmail.com>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Vítor Figueiró <vfigueiro@gmail.com>, 2024
-# Roberto Rosario, 2024
 # Márcia Ferreira, 2024
+# Aline Freitas <aline@alinefreitas.com.br>, 2024
+# Roberto Rosario, 2024
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Márcia Ferreira, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +59,7 @@ msgstr "Comprimento"
 msgid "User ID"
 msgstr "ID de utilizador"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU proteção à privacidade - uma implementação PGP."
 
@@ -119,11 +119,11 @@ msgstr "Importar"
 msgid "Upload key"
 msgstr "Carregar Chave"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr "Chaves privadas"
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr "Chaves públicas"
 
@@ -292,7 +292,7 @@ msgstr "Consultar servidor de chaves"
 msgid "Upload new key"
 msgstr "Carregar nova chave"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
@@ -301,11 +301,11 @@ msgstr ""
 "somente podem ser carregadas pelo usuário. A tela para carregar chaves "
 "públicas e privadas é a mesma."
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr "Não existem chaves privadas."
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
@@ -315,6 +315,6 @@ msgstr ""
 "carregadas pelo utilizador ou descarregadas do servidor de chaves. A visão "
 "geral para carregar chaves privadas e públicas é a mesma."
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr "Não há chaves públicas"

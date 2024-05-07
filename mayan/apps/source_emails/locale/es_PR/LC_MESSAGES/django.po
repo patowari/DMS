@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -86,15 +86,15 @@ msgstr "Buzón de destino"
 msgid "IMAP protocol"
 msgstr "Protocolo IMAP"
 
-#: source_backends/mixins.py:31
+#: source_backends/mixins.py:33
 msgid "Host"
 msgstr "Servidor"
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:42
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/mixins.py:46
+#: source_backends/mixins.py:48
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
@@ -102,20 +102,20 @@ msgstr ""
 "Las opciones típicas son 110 para POP3, 995 para POP3 sobre SSL, 143 para "
 "IMAP, 993 para IMAP sobre SSL."
 
-#: source_backends/mixins.py:52
+#: source_backends/mixins.py:54
 msgid "Port"
 msgstr "Puerto"
 
-#: source_backends/mixins.py:58
+#: source_backends/mixins.py:60
 msgid "Store the body of the email as a text document."
 msgstr ""
 "Almacenar el cuerpo del correo electrónico como un documento de texto."
 
-#: source_backends/mixins.py:60
+#: source_backends/mixins.py:63
 msgid "Store email body"
 msgstr "Almacenar cuerpo del correo electrónico"
 
-#: source_backends/mixins.py:74
+#: source_backends/mixins.py:77
 msgid "Common email options"
 msgstr "Opciones comunes de correo electrónico"
 

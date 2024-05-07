@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Genlin Jiao <jiaogl@pkusz.edu.cn>, 2024
 # xisafe <root@xisafe.com>, 2024
-# Ford Guo <agile.guo@gmail.com>, 2024
-# dave cheng, 2024
-# Roberto Rosario, 2024
+# Genlin Jiao <jiaogl@pkusz.edu.cn>, 2024
 # Leon Chu, 2024
+# dave cheng, 2024
+# Ford Guo <agile.guo@gmail.com>, 2024
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Leon Chu, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "长度"
 msgid "User ID"
 msgstr "用户ID"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU隱私保護 - PGP建置"
 
@@ -117,11 +117,11 @@ msgstr "导入"
 msgid "Upload key"
 msgstr "上传密钥"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr "私钥"
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr "公钥"
 
@@ -284,23 +284,23 @@ msgstr "查询密钥服务器"
 msgid "Upload new key"
 msgstr "上传新密钥"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr "私钥用于签名文档。私钥只能由用户上传。上传私钥和公钥的同一个视图"
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr "没有私钥"
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr "公钥用于验证签名文档。公钥可以由用户上传或从密钥服务器下载。上传私钥和公钥的视图是相同的。"
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr "没有公钥"

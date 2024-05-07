@@ -6,14 +6,15 @@
 # Translators:
 # Roberto Rosario, 2024
 # Mohammed ALDOUB <voulnet@gmail.com>, 2024
+# Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
@@ -48,6 +49,22 @@ msgstr "الغاء الحفظ المؤقت"
 
 #: events.py:19
 msgid "Cache partition purged"
+msgstr ""
+
+#: forms.py:11
+msgid "Identification"
+msgstr ""
+
+#: forms.py:15
+msgid "Storage"
+msgstr "المساحة التخزينية"
+
+#: forms.py:19
+msgid "Configuration"
+msgstr ""
+
+#: forms.py:25
+msgid "Objects"
 msgstr ""
 
 #: links.py:27 links.py:50
@@ -86,7 +103,7 @@ msgstr ""
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:113 model_mixins.py:324
+#: model_mixins.py:113 model_mixins.py:326
 msgid "Current size"
 msgstr "الحجم الحالي"
 
@@ -94,7 +111,11 @@ msgstr "الحجم الحالي"
 msgid "Current size of the cache."
 msgstr "الحجم الحالي للملف المؤقت"
 
-#: model_mixins.py:326
+#: model_mixins.py:123
+msgid "Label"
+msgstr "العنوان"
+
+#: model_mixins.py:328
 msgid "Current size of the cache partition."
 msgstr ""
 
@@ -110,7 +131,7 @@ msgstr "التخزين المحدد"
 msgid "Maximum size of the cache in bytes."
 msgstr "الحد الأقصى لملف التخزين المؤقت"
 
-#: models.py:36 models.py:76
+#: models.py:36 models.py:75
 msgid "Cache"
 msgstr "ملف مؤقت"
 
@@ -118,39 +139,39 @@ msgstr "ملف مؤقت"
 msgid "Caches"
 msgstr "الملفات المؤقتة"
 
-#: models.py:79
+#: models.py:78
 msgid "Name"
 msgstr "اسم"
 
-#: models.py:84 models.py:107
+#: models.py:83 models.py:105
 msgid "Cache partition"
 msgstr "تقسيم الملف المؤقت"
 
-#: models.py:85
+#: models.py:84
 msgid "Cache partitions"
 msgstr "تقسيم الملفات المؤقتة"
 
-#: models.py:110
+#: models.py:108
 msgid "Date time"
 msgstr "التاريخ والوقت"
 
-#: models.py:113
+#: models.py:111
 msgid "Filename"
 msgstr "اسم الملف"
 
-#: models.py:116
+#: models.py:114
 msgid "File size"
 msgstr "حجم الملف"
 
-#: models.py:120
+#: models.py:118
 msgid "Times this cache partition file has been accessed."
 msgstr ""
 
-#: models.py:127
+#: models.py:125
 msgid "Cache partition file"
 msgstr "قسم الذاكرة المؤقتة"
 
-#: models.py:128
+#: models.py:126
 msgid "Cache partition files"
 msgstr "قسم الملفات المؤقتة"
 
@@ -186,40 +207,40 @@ msgid ""
 " a file being requested, before giving up."
 msgstr ""
 
-#: views.py:49
+#: views.py:36
 #, python-format
 msgid "Details of cache: %s"
 msgstr ""
 
-#: views.py:61
+#: views.py:48
 msgid "File caches list"
 msgstr "حفظ الملفات المؤقتة"
 
-#: views.py:82
+#: views.py:69
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr ""
 
-#: views.py:100
+#: views.py:87
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr ""
 
-#: views.py:117
+#: views.py:104
 msgid "Object cache partitions submitted for purging."
 msgstr ""
 
-#: views.py:127
+#: views.py:114
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr ""
 
-#: views.py:130
+#: views.py:117
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr ""
 
-#: views.py:139
+#: views.py:126
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] ""

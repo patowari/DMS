@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:23 links.py:17 settings.py:11
+#: apps.py:25 links.py:17 settings.py:11
 msgid "REST API"
 msgstr "REST API"
 
@@ -57,79 +57,79 @@ msgstr "Це поле обов'язкове."
 msgid "%s API"
 msgstr "%s API"
 
-#: serializers.py:37
+#: serializers.py:36
 msgid "Content"
 msgstr "Зміст"
 
-#: serializers.py:40
+#: serializers.py:39
 msgid "Data"
 msgstr "Дані"
 
-#: serializers.py:43
+#: serializers.py:42
 msgid "Headers"
 msgstr "Заголовки"
 
-#: serializers.py:46
+#: serializers.py:45
 msgid "Name"
 msgstr "Ім'я"
 
-#: serializers.py:49
+#: serializers.py:48
 msgid "Status code"
 msgstr "Код стану"
 
-#: serializers.py:52
+#: serializers.py:51
 msgid "Requests"
 msgstr "Запити"
 
-#: serializers.py:75
+#: serializers.py:74
 msgid "Label"
 msgstr "Мітка"
 
-#: serializers.py:78
+#: serializers.py:77
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:106
+#: serializers.py:105
 msgid "Author"
 msgstr "Автор"
 
-#: serializers.py:109
+#: serializers.py:108
 msgid "Author email"
 msgstr "Електронна адреса автора"
 
-#: serializers.py:112
+#: serializers.py:111
 msgid "Build"
 msgstr "Будувати"
 
-#: serializers.py:115
+#: serializers.py:114
 msgid "Build string"
 msgstr "Рядок побудови"
 
-#: serializers.py:118
+#: serializers.py:117
 msgid "Copyright"
 msgstr "Авторське право"
 
-#: serializers.py:121
+#: serializers.py:120
 msgid "Description"
 msgstr "Опис"
 
-#: serializers.py:124
+#: serializers.py:123
 msgid "Django version"
 msgstr "Версія Django"
 
-#: serializers.py:127
+#: serializers.py:126
 msgid "License"
 msgstr "Ліцензія"
 
-#: serializers.py:130
+#: serializers.py:129
 msgid "Title"
 msgstr "Назва"
 
-#: serializers.py:133
+#: serializers.py:132
 msgid "Version"
 msgstr "Версія"
 
-#: serializers.py:136
+#: serializers.py:135
 msgid "Website"
 msgstr "Веб-сайт"
 

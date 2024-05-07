@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -85,15 +85,15 @@ msgstr "Cílová poštovní schránka"
 msgid "IMAP protocol"
 msgstr ""
 
-#: source_backends/mixins.py:31
+#: source_backends/mixins.py:33
 msgid "Host"
 msgstr "Hostitel"
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:42
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/mixins.py:46
+#: source_backends/mixins.py:48
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
@@ -101,19 +101,19 @@ msgstr ""
 "Typické volby jsou 110 pro POP3, 995 pro POP3 přes SSL, 143 pro IMAP, 993 "
 "pro IMAP přes SSL."
 
-#: source_backends/mixins.py:52
+#: source_backends/mixins.py:54
 msgid "Port"
 msgstr "Přístav"
 
-#: source_backends/mixins.py:58
+#: source_backends/mixins.py:60
 msgid "Store the body of the email as a text document."
 msgstr "Uložte tělo e-mailu jako textový dokument."
 
-#: source_backends/mixins.py:60
+#: source_backends/mixins.py:63
 msgid "Store email body"
 msgstr "Uložte tělo e-mailu"
 
-#: source_backends/mixins.py:74
+#: source_backends/mixins.py:77
 msgid "Common email options"
 msgstr ""
 

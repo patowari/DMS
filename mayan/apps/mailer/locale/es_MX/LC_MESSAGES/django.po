@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:58
+#: apps.py:59 apps.py:80
 msgid "Mailer"
 msgstr "Sistema de correo"
 
-#: classes.py:27
+#: classes.py:23
 msgid "General"
 msgstr "General"
 
-#: classes.py:45
+#: classes.py:41
 msgid "From"
 msgstr "Desde"
 
-#: classes.py:48
+#: classes.py:44
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
@@ -40,11 +40,11 @@ msgstr ""
 "La dirección del remitente. Algunos sistemas rechazarán enviar mensajes si "
 "este valor no está establecido."
 
-#: classes.py:63
+#: classes.py:59
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: classes.py:82 classes.py:102
+#: classes.py:78 classes.py:96
 msgid "Null backend"
 msgstr "Controlador nulo"
 
@@ -90,7 +90,7 @@ msgstr ""
 "El perfil de correo electrónico que se utilizará para enviar este correo "
 "electrónico."
 
-#: forms.py:76 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:49 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Perfil de correo"
@@ -103,48 +103,48 @@ msgstr "El controlador a utilizar al enviar correos electrónicos."
 msgid "Backend"
 msgstr "Controlador"
 
-#: links.py:34 links.py:39
+#: links.py:33 links.py:38
 msgid "Email document link"
 msgstr "Enviar documento"
 
-#: links.py:49 links.py:54
+#: links.py:48 links.py:53
 msgid "Email document file"
 msgstr "Enviar documento"
 
-#: links.py:60 links.py:65
+#: links.py:59 links.py:64
 msgid "Email document file link"
 msgstr "Enviar documento"
 
-#: links.py:75 links.py:80
+#: links.py:74 links.py:79
 msgid "Email document version"
 msgstr "Enviar documento"
 
-#: links.py:86
+#: links.py:85
 msgid "Email document version link"
 msgstr "Enviar documento"
 
-#: links.py:91
+#: links.py:90
 msgid "Email link version"
 msgstr "Enviar enlace"
 
-#: links.py:100
+#: links.py:99
 msgid "Create mailing profile"
 msgstr "Crear perfil de correo"
 
-#: links.py:106
+#: links.py:105
 msgid "Delete"
 msgstr "Eliminar"
 
-#: links.py:110
+#: links.py:109
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:114 links.py:122 links.py:128 models.py:49
-#: views/mailing_profile_views.py:138
+#: links.py:113 links.py:121 links.py:127 models.py:50
+#: views/mailing_profile_views.py:134
 msgid "Mailing profiles"
 msgstr "Perfiles de correo"
 
-#: links.py:132 views/mailing_profile_views.py:168
+#: links.py:131 views/mailing_profile_views.py:162
 msgid "Test"
 msgstr "Probar"
 
@@ -252,20 +252,20 @@ msgstr "Ruta de archivo"
 msgid "Storage"
 msgstr "Almacenamiento"
 
-#: model_mixins.py:173
+#: model_mixins.py:178
 #, python-format
 msgid "Test email from %s"
 msgstr "Correo electrónico de prueba de %s"
 
-#: models.py:31
+#: models.py:32
 msgid "A short text describing the mailing profile."
 msgstr "Un breve texto que describe el perfil de correo."
 
-#: models.py:32
+#: models.py:33
 msgid "Label"
 msgstr "Etiqueta"
 
-#: models.py:36
+#: models.py:37
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
@@ -273,11 +273,11 @@ msgstr ""
 "Si está predeterminado, este perfil de correo será preseleccionado en el "
 "formulario de envío del documento."
 
-#: models.py:38
+#: models.py:39
 msgid "Default"
 msgstr "Por defecto"
 
-#: models.py:41
+#: models.py:42
 msgid "Enabled"
 msgstr "Habilitado"
 
@@ -396,25 +396,25 @@ msgid "%(count)d document file links queued for email delivery"
 msgstr ""
 "%(count)d enlaces de documento sometido para entrega por correo electrónico"
 
-#: views/document_version_views.py:17
+#: views/document_version_views.py:19
 #, python-format
 msgid "%(count)d document version queued for email delivery"
 msgstr ""
 "%(count)d enlace de documento sometido para entrega por correo electrónico"
 
-#: views/document_version_views.py:20
+#: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
 msgstr ""
 "%(count)d enlaces de documento sometido para entrega por correo electrónico"
 
-#: views/document_version_views.py:32
+#: views/document_version_views.py:34
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
 "%(count)d enlace de documento sometido para entrega por correo electrónico"
 
-#: views/document_version_views.py:35
+#: views/document_version_views.py:37
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
@@ -441,17 +441,17 @@ msgstr "Nueva selección de backend de perfil de correo"
 msgid "Create a \"%s\" mailing profile"
 msgstr "Crear un perfil de correo tipo \"%s\""
 
-#: views/mailing_profile_views.py:95
+#: views/mailing_profile_views.py:93
 #, python-format
 msgid "Delete mailing profile: %s"
 msgstr "Eliminar el perfil de correo: %s"
 
-#: views/mailing_profile_views.py:108
+#: views/mailing_profile_views.py:106
 #, python-format
 msgid "Edit mailing profile: %s"
 msgstr "Editar perfil de publicación: %s"
 
-#: views/mailing_profile_views.py:133
+#: views/mailing_profile_views.py:129
 msgid ""
 "Mailing profiles are email configurations. Mailing profiles allow sending "
 "documents as attachments or as links via email."
@@ -460,15 +460,15 @@ msgstr ""
 "perfiles de correo permiten enviar documentos como archivos adjuntos o como "
 "enlaces por correo electrónico."
 
-#: views/mailing_profile_views.py:137
+#: views/mailing_profile_views.py:133
 msgid "No mailing profiles available"
 msgstr "No hay perfiles de correo disponibles"
 
-#: views/mailing_profile_views.py:160
+#: views/mailing_profile_views.py:154
 msgid "Test email sent."
 msgstr "Correo electrónico de prueba enviado."
 
-#: views/mailing_profile_views.py:170
+#: views/mailing_profile_views.py:164
 #, python-format
 msgid "Test mailing profile: %s"
 msgstr "Probar perfil de correo: %s"

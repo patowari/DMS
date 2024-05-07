@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Podpisy dokumentů"
 msgid "Date and time"
 msgstr "Datum a čas"
 
-#: apps.py:114 models.py:52 serializers.py:61
+#: apps.py:114 models.py:53 serializers.py:61
 msgid "Key ID"
 msgstr "ID klíče"
 
@@ -38,7 +38,7 @@ msgstr "ID klíče"
 msgid "None"
 msgstr "Žádný"
 
-#: apps.py:119 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:58
 msgid "Signature ID"
 msgstr "ID podpisu"
 
@@ -181,47 +181,47 @@ msgstr "Soubor dokumentu"
 msgid "Date and time signed"
 msgstr "Datum a čas podpisu"
 
-#: models.py:51
+#: models.py:52
 msgid "ID of the key that will be used to sign the document."
 msgstr "ID klíče, který bude použit k podepsání dokumentu."
 
-#: models.py:61
+#: models.py:62
 msgid "Public key fingerprint"
 msgstr "Otisk veřejného klíče"
 
-#: models.py:68
+#: models.py:69
 msgid "Document file signature"
 msgstr ""
 
-#: models.py:69
+#: models.py:70
 msgid "Document file signatures"
 msgstr ""
 
-#: models.py:86
+#: models.py:87
 msgid "Signature file previously generated."
 msgstr "Soubor podpisu byl dříve vygenerován."
 
-#: models.py:89
+#: models.py:90
 msgid "Signature file"
 msgstr "Podpisový soubor"
 
-#: models.py:95
+#: models.py:96
 msgid "Document file detached signature"
 msgstr "Odpojený podpis souboru dokumentu"
 
-#: models.py:96
+#: models.py:97
 msgid "Document file detached signatures"
 msgstr "Odpojené podpisy souboru dokumentu"
 
-#: models.py:100
+#: models.py:101
 msgid "signature"
 msgstr "podpis"
 
-#: models.py:151
+#: models.py:152
 msgid "Document file embedded signature"
 msgstr "Vložený podpisový soubor dokumentu"
 
-#: models.py:152
+#: models.py:153
 msgid "Document file embedded signatures"
 msgstr "Vložené podpisové dokumenty"
 

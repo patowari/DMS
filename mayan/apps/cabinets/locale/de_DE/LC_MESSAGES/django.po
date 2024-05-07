@@ -4,22 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Björn E <b1pum@web.de>, 2024
 # Siegfried Albrecht, 2024
+# Björn E <b1pum@web.de>, 2024
 # Berny <berny@bernhard-marx.de>, 2024
-# Roberto Rosario, 2024
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Marvin Haschker <marvin@haschker.me>, 2024
+# Roberto Rosario, 2024
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Jesaja Everling <jeverling@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Jesaja Everling <jeverling@gmail.com>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -29,13 +29,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Aktenschränke"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Dokumente"
 
@@ -108,19 +108,19 @@ msgstr ""
 msgid "Full path"
 msgstr "Vollständiger Pfad"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr "Übergeordneter Aktenschrank"
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Ein kurzer Text, der zur Identifizierung des Aktenschrankes dient."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Bezeichner"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Aktenschrank"
 
@@ -128,16 +128,16 @@ msgstr "Aktenschrank"
 msgid "Parent and Label"
 msgstr "Überebene und Bezeichnung"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s mit diesem %(field_labels)s existiert bereits."
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Dokument zu Aktenschrank hinzugefügt"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Dokumenten-Aktenschränke"
 
@@ -165,35 +165,43 @@ msgstr "%(count)d Dokumente aus Aktenschränken entfernen"
 msgid "View cabinets"
 msgstr "Aktenschränke ansehen"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Dokumententyp"
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Dokumentenbezeichner"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Dokumentenbeschreibung"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "Dokumenten-UUID"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Prüfsumme der Dokumentendatei"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "MIME-Typ der Dokumentendatei"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Liste der Unter-Aktenschränke."
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr "Untergeordnete Aktenschränke"
 
@@ -227,11 +235,11 @@ msgid "Primary key of the document to add to the cabinet."
 msgstr ""
 "Primärschlüssel des Dokuments, das zum Aktenschrank hinzugefügt werden soll."
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr "Dokument-ID"
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
 "Primärschlüssel des Dokuments, das aus Aktenschrank entfernt werden soll."
@@ -367,11 +375,11 @@ msgstr "%(count)d Dokument aus Aktenschränken entfernen."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Aktenschränke aus denen die ausgewählten Dokumente entfernt werden."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Aktenschränke auswählen"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Aktenschränke zu denen die ausgewählten Dokumente hinzugefügt werden."
 

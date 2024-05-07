@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:23 links.py:17 settings.py:11
+#: apps.py:25 links.py:17 settings.py:11
 msgid "REST API"
 msgstr "REST API"
 
@@ -33,11 +33,11 @@ msgstr "A sorosító osztály nem található a %s-hoz"
 
 #: links.py:21
 msgid "API Documentation (Swagger)"
-msgstr "API dokumentáció (Swagger)"
+msgstr ""
 
 #: links.py:26
 msgid "API Documentation (ReDoc)"
-msgstr "API dokumentáció (ReDoc)"
+msgstr ""
 
 #: relations.py:33
 #, python-brace-format
@@ -47,90 +47,90 @@ msgstr "Érvénytelen pk \"{pk_value}\" – az objektum nem létezik."
 #: relations.py:36
 #, python-brace-format
 msgid "Incorrect type. Expected pk value, received {data_type}."
-msgstr "Helytelen típus. Várt pk érték, érkezett {data_type} ."
+msgstr ""
 
 #: relations.py:38
 msgid "This field is required."
-msgstr "Ez a mező kötelező."
+msgstr ""
 
 #: schemas.py:10
 #, python-format
 msgid "%s API"
-msgstr "%s API"
+msgstr ""
 
-#: serializers.py:37
+#: serializers.py:36
 msgid "Content"
 msgstr "Tartalom"
 
-#: serializers.py:40
+#: serializers.py:39
 msgid "Data"
 msgstr "Adat"
 
-#: serializers.py:43
+#: serializers.py:42
 msgid "Headers"
 msgstr "Fejlécek"
 
-#: serializers.py:46
+#: serializers.py:45
 msgid "Name"
 msgstr "Név"
 
-#: serializers.py:49
+#: serializers.py:48
 msgid "Status code"
-msgstr "Állapotkód"
+msgstr ""
 
-#: serializers.py:52
+#: serializers.py:51
 msgid "Requests"
-msgstr "Kérések"
+msgstr ""
 
-#: serializers.py:75
+#: serializers.py:74
 msgid "Label"
 msgstr "Cimke"
 
-#: serializers.py:78
+#: serializers.py:77
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:106
+#: serializers.py:105
 msgid "Author"
 msgstr "Szerző"
 
-#: serializers.py:109
+#: serializers.py:108
 msgid "Author email"
 msgstr "Szerző emailcíme"
 
-#: serializers.py:112
+#: serializers.py:111
 msgid "Build"
 msgstr "Build"
 
-#: serializers.py:115
+#: serializers.py:114
 msgid "Build string"
 msgstr "Build sztring"
 
-#: serializers.py:118
+#: serializers.py:117
 msgid "Copyright"
 msgstr "Szerzői jog"
 
-#: serializers.py:121
+#: serializers.py:120
 msgid "Description"
 msgstr "Leírás"
 
-#: serializers.py:124
+#: serializers.py:123
 msgid "Django version"
 msgstr "Django verzió"
 
-#: serializers.py:127
+#: serializers.py:126
 msgid "License"
 msgstr "Licenc"
 
-#: serializers.py:130
+#: serializers.py:129
 msgid "Title"
 msgstr "Cím"
 
-#: serializers.py:133
+#: serializers.py:132
 msgid "Version"
 msgstr "Verzió"
 
-#: serializers.py:136
+#: serializers.py:135
 msgid "Website"
 msgstr "Weboldal"
 
@@ -140,8 +140,8 @@ msgstr "REST API hivatkozások letiltása az eszközök menüben."
 
 #: settings.py:23
 msgid "The maximum page size that can be requested."
-msgstr "Az igényelhető maximális oldalméret."
+msgstr ""
 
 #: settings.py:29
 msgid "The default page size if none is specified."
-msgstr "Az alapértelmezett oldalméret, ha nincs megadva."
+msgstr ""

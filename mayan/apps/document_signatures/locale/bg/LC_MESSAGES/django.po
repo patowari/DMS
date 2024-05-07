@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # Roberto Rosario, 2024
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
+# Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Подписване на документи"
 msgid "Date and time"
 msgstr "Дата и час"
 
-#: apps.py:114 models.py:52 serializers.py:61
+#: apps.py:114 models.py:53 serializers.py:61
 msgid "Key ID"
 msgstr "Ключ №"
 
@@ -39,7 +39,7 @@ msgstr "Ключ №"
 msgid "None"
 msgstr "Няма"
 
-#: apps.py:119 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:58
 msgid "Signature ID"
 msgstr "Подпис №"
 
@@ -184,49 +184,49 @@ msgstr "Файл на документа"
 msgid "Date and time signed"
 msgstr "Дата и час на подписване"
 
-#: models.py:51
+#: models.py:52
 msgid "ID of the key that will be used to sign the document."
 msgstr ""
 "Идентификационен номер на ключа, който ще бъде използван за подписване на "
 "документа."
 
-#: models.py:61
+#: models.py:62
 msgid "Public key fingerprint"
 msgstr "Отпечатък на публичния ключ"
 
-#: models.py:68
+#: models.py:69
 msgid "Document file signature"
 msgstr "Подпис на файл с документ"
 
-#: models.py:69
+#: models.py:70
 msgid "Document file signatures"
 msgstr "Подписи на файл с документи"
 
-#: models.py:86
+#: models.py:87
 msgid "Signature file previously generated."
 msgstr "Предварително създаден файл с подпис."
 
-#: models.py:89
+#: models.py:90
 msgid "Signature file"
 msgstr "Файл с подпис"
 
-#: models.py:95
+#: models.py:96
 msgid "Document file detached signature"
 msgstr "Отделен подпис на файл с документи"
 
-#: models.py:96
+#: models.py:97
 msgid "Document file detached signatures"
 msgstr "Отделени подписи на файлове с документи"
 
-#: models.py:100
+#: models.py:101
 msgid "signature"
 msgstr "подпис"
 
-#: models.py:151
+#: models.py:152
 msgid "Document file embedded signature"
 msgstr "Вграден подпис на файл с документ"
 
-#: models.py:152
+#: models.py:153
 msgid "Document file embedded signatures"
 msgstr "Вградени подписи на файл с документи"
 

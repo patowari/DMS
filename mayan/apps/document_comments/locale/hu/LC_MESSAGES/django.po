@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -50,27 +50,27 @@ msgstr "Törlés"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:8
+#: links.py:31 models.py:48 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Hozzászólások"
 
-#: model_mixins.py:10 models.py:33
+#: model_mixins.py:10 models.py:34
 msgid "User"
 msgstr "Felhasználó"
 
-#: models.py:29
+#: models.py:30
 msgid "Document"
 msgstr "Dokumentum"
 
-#: models.py:36
+#: models.py:37
 msgid "Text"
 msgstr "Szöveg"
 
-#: models.py:40
+#: models.py:41
 msgid "Date time submitted"
 msgstr "Feladás dátum ideje"
 
-#: models.py:46
+#: models.py:47
 msgid "Comment"
 msgstr "Hozzászólás"
 
@@ -80,7 +80,7 @@ msgstr "Új hozzászólások létrehozása"
 
 #: permissions.py:13
 msgid "Delete comments"
-msgstr "Hozzászólás törlése"
+msgstr "Hozzászólások törlése"
 
 #: permissions.py:16
 msgid "Edit comments"
@@ -88,33 +88,33 @@ msgstr "Hozzászólások szerkesztése"
 
 #: permissions.py:19
 msgid "View comments"
-msgstr "Hozzászólás megtekintése"
+msgstr "Hozzászólások megtekintése"
 
 #: serializers.py:12
 msgid "URL"
 msgstr "URL"
 
-#: views.py:37
+#: views.py:38
 #, python-format
 msgid "Add comment to document: %s"
 msgstr "Hozzászólás hozzáadása a dokumentumhoz: %s"
 
-#: views.py:67
+#: views.py:69
 #, python-format
 msgid "Delete comment: %s?"
 msgstr "Hozzászólás törlése: %s ?"
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid "Details for comment: %s?"
 msgstr "Hozzászólás részletei: %s ?"
 
-#: views.py:119
+#: views.py:118
 #, python-format
 msgid "Edit comment: %s?"
 msgstr "Hozzászólás szerkesztése: %s ?"
 
-#: views.py:158
+#: views.py:154
 msgid ""
 "Document comments are timestamped text entries from users. They are great "
 "for collaboration."
@@ -122,11 +122,11 @@ msgstr ""
 "A dokumentum hozzászólásai időbélyegzett szöveges bejegyzések a "
 "felhasználóktól. Kiválóan alkalmasak az együttműködésre."
 
-#: views.py:161
+#: views.py:157
 msgid "There are no comments"
 msgstr "Nincsenek hozzászólások"
 
-#: views.py:163
+#: views.py:160
 #, python-format
 msgid "Comments for document: %s"
 msgstr "Hozzászólások a dokumentumhoz: %s"

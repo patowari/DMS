@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-23 04:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: apps.py:192
 msgid "Maximum memory per child"
-msgstr "Maximális memória gyermekenként"
+msgstr ""
 
 #: apps.py:196
 msgid ""
@@ -105,7 +105,7 @@ msgstr ""
 
 #: apps.py:198
 msgid "Maximum tasks per child"
-msgstr "Gyermekenkénti feladatok maximális száma"
+msgstr ""
 
 #: apps.py:202
 msgid ""
@@ -117,7 +117,7 @@ msgstr ""
 
 #: apps.py:204
 msgid "Concurrency"
-msgstr "Egyidejűség"
+msgstr ""
 
 #: apps.py:208
 msgid ""
@@ -133,15 +133,15 @@ msgstr "Nice szint"
 
 #: classes.py:184
 msgid "Task type count"
-msgstr "Feladattípusok száma"
+msgstr ""
 
 #: classes.py:226
 msgid "Queue count"
-msgstr "Sorszám"
+msgstr ""
 
 #: links.py:13
 msgid "Task type list"
-msgstr "Feladattípus lista"
+msgstr ""
 
 #: links.py:18
 msgid "Worker list"
@@ -149,7 +149,7 @@ msgstr "Worker lista"
 
 #: links.py:23
 msgid "Queue list"
-msgstr "Sorlista"
+msgstr ""
 
 #: permissions.py:10
 msgid "View tasks"
@@ -230,11 +230,11 @@ msgstr "Worker: %s , nem található"
 
 #: workers.py:20
 msgid "Low latency high volume tasks"
-msgstr "Alacsony késleltetésű nagy volumenű feladatok"
+msgstr ""
 
 #: workers.py:28 workers.py:35
 msgid "Medium latency tasks"
-msgstr "Közepes késleltetésű feladatok"
+msgstr ""
 
 #: workers.py:42 workers.py:50
 msgid "Low latency, long lived tasks"

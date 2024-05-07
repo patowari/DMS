@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
-# Yves Dubois <ydubois@gmail.com>, 2024
-# Guillaume Trottier <gui.trottier@gmail.com>, 2024
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Roberto Rosario, 2024
+# Yves Dubois <ydubois@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
+# Guillaume Trottier <gui.trottier@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Guillaume Trottier <gui.trottier@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Impossible d'initialiser le stockage : %(name)s. Vérifiez le chemin en "
 "pointillés et les arguments du backend de stockage."
 
-#: events.py:6 links.py:20 models.py:54 storages.py:22
+#: events.py:6 links.py:20 models.py:55 storages.py:22
 msgid "Download files"
 msgstr "Télécharger les fichiers"
 
@@ -89,15 +89,15 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Nom du stockage à exécuter."
 
-#: model_mixins.py:18 models.py:93
+#: model_mixins.py:67 models.py:96
 msgid "Filename"
 msgstr "Nom de fichier"
 
-#: model_mixins.py:21
+#: model_mixins.py:70
 msgid "Date time"
 msgstr "Date et heure"
 
-#: model_mixins.py:83
+#: model_mixins.py:91
 msgid "Unnamed file"
 msgstr "Fichier sans nom"
 
@@ -105,27 +105,27 @@ msgstr "Fichier sans nom"
 msgid "Size"
 msgstr "Taille"
 
-#: model_mixins.py:110 models.py:46 serializers.py:15
+#: model_mixins.py:110 models.py:47 serializers.py:15
 msgid "User"
 msgstr "Utilisateur"
 
-#: models.py:38 models.py:90
+#: models.py:39 models.py:92
 msgid "File"
 msgstr "Fichier"
 
-#: models.py:41
+#: models.py:42
 msgid "Label"
 msgstr "Libellé"
 
-#: models.py:53
+#: models.py:54
 msgid "Download file"
 msgstr "Télécharger le fichier"
 
-#: models.py:99
+#: models.py:102
 msgid "Shared uploaded file"
 msgstr "Fichier importé partagé"
 
-#: models.py:100 storages.py:36
+#: models.py:103 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Fichiers importés partagés"
 
@@ -214,7 +214,7 @@ msgstr ""
 "Impossible d'initialiser le stockage de fichiers téléchargés partagés. "
 "Vérifiez les paramètres {} et {} pour les erreurs de formatage."
 
-#: views/download_file_views.py:68
+#: views/download_file_views.py:69
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -224,10 +224,10 @@ msgstr ""
 "tel qu'une exportation. Les fichiers téléchargés sont conservés pendant un "
 "certain temps, puis supprimés automatiquement."
 
-#: views/download_file_views.py:72
+#: views/download_file_views.py:73
 msgid "There are no files to download."
 msgstr "Il n'y a aucun fichier à télécharger."
 
-#: views/download_file_views.py:73
+#: views/download_file_views.py:74
 msgid "Downloads"
 msgstr "Téléchargements"

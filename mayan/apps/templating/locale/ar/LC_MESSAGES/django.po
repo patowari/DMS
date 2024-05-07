@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,15 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:19 permissions.py:6
+#: apps.py:21 permissions.py:6
 msgid "Templating"
 msgstr "القوالب"
 
-#: fields.py:21
+#: apps.py:39
+msgid "Current date and time"
+msgstr ""
+
+#: fields.py:28
 #, python-format
 msgid ""
 "Use Django's default templating language "
@@ -36,16 +40,10 @@ msgstr ""
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 " "
 
-#: fields.py:41
+#: fields.py:43
 #, python-format
-msgid ""
-"Use Django's default templating language "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" The {{ %(variable)s }} variable is available to the template."
+msgid "Available template context variables: %s"
 msgstr ""
-"استخدام شكل القوالب الإفتراضي "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" {{ %(variable)s }} المتغيرات."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
@@ -87,12 +85,12 @@ msgstr ""
 msgid "URL"
 msgstr "URL"
 
-#: views.py:44
+#: views.py:45
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr "وضع قالب الحماية : %s"
 
-#: views.py:65
+#: views.py:67
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr "خطأ في النموذج ; %(exception)s"

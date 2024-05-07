@@ -4,14 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -47,6 +48,22 @@ msgstr "Кеш очищено"
 #: events.py:19
 msgid "Cache partition purged"
 msgstr "Розділ кешу очищено"
+
+#: forms.py:11
+msgid "Identification"
+msgstr ""
+
+#: forms.py:15
+msgid "Storage"
+msgstr "Сховище"
+
+#: forms.py:19
+msgid "Configuration"
+msgstr ""
+
+#: forms.py:25
+msgid "Objects"
+msgstr "Об'єкти"
 
 #: links.py:27 links.py:50
 msgid "File caches"
@@ -84,7 +101,7 @@ msgstr "Кількість файлів розділу"
 msgid "Total cached files."
 msgstr "Усього кешованих файлів."
 
-#: model_mixins.py:113 model_mixins.py:324
+#: model_mixins.py:113 model_mixins.py:326
 msgid "Current size"
 msgstr "Поточний розмір"
 
@@ -92,7 +109,11 @@ msgstr "Поточний розмір"
 msgid "Current size of the cache."
 msgstr "Поточний розмір кешу."
 
-#: model_mixins.py:326
+#: model_mixins.py:123
+msgid "Label"
+msgstr "Мітка"
+
+#: model_mixins.py:328
 msgid "Current size of the cache partition."
 msgstr "Поточний розмір розділу кешу."
 
@@ -108,7 +129,7 @@ msgstr "Визначене ім'я сховища"
 msgid "Maximum size of the cache in bytes."
 msgstr "Максимальний розмір кешу в байтах."
 
-#: models.py:36 models.py:76
+#: models.py:36 models.py:75
 msgid "Cache"
 msgstr "Кеш"
 
@@ -116,39 +137,39 @@ msgstr "Кеш"
 msgid "Caches"
 msgstr "Кеші"
 
-#: models.py:79
+#: models.py:78
 msgid "Name"
 msgstr "Ім'я"
 
-#: models.py:84 models.py:107
+#: models.py:83 models.py:105
 msgid "Cache partition"
 msgstr "Розділ кешу"
 
-#: models.py:85
+#: models.py:84
 msgid "Cache partitions"
 msgstr "Розділи кешу"
 
-#: models.py:110
+#: models.py:108
 msgid "Date time"
 msgstr "Дата і час"
 
-#: models.py:113
+#: models.py:111
 msgid "Filename"
 msgstr "Ім'я файлу"
 
-#: models.py:116
+#: models.py:114
 msgid "File size"
 msgstr "Розмір файлу"
 
-#: models.py:120
+#: models.py:118
 msgid "Times this cache partition file has been accessed."
 msgstr "Кількість звернень до цього файлу розділу кешу."
 
-#: models.py:127
+#: models.py:125
 msgid "Cache partition file"
 msgstr "Файл розділу кешу"
 
-#: models.py:128
+#: models.py:126
 msgid "Cache partition files"
 msgstr "Файли розділів кешу"
 
@@ -188,40 +209,40 @@ msgstr ""
 "Кількість разів, які кеш спробує видалити файли, щоб звільнити місце для "
 "нового запитуваного файлу, перед відмовою."
 
-#: views.py:49
+#: views.py:36
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Деталі кешу: %s"
 
-#: views.py:61
+#: views.py:48
 msgid "File caches list"
 msgstr "Список кешів файлів"
 
-#: views.py:82
+#: views.py:69
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Деталі розділу кешу: %s"
 
-#: views.py:100
+#: views.py:87
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "Очистити розділи кешу \"%s\"?"
 
-#: views.py:117
+#: views.py:104
 msgid "Object cache partitions submitted for purging."
 msgstr "Розділи кешу об’єктів надіслано на очищення."
 
-#: views.py:127
+#: views.py:114
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d кеші, подані на очищення."
 
-#: views.py:130
+#: views.py:117
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d кеш надіслано на очищення."
 
-#: views.py:139
+#: views.py:126
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "Надіслати вибраний кеш для очищення?"

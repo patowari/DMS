@@ -5,17 +5,17 @@
 # Translators:
 # Translators:
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
+# Dmytro Batishchev <dmytro.batishchev@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-# Dmytro Batishchev <dmytro.batishchev@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Dmytro Batishchev <dmytro.batishchev@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +55,7 @@ msgstr "СДК видалено"
 msgid "ACL edited"
 msgstr "СКД відредаговано"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Роль"
 
@@ -67,7 +67,7 @@ msgstr "Новий СКД"
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Дозволи"
 
@@ -78,7 +78,7 @@ msgstr "Глобальні СДК"
 #: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr "Об'єкт %sне є моделлю і не може бути перевірений для доступу."
+msgstr "Об'єкт \"%s\" не є моделлю і не може бути перевірений для доступу."
 
 #: managers.py:293
 #, python-format
@@ -89,30 +89,30 @@ msgstr "Недостатній доступ для: %s"
 msgid "Permission count"
 msgstr "Кількість дозволів"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr "Тип вмісту"
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID об'єкта"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "Роль, якій надано доступ до зазначеного об'єкта."
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "Поле доступу"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "Поля доступу"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
-msgstr "Дозволи ролі %(role)s для %(object)s"
+msgstr "Дозволи ролі \"%(role)s\" для \"%(object)s\""
 
 #: permissions.py:10
 msgid "Edit ACLs"
@@ -160,8 +160,8 @@ msgid ""
 "An ACL for \"%(object)s\" using role \"%(role)s\" already exists. Edit that "
 "ACL entry instead."
 msgstr ""
-"СКД для %(object)s, яка використовує роль %(role)s, уже існує. Відредагуйте "
-"це поле СКД. "
+"СКД для \"%(object)s\", яка використовує роль \"%(role)s\", уже існує. "
+"Відредагуйте це поле СКД. "
 
 #: views.py:59
 #, python-format
@@ -173,11 +173,11 @@ msgstr "Новий список контролю доступу для: %s"
 msgid "Delete ACL: %s"
 msgstr "Видалити СКД: %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "Відсутні СКД  для цього об'єкта"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -187,25 +187,25 @@ msgstr ""
 "користувача до об'єктів у системі. СКД дозволяє надати дозвіл на роль, але "
 "лише для конкретного об'єкту або набору об'єктів."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "Список контролю доступу для: %s"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "Надані дозволи"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "Доступні дозволи"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
-msgstr "Дозвіл ролі %(role)sдля %(object)s."
+msgstr "Дозвіл ролі \"%(role)s\" для \"%(object)s\"."
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -217,13 +217,13 @@ msgstr ""
 "представлення. Успадковані дозволи повинні бути видалені з батьківського "
 "об'єкта СКД або з їх ролі через меню Налаштування."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "СДК відсутні"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
-msgstr "Списки глобального контролю доступу"
+msgstr "Глобальний список контролю доступу"
 
 #: workflow_actions.py:44
 msgid "Object type"

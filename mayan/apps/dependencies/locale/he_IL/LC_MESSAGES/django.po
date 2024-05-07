@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "App"
 msgstr ""
 
-#: classes.py:220 classes.py:963
+#: classes.py:220 classes.py:966
 msgid "Environments"
 msgstr ""
 
@@ -134,7 +134,7 @@ msgstr ""
 msgid "JavaScript"
 msgstr ""
 
-#: classes.py:572 classes.py:866
+#: classes.py:572 classes.py:869
 msgid "Downloading... "
 msgstr ""
 
@@ -142,39 +142,39 @@ msgstr ""
 msgid "Verifying... "
 msgstr ""
 
-#: classes.py:582 classes.py:871
+#: classes.py:582 classes.py:874
 msgid "Extracting... "
 msgstr ""
 
-#: classes.py:792
+#: classes.py:795
 msgid "Python packages downloaded from PyPI."
 msgstr ""
 
-#: classes.py:794
+#: classes.py:797
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:846
+#: classes.py:849
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "גופנים הורדו מfonts.googleapis.com."
 
-#: classes.py:848
+#: classes.py:851
 msgid "Google font"
 msgstr ""
 
-#: classes.py:944
+#: classes.py:947
 msgid "Declared in app"
 msgstr ""
 
-#: classes.py:945
+#: classes.py:948
 msgid "Show dependencies by the app that declared them."
 msgstr "הצג תלויות של האפליקציה שהכריזה עליהן."
 
-#: classes.py:949
+#: classes.py:952
 msgid "Class"
 msgstr "Class"
 
-#: classes.py:950
+#: classes.py:953
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -182,11 +182,11 @@ msgstr ""
 "הצג את ה-class-ים השונים של התלויות. ה-class-ים מחולקים בדרך כלל לפי שפה או "
 "סוגי הקבצים של התלות."
 
-#: classes.py:955
+#: classes.py:958
 msgid "State"
 msgstr "מצב"
 
-#: classes.py:956
+#: classes.py:959
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -195,7 +195,7 @@ msgstr ""
 "הצג את המצבים השונים של התלויות. \"True\" אומר שהתלות מותקנת והיא בגרסה "
 "נכונה. \"False\" פירושו שההתלויות חסרות או שקיימת גרסה שגויה."
 
-#: classes.py:964
+#: classes.py:967
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

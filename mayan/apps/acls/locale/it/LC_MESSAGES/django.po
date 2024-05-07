@@ -5,19 +5,19 @@
 # Translators:
 # Translators:
 # Paul Audhep <audhep@gmail.com>, 2024
-# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
+# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
+# Roberto Rosario, 2024
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
-# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Daniele Bortoluzzi <daniele@elkos.it>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "ACL cancellata"
 msgid "ACL edited"
 msgstr "ACL modificata"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Ruolo"
 
@@ -69,7 +69,7 @@ msgstr "Nuova ACL"
 msgid "Delete"
 msgstr "Cancella"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Permessi"
 
@@ -93,27 +93,27 @@ msgstr "Permessi insufficienti per: %s"
 msgid "Permission count"
 msgstr "Conteggio delle autorizzazioni"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr "Tipo di contenuto"
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID dell'oggetto"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "Ruolo al quale si concede l'accesso per l'oggetto specificato."
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "Voce di accesso"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "Voci di accesso"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "Permessi del ruolo \"%(role)s\" per \"%(object)s\""
@@ -177,11 +177,11 @@ msgstr "Nuova lista di controllo accesso per: %s"
 msgid "Delete ACL: %s"
 msgstr "Cancella ACL: %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "Non ci sono ACL per questo oggetto"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -192,25 +192,25 @@ msgstr ""
 "concedere un'autorizzazione a un ruolo ma solo per un specifico oggetto o un"
 " set di oggetti."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "Lista dei permessi d'accesso per: %s"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "Autorizzazioni concesse  "
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "Autorizzazioni disponibili "
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Permessi del ruolo \"%(role)s\" per \"%(object)s\"."
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -222,11 +222,11 @@ msgstr ""
 "permessi ereditati vanno rimossi dalle ACL dell'oggetto padre o del ruolo "
 "tramite il menù Setup."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "Non ci sono ACL."
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "Liste di controllo accessi"
 

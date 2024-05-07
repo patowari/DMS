@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2024
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
+# Roberto Rosario, 2024
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -25,75 +25,75 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:61 events.py:6 permissions.py:6
+#: apps.py:60 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Gestion des utilisateurs"
 
-#: apps.py:76 search.py:10
+#: apps.py:75 search.py:10
 msgid "Group"
 msgstr "Groupe"
 
-#: apps.py:77 apps.py:113 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:76 apps.py:115 links.py:55 links.py:69 links.py:98 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "Groupes"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Nom"
 
-#: apps.py:102 models.py:20 search.py:22
+#: apps.py:104 models.py:20 search.py:22
 msgid "User"
 msgstr "Utilisateur"
 
-#: apps.py:103 apps.py:230 links.py:58 links.py:99 links.py:111
-#: views/user_views.py:170
+#: apps.py:105 apps.py:238 links.py:60 links.py:101 links.py:113
+#: views/user_views.py:178
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: apps.py:107 search.py:31
+#: apps.py:109 search.py:31
 msgid "Email"
 msgstr "Courriel"
 
-#: apps.py:111 search.py:28
+#: apps.py:113 search.py:28
 msgid "First name"
 msgstr "Prénom"
 
-#: apps.py:117
+#: apps.py:119
 msgid "Is active?"
 msgstr "Est actif?"
 
-#: apps.py:120
+#: apps.py:122
 msgid "Is super user?"
 msgstr "Superutilisateur?"
 
-#: apps.py:123 search.py:37
+#: apps.py:125 search.py:37
 msgid "Last name"
 msgstr "Nom"
 
-#: apps.py:126 serializers.py:72
+#: apps.py:128 serializers.py:72
 msgid "Password"
 msgstr "Mot de passe"
 
-#: apps.py:129 search.py:40
+#: apps.py:131 search.py:40
 msgid "Username"
 msgstr "Identifiant"
 
-#: apps.py:132
+#: apps.py:134
 msgid "Last login"
 msgstr "Dernière connexion"
 
-#: apps.py:158
+#: apps.py:166
 msgid "Has usable password?"
 msgstr "Possède un mot de passe utilisable ?"
 
-#: apps.py:165
-msgid "All the groups."
-msgstr "Tous les groupes."
+#: apps.py:173
+msgid "All the groups"
+msgstr ""
 
-#: apps.py:169
-msgid "All the users."
-msgstr "Tous les utilisateurs."
+#: apps.py:177
+msgid "All the users"
+msgstr ""
 
 #: dashboard_widgets.py:14
 msgid "Total users"
@@ -131,27 +131,27 @@ msgstr "Utilisateur connecté"
 msgid "User logged out"
 msgstr "Utilisateur déconnecté"
 
-#: links.py:28
+#: links.py:30
 msgid "User details"
 msgstr "Détails de l'utilisateur"
 
-#: links.py:36 views/group_views.py:25
+#: links.py:38 views/group_views.py:25
 msgid "Create new group"
 msgstr "Créer un nouveau groupe"
 
-#: links.py:41 links.py:44 links.py:81 links.py:85
+#: links.py:43 links.py:46 links.py:83 links.py:87
 msgid "Delete"
 msgstr "Supprimer"
 
-#: links.py:49 links.py:90
+#: links.py:51 links.py:92
 msgid "Edit"
 msgstr "Modifier"
 
-#: links.py:75 views/user_views.py:32
+#: links.py:77 views/user_views.py:32
 msgid "Create new user"
 msgstr "Créer un nouvel utilisateur"
 
-#: links.py:104
+#: links.py:106
 msgid "User options"
 msgstr "Options pour l'utilisateur"
 
@@ -328,44 +328,44 @@ msgstr "Groupe d'utilisateurs"
 msgid "Users of group: %s"
 msgstr "Utilisateurs du groupe : %s"
 
-#: views/user_views.py:55
+#: views/user_views.py:56
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Erreur lors de la suppression de l'utilisateur \"%(instance)s\": "
 "%(exception)s"
 
-#: views/user_views.py:61
+#: views/user_views.py:64
 #, python-format
 msgid "%(count)d users deleted successfully."
 msgstr "%(count)d utilisateurs supprimés avec succès."
 
-#: views/user_views.py:62
+#: views/user_views.py:67
 #, python-format
 msgid "User \"%(object)s\" deleted successfully."
 msgstr "L'utilisateur \"%(object)s\" a été supprimé avec succès."
 
-#: views/user_views.py:63
+#: views/user_views.py:70
 #, python-format
 msgid "%(count)d user deleted successfully."
 msgstr "%(count)d utilisateur supprimé avec succès."
 
-#: views/user_views.py:64
+#: views/user_views.py:72
 #, python-format
 msgid "Delete the %(count)d selected users."
 msgstr "Supprimez les %(count)d utilisateurs sélectionnés."
 
-#: views/user_views.py:65
+#: views/user_views.py:73
 #, python-format
 msgid "Delete user: %(object)s."
 msgstr "Supprimer l'utilisateur: %(object)s."
 
-#: views/user_views.py:66
+#: views/user_views.py:74
 #, python-format
 msgid "Delete the %(count)d selected user."
 msgstr "Supprimez %(count)d utilisateur sélectionné."
 
-#: views/user_views.py:73
+#: views/user_views.py:81
 msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
@@ -374,32 +374,32 @@ msgstr ""
 "utilisateur. Vous perdrez l'accès au système. Cette action n'est pas "
 "réversible."
 
-#: views/user_views.py:93
+#: views/user_views.py:101
 #, python-format
 msgid "Details of user: %s"
 msgstr "Détails pour l'utilisateur: %s"
 
-#: views/user_views.py:112
+#: views/user_views.py:120
 #, python-format
 msgid "Edit user: %s"
 msgstr "Modifier l'utilisateur : %s"
 
-#: views/user_views.py:123
+#: views/user_views.py:131
 msgid "Available groups"
 msgstr "Groupes disponibles"
 
 #. Translators: "User groups" here refer to the list of groups of a
 #. specific user. The user's group membership.
-#: views/user_views.py:126
+#: views/user_views.py:134
 msgid "User groups"
 msgstr "Groupes d'utilisateurs"
 
-#: views/user_views.py:141
+#: views/user_views.py:149
 #, python-format
 msgid "Groups of user: %s"
 msgstr "Membre des groupes : %s"
 
-#: views/user_views.py:166
+#: views/user_views.py:174
 msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
@@ -408,11 +408,11 @@ msgstr ""
 "avoir créé un compte d'utilisateur, vous serez invité à définir un mot de "
 "passe pour ce compte."
 
-#: views/user_views.py:169
+#: views/user_views.py:177
 msgid "There are no user accounts"
 msgstr "Il n'y a pas de compte utilisateur"
 
-#: views/user_views.py:189
+#: views/user_views.py:197
 #, python-format
 msgid "Edit options for user: %s"
 msgstr "Options de modification pour l'utilisateur: %s"

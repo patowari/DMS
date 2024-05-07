@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# WM Shinkada <shinkadawasim@gmail.com>, 2024
 # Mohammed ALDOUB <voulnet@gmail.com>, 2024
+# WM Shinkada <shinkadawasim@gmail.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "تم إستخراج الوثيقة"
 msgid "Document status"
 msgstr "حالة الوثيقة"
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "مستخدم"
 
@@ -118,7 +118,7 @@ msgstr "وقت وتاريخ الخروج"
 msgid "Checkout expiration"
 msgstr "انتهاء صلاحية الخروج"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr "الوثيقة"
 
@@ -130,27 +130,27 @@ msgstr "التحقق من الوقت والتاريخ"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "المدة اللازمة للاحتفاظ بالوثيقة التي تم استخراجها بالدقائق."
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "التحقق من تاريخ انتهاء الصلاحية للوقت والتاريخ"
 
-#: models.py:50
+#: models.py:51
 msgid "Do not allow new file of this document to be uploaded."
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "Block new file upload"
 msgstr ""
 
-#: models.py:59 permissions.py:6
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "الوثيقة النهائية"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "إستخراج الوثيقة"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "التحقق من صلاحية الوقت والتاريخ، يجب ان يكون في المستقبل "
 
@@ -178,15 +178,15 @@ msgstr "الخروج الدوري"
 msgid "Check expired checkouts"
 msgstr "تحقق من الخروج منتهية الصلاحية"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "المفتاح الأساسي للمستند المراد سحبه."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr ""
 

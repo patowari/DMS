@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,15 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:19 permissions.py:6
+#: apps.py:21 permissions.py:6
 msgid "Templating"
 msgstr "Şablonlama"
 
-#: fields.py:21
+#: apps.py:39
+msgid "Current date and time"
+msgstr ""
+
+#: fields.py:28
 #, python-format
 msgid ""
 "Use Django's default templating language "
@@ -37,16 +41,10 @@ msgstr ""
 "Django'nun varsayılan şablonlama dilini kullanın "
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 
-#: fields.py:41
+#: fields.py:43
 #, python-format
-msgid ""
-"Use Django's default templating language "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" The {{ %(variable)s }} variable is available to the template."
+msgid "Available template context variables: %s"
 msgstr ""
-"Django'nun varsayılan şablonlama dilini kullanın "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" {{ %(variable)s }} değişkeni şablon için kullanılabilir."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
@@ -88,12 +86,12 @@ msgstr "HTML"
 msgid "URL"
 msgstr "URL"
 
-#: views.py:44
+#: views.py:45
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr "Şunun içim sandbox şablonu: %s"
 
-#: views.py:65
+#: views.py:67
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr "Şablon hatası; %(exception)s"

@@ -4,22 +4,22 @@
 # 
 # Translators:
 # Translators:
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
-# Márcia Ferreira, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
+# Márcia Ferreira, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:23 links.py:17 settings.py:11
+#: apps.py:25 links.py:17 settings.py:11
 msgid "REST API"
 msgstr "API REST"
 
@@ -64,79 +64,79 @@ msgstr " Este campo é obrigatório."
 msgid "%s API"
 msgstr "API %s"
 
-#: serializers.py:37
+#: serializers.py:36
 msgid "Content"
 msgstr "Conteúdo"
 
-#: serializers.py:40
+#: serializers.py:39
 msgid "Data"
 msgstr "Dados"
 
-#: serializers.py:43
+#: serializers.py:42
 msgid "Headers"
 msgstr "Cabeçalhos"
 
-#: serializers.py:46
+#: serializers.py:45
 msgid "Name"
 msgstr "Nome"
 
-#: serializers.py:49
+#: serializers.py:48
 msgid "Status code"
 msgstr ""
 
-#: serializers.py:52
+#: serializers.py:51
 msgid "Requests"
 msgstr ""
 
-#: serializers.py:75
+#: serializers.py:74
 msgid "Label"
 msgstr "Nome"
 
-#: serializers.py:78
+#: serializers.py:77
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:106
+#: serializers.py:105
 msgid "Author"
 msgstr ""
 
-#: serializers.py:109
+#: serializers.py:108
 msgid "Author email"
 msgstr ""
 
-#: serializers.py:112
+#: serializers.py:111
 msgid "Build"
 msgstr "Compilação"
 
-#: serializers.py:115
+#: serializers.py:114
 msgid "Build string"
 msgstr ""
 
-#: serializers.py:118
+#: serializers.py:117
 msgid "Copyright"
 msgstr ""
 
-#: serializers.py:121
+#: serializers.py:120
 msgid "Description"
 msgstr "Descrição"
 
-#: serializers.py:124
+#: serializers.py:123
 msgid "Django version"
 msgstr ""
 
-#: serializers.py:127
+#: serializers.py:126
 msgid "License"
 msgstr "Licença"
 
-#: serializers.py:130
+#: serializers.py:129
 msgid "Title"
 msgstr "Título"
 
-#: serializers.py:133
+#: serializers.py:132
 msgid "Version"
 msgstr "Versão"
 
-#: serializers.py:136
+#: serializers.py:135
 msgid "Website"
 msgstr ""
 

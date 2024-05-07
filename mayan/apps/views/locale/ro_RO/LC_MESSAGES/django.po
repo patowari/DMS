@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Stefaniu Criste <gupi@hangar.ro>, 2024
-# Badea Gabriel <gcbadea@gmail.com>, 2024
 # Harald Ersch, 2024
+# Badea Gabriel <gcbadea@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Harald Ersch, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Badea Gabriel <gcbadea@gmail.com>, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,15 +34,15 @@ msgstr "Căutare"
 msgid "Selection"
 msgstr "Selecţie"
 
-#: forms.py:233
+#: forms.py:231
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: forms.py:239
+#: forms.py:237
 msgid "Relationship"
 msgstr "Relaţie"
 
-#: generics.py:168
+#: generics.py:167
 msgid ""
 "Select entries to be removed. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -52,7 +52,7 @@ msgstr ""
 "mai multe intrări. După finalizarea selecției, faceți clic pe butonul de mai"
 " jos sau faceți dublu clic pe listă pentru a activa acțiunea."
 
-#: generics.py:173
+#: generics.py:172
 msgid ""
 "Select entries to be added. Hold Control to select multiple entries. Once "
 "the selection is complete, click the button below or double click the list "
@@ -62,97 +62,97 @@ msgstr ""
 "mai multe intrări. După finalizarea selecției, faceți clic pe butonul de mai"
 " jos sau faceți dublu clic pe listă pentru a activa acțiunea."
 
-#: generics.py:327
+#: generics.py:326
 msgid "Add all"
 msgstr "Adaugă tot setul"
 
-#: generics.py:334
+#: generics.py:333
 msgid "Add"
 msgstr "Adăugți"
 
-#: generics.py:345
+#: generics.py:344
 msgid "Remove all"
 msgstr "Elimină tot setul"
 
-#: generics.py:352
+#: generics.py:351
 msgid "Remove"
 msgstr "Eliminați"
 
-#: generics.py:583
+#: generics.py:582
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Eroare la actualizarea relației; %s"
 
-#: generics.py:590
+#: generics.py:589
 msgid "Relationships updated successfully"
 msgstr "Relațiile au fost actualizate cu succes"
 
-#: generics.py:653
+#: generics.py:652
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Eroare de date duplicat: %(error)s"
 
-#: generics.py:672
+#: generics.py:671
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "Obiectul tip %(object)s nu a fost creat, eroare: %(error)s"
 
-#: generics.py:683
+#: generics.py:682
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "Obiectul tip %(object)s a fost creat cu succes."
 
-#: generics.py:727
+#: generics.py:726
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "Obiectul tip %(object)s nu a fost șters, eroare: %(error)s."
 
-#: generics.py:737
+#: generics.py:736
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "Obiectul tip %(object)s a fost șters cu succes."
 
-#: generics.py:800
+#: generics.py:799
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Eroare la preluarea %(object)s; %(error)s"
 
-#: generics.py:912
+#: generics.py:860
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "Obiectul tip %(object)s nu a fost actualizat, eroare: %(error)s."
 
-#: generics.py:922
+#: generics.py:870
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "Obiectul tip %(object)s a fost actualizat cu succes."
 
-#: generics.py:989
+#: generics.py:937
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d obiecte șterse cu succes."
 
-#: generics.py:990
+#: generics.py:938
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "„%(object)s” a fost șters cu succes."
 
-#: generics.py:991
+#: generics.py:939
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d obiect a fost șters cu succes."
 
-#: generics.py:992
+#: generics.py:940
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Ștergeți %(count)d obiecte."
 
-#: generics.py:993
+#: generics.py:941
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Șterge „%(object)s”."
 
-#: generics.py:994
+#: generics.py:942
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Ștergeți %(count)d obiect."
@@ -201,47 +201,47 @@ msgstr "Editare: %s"
 msgid "Create"
 msgstr "Creează"
 
-#: view_mixins.py:417
+#: view_mixins.py:366
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "Nu am găsit %(verbose_name)s care să corespundă interogării"
 
-#: view_mixins.py:443
+#: view_mixins.py:392
 #, python-format
 msgid "Unable to perform operation on object %(instance)s; %(exception)s."
 msgstr ""
 "Imposibil de efectuat operația pe obiectul %(instance)s; %(exception)s."
 
-#: view_mixins.py:447
+#: view_mixins.py:396
 #, python-format
 msgid "Operation performed on %(count)d objects."
 msgstr "Operațiune efectuată pe %(count)d obiecte ."
 
-#: view_mixins.py:449
+#: view_mixins.py:398
 #, python-format
 msgid "Operation performed on %(object)s."
 msgstr "Operațiune efectuată pe %(object)s."
 
-#: view_mixins.py:451
+#: view_mixins.py:400
 #, python-format
 msgid "Operation performed on %(count)d object."
 msgstr "Operațiune efectuată pe obiectul %(count)d."
 
-#: view_mixins.py:453
+#: view_mixins.py:402
 #, python-format
 msgid "Perform operation on %(count)d objects."
 msgstr "Efectuați operațiunea pe %(count)d obiecte."
 
-#: view_mixins.py:454
+#: view_mixins.py:403
 #, python-format
 msgid "Perform operation on %(object)s."
 msgstr "Efectuați operațiunea pe %(object)s."
 
-#: view_mixins.py:455
+#: view_mixins.py:404
 #, python-format
 msgid "Perform operation on %(count)d object."
 msgstr "Efectuați operațiunea pe obiectul %(count)d."
 
-#: view_mixins.py:539
+#: view_mixins.py:488
 msgid "Object"
 msgstr "Obiect"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Dokumentum"
 
 #: models.py:31
 msgid "Data representing the handwritten signature."
-msgstr "A kézzel írt aláírást reprezentáló adatok."
+msgstr ""
 
 #: models.py:32
 msgid "Signature capture data"
@@ -77,7 +77,7 @@ msgstr "Aláíráskép adatok"
 
 #: models.py:36
 msgid "Vector representation of the handwritten signature."
-msgstr "A kézzel írott aláírás vektoros ábrázolása."
+msgstr ""
 
 #: models.py:37
 msgid "SVG signature capture data"
@@ -85,7 +85,7 @@ msgstr "SVG aláíráskép adatok"
 
 #: models.py:40
 msgid "Print version of the captured signature."
-msgstr "A rögzített aláírás nyomtatott változata."
+msgstr ""
 
 #: models.py:41
 msgid "Text"
@@ -97,11 +97,11 @@ msgstr "Felhasználó"
 
 #: models.py:49
 msgid "Date and time created"
-msgstr "Létrehozás dátuma és ideje"
+msgstr ""
 
 #: models.py:53
 msgid "Date and time edited"
-msgstr "Dátum és idő szerkesztve"
+msgstr ""
 
 #: models.py:57
 msgid ""
@@ -109,9 +109,6 @@ msgid ""
 "relationship to the document. Can only contain letters, numbers, and "
 "underscores."
 msgstr ""
-"Ezt az értéket használja a rendszer, amikor erre az aláírás-rögzítésre "
-"hivatkozik a dokumentummal kapcsolatban. Csak betűket, számokat és "
-"aláhúzásjeleket tartalmazhat."
 
 #: models.py:61 transformations.py:40
 msgid "Internal name"
@@ -143,11 +140,11 @@ msgstr "Aláíráskép szöveg"
 
 #: search.py:15
 msgid "Signature capture user first name"
-msgstr "Aláírásrögzítő felhasználó keresztneve"
+msgstr "Aláíráskép felhasználó keresztneve"
 
 #: search.py:19
 msgid "Signature capture user last name"
-msgstr "Aláírásrögzítő felhasználó vezetékneve"
+msgstr "Aláíráskép felhasználó vezetékneve"
 
 #: search.py:23
 msgid "Signature capture user username"
@@ -155,7 +152,7 @@ msgstr "Aláírásrögzítő felhasználó felhasználóneve"
 
 #: search.py:34
 msgid "Document type label"
-msgstr "Dokumentumtípus címke"
+msgstr ""
 
 #: search.py:37
 msgid "Document label"
@@ -163,11 +160,11 @@ msgstr "Dokumentumcímke"
 
 #: search.py:41
 msgid "User first name"
-msgstr "Felhasználó keresztneve"
+msgstr ""
 
 #: search.py:44
 msgid "User last name"
-msgstr "Felhasználó vezetékneve"
+msgstr ""
 
 #: search.py:47
 msgid "User username"
@@ -179,7 +176,7 @@ msgstr "Dokumentum URL"
 
 #: serializers.py:15
 msgid "Image URL"
-msgstr "Kép URL"
+msgstr "Kép URL-je"
 
 #: serializers.py:27
 msgid "URL"
@@ -193,8 +190,9 @@ msgid ""
 "bytes."
 msgstr ""
 "Az a küszöbérték, amelynél a "
-"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND elkezdi törölni a"
-" legrégebbi aláírásgyűjtő gyorsítótár-fájlokat. A méret megadása bájtban."
+"SIGNATURE_CAPTURES_SIGNATURE_CAPTURE_CACHE_STORAGE_BACKEND megkezdi a "
+"legrégebbi aláíráskép gyorsítótár-fájlok törlését. Adja meg a méretet "
+"bájtban."
 
 #: settings.py:30
 msgid ""
@@ -241,33 +239,33 @@ msgstr "Az aláíráskép belső neve"
 msgid "Create signature capture for document: %s"
 msgstr "Aláíráskép létrehozása a következő dokumentumhoz: %s"
 
-#: views.py:78
+#: views.py:75
 #, python-format
 msgid "Delete signature capture: %s"
 msgstr "Aláíráskép törlése: %s"
 
-#: views.py:100
+#: views.py:97
 #, python-format
 msgid "Details of: %s"
-msgstr "Részletek: %s"
+msgstr ""
 
-#: views.py:116
+#: views.py:113
 #, python-format
 msgid "Edit document signature capture: %s"
 msgstr "A dokumentum aláírásképének szerkesztése: %s"
 
-#: views.py:145
+#: views.py:140
 msgid ""
 "Signature captures are electronic versions of a persons's handwritten "
 "signature."
 msgstr ""
 "Az aláírásképek a személyek kézzel írt aláírásának elektronikus változatai."
 
-#: views.py:148
+#: views.py:143
 msgid "Document has no signature captures"
 msgstr "A dokumentumnak nincs aláírásképe"
 
-#: views.py:151
+#: views.py:146
 #, python-format
 msgid "Signature captures for document: %s"
-msgstr "Aláírás rögzítése a következő dokumentumhoz: %s"
+msgstr ""

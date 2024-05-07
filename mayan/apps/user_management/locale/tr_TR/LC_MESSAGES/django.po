@@ -5,20 +5,20 @@
 # Translators:
 # Translators:
 # Caner Başaran <basaran.caner@gmail.com>, 2024
-# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
-# abc Def <hdogan1974@gmail.com>, 2024
 # Emine Öztürk <oemine075@gmail.com>, 2024
-# Bedreddin Şahbaz, 2024
-# serhatcan77 <serhat_can@yahoo.com>, 2024
+# abc Def <hdogan1974@gmail.com>, 2024
+# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # emreunal <bywant@gmail.com>, 2024
+# serhatcan77 <serhat_can@yahoo.com>, 2024
+# Bedreddin Şahbaz, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: emreunal <bywant@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,75 +26,75 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:61 events.py:6 permissions.py:6
+#: apps.py:60 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Kullanıcı yönetimi"
 
-#: apps.py:76 search.py:10
+#: apps.py:75 search.py:10
 msgid "Group"
 msgstr "Grup"
 
-#: apps.py:77 apps.py:113 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:76 apps.py:115 links.py:55 links.py:69 links.py:98 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "Gruplar"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "İsim"
 
-#: apps.py:102 models.py:20 search.py:22
+#: apps.py:104 models.py:20 search.py:22
 msgid "User"
 msgstr "Kullanıcı"
 
-#: apps.py:103 apps.py:230 links.py:58 links.py:99 links.py:111
-#: views/user_views.py:170
+#: apps.py:105 apps.py:238 links.py:60 links.py:101 links.py:113
+#: views/user_views.py:178
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: apps.py:107 search.py:31
+#: apps.py:109 search.py:31
 msgid "Email"
 msgstr "E-posta"
 
-#: apps.py:111 search.py:28
+#: apps.py:113 search.py:28
 msgid "First name"
 msgstr "Ad"
 
-#: apps.py:117
+#: apps.py:119
 msgid "Is active?"
 msgstr "Aktif mi?"
 
-#: apps.py:120
+#: apps.py:122
 msgid "Is super user?"
 msgstr ""
 
-#: apps.py:123 search.py:37
+#: apps.py:125 search.py:37
 msgid "Last name"
 msgstr "Soyad"
 
-#: apps.py:126 serializers.py:72
+#: apps.py:128 serializers.py:72
 msgid "Password"
 msgstr "Parola"
 
-#: apps.py:129 search.py:40
+#: apps.py:131 search.py:40
 msgid "Username"
 msgstr "Kullanıcı adı"
 
-#: apps.py:132
+#: apps.py:134
 msgid "Last login"
 msgstr "Son giriş"
 
-#: apps.py:158
+#: apps.py:166
 msgid "Has usable password?"
 msgstr "Kullanılabilir şifre var mı?"
 
-#: apps.py:165
-msgid "All the groups."
-msgstr "Tüm gruplar."
+#: apps.py:173
+msgid "All the groups"
+msgstr ""
 
-#: apps.py:169
-msgid "All the users."
-msgstr "Tüm kullanıcılar."
+#: apps.py:177
+msgid "All the users"
+msgstr ""
 
 #: dashboard_widgets.py:14
 msgid "Total users"
@@ -132,27 +132,27 @@ msgstr "Giriş yapmış kullanıcı"
 msgid "User logged out"
 msgstr "Çıkış yapmış kullanıcı"
 
-#: links.py:28
+#: links.py:30
 msgid "User details"
 msgstr "Kullanıcı detayları"
 
-#: links.py:36 views/group_views.py:25
+#: links.py:38 views/group_views.py:25
 msgid "Create new group"
 msgstr "Yeni grup oluştur"
 
-#: links.py:41 links.py:44 links.py:81 links.py:85
+#: links.py:43 links.py:46 links.py:83 links.py:87
 msgid "Delete"
 msgstr "Sil"
 
-#: links.py:49 links.py:90
+#: links.py:51 links.py:92
 msgid "Edit"
 msgstr "Düzenle"
 
-#: links.py:75 views/user_views.py:32
+#: links.py:77 views/user_views.py:32
 msgid "Create new user"
 msgstr "Yeni kullanıcı oluştur"
 
-#: links.py:104
+#: links.py:106
 msgid "User options"
 msgstr "Kullanıcı özellikleri"
 
@@ -331,42 +331,42 @@ msgstr "Grup kullanıcıları"
 msgid "Users of group: %s"
 msgstr "Grupun kullanıcıları: %s"
 
-#: views/user_views.py:55
+#: views/user_views.py:56
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
 msgstr "\"%(instance)s\" kullanıcısı silinirken hata oluştu; %(exception)s"
 
-#: views/user_views.py:61
+#: views/user_views.py:64
 #, python-format
 msgid "%(count)d users deleted successfully."
 msgstr "%(count)d kullanıcıları başarıyla silindi."
 
-#: views/user_views.py:62
+#: views/user_views.py:67
 #, python-format
 msgid "User \"%(object)s\" deleted successfully."
 msgstr "Kullanıcı \"%(object)s\" başarıyla silindi."
 
-#: views/user_views.py:63
+#: views/user_views.py:70
 #, python-format
 msgid "%(count)d user deleted successfully."
 msgstr "%(count)d kullanıcısı başarıyla silindi."
 
-#: views/user_views.py:64
+#: views/user_views.py:72
 #, python-format
 msgid "Delete the %(count)d selected users."
 msgstr "%(count)d seçilen kullanıcıları sil."
 
-#: views/user_views.py:65
+#: views/user_views.py:73
 #, python-format
 msgid "Delete user: %(object)s."
 msgstr "Kullanıcıyı sil: %(object)s."
 
-#: views/user_views.py:66
+#: views/user_views.py:74
 #, python-format
 msgid "Delete the %(count)d selected user."
 msgstr "%(count)d seçilen kullanıcıyı sil."
 
-#: views/user_views.py:73
+#: views/user_views.py:81
 msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
@@ -374,32 +374,32 @@ msgstr ""
 "Uyarı! Kendi kullanıcı hesabınızı silmek üzeresiniz. Sisteme erişimi "
 "kaybedeceksiniz. Bu işlem geri döndürülemez."
 
-#: views/user_views.py:93
+#: views/user_views.py:101
 #, python-format
 msgid "Details of user: %s"
 msgstr "Kullanıcı ayrıntıları: %s"
 
-#: views/user_views.py:112
+#: views/user_views.py:120
 #, python-format
 msgid "Edit user: %s"
 msgstr "Kullanıcıyı düzenle: %s"
 
-#: views/user_views.py:123
+#: views/user_views.py:131
 msgid "Available groups"
 msgstr "Kullanılabilir gruplar"
 
 #. Translators: "User groups" here refer to the list of groups of a
 #. specific user. The user's group membership.
-#: views/user_views.py:126
+#: views/user_views.py:134
 msgid "User groups"
 msgstr "Kullanıcı grupları"
 
-#: views/user_views.py:141
+#: views/user_views.py:149
 #, python-format
 msgid "Groups of user: %s"
 msgstr "Kullanıcının grupları: %s"
 
-#: views/user_views.py:166
+#: views/user_views.py:174
 msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
@@ -407,11 +407,11 @@ msgstr ""
 "Buradan kullanıcı hesapları oluşturabilirsiniz. Bir kullanıcı hesabı "
 "oluşturduktan sonra bu kullanıcı için bir şifre oluşturmanız istenecektir."
 
-#: views/user_views.py:169
+#: views/user_views.py:177
 msgid "There are no user accounts"
 msgstr "Herhangi bir kullanıcı hesabı bulunmamaktadır"
 
-#: views/user_views.py:189
+#: views/user_views.py:197
 #, python-format
 msgid "Edit options for user: %s"
 msgstr "%s kullanıcısı için düzenleme seçenekleri"

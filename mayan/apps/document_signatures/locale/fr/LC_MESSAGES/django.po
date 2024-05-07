@@ -4,24 +4,24 @@
 # 
 # Translators:
 # Translators:
-# Guillaume Trottier <gui.trottier@gmail.com>, 2024
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
-# Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2024
 # Benoît GROUSSET <benoit@grousset.xyz>, 2024
-# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2024
-# Olivier W, 2024
+# Guillaume Trottier <gui.trottier@gmail.com>, 2024
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
-# Yves Dubois <ydubois@gmail.com>, 2024
+# Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2024
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Baptiste GAILLET <baptiste.gaillet@cstb.fr>, 2024
 # Roberto Rosario, 2024
+# Olivier W, 2024
+# Yves Dubois <ydubois@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "Signatures du document"
 msgid "Date and time"
 msgstr "Date et heure"
 
-#: apps.py:114 models.py:52 serializers.py:61
+#: apps.py:114 models.py:53 serializers.py:61
 msgid "Key ID"
 msgstr "ID de la clé"
 
@@ -46,7 +46,7 @@ msgstr "ID de la clé"
 msgid "None"
 msgstr "Aucun"
 
-#: apps.py:119 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:58
 msgid "Signature ID"
 msgstr "ID de la signature"
 
@@ -190,47 +190,47 @@ msgstr "Fichier"
 msgid "Date and time signed"
 msgstr "Date et heure de la signature"
 
-#: models.py:51
+#: models.py:52
 msgid "ID of the key that will be used to sign the document."
 msgstr "ID de la clé qui sera utilisée pour signer le document."
 
-#: models.py:61
+#: models.py:62
 msgid "Public key fingerprint"
 msgstr "Empreinte de la clef publique"
 
-#: models.py:68
+#: models.py:69
 msgid "Document file signature"
 msgstr "Signature pour ce document"
 
-#: models.py:69
+#: models.py:70
 msgid "Document file signatures"
 msgstr "Signatures du document"
 
-#: models.py:86
+#: models.py:87
 msgid "Signature file previously generated."
 msgstr "Fichier de signature généré précédemment."
 
-#: models.py:89
+#: models.py:90
 msgid "Signature file"
 msgstr "Fichier de signature"
 
-#: models.py:95
+#: models.py:96
 msgid "Document file detached signature"
 msgstr "Signature détachée du document"
 
-#: models.py:96
+#: models.py:97
 msgid "Document file detached signatures"
 msgstr "Signature détachée du document"
 
-#: models.py:100
+#: models.py:101
 msgid "signature"
 msgstr "signature"
 
-#: models.py:151
+#: models.py:152
 msgid "Document file embedded signature"
 msgstr "Signature intégrée dans le document"
 
-#: models.py:152
+#: models.py:153
 msgid "Document file embedded signatures"
 msgstr "Signature intégrée du document"
 

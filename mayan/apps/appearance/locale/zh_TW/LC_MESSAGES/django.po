@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-# bo feng <87289884@qq.com>, 2024
-# yan songwei <yansw@vip.163.com>, 2024
 # Ford Guo <agile.guo@gmail.com>, 2024
+# bo feng <87289884@qq.com>, 2024
 # Leon Chu, 2024
+# yan songwei <yansw@vip.163.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Leon Chu, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: yan songwei <yansw@vip.163.com>, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "外觀"
 
@@ -57,24 +57,16 @@ msgid "JQuery Form"
 msgstr "jQuery表單"
 
 #: dependencies.py:46
-msgid "jQuery Lazy Load"
-msgstr "jQuery Lazy Load 套件"
-
-#: dependencies.py:50
 msgid "JQuery Match Height"
 msgstr "JQuery Match Height 套件"
 
-#: dependencies.py:54
+#: dependencies.py:50
 msgid "Select 2"
 msgstr "Select 2 套件"
 
-#: dependencies.py:58
+#: dependencies.py:54
 msgid "Toastr"
 msgstr "Toastr 套件"
-
-#: dependencies.py:62
-msgid "URI.js"
-msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
@@ -88,49 +80,49 @@ msgstr "已編輯之佈景"
 msgid "User theme edited"
 msgstr ""
 
-#: links.py:20
+#: links.py:26
 msgid "Theme settings"
 msgstr "佈景設定"
 
-#: links.py:27
+#: links.py:33
 msgid "Edit theme settings"
 msgstr "編輯佈景設定"
 
-#: links.py:33 views.py:32
+#: links.py:39 views.py:34
 msgid "Create new theme"
 msgstr "建立新的佈景"
 
-#: links.py:38
+#: links.py:44
 msgid "Delete"
 msgstr "刪除"
 
-#: links.py:42
+#: links.py:48
 msgid "Edit"
 msgstr "編輯"
 
-#: links.py:46 links.py:54 models.py:32 views.py:101
+#: links.py:52 links.py:60 models.py:33 views.py:103
 msgid "Themes"
 msgstr "佈景"
 
-#: models.py:19
+#: models.py:20
 msgid "A short text describing the theme."
 msgstr "有關此佈景之簡述"
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "標籤"
 
-#: models.py:24
+#: models.py:25
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr "用來更改不同使用者介面顯示項目的 CSS 樣式表"
 
-#: models.py:26
+#: models.py:27
 msgid "Stylesheet"
 msgstr "文件樣式表"
 
-#: models.py:31 models.py:69
+#: models.py:32 models.py:69
 msgid "Theme"
 msgstr "佈景"
 
@@ -190,70 +182,70 @@ msgid ""
 "additional request to be performed."
 msgstr ""
 
-#: templates/403.html:5 templates/403.html:30
+#: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
 msgstr "權限不足"
 
-#: templates/403.html:32
+#: templates/403.html:20
 msgid "You don't have enough permissions for this operation."
 msgstr "你沒有足夠權限來執行目前的操作"
 
-#: templates/404.html:5 templates/404.html:30
+#: templates/404.html:5 templates/404.html:18
 msgid "Page not found"
 msgstr "頁面未找到"
 
-#: templates/404.html:32
+#: templates/404.html:20
 msgid "The requested page could not be found."
 msgstr "所請求的頁面無法被找到。"
 
-#: templates/404.html:40
+#: templates/404.html:28
 msgid "Possible reasons"
 msgstr "可能的原因"
 
-#: templates/404.html:44
+#: templates/404.html:32
 msgid "The location of the item is incorrect."
 msgstr "項目的位置不正確。"
 
-#: templates/404.html:45
+#: templates/404.html:33
 msgid "The location is correct, but the item no longer exists."
 msgstr "位置正確，但是該項目不存在。"
 
-#: templates/404.html:46
+#: templates/404.html:34
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr "位置正確，但是你的帳戶没有存取權限。"
 
-#: templates/500.html:5 templates/500.html:30
+#: templates/500.html:5 templates/500.html:18
 #: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "伺服器錯誤"
 
-#: templates/500.html:32
+#: templates/500.html:20
 msgid "There's been an unexpected error."
 msgstr "發生意外錯誤。"
 
-#: templates/500.html:40
+#: templates/500.html:28
 msgid "What to do next?"
 msgstr "接下來要做甚麼？"
 
-#: templates/500.html:44
+#: templates/500.html:32
 msgid "Refresh the page."
 msgstr "刷新页面。"
 
-#: templates/500.html:45
+#: templates/500.html:33
 msgid "Wait a bit. The system might be overloaded."
 msgstr "請稍等一會兒，系统可能超載。"
 
-#: templates/500.html:46
+#: templates/500.html:34
 msgid "Contact your system administrator."
 msgstr "請與管理員連繫。"
 
-#: templates/500.html:47
+#: templates/500.html:35
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr "檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯誤或“ FATAL”嚴重錯誤的訊息。"
 
-#: templates/500.html:48
+#: templates/500.html:36
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr "開啟一個<a href=\"%(issue_url)s\">問題追蹤</a>的項目"
@@ -389,7 +381,7 @@ msgstr "取消"
 msgid "Views"
 msgstr "视图"
 
-#: templates/appearance/partials/list/header.html:11
+#: templates/appearance/partials/list/header.html:12
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -397,8 +389,8 @@ msgid ""
 msgstr ""
 "總計（%(start)s  -  %(end)s於%(total)s）（%(page_number)s頁，於%(total_pages)s页）"
 
-#: templates/appearance/partials/list/header.html:13
-#: templates/appearance/partials/list/header.html:16
+#: templates/appearance/partials/list/header.html:14
+#: templates/appearance/partials/list/header.html:17
 #, python-format
 msgid "Total: %(total)s"
 msgstr "總計：%(total)s"
@@ -470,31 +462,31 @@ msgstr "請檢查網路連線，並稍後再試。"
 msgid "None"
 msgstr "没有"
 
-#: views.py:57
+#: views.py:59
 #, python-format
 msgid "Delete theme: %s"
 msgstr "刪除佈景 : %s"
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Edit theme: %s"
 msgstr "編輯佈景 : %s"
 
-#: views.py:95
+#: views.py:97
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "佈景可以讓你修改畫面的顯示但不需要改變原始碼."
 
-#: views.py:99
+#: views.py:101
 msgid "There are no themes"
 msgstr "沒有佈景可以使用"
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:148
+#: views.py:150
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

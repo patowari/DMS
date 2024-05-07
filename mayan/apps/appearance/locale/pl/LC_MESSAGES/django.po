@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# mic <winterfall24@gmail.com>, 2024
 # Marcin Lozynski <mlozynski@wp.pl>, 2024
-# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
+# mic <winterfall24@gmail.com>, 2024
 # tomkolp, 2024
 # edasmax <edasmax@gmail.com>, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
+# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Wygląd"
 
@@ -58,24 +58,16 @@ msgid "JQuery Form"
 msgstr "Formularz JQuery"
 
 #: dependencies.py:46
-msgid "jQuery Lazy Load"
-msgstr "Opóźnione ładowanie jQuery"
-
-#: dependencies.py:50
 msgid "JQuery Match Height"
 msgstr "Wyrównaj wysokość jQuery"
 
-#: dependencies.py:54
+#: dependencies.py:50
 msgid "Select 2"
 msgstr "Wybierz 2"
 
-#: dependencies.py:58
+#: dependencies.py:54
 msgid "Toastr"
 msgstr "Toastr"
-
-#: dependencies.py:62
-msgid "URI.js"
-msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
@@ -89,39 +81,39 @@ msgstr "Motyw zmodyfikowany"
 msgid "User theme edited"
 msgstr "Edytowano motyw użytkownika"
 
-#: links.py:20
+#: links.py:26
 msgid "Theme settings"
 msgstr "Ustawienia motywu"
 
-#: links.py:27
+#: links.py:33
 msgid "Edit theme settings"
 msgstr "Modyfikuj ustawienia motywu"
 
-#: links.py:33 views.py:32
+#: links.py:39 views.py:34
 msgid "Create new theme"
 msgstr "Utwórz nowy motyw"
 
-#: links.py:38
+#: links.py:44
 msgid "Delete"
 msgstr "Usuń"
 
-#: links.py:42
+#: links.py:48
 msgid "Edit"
 msgstr "Edytuj"
 
-#: links.py:46 links.py:54 models.py:32 views.py:101
+#: links.py:52 links.py:60 models.py:33 views.py:103
 msgid "Themes"
 msgstr "Motywy"
 
-#: models.py:19
+#: models.py:20
 msgid "A short text describing the theme."
 msgstr "Krótki opis motywu."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Etykieta"
 
-#: models.py:24
+#: models.py:25
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
@@ -129,11 +121,11 @@ msgstr ""
 "Arkusz stylów CSS zmieniający wygląd różnych elementów interfejsu "
 "użytkownika"
 
-#: models.py:26
+#: models.py:27
 msgid "Stylesheet"
 msgstr "Arkusz stylów"
 
-#: models.py:31 models.py:69
+#: models.py:32 models.py:69
 msgid "Theme"
 msgstr "Motyw"
 
@@ -199,35 +191,35 @@ msgstr ""
 "Czas w milisekundach, po którym ograniczone żądanie zostanie wyczyszczone, "
 "umożliwiając wykonanie dodatkowego żądania."
 
-#: templates/403.html:5 templates/403.html:30
+#: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
 msgstr "Niewystarczające uprawnienia"
 
-#: templates/403.html:32
+#: templates/403.html:20
 msgid "You don't have enough permissions for this operation."
 msgstr "Nie masz wystarczających uprawnień do tej operacji."
 
-#: templates/404.html:5 templates/404.html:30
+#: templates/404.html:5 templates/404.html:18
 msgid "Page not found"
 msgstr "Nie znaleziono strony"
 
-#: templates/404.html:32
+#: templates/404.html:20
 msgid "The requested page could not be found."
 msgstr "Żądana strona nie została znaleziona."
 
-#: templates/404.html:40
+#: templates/404.html:28
 msgid "Possible reasons"
 msgstr "Możliwe przyczyny"
 
-#: templates/404.html:44
+#: templates/404.html:32
 msgid "The location of the item is incorrect."
 msgstr "Lokalizacja elementu jest nieprawidłowa."
 
-#: templates/404.html:45
+#: templates/404.html:33
 msgid "The location is correct, but the item no longer exists."
 msgstr "Lokalizacja jest poprawna, ale element już nie istnieje."
 
-#: templates/404.html:46
+#: templates/404.html:34
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
@@ -235,38 +227,38 @@ msgstr ""
 "Lokalizacja jest poprawna, ale twoje konto nie ma wymaganych uprawnień, aby "
 "uzyskać do niej dostęp."
 
-#: templates/500.html:5 templates/500.html:30
+#: templates/500.html:5 templates/500.html:18
 #: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Błąd serwera"
 
-#: templates/500.html:32
+#: templates/500.html:20
 msgid "There's been an unexpected error."
 msgstr "Wystąpił nieoczekiwany błąd."
 
-#: templates/500.html:40
+#: templates/500.html:28
 msgid "What to do next?"
 msgstr "Co zrobić dalej?"
 
-#: templates/500.html:44
+#: templates/500.html:32
 msgid "Refresh the page."
 msgstr "Odśwież stronę."
 
-#: templates/500.html:45
+#: templates/500.html:33
 msgid "Wait a bit. The system might be overloaded."
 msgstr "Poczekaj chwilę. System może być przeciążony."
 
-#: templates/500.html:46
+#: templates/500.html:34
 msgid "Contact your system administrator."
 msgstr "Skontaktuj się z administratorem systemu."
 
-#: templates/500.html:47
+#: templates/500.html:35
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Sprawdź, czy w dziennikach nie ma wiadomości zawierających tagi „ERROR”, "
 "„CRITICAL” lub „FATAL”."
 
-#: templates/500.html:48
+#: templates/500.html:36
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
@@ -404,7 +396,7 @@ msgstr "Anuluj"
 msgid "Views"
 msgstr "Widoki"
 
-#: templates/appearance/partials/list/header.html:11
+#: templates/appearance/partials/list/header.html:12
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -413,8 +405,8 @@ msgstr ""
 "Razem (%(start)s - %(end)s z %(total)s) (Strona %(page_number)s z "
 "%(total_pages)s)"
 
-#: templates/appearance/partials/list/header.html:13
-#: templates/appearance/partials/list/header.html:16
+#: templates/appearance/partials/list/header.html:14
+#: templates/appearance/partials/list/header.html:17
 #, python-format
 msgid "Total: %(total)s"
 msgstr "Razem: %(total)s"
@@ -488,32 +480,32 @@ msgstr "Sprawdź połączenie z siecią i spróbuj za chwilę."
 msgid "None"
 msgstr "Brak"
 
-#: views.py:57
+#: views.py:59
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Usuń motyw: %s"
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Modyfikuj motyw: %s"
 
-#: views.py:95
+#: views.py:97
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Motywy umożliwiają zmianę wyglądu bez dokonywania zmian w kodzie aplikacji."
 
-#: views.py:99
+#: views.py:101
 msgid "There are no themes"
 msgstr "Brak motywów"
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Ustawienia motywu dla użytkownika: %s"
 
-#: views.py:148
+#: views.py:150
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Edytuj ustawienia motywu dla użytkownika: %s"

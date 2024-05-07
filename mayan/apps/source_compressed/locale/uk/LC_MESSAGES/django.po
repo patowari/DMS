@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:58+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,9 @@ msgstr ""
 
 #: apps.py:11
 msgid "Source compressed"
-msgstr "Джерело стиснуто."
+msgstr "Джерело стиснуто"
 
-#: source_backend_actions/arguments.py:7
+#: source_backend_actions/arguments.py:9
 msgid ""
 "Controls whether or not the uploaded file will be uncompressed and processed"
 " and individual files."

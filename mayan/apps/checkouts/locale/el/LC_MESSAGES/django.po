@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Έγγραφο ήδη δεσμευμένο."
 msgid "Document status"
 msgstr "Κατάσταση εγγράφου"
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Χρήστης"
 
@@ -117,7 +117,7 @@ msgstr "Ημερομηνία και ώρα δέσμευσης"
 msgid "Checkout expiration"
 msgstr "Λήξη δέσμευσης"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr "Έγγραφο"
 
@@ -129,27 +129,27 @@ msgstr "Ημέρα και ώρα δέσμευσης"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "Χρονική διάρκεια δέσμευσης εγγράφου σε λεπτά."
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "Ημέρα και ώρα λήξης δέσμευσης"
 
-#: models.py:50
+#: models.py:51
 msgid "Do not allow new file of this document to be uploaded."
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "Block new file upload"
 msgstr ""
 
-#: models.py:59 permissions.py:6
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "Δέσμευση εγγράφου"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "Δέσμευση εγγράφων"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "Η ημέρα και ώρα λήξης δέσμευσης θα πρέπει να είναι στο μέλλον."
 
@@ -177,15 +177,15 @@ msgstr "Περιοδικές δεσμεύσεις"
 msgid "Check expired checkouts"
 msgstr "Έλεγχος ληγμένων δεσμεύσεων"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "Διεύθυνση URL"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "Πρωτεύον κλειδί του εγγράφου προς δέσμευση."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr ""
 

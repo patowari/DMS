@@ -4,26 +4,26 @@
 # 
 # Translators:
 # Translators:
-# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
 # Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Renata Oliveira <renatabels@gmail.com>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@gmail.com>, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@gmail.com>, 2024
+# Emerson Soares <on.emersonsoares@gmail.com>, 2024
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Roberto Rosario, 2024
+# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
+# Aline Freitas <aline@alinefreitas.com.br>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Márcia Ferreira, 2024
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
-# Aline Freitas <aline@alinefreitas.com.br>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 04:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Aline Freitas <aline@alinefreitas.com.br>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,16 +31,16 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:12 views/source_views.py:285
+#: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
+#: models.py:65 queues.py:9 settings.py:14 views/source_views.py:279
 msgid "Sources"
 msgstr "Fontes"
 
-#: apps.py:104
+#: apps.py:109
 msgid "Create a document source"
 msgstr "Criar uma nova fonte de documentos"
 
-#: apps.py:106
+#: apps.py:111
 msgid ""
 "Document sources are the way in which new documents are feed to Mayan EDMS, "
 "create at least a web form source to be able to upload documents from a "
@@ -50,21 +50,21 @@ msgstr ""
 " Mayan EDMS. Crie pelo menos uma fonte de formulário da web para poder "
 "carregar documentos a partir de um navegador."
 
-#: apps.py:130
+#: apps.py:135
 msgid ""
 "Return the value of a specific source metadata for the document's latest "
 "file."
 msgstr ""
 
-#: apps.py:132 apps.py:139
+#: apps.py:137 apps.py:144
 msgid "Source metadata value of"
 msgstr ""
 
-#: apps.py:138
+#: apps.py:143
 msgid "Return the value of a specific source metadata."
 msgstr ""
 
-#: apps.py:157
+#: apps.py:167
 msgid "Type"
 msgstr "Tipo"
 
@@ -107,73 +107,73 @@ msgstr "Backend"
 msgid "File"
 msgstr "Arquivo"
 
-#: links.py:116
+#: links.py:118
 msgid "New document"
 msgstr "Novo documento"
 
-#: links.py:122
+#: links.py:124
 msgid "Upload new file"
 msgstr "Carregar novo arquivo"
 
-#: links.py:130
+#: links.py:132
 msgid "Source metadata"
 msgstr ""
 
-#: links.py:139
+#: links.py:141
 msgid "Create source"
 msgstr "Criar fonte"
 
-#: links.py:144
+#: links.py:146
 msgid "Delete"
 msgstr "Excluir"
 
-#: links.py:148
+#: links.py:150
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:165
+#: links.py:167
 msgid "Test"
 msgstr "Teste"
 
-#: models.py:19 models.py:61
-msgid "Source"
-msgstr "Fonte"
-
-#: models.py:23
+#: models.py:21 serializers.py:19
 msgid "Document file"
 msgstr "Ficheiro do documento"
 
-#: models.py:26
+#: models.py:25
 msgid "Name of the source metadata entry."
 msgstr ""
 
-#: models.py:27
+#: models.py:26
 msgid "Key"
 msgstr "Chave"
 
-#: models.py:31
+#: models.py:30
 msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
-#: models.py:33
+#: models.py:32
 msgid "Value"
 msgstr "Valor"
 
-#: models.py:39 models.py:40
+#: models.py:40 models.py:41
 msgid "Document file source metadata"
 msgstr ""
 
-#: models.py:50
+#: models.py:53
 msgid "A short text to describe this source."
 msgstr "Um texto curto para descrever essa fonte"
 
-#: models.py:51
+#: models.py:54
 msgid "Label"
 msgstr "Rótulo"
 
-#: models.py:54
+#: models.py:57
 msgid "Enabled"
 msgstr "Habilitado"
+
+#: models.py:64
+msgid "Source"
+msgstr "Fonte"
 
 #: permissions.py:6
 msgid "Sources setup"
@@ -187,15 +187,15 @@ msgstr ""
 msgid "Create new document sources"
 msgstr "Criar novas fontes de documentos"
 
-#: permissions.py:22
+#: permissions.py:23
 msgid "Delete document sources"
 msgstr "Excluir fontes de documentos"
 
-#: permissions.py:25
+#: permissions.py:26
 msgid "Edit document sources"
 msgstr "Editar fontes de documentos"
 
-#: permissions.py:28
+#: permissions.py:29
 msgid "View existing document sources"
 msgstr "Ver fontes de documentos existentes"
 
@@ -211,81 +211,95 @@ msgstr ""
 msgid "Check interval source"
 msgstr "Verificar a fonte de intervalo"
 
-#: serializers.py:13
-msgid "Default"
-msgstr "Padrão"
-
-#: serializers.py:16
-msgid "Has default?"
+#: search.py:11 search.py:23
+msgid "Source metadata key"
 msgstr ""
 
-#: serializers.py:19
-msgid "Help text"
-msgstr "Texto de ajuda"
-
-#: serializers.py:22 serializers.py:41
-msgid "Name"
-msgstr "Nome"
-
-#: serializers.py:25
-msgid "Required"
-msgstr "Obrigatório"
-
-#: serializers.py:37 serializers.py:52
-msgid "Arguments"
-msgstr "Argumentos"
-
-#: serializers.py:47
-msgid "Accept files"
+#: search.py:16 search.py:26
+msgid "Source metadata value"
 msgstr ""
 
-#: serializers.py:51
-msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr "Argumentos opcionais para a ação. Deve ser formatado em JSON."
-
-#: serializers.py:56
-msgid "Confirmation"
-msgstr ""
-
-#: serializers.py:59
-msgid "Execute URL"
-msgstr ""
-
-#: serializers.py:62
-msgid "Interfaces"
-msgstr ""
-
-#: serializers.py:66
-msgid "name"
-msgstr "nome"
-
-#: serializers.py:69
-msgid "Permission"
-msgstr "Permissão"
-
-#: serializers.py:74
+#: serializers.py:22 serializers.py:107
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:85
+#: serializers.py:46
+msgid "Default"
+msgstr "Padrão"
+
+#: serializers.py:49
+msgid "Has default?"
+msgstr ""
+
+#: serializers.py:52
+msgid "Help text"
+msgstr "Texto de ajuda"
+
+#: serializers.py:55 serializers.py:74
+msgid "Name"
+msgstr "Nome"
+
+#: serializers.py:58
+msgid "Required"
+msgstr "Obrigatório"
+
+#: serializers.py:70 serializers.py:85
+msgid "Arguments"
+msgstr "Argumentos"
+
+#: serializers.py:80
+msgid "Accept files"
+msgstr ""
+
+#: serializers.py:84
+msgid "Optional arguments for the action. Must be JSON formatted."
+msgstr "Argumentos opcionais para a ação. Deve ser formatado em JSON."
+
+#: serializers.py:89
+msgid "Confirmation"
+msgstr ""
+
+#: serializers.py:92
+msgid "Execute URL"
+msgstr ""
+
+#: serializers.py:95
+msgid "Interfaces"
+msgstr ""
+
+#: serializers.py:99
+msgid "name"
+msgstr "nome"
+
+#: serializers.py:102
+msgid "Permission"
+msgstr "Permissão"
+
+#: serializers.py:118
 msgid "Binary content for the new file."
 msgstr "Conteúdo binário para o novo ficheiro."
 
-#: serializers.py:121
+#: serializers.py:154
 msgid "Actions URL"
 msgstr ""
 
-#: settings.py:19
+#: settings.py:21
 msgid "Arguments to use when creating source backends."
 msgstr "Argumentos a utilizar quando se cria fontes de backends."
 
-#: settings.py:25
+#: settings.py:29
+msgid ""
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
+" the oldest source cache files. Specify the size in bytes."
+msgstr ""
+
+#: settings.py:37
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 "Caminho para a subclasse de Armazenamento utilizado para armazenar fontes de"
 " ficheiros de imagens em cache."
 
-#: settings.py:33
+#: settings.py:44
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr "Argumentos a passar para FONTES_FONTE_CACHE_ARMAZENAMENTO_BACKEND."
 
@@ -305,19 +319,19 @@ msgid ""
 "disables compressed file processing."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:29
+#: source_backend_actions/mixins/arguments.py:31
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:57
+#: source_backend_actions/mixins/arguments.py:59
 msgid "ID of the document type."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:74
+#: source_backend_actions/mixins/arguments.py:76
 msgid "User that will feature as the actor in the events."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:79
+#: source_backend_actions/mixins/arguments.py:81
 msgid "ID of the user that will feature as the actor in the events."
 msgstr ""
 
@@ -329,29 +343,29 @@ msgstr ""
 msgid "Null backend"
 msgstr "Backend nulo"
 
-#: source_backends/mixins.py:27
+#: source_backends/mixins.py:28
 msgid "Regular expression used to select which files to upload."
 msgstr ""
 "Expressão regular utilizado para selecionar quais ficheiros a carregar."
 
-#: source_backends/mixins.py:30
+#: source_backends/mixins.py:32
 msgid "Include regular expression"
 msgstr "Incluir expressão regular. "
 
-#: source_backends/mixins.py:37
+#: source_backends/mixins.py:40
 msgid "Regular expression used to exclude which files to upload."
 msgstr ""
 "Expressão regular utilizada para excluir quais os ficheiros a carregar."
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:44
 msgid "Exclude regular expression"
 msgstr "Excluir expressão regular."
 
-#: source_backends/mixins.py:54
+#: source_backends/mixins.py:58
 msgid "Content selection"
 msgstr ""
 
-#: storages.py:14
+#: storages.py:13
 msgid ""
 "Unable to initialize the staging folder file image storage. Check the "
 "settings {} and {} for formatting errors."
@@ -359,15 +373,15 @@ msgstr ""
 "Não foi possível inicializar o armazenamento da imagem do arquivo da pasta "
 "temporária. Verifique as configurações {} e {} para erros de formatação."
 
-#: storages.py:21
-msgid "Staging folder files"
-msgstr "Arquivos de pasta temporária"
+#: storages.py:20
+msgid "Sources cache"
+msgstr ""
 
-#: tests/arguments.py:6
+#: tests/arguments.py:8
 msgid "Python file like object."
 msgstr ""
 
-#: tests/arguments.py:10
+#: tests/arguments.py:12
 msgid "ID of the shared uploaded file to be processed."
 msgstr ""
 
@@ -377,47 +391,47 @@ msgid ""
 "or enable and existing one."
 msgstr ""
 
-#: views/document_file_views.py:43
+#: views/document_file_views.py:41
 msgid ""
 "This means that the sources system did not record any information about the "
 "creation of the document file."
 msgstr ""
 
-#: views/document_file_views.py:47
+#: views/document_file_views.py:45
 msgid "No source metadata available for this document file."
 msgstr ""
 
-#: views/document_file_views.py:51
+#: views/document_file_views.py:49
 #, python-format
 msgid "Source metadata for: %(document_file)s"
 msgstr ""
 
-#: views/document_file_views.py:96
+#: views/document_file_views.py:82
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
 msgstr ""
 "Não é possível fazer upload de novos arquivos para o documento "
 "\"%(document)s\". %(exception)s"
 
-#: views/document_file_views.py:141
+#: views/document_file_views.py:126
 #, python-format
 msgid "Error executing document file upload task; %(exception)s"
 msgstr ""
 "Erro ao executar a tarefa de upload de arquivo de documento; %(exception)s"
 
-#: views/document_file_views.py:162
+#: views/document_file_views.py:145
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
 "Novo arquivo de documento na fila para upload e estará disponível em breve."
 
-#: views/document_file_views.py:187
+#: views/document_file_views.py:169
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
 msgstr ""
 "Faça upload de um novo arquivo para o documento \"%(document)s\" da fonte: "
 "%(source)s"
 
-#: views/document_file_views.py:193
+#: views/document_file_views.py:175
 msgid "Submit"
 msgstr "Enviar"
 
@@ -458,17 +472,17 @@ msgstr "Nova fonte de seleção de backend"
 msgid "Create a \"%s\" source"
 msgstr "Criar a fonte \"%s\""
 
-#: views/source_views.py:235
+#: views/source_views.py:233
 #, python-format
 msgid "Delete the source: %s?"
 msgstr "Apagar a fonte: %s?"
 
-#: views/source_views.py:251
+#: views/source_views.py:249
 #, python-format
 msgid "Edit source: %s"
 msgstr "Editar fonte: %s"
 
-#: views/source_views.py:279
+#: views/source_views.py:273
 msgid ""
 "Sources provide the means to upload documents. Some sources are interactive "
 "and require user input to operate. Others are automatic and run in the "
@@ -478,18 +492,18 @@ msgstr ""
 "interativas e demandem entradas de utilizador a funcionar. Outras são "
 "automáticas e são executadas em background sem a intervenção do utilizador."
 
-#: views/source_views.py:284
+#: views/source_views.py:278
 msgid "No sources available"
 msgstr "Não há fontes disponíveis"
 
-#: views/source_views.py:309
+#: views/source_views.py:303
 #, python-format
 msgid ""
 "The selected action \"%s\" does not require confirmation and cannot be "
 "tested."
 msgstr ""
 
-#: views/source_views.py:331
+#: views/source_views.py:323
 msgid ""
 "This will execute the source code even if the source is not enabled. Sources"
 " that delete content after downloading will not do so while being tested. "
@@ -501,18 +515,18 @@ msgstr ""
 "enquanto são testadas. Verifique o log do erro da fonte para informações "
 "durante os testes. Um teste bem sucedido irá limpar o log de erros."
 
-#: views/source_views.py:337
+#: views/source_views.py:329
 #, python-format
 msgid "Trigger check for source \"%s\"?"
 msgstr "Verificar a origem \"%s\"?"
 
-#: views/source_views.py:353
+#: views/source_views.py:345
 msgid ""
 "Source test queued. Check for newly created documents or for error log "
 "entries."
 msgstr ""
 
-#: wizard_steps.py:11
+#: wizard_steps.py:13
 msgid "Select document type"
 msgstr "Selecione o tipo de documento"
 

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -87,15 +87,15 @@ msgstr "Пощенска кутия на получателя"
 msgid "IMAP protocol"
 msgstr ""
 
-#: source_backends/mixins.py:31
+#: source_backends/mixins.py:33
 msgid "Host"
 msgstr "Хост"
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:42
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/mixins.py:46
+#: source_backends/mixins.py:48
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
@@ -103,19 +103,19 @@ msgstr ""
 "Типичните възможности за избор са 110 за POP3, 995 за POP3 над SSL, 143 за "
 "IMAP, 993 за IMAP над SSL."
 
-#: source_backends/mixins.py:52
+#: source_backends/mixins.py:54
 msgid "Port"
 msgstr "Порт"
 
-#: source_backends/mixins.py:58
+#: source_backends/mixins.py:60
 msgid "Store the body of the email as a text document."
 msgstr "Съхраняване основния текст на имейла като текстов документ."
 
-#: source_backends/mixins.py:60
+#: source_backends/mixins.py:63
 msgid "Store email body"
 msgstr "Съхраняване основния текст на имейла"
 
-#: source_backends/mixins.py:74
+#: source_backends/mixins.py:77
 msgid "Common email options"
 msgstr ""
 

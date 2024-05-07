@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -24,28 +24,28 @@ msgstr ""
 msgid "Source periodic"
 msgstr ""
 
-#: source_backend_actions/arguments.py:7
+#: source_backend_actions/arguments.py:9
 msgid ""
 "Executes the primary action of the source in test mode. Permanent "
 "modifications like deletion of files are disabled."
 msgstr ""
 
-#: source_backends/mixins.py:30
+#: source_backends/mixins.py:44
 msgid "Assign a document type to documents uploaded from this source."
 msgstr "Přiřaďte typ dokumentu k dokumentům nahraným z tohoto zdroje."
 
-#: source_backends/mixins.py:38
+#: source_backends/mixins.py:50
 msgid "Document type"
 msgstr "Typ dokumentu"
 
-#: source_backends/mixins.py:45
+#: source_backends/mixins.py:67
 msgid "Interval in seconds between checks for new documents."
 msgstr "Interval v sekundách mezi kontrolami nových dokumentů."
 
-#: source_backends/mixins.py:51
+#: source_backends/mixins.py:73
 msgid "Interval"
 msgstr "Interval"
 
-#: source_backends/mixins.py:65
+#: source_backends/mixins.py:87
 msgid "Unattended"
 msgstr ""

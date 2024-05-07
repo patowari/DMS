@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Yves Dubois <ydubois@gmail.com>, 2024
-# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -51,27 +51,27 @@ msgstr "Supprimer"
 msgid "Edit"
 msgstr "Modifier"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:8
+#: links.py:31 models.py:48 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Commentaires"
 
-#: model_mixins.py:10 models.py:33
+#: model_mixins.py:10 models.py:34
 msgid "User"
 msgstr "Utilisateur"
 
-#: models.py:29
+#: models.py:30
 msgid "Document"
 msgstr "Document"
 
-#: models.py:36
+#: models.py:37
 msgid "Text"
 msgstr "Texte"
 
-#: models.py:40
+#: models.py:41
 msgid "Date time submitted"
 msgstr "Date et heure de soumission"
 
-#: models.py:46
+#: models.py:47
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -95,27 +95,27 @@ msgstr "Afficher les commentaires"
 msgid "URL"
 msgstr "URL"
 
-#: views.py:37
+#: views.py:38
 #, python-format
 msgid "Add comment to document: %s"
 msgstr "Ajouter un commentaire au document : %s"
 
-#: views.py:67
+#: views.py:69
 #, python-format
 msgid "Delete comment: %s?"
 msgstr "Supprimer le commentaire : %s ?"
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid "Details for comment: %s?"
 msgstr "Détails pour le commentaire: %s?"
 
-#: views.py:119
+#: views.py:118
 #, python-format
 msgid "Edit comment: %s?"
 msgstr "Modifier le commentaire: %s?"
 
-#: views.py:158
+#: views.py:154
 msgid ""
 "Document comments are timestamped text entries from users. They are great "
 "for collaboration."
@@ -123,11 +123,11 @@ msgstr ""
 "Les commentaires de document sont des entrées de texte horodatées ajouté par"
 " les utilisateurs. Ils sont parfaits pour la collaboration."
 
-#: views.py:161
+#: views.py:157
 msgid "There are no comments"
 msgstr "Il n'y a pas de commentaires"
 
-#: views.py:163
+#: views.py:160
 #, python-format
 msgid "Comments for document: %s"
 msgstr "Commentaires pour le document : %s"

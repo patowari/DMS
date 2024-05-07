@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:24 permissions.py:6 settings.py:12
+#: apps.py:23 permissions.py:6 settings.py:14
 msgid "Document downloads"
 msgstr "Завантаження документів"
 
@@ -28,7 +28,7 @@ msgstr "Завантаження документів"
 msgid "Document_file_bundle.zip"
 msgstr "Document_file_bundle.zip"
 
-#: classes.py:52
+#: classes.py:53
 msgid "Compressed document files"
 msgstr "Стислі файли документів"
 
@@ -54,7 +54,7 @@ msgstr "Файл документа"
 
 #: forms.py:27
 msgid "Include"
-msgstr "Включати"
+msgstr "Включити"
 
 #: links.py:12 links.py:18
 msgid "Download files"
@@ -64,7 +64,7 @@ msgstr "Завантажити файли"
 msgid "Quick download"
 msgstr "Швидке завантаження"
 
-#: literals.py:4
+#: literals.py:7
 msgid ""
 "The document files have been compressed and are available for download using"
 " the link: {{ download_url }} or from the downloads area ({{ "
@@ -73,7 +73,7 @@ msgstr ""
 "Документи були стиснуті і доступні для завантаження за посиланням: {{ "
 "download_url }} або з області завантажень ({{ download_list_url }})."
 
-#: literals.py:10
+#: literals.py:13
 msgid "Document files ready for download."
 msgstr "Файли документу готові до завантаження."
 
@@ -85,7 +85,16 @@ msgstr "Завантажити файли документу"
 msgid "Generate a compressed document file bundle"
 msgstr "Створити пакет файлів стисненого документа"
 
-#: settings.py:18
+#: settings.py:21
+msgid "Path to the download subclass to use when downloading document files."
+msgstr ""
+
+#: settings.py:29
+msgid ""
+"Arguments to pass to the DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
+msgstr ""
+
+#: settings.py:36
 msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
@@ -93,7 +102,7 @@ msgstr ""
 "Шаблон для тексту повідомлення про завантаження документу. Може містити "
 "HTML. Доступні змінні: {}"
 
-#: settings.py:27
+#: settings.py:45
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
@@ -101,7 +110,7 @@ msgstr ""
 "Шаблон для заголовка повідомлення про завантаження документа. Не може "
 "містити HTML. Доступні змінні: {}"
 
-#: views.py:24
+#: views.py:32
 #, python-format
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
@@ -109,37 +118,37 @@ msgstr ""
 "Неможливо поставити документ \"%(instance)s\" в чергу для завантаження "
 "файлу; %(exception)s."
 
-#: views.py:33
+#: views.py:41
 #, python-format
 msgid "%(count)d document files queued for download."
 msgstr "%(count)d файлів документа очікують на завантаження."
 
-#: views.py:36
+#: views.py:44
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
 msgstr "Документ \"%(object)s\" поставлено в чергу для завантаження."
 
-#: views.py:39
+#: views.py:47
 #, python-format
 msgid "%(count)d document file queued for download."
 msgstr "%(count)d файлів документа поставлено в чергу для завантаження."
 
-#: views.py:41
+#: views.py:49
 #, python-format
 msgid "Download files of %(count)d documents"
 msgstr "Завантажити файли %(count)d документів"
 
-#: views.py:42
+#: views.py:50
 #, python-format
 msgid "Download files of document: %(object)s"
 msgstr "Завантажити файли документа: %(object)s"
 
-#: views.py:43
+#: views.py:51
 #, python-format
 msgid "Download files of %(count)d document"
 msgstr "Завантажити файли %(count)d документа"
 
-#: views.py:50
+#: views.py:58
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."

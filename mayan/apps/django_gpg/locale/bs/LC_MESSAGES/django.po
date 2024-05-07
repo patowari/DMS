@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "Dužina"
 msgid "User ID"
 msgstr "ID kosrisnika"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr ""
 
@@ -112,11 +112,11 @@ msgstr "Uvoz"
 msgid "Upload key"
 msgstr "Otpremi ključ"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr "Privatan ključ"
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr "Javni ljuč"
 
@@ -279,23 +279,23 @@ msgstr "Upit servera ključeva"
 msgid "Upload new key"
 msgstr "Uvedi novi ključ"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr ""
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr ""
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr ""

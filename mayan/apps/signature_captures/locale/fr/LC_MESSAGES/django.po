@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -234,32 +234,32 @@ msgstr "Nom interne de la signature manuscrite"
 msgid "Create signature capture for document: %s"
 msgstr "Créer une signature manuscrite pour le document: %s"
 
-#: views.py:78
+#: views.py:75
 #, python-format
 msgid "Delete signature capture: %s"
 msgstr "Supprimer la signature manuscrite : %s"
 
-#: views.py:100
+#: views.py:97
 #, python-format
 msgid "Details of: %s"
 msgstr "Détails de : %s"
 
-#: views.py:116
+#: views.py:113
 #, python-format
 msgid "Edit document signature capture: %s"
 msgstr "Modifier la signature manuscrite du document: %s"
 
-#: views.py:145
+#: views.py:140
 msgid ""
 "Signature captures are electronic versions of a persons's handwritten "
 "signature."
 msgstr ""
 
-#: views.py:148
+#: views.py:143
 msgid "Document has no signature captures"
 msgstr "Le document n'a pas de signature manuscrite"
 
-#: views.py:151
+#: views.py:146
 #, python-format
 msgid "Signature captures for document: %s"
 msgstr "Signature manuscrite pour le document: %s"

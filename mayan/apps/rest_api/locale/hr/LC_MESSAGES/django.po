@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2024\n"
 "Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:23 links.py:17 settings.py:11
+#: apps.py:25 links.py:17 settings.py:11
 msgid "REST API"
 msgstr ""
 
@@ -56,79 +56,79 @@ msgstr ""
 msgid "%s API"
 msgstr ""
 
-#: serializers.py:37
+#: serializers.py:36
 msgid "Content"
 msgstr ""
 
-#: serializers.py:40
+#: serializers.py:39
 msgid "Data"
 msgstr ""
 
-#: serializers.py:43
+#: serializers.py:42
 msgid "Headers"
 msgstr ""
 
-#: serializers.py:46
+#: serializers.py:45
 msgid "Name"
 msgstr "Ime"
 
-#: serializers.py:49
+#: serializers.py:48
 msgid "Status code"
 msgstr ""
 
-#: serializers.py:52
+#: serializers.py:51
 msgid "Requests"
 msgstr ""
 
-#: serializers.py:75
+#: serializers.py:74
 msgid "Label"
 msgstr "Oznaka"
 
-#: serializers.py:78
+#: serializers.py:77
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:106
+#: serializers.py:105
 msgid "Author"
 msgstr ""
 
-#: serializers.py:109
+#: serializers.py:108
 msgid "Author email"
 msgstr ""
 
-#: serializers.py:112
+#: serializers.py:111
 msgid "Build"
 msgstr ""
 
-#: serializers.py:115
+#: serializers.py:114
 msgid "Build string"
 msgstr ""
 
-#: serializers.py:118
+#: serializers.py:117
 msgid "Copyright"
 msgstr ""
 
-#: serializers.py:121
+#: serializers.py:120
 msgid "Description"
 msgstr ""
 
-#: serializers.py:124
+#: serializers.py:123
 msgid "Django version"
 msgstr ""
 
-#: serializers.py:127
+#: serializers.py:126
 msgid "License"
 msgstr ""
 
-#: serializers.py:130
+#: serializers.py:129
 msgid "Title"
 msgstr ""
 
-#: serializers.py:133
+#: serializers.py:132
 msgid "Version"
 msgstr ""
 
-#: serializers.py:136
+#: serializers.py:135
 msgid "Website"
 msgstr ""
 

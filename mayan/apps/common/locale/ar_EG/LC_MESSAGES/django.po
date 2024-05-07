@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# WM Shinkada <shinkadawasim@gmail.com>, 2024
 # Mohammed ALDOUB <voulnet@gmail.com>, 2024
+# WM Shinkada <shinkadawasim@gmail.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
@@ -22,23 +22,15 @@ msgstr ""
 "Language: ar_EG\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:130 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "المشتركة"
 
-#: dependencies.py:189
-msgid "Used to allow offline translation of the code text strings."
-msgstr "يستخدم للسماح بالترجمة دون اتصال للسلاسل النصية للتعليمات البرمجية."
-
-#: dependencies.py:198
-msgid "Provides style checking."
-msgstr "يوفر فحص النمط."
-
-#: dependencies.py:203
+#: dependencies.py:193
 msgid "Command line environment with autocompletion."
 msgstr "بيئة سطر الأوامر مع الإكمال التلقائي."
 
-#: dependencies.py:212
+#: dependencies.py:198
 msgid "Checks proper formatting of the README file."
 msgstr "يتحقق من التنسيق الصحيح لملف إقرأني"
 

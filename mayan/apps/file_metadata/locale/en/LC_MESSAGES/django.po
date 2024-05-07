@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-13 14:31+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "MIME types"
 msgstr ""
 
-#: apps.py:177 models.py:71 models.py:122
+#: apps.py:177 models.py:71 models.py:124
 msgid "Internal name"
 msgstr ""
 
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Attribute count"
 msgstr ""
 
-#: models.py:19 models.py:127
+#: models.py:19 models.py:129
 msgid "Driver"
 msgstr ""
 
@@ -175,11 +175,11 @@ msgstr ""
 msgid "File metadata entries"
 msgstr ""
 
-#: models.py:118
+#: models.py:120
 msgid "Driver path"
 msgstr ""
 
-#: models.py:128
+#: models.py:130
 msgid "Drivers"
 msgstr ""
 

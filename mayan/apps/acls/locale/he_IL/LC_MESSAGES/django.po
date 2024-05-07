@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "רשימת בקרת גישה (ACL) נמחקה"
 msgid "ACL edited"
 msgstr "רשימת בקרת גישה (ACL) נערכה"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "תפקיד"
 
@@ -66,7 +66,7 @@ msgstr "רשימת בקרת גישה (ACL) חדשה"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "הרשאות"
 
@@ -88,27 +88,27 @@ msgstr "גישה לא מספיקה עבור: %s"
 msgid "Permission count"
 msgstr "ספירת הרשאה"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr "סוג תוכן"
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "מזהה רכיב"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "התפקיד שמקבל הרשאה לרכיב שצויין"
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "כניסת גישה"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "כניסות גישה"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "הרשאות תפקיד %(role)s ל- %(object)s"
@@ -172,11 +172,11 @@ msgstr "רשימות בקרת גישה (ACL) חדשות עבור %s"
 msgid "Delete ACL: %s"
 msgstr "מחיקת רשימת בקרת גישה (ACL) %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "אין רשימות בקרת גישה (ACL) לרכיב זה"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -186,25 +186,25 @@ msgstr ""
 "רשימת בקרת גישה מאפשרת נתינת הרשאה לתפקיד אך ורק עבור רכיב מסויים או קבוצת "
 "רכיבים מסויימת."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "רשימת בקרת גישה (ACL) עבור %s"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "הרשאות ניתנו"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "הרשאות זמינות "
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "הרשאות תפקיד %(role)s לרכיב %(object)s "
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -215,11 +215,11 @@ msgstr ""
 "להסיר אותן מתצוגה זו. הרשאות בירושה ניתנות להסרה מרשימת בקרת הגישה של הרכיב "
 "או מהתפקיד בעזרת תפריט \"הגדרות\"."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "אין רשימות בקרת גישה (ACL)"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "רשימות בקרת גישה (ACL) כלליות"
 

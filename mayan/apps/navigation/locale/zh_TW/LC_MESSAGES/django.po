@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Navigation"
 msgstr "导航"
 
-#: classes.py:977
+#: classes.py:982
 msgid "Unnamed function"
 msgstr ""
 
@@ -37,3 +37,19 @@ msgstr "操作"
 #: templates/navigation/actions_dropdown.html:18
 msgid "Toggle Dropdown"
 msgstr "切換下拉選單"
+
+#: templates/navigation/app/list_toolbar.html:14
+msgid "Sort by column"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:15
+msgid "--- Clear ---"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:18
+msgid "(ascending)"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:20
+msgid "(descending)"
+msgstr ""

@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # edasmax <edasmax@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,14 @@ msgstr ""
 #: apps.py:16
 msgid "Databases"
 msgstr "Bazy danych"
+
+#: class_mixins.py:34
+msgid "The object will be executed, depending on the condition return value."
+msgstr "Obiekt zostanie wykonany w zależności od zwracanej wartości warunku."
+
+#: class_mixins.py:37
+msgid "Has a condition?"
+msgstr "Ma warunek?"
 
 #: classes.py:82
 msgid "Model fields"
@@ -42,7 +50,7 @@ msgstr "Właściwości modelu"
 msgid "Model reverse fields"
 msgstr "Modeluj pola odwrotne"
 
-#: literals.py:10
+#: literals.py:12
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -51,7 +59,7 @@ msgstr ""
 "powinien być używany tylko do programowania i testowania, a nie na "
 "produkcji."
 
-#: model_mixins.py:26
+#: model_mixins.py:39
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -63,17 +71,9 @@ msgstr ""
 "Pythonie lub pusty ciąg znaków (''), są uważane za logiczny fałsz, każda "
 "inna wartość jest uważana za logiczną prawdę."
 
-#: model_mixins.py:31
+#: model_mixins.py:47
 msgid "Condition"
 msgstr "Warunek"
-
-#: model_mixins.py:52
-msgid "The object will be executed, depending on the condition return value."
-msgstr "Obiekt zostanie wykonany w zależności od zwracanej wartości warunku."
-
-#: model_mixins.py:55
-msgid "Has a condition?"
-msgstr "Ma warunek?"
 
 #: templates/databases/app/viewport.html:11
 msgid "Warning"

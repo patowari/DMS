@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2024\n"
 "Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -20,102 +20,214 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:27
+#: apps.py:36
 msgid "Dynamic search"
 msgstr ""
 
-#: forms.py:19
+#: events.py:6 permissions.py:6 queues.py:11 settings.py:19
+#: templates/dynamic_search/search_box.html:47
+#: templates/dynamic_search/search_box_toolbar.html:30
+#: views/search_views.py:110
+msgid "Search"
+msgstr ""
+
+#: events.py:10
+msgid "Resultset created"
+msgstr ""
+
+#: forms.py:13
+msgid "Store the search results to speed up paging and for later browsing."
+msgstr ""
+
+#: forms.py:16
+msgid "Save results"
+msgstr ""
+
+#: forms.py:22
+msgid "Persistency"
+msgstr ""
+
+#: forms.py:38
 msgid "Match all"
 msgstr ""
 
-#: forms.py:20
+#: forms.py:39
 msgid "Return only results that match all fields."
 msgstr ""
 
-#: forms.py:52
+#: forms.py:72
 msgid "Search logic"
 msgstr ""
 
-#: forms.py:72 templates/dynamic_search/search_box.html:43
+#: forms.py:100 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr ""
 
-#: links.py:20
+#: forms.py:111
+msgid "Criteria"
+msgstr ""
+
+#: links.py:20 models.py:61 views/saved_resultset_views.py:72
+msgid "Saved resultsets"
+msgstr ""
+
+#: links.py:25
+msgid "Delete"
+msgstr "Fshij"
+
+#: links.py:30
+msgid "Results"
+msgstr ""
+
+#: links.py:35
 msgid "Basic search"
 msgstr ""
 
-#: links.py:24 templates/dynamic_search/search_box.html:49
+#: links.py:39 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced search"
 msgstr ""
 
-#: links.py:28
+#: links.py:43
 msgid "Search again"
 msgstr ""
 
-#: links.py:33 views.py:62
+#: links.py:48 views/search_views.py:65
 msgid "Reindex search backend"
 msgstr ""
 
-#: literals.py:21
+#: literals.py:26
 msgid "Yes"
 msgstr "Po"
 
-#: literals.py:22
+#: literals.py:27
 msgid "No"
 msgstr "Jo"
 
-#: permissions.py:6 queues.py:7 settings.py:15
-#: templates/dynamic_search/search_box.html:47
-#: templates/dynamic_search/search_box_toolbar.html:30 views.py:108
-msgid "Search"
+#: models.py:23
+msgid ""
+"Time to keep the resultset in seconds. This value is increased every time "
+"the resultset is accessed."
+msgstr ""
+
+#: models.py:26
+msgid "Time to live"
+msgstr ""
+
+#: models.py:30
+msgid "The server date and time when the resultset was created."
+msgstr ""
+
+#: models.py:31
+msgid "Timestamp"
+msgstr ""
+
+#: models.py:34
+msgid "Epoch"
+msgstr ""
+
+#: models.py:37 serializers.py:70
+msgid "App label"
+msgstr ""
+
+#: models.py:40 serializers.py:73
+msgid "Model name"
+msgstr ""
+
+#: models.py:43
+msgid "Search query"
+msgstr ""
+
+#: models.py:46
+msgid "Search explainer text"
+msgstr ""
+
+#: models.py:49
+msgid "Number of results stored in the resultset."
+msgstr ""
+
+#: models.py:50
+msgid "Result count"
+msgstr ""
+
+#: models.py:53
+msgid "User for which the resultset was created."
+msgstr ""
+
+#: models.py:55 serializers.py:24
+msgid "User"
+msgstr "Përdoruesi"
+
+#: models.py:60 models.py:95
+msgid "Saved resultset"
+msgstr ""
+
+#: models.py:101
+msgid "Saved resultset entry"
+msgstr ""
+
+#: models.py:102
+msgid "Saved resultset entries"
 msgstr ""
 
 #: permissions.py:10
+msgid "Delete resultsets"
+msgstr ""
+
+#: permissions.py:13
+msgid "View resultsets"
+msgstr ""
+
+#: permissions.py:17
 msgid "Execute search tools"
 msgstr ""
 
-#: queues.py:10
+#: queues.py:14
 msgid "Search slow"
 msgstr ""
 
-#: queues.py:15
+#: queues.py:19
 msgid "Remove a model instance from the search engine."
 msgstr ""
 
-#: queues.py:20
+#: queues.py:24
 msgid "Index a model instance to the search engine."
 msgstr ""
 
-#: queues.py:25
+#: queues.py:30
 msgid "Index all instances of a search model to the search engine."
 msgstr ""
 
-#: queues.py:31
+#: queues.py:36
 msgid ""
 "Index all related instances of a search model after a many to many event."
 msgstr ""
 
-#: queues.py:39
+#: queues.py:44
 msgid "Reset the search backend indices and index all instances again."
 msgstr ""
 
-#: scoped_queries.py:351
-msgid ""
-"Search results exceed limit setting. Results might not be reliable if "
-"multiple scopes are used. Narrow down the search criteria or increase the "
-"value of the results limit setting."
+#: queues.py:51
+msgid "Delete expired saved resultsets"
 msgstr ""
 
-#: scoped_queries.py:367
+#: scoped_queries.py:345
+#, python-format
+msgid ""
+"Query results exceed the current limit of %d. Results will not be reliable "
+"if multiple scopes are used. Narrow down the search criteria or increase the"
+" value of the results limit setting `%s`."
+msgstr ""
+
+#: scoped_queries.py:364
 #, python-format
 msgid ""
 "Search backend error. Verify that the search service is available and that "
 "the search syntax is valid for the active search backend; %s"
 msgstr ""
 
-#: search_fields.py:313
+#: search_fields.py:312
 msgid "Any"
 msgstr ""
 
@@ -128,85 +240,89 @@ msgstr ""
 msgid "All content"
 msgstr ""
 
-#: search_query_types.py:169
+#: search_query_types.py:171
 msgid "Exact"
 msgstr ""
 
-#: search_query_types.py:175
+#: search_query_types.py:177
 msgid "Fuzzy"
 msgstr ""
 
-#: search_query_types.py:181
+#: search_query_types.py:183
 msgid "Greater than"
 msgstr ""
 
-#: search_query_types.py:187
+#: search_query_types.py:189
 msgid "Greater than or equal"
 msgstr ""
 
-#: search_query_types.py:193
+#: search_query_types.py:195
 msgid "Less than"
 msgstr ""
 
-#: search_query_types.py:199
+#: search_query_types.py:201
 msgid "Less than or equal"
 msgstr ""
 
-#: search_query_types.py:205
+#: search_query_types.py:207
 msgid "Partial"
 msgstr ""
 
-#: search_query_types.py:211
+#: search_query_types.py:213
 msgid "Range"
 msgstr ""
 
-#: search_query_types.py:246
+#: search_query_types.py:248
 msgid "Range exclusive"
 msgstr ""
 
-#: search_query_types.py:252
+#: search_query_types.py:254
 msgid "Regular expression"
 msgstr ""
 
-#: serializers.py:14
+#: serializers.py:20
+msgid "Results URL"
+msgstr ""
+
+#: serializers.py:30 serializers.py:82
+msgid "URL"
+msgstr ""
+
+#: serializers.py:53
+msgid "User must be authenticated."
+msgstr ""
+
+#: serializers.py:61
 msgid "Field name"
 msgstr ""
 
-#: serializers.py:17
+#: serializers.py:64
 msgid "Label"
 msgstr "Etiketa"
 
-#: serializers.py:23
-msgid "App label"
-msgstr ""
-
-#: serializers.py:26
-msgid "Model name"
-msgstr ""
-
-#: serializers.py:29
+#: serializers.py:76
 msgid "Primary key"
 msgstr ""
 
-#: serializers.py:32
+#: serializers.py:79
 msgid "Search fields"
 msgstr ""
 
-#: settings.py:21
+#: settings.py:24
 msgid "Full path to the backend to be used to handle the search."
 msgstr ""
 
-#: settings.py:28
+#: settings.py:30
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
 
-#: settings.py:37
+#: settings.py:38
 msgid "The search operator to use when none is specified."
 msgstr ""
 
-#: settings.py:44
+#: settings.py:45
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
@@ -224,8 +340,28 @@ msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 
-#: settings.py:70
+#: settings.py:71
 msgid "Maximum number of search results to fetch and display."
+msgstr ""
+
+#: settings.py:77
+msgid "Maximum number of saved resultsets to keep per user."
+msgstr ""
+
+#: settings.py:83
+msgid "Maximum number of results to store per resultset."
+msgstr ""
+
+#: settings.py:89
+msgid "Time to keep the resultset in seconds."
+msgstr ""
+
+#: settings.py:95
+msgid "Amount to increase the time to live on each access of the resultset."
+msgstr ""
+
+#: settings.py:102
+msgid "Sets the default state of the \"Store results\" checkbox."
 msgstr ""
 
 #: templates/dynamic_search/app/list_toolbar.html:18
@@ -281,50 +417,95 @@ msgstr ""
 msgid "To string"
 msgstr ""
 
-#: views.py:59
+#: views/saved_resultset_views.py:30
+#, python-format
+msgid "Error deleting saved resultset \"%(instance)s\"; %(exception)s"
+msgstr ""
+
+#: views/saved_resultset_views.py:39
+#, python-format
+msgid "%(count)d saved resultsets deleted successfully."
+msgstr ""
+
+#: views/saved_resultset_views.py:42
+#, python-format
+msgid "Saved resultset \"%(object)s\" deleted successfully."
+msgstr ""
+
+#: views/saved_resultset_views.py:45
+#, python-format
+msgid "%(count)d saved resultset deleted successfully."
+msgstr ""
+
+#: views/saved_resultset_views.py:48
+#, python-format
+msgid "Delete the %(count)d selected saved resultsets."
+msgstr ""
+
+#: views/saved_resultset_views.py:50
+#, python-format
+msgid "Delete saved resultset: %(object)s."
+msgstr ""
+
+#: views/saved_resultset_views.py:51
+#, python-format
+msgid "Delete the %(count)d saved resultset."
+msgstr ""
+
+#: views/saved_resultset_views.py:68
+msgid ""
+"Saved resultsets are objects that store the results of a previous search for"
+" a determined amount of time."
+msgstr ""
+
+#: views/saved_resultset_views.py:71
+msgid "No saved resultsets available"
+msgstr ""
+
+#: views/search_views.py:62
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
 
-#: views.py:69
+#: views/search_views.py:72
 msgid ""
 "This tool is required only for some search backends. Search results will be "
 "affected while the backend is being reindexed."
 msgstr ""
 
-#: views.py:75
+#: views/search_views.py:78
 msgid ""
 "The currently selected search backend does not support or requires "
 "reindexing."
 msgstr ""
 
-#: views.py:88
+#: views/search_views.py:91
 msgid "Search backend reindexing queued."
 msgstr ""
 
-#: views.py:110
+#: views/search_views.py:112
 #, python-format
 msgid "Search for: %s"
 msgstr ""
 
-#: views.py:139
+#: views/search_views.py:139
 #, python-format
 msgid "Advanced search for: %s"
 msgstr ""
 
-#: views.py:174
+#: views/search_views.py:195
 msgid "Try again using different terms. "
 msgstr ""
 
-#: views.py:176
+#: views/search_views.py:197
 msgid "No search results"
 msgstr ""
 
-#: views.py:179
+#: views/search_views.py:200
 #, python-format
 msgid "Search query: %s"
 msgstr ""
 
-#: views.py:181
+#: views/search_views.py:203
 #, python-format
 msgid "Search results for: %s"
 msgstr ""

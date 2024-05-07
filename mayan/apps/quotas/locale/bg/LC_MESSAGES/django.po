@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
-#: views.py:150
+#: views.py:145
 msgid "Quotas"
 msgstr "Квоти"
 
@@ -229,25 +229,25 @@ msgstr "Квотата за размер на документа е надвиш
 msgid "New quota backend selection"
 msgstr "Избор на бекенд за нова квота"
 
-#: views.py:65
+#: views.py:64
 #, python-format
 msgid "Create a \"%s\" quota"
 msgstr "Създайте &quot;%s&quot; квота"
 
-#: views.py:98
+#: views.py:95
 #, python-format
 msgid "Delete quota: %s"
 msgstr "Изтрийте квотата: %s"
 
-#: views.py:114
+#: views.py:111
 #, python-format
 msgid "Edit quota: %s"
 msgstr "Редактиране на квота: %s"
 
-#: views.py:147
+#: views.py:142
 msgid "Quotas restrict usage of system resources. "
 msgstr "Квотите ограничават използването на системните ресурси."
 
-#: views.py:149
+#: views.py:144
 msgid "No quotas available"
 msgstr "Няма налични квоти"

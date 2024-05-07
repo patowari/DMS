@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-04-22 22:07+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Duplikált dokumentumok"
 
 #: links.py:24 queues.py:24
 msgid "Duplicated document scan"
-msgstr "Duplikált dokumentum szkennelés"
+msgstr "Duplikált dokumentum szkennelések"
 
 #: models.py:19 models.py:31
 msgid "Stored duplicate backend"
@@ -84,7 +84,6 @@ msgstr "Dokumentum duplikálások beolvasása"
 #: views.py:36
 msgid "Only exact copies of this document will be shown in the this list."
 msgstr ""
-"Csak ennek a dokumentumnak a pontos másolatai jelennek meg ebben a listában."
 
 #: views.py:40
 msgid "There are no duplicates for this document"
@@ -116,4 +115,4 @@ msgstr "Duplikált dokumentumok keresése?"
 
 #: views.py:95
 msgid "Duplicated document scan queued successfully."
-msgstr "A duplikált dokumentum szkennelése sikeresen beállt a sorba."
+msgstr ""

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -63,37 +63,37 @@ msgstr ""
 msgid "Export a document version to a PDF"
 msgstr "Belge sürümünü PDF'ye dışa aktarma"
 
-#: views.py:17
+#: views.py:19
 #, python-format
 msgid "Document version \"%(object)s\" export successfully queued."
 msgstr "Belge sürümü \"%(object)s\" dışa aktarma işlemi başarıyla sıraya alındı."
 
-#: views.py:20
+#: views.py:22
 #, python-format
 msgid "%(count)d document version export successfully queued."
 msgstr "%(count)d belge sürümü verme işlemi başarıyla sıraya alındı."
 
-#: views.py:23
+#: views.py:25
 #, python-format
 msgid "%(count)d document versions exports successfully queued."
 msgstr "%(count)d belge sürümü verme işlemi başarıyla sıraya alındı."
 
-#: views.py:25
+#: views.py:27
 #, python-format
 msgid "Export %(count)d document versions."
 msgstr "%(count)d belge sürümlerini dışa aktarın."
 
-#: views.py:26
+#: views.py:28
 #, python-format
 msgid "Export document version \"%(object)s\"."
 msgstr "Belge sürümünü dışa aktar \"%(object)s\"."
 
-#: views.py:27
+#: views.py:29
 #, python-format
 msgid "Export %(count)d document version."
 msgstr "%(count)d belge sürümünü dışa aktarın."
 
-#: views.py:33
+#: views.py:35
 msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."

@@ -5,16 +5,16 @@
 # 
 # Translators:
 # abc Def <hdogan1974@gmail.com>, 2024
-# Bedreddin Şahbaz, 2024
 # Emine Öztürk <oemine075@gmail.com>, 2024
+# Bedreddin Şahbaz, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Dolaplar"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Belgeler"
 
@@ -102,19 +102,19 @@ msgstr "Tüm atalar dahil dolap yolu."
 msgid "Full path"
 msgstr "Tam yol"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr "Ana"
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Dolabı tanımlamak için kullanılan kısa bir metin."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Etiket"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Dolap"
 
@@ -122,16 +122,16 @@ msgstr "Dolap"
 msgid "Parent and Label"
 msgstr "Ana ve Etiket"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s ile bu %(field_labels)s zaten var."
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Belge Dolabı"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Belge Dolapları"
 
@@ -159,35 +159,43 @@ msgstr "Dolaplardan belgeleri çıkar"
 msgid "View cabinets"
 msgstr "Dolapları Görüntüle"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Belge Türü"
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Belge Etiketi"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Belge Açıklaması"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "Belge UUID"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Belge dosyası checksum'ı"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "Belge dosyası MIME türü"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Alt dolapların listesi."
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr "Çocuk"
 
@@ -217,11 +225,11 @@ msgstr "URL"
 msgid "Primary key of the document to add to the cabinet."
 msgstr "Kabine eklenecek belgenin birincil anahtarı."
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr "Belge ID"
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr "Kabineden çıkarılacak belgenin birincil anahtarı."
 
@@ -354,11 +362,11 @@ msgstr "%(count)d belgesini dolap/dolaplardan çıkart."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Seçilen belgelerin çıkarılacağı dolaplar."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Dolap/Dolapları seç"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Belgenin ekleneceği dolap/dolaplar."
 

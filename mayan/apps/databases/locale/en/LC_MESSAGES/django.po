@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 
 #: apps.py:16
 msgid "Databases"
+msgstr ""
+
+#: class_mixins.py:34
+msgid "The object will be executed, depending on the condition return value."
+msgstr ""
+
+#: class_mixins.py:37
+msgid "Has a condition?"
 msgstr ""
 
 #: classes.py:82
@@ -37,13 +45,13 @@ msgstr ""
 msgid "Model reverse fields"
 msgstr ""
 
-#: literals.py:10
+#: literals.py:12
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
 msgstr ""
 
-#: model_mixins.py:26
+#: model_mixins.py:39
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -51,16 +59,8 @@ msgid ""
 "value is considered to be the logical true."
 msgstr ""
 
-#: model_mixins.py:31
+#: model_mixins.py:47
 msgid "Condition"
-msgstr ""
-
-#: model_mixins.py:52
-msgid "The object will be executed, depending on the condition return value."
-msgstr ""
-
-#: model_mixins.py:55
-msgid "Has a condition?"
 msgstr ""
 
 #: templates/databases/app/viewport.html:11

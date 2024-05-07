@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -32,27 +32,27 @@ msgstr ""
 msgid "OTP enabled"
 msgstr ""
 
-#: forms.py:20
+#: forms.py:22
 msgid "Token is either invalid or expired."
 msgstr ""
 
-#: forms.py:25
+#: forms.py:27
 msgid "TOTP token"
 msgstr ""
 
-#: forms.py:86
+#: forms.py:88
 msgid "OTP enabled?"
 msgstr ""
 
-#: forms.py:87
+#: forms.py:89
 msgid "Yes"
 msgstr "כן"
 
-#: forms.py:87
+#: forms.py:89
 msgid "No"
 msgstr "לא"
 
-#: forms.py:104
+#: forms.py:106
 msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
@@ -60,20 +60,20 @@ msgstr ""
 "לבצע סריקת קוד ה-QR או הזנה של הקוד הסודי במכשיר האימות. אין לשתף את מידע "
 "זה, ויש התייחס אליו כאל סיסמה."
 
-#: forms.py:106 forms.py:111
+#: forms.py:108 forms.py:113
 msgid "Secret"
 msgstr "קוד סודי"
 
-#: forms.py:117
+#: forms.py:119
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr "הזן את האסימון המתאים כדי לוודא שהקוד הסודי נשמר נכון."
 
-#: forms.py:120
+#: forms.py:122
 msgid "Token"
 msgstr ""
 
-#: forms.py:155
+#: forms.py:158
 msgid "Token is incorrect for the specified secret."
 msgstr "האסימון שגוי עבור הקוד הסודי שצויין."
 
@@ -123,15 +123,15 @@ msgstr "OTP הושבת בהצלחה."
 msgid "OTP is already enabled."
 msgstr "OTP כבר מאופשר."
 
-#: views.py:96
+#: views.py:97
 msgid "OTP enabled successfully."
 msgstr "OTP אופשרה בהצלחה."
 
-#: views.py:105
+#: views.py:107
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "אפשור משטח חד פעמי למשתמש: %s"
 
-#: views.py:117
+#: views.py:119
 msgid "OTP secret validation error."
 msgstr "שגיאת אימות קוד סודי של OTP."

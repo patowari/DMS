@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Неможливо ініціалізувати сховище: %(name)s. Перевірте шлях та аргументи "
 "сховища."
 
-#: events.py:6 links.py:20 models.py:54 storages.py:22
+#: events.py:6 links.py:20 models.py:55 storages.py:22
 msgid "Download files"
 msgstr "Завантажити файли"
 
@@ -86,15 +86,15 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "Назва сховища для обробки."
 
-#: model_mixins.py:18 models.py:93
+#: model_mixins.py:67 models.py:96
 msgid "Filename"
 msgstr "Ім'я файлу"
 
-#: model_mixins.py:21
+#: model_mixins.py:70
 msgid "Date time"
 msgstr "Дата і час"
 
-#: model_mixins.py:83
+#: model_mixins.py:91
 msgid "Unnamed file"
 msgstr "Файл без назви"
 
@@ -102,27 +102,27 @@ msgstr "Файл без назви"
 msgid "Size"
 msgstr "Розмір"
 
-#: model_mixins.py:110 models.py:46 serializers.py:15
+#: model_mixins.py:110 models.py:47 serializers.py:15
 msgid "User"
 msgstr "Користувач"
 
-#: models.py:38 models.py:90
+#: models.py:39 models.py:92
 msgid "File"
 msgstr "Файл"
 
-#: models.py:41
+#: models.py:42
 msgid "Label"
 msgstr "Мітка"
 
-#: models.py:53
+#: models.py:54
 msgid "Download file"
 msgstr "Завантажити файл"
 
-#: models.py:99
+#: models.py:102
 msgid "Shared uploaded file"
 msgstr "Спільно завантажений файл"
 
-#: models.py:100 storages.py:36
+#: models.py:103 storages.py:36
 msgid "Shared uploaded files"
 msgstr "Спільно завантажені файли"
 
@@ -132,7 +132,7 @@ msgstr "Видалити файли користувача"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr "Завантажити користувацькі файли"
+msgstr "Завантажити файли користувача"
 
 #: permissions.py:16
 msgid "View user files"
@@ -209,7 +209,7 @@ msgstr ""
 "Не вдалося ініціалізувати спільне сховище завантажених файлів. Перевірте "
 "налаштування {} і {} на наявність помилок форматування."
 
-#: views/download_file_views.py:68
+#: views/download_file_views.py:69
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
@@ -219,10 +219,10 @@ msgstr ""
 "експорту. Завантажені файли зберігаються протягом певного періоду часу, а "
 "потім автоматично видаляються."
 
-#: views/download_file_views.py:72
+#: views/download_file_views.py:73
 msgid "There are no files to download."
 msgstr "Немає файлів для завантаження."
 
-#: views/download_file_views.py:73
+#: views/download_file_views.py:74
 msgid "Downloads"
 msgstr "Завантаження"

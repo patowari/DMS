@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -33,46 +33,46 @@ msgstr ""
 msgid "OTP enabled"
 msgstr ""
 
-#: forms.py:20
+#: forms.py:22
 msgid "Token is either invalid or expired."
 msgstr ""
 
-#: forms.py:25
+#: forms.py:27
 msgid "TOTP token"
 msgstr ""
 
-#: forms.py:86
+#: forms.py:88
 msgid "OTP enabled?"
 msgstr ""
 
-#: forms.py:87
+#: forms.py:89
 msgid "Yes"
 msgstr "قبول"
 
-#: forms.py:87
+#: forms.py:89
 msgid "No"
 msgstr "رفض"
 
-#: forms.py:104
+#: forms.py:106
 msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
 msgstr ""
 
-#: forms.py:106 forms.py:111
+#: forms.py:108 forms.py:113
 msgid "Secret"
 msgstr "خاص"
 
-#: forms.py:117
+#: forms.py:119
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
 
-#: forms.py:120
+#: forms.py:122
 msgid "Token"
 msgstr ""
 
-#: forms.py:155
+#: forms.py:158
 msgid "Token is incorrect for the specified secret."
 msgstr ""
 
@@ -122,15 +122,15 @@ msgstr ""
 msgid "OTP is already enabled."
 msgstr ""
 
-#: views.py:96
+#: views.py:97
 msgid "OTP enabled successfully."
 msgstr ""
 
-#: views.py:105
+#: views.py:107
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr ""
 
-#: views.py:117
+#: views.py:119
 msgid "OTP secret validation error."
 msgstr ""

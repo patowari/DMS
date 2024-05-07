@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Leo Lado, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,23 +57,23 @@ msgstr "Якщо вибрано, то виключає закінчення ді
 msgid "User"
 msgstr "Користувач"
 
-#: links.py:35
+#: links.py:37
 msgid "Logout"
 msgstr "Вихід"
 
-#: links.py:40
+#: links.py:42
 msgid "Change password"
 msgstr "Змінити пароль"
 
-#: links.py:45 views/impersonation_views.py:56
+#: links.py:47 views/impersonation_views.py:56
 msgid "Impersonate user"
 msgstr "Діяти від імені користувача"
 
-#: links.py:50
+#: links.py:52
 msgid "Impersonate"
 msgstr "Видавати себе за іншу особу"
 
-#: links.py:55 links.py:60
+#: links.py:57 links.py:62
 msgid "Set password"
 msgstr "Налаштувати пароль"
 
@@ -160,42 +160,42 @@ msgstr "Сторінка входу"
 msgid "Password reset email sent!"
 msgstr "Електронний лист для скидання пароля відправлено!"
 
-#: views/authentication_views.py:160
+#: views/authentication_views.py:162
 msgid "Next"
 msgstr "Наступний"
 
-#: views/authentication_views.py:166
+#: views/authentication_views.py:168
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Крок %(step)d з %(total_steps)d : %(step_label)s"
 
-#: views/authentication_views.py:190
+#: views/authentication_views.py:192
 msgid "Sign in"
 msgstr "Увійти"
 
-#: views/authentication_views.py:240
+#: views/authentication_views.py:242
 msgid "Your password has been successfully changed."
 msgstr "Ваш пароль успішно змінено."
 
-#: views/authentication_views.py:251
+#: views/authentication_views.py:253
 msgid "Current user password change"
 msgstr "Пароль поточного користувача змінено"
 
-#: views/authentication_views.py:263
+#: views/authentication_views.py:265
 msgid "Changing the password is not allowed for this account."
 msgstr "Зміна пароля не дозволена для цього акаунта."
 
-#: views/authentication_views.py:362
+#: views/authentication_views.py:366
 #, python-format
 msgid "Password change request performed on %(count)d user"
 msgstr "Запит на зміну пароля виконується %(count)dкористувачем"
 
-#: views/authentication_views.py:365
+#: views/authentication_views.py:369
 #, python-format
 msgid "Password change request performed on %(count)d users"
 msgstr "Запит на зміну пароля виконується %(count)dкористувачами"
 
-#: views/authentication_views.py:382
+#: views/authentication_views.py:386
 msgid ""
 "Changing the password of staff or super user accounts via the user interface"
 " is not allowed. Use administration tools to perform this operation."
@@ -204,7 +204,7 @@ msgstr ""
 "інтерфейс користувача заборонено. Для виконання цієї операції використовуйте"
 " інструменти адміністрування."
 
-#: views/authentication_views.py:396
+#: views/authentication_views.py:400
 msgid "Change user password"
 msgid_plural "Change users passwords"
 msgstr[0] "Змінити пароль користувача"
@@ -212,17 +212,17 @@ msgstr[1] "Змінити паролі користувачів"
 msgstr[2] "Змінити паролі користувачів"
 msgstr[3] "Змінити паролі користувачів"
 
-#: views/authentication_views.py:407
+#: views/authentication_views.py:411
 #, python-format
 msgid "Change password for user: %s"
 msgstr "Змінити пароль для користувача: %s"
 
-#: views/authentication_views.py:431
+#: views/authentication_views.py:435
 #, python-format
 msgid "Successful password reset for user: %s."
 msgstr "Успішно скинуто пароль для користувача %s."
 
-#: views/authentication_views.py:437
+#: views/authentication_views.py:441
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
 msgstr ""

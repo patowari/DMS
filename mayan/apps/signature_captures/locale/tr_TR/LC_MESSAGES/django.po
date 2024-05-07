@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # abc Def <hdogan1974@gmail.com>, 2024
-# Emine Öztürk <oemine075@gmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
+# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
+# Emine Öztürk <oemine075@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -242,33 +242,33 @@ msgstr "İmza yakalama dahili adı"
 msgid "Create signature capture for document: %s"
 msgstr "Belge için imza yakalama oluştur: %s"
 
-#: views.py:78
+#: views.py:75
 #, python-format
 msgid "Delete signature capture: %s"
 msgstr "İmza yakalamayı sil: %s"
 
-#: views.py:100
+#: views.py:97
 #, python-format
 msgid "Details of: %s"
 msgstr "Ayrıntılar: %s"
 
-#: views.py:116
+#: views.py:113
 #, python-format
 msgid "Edit document signature capture: %s"
 msgstr "Belge imza yakalamayı düzenle: %s"
 
-#: views.py:145
+#: views.py:140
 msgid ""
 "Signature captures are electronic versions of a persons's handwritten "
 "signature."
 msgstr ""
 "İmza yakalama, bir kişinin el yazısı imzasının elektronik versiyonlarıdır."
 
-#: views.py:148
+#: views.py:143
 msgid "Document has no signature captures"
 msgstr "Belgede imza yakalama yok"
 
-#: views.py:151
+#: views.py:146
 #, python-format
 msgid "Signature captures for document: %s"
 msgstr "Belge için imza yakalamaları: %s"

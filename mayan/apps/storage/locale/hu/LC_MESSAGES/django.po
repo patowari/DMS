@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2024
 # Dezső József <dejo60@gmail.com>, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -32,10 +32,8 @@ msgid ""
 "Unable to initialize storage: %(name)s. Check the storage backend dotted "
 "path and arguments."
 msgstr ""
-"Nem sikerült inicializálni a tárhelyet: %(name)s . Ellenőrizze a háttértár "
-"pontozott elérési útját és argumentumait."
 
-#: events.py:6 links.py:20 models.py:54 storages.py:22
+#: events.py:6 links.py:20 models.py:55 storages.py:22
 msgid "Download files"
 msgstr "Letöltési fájlok"
 
@@ -61,19 +59,17 @@ msgstr "Letöltés"
 
 #: management/commands/storage_process.py:13
 msgid "Name of the app to process."
-msgstr "A feldolgozandó alkalmazás neve."
+msgstr ""
 
 #: management/commands/storage_process.py:19
 msgid ""
 "Path of the database (.dbm) file that will be created/read to keep track of "
 "items processed."
 msgstr ""
-"Az adatbázis-fájl (.dbm) elérési útja, amely létrejön/olvasható a "
-"feldolgozott elemek nyomon követéséhez."
 
 #: management/commands/storage_process.py:26
 msgid "Process a specific model."
-msgstr "Egy adott modell feldolgozása."
+msgstr ""
 
 #: management/commands/storage_process.py:32
 msgid ""
@@ -86,45 +82,45 @@ msgstr ""
 msgid "Name of the storage to process."
 msgstr "A feldolgozandó tároló neve."
 
-#: model_mixins.py:18 models.py:93
+#: model_mixins.py:67 models.py:96
 msgid "Filename"
 msgstr "Fájlnév"
 
-#: model_mixins.py:21
+#: model_mixins.py:70
 msgid "Date time"
 msgstr "Dátum idő"
 
-#: model_mixins.py:83
+#: model_mixins.py:91
 msgid "Unnamed file"
-msgstr "Névtelen fájl"
+msgstr ""
 
 #: model_mixins.py:103
 msgid "Size"
 msgstr "Méret"
 
-#: model_mixins.py:110 models.py:46 serializers.py:15
+#: model_mixins.py:110 models.py:47 serializers.py:15
 msgid "User"
 msgstr "Felhasználó"
 
-#: models.py:38 models.py:90
+#: models.py:39 models.py:92
 msgid "File"
 msgstr "Fájl"
 
-#: models.py:41
+#: models.py:42
 msgid "Label"
 msgstr "Cimke"
 
-#: models.py:53
+#: models.py:54
 msgid "Download file"
-msgstr "Fájl letöltése"
+msgstr ""
 
-#: models.py:99
+#: models.py:102
 msgid "Shared uploaded file"
-msgstr "Megosztott feltöltött fájl"
+msgstr ""
 
-#: models.py:100 storages.py:36
+#: models.py:103 storages.py:36
 msgid "Shared uploaded files"
-msgstr "Megosztott feltöltött fájlok"
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete user files"
@@ -132,19 +128,19 @@ msgstr "Felhasználói fájlok törlése"
 
 #: permissions.py:13
 msgid "Download user files"
-msgstr "Felhasználói fájlok letöltése"
+msgstr ""
 
 #: permissions.py:16
 msgid "View user files"
-msgstr "Felhasználói fájlok megtekintése"
+msgstr ""
 
 #: queues.py:16
 msgid "Storage periodic"
-msgstr "Időszakos tárolás"
+msgstr ""
 
 #: queues.py:22
 msgid "Delete a shared upload"
-msgstr "Megosztott feltöltés törlése"
+msgstr ""
 
 #: queues.py:27
 msgid "Delete stale uploads"
@@ -156,7 +152,7 @@ msgstr "Elavult letöltési fájlok törlése"
 
 #: serializers.py:11
 msgid "Download URL"
-msgstr "Letöltési URL"
+msgstr ""
 
 #: serializers.py:21
 msgid "URL"
@@ -164,7 +160,7 @@ msgstr "URL"
 
 #: settings.py:21
 msgid "Time in seconds, after which download files will be deleted."
-msgstr "Idő másodpercben, amely után a letöltött fájlok törlődnek."
+msgstr ""
 
 #: settings.py:27
 msgid ""
@@ -185,13 +181,10 @@ msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
 msgstr ""
-"Az ideiglenes könyvtár az egész webhelyen bélyegképek, előnézetek és "
-"ideiglenes fájlok tárolására szolgál."
 
 #: settings.py:55
 msgid "Time in seconds, after which temporary uploaded files will be deleted."
 msgstr ""
-"Idő másodpercben, amely után az ideiglenesen feltöltött fájlok törlődnek."
 
 #: storages.py:15
 msgid ""
@@ -209,20 +202,17 @@ msgstr ""
 "Nem sikerült inicializálni a megosztott feltöltött fájl tárolót. Ellenőrizze"
 " a beállításokat {} és {} formázási hibákért."
 
-#: views/download_file_views.py:68
+#: views/download_file_views.py:69
 msgid ""
 "Download files are created as a results of a an external process like an "
 "export. Download files are retained over a span of time and then removed "
 "automatically."
 msgstr ""
-"A letöltési fájlok külső folyamat, például exportálás eredményeként jönnek "
-"létre. A letöltött fájlokat a rendszer egy bizonyos ideig megőrzi, majd "
-"automatikusan eltávolítja."
-
-#: views/download_file_views.py:72
-msgid "There are no files to download."
-msgstr "Nincsenek letölthető fájlok."
 
 #: views/download_file_views.py:73
+msgid "There are no files to download."
+msgstr ""
+
+#: views/download_file_views.py:74
 msgid "Downloads"
-msgstr "Letöltések"
+msgstr ""

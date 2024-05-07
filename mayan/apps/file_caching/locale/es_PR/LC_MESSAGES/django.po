@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,22 @@ msgstr "Caché purgada"
 #: events.py:19
 msgid "Cache partition purged"
 msgstr "Partición de caché purgada"
+
+#: forms.py:11
+msgid "Identification"
+msgstr ""
+
+#: forms.py:15
+msgid "Storage"
+msgstr "Almacenamiento"
+
+#: forms.py:19
+msgid "Configuration"
+msgstr ""
+
+#: forms.py:25
+msgid "Objects"
+msgstr "Objetos"
 
 #: links.py:27 links.py:50
 msgid "File caches"
@@ -84,7 +100,7 @@ msgstr "Número de archivos de partición"
 msgid "Total cached files."
 msgstr "Total de archivos en caché."
 
-#: model_mixins.py:113 model_mixins.py:324
+#: model_mixins.py:113 model_mixins.py:326
 msgid "Current size"
 msgstr "Tamaño actual"
 
@@ -92,7 +108,11 @@ msgstr "Tamaño actual"
 msgid "Current size of the cache."
 msgstr "Tamaño actual del caché."
 
-#: model_mixins.py:326
+#: model_mixins.py:123
+msgid "Label"
+msgstr "Etiqueta"
+
+#: model_mixins.py:328
 msgid "Current size of the cache partition."
 msgstr "Tamaño actual de la partición de caché."
 
@@ -108,7 +128,7 @@ msgstr "Nombre de almacenamiento definido"
 msgid "Maximum size of the cache in bytes."
 msgstr "Tamaño máximo del caché en bytes."
 
-#: models.py:36 models.py:76
+#: models.py:36 models.py:75
 msgid "Cache"
 msgstr "Caché"
 
@@ -116,39 +136,39 @@ msgstr "Caché"
 msgid "Caches"
 msgstr "Cachés"
 
-#: models.py:79
+#: models.py:78
 msgid "Name"
 msgstr "Nombre"
 
-#: models.py:84 models.py:107
+#: models.py:83 models.py:105
 msgid "Cache partition"
 msgstr "Partición de caché"
 
-#: models.py:85
+#: models.py:84
 msgid "Cache partitions"
 msgstr "Particiones de caché"
 
-#: models.py:110
+#: models.py:108
 msgid "Date time"
 msgstr "Fecha y hora"
 
-#: models.py:113
+#: models.py:111
 msgid "Filename"
 msgstr "Nombre del archivo"
 
-#: models.py:116
+#: models.py:114
 msgid "File size"
 msgstr "Tamaño del archivo"
 
-#: models.py:120
+#: models.py:118
 msgid "Times this cache partition file has been accessed."
 msgstr "Veces que se ha accedido a este archivo de partición de caché."
 
-#: models.py:127
+#: models.py:125
 msgid "Cache partition file"
 msgstr "Archivo de partición de caché"
 
-#: models.py:128
+#: models.py:126
 msgid "Cache partition files"
 msgstr "Archivos de partición de caché"
 
@@ -189,40 +209,40 @@ msgstr ""
 "Número de veces que una caché intentará remover archivos para liberar "
 "espacio para un nuevo archivo que se solicita, antes de darse por vencido."
 
-#: views.py:49
+#: views.py:36
 #, python-format
 msgid "Details of cache: %s"
 msgstr "Detalles del caché: %s"
 
-#: views.py:61
+#: views.py:48
 msgid "File caches list"
 msgstr "Lista de cachés de archivos"
 
-#: views.py:82
+#: views.py:69
 #, python-format
 msgid "Details of cache partition: %s"
 msgstr "Detalles de la partición de caché: %s"
 
-#: views.py:100
+#: views.py:87
 #, python-format
 msgid "Purge cache partitions of \"%s\"?"
 msgstr "¿Purgar las particiones de caché de \"%s\"?"
 
-#: views.py:117
+#: views.py:104
 msgid "Object cache partitions submitted for purging."
 msgstr "Particiones de caché de objetos enviadas para depuración."
 
-#: views.py:127
+#: views.py:114
 #, python-format
 msgid "%(count)d caches submitted for purging."
 msgstr "%(count)d cachés enviados para purgar."
 
-#: views.py:130
+#: views.py:117
 #, python-format
 msgid "%(count)d cache submitted for purging."
 msgstr "%(count)d caché enviado para purgar."
 
-#: views.py:139
+#: views.py:126
 msgid "Submit the selected cache for purging?"
 msgid_plural "Submit the selected caches for purging?"
 msgstr[0] "¿Enviar el caché seleccionado para purgar?"

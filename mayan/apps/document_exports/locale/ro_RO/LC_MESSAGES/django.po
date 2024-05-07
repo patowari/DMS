@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -63,37 +63,37 @@ msgstr "Exporturi de documente"
 msgid "Export a document version to a PDF"
 msgstr "Exportați o versiune de document într-un PDF"
 
-#: views.py:17
+#: views.py:19
 #, python-format
 msgid "Document version \"%(object)s\" export successfully queued."
 msgstr "Versiunea documentului „%(object)s” a fost exportată cu succes."
 
-#: views.py:20
+#: views.py:22
 #, python-format
 msgid "%(count)d document version export successfully queued."
 msgstr "Exportul %(count)d versiuni a documentului a fost pus în coadă."
 
-#: views.py:23
+#: views.py:25
 #, python-format
 msgid "%(count)d document versions exports successfully queued."
 msgstr "Exportul a %(count)d versiuni a documentului au fost puse în coadă."
 
-#: views.py:25
+#: views.py:27
 #, python-format
 msgid "Export %(count)d document versions."
 msgstr "Exportați %(count)d versiuni ale documentului."
 
-#: views.py:26
+#: views.py:28
 #, python-format
 msgid "Export document version \"%(object)s\"."
 msgstr "Versiunea documentului de export „%(object)s”."
 
-#: views.py:27
+#: views.py:29
 #, python-format
 msgid "Export %(count)d document version."
 msgstr "Exportați %(count)d versiune a documentului ."
 
-#: views.py:33
+#: views.py:35
 msgid ""
 "The process will be performed in the background. The exported file will be "
 "available in the downloads area."

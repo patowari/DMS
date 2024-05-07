@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Daniele Bortoluzzi <daniele@elkos.it>, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
+# Daniele Bortoluzzi <daniele@elkos.it>, 2024
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,25 +24,15 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:130 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Comune"
 
-#: dependencies.py:189
-msgid "Used to allow offline translation of the code text strings."
-msgstr ""
-"Usato per consentire la traduzione offline delle stringhe di testo nel "
-"codice."
-
-#: dependencies.py:198
-msgid "Provides style checking."
-msgstr "Fornisce controllo dello stile."
-
-#: dependencies.py:203
+#: dependencies.py:193
 msgid "Command line environment with autocompletion."
 msgstr "Ambiente a riga di comando con autocompletamento."
 
-#: dependencies.py:212
+#: dependencies.py:198
 msgid "Checks proper formatting of the README file."
 msgstr "Controlla la corretta formattazione del file README."
 

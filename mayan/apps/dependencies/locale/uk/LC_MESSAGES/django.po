@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Ім'я"
 msgid "App"
 msgstr "Додаток"
 
-#: classes.py:220 classes.py:963
+#: classes.py:220 classes.py:966
 msgid "Environments"
 msgstr "Середовища"
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:572 classes.py:866
+#: classes.py:572 classes.py:869
 msgid "Downloading... "
 msgstr "Завантаження..."
 
@@ -144,39 +144,39 @@ msgstr "Завантаження..."
 msgid "Verifying... "
 msgstr "Перевірка..."
 
-#: classes.py:582 classes.py:871
+#: classes.py:582 classes.py:874
 msgid "Extracting... "
 msgstr "Розпакування..."
 
-#: classes.py:792
+#: classes.py:795
 msgid "Python packages downloaded from PyPI."
 msgstr "Пакети Python, завантажені з PyPI."
 
-#: classes.py:794
+#: classes.py:797
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:846
+#: classes.py:849
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Шрифти завантажені з fonts.googleapis.com."
 
-#: classes.py:848
+#: classes.py:851
 msgid "Google font"
 msgstr "Google шрифт"
 
-#: classes.py:944
+#: classes.py:947
 msgid "Declared in app"
 msgstr "Заявлено в додатку"
 
-#: classes.py:945
+#: classes.py:948
 msgid "Show dependencies by the app that declared them."
 msgstr "Показати залежності за допомогою додатку, який їх оголосив."
 
-#: classes.py:949
+#: classes.py:952
 msgid "Class"
 msgstr "Клас"
 
-#: classes.py:950
+#: classes.py:953
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -184,11 +184,11 @@ msgstr ""
 "Показати різні класи залежностей. Класи зазвичай поділяються за мовою або "
 "типами файлів залежностей."
 
-#: classes.py:955
+#: classes.py:958
 msgid "State"
 msgstr "Стан"
 
-#: classes.py:956
+#: classes.py:959
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -198,7 +198,7 @@ msgstr ""
 "має правильну версію. False означає, що залежність відсутня або присутня "
 "неправильна версія."
 
-#: classes.py:964
+#: classes.py:967
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

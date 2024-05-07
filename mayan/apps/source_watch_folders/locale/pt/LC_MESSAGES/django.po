@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Márcia Ferreira, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Márcia Ferreira, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,6 @@ msgstr ""
 msgid "Watch folders"
 msgstr "Pastas monitoradas"
 
-#: source_backends.py:18
+#: source_backends.py:28
 msgid "Watch folder"
 msgstr "Ver pasta"

@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
 # Roberto Rosario, 2024
+# j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Lengte"
 msgid "User ID"
 msgstr "Gebruikers-ID"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU privacybewaking - een PGP-implementatie."
 
@@ -113,11 +113,11 @@ msgstr "Importeren"
 msgid "Upload key"
 msgstr "Sleutel uploaden"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr "Privésleutels"
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr "Openbare sleutels"
 
@@ -286,7 +286,7 @@ msgstr "Sleutelserver doorzoeken"
 msgid "Upload new key"
 msgstr "Nieuwe sleutel uploaden"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
@@ -295,11 +295,11 @@ msgstr ""
 " alleen door de gebruiker worden geüpload. Het overzicht om privé en "
 "openbare sleutels te uploaden is hetzelfde."
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr "Er zijn geen privésleutels"
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
@@ -310,6 +310,6 @@ msgstr ""
 "gedownload van sleutelservers. Het overzicht om privé en openbare sleutels "
 "te uploaden is hetzelfde."
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr "Er zijn geen openbare sleutels"

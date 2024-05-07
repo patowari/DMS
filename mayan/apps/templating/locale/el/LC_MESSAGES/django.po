@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,15 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:19 permissions.py:6
+#: apps.py:21 permissions.py:6
 msgid "Templating"
 msgstr "Προτυποποίηση"
 
-#: fields.py:21
+#: apps.py:39
+msgid "Current date and time"
+msgstr ""
+
+#: fields.py:28
 #, python-format
 msgid ""
 "Use Django's default templating language "
@@ -35,16 +39,10 @@ msgstr ""
 "Χρησιμοποιήστε την προεπιλεγμένη γλώσσα προτύπων του Django "
 "(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
 
-#: fields.py:41
+#: fields.py:43
 #, python-format
-msgid ""
-"Use Django's default templating language "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" The {{ %(variable)s }} variable is available to the template."
+msgid "Available template context variables: %s"
 msgstr ""
-"Χρησιμοποιήστε την προεπιλεγμένη γλώσσα προτύπων του Django "
-"(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/)."
-" Η μεταβλητή {{%(variable)s}} είναι διαθέσιμη στο πρότυπο."
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."
@@ -86,12 +84,12 @@ msgstr ""
 msgid "URL"
 msgstr "Διεύθυνση URL"
 
-#: views.py:44
+#: views.py:45
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr "Πρότυπο sandbox για: %s"
 
-#: views.py:65
+#: views.py:67
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr "Σφάλμα προτύπου; %(exception)s"

@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
+# Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -22,75 +22,75 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:61 events.py:6 permissions.py:6
+#: apps.py:60 events.py:6 permissions.py:6
 msgid "User management"
 msgstr "Felhasználó kezelés"
 
-#: apps.py:76 search.py:10
+#: apps.py:75 search.py:10
 msgid "Group"
 msgstr "Csoport"
 
-#: apps.py:77 apps.py:113 links.py:53 links.py:67 links.py:96 search.py:34
+#: apps.py:76 apps.py:115 links.py:55 links.py:69 links.py:98 search.py:34
 #: views/group_views.py:111
 msgid "Groups"
 msgstr "Csoportok"
 
-#: apps.py:79 search.py:16
+#: apps.py:78 search.py:16
 msgid "Name"
 msgstr "Név"
 
-#: apps.py:102 models.py:20 search.py:22
+#: apps.py:104 models.py:20 search.py:22
 msgid "User"
 msgstr "Felhasználó"
 
-#: apps.py:103 apps.py:230 links.py:58 links.py:99 links.py:111
-#: views/user_views.py:170
+#: apps.py:105 apps.py:238 links.py:60 links.py:101 links.py:113
+#: views/user_views.py:178
 msgid "Users"
 msgstr "Felhasználók"
 
-#: apps.py:107 search.py:31
+#: apps.py:109 search.py:31
 msgid "Email"
 msgstr "Email"
 
-#: apps.py:111 search.py:28
+#: apps.py:113 search.py:28
 msgid "First name"
 msgstr "Keresztnév"
 
-#: apps.py:117
+#: apps.py:119
 msgid "Is active?"
 msgstr "Aktív?"
 
-#: apps.py:120
+#: apps.py:122
 msgid "Is super user?"
 msgstr "Szuper felhasználó?"
 
-#: apps.py:123 search.py:37
+#: apps.py:125 search.py:37
 msgid "Last name"
 msgstr "Vezetéknév"
 
-#: apps.py:126 serializers.py:72
+#: apps.py:128 serializers.py:72
 msgid "Password"
 msgstr "Jelszó"
 
-#: apps.py:129 search.py:40
+#: apps.py:131 search.py:40
 msgid "Username"
 msgstr "Felhasználónév"
 
-#: apps.py:132
+#: apps.py:134
 msgid "Last login"
 msgstr "Utolsó bejelentkezés"
 
-#: apps.py:158
+#: apps.py:166
 msgid "Has usable password?"
 msgstr "Van használható jelszó?"
 
-#: apps.py:165
-msgid "All the groups."
-msgstr "Minden csoport."
+#: apps.py:173
+msgid "All the groups"
+msgstr ""
 
-#: apps.py:169
-msgid "All the users."
-msgstr "Minden felhasználó."
+#: apps.py:177
+msgid "All the users"
+msgstr ""
 
 #: dashboard_widgets.py:14
 msgid "Total users"
@@ -128,27 +128,27 @@ msgstr "Felhasználó bejelentkezve"
 msgid "User logged out"
 msgstr "Felhasználó kijelentkezve"
 
-#: links.py:28
+#: links.py:30
 msgid "User details"
 msgstr "A felhasználó adatai"
 
-#: links.py:36 views/group_views.py:25
+#: links.py:38 views/group_views.py:25
 msgid "Create new group"
 msgstr "Új csoport létrehozása"
 
-#: links.py:41 links.py:44 links.py:81 links.py:85
+#: links.py:43 links.py:46 links.py:83 links.py:87
 msgid "Delete"
 msgstr "Törlés"
 
-#: links.py:49 links.py:90
+#: links.py:51 links.py:92
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: links.py:75 views/user_views.py:32
+#: links.py:77 views/user_views.py:32
 msgid "Create new user"
 msgstr "Új felhasználó létrehozása"
 
-#: links.py:104
+#: links.py:106
 msgid "User options"
 msgstr "Felhasználói beállítások"
 
@@ -170,7 +170,7 @@ msgstr "A felhasználó nem változtathatja meg a jelszavát."
 
 #: models.py:31
 msgid "User settings"
-msgstr "Felhasználói beállítások"
+msgstr ""
 
 #: models.py:32
 msgid "Users settings"
@@ -178,7 +178,7 @@ msgstr "Felhasználók beállításai"
 
 #: permissions.py:10
 msgid "Create new groups"
-msgstr "Új csoportok létrehozása"
+msgstr ""
 
 #: permissions.py:13
 msgid "Delete existing groups"
@@ -186,11 +186,11 @@ msgstr "Meglévő csoportok törlése"
 
 #: permissions.py:16
 msgid "Edit existing groups"
-msgstr "Meglévő csoportok szerkesztése"
+msgstr ""
 
 #: permissions.py:19
 msgid "View existing groups"
-msgstr "Meglévő csoportok megtekintése"
+msgstr ""
 
 #: permissions.py:22
 msgid "Create new users"
@@ -202,11 +202,11 @@ msgstr "Meglévő felhasználók törlése"
 
 #: permissions.py:28
 msgid "Edit existing users"
-msgstr "Meglévő felhasználók szerkesztése"
+msgstr ""
 
 #: permissions.py:31
 msgid "View existing users"
-msgstr "Meglévő felhasználók megtekintése"
+msgstr ""
 
 #: serializers.py:16
 msgid "URL of the API endpoint showing the list users of this group."
@@ -231,7 +231,7 @@ msgstr "URL"
 
 #: serializers.py:48
 msgid "Primary key of the user to add to the group."
-msgstr "A csoporthoz adandó felhasználó elsődleges kulcsa."
+msgstr ""
 
 #: serializers.py:49 serializers.py:58
 msgid "User ID"
@@ -239,7 +239,7 @@ msgstr "Felhasználói azonosító"
 
 #: serializers.py:57
 msgid "Primary key of the user to remove from the group."
-msgstr "A csoportból eltávolítandó felhasználó elsődleges kulcsa."
+msgstr ""
 
 #: serializers.py:66
 msgid "URL of the API endpoint showing the list groups this user belongs to."
@@ -283,7 +283,7 @@ msgstr "%(count)d kiválasztott csoport törlése."
 #: views/group_views.py:51
 #, python-format
 msgid "Delete group: %(object)s."
-msgstr "Csoport törlése: %(object)s ."
+msgstr ""
 
 #: views/group_views.py:52
 #, python-format
@@ -293,12 +293,12 @@ msgstr "%(count)d kiválasztott csoport törlése."
 #: views/group_views.py:66
 #, python-format
 msgid "Details of group: %s"
-msgstr "A csoport adatai: %s"
+msgstr ""
 
 #: views/group_views.py:83
 #, python-format
 msgid "Edit group: %s"
-msgstr "Csoport szerkesztése: %s"
+msgstr ""
 
 #: views/group_views.py:104
 msgid ""
@@ -313,11 +313,11 @@ msgstr ""
 
 #: views/group_views.py:110
 msgid "There are no user groups"
-msgstr "Nincsenek felhasználói csoportok"
+msgstr ""
 
 #: views/group_views.py:116
 msgid "Available users"
-msgstr "Elérhető felhasználók"
+msgstr ""
 
 #: views/group_views.py:117
 msgid "Group users"
@@ -326,44 +326,44 @@ msgstr "Csoport felhasználók"
 #: views/group_views.py:132
 #, python-format
 msgid "Users of group: %s"
-msgstr "A következő csoport felhasználói: %s"
+msgstr ""
 
-#: views/user_views.py:55
+#: views/user_views.py:56
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
 msgstr "Hiba a \"%(instance)s\" felhasználó törlésekor; %(exception)s"
 
-#: views/user_views.py:61
+#: views/user_views.py:64
 #, python-format
 msgid "%(count)d users deleted successfully."
 msgstr "%(count)d felhasználó sikeresen törölve."
 
-#: views/user_views.py:62
+#: views/user_views.py:67
 #, python-format
 msgid "User \"%(object)s\" deleted successfully."
 msgstr "A \"%(object)s\" felhasználó sikeresen törölve."
 
-#: views/user_views.py:63
+#: views/user_views.py:70
 #, python-format
 msgid "%(count)d user deleted successfully."
-msgstr "%(count)d felhasználó sikeresen törölve."
+msgstr ""
 
-#: views/user_views.py:64
+#: views/user_views.py:72
 #, python-format
 msgid "Delete the %(count)d selected users."
 msgstr "%(count)d kiválasztott felhasználó törlése."
 
-#: views/user_views.py:65
+#: views/user_views.py:73
 #, python-format
 msgid "Delete user: %(object)s."
-msgstr "Felhasználó törlése: %(object)s ."
+msgstr ""
 
-#: views/user_views.py:66
+#: views/user_views.py:74
 #, python-format
 msgid "Delete the %(count)d selected user."
 msgstr "%(count)d kiválasztott felhasználó törlése."
 
-#: views/user_views.py:73
+#: views/user_views.py:81
 msgid ""
 "Warning! You are about to delete your own user account. You will lose access"
 " to the system. This process is not reversible."
@@ -371,44 +371,42 @@ msgstr ""
 "Figyelem! Arra készül, hogy törli saját felhasználói fiókját. Elveszíti a "
 "hozzáférést a rendszerhez. Ez a folyamat nem visszafordítható."
 
-#: views/user_views.py:93
+#: views/user_views.py:101
 #, python-format
 msgid "Details of user: %s"
-msgstr "A felhasználó adatai: %s"
+msgstr ""
 
-#: views/user_views.py:112
+#: views/user_views.py:120
 #, python-format
 msgid "Edit user: %s"
-msgstr "Felhasználó szerkesztése: %s"
+msgstr ""
 
-#: views/user_views.py:123
+#: views/user_views.py:131
 msgid "Available groups"
 msgstr "Elérhető csoportok"
 
 #. Translators: "User groups" here refer to the list of groups of a
 #. specific user. The user's group membership.
-#: views/user_views.py:126
+#: views/user_views.py:134
 msgid "User groups"
-msgstr "Felhasználói csoportok"
+msgstr ""
 
-#: views/user_views.py:141
+#: views/user_views.py:149
 #, python-format
 msgid "Groups of user: %s"
-msgstr "Felhasználói csoportok: %s"
+msgstr ""
 
-#: views/user_views.py:166
+#: views/user_views.py:174
 msgid ""
 "User accounts can be create from this view. After creating a user account "
 "you will prompted to set a password for it. "
 msgstr ""
-"Ebből a nézetből felhasználói fiókok hozhatók létre. A felhasználói fiók "
-"létrehozása után meg kell adnia egy jelszót."
 
-#: views/user_views.py:169
+#: views/user_views.py:177
 msgid "There are no user accounts"
-msgstr "Nincsenek felhasználói fiókok"
+msgstr ""
 
-#: views/user_views.py:189
+#: views/user_views.py:197
 #, python-format
 msgid "Edit options for user: %s"
 msgstr "A felhasználó beállításainak szerkesztése: %s"

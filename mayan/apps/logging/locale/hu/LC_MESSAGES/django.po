@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -21,17 +21,25 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:23 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:24 events.py:6 permissions.py:6 settings.py:12
 msgid "Logging"
 msgstr "Naplózás"
 
+#: apps.py:40
+msgid "System"
+msgstr "Rendszer"
+
+#: apps.py:64
+msgid "Domain"
+msgstr ""
+
 #: events.py:10
 msgid "Error log deleted"
-msgstr "Hibanapló törölve"
+msgstr ""
 
 #: links.py:15 views.py:36
 msgid "Global error log"
-msgstr "Globális hibanapló"
+msgstr ""
 
 #: links.py:26
 msgid "Delete"
@@ -39,63 +47,72 @@ msgstr "Törlés"
 
 #: links.py:31
 msgid "Errors"
-msgstr "Hibák"
+msgstr ""
 
 #: links.py:37
 msgid "Clear errors"
 msgstr "Hibák törlése"
 
-#: model_mixins.py:10
+#: model_mixins.py:11
+#, python-format
+msgid "Unknown domain name: %s"
+msgstr ""
+
+#: model_mixins.py:18
 msgid "Object"
 msgstr "Objektum"
 
-#: model_mixins.py:18
+#: model_mixins.py:26
 msgid "App label"
-msgstr "Alkalmazáscímke"
+msgstr ""
 
-#: models.py:19 models.py:37
+#: models.py:21 models.py:41
 msgid "Internal name"
 msgstr "Belső név"
 
-#: models.py:24 models.py:34
+#: models.py:26 models.py:38
 msgid "Error log"
-msgstr "Hibanapló"
+msgstr ""
 
-#: models.py:25
+#: models.py:27
 msgid "Error logs"
-msgstr "Hibanaplók"
+msgstr ""
 
-#: models.py:51 models.py:63
+#: models.py:55 models.py:69
 msgid "Error log partition"
-msgstr "Hibanapló-partíció"
+msgstr ""
 
-#: models.py:52
+#: models.py:56
 msgid "Error log partitions"
-msgstr "Hibanapló-partíciók"
+msgstr ""
 
-#: models.py:67
+#: models.py:73
 msgid "Date and time"
 msgstr "Dátum és idő"
 
-#: models.py:71
+#: models.py:78
+msgid "Domain name"
+msgstr ""
+
+#: models.py:81
 msgid "Text"
 msgstr "Szöveg"
 
-#: models.py:79
+#: models.py:89
 msgid "Error log partition entry"
 msgstr "Hibanapló-partíció bejegyzés"
 
-#: models.py:80
+#: models.py:90
 msgid "Error log partition entries"
-msgstr "Hibanapló-partíció bejegyzések"
+msgstr ""
 
 #: permissions.py:10
 msgid "Delete error log"
-msgstr "Hibanapló törlése"
+msgstr ""
 
 #: permissions.py:13
 msgid "View error log"
-msgstr "Hibanapló megtekintése"
+msgstr ""
 
 #: serializers.py:12
 msgid "Content type"
@@ -115,15 +132,15 @@ msgstr "Az üzenetek ANSI színkódos naplózásának letiltása."
 
 #: settings.py:24
 msgid "Automatically enable logging to all apps."
-msgstr "A naplózás automatikus engedélyezése az összes alkalmazáshoz."
+msgstr ""
 
 #: settings.py:30
 msgid "List of handlers to which logging messages will be sent."
-msgstr "Azon kezelők listája, amelyeknek a naplózási üzeneteket elküldik."
+msgstr ""
 
 #: settings.py:35
 msgid "Level for the logging system."
-msgstr "A naplózási rendszer szintje."
+msgstr ""
 
 #: settings.py:41
 msgid "Path to the logfile that will track errors during production."
@@ -136,10 +153,8 @@ msgid ""
 "This view displays the error log of different objects. An empty list is a "
 "good thing."
 msgstr ""
-"Ez a nézet a különböző objektumok hibanaplóját jeleníti meg. Az üres lista "
-"jó dolog."
 
-#: views.py:34 views.py:101
+#: views.py:34 views.py:99
 msgid "There are no error log entries"
 msgstr "Nincsenek hibanapló bejegyzések"
 
@@ -157,14 +172,13 @@ msgstr "Az objektum hibanapló sikeresen törölve"
 msgid "Delete error log entry: %s"
 msgstr "Hibanapló bejegyzés törlése: %s"
 
-#: views.py:97
+#: views.py:95
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
-"Ez a nézet egy objektum hibanaplóját jeleníti meg. Az üres lista jó dolog."
 
-#: views.py:105
+#: views.py:103
 #, python-format
 msgid "Error log entries for: %s"
 msgstr "Hibanapló bejegyzések a következőhöz: %s"

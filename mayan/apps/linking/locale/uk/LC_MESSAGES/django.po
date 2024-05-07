@@ -4,8 +4,8 @@
 # 
 # Translators:
 # Translators:
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Сергій Гарашко, 2024
 # Leo Lado, 2024
 # 
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -23,18 +23,18 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:46
+#: apps.py:47
 msgid "Linking"
 msgstr "Посилання"
 
-#: apps.py:120 models.py:31 serializers.py:129
+#: apps.py:121 models.py:33 serializers.py:133
 msgid "Label"
 msgstr "Мітка"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:54
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
-msgstr "Розумні посилання"
+msgstr "Смарт посилання"
 
 #: events.py:10
 msgid "Smart link created"
@@ -56,7 +56,7 @@ msgstr "Створіть нове смарт посилання"
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:54 models.py:44
+#: links.py:54 models.py:46
 msgid "Document types"
 msgstr "Тип документа"
 
@@ -161,11 +161,11 @@ msgstr "ні"
 msgid "Full label"
 msgstr "Повна мітка"
 
-#: models.py:30
+#: models.py:32
 msgid "A short text describing the smart link."
 msgstr "Короткий текст з описом смарт посилання."
 
-#: models.py:35
+#: models.py:37
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
@@ -173,31 +173,31 @@ msgstr ""
 "Використовуйте це поле, щоб показати унікальну мітку в залежності від "
 "документа, з якого здійснюється доступ до смарт посилання."
 
-#: models.py:37
+#: models.py:39
 msgid "Dynamic label"
 msgstr "Динамічна мітка"
 
-#: models.py:40 models.py:117
+#: models.py:42 models.py:121
 msgid "Enabled"
 msgstr "Активовано"
 
-#: models.py:51 models.py:90
+#: models.py:53 models.py:94
 msgid "Smart link"
 msgstr "Смарт посилання"
 
-#: models.py:94
+#: models.py:98
 msgid "The inclusion is ignored for the first item."
 msgstr "Включення ігнорується для першого елемента."
 
-#: models.py:99
+#: models.py:103
 msgid "This represents the metadata of all other documents."
 msgstr "Це метадані всіх інших документів."
 
-#: models.py:101
+#: models.py:105
 msgid "Foreign document attribute"
 msgstr "Зовнішній атрибут документа"
 
-#: models.py:107
+#: models.py:111
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -205,23 +205,23 @@ msgstr ""
 "Вираз із використанням властивостей документа, який потрібно оцінити за "
 "полем зовнішнього документа."
 
-#: models.py:109
+#: models.py:113
 msgid "Expression"
 msgstr "Вираз"
 
-#: models.py:113
+#: models.py:117
 msgid "Inverts the logic of the operator."
 msgstr "Інвертує логіку оператора."
 
-#: models.py:114
+#: models.py:118
 msgid "Negated"
 msgstr "Заперечено"
 
-#: models.py:121
+#: models.py:125
 msgid "Link condition"
-msgstr "Стан посилання"
+msgstr "Умова посилання"
 
-#: models.py:122
+#: models.py:126
 msgid "Link conditions"
 msgstr "Умови посилань"
 
@@ -245,11 +245,11 @@ msgstr "Редагувати смарт посилання"
 msgid "View existing smart links"
 msgstr "Переглянути існуючі смарт посилання"
 
-#: serializers.py:20 serializers.py:132
+#: serializers.py:20 serializers.py:136
 msgid "Smart link URL"
 msgstr "Сиарт URL-адреса"
 
-#: serializers.py:24 serializers.py:86 serializers.py:135
+#: serializers.py:24 serializers.py:90 serializers.py:139
 msgid "URL"
 msgstr "URL"
 
@@ -257,36 +257,36 @@ msgstr "URL"
 msgid "Primary key of the document type to add to the smart link."
 msgstr "Первинний ключ типу документа, який додається до смарт посилання."
 
-#: serializers.py:50 serializers.py:59
+#: serializers.py:51 serializers.py:61
 msgid "Document type ID"
 msgstr "ID типу документа"
 
-#: serializers.py:58
+#: serializers.py:59
 msgid "Primary key of the document type to remove from the smart link."
 msgstr ""
 "Первинний ключ типу документа, який потрібно видалити зі смарт-посилання."
 
-#: serializers.py:66
+#: serializers.py:68
 msgid "Conditions URL"
 msgstr "Умови URL"
 
-#: serializers.py:70
+#: serializers.py:72
 msgid "Document types URL"
 msgstr "URL типів документів "
 
-#: serializers.py:74
+#: serializers.py:77
 msgid "Document types add URL"
 msgstr "Додати URL типів документа"
 
-#: serializers.py:78
+#: serializers.py:82
 msgid "Document types remove URL"
 msgstr "Видалити URL типів документа"
 
-#: serializers.py:105
+#: serializers.py:109
 msgid "Resolved smart link URL"
 msgstr "Вирішена URL смарт посилання"
 
-#: serializers.py:126
+#: serializers.py:130
 msgid "Documents URL"
 msgstr "URL-адреса документів"
 
@@ -310,7 +310,7 @@ msgstr "Умови для смарт посилання: %s"
 #: views/smart_link_condition_views.py:75
 #, python-format
 msgid "Add new conditions to smart link: \"%s\""
-msgstr "Додайте нові умови до смарт посилання: \"%s\""
+msgstr "Додати нові умови до смарт посилання: \"%s\""
 
 #: views/smart_link_condition_views.py:109
 #, python-format
@@ -319,7 +319,7 @@ msgstr "Видалити умову смарт посилання: \"%s\"?"
 
 #: views/smart_link_condition_views.py:136
 msgid "Edit smart link condition"
-msgstr "Редагувати умови смарт посилання"
+msgstr "Редагувати умову смарт посилання"
 
 #: views/smart_link_views.py:74
 #, python-format

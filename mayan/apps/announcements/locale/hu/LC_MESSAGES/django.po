@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:46
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
+#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:48
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:121
 msgid "Announcements"
 msgstr "Közlemények"
 
@@ -50,43 +50,43 @@ msgstr "Törlés"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: models.py:20
+#: models.py:22
 msgid "Short description of this announcement."
 msgstr "A közlemény rövid leírása."
 
-#: models.py:21
+#: models.py:23
 msgid "Label"
 msgstr "Cimke"
 
-#: models.py:24
+#: models.py:26
 msgid "The actual text to be displayed."
 msgstr "A ténylegesen megjelenítendő szöveg."
 
-#: models.py:25
+#: models.py:27
 msgid "Text"
 msgstr "Szöveg"
 
-#: models.py:28
+#: models.py:30
 msgid "Enabled"
 msgstr "Engedélyezett"
 
-#: models.py:32
+#: models.py:34
 msgid "Date and time after which this announcement will be displayed."
 msgstr "Dátum és idő, amely után ez a közlemény megjelenik."
 
-#: models.py:33
+#: models.py:35
 msgid "Start date time"
 msgstr "Kezdés dátuma és ideje"
 
-#: models.py:37
+#: models.py:39
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "Dátum és idő, ameddig ez a közlemény megjelenik."
 
-#: models.py:38
+#: models.py:40
 msgid "End date time"
 msgstr "Befejezés dátuma és ideje"
 
-#: models.py:45
+#: models.py:47
 msgid "Announcement"
 msgstr "Közlemény"
 
@@ -110,47 +110,47 @@ msgstr "Közlemények megtekintése"
 msgid "URL"
 msgstr "URL"
 
-#: views.py:45
+#: views.py:43
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
 msgstr "Hiba a \"%(instance)s\" közlemény törlésekor; %(exception)s"
 
-#: views.py:54
+#: views.py:52
 #, python-format
 msgid "%(count)d announcements deleted successfully."
 msgstr "%(count)d közlemény sikeresen törölve."
 
-#: views.py:57
+#: views.py:55
 #, python-format
 msgid "Announcement \"%(object)s\" deleted successfully."
 msgstr "A \"%(object)s\" közlemény sikeresen törölve."
 
-#: views.py:60
+#: views.py:58
 #, python-format
 msgid "%(count)d announcement deleted successfully."
 msgstr "%(count)d közlemény sikeresen törölve."
 
-#: views.py:62
+#: views.py:60
 #, python-format
 msgid "Delete the %(count)d selected announcements."
 msgstr "%(count)d kiválasztott közlemény törlése."
 
-#: views.py:63
+#: views.py:61
 #, python-format
 msgid "Delete announcement: %(object)s."
 msgstr "Közlemény törlése: %(object)s ."
 
-#: views.py:64
+#: views.py:62
 #, python-format
 msgid "Delete the %(count)d selected announcement."
 msgstr "%(count)d kiválasztott közlemény törlése."
 
-#: views.py:98
+#: views.py:94
 #, python-format
 msgid "Edit announcement: %s"
 msgstr "Közlemény szerkesztése: %s"
 
-#: views.py:121
+#: views.py:115
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
 "convey information about your organization, announcements or usage "
@@ -160,6 +160,6 @@ msgstr ""
 "segítségével információkat közölhet szervezetéről, bejelentéseket vagy "
 "használati irányelveket a felhasználók számára."
 
-#: views.py:126
+#: views.py:120
 msgid "No announcements available"
 msgstr "Nem állnak rendelkezésre közlemények"

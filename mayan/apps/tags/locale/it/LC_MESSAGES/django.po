@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
+# Roberto Rosario, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Giovanni Tricarico <gtricarico92@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:44 apps.py:131 apps.py:135 apps.py:139 apps.py:144 apps.py:148
-#: events.py:6 forms.py:27 links.py:27 menus.py:14 models.py:35
-#: permissions.py:6 views.py:187 workflow_actions.py:40 workflow_actions.py:54
+#: events.py:6 forms.py:27 links.py:27 menus.py:14 models.py:37
+#: permissions.py:6 views.py:183 workflow_actions.py:40 workflow_actions.py:54
 msgid "Tags"
 msgstr "Etichette"
 
-#: apps.py:169 models.py:29
+#: apps.py:169 models.py:31
 msgid "Documents"
 msgstr "Documenti"
 
@@ -88,31 +88,31 @@ msgstr "get_tags()"
 msgid "Preview"
 msgstr "Anteprima "
 
-#: models.py:21
+#: models.py:23
 msgid "A short text used as the tag name."
 msgstr "Un breve testo utilizzato come nome del tag."
 
-#: models.py:22
+#: models.py:24
 msgid "Label"
 msgstr "Etichetta"
 
-#: models.py:25
+#: models.py:27
 msgid "The RGB color values for the tag."
 msgstr "I valori di colore RGB per il tag."
 
-#: models.py:26
+#: models.py:28
 msgid "Color"
 msgstr "Colore"
 
-#: models.py:34
+#: models.py:36
 msgid "Tag"
 msgstr "Etichetta "
 
-#: models.py:63
+#: models.py:65
 msgid "Document tag"
 msgstr "Etichetta documento "
 
-#: models.py:64
+#: models.py:66
 msgid "Document tags"
 msgstr "Etichette documento "
 
@@ -141,34 +141,42 @@ msgid "Remove tags from documents"
 msgstr "Rimuovi  etichetta dal documento"
 
 #: search.py:11
-msgid "Tag label"
-msgstr ""
-
-#: search.py:14
 msgid "Tag color"
 msgstr ""
 
-#: search.py:28
+#: search.py:14
+msgid "The database ID of the tag."
+msgstr ""
+
+#: search.py:15 serializers.py:34 serializers.py:43
+msgid "Tag ID"
+msgstr ""
+
+#: search.py:18
+msgid "Tag label"
+msgstr ""
+
+#: search.py:32
 msgid "Document type"
 msgstr "Tipo documento "
 
-#: search.py:31
+#: search.py:35
 msgid "Document label"
 msgstr "Etichetta del documento"
 
-#: search.py:34
+#: search.py:38
 msgid "Document description"
 msgstr "Descrizione del documento"
 
-#: search.py:37
+#: search.py:41
 msgid "Document UUID"
 msgstr "UUID del documento"
 
-#: search.py:41
+#: search.py:45
 msgid "Document file checksum"
 msgstr "Checksum dei file dei documento"
 
-#: search.py:44
+#: search.py:48
 msgid "Document file MIME type"
 msgstr "Tipo MIME di file di documento"
 
@@ -182,10 +190,6 @@ msgstr "URL"
 
 #: serializers.py:33
 msgid "Primary key of the tag to add to the document."
-msgstr ""
-
-#: serializers.py:34 serializers.py:43
-msgid "Tag ID"
 msgstr ""
 
 #: serializers.py:42
@@ -222,7 +226,7 @@ msgstr ""
 msgid "Attach tags to %(count)d document."
 msgstr ""
 
-#: views.py:69 wizard_steps.py:80
+#: views.py:69 wizard_steps.py:82
 msgid "Tags to be attached."
 msgstr "Tag che saranno allegati."
 
@@ -230,51 +234,51 @@ msgstr "Tag che saranno allegati."
 msgid "Create tag"
 msgstr "Crea etichetta "
 
-#: views.py:123
+#: views.py:121
 #, python-format
 msgid "Error deleting tag \"%(instance)s\"; %(exception)s"
 msgstr ""
 
-#: views.py:129
+#: views.py:127
 #, python-format
 msgid "%(count)d tags deleted successfully."
 msgstr ""
 
-#: views.py:131
+#: views.py:129
 #, python-format
 msgid "Tag \"%(object)s\" deleted successfully."
 msgstr ""
 
-#: views.py:134
+#: views.py:132
 #, python-format
 msgid "%(count)d tag deleted successfully."
 msgstr ""
 
-#: views.py:136
+#: views.py:134
 #, python-format
 msgid "Delete the %(count)d selected tags"
 msgstr ""
 
-#: views.py:137
+#: views.py:135
 #, python-format
 msgid "Delete tag: %(object)s"
 msgstr ""
 
-#: views.py:138
+#: views.py:136
 #, python-format
 msgid "Delete the %(count)d selected tag"
 msgstr ""
 
-#: views.py:144
+#: views.py:142
 msgid "Will be removed from all documents."
 msgstr "Sarà rimossa da tutti i documenti"
 
-#: views.py:160
+#: views.py:158
 #, python-format
 msgid "Edit tag: %s"
 msgstr "Modifica etichetta: %s"
 
-#: views.py:183
+#: views.py:179
 msgid ""
 "Tags are color coded properties that can be attached or removed from "
 "documents."
@@ -282,59 +286,59 @@ msgstr ""
 "I tag sono proprietà codificate a colori che possono essere allegate o "
 "rimosse dai documenti."
 
-#: views.py:186
+#: views.py:182
 msgid "No tags available"
 msgstr "Nessun tag disponibile"
 
-#: views.py:220
+#: views.py:216
 #, python-format
 msgid "Documents with the tag: %s"
 msgstr "Documenti con l'etichetta: %s"
 
-#: views.py:249
+#: views.py:245
 msgid "Document has no tags attached"
 msgstr "Il documento non ha tag allegati"
 
-#: views.py:253
+#: views.py:249
 #, python-format
 msgid "Tags for document: %s"
 msgstr "Etichette per il documento: %s"
 
-#: views.py:271
+#: views.py:267
 #, python-format
 msgid "Tags removed from %(count)d documents successfully."
 msgstr ""
 
-#: views.py:274
+#: views.py:270
 #, python-format
 msgid "Tags removed from document \"%(object)s\" successfully."
 msgstr ""
 
-#: views.py:277
+#: views.py:273
 #, python-format
 msgid "Tags removed from %(count)d document successfully."
 msgstr ""
 
-#: views.py:279
+#: views.py:275
 #, python-format
 msgid "Remove tags from %(count)d documents."
 msgstr ""
 
-#: views.py:280
+#: views.py:276
 #, python-format
 msgid "Remove tags from document: %(object)s"
 msgstr ""
 
-#: views.py:281
+#: views.py:277
 #, python-format
 msgid "Remove tags from %(count)d document."
 msgstr ""
 
-#: views.py:298
+#: views.py:294
 msgid "Tags to be removed."
 msgstr "Tag da rimuovere"
 
-#: wizard_steps.py:19
+#: wizard_steps.py:21
 msgid "Select tags"
 msgstr "Seleziona i tag"
 

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -24,23 +24,32 @@ msgstr ""
 msgid "Databases"
 msgstr "Adatbázisok"
 
+#: class_mixins.py:34
+msgid "The object will be executed, depending on the condition return value."
+msgstr ""
+"Az objektum a feltétel visszatérési értékétől függően végrehajtásra kerül."
+
+#: class_mixins.py:37
+msgid "Has a condition?"
+msgstr "Van feltétele?"
+
 #: classes.py:82
 msgid "Model fields"
 msgstr "Modellmezők"
 
 #: classes.py:130
 msgid "Model related fields"
-msgstr "Modellhez kapcsolódó mezők"
+msgstr ""
 
 #: classes.py:135
 msgid "Model properties"
-msgstr "Modell tulajdonságai"
+msgstr ""
 
 #: classes.py:140
 msgid "Model reverse fields"
 msgstr "Modell fordított mezők"
 
-#: literals.py:10
+#: literals.py:12
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -48,7 +57,7 @@ msgstr ""
 "Az adatbázis-háttérrendszer SQLite használatára van beállítva. Az SQLite-t "
 "csak fejlesztésre és tesztelésre szabad használni, élesre nem."
 
-#: model_mixins.py:26
+#: model_mixins.py:39
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -60,18 +69,9 @@ msgstr ""
 "logikai Nincs vagy üres karakterláncot ('') adják vissza, logikai hamisnak, "
 "minden más értéket logikai igaznak tekintenek."
 
-#: model_mixins.py:31
+#: model_mixins.py:47
 msgid "Condition"
 msgstr "Feltétel"
-
-#: model_mixins.py:52
-msgid "The object will be executed, depending on the condition return value."
-msgstr ""
-"Az objektum a feltétel visszatérési értékétől függően végrehajtásra kerül."
-
-#: model_mixins.py:55
-msgid "Has a condition?"
-msgstr "Van feltétele?"
 
 #: templates/databases/app/viewport.html:11
 msgid "Warning"

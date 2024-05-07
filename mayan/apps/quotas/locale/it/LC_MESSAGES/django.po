@@ -6,16 +6,16 @@
 # Translators:
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
-# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
+# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
-#: views.py:150
+#: views.py:145
 msgid "Quotas"
 msgstr "Quote"
 
@@ -229,25 +229,25 @@ msgstr "Quota di dimensione documento superata."
 msgid "New quota backend selection"
 msgstr "Nuova selezione del backend di quota"
 
-#: views.py:65
+#: views.py:64
 #, python-format
 msgid "Create a \"%s\" quota"
 msgstr "Crea una quota \"%s\""
 
-#: views.py:98
+#: views.py:95
 #, python-format
 msgid "Delete quota: %s"
 msgstr "Elimina quota: %s"
 
-#: views.py:114
+#: views.py:111
 #, python-format
 msgid "Edit quota: %s"
 msgstr "Modifica quota: %s"
 
-#: views.py:147
+#: views.py:142
 msgid "Quotas restrict usage of system resources. "
 msgstr "Le quote limitano l'utilizzo delle risorse di sistema."
 
-#: views.py:149
+#: views.py:144
 msgid "No quotas available"
 msgstr "Nessuna quota disponibile"

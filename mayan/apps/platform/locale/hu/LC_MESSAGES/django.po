@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -24,37 +24,37 @@ msgstr ""
 msgid "Platform"
 msgstr "Platform"
 
-#: classes.py:241
+#: classes.py:239
 msgid "Template for entrypoint.sh file inside a Docker image."
-msgstr "Sablon az enterpoint.sh fájlhoz egy Docker-képben."
+msgstr ""
 
-#: classes.py:256
+#: classes.py:254
 msgid "Template that generates the Docker Compose file."
-msgstr "Sablon, amely létrehozza a Docker Compose fájlt."
+msgstr ""
 
-#: classes.py:416
+#: classes.py:419
 msgid "Template for Supervisord inside a Docker image."
 msgstr "Sablon a Supervisord számára egy Docker-képen belül."
 
-#: classes.py:434
+#: classes.py:437
 msgid "Template that generates a Dockerfile file."
-msgstr "Dockerfile-fájlt létrehozó sablon."
+msgstr ""
 
-#: classes.py:449
+#: classes.py:452
 msgid "Template that generates a GitLab CI config file."
-msgstr "GitLab CI konfigurációs fájlt létrehozó sablon."
+msgstr ""
 
-#: classes.py:598
+#: classes.py:601
 msgid "Template for Supervisord."
 msgstr "Sablon a Supervisord számára."
 
-#: classes.py:672
+#: classes.py:675
 msgid "Template showing the queues of a worker."
 msgstr "Egy worker sorait bemutató sablon."
 
 #: client_backends.py:34
 msgid "Sentry test error"
-msgstr "Sentry teszt hiba"
+msgstr ""
 
 #: permissions.py:10
 msgid "Trigger tests"
@@ -65,8 +65,6 @@ msgid ""
 "List of client backends to launch after startup. Use full dotted path to the"
 " client backend classes."
 msgstr ""
-"Az indítás után elindítandó kliens háttérprogramok listája. Használja a "
-"teljes pontozott elérési utat az ügyfél háttérosztályaihoz."
 
 #: settings.py:24
 msgid ""

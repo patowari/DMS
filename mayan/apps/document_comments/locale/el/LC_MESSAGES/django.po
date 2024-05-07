@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Hmayag Antonian <hmayag@freemail.gr>, 2024
 # pyrotech <anastasios@tutamail.com>, 2024
+# Hmayag Antonian <hmayag@freemail.gr>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,27 +49,27 @@ msgstr "Διαγραφή"
 msgid "Edit"
 msgstr "Τροποποίηση"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:8
+#: links.py:31 models.py:48 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Σχόλια"
 
-#: model_mixins.py:10 models.py:33
+#: model_mixins.py:10 models.py:34
 msgid "User"
 msgstr "Χρήστης"
 
-#: models.py:29
+#: models.py:30
 msgid "Document"
 msgstr "Έγγραφο"
 
-#: models.py:36
+#: models.py:37
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:40
+#: models.py:41
 msgid "Date time submitted"
 msgstr "Ημερομηνία και ώρα υποβολής"
 
-#: models.py:46
+#: models.py:47
 msgid "Comment"
 msgstr "Σχόλιο"
 
@@ -93,27 +93,27 @@ msgstr "Προβολή σχολίων"
 msgid "URL"
 msgstr "Διεύθυνση URL"
 
-#: views.py:37
+#: views.py:38
 #, python-format
 msgid "Add comment to document: %s"
 msgstr "Προσθήκη σχολίου στο έγγραφο: %s"
 
-#: views.py:67
+#: views.py:69
 #, python-format
 msgid "Delete comment: %s?"
 msgstr "Διαγραφή σχολίου: %s"
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid "Details for comment: %s?"
 msgstr "Λεπτομέρειες για σχόλιο: %s;"
 
-#: views.py:119
+#: views.py:118
 #, python-format
 msgid "Edit comment: %s?"
 msgstr "Τροποίηση σχολίου: %s;"
 
-#: views.py:158
+#: views.py:154
 msgid ""
 "Document comments are timestamped text entries from users. They are great "
 "for collaboration."
@@ -121,11 +121,11 @@ msgstr ""
 "Τα σχόλια εγγράφων είναι καταχωρίσεις κειμένου χρηστών με χρονοσφραγίδα. "
 "Είναι εξαιρετικές για συνεργασία."
 
-#: views.py:161
+#: views.py:157
 msgid "There are no comments"
 msgstr "Δεν υπάρχουν σχόλια"
 
-#: views.py:163
+#: views.py:160
 #, python-format
 msgid "Comments for document: %s"
 msgstr "Σχόλια για το έγγραφο: %s"

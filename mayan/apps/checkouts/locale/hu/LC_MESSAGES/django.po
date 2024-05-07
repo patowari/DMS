@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
+# Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Dokumentum már lefoglalva"
 msgid "Document status"
 msgstr "Dokumentum állapot"
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Felhasználó"
 
@@ -72,7 +72,7 @@ msgstr "Lefoglalás lejárati ideje"
 
 #: forms.py:51
 msgid "New files allowed?"
-msgstr "Új fájlok engedélyezettek?"
+msgstr ""
 
 #: forms.py:52
 msgid "Yes"
@@ -118,7 +118,7 @@ msgstr "Lefoglalás dátuma és ideje"
 msgid "Checkout expiration"
 msgstr "Lefoglalás lejárati ideje"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr "Dokumentum"
 
@@ -130,27 +130,27 @@ msgstr "Lefoglalás dátuma és ideje"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "Dokumentum lefoglalt állapotban tartásának ideje percekben"
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "Lefoglalás lejárati dátuma és ideje"
 
-#: models.py:50
-msgid "Do not allow new file of this document to be uploaded."
-msgstr "Ne engedélyezze a dokumentum új fájljának feltöltését."
-
 #: models.py:51
-msgid "Block new file upload"
-msgstr "Új fájl feltöltésének blokkolása"
+msgid "Do not allow new file of this document to be uploaded."
+msgstr ""
 
-#: models.py:59 permissions.py:6
+#: models.py:52
+msgid "Block new file upload"
+msgstr ""
+
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "Dokumentum lefoglalás"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "Dokumentum lefoglalások"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "A lefoglalás lejárati dátumának és idejének a jövőben kell lennie."
 
@@ -178,15 +178,15 @@ msgstr "Lefoglalások időszaka"
 msgid "Check expired checkouts"
 msgstr "Lejárt lefoglalások ellenőrzése"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "A lefoglalni kívánt dokumentum elsődleges kulcsa."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr "Dokumentumazonosító"
 

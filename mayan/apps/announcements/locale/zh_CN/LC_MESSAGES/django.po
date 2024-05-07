@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # dave cheng, 2024
-# Ford Guo <agile.guo@gmail.com>, 2024
 # Leon Chu, 2024
+# Roberto Rosario, 2024
+# Ford Guo <agile.guo@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Leon Chu, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Ford Guo <agile.guo@gmail.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,8 +23,8 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:46
-#: permissions.py:6 templates/announcements/announcements.html:8 views.py:127
+#: apps.py:39 events.py:6 links.py:37 links.py:46 models.py:48
+#: permissions.py:6 templates/announcements/announcements.html:8 views.py:121
 msgid "Announcements"
 msgstr "公告"
 
@@ -52,43 +52,43 @@ msgstr "删除"
 msgid "Edit"
 msgstr "编辑"
 
-#: models.py:20
+#: models.py:22
 msgid "Short description of this announcement."
 msgstr "簡述此公告內容"
 
-#: models.py:21
+#: models.py:23
 msgid "Label"
 msgstr "标签"
 
-#: models.py:24
+#: models.py:26
 msgid "The actual text to be displayed."
 msgstr "實際呈現的文字"
 
-#: models.py:25
+#: models.py:27
 msgid "Text"
 msgstr "文字"
 
-#: models.py:28
+#: models.py:30
 msgid "Enabled"
 msgstr "啟用"
 
-#: models.py:32
+#: models.py:34
 msgid "Date and time after which this announcement will be displayed."
 msgstr "此公告將被公布的日期˙與時間"
 
-#: models.py:33
+#: models.py:35
 msgid "Start date time"
 msgstr "開始日期與時間"
 
-#: models.py:37
+#: models.py:39
 msgid "Date and time until when this announcement is to be displayed."
 msgstr "此公告將被終止公布的日期與時間"
 
-#: models.py:38
+#: models.py:40
 msgid "End date time"
 msgstr "結束的日期與時間"
 
-#: models.py:45
+#: models.py:47
 msgid "Announcement"
 msgstr "公告"
 
@@ -112,53 +112,53 @@ msgstr "預覽公告"
 msgid "URL"
 msgstr "网址"
 
-#: views.py:45
+#: views.py:43
 #, python-format
 msgid "Error deleting announcement \"%(instance)s\"; %(exception)s"
 msgstr "公告刪除錯誤\"%(instance)s\";%(exception)s"
 
-#: views.py:54
+#: views.py:52
 #, python-format
 msgid "%(count)d announcements deleted successfully."
 msgstr "%(count)d公告刪除成功"
 
-#: views.py:57
+#: views.py:55
 #, python-format
 msgid "Announcement \"%(object)s\" deleted successfully."
 msgstr "公告 \"%(object)s\" 刪除成功"
 
-#: views.py:60
+#: views.py:58
 #, python-format
 msgid "%(count)d announcement deleted successfully."
 msgstr "%(count)d項公告刪除成功"
 
-#: views.py:62
+#: views.py:60
 #, python-format
 msgid "Delete the %(count)d selected announcements."
 msgstr "刪除 %(count)d已選取之公告"
 
-#: views.py:63
+#: views.py:61
 #, python-format
 msgid "Delete announcement: %(object)s."
 msgstr "刪除公告: %(object)s"
 
-#: views.py:64
+#: views.py:62
 #, python-format
 msgid "Delete the %(count)d selected announcement."
 msgstr "刪除 %(count)d 已選取之公告"
 
-#: views.py:98
+#: views.py:94
 #, python-format
 msgid "Edit announcement: %s"
 msgstr "編輯公告: %s"
 
-#: views.py:121
+#: views.py:115
 msgid ""
 "Announcements are displayed in the login view. You can use announcements to "
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
 
-#: views.py:126
+#: views.py:120
 msgid "No announcements available"
 msgstr "無可用之公告"

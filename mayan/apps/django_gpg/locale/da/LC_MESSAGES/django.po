@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mads L. Nielsen <sirlundgaard@gmail.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr ""
 msgid "Upload key"
 msgstr ""
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr ""
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr ""
 
@@ -280,23 +280,23 @@ msgstr ""
 msgid "Upload new key"
 msgstr ""
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
 msgstr ""
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr ""
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr ""

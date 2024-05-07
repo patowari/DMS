@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
-# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
-# Roberto Rosario, 2024
 # Giovanni Tricarico <gtricarico92@gmail.com>, 2024
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
+# Roberto Rosario, 2024
+# Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Daniele Bortoluzzi <daniele@elkos.it>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
 "MIME-Version: 1.0\n"
@@ -25,13 +25,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Cartelle"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Documenti"
 
@@ -103,19 +103,19 @@ msgstr "Il percorso della cartella incluse le cartelle padre."
 msgid "Full path"
 msgstr "Percorso completo"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Un breve testo utilizzato per identificare la cartella."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Etichetta"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Cartella"
 
@@ -123,16 +123,16 @@ msgstr "Cartella"
 msgid "Parent and Label"
 msgstr "Cartella padre ed etichetta"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s chiamato %(field_labels)s esiste già."
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Cartella documenti"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Cartelle documenti"
 
@@ -160,35 +160,43 @@ msgstr "Rimuovere i documenti dalle cartelle"
 msgid "View cabinets"
 msgstr "Visualizza cartelle"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Tipo documento "
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Etichetta del documento"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Descrizione del documento"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "UUID del documento"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Checksum dei file dei documento"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "Tipo MIME di file di documento"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Elenco delle cartelle figlie."
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr ""
 
@@ -218,11 +226,11 @@ msgstr "URL"
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr ""
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
 
@@ -356,11 +364,11 @@ msgstr "Rimuovi %(count)d documento dalle cartelle."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Cartelle dalle quali verranno rimossi i documenti selezionati."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Seleziona cartelle"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Cartelle alle quali verrà aggiunto il documento."
 

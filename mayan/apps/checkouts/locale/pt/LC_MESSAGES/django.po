@@ -5,18 +5,18 @@
 # Translators:
 # Translators:
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Vítor Figueiró <vfigueiro@gmail.com>, 2024
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
+# Vítor Figueiró <vfigueiro@gmail.com>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Márcia Ferreira, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Documento já foi retirado"
 msgid "Document status"
 msgstr "Status do documento"
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Utilizador"
 
@@ -121,7 +121,7 @@ msgstr "Data e hora de requisição"
 msgid "Checkout expiration"
 msgstr "Expiração de requisição"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr "Documento"
 
@@ -133,27 +133,27 @@ msgstr "Data e hora de requisição"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "Quantidade de tempo, em minutos, para manter o documento requisitado."
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "Data e hora de expiração de requisição "
 
-#: models.py:50
+#: models.py:51
 msgid "Do not allow new file of this document to be uploaded."
 msgstr "Não permitir que nova versão deste documento seja submetida."
 
-#: models.py:51
+#: models.py:52
 msgid "Block new file upload"
 msgstr "Bloquear submissão de novos ficheiros."
 
-#: models.py:59 permissions.py:6
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "Requisição de documento"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "Retiradas de documentos"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "A data de expiração de requisição deverá ser no futuro."
 
@@ -181,15 +181,15 @@ msgstr "Requisições periódicas"
 msgid "Check expired checkouts"
 msgstr "Verificar requisições expiradas"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "Chave primária do documento para ser requisitada."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr ""
 

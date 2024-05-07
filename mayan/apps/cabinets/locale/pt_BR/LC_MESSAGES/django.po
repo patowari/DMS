@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# Márcia Ferreira, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Márcia Ferreira, 2024
 # Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -26,13 +26,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Pastas"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Documentos"
 
@@ -104,19 +104,19 @@ msgstr "O caminho para a pasta, incluindo todos os ancestrais."
 msgid "Full path"
 msgstr "Caminho completo"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Um texto curto usado para identificar a pasta."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Rótulo"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Pasta"
 
@@ -124,16 +124,16 @@ msgstr "Pasta"
 msgid "Parent and Label"
 msgstr "Pai e Rótulo"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(model_name)s com estes %(field_labels)s já existem. "
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Pasta de documentos"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Pastas de documentos"
 
@@ -161,35 +161,43 @@ msgstr "Excluir documentos das pastas"
 msgid "View cabinets"
 msgstr "Ver pastas"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Tipo de documento"
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Rótulo do documento"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Descrição do documento"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "UUID do documento"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Soma de controlo do ficheiro do documento"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "Tipo de versão de documento MIME"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Lista de pastas filhas"
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr ""
 
@@ -219,11 +227,11 @@ msgstr "URL"
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr ""
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
 
@@ -358,11 +366,11 @@ msgstr "Remover %(count)d documento de pastas."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Pastas das quais os documentos selecionados serão removidos."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Selecionar pastas"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Pastas às quais o documento será adicionado."
 

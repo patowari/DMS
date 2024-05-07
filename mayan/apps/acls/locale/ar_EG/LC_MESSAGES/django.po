@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Ali <alimahwer@yahoo.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
-# ali ahmed, 2024
+# Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024
+# ali ahmed, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: ali ahmed, 2024\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,7 @@ msgstr "تم حذف قائمة التحكم فى الدخول"
 msgid "ACL edited"
 msgstr "تم تحرير قائمة التحكم فى الدخول"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "دور"
 
@@ -68,7 +68,7 @@ msgstr "قائمة تحكم في الدخول جديدة "
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "أذونات"
 
@@ -90,27 +90,27 @@ msgstr "وصول غير كافٍ لـ: %s"
 msgid "Permission count"
 msgstr "عدد الأذونات"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "معرف الكائن"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "الدور الذي يتم منح الوصول إليه للكائن المحدد."
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "بوابة الدخول"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "بوابات الدخول"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "إذن الدور \"%(role)s\" لـ \"%(object)s\""
@@ -174,11 +174,11 @@ msgstr "قوائم جديدة للتحكم في الوصول لـ: %s"
 msgid "Delete ACL: %s"
 msgstr "حذف قائمة التحكم في الدخول : %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "لا توجد قوائم تحكم بالدخول لهذا الكائن"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -188,25 +188,25 @@ msgstr ""
 "إلى الكائنات في النظام. تسمح قوائم التحكم في الدخول بمنح إذن لدور ما ولكن "
 "فقط لكائن معين أو مجموعة كائنات."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr " المستخدمين والصلاحيات: %s"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "الأذونات الممنوحة"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "الأذونات المتاحة"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "إذن الدور \"%(role)s\" ل\"%(object)s\""
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -217,11 +217,11 @@ msgstr ""
 "يمكن إزالتها من هذا العرض. يجب إزالة الصلاحيات الموروثة من قائمة التحكم في "
 "الوصول للكائن الأصلي أو من دورها عبر قائمة الإعداد."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "لا توجد قوائم بحق الوصول ACL"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "القوائم الشاملة لحق الوصول"
 

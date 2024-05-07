@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
-#: views.py:150
+#: views.py:145
 msgid "Quotas"
 msgstr ""
 
@@ -226,25 +226,25 @@ msgstr ""
 msgid "New quota backend selection"
 msgstr ""
 
-#: views.py:65
+#: views.py:64
 #, python-format
 msgid "Create a \"%s\" quota"
 msgstr ""
 
-#: views.py:98
+#: views.py:95
 #, python-format
 msgid "Delete quota: %s"
 msgstr ""
 
-#: views.py:114
+#: views.py:111
 #, python-format
 msgid "Edit quota: %s"
 msgstr ""
 
-#: views.py:147
+#: views.py:142
 msgid "Quotas restrict usage of system resources. "
 msgstr ""
 
-#: views.py:149
+#: views.py:144
 msgid "No quotas available"
 msgstr ""

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:24 permissions.py:6 settings.py:12
+#: apps.py:23 permissions.py:6 settings.py:14
 msgid "Document downloads"
 msgstr "Descargas de documentos"
 
@@ -28,7 +28,7 @@ msgstr "Descargas de documentos"
 msgid "Document_file_bundle.zip"
 msgstr "Paquete_de_archivos_de_documentos.zip"
 
-#: classes.py:52
+#: classes.py:53
 msgid "Compressed document files"
 msgstr "Archivos de documentos comprimidos"
 
@@ -64,7 +64,7 @@ msgstr "Descargar archivos"
 msgid "Quick download"
 msgstr "Descarga rápida"
 
-#: literals.py:4
+#: literals.py:7
 msgid ""
 "The document files have been compressed and are available for download using"
 " the link: {{ download_url }} or from the downloads area ({{ "
@@ -74,7 +74,7 @@ msgstr ""
 "descargar usando el enlace: {{ download_url }} o desde el área de descargas "
 "({{ download_list_url }})."
 
-#: literals.py:10
+#: literals.py:13
 msgid "Document files ready for download."
 msgstr "Archivos de documentos listos para descargar."
 
@@ -86,7 +86,16 @@ msgstr "Descargar archivos de documentos"
 msgid "Generate a compressed document file bundle"
 msgstr "Generar un paquete de archivos de documentos comprimidos"
 
-#: settings.py:18
+#: settings.py:21
+msgid "Path to the download subclass to use when downloading document files."
+msgstr ""
+
+#: settings.py:29
+msgid ""
+"Arguments to pass to the DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
+msgstr ""
+
+#: settings.py:36
 msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
@@ -94,7 +103,7 @@ msgstr ""
 "Plantilla para el texto del cuerpo del mensaje de descarga del documento. "
 "Puede incluir HTML. Variables disponibles: {}"
 
-#: settings.py:27
+#: settings.py:45
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
@@ -102,7 +111,7 @@ msgstr ""
 "Plantilla para la línea de asunto del mensaje de descarga del documento. No "
 "se puede incluir HTML. Variables disponibles: {}"
 
-#: views.py:24
+#: views.py:32
 #, python-format
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
@@ -110,37 +119,37 @@ msgstr ""
 "No se puede poner en cola el documento \"%(instance)s\" para descarga de "
 "archivo; %(exception)s."
 
-#: views.py:33
+#: views.py:41
 #, python-format
 msgid "%(count)d document files queued for download."
 msgstr "%(count)d archivos de documentos en cola para descargar."
 
-#: views.py:36
+#: views.py:44
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
 msgstr "Archivo de documento \"%(object)s\" en cola para descargar."
 
-#: views.py:39
+#: views.py:47
 #, python-format
 msgid "%(count)d document file queued for download."
 msgstr "%(count)d archivo de documento en cola para descargar."
 
-#: views.py:41
+#: views.py:49
 #, python-format
 msgid "Download files of %(count)d documents"
 msgstr "Descargar archivos de %(count)d documentos"
 
-#: views.py:42
+#: views.py:50
 #, python-format
 msgid "Download files of document: %(object)s"
 msgstr "Descargar archivos del documento: %(object)s"
 
-#: views.py:43
+#: views.py:51
 #, python-format
 msgid "Download files of %(count)d document"
 msgstr "Descargar archivos de %(count)d documento"
 
-#: views.py:50
+#: views.py:58
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."

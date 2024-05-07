@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Uzunluk"
 msgid "User ID"
 msgstr "Kullanıcı ID"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU gizlilik koruması - bir PGP uygulaması."
 
@@ -115,11 +115,11 @@ msgstr "İçeri Al"
 msgid "Upload key"
 msgstr "Anahtar yükle"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
 msgstr "Özel anahtarlar"
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
 msgstr "Genel anahtarlar"
 
@@ -285,7 +285,7 @@ msgstr "Anahtar sorgulama sunucusu"
 msgid "Upload new key"
 msgstr "Yeni anahtar yükle"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
@@ -294,11 +294,11 @@ msgstr ""
 "yalnızca kullanıcı tarafından yüklenebilir. Özel ve genel anahtarları "
 "yükleme görünümü aynıdır."
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr "Özel anahtar yok"
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
@@ -308,6 +308,6 @@ msgstr ""
 "anahtarlar, kullanıcı tarafından yüklenebilir veya anahtar sunucularından "
 "indirilebilir. Özel ve genel anahtarları yükleme görünümü aynıdır."
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr "Genel anahtar yok"

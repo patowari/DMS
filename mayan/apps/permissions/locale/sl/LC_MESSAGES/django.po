@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:45 events.py:6 models.py:31 models.py:88 permissions.py:6
+#: apps.py:43 events.py:6 models.py:33 models.py:90 permissions.py:6
 msgid "Permissions"
 msgstr "Pravice"
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Role edited"
 msgstr ""
 
-#: links.py:21 links.py:51 links.py:63 models.py:42 views.py:121
+#: links.py:21 links.py:51 links.py:63 models.py:44 views.py:121
 msgid "Roles"
 msgstr "Vloge"
 
@@ -60,7 +60,7 @@ msgstr "Izbriši"
 msgid "Edit"
 msgstr ""
 
-#: links.py:47 models.py:34
+#: links.py:47 models.py:36
 msgid "Groups"
 msgstr "Skupine"
 
@@ -82,27 +82,27 @@ msgstr ""
 msgid "Unknown or obsolete permission namespace: %s"
 msgstr ""
 
-#: models.py:26
+#: models.py:28
 msgid "A short text describing the role."
 msgstr ""
 
-#: models.py:27 search.py:14 serializers.py:20
+#: models.py:29 search.py:14 serializers.py:20
 msgid "Label"
 msgstr "Oznaka"
 
-#: models.py:41
+#: models.py:43
 msgid "Role"
 msgstr "Vloga"
 
-#: models.py:76 serializers.py:14
+#: models.py:78 serializers.py:14
 msgid "Namespace"
 msgstr "Imenski prostor"
 
-#: models.py:79
+#: models.py:81
 msgid "Name"
 msgstr "Ime"
 
-#: models.py:87
+#: models.py:89
 msgid "Permission"
 msgstr ""
 

@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Alex Chigrin <chalex84@mail.ru>, 2024
 # Panasoft, 2024
-# Oleg Sizov <olegsm35@gmail.com>, 2024
-# Daler Abdulloev <abdulloevdaler@gmail.com>, 2024
 # Sergey Glita <gsv70@mail.ru>, 2024
+# Alex Chigrin <chalex84@mail.ru>, 2024
+# Daler Abdulloev <abdulloevdaler@gmail.com>, 2024
+# Oleg Sizov <olegsm35@gmail.com>, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -26,13 +26,13 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Кабинеты"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Документы"
 
@@ -104,19 +104,19 @@ msgstr "Путь к кабинету включая всех предков."
 msgid "Full path"
 msgstr "Полный путь"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr ""
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Краткое описание кабинета."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Заголовок"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Кабинет"
 
@@ -124,16 +124,16 @@ msgstr "Кабинет"
 msgid "Parent and Label"
 msgstr "Родитель и заголовок"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "\"%(model_name)s\" с ярлыком \"%(field_labels)s\" уже существует."
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Кабинет документа"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Кабинет документов"
 
@@ -161,35 +161,43 @@ msgstr "Удалить документы из кабинетов"
 msgid "View cabinets"
 msgstr "Просмотр кабинетов"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Тип документа"
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Заголовок документа"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Описание документа"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "UUID документа"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Контрольная сумма файла документа"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "MIME тип файла документа"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Список дочерних кабинетов."
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr ""
 
@@ -218,11 +226,11 @@ msgstr "URL"
 msgid "Primary key of the document to add to the cabinet."
 msgstr ""
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr ""
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr ""
 
@@ -356,11 +364,11 @@ msgstr "Удалить %(count)d документ из кабинетов."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Кабинеты, из которых будут удалены выбранные документы."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Выберите кабинеты"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Кабинеты, в которые будет добавлен документ."
 

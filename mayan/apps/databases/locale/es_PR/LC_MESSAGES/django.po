@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,15 @@ msgstr ""
 #: apps.py:16
 msgid "Databases"
 msgstr "Bases de datos"
+
+#: class_mixins.py:34
+msgid "The object will be executed, depending on the condition return value."
+msgstr ""
+"El objeto se ejecutará, dependiendo del valor de retorno de la condición."
+
+#: class_mixins.py:37
+msgid "Has a condition?"
+msgstr "¿Tiene una condición?"
 
 #: classes.py:82
 msgid "Model fields"
@@ -40,7 +49,7 @@ msgstr "Propiedades del modelo"
 msgid "Model reverse fields"
 msgstr "Campos inversos de modelo"
 
-#: literals.py:10
+#: literals.py:12
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -48,7 +57,7 @@ msgstr ""
 "El backend de su base de datos está configurado para usar SQLite. SQLite "
 "solo debe usarse para desarrollo y pruebas, no para producción."
 
-#: model_mixins.py:26
+#: model_mixins.py:39
 msgid ""
 "The condition that will determine if this object is executed or not. "
 "Conditions that do not return any value, that return the Python logical "
@@ -60,18 +69,9 @@ msgstr ""
 "una cadena vacía ('') se consideran falsas lógicas, cualquier otro valor se "
 "considera verdadero lógico."
 
-#: model_mixins.py:31
+#: model_mixins.py:47
 msgid "Condition"
 msgstr "Condición"
-
-#: model_mixins.py:52
-msgid "The object will be executed, depending on the condition return value."
-msgstr ""
-"El objeto se ejecutará, dependiendo del valor de retorno de la condición."
-
-#: model_mixins.py:55
-msgid "Has a condition?"
-msgstr "¿Tiene una condición?"
 
 #: templates/databases/app/viewport.html:11
 msgid "Warning"

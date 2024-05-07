@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "název"
 msgid "App"
 msgstr "Aplikace"
 
-#: classes.py:220 classes.py:963
+#: classes.py:220 classes.py:966
 msgid "Environments"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:572 classes.py:866
+#: classes.py:572 classes.py:869
 msgid "Downloading... "
 msgstr "Stahování ..."
 
@@ -143,39 +143,39 @@ msgstr "Stahování ..."
 msgid "Verifying... "
 msgstr "Ověření ..."
 
-#: classes.py:582 classes.py:871
+#: classes.py:582 classes.py:874
 msgid "Extracting... "
 msgstr "Probíhá extrakce ..."
 
-#: classes.py:792
+#: classes.py:795
 msgid "Python packages downloaded from PyPI."
 msgstr "Python balíčky stažené z PyPI."
 
-#: classes.py:794
+#: classes.py:797
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:846
+#: classes.py:849
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "Fonty stažené z fonts.googleapis.com."
 
-#: classes.py:848
+#: classes.py:851
 msgid "Google font"
 msgstr "Písmo Google"
 
-#: classes.py:944
+#: classes.py:947
 msgid "Declared in app"
 msgstr "Deklarováno v aplikaci"
 
-#: classes.py:945
+#: classes.py:948
 msgid "Show dependencies by the app that declared them."
 msgstr "Zobrazit závislosti podle aplikace, která je deklarovala."
 
-#: classes.py:949
+#: classes.py:952
 msgid "Class"
 msgstr "Třída"
 
-#: classes.py:950
+#: classes.py:953
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -183,11 +183,11 @@ msgstr ""
 "Zobrazit různé třídy závislostí. Třídy jsou obvykle rozděleny podle jazyka "
 "nebo typu souboru závislosti."
 
-#: classes.py:955
+#: classes.py:958
 msgid "State"
 msgstr "Stav"
 
-#: classes.py:956
+#: classes.py:959
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -197,7 +197,7 @@ msgstr ""
 "závislosti a mají správnou verzi. False znamená, že chybí závislosti nebo je"
 " přítomna nesprávná verze."
 
-#: classes.py:964
+#: classes.py:967
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

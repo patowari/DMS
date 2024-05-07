@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
+# Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
-msgstr "Függőségek"
+msgstr ""
 
 #: apps.py:32 apps.py:69 apps.py:78
 msgid "Label"
@@ -44,7 +44,7 @@ msgstr "Típus"
 
 #: apps.py:49 classes.py:221
 msgid "Other data"
-msgstr "Egyéb adatok"
+msgstr ""
 
 #: apps.py:53
 msgid "Declared by"
@@ -56,7 +56,7 @@ msgstr "Verzió"
 
 #: apps.py:61
 msgid "Environment"
-msgstr "Környezet"
+msgstr ""
 
 #: apps.py:64 classes.py:221
 msgid "Check"
@@ -70,9 +70,9 @@ msgstr "Név"
 msgid "App"
 msgstr "Alkalmazás"
 
-#: classes.py:220 classes.py:963
+#: classes.py:220 classes.py:966
 msgid "Environments"
-msgstr "Környezetek"
+msgstr ""
 
 #: classes.py:331
 msgid "Need to specify at least one: app_label or module."
@@ -98,11 +98,11 @@ msgstr "Kész."
 
 #: classes.py:439
 msgid "Installed and correct version"
-msgstr "Telepített és helyes verzió"
+msgstr ""
 
 #: classes.py:441
 msgid "Missing or incorrect version"
-msgstr "Hiányzó vagy hibás verzió"
+msgstr ""
 
 #: classes.py:478
 msgid "None"
@@ -110,15 +110,15 @@ msgstr "Nincs"
 
 #: classes.py:487
 msgid "Not specified"
-msgstr "Nem meghatározott"
+msgstr ""
 
 #: classes.py:490
 msgid "Patching files... "
-msgstr "Fájlok javítása..."
+msgstr ""
 
 #: classes.py:518
 msgid "Executables that are called directly by the code."
-msgstr "A kód által közvetlenül meghívott végrehajtható fájlok."
+msgstr ""
 
 #: classes.py:520
 msgid "Binary"
@@ -136,7 +136,7 @@ msgstr ""
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:572 classes.py:866
+#: classes.py:572 classes.py:869
 msgid "Downloading... "
 msgstr "Letöltés..."
 
@@ -144,39 +144,39 @@ msgstr "Letöltés..."
 msgid "Verifying... "
 msgstr "Ellenőrzés..."
 
-#: classes.py:582 classes.py:871
+#: classes.py:582 classes.py:874
 msgid "Extracting... "
 msgstr "Kibontás..."
 
-#: classes.py:792
+#: classes.py:795
 msgid "Python packages downloaded from PyPI."
 msgstr "A PyPI-ről letöltött Python-csomagok."
 
-#: classes.py:794
+#: classes.py:797
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:846
+#: classes.py:849
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "A fonts.googleapis.com webhelyről letöltött betűtípusok."
 
-#: classes.py:848
+#: classes.py:851
 msgid "Google font"
 msgstr "Google font"
 
-#: classes.py:944
+#: classes.py:947
 msgid "Declared in app"
 msgstr "Az alkalmazásban deklarálva"
 
-#: classes.py:945
+#: classes.py:948
 msgid "Show dependencies by the app that declared them."
 msgstr "A függőségek megjelenítése az azokat deklaráló alkalmazás által."
 
-#: classes.py:949
+#: classes.py:952
 msgid "Class"
 msgstr "Osztály"
 
-#: classes.py:950
+#: classes.py:953
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -184,11 +184,11 @@ msgstr ""
 "Mutassa a különböző függőségi osztályokat. Az osztályokat általában nyelv "
 "vagy a függőségi fájltípusok szerint osztják fel."
 
-#: classes.py:955
+#: classes.py:958
 msgid "State"
 msgstr "Állapot"
 
-#: classes.py:956
+#: classes.py:959
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -198,7 +198,7 @@ msgstr ""
 "függőségek telepítve vannak, és megfelelő verziójúak. A hamis azt jelenti, "
 "hogy a függőségek hiányoznak, vagy hibás verzió van jelen."
 
-#: classes.py:964
+#: classes.py:967
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."
@@ -404,4 +404,4 @@ msgstr "A %s bejegyzés nem található."
 
 #: views.py:145
 msgid "Other packages licenses"
-msgstr "Egyéb csomagok licencei"
+msgstr ""

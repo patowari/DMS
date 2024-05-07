@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -53,24 +53,16 @@ msgid "JQuery Form"
 msgstr "JQuery Form"
 
 #: dependencies.py:46
-msgid "jQuery Lazy Load"
-msgstr "jQuery Lazy Load"
-
-#: dependencies.py:50
 msgid "JQuery Match Height"
 msgstr "JQuery Match Height"
 
-#: dependencies.py:54
+#: dependencies.py:50
 msgid "Select 2"
 msgstr "Select 2"
 
-#: dependencies.py:58
+#: dependencies.py:54
 msgid "Toastr"
 msgstr "Toastr"
-
-#: dependencies.py:62
-msgid "URI.js"
-msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
@@ -84,39 +76,39 @@ msgstr "Tema editado"
 msgid "User theme edited"
 msgstr "Tema de usuario editado"
 
-#: links.py:20
+#: links.py:26
 msgid "Theme settings"
 msgstr "Ajustes de tema"
 
-#: links.py:27
+#: links.py:33
 msgid "Edit theme settings"
 msgstr "Editar los ajustes de tema"
 
-#: links.py:33 views.py:32
+#: links.py:39 views.py:34
 msgid "Create new theme"
 msgstr "Crear nuevo tema"
 
-#: links.py:38
+#: links.py:44
 msgid "Delete"
 msgstr "Eliminar"
 
-#: links.py:42
+#: links.py:48
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:46 links.py:54 models.py:32 views.py:101
+#: links.py:52 links.py:60 models.py:33 views.py:103
 msgid "Themes"
 msgstr "Temas"
 
-#: models.py:19
+#: models.py:20
 msgid "A short text describing the theme."
 msgstr "Un breve texto que describe el tema."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Etiqueta"
 
-#: models.py:24
+#: models.py:25
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
@@ -124,11 +116,11 @@ msgstr ""
 "La hoja de estilo CSS para cambiar la apariencia de los diferentes elementos"
 " de la interfaz de usuario."
 
-#: models.py:26
+#: models.py:27
 msgid "Stylesheet"
 msgstr "Hoja de estilo"
 
-#: models.py:31 models.py:69
+#: models.py:32 models.py:69
 msgid "Theme"
 msgstr "Tema"
 
@@ -195,35 +187,35 @@ msgstr ""
 "Tiempo en milisegundos después del cual se borrará una solicitud limitada, "
 "lo que permitirá que se realice una solicitud adicional."
 
-#: templates/403.html:5 templates/403.html:30
+#: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
 msgstr "Permiso insuficiente"
 
-#: templates/403.html:32
+#: templates/403.html:20
 msgid "You don't have enough permissions for this operation."
 msgstr "No tiene suficientes permisos para esta operación."
 
-#: templates/404.html:5 templates/404.html:30
+#: templates/404.html:5 templates/404.html:18
 msgid "Page not found"
 msgstr "Página no encontrada"
 
-#: templates/404.html:32
+#: templates/404.html:20
 msgid "The requested page could not be found."
 msgstr "La página solicitada no pudo ser encontrada."
 
-#: templates/404.html:40
+#: templates/404.html:28
 msgid "Possible reasons"
 msgstr "Posibles razones"
 
-#: templates/404.html:44
+#: templates/404.html:32
 msgid "The location of the item is incorrect."
 msgstr "La ubicación del artículo es incorrecta."
 
-#: templates/404.html:45
+#: templates/404.html:33
 msgid "The location is correct, but the item no longer exists."
 msgstr "La ubicación es correcta, pero el artículo ya no existe."
 
-#: templates/404.html:46
+#: templates/404.html:34
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
@@ -231,38 +223,38 @@ msgstr ""
 "La ubicación es correcta, pero su cuenta no tiene el permiso requerido para "
 "acceder a ella."
 
-#: templates/500.html:5 templates/500.html:30
+#: templates/500.html:5 templates/500.html:18
 #: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Error de servidor"
 
-#: templates/500.html:32
+#: templates/500.html:20
 msgid "There's been an unexpected error."
 msgstr "Ha occurido un error inesperado."
 
-#: templates/500.html:40
+#: templates/500.html:28
 msgid "What to do next?"
 msgstr "¿Qué hacer a continuación?"
 
-#: templates/500.html:44
+#: templates/500.html:32
 msgid "Refresh the page."
 msgstr "Recargar la página."
 
-#: templates/500.html:45
+#: templates/500.html:33
 msgid "Wait a bit. The system might be overloaded."
 msgstr "Espera un poco. El sistema puede estar sobrecargado."
 
-#: templates/500.html:46
+#: templates/500.html:34
 msgid "Contact your system administrator."
 msgstr "Póngase en contacto con el administrador de su sistema."
 
-#: templates/500.html:47
+#: templates/500.html:35
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Verifique los registros de mensajes con las etiquetas \"ERROR\", \"CRÍTICO\""
 " o \"FATAL\"."
 
-#: templates/500.html:48
+#: templates/500.html:36
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
@@ -419,7 +411,7 @@ msgstr "Cancelar"
 msgid "Views"
 msgstr "Vistas"
 
-#: templates/appearance/partials/list/header.html:11
+#: templates/appearance/partials/list/header.html:12
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -428,8 +420,8 @@ msgstr ""
 "Total (%(start)s - %(end)s de %(total)s) (Página %(page_number)s de "
 "%(total_pages)s)"
 
-#: templates/appearance/partials/list/header.html:13
-#: templates/appearance/partials/list/header.html:16
+#: templates/appearance/partials/list/header.html:14
+#: templates/appearance/partials/list/header.html:17
 #, python-format
 msgid "Total: %(total)s"
 msgstr "Total: %(total)s"
@@ -503,33 +495,33 @@ msgstr "Verifique su conexión de red y vuelva a intentarlo en unos momentos."
 msgid "None"
 msgstr "Ninguno"
 
-#: views.py:57
+#: views.py:59
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Eliminar tema: %s"
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Editar tema: %s"
 
-#: views.py:95
+#: views.py:97
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr ""
 "Los temas permiten cambiar la apariencia visual sin requerir cambios de "
 "código."
 
-#: views.py:99
+#: views.py:101
 msgid "There are no themes"
 msgstr "No hay temas"
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr "Configuración de tema para el usuario: %s"
 
-#: views.py:148
+#: views.py:150
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr "Editar la configuración de tema para el usuario: %s"

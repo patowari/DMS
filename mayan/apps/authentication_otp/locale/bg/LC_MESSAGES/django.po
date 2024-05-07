@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -33,27 +33,27 @@ msgstr "OTP е деактивиран"
 msgid "OTP enabled"
 msgstr "OTP е активиран"
 
-#: forms.py:20
+#: forms.py:22
 msgid "Token is either invalid or expired."
 msgstr "Маркерът е или невалиден, или изтекъл."
 
-#: forms.py:25
+#: forms.py:27
 msgid "TOTP token"
 msgstr "TOTP маркер"
 
-#: forms.py:86
+#: forms.py:88
 msgid "OTP enabled?"
 msgstr "Активиран ли е OTP?"
 
-#: forms.py:87
+#: forms.py:89
 msgid "Yes"
 msgstr "Да"
 
-#: forms.py:87
+#: forms.py:89
 msgid "No"
 msgstr "Не"
 
-#: forms.py:104
+#: forms.py:106
 msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
@@ -61,22 +61,22 @@ msgstr ""
 "Сканирайте QR кода или въведете тайния код във вашето устройство за "
 "удостоверяване. Не споделяйте този таен код, третирайте го като парола."
 
-#: forms.py:106 forms.py:111
+#: forms.py:108 forms.py:113
 msgid "Secret"
 msgstr "Тайни"
 
-#: forms.py:117
+#: forms.py:119
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
 "Въведете съответния маркер, за да потвърдите, че тайният код е запазен "
 "правилно."
 
-#: forms.py:120
+#: forms.py:122
 msgid "Token"
 msgstr "Маркер"
 
-#: forms.py:155
+#: forms.py:158
 msgid "Token is incorrect for the specified secret."
 msgstr "Маркерът е неправилен за посоченият таен код."
 
@@ -126,15 +126,15 @@ msgstr "OTP деактивиране успешно."
 msgid "OTP is already enabled."
 msgstr "OTP вече е активиран."
 
-#: views.py:96
+#: views.py:97
 msgid "OTP enabled successfully."
 msgstr "OTP е активиран успешно."
 
-#: views.py:105
+#: views.py:107
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Активиране на временната клавиатура за потребител: %s"
 
-#: views.py:117
+#: views.py:119
 msgid "OTP secret validation error."
 msgstr "Грешка при валидиране на тайния код на OTP."

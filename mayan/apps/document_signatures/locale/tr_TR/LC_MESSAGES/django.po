@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# abc Def <hdogan1974@gmail.com>, 2024
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # Bedreddin Şahbaz, 2024
+# abc Def <hdogan1974@gmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Belge imzaları"
 msgid "Date and time"
 msgstr "Tarih ve saat"
 
-#: apps.py:114 models.py:52 serializers.py:61
+#: apps.py:114 models.py:53 serializers.py:61
 msgid "Key ID"
 msgstr "Anahtar Kimliği"
 
@@ -39,7 +39,7 @@ msgstr "Anahtar Kimliği"
 msgid "None"
 msgstr "Yok"
 
-#: apps.py:119 forms.py:65 models.py:57
+#: apps.py:119 forms.py:65 models.py:58
 msgid "Signature ID"
 msgstr ""
 
@@ -181,47 +181,47 @@ msgstr "Belge dosyası"
 msgid "Date and time signed"
 msgstr ""
 
-#: models.py:51
+#: models.py:52
 msgid "ID of the key that will be used to sign the document."
 msgstr ""
 
-#: models.py:61
+#: models.py:62
 msgid "Public key fingerprint"
 msgstr ""
 
-#: models.py:68
+#: models.py:69
 msgid "Document file signature"
 msgstr ""
 
-#: models.py:69
+#: models.py:70
 msgid "Document file signatures"
 msgstr ""
 
-#: models.py:86
+#: models.py:87
 msgid "Signature file previously generated."
 msgstr ""
 
-#: models.py:89
+#: models.py:90
 msgid "Signature file"
 msgstr "İmza dosyası"
 
-#: models.py:95
+#: models.py:96
 msgid "Document file detached signature"
 msgstr ""
 
-#: models.py:96
+#: models.py:97
 msgid "Document file detached signatures"
 msgstr ""
 
-#: models.py:100
+#: models.py:101
 msgid "signature"
 msgstr ""
 
-#: models.py:151
+#: models.py:152
 msgid "Document file embedded signature"
 msgstr ""
 
-#: models.py:152
+#: models.py:153
 msgid "Document file embedded signatures"
 msgstr ""
 

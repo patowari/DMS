@@ -6,18 +6,18 @@
 # Translators:
 # Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Márcia Ferreira, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Roberto Rosario, 2024
+# Márcia Ferreira, 2024
+# Aline Freitas <aline@alinefreitas.com.br>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,24 +25,24 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:55 events.py:6 links.py:54 links.py:80 permissions.py:6 queues.py:6
-#: search.py:18 settings.py:11 workflow_actions.py:50
+#: apps.py:56 apps.py:91 events.py:6 links.py:54 links.py:80 permissions.py:6
+#: queues.py:6 search.py:18 settings.py:11 workflow_actions.py:53
 msgid "OCR"
 msgstr "OCR"
 
-#: apps.py:116
+#: apps.py:121
 msgid "The OCR content."
 msgstr "O conteúdo do OCR."
 
-#: apps.py:121
+#: apps.py:126
 msgid "A generator returning the document's version pages OCR content."
 msgstr ""
 
-#: apps.py:123
+#: apps.py:128
 msgid "OCR content"
 msgstr "Conteúdo OCR"
 
-#: backends/tesseract.py:84
+#: backends/tesseract.py:82
 msgid "Tesseract OCR not found."
 msgstr "Tesseract OCR não encontrado."
 
@@ -99,45 +99,45 @@ msgstr "Enviar para OCR"
 msgid "Edit OCR"
 msgstr "Editar OCR"
 
-#: models.py:22
+#: models.py:24
 msgid "Document type"
 msgstr "Tipo de documento"
 
-#: models.py:26
+#: models.py:28
 msgid "Automatically queue newly created documents for OCR."
 msgstr "Enfileirar automaticamente documentos criados para OCR"
 
-#: models.py:27
+#: models.py:29
 msgid "Auto OCR"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "Document type settings"
 msgstr "Configuração do tipo de documento"
 
-#: models.py:34
+#: models.py:36
 msgid "Document types settings"
 msgstr "Configurações de tipos de documentos"
 
-#: models.py:47
+#: models.py:50
 msgid "Document version page"
 msgstr "Versão de página do documento"
 
-#: models.py:51
+#: models.py:55
 msgid "The actual text content extracted by the OCR backend."
 msgstr ""
 "O conteúdo real do texto, conforme extraído pelo backend de OCR do "
 "documento."
 
-#: models.py:52
+#: models.py:56
 msgid "Content"
 msgstr "Conteúdo"
 
-#: models.py:58
+#: models.py:62
 msgid "Document version page OCR content"
 msgstr "Conteúdo OCR da página da versão do documento"
 
-#: models.py:59
+#: models.py:63
 msgid "Document version pages OCR contents"
 msgstr "Conteúdos OCR de páginas de versões de documento"
 
@@ -177,73 +177,73 @@ msgstr "Definir novos tipos de documentos para realizar OCR automaticamente"
 msgid "Full path to the backend to be used to do OCR."
 msgstr "Caminho completo para o servidor a ser usado para fazer OCR."
 
-#: views.py:57
+#: views.py:64
 #, python-format
 msgid "Edit OCR settings for document type: %s."
 msgstr "Editar as configurações de OCR para o tipo de documento: %s"
 
-#: views.py:67
+#: views.py:74
 msgid "Submit all documents of a type for OCR"
 msgstr "Enviar todos os documentos do tipo para OCR"
 
-#: views.py:88
+#: views.py:95
 #, python-format
 msgid "%(count)d documents added to the OCR queue."
 msgstr "%(count)d documentos adicionados para a fila de OCR."
 
-#: views.py:111
+#: views.py:118
 #, python-format
 msgid "Error deleting document version OCR \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Erros ao eliminar a versão do documento OCR \"%(instance)s\"; %(exception)s"
 
-#: views.py:117
+#: views.py:124
 #, python-format
 msgid "OCR content of %(count)d document versions deleted successfully."
 msgstr "Conteúdo OCR de %(count)dversões de documento eliminado com sucesso"
 
-#: views.py:120
+#: views.py:127
 #, python-format
 msgid "OCR content of \"%(object)s\" deleted successfully."
 msgstr "Conteúdo OCR de \"%(object)s\" eliminado com sucesso"
 
-#: views.py:123
+#: views.py:130
 #, python-format
 msgid "OCR content of %(count)d document version deleted successfully."
 msgstr "Conteúdo OCR de %(count)dversão do documento eliminada com sucesso"
 
-#: views.py:126
+#: views.py:133
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document versions."
 msgstr "Eliminar o conteúdo OCR de %(count)dversões de documento selecionadas"
 
-#: views.py:128
+#: views.py:135
 #, python-format
 msgid "Delete the OCR content of: %(object)s."
 msgstr "Eliminar o conteúdo OCR de: %(object)s"
 
-#: views.py:130
+#: views.py:137
 #, python-format
 msgid "Delete the OCR content of the %(count)d selected document version."
 msgstr ""
 "Eliminar o conteúdo OCR das %(count)dversões de documento selecionadas"
 
-#: views.py:161
+#: views.py:168
 #, python-format
 msgid "OCR result for document: %s"
 msgstr "Resultados de OCR para documento: %s"
 
-#: views.py:183
+#: views.py:190
 #, python-format
 msgid "%(count)d document version submitted to the OCR queue."
 msgstr ""
 
-#: views.py:186
+#: views.py:193
 #, python-format
 msgid "%(count)d document versions submitted to the OCR queue."
 msgstr ""
 
-#: views.py:195
+#: views.py:202
 msgid "Submit the selected document version to the OCR queue?"
 msgid_plural "Submit the selected document versions to the OCR queue?"
 msgstr[0] ""
@@ -253,21 +253,21 @@ msgstr[1] ""
 msgstr[2] ""
 "Submeter as versões de documento selecionadas para a fila de espera OCR?"
 
-#: views.py:231
+#: views.py:238
 #, python-format
 msgid "OCR result for document version page: %s"
 msgstr "Resultado OCR da página de versão de documento: %s"
 
-#: views.py:259
+#: views.py:266
 #, python-format
 msgid "Edit OCR for document version page: %s"
 msgstr "Editar OCR para página de versão do documento: %s"
 
-#: workflow_actions.py:15
+#: workflow_actions.py:18
 msgid "Page condition"
 msgstr "Condição da página"
 
-#: workflow_actions.py:19
+#: workflow_actions.py:22
 msgid ""
 "The condition that will determine if a document page's OCR content will be "
 "modified or not. The condition is evaluated against the iterated document "
@@ -281,14 +281,14 @@ msgstr ""
 "Python lógico Nenhum ou uma string vazia (\"\") são consideradas falsos "
 "lógicas, qualquer outro valor é considerado lógico verdadeiro."
 
-#: workflow_actions.py:31
+#: workflow_actions.py:34
 msgid "Page content"
 msgstr "Conteúdo da página"
 
-#: workflow_actions.py:35
+#: workflow_actions.py:38
 msgid "A template that will generate the OCR content to be saved."
 msgstr "Um template que irá gerar o conteúdo OCR a ser salvo."
 
-#: workflow_actions.py:42
+#: workflow_actions.py:45
 msgid "Update document page OCR content"
 msgstr "Atualizar o conteúdo do OCR da página do documento"

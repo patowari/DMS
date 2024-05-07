@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # Marcin Lozynski <mlozynski@wp.pl>, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
 # edasmax <edasmax@gmail.com>, 2024
 # 
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:24 permissions.py:6 settings.py:12
+#: apps.py:23 permissions.py:6 settings.py:14
 msgid "Document downloads"
 msgstr "Pobieranie dokumenów"
 
@@ -31,7 +31,7 @@ msgstr "Pobieranie dokumenów"
 msgid "Document_file_bundle.zip"
 msgstr "Document_file_bundle.zip"
 
-#: classes.py:52
+#: classes.py:53
 msgid "Compressed document files"
 msgstr "Skompresowane pliki dokumentów"
 
@@ -67,14 +67,14 @@ msgstr "Pobierz pliki"
 msgid "Quick download"
 msgstr "Szybkie pobieranie"
 
-#: literals.py:4
+#: literals.py:7
 msgid ""
 "The document files have been compressed and are available for download using"
 " the link: {{ download_url }} or from the downloads area ({{ "
 "download_list_url }})."
 msgstr ""
 
-#: literals.py:10
+#: literals.py:13
 msgid "Document files ready for download."
 msgstr "Pliki dokumentów gotowe do pobrania."
 
@@ -86,19 +86,28 @@ msgstr "Pobieranie plików dokumentów"
 msgid "Generate a compressed document file bundle"
 msgstr "Wygeneruj pakiet skompresowanych plików dokumentów"
 
-#: settings.py:18
+#: settings.py:21
+msgid "Path to the download subclass to use when downloading document files."
+msgstr ""
+
+#: settings.py:29
+msgid ""
+"Arguments to pass to the DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
+msgstr ""
+
+#: settings.py:36
 msgid ""
 "Template for the document download message body text. Can include HTML. "
 "Available variables: {}"
 msgstr ""
 
-#: settings.py:27
+#: settings.py:45
 msgid ""
 "Template for the document download message subject line. Can't include HTML."
 " Available variables: {}"
 msgstr ""
 
-#: views.py:24
+#: views.py:32
 #, python-format
 msgid ""
 "Unable to queued document \"%(instance)s\" for file download; %(exception)s."
@@ -106,37 +115,37 @@ msgstr ""
 "Nie można umieścić dokumentu \"%(instance)s\" w kolejce do pobrania pliku; "
 "%(exception)s."
 
-#: views.py:33
+#: views.py:41
 #, python-format
 msgid "%(count)d document files queued for download."
 msgstr "%(count)d plików dokumentów oczekuje na pobranie."
 
-#: views.py:36
+#: views.py:44
 #, python-format
 msgid "Document file \"%(object)s\" queued for download."
 msgstr "Plik dokumentu \" %(object)s\" w kolejce do pobrania."
 
-#: views.py:39
+#: views.py:47
 #, python-format
 msgid "%(count)d document file queued for download."
 msgstr "%(count)d plik dokumentu oczekuje na pobranie."
 
-#: views.py:41
+#: views.py:49
 #, python-format
 msgid "Download files of %(count)d documents"
 msgstr "Pobierz pliki %(count)d dokumentów"
 
-#: views.py:42
+#: views.py:50
 #, python-format
 msgid "Download files of document: %(object)s"
 msgstr "Pobierz pliki dokumentu: %(object)s"
 
-#: views.py:43
+#: views.py:51
 #, python-format
 msgid "Download files of %(count)d document"
 msgstr "Pobierz pliki %(count)d dokumentu"
 
-#: views.py:50
+#: views.py:58
 msgid ""
 "The process will be performed in the background. The document files will be "
 "available in the downloads area."

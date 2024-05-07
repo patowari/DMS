@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
 "Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "המסמך כבר הוצא מהארכיון."
 msgid "Document status"
 msgstr ""
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "משתמש"
 
@@ -116,7 +116,7 @@ msgstr "שעה ותאריך הוצאה מהארכיון"
 msgid "Checkout expiration"
 msgstr "תפוגה של הוצאה מהארכיון"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr ""
 
@@ -128,27 +128,27 @@ msgstr "תאריך ושעה של הוצאה מהארכיון"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "משך הזמן להוצאת המסמך מהארכיון, בדקות."
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "תאריך ושעת תפוגה של הוצאה מהארכיון"
 
-#: models.py:50
+#: models.py:51
 msgid "Do not allow new file of this document to be uploaded."
 msgstr "לא לאפשר להעלות קובץ תוכן חדש של מסמך זה."
 
-#: models.py:51
+#: models.py:52
 msgid "Block new file upload"
 msgstr "חסימת העלאת קובץ חדש"
 
-#: models.py:59 permissions.py:6
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "הוצאת מסמך מהארכיון"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "הוצאות מסמך מהארכיון"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "תאריך ושעת התפוגה חייבים להיות בעתיד."
 
@@ -176,15 +176,15 @@ msgstr "הוצאות מסמכים תקופתיות"
 msgid "Check expired checkouts"
 msgstr "בדיקת הוצאות מסמכים שפג תוקפן"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "כתובת אתר (URL)"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "מפתח ראשי של המסמך שיש להוציא מהארכיון."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr "Document ID"
 

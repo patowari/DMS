@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -42,27 +42,27 @@ msgstr "Повідомлення створено"
 msgid "Message edited"
 msgstr "Повідомлення відредаговано"
 
-#: forms.py:26 models.py:37 workflow_actions.py:55
+#: forms.py:26 models.py:40 workflow_actions.py:79
 msgid "Body"
 msgstr "Зміст листа"
 
-#: links.py:49 views.py:38
+#: links.py:51 views.py:38
 msgid "Create message"
 msgstr "Створити повідомлення"
 
-#: links.py:52 links.py:58
+#: links.py:54 links.py:60
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:68 links.py:79
+#: links.py:70 links.py:81
 msgid "Mark as read"
 msgstr "Позначити як прочитане"
 
-#: links.py:74 links.py:83
+#: links.py:76 links.py:85
 msgid "Mark as unread"
 msgstr "Позначити як непрочитане"
 
-#: links.py:87
+#: links.py:89
 msgid "Mark all as read"
 msgstr "Позначити все як прочитане"
 
@@ -70,51 +70,51 @@ msgstr "Позначити все як прочитане"
 msgid "Label"
 msgstr "Мітка"
 
-#: models.py:19
+#: models.py:21
 msgid "Sender content type"
 msgstr "Тип вмісту відправника"
 
-#: models.py:22
+#: models.py:24
 msgid "Sender object ID"
 msgstr "ID об’єкта відправника"
 
-#: models.py:29
+#: models.py:31
 msgid "User"
 msgstr "Користувач"
 
-#: models.py:32
+#: models.py:35
 msgid "Short description of this message."
 msgstr "Короткий опис цього повідомлення."
 
-#: models.py:33 workflow_actions.py:38
+#: models.py:36 workflow_actions.py:64
 msgid "Subject"
 msgstr "Тема"
 
-#: models.py:36
+#: models.py:39
 msgid "The actual content of the message."
 msgstr "Фактичний зміст повідомлення."
 
-#: models.py:41
+#: models.py:44
 msgid "This field determines if the message has been read or not."
 msgstr "Це поле визначає, чи було прочитано повідомлення чи ні."
 
-#: models.py:42
+#: models.py:46
 msgid "Read"
 msgstr "Читати"
 
-#: models.py:46
+#: models.py:50
 msgid "Date and time of the message creation."
 msgstr "Дата і час створення повідомлення."
 
-#: models.py:47
+#: models.py:51
 msgid "Creation date and time"
 msgstr "Дата і час створення"
 
-#: models.py:52
+#: models.py:56
 msgid "Message"
 msgstr "Повідомлення"
 
-#: models.py:53 views.py:128
+#: models.py:57 views.py:128
 msgid "Messages"
 msgstr "Повідомлення"
 
@@ -238,7 +238,7 @@ msgstr "Позначте %(count)d вибраних повідомлень як 
 #: views.py:152
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
-msgstr "Позначте повідомлення \"%(object)s\" як прочитане."
+msgstr "Позначити повідомлення \"%(object)s\" як прочитане."
 
 #: views.py:153
 #, python-format
@@ -283,38 +283,60 @@ msgstr "Позначити %(count)d вибраних повідомлень я�
 #: views.py:219
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
-msgstr "Позначте повідомлення \"%(object)s\" як непрочитане."
+msgstr "Позначити повідомлення \"%(object)s\" як непрочитане."
 
 #: views.py:220
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
-msgstr "Позначте %(count)d вибране повідомлення як непрочитане."
+msgstr "Позначити %(count)d вибране повідомлення як непрочитане."
 
-#: workflow_actions.py:19
+#: workflow_actions.py:20
+msgid "Group name list"
+msgstr ""
+
+#: workflow_actions.py:24
+msgid ""
+"Comma separated list of user group names that will receive the message. Can "
+"be a static value or a template."
+msgstr ""
+
+#: workflow_actions.py:34
+msgid "Role name list"
+msgstr ""
+
+#: workflow_actions.py:38
+msgid ""
+"Comma separated list of role labels that will receive the message. Can be a "
+"static value or a template."
+msgstr ""
+
+#: workflow_actions.py:48
 msgid "Username list"
 msgstr "Список користувачів"
 
-#: workflow_actions.py:26
-msgid "Comma separated list of usernames that will receive the message."
+#: workflow_actions.py:53
+msgid ""
+"Comma separated list of usernames that will receive the message. Can be a "
+"static value or a template."
 msgstr ""
-"Розділений комами список імен користувачів, які отримають повідомлення."
 
-#: workflow_actions.py:45
-msgid "Subject of the message to be sent."
-msgstr "Тема повідомлення, яке буде надіслано."
+#: workflow_actions.py:69
+msgid ""
+"Subject of the message to be sent. Can be a static value or a template."
+msgstr ""
 
-#: workflow_actions.py:62
-msgid "The actual text to send."
-msgstr "Фактичний текст для надсилання."
+#: workflow_actions.py:84
+msgid "The actual text to send. Can be a static value or a template."
+msgstr ""
 
-#: workflow_actions.py:72
+#: workflow_actions.py:94
 msgid "Send user message"
 msgstr "Надіслати повідомлення користувача"
 
-#: workflow_actions.py:80
+#: workflow_actions.py:102
 msgid "Recipients"
 msgstr "Одержувачі"
 
-#: workflow_actions.py:84
+#: workflow_actions.py:108
 msgid "Content"
 msgstr "Зміст"

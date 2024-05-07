@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 01:48+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:28 events.py:6
+#: apps.py:28 events.py:6 settings.py:9
 msgid "Locales"
 msgstr "Локалізація"
 
-#: dependencies.py:12
+#: dependencies.py:10
 msgid "Transifex Client"
 msgstr "Клієнт Transifex"
 
@@ -61,16 +61,25 @@ msgstr "Локальний профіль користувача"
 msgid "User locale profiles"
 msgstr "Локальні профілі користувача"
 
-#: models.py:39
+#: models.py:38 models.py:39
 msgid "None"
 msgstr "None"
 
-#: views.py:49
+#: settings.py:15
+msgid ""
+"Default profile language for new user accounts. Must be in ISO639-3 format."
+msgstr ""
+
+#: settings.py:22
+msgid "Default profile language for new user accounts."
+msgstr ""
+
+#: views.py:52
 #, python-format
 msgid "Locale profile for user: %s"
 msgstr "Профіль локалізації для користувача: %s"
 
-#: views.py:82
+#: views.py:86
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "Редагувати локальний профіль для користувача: %s"

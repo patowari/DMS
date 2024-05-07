@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Dasapich Thongnopnua <dasapich@gmail.com>, 2024\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
 "MIME-Version: 1.0\n"
@@ -20,29 +20,29 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:58
+#: apps.py:59 apps.py:80
 msgid "Mailer"
 msgstr ""
 
-#: classes.py:27
+#: classes.py:23
 msgid "General"
 msgstr ""
 
-#: classes.py:45
+#: classes.py:41
 msgid "From"
 msgstr ""
 
-#: classes.py:48
+#: classes.py:44
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
 msgstr ""
 
-#: classes.py:63
+#: classes.py:59
 msgid "Compatibility"
 msgstr ""
 
-#: classes.py:82 classes.py:102
+#: classes.py:78 classes.py:96
 msgid "Null backend"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "The email profile that will be used to send this email."
 msgstr ""
 
-#: forms.py:76 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:49 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr ""
@@ -97,48 +97,48 @@ msgstr ""
 msgid "Backend"
 msgstr ""
 
-#: links.py:34 links.py:39
+#: links.py:33 links.py:38
 msgid "Email document link"
 msgstr ""
 
-#: links.py:49 links.py:54
+#: links.py:48 links.py:53
 msgid "Email document file"
 msgstr ""
 
-#: links.py:60 links.py:65
+#: links.py:59 links.py:64
 msgid "Email document file link"
 msgstr ""
 
-#: links.py:75 links.py:80
+#: links.py:74 links.py:79
 msgid "Email document version"
 msgstr ""
 
-#: links.py:86
+#: links.py:85
 msgid "Email document version link"
 msgstr ""
 
-#: links.py:91
+#: links.py:90
 msgid "Email link version"
 msgstr ""
 
-#: links.py:100
+#: links.py:99
 msgid "Create mailing profile"
 msgstr ""
 
-#: links.py:106
+#: links.py:105
 msgid "Delete"
 msgstr "ลบ"
 
-#: links.py:110
+#: links.py:109
 msgid "Edit"
 msgstr ""
 
-#: links.py:114 links.py:122 links.py:128 models.py:49
-#: views/mailing_profile_views.py:138
+#: links.py:113 links.py:121 links.py:127 models.py:50
+#: views/mailing_profile_views.py:134
 msgid "Mailing profiles"
 msgstr ""
 
-#: links.py:132 views/mailing_profile_views.py:168
+#: links.py:131 views/mailing_profile_views.py:162
 msgid "Test"
 msgstr ""
 
@@ -228,30 +228,30 @@ msgstr ""
 msgid "Storage"
 msgstr ""
 
-#: model_mixins.py:173
+#: model_mixins.py:178
 #, python-format
 msgid "Test email from %s"
 msgstr ""
 
-#: models.py:31
+#: models.py:32
 msgid "A short text describing the mailing profile."
 msgstr ""
 
-#: models.py:32
+#: models.py:33
 msgid "Label"
 msgstr ""
 
-#: models.py:36
+#: models.py:37
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
 msgstr ""
 
-#: models.py:38
+#: models.py:39
 msgid "Default"
 msgstr ""
 
-#: models.py:41
+#: models.py:42
 msgid "Enabled"
 msgstr ""
 
@@ -360,22 +360,22 @@ msgstr ""
 msgid "%(count)d document file links queued for email delivery"
 msgstr ""
 
-#: views/document_version_views.py:17
+#: views/document_version_views.py:19
 #, python-format
 msgid "%(count)d document version queued for email delivery"
 msgstr ""
 
-#: views/document_version_views.py:20
+#: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
 msgstr ""
 
-#: views/document_version_views.py:32
+#: views/document_version_views.py:34
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
 
-#: views/document_version_views.py:35
+#: views/document_version_views.py:37
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
@@ -399,31 +399,31 @@ msgstr ""
 msgid "Create a \"%s\" mailing profile"
 msgstr ""
 
-#: views/mailing_profile_views.py:95
+#: views/mailing_profile_views.py:93
 #, python-format
 msgid "Delete mailing profile: %s"
 msgstr ""
 
-#: views/mailing_profile_views.py:108
+#: views/mailing_profile_views.py:106
 #, python-format
 msgid "Edit mailing profile: %s"
 msgstr ""
 
-#: views/mailing_profile_views.py:133
+#: views/mailing_profile_views.py:129
 msgid ""
 "Mailing profiles are email configurations. Mailing profiles allow sending "
 "documents as attachments or as links via email."
 msgstr ""
 
-#: views/mailing_profile_views.py:137
+#: views/mailing_profile_views.py:133
 msgid "No mailing profiles available"
 msgstr ""
 
-#: views/mailing_profile_views.py:160
+#: views/mailing_profile_views.py:154
 msgid "Test email sent."
 msgstr ""
 
-#: views/mailing_profile_views.py:170
+#: views/mailing_profile_views.py:164
 #, python-format
 msgid "Test mailing profile: %s"
 msgstr ""

@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -23,17 +23,17 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:218 apps.py:655 events.py:6 menus.py:8
-#: models/document_models.py:116 permissions.py:6 settings.py:34
+#: apps.py:220 apps.py:285 apps.py:662 events.py:6 menus.py:8
+#: models/document_models.py:112 permissions.py:6 settings.py:33
 #: statistics.py:286
 msgid "Documents"
 msgstr "Documente"
 
-#: apps.py:299
+#: apps.py:306
 msgid "Create a document type"
 msgstr "Creați un tip de document"
 
-#: apps.py:301
+#: apps.py:308
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
@@ -41,75 +41,75 @@ msgstr ""
 "Fiecare document încărcat trebuie să fie atribuit unui tip de document, "
 "acesta este modul de bază în care Mayan EDMS categorizează documente."
 
-#: apps.py:395
+#: apps.py:402
 msgid "File comments"
 msgstr "Comentarii despre fișier"
 
-#: apps.py:399
+#: apps.py:406
 msgid "File encodings"
 msgstr "Codificări de fișiere"
 
-#: apps.py:403
+#: apps.py:410
 msgid "File MIME types"
 msgstr "Tipuri MIME de fișiere"
 
-#: apps.py:407
+#: apps.py:414
 msgid "File timestamps"
 msgstr "Marcaje temporale pentru fișiere "
 
-#: apps.py:412 links/document_file_page_links.py:77
-#: models/document_file_models.py:106 models/document_file_page_models.py:26
-#: search.py:49
+#: apps.py:419 links/document_file_page_links.py:76
+#: models/document_file_models.py:107 models/document_file_page_models.py:28
+#: search.py:54
 msgid "Document file"
 msgstr "Fișierul documentului"
 
-#: apps.py:416 models/document_file_page_models.py:30
-#: models/document_version_page_models.py:40
+#: apps.py:423 models/document_file_page_models.py:32
+#: models/document_version_page_models.py:42
 msgid "Page number"
 msgstr "Numărul paginii"
 
-#: apps.py:421
+#: apps.py:428
 msgid "Return the latest file of the document."
 msgstr "Returnează cel mai recent fișier al documentului."
 
-#: apps.py:422
+#: apps.py:429
 msgid "Latest file"
 msgstr "Cel mai recent fișier"
 
-#: apps.py:426
+#: apps.py:433
 msgid "Return the document instance."
 msgstr "Întoarce instanța documentului."
 
-#: apps.py:427 links/document_file_links.py:71
-#: links/document_file_page_links.py:71 links/document_version_links.py:73
-#: links/document_version_page_links.py:90 models/document_file_models.py:57
-#: models/document_models.py:115 models/document_version_models.py:28
+#: apps.py:434 links/document_file_links.py:71
+#: links/document_file_page_links.py:70 links/document_version_links.py:73
+#: links/document_version_page_links.py:90 models/document_file_models.py:58
+#: models/document_models.py:111 models/document_version_models.py:30
 #: models/favorite_document_models.py:30
 #: models/recently_accessed_document_models.py:25 search.py:14
 #: serializers/favorite_document_serializers.py:13
-#: serializers/recently_accessed_document_serializers.py:13
+#: serializers/recently_accessed_document_serializers.py:15
 msgid "Document"
 msgstr "Document"
 
-#: apps.py:558 apps.py:612 apps.py:641 apps.py:676 apps.py:701
+#: apps.py:570 apps.py:615 apps.py:648 apps.py:683 apps.py:708
 msgid "Thumbnail"
 msgstr "Miniatură"
 
-#: apps.py:564
+#: apps.py:575
 msgid "Type"
 msgstr "Tip"
 
-#: apps.py:569 apps.py:617 apps.py:681 forms/document_file_forms.py:89
-#: links/document_file_page_links.py:120
+#: apps.py:580 apps.py:620 apps.py:688 forms/document_file_forms.py:89
+#: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Pagini"
 
-#: apps.py:579 models/favorite_document_models.py:33
+#: apps.py:590 models/favorite_document_models.py:33
 msgid "Date and time added"
 msgstr "Data și ora adăugate"
 
-#: apps.py:590
+#: apps.py:601
 msgid "Access date and time"
 msgstr "Data și ora accesului"
 
@@ -121,7 +121,7 @@ msgstr "Original"
 msgid "Keeps the original filename of the uploaded file."
 msgstr "Păstrează numele original al fișierului încărcat."
 
-#: classes.py:77 forms/document_forms.py:110 models/document_models.py:54
+#: classes.py:77 forms/document_forms.py:110 models/document_models.py:50
 msgid "UUID"
 msgstr "UUID"
 
@@ -150,13 +150,13 @@ msgstr "Total pagini"
 msgid "Total documents"
 msgstr "Total documente"
 
-#: dashboard_widgets.py:70 views/trashed_document_views.py:156
+#: dashboard_widgets.py:70 views/trashed_document_views.py:164
 msgid "Documents in trash"
 msgstr "Documentele din coșul de gunoi"
 
 #: dashboard_widgets.py:88 links/document_type_links.py:67
-#: links/document_type_links.py:82 permissions.py:78
-#: views/document_type_views.py:81
+#: links/document_type_links.py:82 models/document_type_models.py:105
+#: permissions.py:78 views/document_type_views.py:83
 msgid "Document types"
 msgstr "Tipuri de documente"
 
@@ -320,15 +320,15 @@ msgstr "Alte"
 msgid "Date added"
 msgstr "Dată adaugată"
 
-#: forms/document_file_forms.py:66 models/document_file_models.py:83
+#: forms/document_file_forms.py:66 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "Tip MIME"
 
-#: forms/document_file_forms.py:70 models/document_file_models.py:89
+#: forms/document_file_forms.py:70 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "Encodare"
 
-#: forms/document_file_forms.py:74 models/document_file_models.py:101
+#: forms/document_file_forms.py:74 models/document_file_models.py:102
 msgid "Size"
 msgstr "mărime"
 
@@ -340,7 +340,7 @@ msgstr "Există în arhivă"
 msgid "Path in storage"
 msgstr "Calea în depozit"
 
-#: forms/document_file_forms.py:86 models/document_file_models.py:96
+#: forms/document_file_forms.py:86 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "Suma de control"
 
@@ -365,12 +365,12 @@ msgstr ""
 msgid "Date created"
 msgstr "Data creării"
 
-#: forms/document_forms.py:113 models/document_models.py:82
+#: forms/document_forms.py:113 models/document_models.py:78
 msgid "Language"
 msgstr "Limba"
 
-#: forms/document_type_forms.py:42 models/document_models.py:59
-#: models/document_type_models.py:102 models/document_type_models.py:150
+#: forms/document_type_forms.py:42 models/document_models.py:55
+#: models/document_type_models.py:104 models/document_type_models.py:153
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
@@ -410,7 +410,7 @@ msgstr "Numărul paginii țintă nu poate fi repetat."
 msgid "Page group"
 msgstr "Grup de pagini"
 
-#: forms/misc_forms.py:13 literals.py:96
+#: forms/misc_forms.py:13 literals.py:99
 msgid "Page range"
 msgstr "Gamă de pagini"
 
@@ -447,11 +447,11 @@ msgstr "Fișiere"
 msgid "Print"
 msgstr "Imprimare"
 
-#: links/document_file_links.py:66 links/document_links.py:43
+#: links/document_file_links.py:66 links/document_links.py:46
 msgid "Properties"
 msgstr "Proprietăți"
 
-#: links/document_file_links.py:84 links/document_links.py:38
+#: links/document_file_links.py:84 links/document_links.py:41
 #: links/document_version_links.py:63
 msgid "Preview"
 msgstr "Previzualizare"
@@ -465,28 +465,28 @@ msgstr "Șterge transformări"
 msgid "Clone transformations"
 msgstr "Clonare transformări"
 
-#: links/document_file_page_links.py:44
+#: links/document_file_page_links.py:43
 #: links/document_version_page_links.py:62
 msgid "First page"
 msgstr "Prima pagină"
 
-#: links/document_file_page_links.py:50
+#: links/document_file_page_links.py:49
 #: links/document_version_page_links.py:68
 msgid "Last page"
 msgstr "Ultima pagină"
 
-#: links/document_file_page_links.py:58
+#: links/document_file_page_links.py:57
 #: links/document_version_page_links.py:76
 msgid "Previous page"
 msgstr "Pagina precedentă"
 
-#: links/document_file_page_links.py:64
+#: links/document_file_page_links.py:63
 #: links/document_version_page_links.py:82
 msgid "Next page"
 msgstr "Pagina următoare"
 
-#: links/document_file_page_links.py:84 models/document_file_page_models.py:39
-#: models/document_file_page_models.py:85
+#: links/document_file_page_links.py:83 models/document_file_page_models.py:41
+#: models/document_file_page_models.py:86
 msgid "Document file pages"
 msgstr "Pagini de fișiere de documente"
 
@@ -495,52 +495,52 @@ msgstr "Pagini de fișiere de documente"
 msgid "Rotate left"
 msgstr "Rotire la stanga"
 
-#: links/document_file_page_links.py:94
+#: links/document_file_page_links.py:95
 #: links/document_version_page_links.py:113
 msgid "Rotate right"
 msgstr "Rotire la dreapta"
 
-#: links/document_file_page_links.py:98
+#: links/document_file_page_links.py:100
 #: links/document_version_page_links.py:118
 msgid "Page image"
 msgstr "Imaginea paginii"
 
-#: links/document_file_page_links.py:103
+#: links/document_file_page_links.py:105
 #: links/document_version_page_links.py:123
 msgid "Reset view"
 msgstr "Vedere inițială"
 
-#: links/document_file_page_links.py:109
+#: links/document_file_page_links.py:111
 #: links/document_version_page_links.py:129
 msgid "Zoom in"
 msgstr "Mărește"
 
-#: links/document_file_page_links.py:115
+#: links/document_file_page_links.py:117
 #: links/document_version_page_links.py:135
 msgid "Zoom out"
 msgstr "Micșorează"
 
-#: links/document_links.py:17 links/document_links.py:33
+#: links/document_links.py:18 links/document_links.py:36
 msgid "Change type"
 msgstr "Modificați tipul"
 
-#: links/document_links.py:22 views/document_views.py:71
+#: links/document_links.py:23 views/document_views.py:71
 msgid "All documents"
 msgstr "Toate documentele"
 
-#: links/document_links.py:25 views/recently_accessed_document_views.py:29
+#: links/document_links.py:27 views/recently_accessed_document_views.py:31
 msgid "Recently accessed"
 msgstr "Accesate recent"
 
-#: links/document_links.py:29 views/recently_created_document_views.py:27
+#: links/document_links.py:32 views/recently_created_document_views.py:27
 msgid "Recently created"
 msgstr "Create recent"
 
-#: links/document_links.py:50
+#: links/document_links.py:53
 msgid "Edit properties"
 msgstr "Editați proprietățile"
 
-#: links/document_type_links.py:22 views/document_type_views.py:96
+#: links/document_type_links.py:22 views/document_type_views.py:98
 msgid "Create document type"
 msgstr "Creați tipul de document"
 
@@ -548,7 +548,7 @@ msgstr "Creați tipul de document"
 msgid "Add quick label to document type"
 msgstr "Adăugați etichetă rapidă la tipul de document"
 
-#: links/document_type_links.py:58 models/document_type_models.py:163
+#: links/document_type_links.py:58 models/document_type_models.py:166
 msgid "Quick labels"
 msgstr "Etichete rapide"
 
@@ -581,26 +581,26 @@ msgid "Remap pages"
 msgstr "Remapează paginile"
 
 #: links/document_version_page_links.py:96
-#: models/document_version_models.py:51
-#: models/document_version_page_models.py:34 search.py:116
+#: models/document_version_models.py:54
+#: models/document_version_page_models.py:36 search.py:128
 msgid "Document version"
 msgstr "Versiune document"
 
 #: links/document_version_page_links.py:102
-#: models/document_version_page_models.py:57
-#: models/document_version_page_models.py:102
+#: models/document_version_page_models.py:60
+#: models/document_version_page_models.py:104
 msgid "Document version pages"
 msgstr "Paginile versiunii documentului"
 
-#: links/favorite_links.py:28 views/favorite_document_views.py:38
+#: links/favorite_links.py:34 views/favorite_document_views.py:38
 msgid "Favorites"
 msgstr "Preferate"
 
-#: links/favorite_links.py:34 links/favorite_links.py:44
+#: links/favorite_links.py:40 links/favorite_links.py:51
 msgid "Add to favorites"
 msgstr "Adaugă la favorite"
 
-#: links/favorite_links.py:40 links/favorite_links.py:48
+#: links/favorite_links.py:47 links/favorite_links.py:55
 msgid "Remove from favorites"
 msgstr "Eliminați de la favorite"
 
@@ -628,100 +628,100 @@ msgstr "Golire coș de gunoi"
 msgid "Default"
 msgstr "Implicit"
 
-#: literals.py:88
+#: literals.py:91
 msgid "January"
 msgstr "ianuarie"
 
-#: literals.py:88
+#: literals.py:91
 msgid "February"
 msgstr "februarie"
 
-#: literals.py:88
+#: literals.py:91
 msgid "March"
 msgstr "martie"
 
-#: literals.py:88
+#: literals.py:91
 msgid "April"
 msgstr "aprilie"
 
-#: literals.py:88
+#: literals.py:91
 msgid "May"
 msgstr "mai"
 
-#: literals.py:89
+#: literals.py:92
 msgid "June"
 msgstr "iunie"
 
-#: literals.py:89
+#: literals.py:92
 msgid "July"
 msgstr "iulie"
 
-#: literals.py:89
+#: literals.py:92
 msgid "August"
 msgstr "august"
 
-#: literals.py:89
+#: literals.py:92
 msgid "September"
 msgstr "septembrie"
 
-#: literals.py:89
+#: literals.py:92
 msgid "October"
 msgstr "octombrie"
 
-#: literals.py:90
+#: literals.py:93
 msgid "November"
 msgstr "noiembrie"
 
-#: literals.py:90
+#: literals.py:93
 msgid "December"
 msgstr "decembrie"
 
-#: literals.py:96
+#: literals.py:99
 msgid "All pages"
 msgstr "Toate paginile"
 
-#: models/document_file_model_mixins.py:299
+#: models/document_file_model_mixins.py:365
 #: models/document_file_page_model_mixins.py:244
-#: models/document_model_mixins.py:176 models/document_models.py:67
-#: models/document_type_models.py:41 models/document_type_models.py:153
-#: models/document_version_model_mixins.py:128
+#: models/document_model_mixins.py:179 models/document_models.py:63
+#: models/document_type_models.py:43 models/document_type_models.py:156
+#: models/document_version_model_mixins.py:131
 #: models/document_version_page_model_mixins.py:290
 #: serializers/document_serializers.py:22
 #: serializers/document_version_serializers.py:17
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: models/document_file_model_mixins.py:457
+#: models/document_file_model_mixins.py:506
 msgid "Controls what happens when a new document file is uploaded."
 msgstr ""
 "Controlează ce se întâmplă atunci când este încărcat un nou fișier de "
 "document."
 
-#: models/document_file_models.py:61
+#: models/document_file_models.py:62
 msgid "The server date and time when the document file was processed."
 msgstr "Data și ora serverului la care a fost procesat fișierul document."
 
-#: models/document_file_models.py:62 models/document_version_models.py:33
+#: models/document_file_models.py:63 models/document_version_models.py:36
 msgid "Timestamp"
 msgstr "Marcaj temporal"
 
-#: models/document_file_models.py:66
+#: models/document_file_models.py:67
 msgid "An optional short text describing the document file."
 msgstr "Un text scurt opțional care descrie fișierul documentului."
 
-#: models/document_file_models.py:67 models/document_version_models.py:38
+#: models/document_file_models.py:68 models/document_version_models.py:41
 msgid "Comment"
 msgstr "Comentariu"
 
-#: models/document_file_models.py:72 serializers/document_serializers.py:93
+#: models/document_file_models.py:73 serializers/document_serializers.py:93
 msgid "File"
 msgstr "Fișier"
 
-#: models/document_file_models.py:75
+#: models/document_file_models.py:76
 msgid "Filename"
 msgstr "Nume fişier"
 
-#: models/document_file_models.py:79
+#: models/document_file_models.py:80
 msgid ""
 "The document file's file mimetype. MIME types are a standard way to describe"
 " the format of a file, in this case the file format of the document. Some "
@@ -731,7 +731,7 @@ msgstr ""
 "a descrie formatul unui fișier, în acest caz formatul de fișier al "
 "documentului. Câteva exemple: „text / simplu” sau „imagine / jpeg”."
 
-#: models/document_file_models.py:87
+#: models/document_file_models.py:88
 msgid ""
 "The document file file encoding. binary 7-bit, binary 8-bit, text, base64, "
 "etc."
@@ -739,7 +739,7 @@ msgstr ""
 "Codificarea fișierului fișierului document. binar pe 7 biți, binar pe 8 "
 "biți, text, base64 etc."
 
-#: models/document_file_models.py:107 storages.py:27
+#: models/document_file_models.py:108 storages.py:27
 msgid "Document files"
 msgstr "Fișiere de documente"
 
@@ -748,21 +748,21 @@ msgstr "Fișiere de documente"
 msgid "%(document_file)s - page %(page_num)d of %(total_pages)d"
 msgstr "%(document_file)s - pagina %(page_num)d din %(total_pages)d"
 
-#: models/document_file_page_models.py:38
-#: models/document_file_page_models.py:84 search.py:80
+#: models/document_file_page_models.py:40
+#: models/document_file_page_models.py:85 search.py:91
 msgid "Document file page"
 msgstr "Pagina fișierului documentului"
 
-#: models/document_model_mixins.py:173
+#: models/document_model_mixins.py:176
 #, python-format
 msgid "Document stub, id: %d"
 msgstr "Stub document, id: %d"
 
-#: models/document_models.py:47
+#: models/document_models.py:43
 msgid "Latest document file"
 msgstr "Cel mai recent fișier document"
 
-#: models/document_models.py:52
+#: models/document_models.py:48
 msgid ""
 "UUID of a document, universally Unique ID. An unique identifier generated "
 "for each document."
@@ -770,11 +770,11 @@ msgstr ""
 "UUID al unui document, identificator unic universal. Un identificator unic "
 "generat pentru fiecare document."
 
-#: models/document_models.py:57
+#: models/document_models.py:53
 msgid "The document type of the document."
 msgstr "Tipul de document al documentului."
 
-#: models/document_models.py:64
+#: models/document_models.py:60
 msgid ""
 "A short text identifying the document. By default, will be set to the "
 "filename of the first file uploaded to the document."
@@ -782,44 +782,44 @@ msgstr ""
 "Un scurt text care identifică documentul. În mod implicit, va fi setat la "
 "numele fișierului primului fișier încărcat în document."
 
-#: models/document_models.py:71
+#: models/document_models.py:67
 msgid "An optional short text describing a document."
 msgstr "Un text scurt opțional care descrie un document."
 
-#: models/document_models.py:72 serializers/document_version_serializers.py:20
+#: models/document_models.py:68 serializers/document_version_serializers.py:20
 msgid "Description"
 msgstr "Descriere"
 
-#: models/document_models.py:76
+#: models/document_models.py:72
 msgid "The date and time of the document creation."
 msgstr "Data și ora creării documentului."
 
-#: models/document_models.py:77
+#: models/document_models.py:73
 msgid "Created"
 msgstr "Creat"
 
-#: models/document_models.py:81
+#: models/document_models.py:77
 msgid "The primary language in the document."
 msgstr "Limba principală în document."
 
-#: models/document_models.py:86
+#: models/document_models.py:82
 msgid "Whether or not this document is in the trash."
 msgstr "Dacă acest document este sau nu în coșul de gunoi."
 
-#: models/document_models.py:87
+#: models/document_models.py:83
 msgid "In trash?"
 msgstr "În gunoi?"
 
-#: models/document_models.py:91
+#: models/document_models.py:87
 msgid "The server date and time when the document was moved to the trash."
 msgstr ""
 "Data și ora serverului când documentul a fost mutat în coșul de gunoi."
 
-#: models/document_models.py:93
+#: models/document_models.py:89
 msgid "Date and time trashed"
 msgstr "Data și ora în gunoi"
 
-#: models/document_models.py:97
+#: models/document_models.py:93
 msgid ""
 "A document stub is a document with an entry on the database but no file "
 "uploaded. This could be an interrupted upload or a deferred upload via the "
@@ -829,19 +829,19 @@ msgstr ""
 "încarcat niciun fișier. Aceasta ar putea fi o încărcare întreruptă sau o "
 "încărcare amânată prin API."
 
-#: models/document_models.py:100
+#: models/document_models.py:96
 msgid "Is stub?"
 msgstr "Este stub?"
 
-#: models/document_models.py:105
+#: models/document_models.py:101
 msgid "Active document version"
 msgstr "Versiunea activă a documentului"
 
-#: models/document_type_models.py:40
+#: models/document_type_models.py:42
 msgid "A short text identifying the document type."
 msgstr "Un scurt text care identifică tipul de document."
 
-#: models/document_type_models.py:45
+#: models/document_type_models.py:47
 msgid ""
 "The class responsible for producing the actual filename used to store the "
 "uploaded documents."
@@ -849,21 +849,21 @@ msgstr ""
 "Clasa responsabilă de producerea numelui de fișier real utilizat pentru a "
 "stoca documentele încărcate."
 
-#: models/document_type_models.py:47
+#: models/document_type_models.py:49
 msgid "Filename generator backend"
 msgstr "Generator de nume de fișiere backend"
 
-#: models/document_type_models.py:51
+#: models/document_type_models.py:53
 msgid "The arguments for the filename generator backend as a YAML dictionary."
 msgstr ""
 "Argumentele pentru generatorul de nume de fișiere sub formă de dicționar "
 "YAML."
 
-#: models/document_type_models.py:56
+#: models/document_type_models.py:58
 msgid "Filename generator backend arguments"
 msgstr "Parametri backend pentru generatorul de nume de fișiere"
 
-#: models/document_type_models.py:64
+#: models/document_type_models.py:66
 msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
@@ -871,15 +871,15 @@ msgstr ""
 "Cantitatea de timp după care documentele de acest tip vor fi mutate în coșul"
 " de gunoi."
 
-#: models/document_type_models.py:66
+#: models/document_type_models.py:68
 msgid "Trash time period"
 msgstr "Durata perioadei în gunoi"
 
-#: models/document_type_models.py:70
+#: models/document_type_models.py:72
 msgid "Trash time unit"
 msgstr "Unitatea timpului păstrare în gunoi"
 
-#: models/document_type_models.py:74
+#: models/document_type_models.py:76
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
@@ -887,15 +887,15 @@ msgstr ""
 "Cantitatea de timp după care documentele de acest tip din coșul de gunoi vor"
 " fi șterse."
 
-#: models/document_type_models.py:76
+#: models/document_type_models.py:78
 msgid "Delete time period"
 msgstr "Perioada de timp de ștergere"
 
-#: models/document_type_models.py:81
+#: models/document_type_models.py:83
 msgid "Delete time unit"
 msgstr "Unitate de timp pt. ștergere"
 
-#: models/document_type_models.py:85
+#: models/document_type_models.py:87
 msgid ""
 "Delete documents that do not contain any files after a configured expiration"
 " interval."
@@ -903,11 +903,11 @@ msgstr ""
 "Ștergere documentele care nu conțin fișiere după un interval de expirare "
 "configurat."
 
-#: models/document_type_models.py:87
+#: models/document_type_models.py:89
 msgid "Document stub pruning"
 msgstr "Toaletarea stub-urilor de document"
 
-#: models/document_type_models.py:91
+#: models/document_type_models.py:93
 msgid ""
 "Time (in seconds) after which a document stub will be considered invalid and"
 " deleted, if pruning is enabled. This an optimization setting and should "
@@ -917,39 +917,35 @@ msgstr ""
 "șters, dacă toaletarea este activată. Aceasta este o setare de optimizare și"
 " ar trebui modificată numai pentru circumstanțe specifice."
 
-#: models/document_type_models.py:95
+#: models/document_type_models.py:97
 msgid "Document stub expiration interval"
 msgstr "Intervalul de expirare a stub-urilor documentului"
 
-#: models/document_type_models.py:103
-msgid "Documents types"
-msgstr "Tipuri de documente"
-
-#: models/document_type_models.py:156
+#: models/document_type_models.py:159
 msgid "Enabled"
 msgstr "Activat"
 
-#: models/document_type_models.py:162
+#: models/document_type_models.py:165
 msgid "Quick label"
 msgstr "Etichetă rapidă"
 
-#: models/document_version_models.py:32
+#: models/document_version_models.py:34
 msgid "The server date and time when the document version was created."
 msgstr "Data și ora serverului la care a fost creată versiunea documentului."
 
-#: models/document_version_models.py:37
+#: models/document_version_models.py:40
 msgid "An optional short text describing the document version."
 msgstr "Un text scurt opțional care descrie versiunea documentului."
 
-#: models/document_version_models.py:42
+#: models/document_version_models.py:45
 msgid "Determines the active version of the document."
 msgstr "Determină versiunea activă a documentului."
 
-#: models/document_version_models.py:43
+#: models/document_version_models.py:46
 msgid "Active"
 msgstr "Activ"
 
-#: models/document_version_models.py:52
+#: models/document_version_models.py:55
 msgid "Document versions"
 msgstr "Versiuni ale documentului"
 
@@ -958,28 +954,28 @@ msgstr "Versiuni ale documentului"
 msgid "%(document_version)s page %(page_number)d of %(total_pages)d"
 msgstr "%(document_version)s pagina %(page_number)d din %(total_pages)d"
 
-#: models/document_version_page_models.py:38
+#: models/document_version_page_models.py:40
 msgid "Unique integer number for the page. Pages are ordered by this number."
 msgstr ""
 "Număr întreg unic pentru pagină. Paginile sunt ordonate după acest număr."
 
-#: models/document_version_page_models.py:43
+#: models/document_version_page_models.py:46
 msgid "Content type for the source object of the page."
 msgstr "Tipul de conținut pentru obiectul sursă al paginii."
 
-#: models/document_version_page_models.py:47
+#: models/document_version_page_models.py:50
 msgid "ID for the source object of the page."
 msgstr "ID pentru obiectul sursă al paginii."
 
-#: models/document_version_page_models.py:56
-#: models/document_version_page_models.py:101 search.py:144
+#: models/document_version_page_models.py:59
+#: models/document_version_page_models.py:103 search.py:161
 msgid "Document version page"
 msgstr "Pagina versiunii documentului"
 
 #: models/favorite_document_models.py:26
 #: models/recently_accessed_document_models.py:21
 #: serializers/favorite_document_serializers.py:20
-#: serializers/recently_accessed_document_serializers.py:16
+#: serializers/recently_accessed_document_serializers.py:18
 msgid "User"
 msgstr "Utilizator"
 
@@ -1112,115 +1108,140 @@ msgid "Documents fast"
 msgstr "Documente mod rapid"
 
 #: queues.py:17
+msgid "Documents slow"
+msgstr ""
+
+#: queues.py:20
 msgid "Documents file"
 msgstr "Dosar documente"
 
-#: queues.py:20
+#: queues.py:23
 msgid "Documents file slow"
 msgstr "Documente mod lent"
 
-#: queues.py:24
+#: queues.py:27
 msgid "Documents periodic"
 msgstr "Documente periodice"
 
-#: queues.py:28
+#: queues.py:31
 msgid "Documents trash"
 msgstr "Coș de gunoi de documente"
 
-#: queues.py:31
+#: queues.py:35
 msgid "Documents version"
 msgstr "Versiunile documentelor"
 
-#: queues.py:36
+#: queues.py:41
 msgid "Create new document file"
 msgstr "Creați un nou fișier de document"
 
-#: queues.py:40
+#: queues.py:45
 msgid "Upload new document file"
 msgstr "Încărcați fișierul document nou"
 
-#: queues.py:44
+#: queues.py:49
+msgid "Move a document to the trash"
+msgstr ""
+
+#: queues.py:53
 msgid "Upload new document"
 msgstr "Încărcați un document nou"
 
-#: queues.py:49
+#: queues.py:58
 msgid "Calculate and update document file checksum"
 msgstr "Calculați și actualizați suma de verificare a fișierului documentului"
 
-#: queues.py:53
+#: queues.py:62
 msgid "Calculate and update document file MIME type"
 msgstr "Calculați și actualizați tipul MIME fișier de document"
 
-#: queues.py:57
+#: queues.py:66
 msgid "Update document file page count"
 msgstr "Actualizați numărul de pagini ale fișierului documentului"
 
-#: queues.py:61
+#: queues.py:70
 msgid "Update document file size"
 msgstr "Actualizați dimensiunea fișierului documentului"
 
-#: queues.py:65
+#: queues.py:74
 msgid "Create a new version after the file is processed"
 msgstr "Creați o nouă versiune după procesarea fișierului"
 
-#: queues.py:70
+#: queues.py:79
 msgid "Delete a document file"
 msgstr "Ștergeți un fișier document"
 
-#: queues.py:75
+#: queues.py:84
 msgid "Check document type trash periods"
 msgstr "Verificați perioadele de păstrare la gunoi pentru tipul de document"
 
-#: queues.py:81
+#: queues.py:90
 msgid "Delete document stubs"
 msgstr "Ștergeți stub-uri de document"
 
-#: queues.py:87
+#: queues.py:96
 msgid "Check document type delete periods"
 msgstr "Verificați perioadele de ștergere pe tipul de document"
 
-#: queues.py:96
+#: queues.py:105
 msgid "Empty the trash can"
 msgstr "Goliți coșul de gunoi"
 
-#: queues.py:100
+#: queues.py:109
 msgid "Delete a document"
 msgstr "Ștergeți un document"
 
-#: queues.py:105
+#: queues.py:114
 msgid "Append all document file pages to a document version"
 msgstr ""
 "Adăugați toate paginile fișierului de document la o versiune de document"
 
-#: queues.py:109
+#: queues.py:118
 msgid "Reset the page list of a document version"
 msgstr "Resetați lista de pagini a unei versiuni de document"
 
-#: queues.py:113
+#: queues.py:122
 msgid "Export a document version"
 msgstr "Exportați o versiune a documentului"
 
-#: queues.py:117
+#: queues.py:126
 msgid "Delete a document version"
 msgstr "Ștergeți o versiune a documentului"
 
-#: search.py:30 search.py:61 search.py:92 search.py:129 search.py:156
+#: search.py:31
+msgid "The database ID of the document type."
+msgstr ""
+
+#: search.py:32 serializers/document_serializers.py:32
+#: serializers/document_serializers.py:78
+msgid "Document type ID"
+msgstr "ID tip document"
+
+#: search.py:35 search.py:66 search.py:103 search.py:141 search.py:173
 msgid "Document type label"
 msgstr "Etichetă tip document"
 
-#: search.py:64 search.py:95 search.py:132 search.py:159
-msgid "Document label"
-msgstr "Etichetele documentului"
-
-#: search.py:67 search.py:135
+#: search.py:69 search.py:152
 msgid "Document description"
 msgstr "Descrierea documentului"
 
-#: search.py:70 search.py:101 search.py:138 search.py:162
+#: search.py:73 search.py:145
+msgid "The database ID of the document."
+msgstr ""
+
+#: search.py:74 search.py:146 serializers/favorite_document_serializers.py:17
+msgid "Document ID"
+msgstr "ID document"
+
+#: search.py:77 search.py:106 search.py:149 search.py:176
+msgid "Document label"
+msgstr "Etichetele documentului"
+
+#: search.py:80 search.py:112 search.py:155 search.py:179
 msgid "Document UUID"
 msgstr "UUID al documentului"
 
-#: search.py:98
+#: search.py:109
 msgid "Document file checksum"
 msgstr "Suma de control a fișierului documentului"
 
@@ -1235,10 +1256,10 @@ msgid "Image URL"
 msgstr "Adresa URL a imaginii"
 
 #: serializers/document_file_serializers.py:40
-#: serializers/document_file_serializers.py:107
+#: serializers/document_file_serializers.py:95
 #: serializers/document_serializers.py:57
 #: serializers/document_type_serializers.py:15
-#: serializers/document_type_serializers.py:42
+#: serializers/document_type_serializers.py:52
 #: serializers/document_version_serializers.py:73
 #: serializers/document_version_serializers.py:135
 #: serializers/favorite_document_serializers.py:26
@@ -1256,23 +1277,19 @@ msgid "Document URL"
 msgstr "Adresa URL a documentului"
 
 #: serializers/document_file_serializers.py:76
-msgid "Download URL"
-msgstr "Adresa URL a descărcării"
-
-#: serializers/document_file_serializers.py:88
 msgid "Binary content for the new file."
 msgstr "Conținut binar pentru noul fișier."
 
-#: serializers/document_file_serializers.py:89
+#: serializers/document_file_serializers.py:77
 msgid "File new"
 msgstr "Fișier nou"
 
-#: serializers/document_file_serializers.py:92
+#: serializers/document_file_serializers.py:80
 #: serializers/document_version_serializers.py:120
 msgid "Page list URL"
 msgstr "Adresa URL a listei de pagini"
 
-#: serializers/document_file_serializers.py:104
+#: serializers/document_file_serializers.py:92
 #: serializers/document_version_serializers.py:132
 msgid "Pages first"
 msgstr "Paginile mai întâi"
@@ -1285,11 +1302,6 @@ msgstr "ID-ul"
 #: serializers/document_serializers.py:31
 msgid "Document type ID for the new document."
 msgstr "ID tip document pentru noul document."
-
-#: serializers/document_serializers.py:32
-#: serializers/document_serializers.py:78
-msgid "Document type ID"
-msgstr "ID tip document"
 
 #: serializers/document_serializers.py:35
 msgid "Document change type URL"
@@ -1322,6 +1334,11 @@ msgid "Document type URL"
 msgstr "Adresa URL a tipului de document"
 
 #: serializers/document_type_serializers.py:35
+#: serializers/document_type_serializers.py:47
+msgid "Documents URL"
+msgstr "Adresa URL a documentelor"
+
+#: serializers/document_type_serializers.py:39
 msgid "Quick label list URL"
 msgstr "Adresa URL a listei rapidă de etichete"
 
@@ -1349,15 +1366,11 @@ msgstr "Adresa URL pentru export"
 msgid "Document ID for the new favorite document."
 msgstr "ID document pentru noul document preferat."
 
-#: serializers/favorite_document_serializers.py:17
-msgid "Document ID"
-msgstr "ID document"
-
 #: serializers/trashed_document_serializers.py:16
 msgid "Restore URL"
 msgstr "Adresa URL de restaurare"
 
-#: settings.py:50
+#: settings.py:49
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
 "will start deleting the oldest document file page image cache files. Specify"
@@ -1367,17 +1380,17 @@ msgstr ""
 "șteargă cele mai vechi fișiere cache a imaginii din paginile fișierului de "
 "document. Specificați dimensiunea în octeți."
 
-#: settings.py:58
+#: settings.py:57
 msgid "Path to the Storage subclass to use when storing document files."
 msgstr ""
 "Calea către subclasa de stocare care trebuie utilizată la stocarea "
 "fișierelor de documente."
 
-#: settings.py:65
+#: settings.py:64
 msgid "Arguments to pass to the DOCUMENT_FILE_STORAGE_BACKEND."
 msgstr "Argumente de transmis la DOCUMENT_FILE_STORAGE_BACKEND."
 
-#: settings.py:71
+#: settings.py:70
 msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
@@ -1385,18 +1398,18 @@ msgstr ""
 "Calea către subclasa Storage de utilizat atunci când stocați fișierele de "
 "imagine din pagina fișierului documentului din cache."
 
-#: settings.py:79
+#: settings.py:78
 msgid ""
 "Arguments to pass to the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Argumente de transmis la DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:85
+#: settings.py:84
 msgid "Maximum number of favorite documents to remember per user."
 msgstr ""
 "Numărul maxim de documente preferate de reținut pentru fiecare utilizator."
 
-#: settings.py:91
+#: settings.py:90
 msgid ""
 "Size of blocks to use when calculating the document file's checksum. A value"
 " of 0 disables the block calculation and the entire file will be loaded into"
@@ -1406,15 +1419,15 @@ msgstr ""
 "fișierului documentului. O valoare de 0 dezactivează calculul blocului și "
 "întregul fișier va fi încărcat în memorie."
 
-#: settings.py:98
+#: settings.py:97
 msgid "Default documents language (in ISO639-3 format)."
 msgstr "Limba standard a documentelor (în format ISO639-3)."
 
-#: settings.py:102
+#: settings.py:101
 msgid "List of supported document languages. In ISO639-3 format."
 msgstr "Lista limbilor de documente acceptate. În format ISO639-3."
 
-#: settings.py:108
+#: settings.py:107
 msgid ""
 "The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
 " will start deleting the oldest document version page image cache versions. "
@@ -1424,7 +1437,7 @@ msgstr ""
 "să șteargă cele mai vechi versiuni de cache a imaginilor din pagina de "
 "versiune a documentului. Specificați dimensiunea în octeți."
 
-#: settings.py:117
+#: settings.py:116
 msgid ""
 "Path to the Storage subclass to use when storing the cached document version"
 " page image versions."
@@ -1432,13 +1445,13 @@ msgstr ""
 "Calea către subclasa Storage de utilizat atunci când stocați versiunile de "
 "imagini ale paginii versiunii documentului stocate în cache."
 
-#: settings.py:125
+#: settings.py:124
 msgid ""
 "Arguments to pass to the DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 msgstr ""
 "Argumente de transmis la DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND."
 
-#: settings.py:147
+#: settings.py:146
 msgid ""
 "Maximum number of recently accessed documents (created, edited, viewed) to "
 "remember per user."
@@ -1446,21 +1459,21 @@ msgstr ""
 "Numărul maxim de documente accesate recent (create, editate, vizualizate) de"
 " reținut pentru fiecare utilizator."
 
-#: settings.py:154
+#: settings.py:153
 msgid "Maximum number of recently created documents to show."
 msgstr "Numărul maxim de documente create recent pentru a fi afișate."
 
-#: settings.py:160
+#: settings.py:159
 msgid "Amount in degrees to rotate a document page per user interaction."
 msgstr ""
 "Ce rotaţie pentru pagină (în grade) este folosită în interacțiunea cu "
 "utilizatorul."
 
-#: settings.py:166
+#: settings.py:165
 msgid "Height in pixels of the document thumbnail image."
 msgstr "Înălțimea în pixeli a imaginii miniatură a documentelor."
 
-#: settings.py:185
+#: settings.py:184
 msgid ""
 "Maximum amount in percent (%) to allow user to zoom in a document page "
 "interactively."
@@ -1468,7 +1481,7 @@ msgstr ""
 "Suma maximă în procente (%), permisă utilizatorilor pentru mărirea "
 "interactiv a unei pagini ."
 
-#: settings.py:192
+#: settings.py:191
 msgid ""
 "Minimum amount in percent (%) to allow user to zoom out a document page "
 "interactively."
@@ -1476,7 +1489,7 @@ msgstr ""
 "Suma minimă în procente (%), permisă utilizatorului pentru micșorarea "
 "interactivă a unei pagini ."
 
-#: settings.py:199
+#: settings.py:198
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
 "Suma în procente folosită pentru a mării sau micşora un document interactiv "
@@ -1554,6 +1567,10 @@ msgstr "Imaginile paginii cu versiunea documentului"
 msgid "Document page image preview"
 msgstr "Previzualizare imagine pagină document"
 
+#: templates/documents/errors/document_file_has_no_pages.html:5
+msgid "No file pages"
+msgstr ""
+
 #: templates/documents/errors/document_file_page_transformation_error.html:5
 msgid "Document file page transformation error"
 msgstr "Eroare de transformare a paginii fișierului de document"
@@ -1590,7 +1607,7 @@ msgstr "Nu există pagini de afișat"
 msgid "Unknown language \"%s\""
 msgstr "Limbă necunoscută \"%s\""
 
-#: views/document_file_page_views.py:55
+#: views/document_file_page_views.py:53
 msgid ""
 "This could mean that the document file is of a format that is not supported,"
 " that it is corrupted, or that the upload process was interrupted. Use the "
@@ -1601,27 +1618,25 @@ msgstr ""
 "Utilizați linkul de introspecție a fișierului document pentru a încerca din "
 "nou să detectați numărul de pagini."
 
-#: views/document_file_page_views.py:61
+#: views/document_file_page_views.py:59
 msgid "No document file pages available"
 msgstr "Nu sunt disponibile pagini de fișiere de document"
 
-#: views/document_file_page_views.py:63
+#: views/document_file_page_views.py:62
 #, python-format
 msgid "Pages of document file: %s"
 msgstr "Pagini ale fișierului document: %s"
 
 #: views/document_file_page_views.py:144
-#: views/document_version_page_views.py:315
 msgid "There are no more pages in this document"
 msgstr "Nu mai sunt pagini în acest document."
 
 #: views/document_file_page_views.py:160
-#: views/document_version_page_views.py:331
 msgid "You are already at the first page of this document"
 msgstr "Sunteți deja la prima pagină a acestui document"
 
-#: views/document_file_page_views.py:195
-#: views/document_version_page_views.py:370
+#: views/document_file_page_views.py:196
+#: views/document_version_page_views.py:363
 #, python-format
 msgid "Image of: %s"
 msgstr "Imaginea: %s"
@@ -1675,34 +1690,34 @@ msgstr ""
 "paginile versiunii de document legate de acestea vor fi de asemenea șterse. "
 "Procesul va fi efectuat în fundal."
 
-#: views/document_file_views.py:114
+#: views/document_file_views.py:115
 #, python-format
 msgid "Edit document file: %s"
 msgstr "Editați fișierul document: %s"
 
-#: views/document_file_views.py:135
+#: views/document_file_views.py:133
 #, python-format
 msgid "%(count)d document file queued for introspection."
 msgstr "%(count)d fișier document pus în coadă pentru introspecție."
 
-#: views/document_file_views.py:138
+#: views/document_file_views.py:136
 #, python-format
 msgid "%(count)d document files queued for introspection."
 msgstr "%(count)d fișiere document puse în coadă pentru introspecție."
 
-#: views/document_file_views.py:147
+#: views/document_file_views.py:145
 msgid "Introspect the selected document file?"
 msgid_plural "Introspect the selected document files?"
 msgstr[0] "Introspectați fișierul document selectat?"
 msgstr[1] "Introspectați fișierele de document selectate?"
 msgstr[2] "Introspectați fișierele de document selectate?"
 
-#: views/document_file_views.py:158
+#: views/document_file_views.py:156
 #, python-format
 msgid "Introspect the document file: %s?"
 msgstr "Introspectați fișierul document: %s ?"
 
-#: views/document_file_views.py:164
+#: views/document_file_views.py:162
 msgid ""
 "The document file will be re-examined for file size, page count, checksum, "
 "and its related document version pages re-created. All transformations will "
@@ -1712,7 +1727,7 @@ msgstr ""
 "numărul de pagini, suma de verificare și paginile sale aferente versiunii "
 "documentului vor fi recreate. Toate transformările vor fi pierdute."
 
-#: views/document_file_views.py:193
+#: views/document_file_views.py:191
 msgid ""
 "File are the actual files that were uploaded for each document. Their "
 "contents needs to be mapped to a version before it can be used."
@@ -1721,40 +1736,40 @@ msgstr ""
 "document. Conținutul lor trebuie mapat la o versiune înainte de a putea fi "
 "utilizat."
 
-#: views/document_file_views.py:197
+#: views/document_file_views.py:195
 msgid "No files available"
 msgstr "Nu există fișiere disponibile"
 
-#: views/document_file_views.py:222
+#: views/document_file_views.py:220
 #, python-format
 msgid "Files of document: %s"
 msgstr "Fișierele documentului: %s"
 
-#: views/document_file_views.py:258
+#: views/document_file_views.py:256
 #, python-format
 msgid "Preview of document file: %s"
 msgstr "Previzualizare fișier document: %s"
 
-#: views/document_file_views.py:318
+#: views/document_file_views.py:314
 #, python-format
 msgid "Properties of document file: %s"
 msgstr "Proprietățile fișierului document: %s"
 
-#: views/document_file_views.py:327
+#: views/document_file_views.py:323
 #, python-format
 msgid "Transformation clear request processed for %(count)d document file."
 msgstr ""
 "Solicitarea de ștergere a transformării a fost procesată pentru %(count)d "
 "fișier document."
 
-#: views/document_file_views.py:330
+#: views/document_file_views.py:327
 #, python-format
 msgid "Transformation clear request processed for %(count)d document files."
 msgstr ""
 "Solicitarea de ștergere a transformării a fost procesată pentru %(count)d  "
 "fișiere de document."
 
-#: views/document_file_views.py:337
+#: views/document_file_views.py:335
 msgid "Clear all the page transformations for the selected document file?"
 msgid_plural ""
 "Clear all the page transformations for the selected document files?"
@@ -1767,12 +1782,12 @@ msgstr[2] ""
 "Ștergeți toate transformările de pagină pentru fișierele de document "
 "selectate?"
 
-#: views/document_file_views.py:348
+#: views/document_file_views.py:346
 #, python-format
 msgid "Clear all the page transformations for the document file: %s?"
 msgstr "Ștergeți toate transformările de pagină pentru fișierul document: %s?"
 
-#: views/document_file_views.py:365
+#: views/document_file_views.py:363
 #, python-format
 msgid ""
 "Error deleting the page transformations for document file: "
@@ -1781,7 +1796,7 @@ msgstr ""
 "Eroare la ștergerea transformărilor paginii pentru fișierul document: "
 "%(document_file)s; %(error)s."
 
-#: views/document_file_views.py:402
+#: views/document_file_views.py:400
 #, python-format
 msgid ""
 "Error cloning the page transformations for document file: %(document_file)s;"
@@ -1790,11 +1805,11 @@ msgstr ""
 "Eroare la clonarea transformărilor paginii pentru fișierul document: "
 "%(document_file)s; %(error)s."
 
-#: views/document_file_views.py:411 views/document_version_views.py:412
+#: views/document_file_views.py:409 views/document_version_views.py:419
 msgid "Transformations cloned successfully."
 msgstr "Transformările clonate cu succes."
 
-#: views/document_file_views.py:426
+#: views/document_file_views.py:422
 #, python-format
 msgid "Clone page transformations of document file: %s"
 msgstr "Clonează transformările paginii ale fișierului document: %s"
@@ -1816,12 +1831,12 @@ msgstr "Toaletare stub-uri"
 msgid "Retention policies for document type: %s"
 msgstr "Politici de păstrare pentru tipul de document: %s"
 
-#: views/document_type_views.py:54
+#: views/document_type_views.py:55
 #, python-format
 msgid "Documents of type: %s"
 msgstr "Documente de tipul: %s"
 
-#: views/document_type_views.py:74
+#: views/document_type_views.py:76
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
 "system will depend on them. Define a document type for each type of physical"
@@ -1834,20 +1849,20 @@ msgstr ""
 "de documente: factură, chitanță, procedură, manual de utilizare, "
 "prescripție, bilanț."
 
-#: views/document_type_views.py:80
+#: views/document_type_views.py:82
 msgid "No document types available"
 msgstr "Nu sunt disponibile tipuri de documente"
 
-#: views/document_type_views.py:116
+#: views/document_type_views.py:117
 msgid "All documents of this type will be deleted too."
 msgstr "Toate documentele de acest tip vor fi de asemenea șterse."
 
-#: views/document_type_views.py:118
+#: views/document_type_views.py:120
 #, python-format
 msgid "Delete the document type: %s?"
 msgstr "Ștergeți tipul de document: %s?"
 
-#: views/document_type_views.py:135
+#: views/document_type_views.py:137
 #, python-format
 msgid "Edit document type: %s"
 msgstr "Editați tipul de document: %s"
@@ -1865,14 +1880,14 @@ msgstr ""
 "Ștergeți eticheta rapidă: %(label)s, de la tipul de document "
 "\"%(document_type)s\"?"
 
-#: views/document_type_views.py:207
+#: views/document_type_views.py:206
 #, python-format
 msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr ""
 "Editați eticheta rapidă \"%(filename)s\" din tipul de document "
 "\"%(document_type)s\""
 
-#: views/document_type_views.py:246
+#: views/document_type_views.py:244
 msgid ""
 "Quick labels are predetermined filenames that allow the quick renaming of "
 "documents as they are uploaded by selecting them from a list. Quick labels "
@@ -1883,16 +1898,16 @@ msgstr ""
 "dintr-o listă. Etichetele rapide pot fi de asemenea folosite după ce "
 "documentele au fost încărcate."
 
-#: views/document_type_views.py:252
+#: views/document_type_views.py:250
 msgid "There are no quick labels for this document type"
 msgstr "Nu există etichete rapide pentru acest tip de document"
 
-#: views/document_type_views.py:255
+#: views/document_type_views.py:253
 #, python-format
 msgid "Quick labels for document type: %s"
 msgstr "Etichete rapide pentru tipul de document: %s"
 
-#: views/document_type_views.py:277
+#: views/document_type_views.py:275
 #, python-format
 msgid "Filename generation setup for document type: %s"
 msgstr ""
@@ -1912,7 +1927,7 @@ msgstr ""
 msgid "Delete document version page %s ?"
 msgstr "Ștergeți pagina versiunii documentului %s ?"
 
-#: views/document_version_page_views.py:102
+#: views/document_version_page_views.py:99
 msgid ""
 "Document version pages are links to actual content pages. Create them using "
 "the page remap actions or the version modification action."
@@ -1921,33 +1936,41 @@ msgstr ""
 " Creați-le folosind acțiunile de remapare a paginii sau acțiunea de "
 "modificare a versiunii."
 
-#: views/document_version_page_views.py:107
+#: views/document_version_page_views.py:104
 msgid "No document version pages available"
 msgstr "Nu sunt disponibile pagini cu versiunea documentului"
 
-#: views/document_version_page_views.py:111
+#: views/document_version_page_views.py:108
 #, python-format
 msgid "Pages of document version: %s"
 msgstr "Pagini ale versiunii documentului: %s"
 
-#: views/document_version_page_views.py:163
+#: views/document_version_page_views.py:160
 msgid "None"
 msgstr "Nici unul"
 
-#: views/document_version_page_views.py:190
+#: views/document_version_page_views.py:187
 msgid "There are no sources available to remap for this document version."
 msgstr ""
 "Nu există surse disponibile pentru a remapa pentru această versiune a "
 "documentului."
 
-#: views/document_version_page_views.py:193
+#: views/document_version_page_views.py:190
 msgid "No page sources available"
 msgstr "Nu sunt disponibile surse de pagină"
 
-#: views/document_version_page_views.py:196
+#: views/document_version_page_views.py:193
 #, python-format
 msgid "Remap pages of document version: %s"
 msgstr "Remapează paginile versiunii documentului: %s"
+
+#: views/document_version_page_views.py:311
+msgid "There are no more pages in this document."
+msgstr ""
+
+#: views/document_version_page_views.py:327
+msgid "You are already at the first page of this document."
+msgstr ""
 
 #: views/document_version_views.py:63
 #, python-format
@@ -1958,57 +1981,57 @@ msgstr "Faceți versiunea documentului „%s” versiunea activă?"
 msgid "Successfully changed the active document version."
 msgstr "S-a schimbat cu succes versiunea documentului activ."
 
-#: views/document_version_views.py:88
+#: views/document_version_views.py:90
 #, python-format
 msgid "Create a document version for document: %s"
 msgstr "Creați o versiune de document pentru documentul: %s"
 
-#: views/document_version_views.py:107
+#: views/document_version_views.py:109
 #, python-format
 msgid "Document version \"%(object)s\" deletion queued successfully."
 msgstr ""
 "Versiunea documentului „%(object)s” a fost pusă în coada de ștergere cu "
 "succes."
 
-#: views/document_version_views.py:110
+#: views/document_version_views.py:112
 #, python-format
 msgid "%(count)d document version deletion queued successfully."
 msgstr ""
 "%(count)d versiunie a documentului a fost pusă în coada de ștergere cu "
 "succes."
 
-#: views/document_version_views.py:113
+#: views/document_version_views.py:115
 #, python-format
 msgid "%(count)d document version deletions queued successfully."
 msgstr ""
 "%(count)d versiuni ale documentului au fost puse în coada de ștergeri cu "
 "succes."
 
-#: views/document_version_views.py:115
+#: views/document_version_views.py:117
 #, python-format
 msgid "Delete document version \"%(object)s\"."
 msgstr "Ștergeți versiunea documentului „%(object)s”."
 
-#: views/document_version_views.py:116
+#: views/document_version_views.py:118
 #, python-format
 msgid "Delete %(count)d document version."
 msgstr "Ștergeți%(count)d versiune a documentului ."
 
-#: views/document_version_views.py:117
+#: views/document_version_views.py:119
 #, python-format
 msgid "Delete %(count)d document versions."
 msgstr "Ștergeți %(count)d versiuni ale documentului."
 
-#: views/document_version_views.py:123
+#: views/document_version_views.py:125
 msgid "The process will be performed in the background."
 msgstr "Procesul va fi efectuat în fundal."
 
-#: views/document_version_views.py:163
+#: views/document_version_views.py:165
 #, python-format
 msgid "Edit document version: %s"
 msgstr "Editați versiunea documentului: %s"
 
-#: views/document_version_views.py:200
+#: views/document_version_views.py:199
 msgid ""
 "Versions are views that can display document file pages as they are, remap "
 "or merge them into different layouts."
@@ -2020,37 +2043,37 @@ msgstr ""
 msgid "No versions available"
 msgstr "Nu există versiuni disponibile"
 
-#: views/document_version_views.py:206
+#: views/document_version_views.py:207
 #, python-format
 msgid "Versions of document: %s"
 msgstr "Versiuni de document: %s"
 
-#: views/document_version_views.py:238
+#: views/document_version_views.py:240
 msgid "Document version modification backend queued successfully."
 msgstr ""
 "Backend-ul pentru modificarea versiunii documentului a fost pus în coadă cu "
 "succes."
 
-#: views/document_version_views.py:248
+#: views/document_version_views.py:251
 #, python-format
 msgid "Execute version modification action for document version: %s"
 msgstr ""
 "Executați acțiunea de modificare a versiunii pentru versiunea documentului: "
 "%s"
 
-#: views/document_version_views.py:279
+#: views/document_version_views.py:283
 #, python-format
 msgid "Preview of document version: %s"
 msgstr "Previzualizarea versiunii de document: %s"
 
-#: views/document_version_views.py:326
+#: views/document_version_views.py:331
 #, python-format
 msgid "Transformation clear request processed for %(count)d document version."
 msgstr ""
 "Solicitarea de clarificare a transformării a fost procesată pentru %(count)d"
 " versiune a documentului."
 
-#: views/document_version_views.py:330
+#: views/document_version_views.py:335
 #, python-format
 msgid ""
 "Transformation clear request processed for %(count)d document versions."
@@ -2058,7 +2081,7 @@ msgstr ""
 "Solicitarea de clarificare a transformării a fost procesată pentru %(count)d"
 " versiuni ale documentului ."
 
-#: views/document_version_views.py:338
+#: views/document_version_views.py:343
 msgid "Clear all the page transformations for the selected document version?"
 msgid_plural ""
 "Clear all the page transformations for the selected document version?"
@@ -2072,13 +2095,13 @@ msgstr[2] ""
 "Ștergeți toate transformările de pagină pentru versiunea de document "
 "selectată?"
 
-#: views/document_version_views.py:349
+#: views/document_version_views.py:354
 #, python-format
 msgid "Clear all the page transformations for the document version: %s?"
 msgstr ""
 "Ștergeți toate transformările paginii pentru versiunea documentului: %s?"
 
-#: views/document_version_views.py:366
+#: views/document_version_views.py:371
 #, python-format
 msgid ""
 "Error deleting the page transformations for document version: "
@@ -2087,7 +2110,7 @@ msgstr ""
 "Eroare la ștergerea transformărilor paginii pentru versiunea documentului: "
 "%(document_version)s; %(error)s."
 
-#: views/document_version_views.py:403
+#: views/document_version_views.py:410
 #, python-format
 msgid ""
 "Error cloning the page transformations for document version: "
@@ -2096,7 +2119,7 @@ msgstr ""
 "Eroare la clonarea transformărilor paginii pentru versiunea documentului: "
 "%(document_version)s; %(error)s."
 
-#: views/document_version_views.py:427
+#: views/document_version_views.py:432
 #, python-format
 msgid "Clone page transformations of document version: %s"
 msgstr "Clonează transformările paginii ale versiunii documentului: %s"
@@ -2122,46 +2145,42 @@ msgstr "Nu există documente disponibile"
 
 #: views/document_views.py:85
 #, python-format
-msgid "Document type change request performed on %(count)d document"
+msgid "Document type change request performed on %(count)d document."
 msgstr ""
-"Solicitarea de modificare a tipului de document efectuată pe %(count)d "
-"documente"
 
-#: views/document_views.py:88
+#: views/document_views.py:89
 #, python-format
-msgid "Document type change request performed on %(count)d documents"
+msgid "Document type change request performed on %(count)d documents."
 msgstr ""
-"Solicitarea de modificare a tipului de document efectuată pe %(count)d "
-"documente"
 
-#: views/document_views.py:95
-msgid "Change the type of the selected document"
-msgid_plural "Change the type of the selected documents"
-msgstr[0] "Schimbați tipul documentului selectat"
-msgstr[1] "Schimbați tipul documentelor selectate"
-msgstr[2] "Schimbați tipul documentelor selectate"
+#: views/document_views.py:97
+msgid "Change the type of the selected document."
+msgid_plural "Change the type of the selected documents."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: views/document_views.py:106
+#: views/document_views.py:108
 #, python-format
 msgid "Change the type of the document: %s"
 msgstr "Modificați tipul documentului: %s"
 
-#: views/document_views.py:134
+#: views/document_views.py:136
 #, python-format
 msgid "Document type for \"%s\" changed successfully."
 msgstr "Tipul de document pentru \"%s\" a fost modificat cu succes."
 
-#: views/document_views.py:160
+#: views/document_views.py:162
 #, python-format
 msgid "Preview of document: %s"
 msgstr "Previzualizarea documentului: %s"
 
-#: views/document_views.py:179
+#: views/document_views.py:182
 #, python-format
 msgid "Edit properties of document: %s"
 msgstr "Editați proprietățile documentului: %s"
 
-#: views/document_views.py:211
+#: views/document_views.py:212
 #, python-format
 msgid "Properties of document: %s"
 msgstr "Proprietățile documentului: %s"
@@ -2218,12 +2237,12 @@ msgstr[0] "Eliminați documentul selectat din favorite?"
 msgstr[1] "Eliminați documentele selectate din favorite?"
 msgstr[2] "Eliminați documentele selectate din favorite?"
 
-#: views/misc_views.py:44
+#: views/misc_views.py:43
 #, python-format
 msgid "Print: %s"
 msgstr "Tipărește: %s"
 
-#: views/recently_accessed_document_views.py:23
+#: views/recently_accessed_document_views.py:25
 msgid ""
 "This view will list the latest documents viewed or manipulated in any way by"
 " this user account."
@@ -2231,7 +2250,7 @@ msgstr ""
 "Această vizualizare va afișa cele mai recente documente vizualizate sau "
 "manipulate în vreun fel de acest cont de utilizator."
 
-#: views/recently_accessed_document_views.py:27
+#: views/recently_accessed_document_views.py:29
 msgid "There are no recently accessed documents"
 msgstr "Nu există documente accesate recent"
 
@@ -2244,73 +2263,68 @@ msgstr ""
 msgid "There are no recently created documents"
 msgstr "Nu există documente create recent"
 
-#: views/trashed_document_views.py:37
-#, python-format
-msgid "Document \"%(object)s\" moved to trash."
-msgstr "Documentul „%(object)s” a fost mutat în coșul de gunoi."
-
 #: views/trashed_document_views.py:40
 #, python-format
-msgid "%(count)d document moved to the trash."
-msgstr "%(count)d document  transferat în coșul de gunoi."
+msgid "Document \"%(object)s\" queued for trashing."
+msgstr ""
 
-#: views/trashed_document_views.py:43
+#: views/trashed_document_views.py:43 views/trashed_document_views.py:46
 #, python-format
-msgid "%(count)d documents moved to the trash."
-msgstr "%(count)d documente transferate în coșul de gunoi."
+msgid "%(count)d documents queued for trashing."
+msgstr ""
 
-#: views/trashed_document_views.py:45
+#: views/trashed_document_views.py:48
 #, python-format
 msgid "Move the document \"%(object)s\" to trash?"
 msgstr "Mutați documentul „%(object)s” în coșul de gunoi?"
 
-#: views/trashed_document_views.py:46
+#: views/trashed_document_views.py:49
 msgid "Move the selected document to the trash?"
 msgstr "Mutați documentul selectat în coșul de gunoi?"
 
-#: views/trashed_document_views.py:47
+#: views/trashed_document_views.py:51
 #, python-format
 msgid "Move the %(count)d selected documents to trash?"
 msgstr "Mutați %(count)d documente selectate în coșul de gunoi?"
 
-#: views/trashed_document_views.py:78
+#: views/trashed_document_views.py:86
 msgid "Empty trash?"
 msgstr "Goliți Coșul de gunoi?"
 
-#: views/trashed_document_views.py:91
+#: views/trashed_document_views.py:99
 msgid "The trash emptying task has been queued."
 msgstr "Sarcina de golire a coșului de gunoi a fost pusă la coadă."
 
-#: views/trashed_document_views.py:101
+#: views/trashed_document_views.py:109
 #, python-format
 msgid "%(count)d trashed documents submitted for deletion."
 msgstr "%(count)d documente din gunoi trimise pentru ștergere."
 
-#: views/trashed_document_views.py:104
+#: views/trashed_document_views.py:112
 #, python-format
 msgid "Trash document \"%(object)s\" submitted for deletion."
 msgstr "Documentul de gunoi „%(object)s” a fost trimis pentru ștergere."
 
-#: views/trashed_document_views.py:107
+#: views/trashed_document_views.py:115
 #, python-format
 msgid "%(count)d trashed document submitted for deletion."
 msgstr "%(count)d document din gunoi trimis pentru ștergere."
 
-#: views/trashed_document_views.py:109
+#: views/trashed_document_views.py:117
 #, python-format
 msgid "Delete the %(count)d selected trashed documents?"
 msgstr "Ștergeți%(count)d documente  selectate din coșul de gunoi?"
 
-#: views/trashed_document_views.py:110
+#: views/trashed_document_views.py:118
 #, python-format
 msgid "Delete the trashed document \"%(object)s\"?"
 msgstr "Ștergeți documentul din coșul de gunoi „%(object)s”?"
 
-#: views/trashed_document_views.py:111
+#: views/trashed_document_views.py:119
 msgid "Delete the selected trashed document?"
 msgstr "Ștergeți documentul din coșul de gunoi selectat?"
 
-#: views/trashed_document_views.py:149
+#: views/trashed_document_views.py:157
 msgid ""
 "To avoid loss of data, documents are not deleted instantly. First, they are "
 "placed in the trash can. From here they can be then finally deleted or "
@@ -2320,36 +2334,36 @@ msgstr ""
 "Mai întâi, ele sunt plasate în coșul de gunoi. De aici, ele pot fi ulterior "
 "șterse sau restaurate."
 
-#: views/trashed_document_views.py:154
+#: views/trashed_document_views.py:162
 msgid "There are no documents in the trash can"
 msgstr "Nu există documente în coșul de gunoi"
 
-#: views/trashed_document_views.py:167
+#: views/trashed_document_views.py:175
 #, python-format
 msgid "%(count)d trashed documents restored."
 msgstr "%(count)d documente din coșul de gunoi restaurate."
 
-#: views/trashed_document_views.py:170
+#: views/trashed_document_views.py:178
 #, python-format
 msgid "Trashed document \"%(object)s\" restored."
 msgstr "Documentul aruncat în coșul de gunoi „%(object)s” a fost restaurat."
 
-#: views/trashed_document_views.py:173
+#: views/trashed_document_views.py:181
 #, python-format
 msgid "%(count)d trashed document restored."
 msgstr "%(count)d document din coșul de gunoi restabilit."
 
-#: views/trashed_document_views.py:175
+#: views/trashed_document_views.py:183
 #, python-format
 msgid "Restore the %(count)d selected trashed documents?"
 msgstr "Restabiliți %(count)d documente selectate din coșul de gunoi?"
 
-#: views/trashed_document_views.py:176
+#: views/trashed_document_views.py:184
 #, python-format
 msgid "Restore the trashed document: %(object)s"
 msgstr "Restaurați documentul aruncat în coșul de gunoi: %(object)s"
 
-#: views/trashed_document_views.py:177
+#: views/trashed_document_views.py:185
 msgid "Restore the selected trashed document?"
 msgstr "Restabiliți documentul din coșul de gunoi selectat?"
 

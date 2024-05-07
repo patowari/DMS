@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Zoljargal Munkhjargal, 2024\n"
 "Language-Team: Mongolian (Mongolia) (https://app.transifex.com/rosarior/teams/13584/mn_MN/)\n"
 "MIME-Version: 1.0\n"
@@ -32,27 +32,27 @@ msgstr "Нэг удаагын код идэвхгүй"
 msgid "OTP enabled"
 msgstr "Нэг удаагийн код идэвхтэй"
 
-#: forms.py:20
+#: forms.py:22
 msgid "Token is either invalid or expired."
 msgstr "Идэвхжүүлэх хугацаа дууссан эсвэл хүчингүй."
 
-#: forms.py:25
+#: forms.py:27
 msgid "TOTP token"
 msgstr ""
 
-#: forms.py:86
+#: forms.py:88
 msgid "OTP enabled?"
 msgstr "Нэг удаагийн код идэвхтэй юу?"
 
-#: forms.py:87
+#: forms.py:89
 msgid "Yes"
 msgstr "Тийм"
 
-#: forms.py:87
+#: forms.py:89
 msgid "No"
 msgstr "Үгүй"
 
-#: forms.py:104
+#: forms.py:106
 msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
@@ -60,22 +60,22 @@ msgstr ""
 "Нэвтрэх төхөөрөмж дээрээ QR кодыг уншуулах эсвэл нууц кодыг оруулна уу. Энэ "
 "нууц кодыг бусдад тараахгүй байхыг хүсье."
 
-#: forms.py:106 forms.py:111
+#: forms.py:108 forms.py:113
 msgid "Secret"
 msgstr "Нууц"
 
-#: forms.py:117
+#: forms.py:119
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
 "Нууц түлхүүр зөв хадгалсан эсэхийг баталгаажуулахын тулд харгалзах токеныг "
 "оруулна уу."
 
-#: forms.py:120
+#: forms.py:122
 msgid "Token"
 msgstr "Токен"
 
-#: forms.py:155
+#: forms.py:158
 msgid "Token is incorrect for the specified secret."
 msgstr "Токен нууц түлхүүрт тохирохгүй байна."
 
@@ -125,15 +125,15 @@ msgstr "Нэг удаагийн код идэвхгүй боллоо."
 msgid "OTP is already enabled."
 msgstr "Нэг удаагийн код аль хэдийн идэвхтэй байна."
 
-#: views.py:96
+#: views.py:97
 msgid "OTP enabled successfully."
 msgstr "Нэг удаагийн код идвэхжлээ."
 
-#: views.py:105
+#: views.py:107
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr ""
 
-#: views.py:117
+#: views.py:119
 msgid "OTP secret validation error."
 msgstr "Нэг удаагийн код баталгаажуулахад алдаа гарлаа."

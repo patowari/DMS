@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
 "MIME-Version: 1.0\n"
@@ -78,33 +78,33 @@ msgstr ""
 msgid "IMAP protocol"
 msgstr ""
 
-#: source_backends/mixins.py:31
+#: source_backends/mixins.py:33
 msgid "Host"
 msgstr "主机"
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:42
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/mixins.py:46
+#: source_backends/mixins.py:48
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
 msgstr "对于POP3，典型的选择是110，对于基于SSL的POP3为995，对于IMAP为143，对于基于SSL的IMAP为993。"
 
-#: source_backends/mixins.py:52
+#: source_backends/mixins.py:54
 msgid "Port"
 msgstr "端口"
 
-#: source_backends/mixins.py:58
+#: source_backends/mixins.py:60
 msgid "Store the body of the email as a text document."
 msgstr "将电子邮件正文存储为文本文档。"
 
-#: source_backends/mixins.py:60
+#: source_backends/mixins.py:63
 msgid "Store email body"
 msgstr "存储邮件正文"
 
-#: source_backends/mixins.py:74
+#: source_backends/mixins.py:77
 msgid "Common email options"
 msgstr ""
 

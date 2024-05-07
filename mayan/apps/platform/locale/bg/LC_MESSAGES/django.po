@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
+# 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,31 +25,31 @@ msgstr ""
 msgid "Platform"
 msgstr "Платформа"
 
-#: classes.py:241
+#: classes.py:239
 msgid "Template for entrypoint.sh file inside a Docker image."
 msgstr "Шаблон за файл entrypoint.sh в изображение на Docker."
 
-#: classes.py:256
+#: classes.py:254
 msgid "Template that generates the Docker Compose file."
 msgstr ""
 
-#: classes.py:416
+#: classes.py:419
 msgid "Template for Supervisord inside a Docker image."
 msgstr "Шаблон за Supervisord в Docker образ"
 
-#: classes.py:434
+#: classes.py:437
 msgid "Template that generates a Dockerfile file."
 msgstr "Шаблон, който генерира Dockerfile файл."
 
-#: classes.py:449
+#: classes.py:452
 msgid "Template that generates a GitLab CI config file."
 msgstr "Шаблон, който генерира GitLab CI конфигурационен файл."
 
-#: classes.py:598
+#: classes.py:601
 msgid "Template for Supervisord."
 msgstr "Шаблон за Supervisord"
 
-#: classes.py:672
+#: classes.py:675
 msgid "Template showing the queues of a worker."
 msgstr "Шаблон, показващ опашките на работна програма."
 

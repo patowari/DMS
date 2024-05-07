@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # Ford Guo <agile.guo@gmail.com>, 2024
+# Roberto Rosario, 2024
 # Leon Chu, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -22,23 +22,15 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:130 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Common"
 
-#: dependencies.py:189
-msgid "Used to allow offline translation of the code text strings."
-msgstr "用來允許離現翻譯程式碼的文字字串"
-
-#: dependencies.py:198
-msgid "Provides style checking."
-msgstr "提供格式檢查"
-
-#: dependencies.py:203
+#: dependencies.py:193
 msgid "Command line environment with autocompletion."
 msgstr "含有自動完成之命令列環境"
 
-#: dependencies.py:212
+#: dependencies.py:198
 msgid "Checks proper formatting of the README file."
 msgstr "檢查適當的README檔案格式"
 

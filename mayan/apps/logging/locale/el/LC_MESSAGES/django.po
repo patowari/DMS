@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,17 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:23 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:24 events.py:6 permissions.py:6 settings.py:12
 msgid "Logging"
 msgstr "Καταγραφή συμβάντων και σφαλμάτων"
+
+#: apps.py:40
+msgid "System"
+msgstr "Σύστημα"
+
+#: apps.py:64
+msgid "Domain"
+msgstr ""
 
 #: events.py:10
 msgid "Error log deleted"
@@ -45,47 +53,56 @@ msgstr "Σφάλματα"
 msgid "Clear errors"
 msgstr "Διαγραφή σφαλμάτων"
 
-#: model_mixins.py:10
+#: model_mixins.py:11
+#, python-format
+msgid "Unknown domain name: %s"
+msgstr ""
+
+#: model_mixins.py:18
 msgid "Object"
 msgstr "Αντικείμενο"
 
-#: model_mixins.py:18
+#: model_mixins.py:26
 msgid "App label"
 msgstr "Ετικέτα εφαρμογής"
 
-#: models.py:19 models.py:37
+#: models.py:21 models.py:41
 msgid "Internal name"
 msgstr "Όνομα εσωτερικής αναφοράς"
 
-#: models.py:24 models.py:34
+#: models.py:26 models.py:38
 msgid "Error log"
 msgstr "Αρχείο καταγραφής σφαλμάτων"
 
-#: models.py:25
+#: models.py:27
 msgid "Error logs"
 msgstr "Αρχεία καταγραφής σφαλμάτων"
 
-#: models.py:51 models.py:63
+#: models.py:55 models.py:69
 msgid "Error log partition"
 msgstr "Κατάτμηση καταγραφής σφαλμάτων"
 
-#: models.py:52
+#: models.py:56
 msgid "Error log partitions"
 msgstr "Κατατμήσεις καταγραφής σφαλμάτων"
 
-#: models.py:67
+#: models.py:73
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: models.py:71
+#: models.py:78
+msgid "Domain name"
+msgstr ""
+
+#: models.py:81
 msgid "Text"
 msgstr "Κείμενο"
 
-#: models.py:79
+#: models.py:89
 msgid "Error log partition entry"
 msgstr "Καταχώριση κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
-#: models.py:80
+#: models.py:90
 msgid "Error log partition entries"
 msgstr "Καταχωρήσεις κατάτμησης αρχείου καταγραφής σφαλμάτων"
 
@@ -137,7 +154,7 @@ msgid ""
 "good thing."
 msgstr ""
 
-#: views.py:34 views.py:101
+#: views.py:34 views.py:99
 msgid "There are no error log entries"
 msgstr "Δεν υπάρχουν καταχωρήσεις καταγραφής σφαλμάτων"
 
@@ -156,13 +173,13 @@ msgstr ""
 msgid "Delete error log entry: %s"
 msgstr ""
 
-#: views.py:97
+#: views.py:95
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
 
-#: views.py:105
+#: views.py:103
 #, python-format
 msgid "Error log entries for: %s"
 msgstr "Καταχωρήσεις σφαλμάτων για: %s"

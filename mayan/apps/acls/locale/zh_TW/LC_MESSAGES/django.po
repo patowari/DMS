@@ -4,8 +4,8 @@
 # 
 # Translators:
 # Translators:
-# Ford Guo <agile.guo@gmail.com>, 2024
 # Roberto Rosario, 2024
+# Ford Guo <agile.guo@gmail.com>, 2024
 # Chen-Yu Hsieh <jenyuxie@gmail.com>, 2024
 # Leon Chu, 2024
 # 
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "已刪除的ACL存取控制"
 msgid "ACL edited"
 msgstr "已編輯的ACL存取控制"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "角色"
 
@@ -65,7 +65,7 @@ msgstr "建立存取清單"
 msgid "Delete"
 msgstr "刪除"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "權限"
 
@@ -87,27 +87,27 @@ msgstr "訪問權限不足: %s"
 msgid "Permission count"
 msgstr ""
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "物件ID"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "對於特定物件被允許存取的角色."
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "存取項目"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "存取項目-複數項目"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "角色%(object)s中“%(role)s”的權限"
@@ -169,36 +169,36 @@ msgstr "為 %s新增存取控制列表"
 msgid "Delete ACL: %s"
 msgstr "删除存取控制列表: %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "對此物件無存取控制列表"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
 "but only for a specific object or set of objects."
 msgstr "ACL代表存取控制列表，是控制用户對系统中物件的精確的方法。 ACL允許授予角色權限，但只能授予特定物件或一組物件的權限。"
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "%s的存取控制列表"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "已授予的權限"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "可用的權限"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "為\"%(object)s\"的角色 \"%(role)s\" 權限"
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -206,11 +206,11 @@ msgid ""
 "menu."
 msgstr "禁用的權限是從母物件繼承或直接授予角色的，不能從此視圖中删除。需要透過“設置”選單從母物件的ACL或角色中删除所繼承的權限。"
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "沒有ACLs存取控制"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "全域存取控制列表"
 

@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Translators:
-# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@gmail.com>, 2024
 # wolvsky <gustavo@infomania.com.br>, 2024
-# Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
-# Roberto Rosario, 2024
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
+# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@gmail.com>, 2024
+# Emerson Soares <on.emersonsoares@gmail.com>, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Roberto Rosario, 2024
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
 # Márcia Ferreira, 2024
 # 
@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "ACL eliminada"
 msgid "ACL edited"
 msgstr "ACL editada"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Papel"
 
@@ -73,7 +73,7 @@ msgstr "Nova ACL"
 msgid "Delete"
 msgstr "Excluir"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Permissões"
 
@@ -96,27 +96,27 @@ msgstr "Acesso insuficiente para: %s"
 msgid "Permission count"
 msgstr "Contagem de permissões"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr "Tipo de conteúdo"
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "ID do objeto"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "Função para qual o acesso é garantido para o objeto específico. "
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "Entrada de acesso"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "Entradas de acesso"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "Permissões do papel \"%(role)s\" para \"%(object)s\""
@@ -180,11 +180,11 @@ msgstr "Nova lista de controle de acesso para: %s"
 msgid "Delete ACL: %s"
 msgstr "Excluir ACL: %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "Não há Controle de Acesso \"ACLs\" para este objeto"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -195,25 +195,25 @@ msgstr ""
 "conceder uma permissão para uma função, mas apenas para um objeto ou "
 "conjunto de objetos específico."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "Listas de controle de acesso para: %s"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "Permissões concedidas"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "Permissões disponíveis"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr "Permissões do papel \"%(role)s\" para o \"%(object)s\"."
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -225,11 +225,11 @@ msgstr ""
 " herdadas precisam ser removidas da ACL do objeto pai ou delas por meio do "
 "menu Configuração."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "Não existem ACLs"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "Listas de controlo de acesso globais"
 

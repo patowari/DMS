@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:52 models.py:159
-#: permissions.py:6 search.py:48 views.py:169 workflow_actions.py:39
+#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Fișete"
 
-#: apps.py:164 models.py:41
+#: apps.py:164 models.py:43
 msgid "Documents"
 msgstr "Documente"
 
@@ -101,19 +101,19 @@ msgstr "Calea către fişet, inclusiv toți strămoșii."
 msgid "Full path"
 msgstr "Calea completă"
 
-#: models.py:33 serializers.py:41
+#: models.py:35 serializers.py:41
 msgid "Parent"
 msgstr "Părinte"
 
-#: models.py:36
+#: models.py:38
 msgid "A short text used to identify the cabinet."
 msgstr "Un text scurt folosit pentru identificarea cabinetului."
 
-#: models.py:37
+#: models.py:39
 msgid "Label"
 msgstr "Conținut etichetă"
 
-#: models.py:51 models.py:133 models.py:158
+#: models.py:53 models.py:135 models.py:159
 msgid "Cabinet"
 msgstr "Fișet"
 
@@ -121,16 +121,16 @@ msgstr "Fișet"
 msgid "Parent and Label"
 msgstr "Părinte și etichetă"
 
-#: models.py:141
+#: models.py:142
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr " Există deja %(model_name)s cu acest %(field_labels)s."
 
-#: models.py:170
+#: models.py:171
 msgid "Document cabinet"
 msgstr "Fișet de documente"
 
-#: models.py:171
+#: models.py:172
 msgid "Document cabinets"
 msgstr "Fișete cu documentul"
 
@@ -158,35 +158,43 @@ msgstr "Scoateți documentele din fișete"
 msgid "View cabinets"
 msgstr "Vezi fișete"
 
-#: search.py:24
+#: search.py:25
 msgid "Document type"
 msgstr "Tipul documentului"
 
-#: search.py:27
+#: search.py:28
 msgid "Document label"
 msgstr "Etichetele documentului"
 
-#: search.py:30
+#: search.py:31
 msgid "Document description"
 msgstr "Descrierea documentului"
 
-#: search.py:33
+#: search.py:34
 msgid "Document UUID"
 msgstr "UUID al documentului"
 
-#: search.py:39
+#: search.py:40
 msgid "Document file checksum"
 msgstr "Suma de control a fișierului documentului"
 
-#: search.py:42
+#: search.py:43
 msgid "Document file MIME type"
 msgstr "Tipul MIME al fișierului document"
+
+#: search.py:50
+msgid "The database ID of the cabinet."
+msgstr ""
+
+#: search.py:51
+msgid "Cabinet ID"
+msgstr ""
 
 #: serializers.py:18
 msgid "List of children cabinets."
 msgstr "Listă fișetelor subordonate"
 
-#: serializers.py:18
+#: serializers.py:19
 msgid "Children"
 msgstr "Copii"
 
@@ -218,11 +226,11 @@ msgstr "URL"
 msgid "Primary key of the document to add to the cabinet."
 msgstr "Cheia primară a documentului de adăugat în fișet."
 
-#: serializers.py:85 serializers.py:94
+#: serializers.py:85 serializers.py:95
 msgid "Document ID"
 msgstr "ID document"
 
-#: serializers.py:93
+#: serializers.py:94
 msgid "Primary key of the document to remove from the cabinet."
 msgstr "Cheia primară a documentului de scos din fișet."
 
@@ -356,11 +364,11 @@ msgstr "Scoateți documentul %(count)d din fișete."
 msgid "Cabinets from which the selected documents will be removed."
 msgstr "Fișetele din care vor fi eliminate documentele selectate."
 
-#: wizard_steps.py:18
+#: wizard_steps.py:20
 msgid "Select cabinets"
 msgstr "Selectați fișete"
 
-#: wizard_steps.py:77 workflow_actions.py:33
+#: wizard_steps.py:80 workflow_actions.py:33
 msgid "Cabinets to which the document will be added."
 msgstr "Fișetele la care se va adăuga documentul."
 

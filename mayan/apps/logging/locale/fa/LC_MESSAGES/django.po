@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mehdi Amani <MehdiAmani@toorintan.com>, 2024\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,16 @@ msgstr ""
 "Language: fa\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:23 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:24 events.py:6 permissions.py:6 settings.py:12
 msgid "Logging"
+msgstr ""
+
+#: apps.py:40
+msgid "System"
+msgstr "سیستم"
+
+#: apps.py:64
+msgid "Domain"
 msgstr ""
 
 #: events.py:10
@@ -45,47 +53,56 @@ msgstr "خطاها"
 msgid "Clear errors"
 msgstr ""
 
-#: model_mixins.py:10
+#: model_mixins.py:11
+#, python-format
+msgid "Unknown domain name: %s"
+msgstr ""
+
+#: model_mixins.py:18
 msgid "Object"
 msgstr "شیئ"
 
-#: model_mixins.py:18
+#: model_mixins.py:26
 msgid "App label"
 msgstr ""
 
-#: models.py:19 models.py:37
+#: models.py:21 models.py:41
 msgid "Internal name"
 msgstr "نام داخلی"
 
-#: models.py:24 models.py:34
+#: models.py:26 models.py:38
 msgid "Error log"
 msgstr ""
 
-#: models.py:25
+#: models.py:27
 msgid "Error logs"
 msgstr ""
 
-#: models.py:51 models.py:63
+#: models.py:55 models.py:69
 msgid "Error log partition"
 msgstr ""
 
-#: models.py:52
+#: models.py:56
 msgid "Error log partitions"
 msgstr ""
 
-#: models.py:67
+#: models.py:73
 msgid "Date and time"
 msgstr "تاریخ و زمان"
 
-#: models.py:71
+#: models.py:78
+msgid "Domain name"
+msgstr ""
+
+#: models.py:81
 msgid "Text"
 msgstr "Text"
 
-#: models.py:79
+#: models.py:89
 msgid "Error log partition entry"
 msgstr ""
 
-#: models.py:80
+#: models.py:90
 msgid "Error log partition entries"
 msgstr ""
 
@@ -135,7 +152,7 @@ msgid ""
 "good thing."
 msgstr ""
 
-#: views.py:34 views.py:101
+#: views.py:34 views.py:99
 msgid "There are no error log entries"
 msgstr ""
 
@@ -153,13 +170,13 @@ msgstr ""
 msgid "Delete error log entry: %s"
 msgstr ""
 
-#: views.py:97
+#: views.py:95
 msgid ""
 "This view displays the error log of an object. An empty list is a good "
 "thing."
 msgstr ""
 
-#: views.py:105
+#: views.py:103
 #, python-format
 msgid "Error log entries for: %s"
 msgstr "ورودی های ورود به سیستم خطا برای: %s"

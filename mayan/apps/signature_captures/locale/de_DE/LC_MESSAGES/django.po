@@ -5,19 +5,19 @@
 # 
 # Translators:
 # Roberto Rosario, 2024
-# Tobias Paepke <tobias.paepke@paepke.net>, 2024
 # Siegfried Albrecht, 2024
+# Tobias Paepke <tobias.paepke@paepke.net>, 2024
+# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2024
 # T W, 2024
 # Berny <berny@bernhard-marx.de>, 2024
-# Ampérlo Voltić <amperlo.voltic@gmail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -246,22 +246,22 @@ msgstr "Interner Name der Unterschriftserfassung"
 msgid "Create signature capture for document: %s"
 msgstr "Unterschriftserfassung für Dokument %s erstellen"
 
-#: views.py:78
+#: views.py:75
 #, python-format
 msgid "Delete signature capture: %s"
 msgstr "Unterschriftserfassung %s löschen"
 
-#: views.py:100
+#: views.py:97
 #, python-format
 msgid "Details of: %s"
 msgstr "Details für %s"
 
-#: views.py:116
+#: views.py:113
 #, python-format
 msgid "Edit document signature capture: %s"
 msgstr "Unterschriftserfassung %s bearbeiten"
 
-#: views.py:145
+#: views.py:140
 msgid ""
 "Signature captures are electronic versions of a persons's handwritten "
 "signature."
@@ -269,11 +269,11 @@ msgstr ""
 "Unterschriftserfassungen sind digitale Versionen einer handschriftlichen "
 "persönlichen Unterschrift."
 
-#: views.py:148
+#: views.py:143
 msgid "Document has no signature captures"
 msgstr "Das Dokument verfügt über keine Unterschriftserfassungen"
 
-#: views.py:151
+#: views.py:146
 #, python-format
 msgid "Signature captures for document: %s"
 msgstr "Unterschriftserfassungen für Dokument %s"

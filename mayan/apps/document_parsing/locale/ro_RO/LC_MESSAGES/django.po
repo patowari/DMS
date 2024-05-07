@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
@@ -22,17 +22,17 @@ msgstr ""
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: apps.py:51 events.py:6 permissions.py:6 settings.py:11
+#: apps.py:53 apps.py:89 events.py:6 permissions.py:6 settings.py:11
 msgid "Document parsing"
 msgstr "Analiza documentelor"
 
-#: apps.py:107
+#: apps.py:113
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 "Un generator care returnează conținutul analizat din paginile fișierului "
 "documentului."
 
-#: apps.py:108 links.py:26 links.py:49 models.py:25 search.py:18
+#: apps.py:114 links.py:26 links.py:49 models.py:27 search.py:18
 msgid "Content"
 msgstr "Conținut"
 
@@ -85,41 +85,41 @@ msgstr "Configurarea analizării"
 msgid "Parse documents per type"
 msgstr "Analizare pe tipuri de documente"
 
-#: models.py:19
+#: models.py:21
 msgid "Document file page"
 msgstr "Pagina fișierului documentului"
 
-#: models.py:23
+#: models.py:25
 msgid "The actual text content as extracted by the document parsing backend."
 msgstr ""
 "Conținutul actual de text extras de către backend-ul de analiză a "
 "documentelor."
 
-#: models.py:31 search.py:24
+#: models.py:33 search.py:24
 msgid "Document file page content"
 msgstr "Conținutul paginii fișierului documentului"
 
-#: models.py:32
+#: models.py:34
 msgid "Document file page contents"
 msgstr "Conținutul paginii fișierului de document"
 
-#: models.py:44
+#: models.py:46
 msgid "Document type"
 msgstr "Tipul documentului"
 
-#: models.py:48
+#: models.py:50
 msgid "Automatically queue newly created documents for parsing."
 msgstr "Analiză automată a documentelor nou create"
 
-#: models.py:49
+#: models.py:51
 msgid "Auto parsing"
 msgstr "Analiza automată"
 
-#: models.py:59
+#: models.py:61
 msgid "Document type settings"
 msgstr "Setările tipului de document"
 
-#: models.py:60
+#: models.py:62
 msgid "Document types settings"
 msgstr "Setările pentru tipurile de documente"
 
@@ -171,64 +171,64 @@ msgstr ""
 "Calea de fișier pentru programul pdftotext folosit pentru a extrage textul "
 "din fișiere PDF."
 
-#: views.py:35
+#: views.py:38
 #, python-format
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Eroare la ștergerea conținutului versiunii documentului „%(instance)s”; "
 "%(exception)s"
 
-#: views.py:42
+#: views.py:45
 #, python-format
 msgid "Content of %(count)d document versions deleted successfully."
 msgstr "Conținutul versiunilor documentului %(count)d a fost șters cu succes."
 
-#: views.py:45
+#: views.py:48
 #, python-format
 msgid "Content of \"%(object)s\" deleted successfully."
 msgstr "Conținutul „%(object)s” a fost șters cu succes."
 
-#: views.py:48
+#: views.py:51
 #, python-format
 msgid "Content of %(count)d document version deleted successfully."
 msgstr "Conținutul versiunii documentului %(count)d a fost șters cu succes."
 
-#: views.py:50
+#: views.py:53
 #, python-format
 msgid "Delete the content of: %(object)s."
 msgstr "Ștergeți conținutul din: %(object)s."
 
-#: views.py:52
+#: views.py:55
 #, python-format
 msgid "Delete the content of the %(count)d selected document version."
 msgstr "Ștergeți conținutul versiunii documentului selectat %(count)d."
 
-#: views.py:55
+#: views.py:58
 #, python-format
 msgid "Delete the content of the %(count)d selected document versions."
 msgstr "Ștergeți conținutul versiunilor de document %(count)d selectate."
 
-#: views.py:96
+#: views.py:99
 #, python-format
 msgid "Content for document file: %s"
 msgstr "Conținut pentru fișierul document: %s"
 
-#: views.py:118
+#: views.py:121
 #, python-format
 msgid "Content for document file page: %s"
 msgstr "Conținut pentru pagina fișierului document: %s"
 
-#: views.py:133
+#: views.py:136
 #, python-format
 msgid "%(count)d document file added to the parsing queue"
 msgstr "Fișierul document %(count)d adăugat la coada de analiză"
 
-#: views.py:136
+#: views.py:139
 #, python-format
 msgid "%(count)d documents files added to the parsing queue"
 msgstr "%(count)d fișiere document adăugate la coada de analiză"
 
-#: views.py:145
+#: views.py:148
 #, python-format
 msgid "Submit %(count)d document file to the parsing queue?"
 msgid_plural "Submit %(count)d documents files to the parsing queue?"
@@ -236,21 +236,21 @@ msgstr[0] "Trimiteți fișierul document %(count)d la coada de analiză?"
 msgstr[1] "Trimiteți fișierele documentelor %(count)d la coada de analiză?"
 msgstr[2] "Trimiteți  %(count)d fișiere document la coada de analiză?"
 
-#: views.py:158
+#: views.py:161
 #, python-format
 msgid "Submit document file \"%s\" to the parsing queue"
 msgstr "Trimiteți fișierul document „%s” la coada de analiză"
 
-#: views.py:188
+#: views.py:191
 #, python-format
 msgid "Edit parsing settings for document type: %s."
 msgstr "Editați setările de analiză pentru tipul de document: %s."
 
-#: views.py:198
+#: views.py:201
 msgid "Submit all documents of a type for parsing"
 msgstr "Trimiteți toate documentele de un tip la analiză"
 
-#: views.py:220
+#: views.py:223
 #, python-format
 msgid "%(count)d documents added to the parsing queue."
 msgstr "%(count)d documente adăugate la coada de analiză."

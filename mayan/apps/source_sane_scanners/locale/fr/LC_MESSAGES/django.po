@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Yves Dubois <ydubois@gmail.com>, 2024
-# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Thierry Schott <DarkDare@users.noreply.github.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -35,37 +35,37 @@ msgstr ""
 "Utilitaire fourni par le package SANE. Utilisé pour contrôler le scanner et "
 "obtenir l'image du document numérisé."
 
-#: source_backends.py:29
+#: source_backends.py:31
 msgid "SANE Scanner"
 msgstr "Scanner SANE"
 
-#: source_backends.py:48
+#: source_backends.py:50
 msgid "Device name as returned by the SANE backend."
 msgstr "Nom du périphérique tel qu'il est retourné par l'interface SANE."
 
-#: source_backends.py:51
+#: source_backends.py:53
 msgid "Device name"
 msgstr "Nom du périphérique"
 
-#: source_backends.py:57
+#: source_backends.py:59
 msgid ""
 "YAML formatted arguments to pass to the `scanimage` command. The arguments "
 "will change depending on the device. Execute `scanimage --help --device-"
 "name=DEVICE` for the list of supported arguments."
 msgstr ""
 
-#: source_backends.py:62
+#: source_backends.py:65
 msgid "Arguments"
 msgstr "Arguments"
 
-#: source_backends.py:76
+#: source_backends.py:79
 msgid "SANE client"
 msgstr ""
 
-#: source_backends.py:134
+#: source_backends.py:137
 msgid "Document properties"
 msgstr "Propriétés du document"
 
-#: source_backends.py:135
+#: source_backends.py:138
 msgid "Scan"
 msgstr "Numériser"

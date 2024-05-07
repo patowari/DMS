@@ -4,8 +4,8 @@
 # 
 # Translators:
 # Translators:
-# serhatcan77 <serhat_can@yahoo.com>, 2024
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
+# serhatcan77 <serhat_can@yahoo.com>, 2024
 # Bedreddin Şahbaz, 2024
 # 
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"

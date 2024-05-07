@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
-# Сергій Гарашко, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Сергій Гарашко, 2024
 # Leo Lado, 2024
+# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Leo Lado, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Vasyl Olenchenko <olenchenko@gmail.com>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,39 +28,39 @@ msgid "None"
 msgstr "None"
 
 #: admin.py:26 links.py:88 models/index_template_models.py:50
-#: serializers.py:291
+#: serializers.py:315
 msgid "Document types"
 msgstr "Тип документа"
 
-#: apps.py:58 events.py:6
+#: apps.py:60 events.py:6
 msgid "Document indexing"
 msgstr "Індексація документів"
 
-#: apps.py:153 apps.py:183 apps.py:223 apps.py:257
+#: apps.py:155 apps.py:185 apps.py:225 apps.py:259
 msgid "Level"
 msgstr "Рівень"
 
-#: apps.py:161 apps.py:192
+#: apps.py:163 apps.py:194 serializers.py:20 serializers.py:60
 msgid "Depth"
 msgstr "Глибина"
 
-#: apps.py:165
+#: apps.py:167
 msgid "Total nodes"
 msgstr "Загальна кількість вузлів"
 
-#: apps.py:172
+#: apps.py:174
 msgid "Total documents"
 msgstr "Загальна кількість документів"
 
-#: apps.py:174 apps.py:213
+#: apps.py:176 apps.py:215
 msgid "Number of unique documents this item contains."
 msgstr "Кількість унікальних документів, які містить цей елемент."
 
-#: apps.py:200
+#: apps.py:202
 msgid "Nodes"
 msgstr "Вузли"
 
-#: apps.py:211 models/index_instance_models.py:64
+#: apps.py:213 models/index_instance_models.py:67
 msgid "Documents"
 msgstr "Документи"
 
@@ -81,7 +81,7 @@ msgid "Label"
 msgstr "Мітка"
 
 #: forms.py:34 models/index_template_models.py:46
-#: models/index_template_models.py:164
+#: models/index_template_models.py:166
 msgid "Enabled"
 msgstr "Активовано"
 
@@ -119,7 +119,7 @@ msgstr "Видалити та створити з нуля всі індекси
 msgid "Rebuild indexes"
 msgstr "Перебудувати індекси"
 
-#: links.py:69 views/index_template_views.py:453
+#: links.py:69 views/index_template_views.py:452
 msgid "Reset indexes"
 msgstr "Скинути індекси"
 
@@ -193,31 +193,31 @@ msgstr "Примірник індексу"
 msgid "Index instances"
 msgstr "Примірники індексу"
 
-#: models/index_instance_models.py:57 models/index_template_models.py:176
+#: models/index_instance_models.py:59 models/index_template_models.py:178
 msgid "Index template node"
 msgstr "Індекс шаблону вузла"
 
-#: models/index_instance_models.py:60 search.py:17
+#: models/index_instance_models.py:63 search.py:17
 msgid "Value"
 msgstr "Значення"
 
-#: models/index_instance_models.py:70 models/index_instance_models.py:101
+#: models/index_instance_models.py:73 models/index_instance_models.py:103
 msgid "Index instance node"
 msgstr "Індекс екземпляра вузла"
 
-#: models/index_instance_models.py:71
+#: models/index_instance_models.py:74
 msgid "Indexes instances node"
 msgstr "Індекси екземплярів вузла"
 
-#: models/index_instance_models.py:94
+#: models/index_instance_models.py:96
 msgid "Document index node instance"
 msgstr "Екземпляр вузла індексу документа"
 
-#: models/index_instance_models.py:95
+#: models/index_instance_models.py:97
 msgid "Document indexes node instances"
 msgstr "Індекси документа екземпляра вузлів"
 
-#: models/index_instance_models.py:102
+#: models/index_instance_models.py:104
 msgid "Index instance nodes"
 msgstr "Індексувати вузли екземпляру"
 
@@ -241,47 +241,47 @@ msgid ""
 msgstr ""
 "Цей індекс стає видимим і оновлюється, коли змінюються дані документа."
 
-#: models/index_template_models.py:57 models/index_template_models.py:98
+#: models/index_template_models.py:57 models/index_template_models.py:97
 msgid "Index template"
 msgstr "Шаблон індексу"
 
-#: models/index_template_models.py:102
+#: models/index_template_models.py:101
 msgid "Event type"
 msgstr "Тип події"
 
-#: models/index_template_models.py:107
+#: models/index_template_models.py:106
 msgid "Index template event trigger"
 msgstr "Тригер події шаблону індексу"
 
-#: models/index_template_models.py:108
+#: models/index_template_models.py:107
 msgid "Index template event triggers"
 msgstr "Тригери подій шаблону індексу"
 
-#: models/index_template_models.py:143
+#: models/index_template_models.py:145
 msgid "Parent index template node of this node."
 msgstr "батьківський індекс шаблону вузла цього вузла."
 
-#: models/index_template_models.py:149
+#: models/index_template_models.py:151
 msgid "Index"
 msgstr "Індекс"
 
-#: models/index_template_models.py:153
+#: models/index_template_models.py:155
 msgid "Enter a template to render. Use Django's default templating language."
 msgstr ""
 "Введіть шаблон для відображення. Використовуйте стандартну мову шаблонізації"
 " Django."
 
-#: models/index_template_models.py:156
+#: models/index_template_models.py:158
 msgid "Indexing expression"
 msgstr "Індексація виразу"
 
-#: models/index_template_models.py:161
+#: models/index_template_models.py:163
 msgid "Causes this node to be visible and updated when document data changes."
 msgstr ""
 "Примушує цей вузол бути видимим і оновлюватися під час зміни даних "
 "документа."
 
-#: models/index_template_models.py:169
+#: models/index_template_models.py:171
 msgid ""
 "Check this option to have this node act as a container for documents and not"
 " as a parent for further nodes."
@@ -289,15 +289,15 @@ msgstr ""
 "Позначте цей параметр, щоб цей вузол діяв як контейнер для документів, а не "
 "як батьківський для інших вузлів."
 
-#: models/index_template_models.py:172
+#: models/index_template_models.py:174
 msgid "Link documents"
 msgstr "Посилання на документи"
 
-#: models/index_template_models.py:177
+#: models/index_template_models.py:179
 msgid "Index template nodes"
 msgstr "Індексувати вузли шаблону"
 
-#: models/index_template_models.py:181
+#: models/index_template_models.py:183
 msgid "Root"
 msgstr "Корінь"
 
@@ -325,7 +325,7 @@ msgstr "Видалити шаблони індексу"
 msgid "View index templates"
 msgstr "Переглянути шаблони індексу"
 
-#: permissions.py:25 views/index_template_views.py:415
+#: permissions.py:25 views/index_template_views.py:416
 msgid "Rebuild index templates"
 msgstr "Перебудувати шаблони індексу"
 
@@ -365,40 +365,44 @@ msgstr "Документ UUID"
 msgid "Document checksum"
 msgstr "Контрольна сума документа "
 
-#: serializers.py:20 serializers.py:60 serializers.py:126 serializers.py:187
-#: serializers.py:285
-msgid "URL"
-msgstr "URL"
+#: serializers.py:23 serializers.py:69
+msgid "Node count"
+msgstr ""
 
-#: serializers.py:23 serializers.py:274
+#: serializers.py:27 serializers.py:298
 msgid "Nodes URL"
 msgstr "URL вузлів"
 
-#: serializers.py:48
+#: serializers.py:30 serializers.py:76 serializers.py:146 serializers.py:209
+#: serializers.py:309
+msgid "URL"
+msgstr "URL"
+
+#: serializers.py:57
 msgid "Children URL"
 msgstr "URL родича"
 
-#: serializers.py:51
+#: serializers.py:63
 msgid "Documents URL"
 msgstr "URL-адреса документів"
 
-#: serializers.py:54 serializers.py:120 serializers.py:178
+#: serializers.py:66 serializers.py:140 serializers.py:200
 msgid "Index URL"
 msgstr "Індекс URL"
 
-#: serializers.py:57 serializers.py:123 serializers.py:184
+#: serializers.py:73 serializers.py:143 serializers.py:206
 msgid "Parent URL"
 msgstr "Кореневий \"батьківський\" URL"
 
-#: serializers.py:117 serializers.py:175
+#: serializers.py:137 serializers.py:197
 msgid "Children"
 msgstr "Дитина"
 
-#: serializers.py:181
+#: serializers.py:203
 msgid "Parent"
 msgstr "Родич"
 
-#: serializers.py:247
+#: serializers.py:271
 msgid ""
 "URL of the API endpoint showing the list document types associated with this"
 " index template."
@@ -406,52 +410,52 @@ msgstr ""
 "URL API-точки, яка показує список типів документів, пов'язаних з цим "
 "шаблоном індексу."
 
-#: serializers.py:249
+#: serializers.py:273
 msgid "Document types URL"
 msgstr "URL типів документів "
 
-#: serializers.py:255
+#: serializers.py:279
 msgid "URL of the API endpoint to add document types to this index template."
 msgstr ""
 "URL API-точки доступу для додавання типів документів до цього шаблону "
 "індексу."
 
-#: serializers.py:257
+#: serializers.py:281
 msgid "Document types add URL"
 msgstr "Додати URL типів документа"
 
-#: serializers.py:263
+#: serializers.py:287
 msgid ""
 "URL of the API endpoint to remove document types from this index template."
 msgstr "URL API-точки видалення типів документів з цього шаблону індексу."
 
-#: serializers.py:265
+#: serializers.py:289
 msgid "Document types remove URL"
 msgstr "Видалити URL типів документа"
 
-#: serializers.py:270
+#: serializers.py:294
 msgid "Index template root node ID"
 msgstr "ID кореневого вузла шаблону індексу"
 
-#: serializers.py:277
+#: serializers.py:301
 msgid "Rebuild URL"
 msgstr "Перебудувати URL"
 
-#: serializers.py:281
+#: serializers.py:305
 msgid "Reset URL"
 msgstr "Скинути URL"
 
-#: serializers.py:327
+#: serializers.py:353
 msgid "Primary key of the document type to add to the index template."
 msgstr ""
 "Первинний ключ \"Primary key\" типу документа, який додається до шаблону "
 "індексу."
 
-#: serializers.py:328 serializers.py:337
+#: serializers.py:355 serializers.py:365
 msgid "Document type ID"
 msgstr "ID типу документа"
 
-#: serializers.py:336
+#: serializers.py:363
 msgid "Primary key of the document type to remove from the index template."
 msgstr ""
 "Первинний ключ \"Primary key\" типу документа, який потрібно видалити з "
@@ -555,26 +559,26 @@ msgstr ""
 "Лише документи вибраних типів будуть показані в індексі після створення. "
 "Лише події документів вибраного типу запускатимуть оновлення в індексі."
 
-#: views/index_template_views.py:156
+#: views/index_template_views.py:157
 #, python-format
 msgid "Document types linked to index: %s"
 msgstr "Типи документів, пов’язані з індексом: %s"
 
-#: views/index_template_views.py:174
+#: views/index_template_views.py:175
 #, python-format
 msgid "Edit index: %s"
 msgstr "Редагувати індекс: %s"
 
-#: views/index_template_views.py:218
+#: views/index_template_views.py:219
 #, python-format
 msgid "Error updating index template event trigger; %s"
 msgstr "Помилка оновлення тригера події шаблону індексу; %s"
 
-#: views/index_template_views.py:227
+#: views/index_template_views.py:228
 msgid "Index template event triggers updated successfully."
 msgstr "Тригери подій шаблону індексу успішно оновлено."
 
-#: views/index_template_views.py:237
+#: views/index_template_views.py:238
 msgid ""
 "Triggers are document events that cause instances of this index template to "
 "be updated."
@@ -582,22 +586,22 @@ msgstr ""
 "Тригери - це події документа, які спричиняють оновлення екземплярів цього "
 "шаблону індексу."
 
-#: views/index_template_views.py:242
+#: views/index_template_views.py:243
 #, python-format
 msgid "Index template event triggers for: %s"
 msgstr "Індекс шаблону події тригерів для: %s"
 
-#: views/index_template_views.py:287
+#: views/index_template_views.py:288
 #, python-format
 msgid "Tree template nodes for index: %s"
 msgstr "Дерево шаблону вузлів для індексу: %s"
 
-#: views/index_template_views.py:313
+#: views/index_template_views.py:315
 #, python-format
 msgid "Create child node of: %s"
 msgstr "Створити дочірній вузол: %s"
 
-#: views/index_template_views.py:340
+#: views/index_template_views.py:341
 #, python-format
 msgid "Delete the index template node: %s?"
 msgstr "Видалити індекс шаблону вузла: %s ?"
@@ -612,11 +616,11 @@ msgstr "Відредагувати індекс шаблону вузла: %s"
 msgid "Rebuild index template: %s"
 msgstr "Перебудувати шаблон індексу: %s"
 
-#: views/index_template_views.py:408
+#: views/index_template_views.py:409
 msgid "Index template queued for rebuild."
 msgstr "Індекс шаблону поставлений у чергу для перебудови."
 
-#: views/index_template_views.py:432
+#: views/index_template_views.py:433
 #, python-format
 msgid "%(count)d index template queued for rebuild."
 msgid_plural "%(count)d index templates queued for rebuild."
@@ -625,7 +629,7 @@ msgstr[1] "%(count)d індексів шаблону поставлено в ч�
 msgstr[2] "%(count)d індекснів шаблону поставлено в чергу для перебудови."
 msgstr[3] "%(count)d індексних шаблонів поставлено в чергу для перебудови."
 
-#: views/index_template_views.py:466
+#: views/index_template_views.py:465
 #, python-format
 msgid "%(count)d index reset."
 msgid_plural "%(count)d indexes reset."
@@ -634,6 +638,6 @@ msgstr[1] "%(count)d індексів скинуто."
 msgstr[2] "%(count)d індексів скинуто."
 msgstr[3] "%(count)d індексів скинуто."
 
-#: views/index_template_views.py:479
+#: views/index_template_views.py:478
 msgid "Index templates for which their instances will be deleted."
 msgstr "Індексні шаблони, для яких будуть видалені їхні екземпляри."

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -33,19 +33,19 @@ msgstr ""
 "SANE paketi tarafından sağlanan yardımcı program. Tarayıcıyı kontrol etmek "
 "ve taranan belge görüntüsünü almak için kullanılır."
 
-#: source_backends.py:29
+#: source_backends.py:31
 msgid "SANE Scanner"
 msgstr "SANE Tarayıcı"
 
-#: source_backends.py:48
+#: source_backends.py:50
 msgid "Device name as returned by the SANE backend."
 msgstr "SANE tarafından döndürülen cihaz adı."
 
-#: source_backends.py:51
+#: source_backends.py:53
 msgid "Device name"
 msgstr "Cihaz adı"
 
-#: source_backends.py:57
+#: source_backends.py:59
 msgid ""
 "YAML formatted arguments to pass to the `scanimage` command. The arguments "
 "will change depending on the device. Execute `scanimage --help --device-"
@@ -55,18 +55,18 @@ msgstr ""
 "cihaza bağlı olarak değişecektir. Desteklenen argümanların listesi için "
 "`scanimage --help --device-name=DEVICE` komutunu çalıştırın."
 
-#: source_backends.py:62
+#: source_backends.py:65
 msgid "Arguments"
 msgstr "Argümanlar"
 
-#: source_backends.py:76
+#: source_backends.py:79
 msgid "SANE client"
 msgstr ""
 
-#: source_backends.py:134
+#: source_backends.py:137
 msgid "Document properties"
 msgstr "Belge özellikleri"
 
-#: source_backends.py:135
+#: source_backends.py:138
 msgid "Scan"
 msgstr "Tara"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -54,21 +54,21 @@ msgstr "Hossz"
 msgid "User ID"
 msgstr "Felhasználói azonosító"
 
-#: dependencies.py:11
+#: dependencies.py:9
 msgid "GNU privacy guard - a PGP implementation."
 msgstr "GNU adatvédelmi őr – PGP implementáció."
 
 #: events.py:6 links.py:42 permissions.py:6
 msgid "Key management"
-msgstr "Kulcskezelés"
+msgstr ""
 
 #: events.py:10
 msgid "Key created"
-msgstr "Kulcs létrehozva"
+msgstr ""
 
 #: events.py:14
 msgid "Key downloaded"
-msgstr "Kulcs letöltve"
+msgstr ""
 
 #: forms.py:27
 msgid "None"
@@ -76,11 +76,11 @@ msgstr "Nincs"
 
 #: forms.py:32 models.py:36
 msgid "Fingerprint"
-msgstr "Ujjlenyomat"
+msgstr ""
 
 #: forms.py:38 models.py:42
 msgid "Algorithm"
-msgstr "Algoritmus"
+msgstr ""
 
 #: forms.py:56
 msgid "Term"
@@ -104,7 +104,7 @@ msgstr "Letöltés"
 
 #: links.py:32 permissions.py:28
 msgid "Query keyservers"
-msgstr "Kulcsszerverek lekérdezése"
+msgstr ""
 
 #: links.py:37
 msgid "Import"
@@ -114,21 +114,21 @@ msgstr "Importálás"
 msgid "Upload key"
 msgstr "Kulcs feltöltése"
 
-#: links.py:50 views.py:215
+#: links.py:50 views.py:213
 msgid "Private keys"
-msgstr "Privát kulcsok"
+msgstr ""
 
-#: links.py:54 views.py:240
+#: links.py:54 views.py:238
 msgid "Public keys"
-msgstr "Nyilvános kulcsok"
+msgstr ""
 
 #: literals.py:23 literals.py:31
 msgid "Public"
-msgstr "Nyilvános"
+msgstr ""
 
 #: literals.py:24 literals.py:32
 msgid "Secret"
-msgstr "Titok"
+msgstr ""
 
 #: literals.py:41 literals.py:50
 msgid "RSA"
@@ -144,29 +144,27 @@ msgstr "Elgamal"
 
 #: literals.py:70
 msgid "Bad signature."
-msgstr "Rossz aláírás."
+msgstr ""
 
 #: literals.py:73
 msgid "Document not signed or invalid signature."
-msgstr "A dokumentum nincs aláírva, vagy érvénytelen az aláírás."
+msgstr ""
 
 #: literals.py:76
 msgid "Signature error."
-msgstr "Aláírási hiba."
+msgstr ""
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
 msgstr ""
-"A dokumentum alá van írva, de nem áll rendelkezésre nyilvános kulcs az "
-"ellenőrzéshez."
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
-msgstr "A dokumentum aláírva, az aláírás jó."
+msgstr ""
 
 #: literals.py:88
 msgid "Document is signed with a valid signature."
-msgstr "A dokumentumot érvényes aláírással írják alá."
+msgstr ""
 
 #: models.py:24
 msgid "ASCII armored version of the key."
@@ -182,7 +180,7 @@ msgstr "Kulcs"
 
 #: models.py:56
 msgid "Keys"
-msgstr "Kulcsok"
+msgstr ""
 
 #: models.py:71
 msgid "Invalid key data"
@@ -268,7 +266,7 @@ msgid ""
 "Use names, last names, key ids or emails to search public keys to import "
 "from the keyserver."
 msgstr ""
-"Használjon neveket, vezetékneveket, kulcsazonosítókat vagy email címeket a "
+"Használjon neveket, vezetékneveket, kulcsazonosítókat vagy email-címeket a "
 "kulcsszerverről importálandó nyilvános kulcsok kereséséhez."
 
 #: views.py:139
@@ -287,7 +285,7 @@ msgstr "Kulcsszerver lekérdezése"
 msgid "Upload new key"
 msgstr "Új kulcs feltöltése"
 
-#: views.py:208
+#: views.py:206
 msgid ""
 "Private keys are used to signed documents. Private keys can only be uploaded"
 " by the user. The view to upload private and public keys is the same."
@@ -296,11 +294,11 @@ msgstr ""
 " a felhasználó tölthet fel. A privát és nyilvános kulcsok feltöltésének "
 "nézete megegyezik."
 
-#: views.py:213
+#: views.py:211
 msgid "There no private keys"
 msgstr "Nincsenek privát kulcsok"
 
-#: views.py:232
+#: views.py:230
 msgid ""
 "Public keys are used to verify signed documents. Public keys can be uploaded"
 " by the user or downloaded from keyservers. The view to upload private and "
@@ -310,6 +308,6 @@ msgstr ""
 "nyilvános kulcsokat a felhasználó feltöltheti, vagy kulcsszerverekről "
 "töltheti le. A privát és nyilvános kulcsok feltöltésének nézete megegyezik."
 
-#: views.py:238
+#: views.py:236
 msgid "There no public keys"
 msgstr "Nincsenek nyilvános kulcsok"

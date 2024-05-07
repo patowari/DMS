@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 04:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Dasapich Thongnopnua <dasapich@gmail.com>, 2024\n"
 "Language-Team: Thai (https://app.transifex.com/rosarior/teams/13584/th/)\n"
 "MIME-Version: 1.0\n"
@@ -20,37 +20,37 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:56 events.py:6 links.py:152 links.py:159 menus.py:6 models.py:62
-#: queues.py:9 settings.py:12 views/source_views.py:285
+#: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
+#: models.py:65 queues.py:9 settings.py:14 views/source_views.py:279
 msgid "Sources"
 msgstr ""
 
-#: apps.py:104
+#: apps.py:109
 msgid "Create a document source"
 msgstr ""
 
-#: apps.py:106
+#: apps.py:111
 msgid ""
 "Document sources are the way in which new documents are feed to Mayan EDMS, "
 "create at least a web form source to be able to upload documents from a "
 "browser."
 msgstr ""
 
-#: apps.py:130
+#: apps.py:135
 msgid ""
 "Return the value of a specific source metadata for the document's latest "
 "file."
 msgstr ""
 
-#: apps.py:132 apps.py:139
+#: apps.py:137 apps.py:144
 msgid "Source metadata value of"
 msgstr ""
 
-#: apps.py:138
+#: apps.py:143
 msgid "Return the value of a specific source metadata."
 msgstr ""
 
-#: apps.py:157
+#: apps.py:167
 msgid "Type"
 msgstr ""
 
@@ -91,72 +91,72 @@ msgstr ""
 msgid "File"
 msgstr "ไฟล์"
 
-#: links.py:116
+#: links.py:118
 msgid "New document"
 msgstr ""
 
-#: links.py:122
+#: links.py:124
 msgid "Upload new file"
 msgstr ""
 
-#: links.py:130
+#: links.py:132
 msgid "Source metadata"
 msgstr ""
 
-#: links.py:139
+#: links.py:141
 msgid "Create source"
 msgstr ""
 
-#: links.py:144
+#: links.py:146
 msgid "Delete"
 msgstr "ลบ"
 
-#: links.py:148
+#: links.py:150
 msgid "Edit"
 msgstr ""
 
-#: links.py:165
+#: links.py:167
 msgid "Test"
 msgstr ""
 
-#: models.py:19 models.py:61
-msgid "Source"
-msgstr ""
-
-#: models.py:23
+#: models.py:21 serializers.py:19
 msgid "Document file"
 msgstr ""
 
-#: models.py:26
+#: models.py:25
 msgid "Name of the source metadata entry."
 msgstr ""
 
-#: models.py:27
+#: models.py:26
 msgid "Key"
 msgstr ""
 
-#: models.py:31
+#: models.py:30
 msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
-#: models.py:33
+#: models.py:32
 msgid "Value"
 msgstr ""
 
-#: models.py:39 models.py:40
+#: models.py:40 models.py:41
 msgid "Document file source metadata"
 msgstr ""
 
-#: models.py:50
+#: models.py:53
 msgid "A short text to describe this source."
 msgstr ""
 
-#: models.py:51
+#: models.py:54
 msgid "Label"
 msgstr ""
 
-#: models.py:54
+#: models.py:57
 msgid "Enabled"
+msgstr ""
+
+#: models.py:64
+msgid "Source"
 msgstr ""
 
 #: permissions.py:6
@@ -171,15 +171,15 @@ msgstr ""
 msgid "Create new document sources"
 msgstr ""
 
-#: permissions.py:22
+#: permissions.py:23
 msgid "Delete document sources"
 msgstr ""
 
-#: permissions.py:25
+#: permissions.py:26
 msgid "Edit document sources"
 msgstr ""
 
-#: permissions.py:28
+#: permissions.py:29
 msgid "View existing document sources"
 msgstr ""
 
@@ -195,79 +195,93 @@ msgstr ""
 msgid "Check interval source"
 msgstr ""
 
-#: serializers.py:13
-msgid "Default"
+#: search.py:11 search.py:23
+msgid "Source metadata key"
 msgstr ""
 
-#: serializers.py:16
-msgid "Has default?"
+#: search.py:16 search.py:26
+msgid "Source metadata value"
 msgstr ""
 
-#: serializers.py:19
-msgid "Help text"
-msgstr ""
-
-#: serializers.py:22 serializers.py:41
-msgid "Name"
-msgstr ""
-
-#: serializers.py:25
-msgid "Required"
-msgstr ""
-
-#: serializers.py:37 serializers.py:52
-msgid "Arguments"
-msgstr ""
-
-#: serializers.py:47
-msgid "Accept files"
-msgstr ""
-
-#: serializers.py:51
-msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr ""
-
-#: serializers.py:56
-msgid "Confirmation"
-msgstr ""
-
-#: serializers.py:59
-msgid "Execute URL"
-msgstr ""
-
-#: serializers.py:62
-msgid "Interfaces"
-msgstr ""
-
-#: serializers.py:66
-msgid "name"
-msgstr ""
-
-#: serializers.py:69
-msgid "Permission"
-msgstr ""
-
-#: serializers.py:74
+#: serializers.py:22 serializers.py:107
 msgid "URL"
 msgstr ""
 
-#: serializers.py:85
+#: serializers.py:46
+msgid "Default"
+msgstr ""
+
+#: serializers.py:49
+msgid "Has default?"
+msgstr ""
+
+#: serializers.py:52
+msgid "Help text"
+msgstr ""
+
+#: serializers.py:55 serializers.py:74
+msgid "Name"
+msgstr ""
+
+#: serializers.py:58
+msgid "Required"
+msgstr ""
+
+#: serializers.py:70 serializers.py:85
+msgid "Arguments"
+msgstr ""
+
+#: serializers.py:80
+msgid "Accept files"
+msgstr ""
+
+#: serializers.py:84
+msgid "Optional arguments for the action. Must be JSON formatted."
+msgstr ""
+
+#: serializers.py:89
+msgid "Confirmation"
+msgstr ""
+
+#: serializers.py:92
+msgid "Execute URL"
+msgstr ""
+
+#: serializers.py:95
+msgid "Interfaces"
+msgstr ""
+
+#: serializers.py:99
+msgid "name"
+msgstr ""
+
+#: serializers.py:102
+msgid "Permission"
+msgstr ""
+
+#: serializers.py:118
 msgid "Binary content for the new file."
 msgstr ""
 
-#: serializers.py:121
+#: serializers.py:154
 msgid "Actions URL"
 msgstr ""
 
-#: settings.py:19
+#: settings.py:21
 msgid "Arguments to use when creating source backends."
 msgstr ""
 
-#: settings.py:25
+#: settings.py:29
+msgid ""
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
+" the oldest source cache files. Specify the size in bytes."
+msgstr ""
+
+#: settings.py:37
 msgid "Path to the Storage subclass used to store cached source image files."
 msgstr ""
 
-#: settings.py:33
+#: settings.py:44
 msgid "Arguments to pass to the SOURCES_SOURCE_CACHE_STORAGE_BACKEND."
 msgstr ""
 
@@ -287,19 +301,19 @@ msgid ""
 "disables compressed file processing."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:29
+#: source_backend_actions/mixins/arguments.py:31
 msgid "ID of the document to which a new file will be uploaded to."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:57
+#: source_backend_actions/mixins/arguments.py:59
 msgid "ID of the document type."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:74
+#: source_backend_actions/mixins/arguments.py:76
 msgid "User that will feature as the actor in the events."
 msgstr ""
 
-#: source_backend_actions/mixins/arguments.py:79
+#: source_backend_actions/mixins/arguments.py:81
 msgid "ID of the user that will feature as the actor in the events."
 msgstr ""
 
@@ -311,41 +325,41 @@ msgstr ""
 msgid "Null backend"
 msgstr ""
 
-#: source_backends/mixins.py:27
+#: source_backends/mixins.py:28
 msgid "Regular expression used to select which files to upload."
 msgstr ""
 
-#: source_backends/mixins.py:30
+#: source_backends/mixins.py:32
 msgid "Include regular expression"
 msgstr ""
 
-#: source_backends/mixins.py:37
+#: source_backends/mixins.py:40
 msgid "Regular expression used to exclude which files to upload."
 msgstr ""
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:44
 msgid "Exclude regular expression"
 msgstr ""
 
-#: source_backends/mixins.py:54
+#: source_backends/mixins.py:58
 msgid "Content selection"
 msgstr ""
 
-#: storages.py:14
+#: storages.py:13
 msgid ""
 "Unable to initialize the staging folder file image storage. Check the "
 "settings {} and {} for formatting errors."
 msgstr ""
 
-#: storages.py:21
-msgid "Staging folder files"
+#: storages.py:20
+msgid "Sources cache"
 msgstr ""
 
-#: tests/arguments.py:6
+#: tests/arguments.py:8
 msgid "Python file like object."
 msgstr ""
 
-#: tests/arguments.py:10
+#: tests/arguments.py:12
 msgid "ID of the shared uploaded file to be processed."
 msgstr ""
 
@@ -355,41 +369,41 @@ msgid ""
 "or enable and existing one."
 msgstr ""
 
-#: views/document_file_views.py:43
+#: views/document_file_views.py:41
 msgid ""
 "This means that the sources system did not record any information about the "
 "creation of the document file."
 msgstr ""
 
-#: views/document_file_views.py:47
+#: views/document_file_views.py:45
 msgid "No source metadata available for this document file."
 msgstr ""
 
-#: views/document_file_views.py:51
+#: views/document_file_views.py:49
 #, python-format
 msgid "Source metadata for: %(document_file)s"
 msgstr ""
 
-#: views/document_file_views.py:96
+#: views/document_file_views.py:82
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
 msgstr ""
 
-#: views/document_file_views.py:141
+#: views/document_file_views.py:126
 #, python-format
 msgid "Error executing document file upload task; %(exception)s"
 msgstr ""
 
-#: views/document_file_views.py:162
+#: views/document_file_views.py:145
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
 
-#: views/document_file_views.py:187
+#: views/document_file_views.py:169
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
 msgstr ""
 
-#: views/document_file_views.py:193
+#: views/document_file_views.py:175
 msgid "Submit"
 msgstr ""
 
@@ -430,35 +444,35 @@ msgstr ""
 msgid "Create a \"%s\" source"
 msgstr ""
 
-#: views/source_views.py:235
+#: views/source_views.py:233
 #, python-format
 msgid "Delete the source: %s?"
 msgstr ""
 
-#: views/source_views.py:251
+#: views/source_views.py:249
 #, python-format
 msgid "Edit source: %s"
 msgstr ""
 
-#: views/source_views.py:279
+#: views/source_views.py:273
 msgid ""
 "Sources provide the means to upload documents. Some sources are interactive "
 "and require user input to operate. Others are automatic and run in the "
 "background without user intervention."
 msgstr ""
 
-#: views/source_views.py:284
+#: views/source_views.py:278
 msgid "No sources available"
 msgstr ""
 
-#: views/source_views.py:309
+#: views/source_views.py:303
 #, python-format
 msgid ""
 "The selected action \"%s\" does not require confirmation and cannot be "
 "tested."
 msgstr ""
 
-#: views/source_views.py:331
+#: views/source_views.py:323
 msgid ""
 "This will execute the source code even if the source is not enabled. Sources"
 " that delete content after downloading will not do so while being tested. "
@@ -466,18 +480,18 @@ msgid ""
 "test will clear the error log."
 msgstr ""
 
-#: views/source_views.py:337
+#: views/source_views.py:329
 #, python-format
 msgid "Trigger check for source \"%s\"?"
 msgstr ""
 
-#: views/source_views.py:353
+#: views/source_views.py:345
 msgid ""
 "Source test queued. Check for newly created documents or for error log "
 "entries."
 msgstr ""
 
-#: wizard_steps.py:11
+#: wizard_steps.py:13
 msgid "Select document type"
 msgstr ""
 

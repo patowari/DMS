@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -50,27 +50,27 @@ msgstr "Verwijderen"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: links.py:31 models.py:47 permissions.py:6 search.py:8
+#: links.py:31 models.py:48 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr "Opmerkingen"
 
-#: model_mixins.py:10 models.py:33
+#: model_mixins.py:10 models.py:34
 msgid "User"
 msgstr "Gebruiker"
 
-#: models.py:29
+#: models.py:30
 msgid "Document"
 msgstr "Document"
 
-#: models.py:36
+#: models.py:37
 msgid "Text"
 msgstr "Tekst"
 
-#: models.py:40
+#: models.py:41
 msgid "Date time submitted"
 msgstr "Indientijdstip"
 
-#: models.py:46
+#: models.py:47
 msgid "Comment"
 msgstr "Commentaar"
 
@@ -94,27 +94,27 @@ msgstr "Opmerkingen bekijken"
 msgid "URL"
 msgstr "URL"
 
-#: views.py:37
+#: views.py:38
 #, python-format
 msgid "Add comment to document: %s"
 msgstr "Opmerking toevoegen aan document: %s"
 
-#: views.py:67
+#: views.py:69
 #, python-format
 msgid "Delete comment: %s?"
 msgstr "Verwijder opmerking: %s?"
 
-#: views.py:99
+#: views.py:98
 #, python-format
 msgid "Details for comment: %s?"
 msgstr "Details voor opmerking: %s?"
 
-#: views.py:119
+#: views.py:118
 #, python-format
 msgid "Edit comment: %s?"
 msgstr "Bewerk opmerking: %s?"
 
-#: views.py:158
+#: views.py:154
 msgid ""
 "Document comments are timestamped text entries from users. They are great "
 "for collaboration."
@@ -122,11 +122,11 @@ msgstr ""
 "Documentopmerkingen zijn van tijd voorziene tekstinvoer door gebruikers. Ze "
 "kunnen prima gebruikt worden voor samenwerking."
 
-#: views.py:161
+#: views.py:157
 msgid "There are no comments"
 msgstr "Er zijn geen opmerkingen"
 
-#: views.py:163
+#: views.py:160
 #, python-format
 msgid "Comments for document: %s"
 msgstr "Opmerkingen voor document: %s"

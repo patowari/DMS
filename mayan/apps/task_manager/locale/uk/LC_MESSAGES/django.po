@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-23 04:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -157,7 +157,7 @@ msgstr "Переглянути завдання"
 
 #: settings.py:11
 msgid "Celery"
-msgstr "Селера"
+msgstr "Celery"
 
 #: settings.py:17
 msgid "Default: \"AMQPLAIN\". Set custom amqp login method."

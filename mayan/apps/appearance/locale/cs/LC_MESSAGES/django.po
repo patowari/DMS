@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Jiri Fait <fait@orkasolutions.cz>, 2024
-# Michal Švábík <snadno@lehce.cz>, 2024
 # Jiří Podhorecký, 2024
+# Michal Švábík <snadno@lehce.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Jiří Podhorecký, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Vzhled"
 
@@ -55,24 +55,16 @@ msgid "JQuery Form"
 msgstr "Formulář JQuery"
 
 #: dependencies.py:46
-msgid "jQuery Lazy Load"
-msgstr "jQuery spožděné načítání"
-
-#: dependencies.py:50
 msgid "JQuery Match Height"
 msgstr "JQuery Match Height"
 
-#: dependencies.py:54
+#: dependencies.py:50
 msgid "Select 2"
 msgstr "Select 2"
 
-#: dependencies.py:58
+#: dependencies.py:54
 msgid "Toastr"
 msgstr "Toastr"
-
-#: dependencies.py:62
-msgid "URI.js"
-msgstr "URI.js"
 
 #: events.py:10
 msgid "Theme created"
@@ -86,50 +78,50 @@ msgstr "Motiv upraven"
 msgid "User theme edited"
 msgstr "Uživatelský motiv upraven"
 
-#: links.py:20
+#: links.py:26
 msgid "Theme settings"
 msgstr "Nastavení motivu"
 
-#: links.py:27
+#: links.py:33
 msgid "Edit theme settings"
 msgstr "Upravit nastavení motivu"
 
-#: links.py:33 views.py:32
+#: links.py:39 views.py:34
 msgid "Create new theme"
 msgstr "Vytvořit nový motiv"
 
-#: links.py:38
+#: links.py:44
 msgid "Delete"
 msgstr "Odstranit"
 
-#: links.py:42
+#: links.py:48
 msgid "Edit"
 msgstr "Upravit"
 
-#: links.py:46 links.py:54 models.py:32 views.py:101
+#: links.py:52 links.py:60 models.py:33 views.py:103
 msgid "Themes"
 msgstr "Motivy"
 
-#: models.py:19
+#: models.py:20
 msgid "A short text describing the theme."
 msgstr "Krátký text popisující motiv."
 
-#: models.py:20
+#: models.py:21
 msgid "Label"
 msgstr "Jmenovka"
 
-#: models.py:24
+#: models.py:25
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
 "Šablona stylů CSS pro změnu vzhledu různých prvků uživatelského rozhraní."
 
-#: models.py:26
+#: models.py:27
 msgid "Stylesheet"
 msgstr "Stylesheet"
 
-#: models.py:31 models.py:69
+#: models.py:32 models.py:69
 msgid "Theme"
 msgstr "Motiv"
 
@@ -190,72 +182,72 @@ msgid ""
 "additional request to be performed."
 msgstr ""
 
-#: templates/403.html:5 templates/403.html:30
+#: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
 msgstr "Nedostatečné povolení"
 
-#: templates/403.html:32
+#: templates/403.html:20
 msgid "You don't have enough permissions for this operation."
 msgstr "Pro tuto operaci nemáte dostatečná oprávnění."
 
-#: templates/404.html:5 templates/404.html:30
+#: templates/404.html:5 templates/404.html:18
 msgid "Page not found"
 msgstr "Stránka nenalezena"
 
-#: templates/404.html:32
+#: templates/404.html:20
 msgid "The requested page could not be found."
 msgstr "Požadovaná stránka nenalezena."
 
-#: templates/404.html:40
+#: templates/404.html:28
 msgid "Possible reasons"
 msgstr "Možné důvody"
 
-#: templates/404.html:44
+#: templates/404.html:32
 msgid "The location of the item is incorrect."
 msgstr "Umístění položky je nesprávné."
 
-#: templates/404.html:45
+#: templates/404.html:33
 msgid "The location is correct, but the item no longer exists."
 msgstr "Umístění je správné, ale položka již neexistuje."
 
-#: templates/404.html:46
+#: templates/404.html:34
 msgid ""
 "The location is be correct, but your account does not have the required "
 "permission to access it."
 msgstr "Poloha je správná, ale váš účet nemá k přístupu potřebná oprávnění."
 
-#: templates/500.html:5 templates/500.html:30
+#: templates/500.html:5 templates/500.html:18
 #: templates/appearance/root.html:46
 msgid "Server error"
 msgstr "Chyba serveru"
 
-#: templates/500.html:32
+#: templates/500.html:20
 msgid "There's been an unexpected error."
 msgstr "Došlo k neočekávané chybě."
 
-#: templates/500.html:40
+#: templates/500.html:28
 msgid "What to do next?"
 msgstr "Co dělat dál?"
 
-#: templates/500.html:44
+#: templates/500.html:32
 msgid "Refresh the page."
 msgstr "Obnovte stránku."
 
-#: templates/500.html:45
+#: templates/500.html:33
 msgid "Wait a bit. The system might be overloaded."
 msgstr "Počkej chvíli. Systém může být přetížen."
 
-#: templates/500.html:46
+#: templates/500.html:34
 msgid "Contact your system administrator."
 msgstr "Obraťte se na správce systému."
 
-#: templates/500.html:47
+#: templates/500.html:35
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "V protokolech zkontrolujte zprávy se značkami „CHYBA“, „KRITICKÁ“ nebo "
 "„FATÁLNÍ“."
 
-#: templates/500.html:48
+#: templates/500.html:36
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
@@ -393,7 +385,7 @@ msgstr "Zrušit"
 msgid "Views"
 msgstr "Náhledy"
 
-#: templates/appearance/partials/list/header.html:11
+#: templates/appearance/partials/list/header.html:12
 #, python-format
 msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
@@ -402,8 +394,8 @@ msgstr ""
 "Celkem (%(start)s - %(end)s z %(total)s) (stránka %(page_number)s z "
 "%(total_pages)s)"
 
-#: templates/appearance/partials/list/header.html:13
-#: templates/appearance/partials/list/header.html:16
+#: templates/appearance/partials/list/header.html:14
+#: templates/appearance/partials/list/header.html:17
 #, python-format
 msgid "Total: %(total)s"
 msgstr "Celkem: %(total)s"
@@ -477,31 +469,31 @@ msgstr "Zkontrolujte připojení k síti a zkuste to znovu za chvíli."
 msgid "None"
 msgstr "Žádný"
 
-#: views.py:57
+#: views.py:59
 #, python-format
 msgid "Delete theme: %s"
 msgstr "Odstranit motiv: %s"
 
-#: views.py:74
+#: views.py:76
 #, python-format
 msgid "Edit theme: %s"
 msgstr "Upravit motiv: %s"
 
-#: views.py:95
+#: views.py:97
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
 msgstr "Motivy umožňují změnu vizuálního vzhledu bez nutnosti změn kódu."
 
-#: views.py:99
+#: views.py:101
 msgid "There are no themes"
 msgstr "Neexistují žádné motivy"
 
-#: views.py:125
+#: views.py:127
 #, python-format
 msgid "Theme settings for user: %s"
 msgstr ""
 
-#: views.py:148
+#: views.py:150
 #, python-format
 msgid "Edit theme settings for user: %s"
 msgstr ""

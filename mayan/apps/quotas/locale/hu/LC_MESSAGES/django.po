@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 20:31+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 links.py:37 models.py:31 permissions.py:6
-#: views.py:150
+#: views.py:145
 msgid "Quotas"
 msgstr "Kvóták"
 
@@ -40,11 +40,11 @@ msgstr "Null háttérrendszer"
 
 #: events.py:10
 msgid "Quota created"
-msgstr "Kvóta létrehozva"
+msgstr ""
 
 #: events.py:13
 msgid "Quota edited"
-msgstr "Kvóta szerkesztve"
+msgstr ""
 
 #: forms.py:15 model_mixins.py:16
 msgid "Backend"
@@ -52,11 +52,11 @@ msgstr "Háttérrendszer"
 
 #: forms.py:16
 msgid "The quota driver for this entry."
-msgstr "A kvóta illesztőprogramja ehhez a bejegyzéshez."
+msgstr ""
 
 #: links.py:17
 msgid "Create quota"
-msgstr "Kvóta létrehozása"
+msgstr ""
 
 #: links.py:22
 msgid "Delete"
@@ -72,7 +72,7 @@ msgstr "Kvóták listája"
 
 #: mixins.py:17
 msgid "All document types"
-msgstr "Minden dokumentumtípus"
+msgstr ""
 
 #: mixins.py:20
 msgid ""
@@ -88,16 +88,16 @@ msgstr "Dokumentumtípusok"
 
 #: mixins.py:33
 msgid "Document types to which the quota will be applied."
-msgstr "Dokumentumtípusok, amelyekre a kvótát alkalmazni fogják."
+msgstr ""
 
 #: mixins.py:67
 msgid "all document types"
-msgstr "minden dokumentumtípus"
+msgstr ""
 
 #: mixins.py:70
 #, python-format
 msgid "document types: %(document_types)s"
-msgstr "dokumentumtípusok: %(document_types)s"
+msgstr ""
 
 #: mixins.py:94
 msgid "Groups"
@@ -105,11 +105,11 @@ msgstr "Csoportok"
 
 #: mixins.py:101
 msgid "Groups to which the quota will be applied."
-msgstr "Csoportok, amelyekre a kvótát alkalmazni fogják."
+msgstr ""
 
 #: mixins.py:105
 msgid "All users"
-msgstr "Minden felhasználó"
+msgstr ""
 
 #: mixins.py:108
 msgid ""
@@ -127,20 +127,20 @@ msgstr "Felhasználók"
 
 #: mixins.py:122
 msgid "Users to which the quota will be applied."
-msgstr "Felhasználók, akikre a kvótát alkalmazni fogják."
+msgstr ""
 
 #: mixins.py:160
 msgid "all users"
-msgstr "minden felhasználó"
+msgstr ""
 
 #: mixins.py:162
 #, python-format
 msgid "groups: %(groups)s, users: %(users)s"
-msgstr "csoportok: %(groups)s , felhasználók: %(users)s"
+msgstr ""
 
 #: model_mixins.py:15
 msgid "Driver used for this quota entry."
-msgstr "Ehhez a kvótabejegyzéshez használt illesztőprogram."
+msgstr ""
 
 #: model_mixins.py:20
 msgid "Arguments"
@@ -148,7 +148,7 @@ msgstr "Argumentumok"
 
 #: model_mixins.py:24
 msgid "Usage"
-msgstr "Használat"
+msgstr ""
 
 #: models.py:16
 msgid "The dotted Python path to the backend class."
@@ -172,7 +172,7 @@ msgstr "Engedélyezett"
 
 #: models.py:30
 msgid "Quota"
-msgstr "Kvóta"
+msgstr ""
 
 #: permissions.py:10
 msgid "Create a quota"
@@ -180,77 +180,77 @@ msgstr "Kvóta létrehozása"
 
 #: permissions.py:13
 msgid "Delete a quota"
-msgstr "Kvóta törlése"
+msgstr ""
 
 #: permissions.py:16
 msgid "Edit a quota"
-msgstr "Kvóta szerkesztése"
+msgstr ""
 
 #: permissions.py:19
 msgid "View a quota"
-msgstr "Kvóta megtekintése"
+msgstr ""
 
 #: quota_backends.py:72 quota_backends.py:172
 msgid "Document count quota exceeded."
-msgstr "A dokumentumszám-kvóta túllépve."
+msgstr ""
 
 #: quota_backends.py:76
 msgid "Documents limit"
-msgstr "Dokumentumkorlát"
+msgstr ""
 
 #: quota_backends.py:79
 msgid "Maximum number of documents."
-msgstr "Dokumentumok maximális száma."
+msgstr ""
 
 #: quota_backends.py:83
 msgid "Document count limit"
-msgstr "Dokumentumszám korlát"
+msgstr ""
 
 #: quota_backends.py:108
 #, python-format
 msgid "document count: %(document_count)s"
-msgstr "dokumentumok száma: %(document_count)s"
+msgstr ""
 
 #: quota_backends.py:183
 msgid "Maximum document size in megabytes (MB)."
-msgstr "A dokumentum maximális mérete megabájtban (MB)."
+msgstr ""
 
 #: quota_backends.py:184 quota_backends.py:187
 msgid "Document size limit"
-msgstr "Dokumentum méretkorlát"
+msgstr ""
 
 #: quota_backends.py:212
 #, python-format
 msgid "document size: %(formatted_file_size)s"
-msgstr "dokumentum mérete: %(formatted_file_size)s"
+msgstr ""
 
 #: quota_backends.py:234
 msgid "Document size quota exceeded."
-msgstr "Túllépte a dokumentumméret-kvótát."
+msgstr ""
 
 #: views.py:27
 msgid "New quota backend selection"
 msgstr "Új kvóta háttérrendszer választás"
 
-#: views.py:65
+#: views.py:64
 #, python-format
 msgid "Create a \"%s\" quota"
 msgstr "\"%s\" kvóta létrehozása"
 
-#: views.py:98
+#: views.py:95
 #, python-format
 msgid "Delete quota: %s"
-msgstr "Kvóta törlése: %s"
+msgstr ""
 
-#: views.py:114
+#: views.py:111
 #, python-format
 msgid "Edit quota: %s"
-msgstr "Kvóta szerkesztése: %s"
+msgstr ""
 
-#: views.py:147
+#: views.py:142
 msgid "Quotas restrict usage of system resources. "
-msgstr "A kvóták korlátozzák a rendszererőforrások használatát."
+msgstr ""
 
-#: views.py:149
+#: views.py:144
 msgid "No quotas available"
-msgstr "Nem áll rendelkezésre kvóta"
+msgstr ""

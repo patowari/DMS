@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 22:08+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,23 +16,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:19 permissions.py:6
+#: apps.py:21 permissions.py:6
 msgid "Templating"
 msgstr ""
 
-#: fields.py:21
+#: apps.py:39
+msgid "Current date and time"
+msgstr ""
+
+#: fields.py:28
 #, python-format
 msgid ""
 "Use Django's default templating language (https://docs.djangoproject.com/en/"
 "%(django_version)s/ref/templates/builtins/). "
 msgstr ""
 
-#: fields.py:41
+#: fields.py:43
 #, python-format
-msgid ""
-"Use Django's default templating language (https://docs.djangoproject.com/en/"
-"%(django_version)s/ref/templates/builtins/). The {{ %(variable)s }} variable "
-"is available to the template."
+msgid "Available template context variables: %s"
 msgstr ""
 
 #: forms.py:9
@@ -75,12 +76,12 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: views.py:44
+#: views.py:45
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr ""
 
-#: views.py:65
+#: views.py:67
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr ""

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# molnars <szabolcs.molnar@gmail.com>, 2024
 # Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
+# molnars <szabolcs.molnar@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 01:48+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Csaba Tarjányi, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: molnars <szabolcs.molnar@gmail.com>, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,17 +22,17 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:28 events.py:6
+#: apps.py:28 events.py:6 settings.py:9
 msgid "Locales"
 msgstr "Területi beállítások"
 
-#: dependencies.py:12
+#: dependencies.py:10
 msgid "Transifex Client"
-msgstr "Transifex kliens"
+msgstr ""
 
 #: events.py:10
 msgid "User locale profile edited"
-msgstr "A felhasználói területi profil szerkesztve"
+msgstr ""
 
 #: links.py:14
 msgid "Locale profile"
@@ -40,7 +40,7 @@ msgstr "Nyelvi profil"
 
 #: links.py:19
 msgid "Edit locale profile"
-msgstr "A nyelvi profil szerkesztése"
+msgstr ""
 
 #: models.py:20
 msgid "User"
@@ -48,7 +48,7 @@ msgstr "Felhasználó"
 
 #: models.py:24
 msgid "Timezone"
-msgstr "Időzóna"
+msgstr ""
 
 #: models.py:28
 msgid "Language"
@@ -60,18 +60,27 @@ msgstr "Felhasználói területi profil"
 
 #: models.py:35
 msgid "User locale profiles"
-msgstr "Felhasználói területi beállítások"
+msgstr ""
 
-#: models.py:39
+#: models.py:38 models.py:39
 msgid "None"
 msgstr "Nincs"
 
-#: views.py:49
+#: settings.py:15
+msgid ""
+"Default profile language for new user accounts. Must be in ISO639-3 format."
+msgstr ""
+
+#: settings.py:22
+msgid "Default profile language for new user accounts."
+msgstr ""
+
+#: views.py:52
 #, python-format
 msgid "Locale profile for user: %s"
-msgstr "A felhasználó nyelvi profilja: %s"
+msgstr ""
 
-#: views.py:82
+#: views.py:86
 #, python-format
 msgid "Edit locale profile for user: %s"
 msgstr "A következő felhasználó területi beállításainak szerkesztése: %s"

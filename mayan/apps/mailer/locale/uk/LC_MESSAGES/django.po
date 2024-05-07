@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Vasyl Olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -23,19 +23,19 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:58
+#: apps.py:59 apps.py:80
 msgid "Mailer"
-msgstr "Розсилка"
+msgstr "Поштова програма"
 
-#: classes.py:27
+#: classes.py:23
 msgid "General"
 msgstr "Загальний"
 
-#: classes.py:45
+#: classes.py:41
 msgid "From"
 msgstr "Від"
 
-#: classes.py:48
+#: classes.py:44
 msgid ""
 "The sender's address. Some system will refuse to send messages if this value"
 " is not set."
@@ -43,11 +43,11 @@ msgstr ""
 "Адреса відправника. Деякі системи відмовляться надсилати повідомлення, якщо "
 "це значення не встановлено."
 
-#: classes.py:63
+#: classes.py:59
 msgid "Compatibility"
 msgstr "Сумісність"
 
-#: classes.py:82 classes.py:102
+#: classes.py:78 classes.py:96
 msgid "Null backend"
 msgstr "Null backend"
 
@@ -93,7 +93,7 @@ msgstr ""
 "Профіль електронної пошти, який використовуватиметься для надсилання цього "
 "електронного листа."
 
-#: forms.py:76 models.py:48 workflow_action_mixins.py:111
+#: forms.py:76 models.py:49 workflow_action_mixins.py:111
 #: workflow_action_mixins.py:125
 msgid "Mailing profile"
 msgstr "Профіль розсилки"
@@ -106,48 +106,48 @@ msgstr "Драйвер для надсилання електронних лис
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:34 links.py:39
+#: links.py:33 links.py:38
 msgid "Email document link"
 msgstr "Посилання на документ електронної пошти"
 
-#: links.py:49 links.py:54
+#: links.py:48 links.py:53
 msgid "Email document file"
-msgstr "Е-мейл файл"
+msgstr "E-mail документ"
 
-#: links.py:60 links.py:65
+#: links.py:59 links.py:64
 msgid "Email document file link"
 msgstr "Посилання на файл документа електронної пошти"
 
-#: links.py:75 links.py:80
+#: links.py:74 links.py:79
 msgid "Email document version"
 msgstr "Версія документа електроннї пошти"
 
-#: links.py:86
+#: links.py:85
 msgid "Email document version link"
 msgstr "Посилання на версію документу електронної пошти"
 
-#: links.py:91
+#: links.py:90
 msgid "Email link version"
 msgstr "Версія посилання електронної пошти"
 
-#: links.py:100
+#: links.py:99
 msgid "Create mailing profile"
 msgstr "Створити профіль розсилки"
 
-#: links.py:106
+#: links.py:105
 msgid "Delete"
 msgstr "Видалити"
 
-#: links.py:110
+#: links.py:109
 msgid "Edit"
 msgstr "Редагувати"
 
-#: links.py:114 links.py:122 links.py:128 models.py:49
-#: views/mailing_profile_views.py:138
+#: links.py:113 links.py:121 links.py:127 models.py:50
+#: views/mailing_profile_views.py:134
 msgid "Mailing profiles"
 msgstr "Профілі розсилки"
 
-#: links.py:132 views/mailing_profile_views.py:168
+#: links.py:131 views/mailing_profile_views.py:162
 msgid "Test"
 msgstr "Тест"
 
@@ -214,8 +214,8 @@ msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
-"Чи використовувати захищене з'єднання TLS при спілкуванні з SMTP-сервером. "
-"Це використовується для явних TLS-з'єднань, зазвичай на порту 587."
+"Чи використовувати TLS (захищене) з’єднання під час спілкування з сервером "
+"SMTP. Це використовується для явних з’єднань TLS, як правило, на порту 587."
 
 #: mailers.py:46
 msgid "Use SSL"
@@ -254,20 +254,20 @@ msgstr "Шлях до файлу"
 msgid "Storage"
 msgstr "Сховище"
 
-#: model_mixins.py:173
+#: model_mixins.py:178
 #, python-format
 msgid "Test email from %s"
 msgstr "Тестовий електронний лист від %s"
 
-#: models.py:31
+#: models.py:32
 msgid "A short text describing the mailing profile."
 msgstr "Короткий текст, що описує профіль розсилки."
 
-#: models.py:32
+#: models.py:33
 msgid "Label"
 msgstr "Мітка"
 
-#: models.py:36
+#: models.py:37
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
@@ -275,11 +275,11 @@ msgstr ""
 "За умовчанням цей профіль розсилки буде попередньо вибрано у формі розсилки "
 "документа."
 
-#: models.py:38
+#: models.py:39
 msgid "Default"
 msgstr "За замовчуванням"
 
-#: models.py:41
+#: models.py:42
 msgid "Enabled"
 msgstr "Активовано"
 
@@ -399,28 +399,28 @@ msgstr ""
 "%(count)d документів посилань файлів поставлено в чергу для доставки "
 "електронною поштою."
 
-#: views/document_version_views.py:17
+#: views/document_version_views.py:19
 #, python-format
 msgid "%(count)d document version queued for email delivery"
 msgstr ""
 "%(count)d версія документа поставлена в чергу для доставки електронною "
 "поштою"
 
-#: views/document_version_views.py:20
+#: views/document_version_views.py:22
 #, python-format
 msgid "%(count)d document versions queued for email delivery"
 msgstr ""
 "%(count)d версій документів поставлено в чергу для доставки електронною "
 "поштою"
 
-#: views/document_version_views.py:32
+#: views/document_version_views.py:34
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
 "%(count)d посилання на версію документа поставлено в чергу для доставки "
 "електронною поштою"
 
-#: views/document_version_views.py:35
+#: views/document_version_views.py:37
 #, python-format
 msgid "%(count)d document version links queued for email delivery"
 msgstr ""
@@ -450,17 +450,17 @@ msgstr "Вибір нового профілю розсилки"
 msgid "Create a \"%s\" mailing profile"
 msgstr "Створити профіль розсилки \"%s\""
 
-#: views/mailing_profile_views.py:95
+#: views/mailing_profile_views.py:93
 #, python-format
 msgid "Delete mailing profile: %s"
 msgstr "Видалити профіль розсилки: %s"
 
-#: views/mailing_profile_views.py:108
+#: views/mailing_profile_views.py:106
 #, python-format
 msgid "Edit mailing profile: %s"
 msgstr "Редагувати профіль розсилки: %s"
 
-#: views/mailing_profile_views.py:133
+#: views/mailing_profile_views.py:129
 msgid ""
 "Mailing profiles are email configurations. Mailing profiles allow sending "
 "documents as attachments or as links via email."
@@ -469,15 +469,15 @@ msgstr ""
 "дозволяють надсилати документи як вкладення або як посилання електронною "
 "поштою."
 
-#: views/mailing_profile_views.py:137
+#: views/mailing_profile_views.py:133
 msgid "No mailing profiles available"
 msgstr "Немає доступних профілів розсилки"
 
-#: views/mailing_profile_views.py:160
+#: views/mailing_profile_views.py:154
 msgid "Test email sent."
 msgstr "Тестовий електронний лист надіслано."
 
-#: views/mailing_profile_views.py:170
+#: views/mailing_profile_views.py:164
 #, python-format
 msgid "Test mailing profile: %s"
 msgstr "Тестовий профіль розсилки: %s"

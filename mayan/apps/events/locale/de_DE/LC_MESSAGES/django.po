@@ -5,8 +5,8 @@
 # Translators:
 # Translators:
 # tetjarediske <tetja.rediske@googlemail.com>, 2024
-# Felix <felix.com@gmx.com>, 2024
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
+# Felix <felix.com@gmx.com>, 2024
 # Roberto Rosario, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -25,60 +25,60 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:11 links.py:53 links.py:94 permissions.py:6
+#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "Ereignisse"
 
-#: apps.py:82 apps.py:117
+#: apps.py:86 apps.py:121
 msgid "Date and time"
 msgstr "Datum und Uhrzeit"
 
-#: apps.py:86 apps.py:120 serializers.py:72
+#: apps.py:90 apps.py:124 serializers.py:72
 msgid "Actor"
 msgstr "Akteur"
 
-#: apps.py:90 apps.py:125
+#: apps.py:94 apps.py:129
 msgid "Event"
 msgstr "Ereignis"
 
-#: apps.py:94 apps.py:130 serializers.py:78
+#: apps.py:98 apps.py:134 serializers.py:78
 msgid "Target"
 msgstr "Ziel"
 
-#: apps.py:98 apps.py:134
+#: apps.py:102 apps.py:138
 msgid "Action object"
 msgstr "Aktionsobjekt"
 
-#: apps.py:105 forms.py:10 forms.py:71
+#: apps.py:109 forms.py:10 forms.py:71
 msgid "Namespace"
 msgstr "Namensraum"
 
-#: apps.py:110 forms.py:16 forms.py:77 serializers.py:21 serializers.py:46
+#: apps.py:114 forms.py:16 forms.py:77 serializers.py:21 serializers.py:46
 msgid "Label"
 msgstr "Bezeichner"
 
-#: apps.py:139
+#: apps.py:143
 msgid "Seen"
 msgstr "Gesehen"
 
-#: apps.py:146
+#: apps.py:150
 msgid "Object"
 msgstr "Objekt"
 
-#: apps.py:151 models.py:46 models.py:105
+#: apps.py:155 models.py:48 models.py:109
 msgid "Event type"
 msgstr "Ereignistyp"
 
-#: classes.py:91
+#: classes.py:90
 msgid "Event list export to CSV"
 msgstr "Ereignisliste nach CSV exportieren"
 
-#: classes.py:122
+#: classes.py:119
 msgid "Events exported."
 msgstr "Ereignisse exportiert."
 
-#: classes.py:124
+#: classes.py:121
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -111,31 +111,31 @@ msgstr "Subskribiert"
 msgid "System"
 msgstr "System"
 
-#: links.py:56 links.py:101 views/clear_views.py:65
+#: links.py:55 links.py:100 views/clear_views.py:65
 msgid "Clear events"
 msgstr "Ereignisse zurücksetzen"
 
-#: links.py:60 links.py:108 views/export_views.py:64
+#: links.py:59 links.py:107 views/export_views.py:64
 msgid "Export events"
 msgstr "Ereignisse exportieren"
 
-#: links.py:66 models.py:53 views/subscription_views.py:54
+#: links.py:65 models.py:55 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr "Ereignissubskriptionen"
 
-#: links.py:72 models.py:113 views/subscription_views.py:169
+#: links.py:71 models.py:117 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr "Objektereignissubskriptionen"
 
-#: links.py:84
+#: links.py:83
 msgid "Mark as seen"
 msgstr "Als gesehen markieren"
 
-#: links.py:88
+#: links.py:87
 msgid "Mark all as seen"
 msgstr "Alle als gesehen markieren"
 
-#: links.py:115
+#: links.py:114
 msgid "Subscriptions"
 msgstr "Subskriptionen"
 
@@ -144,43 +144,43 @@ msgstr "Subskriptionen"
 msgid "Unknown or obsolete event type: %s"
 msgstr "Unbekannter oder unerlaubter Ereignistyp: %s"
 
-#: models.py:23 serializers.py:24 serializers.py:49
+#: models.py:25 serializers.py:24 serializers.py:49
 msgid "Name"
 msgstr "Name"
 
-#: models.py:27
+#: models.py:29
 msgid "Stored event type"
 msgstr "Gespeicherter Ereignistyp"
 
-#: models.py:28
+#: models.py:30
 msgid "Stored event types"
 msgstr "Gespeicherte Ereignistypen"
 
-#: models.py:42 models.py:68 models.py:101 serializers.py:103
+#: models.py:44 models.py:72 models.py:105 serializers.py:103
 msgid "User"
 msgstr "Benutzer"
 
-#: models.py:52
+#: models.py:54
 msgid "Event subscription"
 msgstr "Ereignissubskription"
 
-#: models.py:72 serializers.py:100
+#: models.py:76 serializers.py:100
 msgid "Action"
 msgstr "Aktion"
 
-#: models.py:75
+#: models.py:79
 msgid "Read"
 msgstr "Gelesen"
 
-#: models.py:82
+#: models.py:86
 msgid "Notification"
 msgstr "Benachrichtigung"
 
-#: models.py:83 views/notification_views.py:33
+#: models.py:87 views/notification_views.py:33
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: models.py:112
+#: models.py:116
 msgid "Object event subscription"
 msgstr "Objektereignissubskription"
 
@@ -216,7 +216,7 @@ msgstr "Ereignissuchanfragen löschen"
 msgid "Export event querysets"
 msgstr "Ereignissuchanfragen exportieren"
 
-#: serializers.py:27
+#: serializers.py:27 serializers.py:109
 msgid "URL"
 msgstr "URL"
 
@@ -261,12 +261,12 @@ msgstr ""
 msgid "Event list clear task queued successfully."
 msgstr "Task für die Löschung der Ereignisliste erfolgreich eingereicht."
 
-#: views/clear_views.py:86
+#: views/clear_views.py:85
 #, python-format
 msgid "Clear events of: %s"
 msgstr "Ereignisse löschen für %s"
 
-#: views/clear_views.py:111
+#: views/clear_views.py:109
 #, python-format
 msgid "Clear events of type: %s"
 msgstr "Ereignisse löschen für Typ %s"
@@ -309,12 +309,12 @@ msgstr ""
 msgid "Event list export task queued successfully."
 msgstr "Export der Ereignisliste erfolgreich eingereiht."
 
-#: views/export_views.py:85
+#: views/export_views.py:84
 #, python-format
 msgid "Export events of: %s"
 msgstr "Ereignisse für %s exportieren"
 
-#: views/export_views.py:104
+#: views/export_views.py:102
 #, python-format
 msgid "Export events of type: %s"
 msgstr "Ereignisse für Typ %s exportieren"

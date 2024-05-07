@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:29+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -41,9 +41,6 @@ msgid ""
 "Criteria to use when searching for messages to process. Use the format "
 "specified in https://tools.ietf.org/html/rfc2060.html#section-6.4.4"
 msgstr ""
-"A feldolgozandó üzenetek keresésekor használandó kritériumok. Használja a "
-"https://tools.ietf.org/html/rfc2060.html#section-6.4.4 helyen megadott "
-"formátumot"
 
 #: source_backends/imap_source_backends.py:66
 msgid "Search criteria"
@@ -76,45 +73,43 @@ msgstr "Törlés végrehajtása"
 
 #: source_backends/imap_source_backends.py:97
 msgid "IMAP Mailbox to which processed messages will be copied."
-msgstr "IMAP-postafiók, amelybe a feldolgozott üzenetek másolásra kerülnek."
+msgstr ""
 
 #: source_backends/imap_source_backends.py:100
 msgid "Destination mailbox"
-msgstr "Cél postafiók"
+msgstr ""
 
 #: source_backends/imap_source_backends.py:116
 msgid "IMAP protocol"
-msgstr "IMAP protokoll"
+msgstr ""
 
-#: source_backends/mixins.py:31
+#: source_backends/mixins.py:33
 msgid "Host"
 msgstr "Kiszolgáló"
 
-#: source_backends/mixins.py:40
+#: source_backends/mixins.py:42
 msgid "SSL"
 msgstr "SSL"
 
-#: source_backends/mixins.py:46
+#: source_backends/mixins.py:48
 msgid ""
 "Typical choices are 110 for POP3, 995 for POP3 over SSL, 143 for IMAP, 993 "
 "for IMAP over SSL."
 msgstr ""
-"A tipikus választások a következők: 110 POP3, 995 POP3 SSL, 143 IMAP, 993 "
-"IMAP SSL felett."
 
-#: source_backends/mixins.py:52
+#: source_backends/mixins.py:54
 msgid "Port"
 msgstr "Portszám"
 
-#: source_backends/mixins.py:58
+#: source_backends/mixins.py:60
 msgid "Store the body of the email as a text document."
 msgstr "Az email szövegtörzsét szöveges dokumentumként tárolja."
 
-#: source_backends/mixins.py:60
+#: source_backends/mixins.py:63
 msgid "Store email body"
 msgstr "Az email szövegtörzsének tárolása"
 
-#: source_backends/mixins.py:74
+#: source_backends/mixins.py:77
 msgid "Common email options"
 msgstr "Általános email beállítások"
 

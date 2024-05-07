@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Jorge <emailcurro@gmail.com>, 2024\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "ACL edited"
 msgstr "LCA editada"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Rol"
 
@@ -62,7 +62,7 @@ msgstr "Nova LCA"
 msgid "Delete"
 msgstr "Esborrar"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "Permisos"
 
@@ -84,27 +84,27 @@ msgstr "Accés insuficient per: \"%s\""
 msgid "Permission count"
 msgstr ""
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr ""
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr ""
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr ""
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "Entrada d'accés"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "Entrades d'accés"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "El permís de la funció \"%(role)s\" es per a \"%(object)s\""
@@ -166,11 +166,11 @@ msgstr ""
 msgid "Delete ACL: %s"
 msgstr ""
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr ""
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -180,25 +180,25 @@ msgstr ""
 "controlar l'accés d'usuaris a objectes del sistema. Les LCAs permeten "
 "atorgar un permís a un rol però només a un objecte o conjunt d'objectes."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "Llistes de control d'accessos per a: \"%s\""
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "Permisos atorgats"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "Permisos disponibles"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr ""
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -206,11 +206,11 @@ msgid ""
 "menu."
 msgstr ""
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr ""
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr ""
 

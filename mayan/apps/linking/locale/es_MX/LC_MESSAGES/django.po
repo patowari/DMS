@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:46
+#: apps.py:47
 msgid "Linking"
 msgstr "Enlaces"
 
-#: apps.py:120 models.py:31 serializers.py:129
+#: apps.py:121 models.py:33 serializers.py:133
 msgid "Label"
 msgstr "Etiqueta"
 
-#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:52
+#: events.py:6 links.py:28 links.py:36 links.py:68 links.py:76 models.py:54
 #: permissions.py:6 views/smart_link_views.py:157
 msgid "Smart links"
 msgstr "Enlaces inteligentes"
@@ -53,7 +53,7 @@ msgstr "Crear un enlace inteligente nuevo"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: links.py:54 models.py:44
+#: links.py:54 models.py:46
 msgid "Document types"
 msgstr "Tipos de documento"
 
@@ -160,11 +160,11 @@ msgstr "no"
 msgid "Full label"
 msgstr "Etiqueta completa"
 
-#: models.py:30
+#: models.py:32
 msgid "A short text describing the smart link."
 msgstr "Un breve texto que describe el enlace inteligente."
 
-#: models.py:35
+#: models.py:37
 msgid ""
 "Use this field to show a unique label depending on the document from which "
 "the smart link is being accessed."
@@ -172,31 +172,31 @@ msgstr ""
 "Use este campo para mostrar una etiqueta única según el documento desde el "
 "que se accede al enlace inteligente."
 
-#: models.py:37
+#: models.py:39
 msgid "Dynamic label"
 msgstr "Etiqueta dinámica"
 
-#: models.py:40 models.py:117
+#: models.py:42 models.py:121
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: models.py:51 models.py:90
+#: models.py:53 models.py:94
 msgid "Smart link"
 msgstr "Enlace inteligente"
 
-#: models.py:94
+#: models.py:98
 msgid "The inclusion is ignored for the first item."
 msgstr "La inclusión es ignorada para el primer artículo."
 
-#: models.py:99
+#: models.py:103
 msgid "This represents the metadata of all other documents."
 msgstr "Esto representa los meta datos de los documentos foráneos."
 
-#: models.py:101
+#: models.py:105
 msgid "Foreign document attribute"
 msgstr "Attributo del documento foráneo"
 
-#: models.py:107
+#: models.py:111
 msgid ""
 "The expression using document properties to be evaluated against the foreign"
 " document field."
@@ -204,23 +204,23 @@ msgstr ""
 "La expresión que usa las propiedades del documento que se evaluarán contra "
 "el campo de documento externo."
 
-#: models.py:109
+#: models.py:113
 msgid "Expression"
 msgstr "Expresión"
 
-#: models.py:113
+#: models.py:117
 msgid "Inverts the logic of the operator."
 msgstr "Invierte la lógica del operador."
 
-#: models.py:114
+#: models.py:118
 msgid "Negated"
 msgstr "Invertido"
 
-#: models.py:121
+#: models.py:125
 msgid "Link condition"
 msgstr "Condición de enlace"
 
-#: models.py:122
+#: models.py:126
 msgid "Link conditions"
 msgstr "Condiciones de enlace"
 
@@ -244,11 +244,11 @@ msgstr "Editar enlaces inteligentes"
 msgid "View existing smart links"
 msgstr "Ver enlaces inteligentes existentes"
 
-#: serializers.py:20 serializers.py:132
+#: serializers.py:20 serializers.py:136
 msgid "Smart link URL"
 msgstr "URL de enlace inteligente"
 
-#: serializers.py:24 serializers.py:86 serializers.py:135
+#: serializers.py:24 serializers.py:90 serializers.py:139
 msgid "URL"
 msgstr "URL"
 
@@ -257,37 +257,37 @@ msgid "Primary key of the document type to add to the smart link."
 msgstr ""
 "Llave principal del tipo de documento para agregar al enlace inteligente."
 
-#: serializers.py:50 serializers.py:59
+#: serializers.py:51 serializers.py:61
 msgid "Document type ID"
 msgstr "Identificación del tipo de documento"
 
-#: serializers.py:58
+#: serializers.py:59
 msgid "Primary key of the document type to remove from the smart link."
 msgstr ""
 "Llave principal del tipo de documento que se eliminará del enlace "
 "inteligente."
 
-#: serializers.py:66
+#: serializers.py:68
 msgid "Conditions URL"
 msgstr "URL de condiciones"
 
-#: serializers.py:70
+#: serializers.py:72
 msgid "Document types URL"
 msgstr "URL de tipos de documentos"
 
-#: serializers.py:74
+#: serializers.py:77
 msgid "Document types add URL"
 msgstr "URL para agregar tipos de documentos"
 
-#: serializers.py:78
+#: serializers.py:82
 msgid "Document types remove URL"
 msgstr "URL para eliminar tipos de documentos"
 
-#: serializers.py:105
+#: serializers.py:109
 msgid "Resolved smart link URL"
 msgstr "URL de enlace inteligente resuelto"
 
-#: serializers.py:126
+#: serializers.py:130
 msgid "Documents URL"
 msgstr "URL de documentos"
 

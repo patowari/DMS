@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (Puerto Rico) (https://app.transifex.com/rosarior/teams/13584/es_PR/)\n"
 "MIME-Version: 1.0\n"
@@ -20,25 +20,15 @@ msgstr ""
 "Language: es_PR\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:130 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Común"
 
-#: dependencies.py:189
-msgid "Used to allow offline translation of the code text strings."
-msgstr ""
-"Se utiliza para permitir la traducción sin conexión de los textos del "
-"código."
-
-#: dependencies.py:198
-msgid "Provides style checking."
-msgstr "Proporciona la comprobación de estilo."
-
-#: dependencies.py:203
+#: dependencies.py:193
 msgid "Command line environment with autocompletion."
 msgstr "Entorno de línea de comandos con autocompletado."
 
-#: dependencies.py:212
+#: dependencies.py:198
 msgid "Checks proper formatting of the README file."
 msgstr "Comprueba el formato correcto del archivo README."
 

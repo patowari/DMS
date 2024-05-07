@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:28+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -34,27 +34,27 @@ msgstr "OTP désactivé"
 msgid "OTP enabled"
 msgstr "OTP activé"
 
-#: forms.py:20
+#: forms.py:22
 msgid "Token is either invalid or expired."
 msgstr "Le jeton n'est pas valide ou a expiré."
 
-#: forms.py:25
+#: forms.py:27
 msgid "TOTP token"
 msgstr "Jeton TOTP"
 
-#: forms.py:86
+#: forms.py:88
 msgid "OTP enabled?"
 msgstr "OTP activé?"
 
-#: forms.py:87
+#: forms.py:89
 msgid "Yes"
 msgstr "Oui"
 
-#: forms.py:87
+#: forms.py:89
 msgid "No"
 msgstr "Non"
 
-#: forms.py:104
+#: forms.py:106
 msgid ""
 "Scan the QR code or enter the secret in your authentication device. Do not "
 "share this secret, treat it like a password."
@@ -63,22 +63,22 @@ msgstr ""
 "d'authentification. Ne partagez pas ce secret, traitez-le comme un mot de "
 "passe."
 
-#: forms.py:106 forms.py:111
+#: forms.py:108 forms.py:113
 msgid "Secret"
 msgstr "Secret"
 
-#: forms.py:117
+#: forms.py:119
 msgid ""
 "Enter the corresponding token to validate that the secret was saved correct."
 msgstr ""
 "Entrez le jeton correspondant pour valider que le secret a été enregistré "
 "correctement."
 
-#: forms.py:120
+#: forms.py:122
 msgid "Token"
 msgstr "Jeton"
 
-#: forms.py:155
+#: forms.py:158
 msgid "Token is incorrect for the specified secret."
 msgstr "Le jeton est incorrect pour le secret spécifié."
 
@@ -128,15 +128,15 @@ msgstr "OTP désactivé avec succès."
 msgid "OTP is already enabled."
 msgstr "OTP est déjà activé."
 
-#: views.py:96
+#: views.py:97
 msgid "OTP enabled successfully."
 msgstr "OTP activé avec succès."
 
-#: views.py:105
+#: views.py:107
 #, python-format
 msgid "Enable one time pad for user: %s"
 msgstr "Activer le masque jetable pour l'utilisateur: %s"
 
-#: views.py:117
+#: views.py:119
 msgid "OTP secret validation error."
 msgstr "Erreur de validation du secret OTP."

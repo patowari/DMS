@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 18:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Документът вече е изписан."
 msgid "Document status"
 msgstr "Състояние на документа"
 
-#: forms.py:37 model_mixins.py:9 models.py:46 serializers.py:20
+#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Потребител"
 
@@ -117,7 +117,7 @@ msgstr "Час и дата на изписване"
 msgid "Checkout expiration"
 msgstr "Срок на изписване"
 
-#: models.py:34 serializers.py:17
+#: models.py:34 serializers.py:19
 msgid "Document"
 msgstr "Документ"
 
@@ -129,27 +129,27 @@ msgstr "Дата и час на изписване"
 msgid "Amount of time to hold the document checked out in minutes."
 msgstr "Време за задържане на изписания документ в минути."
 
-#: models.py:42
+#: models.py:43
 msgid "Check out expiration date and time"
 msgstr "Срок на изписване - дата и час"
 
-#: models.py:50
+#: models.py:51
 msgid "Do not allow new file of this document to be uploaded."
 msgstr "Не позволявайте качването на нов файл от този документ."
 
-#: models.py:51
+#: models.py:52
 msgid "Block new file upload"
 msgstr "Блокиране на качването на нов файл"
 
-#: models.py:59 permissions.py:6
+#: models.py:60 permissions.py:6
 msgid "Document checkout"
 msgstr "Изписване на документ"
 
-#: models.py:60
+#: models.py:61
 msgid "Document checkouts"
 msgstr "Изписвания на документи"
 
-#: models.py:69
+#: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr "Датата и часът за срока на изписване трябва да бъдат в бъдещето."
 
@@ -177,15 +177,15 @@ msgstr "Периодика на изписванията"
 msgid "Check expired checkouts"
 msgstr "Провери изписванията с изтекъл срок"
 
-#: serializers.py:26
+#: serializers.py:28
 msgid "URL"
 msgstr "URL"
 
-#: serializers.py:44
+#: serializers.py:46
 msgid "Primary key of the document to be checked out."
 msgstr "Основен ключ на документа, който трябва да бъде изписан."
 
-#: serializers.py:45
+#: serializers.py:47
 msgid "Document ID"
 msgstr ""
 

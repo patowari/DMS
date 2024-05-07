@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:57+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Jorge <emailcurro@gmail.com>, 2024\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -40,27 +40,27 @@ msgstr ""
 msgid "Message edited"
 msgstr ""
 
-#: forms.py:26 models.py:37 workflow_actions.py:55
+#: forms.py:26 models.py:40 workflow_actions.py:79
 msgid "Body"
 msgstr ""
 
-#: links.py:49 views.py:38
+#: links.py:51 views.py:38
 msgid "Create message"
 msgstr ""
 
-#: links.py:52 links.py:58
+#: links.py:54 links.py:60
 msgid "Delete"
 msgstr "Esborrar"
 
-#: links.py:68 links.py:79
+#: links.py:70 links.py:81
 msgid "Mark as read"
 msgstr ""
 
-#: links.py:74 links.py:83
+#: links.py:76 links.py:85
 msgid "Mark as unread"
 msgstr ""
 
-#: links.py:87
+#: links.py:89
 msgid "Mark all as read"
 msgstr ""
 
@@ -68,51 +68,51 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: models.py:19
+#: models.py:21
 msgid "Sender content type"
 msgstr ""
 
-#: models.py:22
+#: models.py:24
 msgid "Sender object ID"
 msgstr ""
 
-#: models.py:29
+#: models.py:31
 msgid "User"
 msgstr ""
 
-#: models.py:32
+#: models.py:35
 msgid "Short description of this message."
 msgstr ""
 
-#: models.py:33 workflow_actions.py:38
+#: models.py:36 workflow_actions.py:64
 msgid "Subject"
 msgstr ""
 
-#: models.py:36
+#: models.py:39
 msgid "The actual content of the message."
 msgstr ""
 
-#: models.py:41
+#: models.py:44
 msgid "This field determines if the message has been read or not."
 msgstr ""
 
-#: models.py:42
+#: models.py:46
 msgid "Read"
 msgstr ""
 
-#: models.py:46
+#: models.py:50
 msgid "Date and time of the message creation."
 msgstr ""
 
-#: models.py:47
+#: models.py:51
 msgid "Creation date and time"
 msgstr ""
 
-#: models.py:52
+#: models.py:56
 msgid "Message"
 msgstr ""
 
-#: models.py:53 views.py:128
+#: models.py:57 views.py:128
 msgid "Messages"
 msgstr ""
 
@@ -282,30 +282,53 @@ msgstr ""
 msgid "Mark the %(count)d selected message as unread."
 msgstr ""
 
-#: workflow_actions.py:19
+#: workflow_actions.py:20
+msgid "Group name list"
+msgstr ""
+
+#: workflow_actions.py:24
+msgid ""
+"Comma separated list of user group names that will receive the message. Can "
+"be a static value or a template."
+msgstr ""
+
+#: workflow_actions.py:34
+msgid "Role name list"
+msgstr ""
+
+#: workflow_actions.py:38
+msgid ""
+"Comma separated list of role labels that will receive the message. Can be a "
+"static value or a template."
+msgstr ""
+
+#: workflow_actions.py:48
 msgid "Username list"
 msgstr ""
 
-#: workflow_actions.py:26
-msgid "Comma separated list of usernames that will receive the message."
+#: workflow_actions.py:53
+msgid ""
+"Comma separated list of usernames that will receive the message. Can be a "
+"static value or a template."
 msgstr ""
 
-#: workflow_actions.py:45
-msgid "Subject of the message to be sent."
-msgstr ""
-
-#: workflow_actions.py:62
-msgid "The actual text to send."
-msgstr ""
-
-#: workflow_actions.py:72
-msgid "Send user message"
-msgstr ""
-
-#: workflow_actions.py:80
-msgid "Recipients"
+#: workflow_actions.py:69
+msgid ""
+"Subject of the message to be sent. Can be a static value or a template."
 msgstr ""
 
 #: workflow_actions.py:84
+msgid "The actual text to send. Can be a static value or a template."
+msgstr ""
+
+#: workflow_actions.py:94
+msgid "Send user message"
+msgstr ""
+
+#: workflow_actions.py:102
+msgid "Recipients"
+msgstr ""
+
+#: workflow_actions.py:108
 msgid "Content"
 msgstr ""

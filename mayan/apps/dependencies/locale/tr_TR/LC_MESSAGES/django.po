@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# Emine Öztürk <oemine075@gmail.com>, 2024
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-# Emine Öztürk <oemine075@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "İsim"
 msgid "App"
 msgstr "Uygulama"
 
-#: classes.py:220 classes.py:963
+#: classes.py:220 classes.py:966
 msgid "Environments"
 msgstr "Çevresel değişkenler"
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: classes.py:572 classes.py:866
+#: classes.py:572 classes.py:869
 msgid "Downloading... "
 msgstr "İndiriliyor..."
 
@@ -145,39 +145,39 @@ msgstr "İndiriliyor..."
 msgid "Verifying... "
 msgstr "Doğrulanıyor..."
 
-#: classes.py:582 classes.py:871
+#: classes.py:582 classes.py:874
 msgid "Extracting... "
 msgstr "Ayıklanıyor..."
 
-#: classes.py:792
+#: classes.py:795
 msgid "Python packages downloaded from PyPI."
 msgstr "Python paketleri PyPI'den indirildi."
 
-#: classes.py:794
+#: classes.py:797
 msgid "Python"
 msgstr "Python"
 
-#: classes.py:846
+#: classes.py:849
 msgid "Fonts downloaded from fonts.googleapis.com."
 msgstr "fonts.googleapis.com adresinden indirilen yazı tipleri."
 
-#: classes.py:848
+#: classes.py:851
 msgid "Google font"
 msgstr "Google yazı tipi"
 
-#: classes.py:944
+#: classes.py:947
 msgid "Declared in app"
 msgstr "Uygulamada bildirildi"
 
-#: classes.py:945
+#: classes.py:948
 msgid "Show dependencies by the app that declared them."
 msgstr "Bağımlılıkları, bunları bildiren uygulamaya göre gösterin."
 
-#: classes.py:949
+#: classes.py:952
 msgid "Class"
 msgstr "Sınıf"
 
-#: classes.py:950
+#: classes.py:953
 msgid ""
 "Show the different classes of dependencies. Classes are usually divided by "
 "language or the file types of the dependency."
@@ -185,11 +185,11 @@ msgstr ""
 "Farklı bağımlılık sınıflarını göster. Sınıflar genellikle dile veya "
 "bağımlılığın dosya türlerine göre bölünür."
 
-#: classes.py:955
+#: classes.py:958
 msgid "State"
 msgstr "Durum"
 
-#: classes.py:956
+#: classes.py:959
 msgid ""
 "Show the different states of the dependencies. True means that the "
 "dependencies is installed and is of a correct version. False means the "
@@ -199,7 +199,7 @@ msgstr ""
 "olduğu ve doğru bir sürüm olduğu anlamına gelir. False, bağımlılıkların "
 "eksik olduğu veya yanlış bir sürümün mevcut olduğu anlamına gelir."
 
-#: classes.py:964
+#: classes.py:967
 msgid ""
 "Dependencies required for an environment might not be required for another. "
 "Example environments: Production, Development."

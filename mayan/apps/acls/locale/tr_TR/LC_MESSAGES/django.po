@@ -4,20 +4,20 @@
 # 
 # Translators:
 # Translators:
-# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
-# abc Def <hdogan1974@gmail.com>, 2024
-# serhatcan77 <serhat_can@yahoo.com>, 2024
 # Çağlar Yeşilyurt <grch@mm.st>, 2024
-# Bedreddin Şahbaz, 2024
+# abc Def <hdogan1974@gmail.com>, 2024
+# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # Emine Öztürk <oemine075@gmail.com>, 2024
+# serhatcan77 <serhat_can@yahoo.com>, 2024
+# Bedreddin Şahbaz, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
-"PO-Revision-Date: 2024-01-02 18:58+0000\n"
-"Last-Translator: Emine Öztürk <oemine075@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Bedreddin Şahbaz, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "Erişim Kontrol Listesi silindi"
 msgid "ACL edited"
 msgstr "Erişim Kontrol Listesi düzenlendi"
 
-#: forms.py:13 models.py:56 serializers.py:79 views.py:73
+#: forms.py:13 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Rol"
 
@@ -69,7 +69,7 @@ msgstr "Yeni Erişim Kontrol Listesi"
 msgid "Delete"
 msgstr "Sil"
 
-#: links.py:31 models.py:50 workflow_actions.py:68 workflow_actions.py:204
+#: links.py:31 models.py:52 workflow_actions.py:68 workflow_actions.py:204
 msgid "Permissions"
 msgstr "İzinler"
 
@@ -91,27 +91,27 @@ msgstr "%siçin yetersiz izin"
 msgid "Permission count"
 msgstr "Yetki sayısı"
 
-#: models.py:40 serializers.py:16
+#: models.py:42 serializers.py:16
 msgid "Content type"
 msgstr "İçerik türü"
 
-#: models.py:43 workflow_actions.py:54
+#: models.py:45 workflow_actions.py:54
 msgid "Object ID"
 msgstr "Nesne ID"
 
-#: models.py:54
+#: models.py:56
 msgid "Role to which the access is granted for the specified object."
 msgstr "Belirtilen nesne için erişim yetkisinin verildiği rol."
 
-#: models.py:64
+#: models.py:66
 msgid "Access entry"
 msgstr "Erişim Girişi"
 
-#: models.py:65
+#: models.py:67
 msgid "Access entries"
 msgstr "Erişim Girişleri"
 
-#: models.py:69
+#: models.py:71
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
 msgstr "Rol \"%(role)s\" izni \"%(object)s\" için"
@@ -175,11 +175,11 @@ msgstr "Şunlar için yeni erişim kontrol listeleri: %s"
 msgid "Delete ACL: %s"
 msgstr "Erişim Kontrol Listesi sil: %s"
 
-#: views.py:149
+#: views.py:147
 msgid "There are no ACLs for this object"
 msgstr "Bu nesne için Erişim Kontrol Listesi yok"
 
-#: views.py:152 views.py:277
+#: views.py:150 views.py:273
 msgid ""
 "ACL stands for Access Control List and is a precise method to control user "
 "access to objects in the system. ACLs allow granting a permission to a role "
@@ -189,25 +189,25 @@ msgstr ""
 " erişimini kontrol etmek için kesin bir yöntemdir. ACL'ler, yalnızca belirli"
 " bir nesne veya nesne kümesi için bir role izin verilmesini sağlar."
 
-#: views.py:159
+#: views.py:157
 #, python-format
 msgid "Access control lists for: %s"
 msgstr "%s için Erişim kontrol listeleri"
 
-#: views.py:168
+#: views.py:166
 msgid "Granted permissions"
 msgstr "Verilen izinler"
 
-#: views.py:169
+#: views.py:167
 msgid "Available permissions"
 msgstr "Kullanılabilir izinler"
 
-#: views.py:223
+#: views.py:221
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\"."
 msgstr " \"%(object)s\" için \"%(role)s\" rol yetkisi"
 
-#: views.py:233
+#: views.py:231
 msgid ""
 "Disabled permissions are inherited from a parent object or directly granted "
 "to the role and can't be removed from this view. Inherited permissions need "
@@ -219,11 +219,11 @@ msgstr ""
 "nesnenin ACL'sinden veya Kurulum menüsü aracılığıyla üst nesnenin rolünden "
 "kaldırılması gerekir."
 
-#: views.py:274
+#: views.py:271
 msgid "There are no ACLs"
 msgstr "Erişim Kontrol Listesi yok"
 
-#: views.py:283
+#: views.py:278
 msgid "Global access control lists"
 msgstr "Global erişim kontrol listeleri"
 
