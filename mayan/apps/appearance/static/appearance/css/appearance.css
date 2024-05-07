@@ -690,6 +690,18 @@ a i {
     text-align:center;
 }
 
+/* Error templates */
+
+.appearance-div-error {
+    margin-top: 50px;
+}
+
+.appearance-icon-error {
+    margin-bottom: 30px;
+    margin-left: -75px;
+    margin-top: 50px
+}
+
 /* Fieldsets */
 
 .appearance-fieldset {
