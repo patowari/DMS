@@ -37,17 +37,19 @@ class DocumentTrashView(MultipleObjectConfirmActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_single = _(
-        message='Document "%(object)s" moved to trash.'
+        message='Document "%(object)s" queued for trashing.'
     )
     success_message_singular = _(
-        message='%(count)d document moved to the trash.'
+        message='%(count)d documents queued for trashing.'
     )
     success_message_plural = _(
-        message='%(count)d documents moved to the trash.'
+        message='%(count)d documents queued for trashing.'
     )
     title_single = _(message='Move the document "%(object)s" to trash?')
     title_singular = _(message='Move the selected document to the trash?')
-    title_plural = _(message='Move the %(count)d selected documents to trash?')
+    title_plural = _(
+        message='Move the %(count)d selected documents to trash?'
+    )
     view_icon = icon_document_trash_send
 
     def get_extra_context(self):
