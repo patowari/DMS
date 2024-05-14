@@ -23,6 +23,9 @@
   - coverage from 6.5.0 to 7.4.4
   - coveralls from 3.3.1 to 4.0.0
 
+- Rename `menu_about` to `menu_system` to reflect it true purpose.
+- Update the system menu icon.
+
 4.7 (2024-05-07)
 ================
 - Remove local version from the platform cache identifiers.

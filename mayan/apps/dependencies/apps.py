@@ -2,7 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_about, menu_list_facet, menu_return, menu_tools
+    menu_list_facet, menu_return, menu_system, menu_tools
 )
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import TwoStateWidget
@@ -84,7 +84,7 @@ class DependenciesApp(MayanAppConfig):
         )
 
         # Position #7 which is after "License" link.
-        menu_about.bind_links(
+        menu_system.bind_links(
             links=(link_packages_licenses,), position=7
         )
         menu_list_facet.bind_links(

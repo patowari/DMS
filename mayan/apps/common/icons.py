@@ -21,8 +21,8 @@ icon_license = Icon(
 icon_mailing_list = Icon(
     driver_name='fontawesome', symbol='envelope'
 )
-icon_menu_about = Icon(
-    driver_name='fontawesome', symbol='info'
+icon_menu_system = Icon(
+    driver_name='fontawesome', symbol='microchip'
 )
 icon_menu_user = Icon(
     driver_name='fontawesome', symbol='user-circle'
