@@ -25,6 +25,8 @@
 
 - Rename `menu_about` to `menu_system` to reflect it true purpose.
 - Update the system menu icon.
+- Remove hardcoded dropdown markup in `partials/list/toolbar.html`. Instead
+  use the general purpose template `actions_dropdown.html`.
 
 4.7 (2024-05-07)
 ================
