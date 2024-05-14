@@ -13,7 +13,7 @@ icon_home = Icon(
     driver_name='fontawesome', symbol='home'
 )
 icon_knowledge_base = Icon(
-    driver_name='fontawesome', symbol='lightbulb'
+    driver_name='fontawesome', symbol='book-open-reader'
 )
 icon_license = Icon(
     driver_name='fontawesome', symbol='certificate'
@@ -38,9 +38,7 @@ icon_setup = Icon(
 )
 icon_source_code = Icon(driver_name='fontawesome', symbol='code-branch')
 icon_store = Icon(driver_name='fontawesome', symbol='tshirt')
-icon_support = Icon(
-    driver_name='fontawesome', symbol='phone'
-)
+icon_support = Icon(driver_name='fontawesome', symbol='handshake')
 icon_tools = Icon(
     driver_name='fontawesome', symbol='wrench'
 )

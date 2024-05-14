@@ -80,7 +80,7 @@ link_store = Link(
     url=URL_STORE
 )
 link_support = Link(
-    icon=icon_support, tags='new_window', text=_(message='Get support'),
+    icon=icon_support, tags='new_window', text=_(message='Support'),
     url=URL_SUPPORT
 )
 link_tools = Link(
