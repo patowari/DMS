@@ -10,11 +10,11 @@ BinaryDependency(
 )
 PythonDependency(
     environment=environment_testing, module=__name__, name='coverage',
-    version_string='==6.5.0'
+    version_string='==7.4.4'
 )
 PythonDependency(
     environment=environment_testing, module=__name__, name='coveralls',
-    version_string='==3.3.1'
+    version_string='==4.0.0'
 )
 PythonDependency(
     environment=environment_testing, module=__name__,

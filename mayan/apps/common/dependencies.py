@@ -36,7 +36,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==4.2.11'
+    ''', module=__name__, name='django', version_string='==4.2.13'
 )
 PythonDependency(
     legal_text='''
@@ -119,7 +119,7 @@ PythonDependency(
     ''', module=__name__, name='django-mptt', version_string='==0.16.0'
 )
 PythonDependency(
-    module=__name__, name='importlib-metadata', version_string='==7.0.2'
+    module=__name__, name='importlib-metadata', version_string='==7.1.0'
 )
 PythonDependency(
     legal_text='''
@@ -174,7 +174,7 @@ PythonDependency(
 
 PythonDependency(
     module=__name__, environment=environment_development,
-    name='devpi-server', version_string='==6.10.0'
+    name='devpi-server', version_string='==6.11.0'
 )
 PythonDependency(
     environment=environment_development, module=__name__,
@@ -191,7 +191,7 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.22.2'
+    ), module=__name__, name='ipython', version_string='==8.24.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
@@ -200,7 +200,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==3.1.0'
+    module=__name__, name='safety', version_string='==3.2.0'
 )
 
 # Documentation

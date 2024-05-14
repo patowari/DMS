@@ -1,3 +1,28 @@
+4.8 (XXXX-XX-XX)
+================
+- Update dependency versions:
+
+  - Wheel from 0.42.0 to 0.43.0
+  - django-auth-ldap from 4.6.0 to 4.8.0
+  - mozilla-django-oidc from 4.0.0 to 4.0.1
+  - django from 4.2.11 to 4.2.13
+  - importlib-metadata from 7.0.2 to 7.1.0
+  - devpi-server from 6.10.0 to 6.11.0
+  - ipython from 8.22.2 to 8.24.0
+  - safety from 3.1.0 to 3.2.0
+  - pypdf from 4.1.0 to 4.2.0
+  - packaging from 21.3 to 24.0
+  - gunicorn from 21.2.0 to 22.0.0
+  - sentry-sdk from 1.41.0 to 2.1.1
+  - djangorestframework from 3.14.0 to 3.15.1
+  - jsonschema from 4.21.1 to 4.22.0
+  - boto3 from 1.33.7 to 1.34.105
+  - django-storages from 1.14.2 to 1.14.3
+  - google-cloud-storage from 2.15.0 to 2.16.0
+  - celery from 5.3.6 to 5.4.0
+  - coverage from 6.5.0 to 7.4.4
+  - coveralls from 3.3.1 to 4.0.0
+
 4.7 (2024-05-07)
 ================
 - Remove local version from the platform cache identifiers.
