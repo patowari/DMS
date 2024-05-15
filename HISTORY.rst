@@ -7,7 +7,6 @@
   - mozilla-django-oidc from 4.0.0 to 4.0.1
   - django from 4.2.11 to 4.2.13
   - importlib-metadata from 7.0.2 to 7.1.0
-  - devpi-server from 6.10.0 to 6.11.0
   - ipython from 8.22.2 to 8.24.0
   - safety from 3.1.0 to 3.2.0
   - pypdf from 4.1.0 to 4.2.0
@@ -31,6 +30,7 @@
   results of the navigation object inspection.
 - Remove AJAX navigation exclusion for the `.btn-multi-item-action` class
   and shift the responsibility of interaction from HTML/CSS to JavaScript.
+- Remove devpi-server and related make file targets.
 
 4.7 (2024-05-07)
 ================

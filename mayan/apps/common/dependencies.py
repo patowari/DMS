@@ -173,10 +173,6 @@ PythonDependency(
 # Development
 
 PythonDependency(
-    module=__name__, environment=environment_development,
-    name='devpi-server', version_string='==6.11.0'
-)
-PythonDependency(
     environment=environment_development, module=__name__,
     name='django-debug-toolbar', version_string='==4.3.0'
 )

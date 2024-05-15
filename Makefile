@@ -21,8 +21,6 @@ ifndef SETTINGS
 override SETTINGS = mayan.settings.testing.development
 endif
 
-HOST_IP = `/sbin/ip route get 1.0.0.0|cut --delimiter=" " --fields=7`
-
 ifeq ($(origin APT_PROXY), undefined)
 	ifneq ($(origin APT_PROXY_IP), undefined)
 		APT_PROXY = "$(APT_PROXY_IP):3142"
@@ -298,18 +296,6 @@ setup-dev-operating-system-packages:  ## Install the operating system packages n
 
 copy-config-env:
 	@contrib/scripts/copy_config_env.py > mayan/settings/literals.py
-
-# Devpi
-
-devpi-init:
-	@if [ -z "$$(pip list | grep devpi-server)" ]; then echo "devpi-server not installed"; exit 1;fi
-	devpi-init || true
-
-devpi-start: devpi-stop devpi-init
-	devpi-server --host=0.0.0.0 >/dev/null &
-
-devpi-stop:
-	killall devpi-server || true
 
 -include docker/Makefile
 -include gitlab-ci/Makefile
