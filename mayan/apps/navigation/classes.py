@@ -1,3 +1,4 @@
+from functools import cache
 import logging
 
 from furl import furl
@@ -357,6 +358,111 @@ class Menu(TemplateObjectMixin):
     def get_icon(self, context):
         return self._icon
 
+    @cache
+    def get_links_for_class(self, resolved_navigation_object_class):
+        matched_links = set()
+
+        try:
+            mro = resolved_navigation_object_class.__mro__
+        except AttributeError:
+            # Not a class, direct instance match.
+            matched_links.update(
+                set(
+                    self.bound_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                ) - set(
+                    self.unbound_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                ) - set(
+                    self.excluded_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                )
+            )
+        else:
+            for super_class in mro[:-1]:
+                matched_links.update(
+                    set(
+                        self.bound_links.get(
+                            super_class, ()
+                        )
+                    ) - set(
+                        self.unbound_links.get(
+                            super_class, ()
+                        )
+                    ) - set(
+                        self.excluded_links.get(
+                            resolved_navigation_object_class, ()
+                        )
+                    )
+                )
+
+            # Get proxy results.
+            # Remove the results explicitly excluded.
+            # Execute after the root model results to allow
+            # a proxy to override an existing results.
+            model = resolved_navigation_object_class
+            try:
+                proxy_parent_model = model._meta.proxy_for_model
+            except AttributeError:
+                """It's not a model. Skip."""
+            else:
+                if proxy_parent_model and (model not in self.proxy_exclusions):
+                    matched_links.update(
+                        set(
+                            self.bound_links.get(
+                                proxy_parent_model, ()
+                            )
+                        ) - set(
+                            self.unbound_links.get(
+                                proxy_parent_model, ()
+                            )
+                        ) - set(
+                            self.excluded_links.get(
+                                model, ()
+                            )
+                        )
+                    )
+
+        return matched_links
+
+    def get_navigation_object_class(self, resolved_navigation_object):
+        if resolved_navigation_object is None:
+            # None means "always on" menu links.
+            return None
+        elif isinstance(resolved_navigation_object, str):
+            # It is a view name, return the value.
+            return resolved_navigation_object
+        else:
+            try:
+                # Try it as a queryset.
+                model = resolved_navigation_object.model
+            except AttributeError:
+                try:
+                    # Try it as a list.
+                    item = resolved_navigation_object[0]
+                except TypeError:
+                    try:
+                        # Try as a model instance or model.
+                        model = resolved_navigation_object._meta.model
+                    except AttributeError:
+                        # Must be a non model class instance, return the class.
+                        return resolved_navigation_object.__class__
+                    else:
+                        return model
+                else:
+                    # It is a list, return the class of the first item.
+                    return self.get_navigation_object_class(
+                        resolved_navigation_object=item
+                    )
+            else:
+                # It is a queryset, return the model.
+                return self.get_navigation_object_class(
+                    resolved_navigation_object=model
+                )
+
     def get_resolved_navigation_object_list(self, context, source):
         resolved_navigation_object_list = []
 
@@ -400,127 +506,9 @@ class Menu(TemplateObjectMixin):
         else:
             return self.link_positions.get(item, 0) or 0
 
-    def get_links_for(self, resolved_navigation_object):
-        matched_links = set()
-
-        try:
-            # Try it as a queryset.
-            model = resolved_navigation_object.model
-        except AttributeError:
-            if isinstance(resolved_navigation_object, str) or resolved_navigation_object is None:
-                try:
-                    # Try a direct match. Such as strings for view names.
-                    matched_links.update(
-                        set(
-                            self.bound_links[resolved_navigation_object]
-                        ) - set(
-                            self.unbound_links.get(
-                                resolved_navigation_object, ()
-                            )
-                        ) - set(
-                            self.excluded_links.get(
-                                resolved_navigation_object, ()
-                            )
-                        )
-                    )
-                except KeyError:
-                    return matched_links
-            else:
-                try:
-                    # Try it as a list.
-                    item = resolved_navigation_object[0]
-                except TypeError:
-                    # Neither a queryset nor a list.
-                    try:
-                        # Try a direct match. Such as strings for view names.
-                        matched_links.update(
-                            set(
-                                self.bound_links[resolved_navigation_object]
-                            ) - set(
-                                self.unbound_links.get(
-                                    resolved_navigation_object, ()
-                                )
-                            ) - set(
-                                self.excluded_links.get(
-                                    resolved_navigation_object, ()
-                                )
-                            )
-                        )
-                    except KeyError:
-                        try:
-                            # Try as a model instance or model.
-                            model = resolved_navigation_object._meta.model
-                        except AttributeError:
-                            # Not a model instance. Try as subclass
-                            # instance, check the class hierarchy.
-                            for super_class in resolved_navigation_object.__class__.__mro__[:-1]:
-                                matched_links.update(
-                                    set(
-                                        self.bound_links.get(
-                                            super_class, ()
-                                        )
-                                    ) - set(
-                                        self.unbound_links.get(
-                                            super_class, ()
-                                        )
-                                    ) - set(
-                                        self.excluded_links.get(
-                                            resolved_navigation_object, ()
-                                        )
-                                    )
-                                )
-                        else:
-                            # Get model link.
-                            matched_links.update(
-                                set(
-                                    self.bound_links.get(
-                                        model, ()
-                                    )
-                                ) - set(
-                                    self.unbound_links.get(
-                                        model, ()
-                                    )
-                                ) - set(
-                                    self.excluded_links.get(
-                                        model, ()
-                                    )
-                                )
-                            )
-
-                            # Get proxy results.
-                            # Remove the results explicitly excluded.
-                            # Execute after the root model results to allow
-                            # a proxy to override an existing results.
-                            if model._meta.proxy_for_model and model not in self.proxy_exclusions:
-                                matched_links.update(
-                                    set(
-                                        self.bound_links.get(
-                                            model._meta.proxy_for_model, ()
-                                        )
-                                    ) - set(
-                                        self.unbound_links.get(
-                                            model._meta.proxy_for_model, ()
-                                        )
-                                    ) - set(
-                                        self.excluded_links.get(
-                                            model, ()
-                                        )
-                                    )
-                                )
-                else:
-                    # It was is a list.
-                    return self.get_links_for(
-                        resolved_navigation_object=item
-                    )
-        else:
-            # It was is a queryset.
-            return self.get_links_for(
-                resolved_navigation_object=model
-            )
-
-        return matched_links
-
-    def resolve(self, context=None, request=None, source=None, sort_results=False):
+    def resolve(
+        self, context=None, request=None, source=None, sort_results=False
+    ):
         result = []
         self.matched_link_set = set()
 
@@ -552,8 +540,11 @@ class Menu(TemplateObjectMixin):
         )
 
         for resolved_navigation_object in resolved_navigation_object_list:
-            matched_links = self.get_links_for(
+            navigation_object_class = self.get_navigation_object_class(
                 resolved_navigation_object=resolved_navigation_object
+            )
+            matched_links = self.get_links_for_class(
+                resolved_navigation_object_class=navigation_object_class
             )
 
             result.extend(
@@ -566,8 +557,11 @@ class Menu(TemplateObjectMixin):
             )
 
         # Resolve view links.
-        matched_links = self.get_links_for(
+        navigation_object_class = self.get_navigation_object_class(
             resolved_navigation_object=current_view_name
+        )
+        matched_links = self.get_links_for_class(
+            resolved_navigation_object_class=navigation_object_class
         )
 
         result.extend(
@@ -579,8 +573,11 @@ class Menu(TemplateObjectMixin):
         )
 
         # Resolve "always one" menu links.
-        matched_links = self.get_links_for(
+        navigation_object_class = self.get_navigation_object_class(
             resolved_navigation_object=None
+        )
+        matched_links = self.get_links_for_class(
+            resolved_navigation_object_class=navigation_object_class
         )
 
         result.extend(
@@ -624,9 +621,7 @@ class Menu(TemplateObjectMixin):
         self.matched_link_set.update(matched_links)
 
         for link in matched_links:
-            kwargs = {
-                'context': context
-            }
+            kwargs = {'context': context}
 
             if as_resolved_object:
                 kwargs['resolved_object'] = resolved_navigation_object
@@ -644,8 +639,8 @@ class Menu(TemplateObjectMixin):
         if object_resolved_links:
             result.append(
                 {
-                    'object': resolved_navigation_object,
-                    'links': object_resolved_links
+                    'links': object_resolved_links,
+                    'object': resolved_navigation_object
                 }
             )
 

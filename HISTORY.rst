@@ -27,6 +27,8 @@
 - Update the system menu icon.
 - Remove hardcoded dropdown markup in `partials/list/toolbar.html`. Instead
   use the general purpose template `actions_dropdown.html`.
+- Split menu link resolution into two stages. Add caching to the class
+  results of the navigation object inspection.
 
 4.7 (2024-05-07)
 ================
