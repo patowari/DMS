@@ -33,6 +33,7 @@
 - Remove devpi-server and related make file targets.
 - Remove Docker Compose `version` tag.
   https://github.com/docker/compose/issues/11628
+- Remove vagrant files and make file targets.
 
 4.7 (2024-05-07)
 ================

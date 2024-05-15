@@ -300,4 +300,3 @@ copy-config-env:
 -include docker/Makefile
 -include gitlab-ci/Makefile
 -include python/Makefile
--include vagrant/Makefile
