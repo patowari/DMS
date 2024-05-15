@@ -13,11 +13,14 @@ from .views import (
     StoredPermissionDetailView
 )
 
-urlpatterns = [
+urlpatterns_groups = [
     re_path(
         route=r'^groups/(?P<group_id>\d+)/roles/$', name='group_role_list',
         view=GroupRoleAddRemoveView.as_view()
-    ),
+    )
+]
+
+urlpatterns_roles = [
     re_path(
         route=r'^roles/$', name='role_list', view=RoleListView.as_view()
     ),
@@ -45,13 +48,21 @@ urlpatterns = [
     re_path(
         route=r'^roles/multiple/delete/$', name='role_multiple_delete',
         view=RoleDeleteView.as_view()
-    ),
+    )
+]
+
+urlpatterns_permissions = [
     re_path(
         route=r'^stored_permissions/(?P<stored_permission_id>\d+)/$',
         name='stored_permission_detail',
         view=StoredPermissionDetailView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_groups)
+urlpatterns.extend(urlpatterns_roles)
+urlpatterns.extend(urlpatterns_permissions)
 
 api_urls = [
     re_path(

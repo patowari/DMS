@@ -17,7 +17,7 @@ from .views import (
     DocumentFileDetachedSignatureUploadView
 )
 
-urlpatterns = [
+urlpatterns_documents = [
     re_path(
         route=r'^documents/files/(?P<document_file_id>\d+)/signatures/$',
         name='document_file_signature_list',
@@ -37,7 +37,10 @@ urlpatterns = [
         route=r'^documents/files/(?P<document_file_id>\d+)/signatures/embedded/create/$',
         name='document_file_signature_embedded_create',
         view=DocumentFileEmbeddedSignatureCreateView.as_view()
-    ),
+    )
+]
+
+urlpatterns_signatures = [
     re_path(
         route=r'^signatures/detached/(?P<signature_id>\d+)/delete/$',
         name='document_file_signature_detached_delete',
@@ -52,7 +55,10 @@ urlpatterns = [
         route=r'^signatures/(?P<signature_id>\d+)/details/$',
         name='document_file_signature_detail',
         view=DocumentFileSignatureDetailView.as_view()
-    ),
+    )
+]
+
+urlpatterns_tools = [
     re_path(
         route=r'^tools/all/document/file/signature/refresh/$',
         name='all_document_file_signature_refresh',
@@ -64,6 +70,11 @@ urlpatterns = [
         view=AllDocumentSignatureVerifyView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_documents)
+urlpatterns.extend(urlpatterns_signatures)
+urlpatterns.extend(urlpatterns_tools)
 
 api_urls = [
     re_path(

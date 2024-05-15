@@ -25,11 +25,6 @@ urlpatterns_document_type = [
 
 urlpatterns_document_metadata = [
     re_path(
-        route=r'^document_types/(?P<document_type_id>\d+)/metadata_types/$',
-        name='document_type_metadata_type_relationship',
-        view=DocumentTypeMetadataTypeRelationshipView.as_view()
-    ),
-    re_path(
         route=r'^documents/(?P<document_id>\d+)/metadata/edit/$',
         name='metadata_edit', view=DocumentMetadataEditView.as_view()
     ),

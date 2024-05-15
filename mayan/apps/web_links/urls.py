@@ -12,12 +12,15 @@ from .views import (
     WebLinkEditView, WebLinkListView
 )
 
-urlpatterns = [
+urlpatterns_document_types = [
     re_path(
         route=r'^document_types/(?P<document_type_id>\d+)/web_links/$',
         name='document_type_web_links',
         view=DocumentTypeWebLinksView.as_view()
-    ),
+    )
+]
+
+urlpatterns_documents = [
     re_path(
         route=r'^documents/(?P<document_id>\d+)/web_links/$',
         name='document_web_link_list', view=DocumentWebLinkListView.as_view()
@@ -25,29 +28,37 @@ urlpatterns = [
     re_path(
         route=r'^documents/(?P<document_id>\d+)/web_links/(?P<web_link_id>\d+)/$',
         name='web_link_instance_view', view=ResolvedWebLinkView.as_view()
-    ),
+    )
+]
+
+urlpatterns_web_links = [
     re_path(
-        route=r'^weblinks/$', name='web_link_list',
+        route=r'^web_links/$', name='web_link_list',
         view=WebLinkListView.as_view()
     ),
     re_path(
-        route=r'^weblinks/create/$', name='web_link_create',
+        route=r'^web_links/create/$', name='web_link_create',
         view=WebLinkCreateView.as_view()
     ),
     re_path(
-        route=r'^weblinks/(?P<web_link_id>\d+)/delete/$',
+        route=r'^web_links/(?P<web_link_id>\d+)/delete/$',
         name='web_link_delete', view=WebLinkDeleteView.as_view()
     ),
     re_path(
-        route=r'^weblinks/(?P<web_link_id>\d+)/document_types/$',
+        route=r'^web_links/(?P<web_link_id>\d+)/document_types/$',
         name='web_link_document_types',
         view=WebLinkDocumentTypesView.as_view()
     ),
     re_path(
-        route=r'^weblinks/(?P<web_link_id>\d+)/edit/$', name='web_link_edit',
+        route=r'^web_links/(?P<web_link_id>\d+)/edit/$', name='web_link_edit',
         view=WebLinkEditView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_document_types)
+urlpatterns.extend(urlpatterns_documents)
+urlpatterns.extend(urlpatterns_web_links)
 
 api_urls = [
     re_path(

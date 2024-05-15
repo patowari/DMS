@@ -10,7 +10,7 @@ from .views import (
     SignatureCaptureListView
 )
 
-urlpatterns = [
+urlpatterns_documents = [
     re_path(
         route=r'^documents/(?P<document_id>\d+)/signature_captures/$',
         name='signature_capture_list',
@@ -20,7 +20,10 @@ urlpatterns = [
         route=r'^documents/(?P<document_id>\d+)/signature_captures/create/$',
         name='signature_capture_create',
         view=SignatureCaptureCreateView.as_view()
-    ),
+    )
+]
+
+urlpatterns_signature_captures = [
     re_path(
         route=r'^signature_captures/(?P<signature_capture_id>\d+)/delete/$',
         name='signature_capture_delete',
@@ -37,6 +40,10 @@ urlpatterns = [
         view=SignatureCaptureEditView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_documents)
+urlpatterns.extend(urlpatterns_signature_captures)
 
 api_urls = [
     re_path(

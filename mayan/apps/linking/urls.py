@@ -19,7 +19,15 @@ from .views.smart_link_views import (
     SmartLinkDocumentTypeAddRemoveView, SmartLinkEditView, SmartLinkListView
 )
 
-urlpatterns = [
+urlpatterns_document_types = [
+    re_path(
+        route=r'^document_types/(?P<document_type_id>\d+)/smart_links/$',
+        name='document_type_smart_links',
+        view=DocumentTypeSmartLinkAddRemoveView.as_view()
+    )
+]
+
+urlpatterns_documents = [
     re_path(
         route=r'^documents/(?P<document_id>\d+)/smart_links/$',
         name='document_smart_link_instance_list',
@@ -29,12 +37,10 @@ urlpatterns = [
         route=r'^documents/(?P<document_id>\d+)/smart_links/(?P<smart_link_id>\d+)/$',
         name='smart_link_instance_view',
         view=DocumentResolvedSmartLinkDocumentListView.as_view()
-    ),
-    re_path(
-        route=r'^document_types/(?P<document_type_id>\d+)/smart_links/$',
-        name='document_type_smart_links',
-        view=DocumentTypeSmartLinkAddRemoveView.as_view()
-    ),
+    )
+]
+
+urlpatterns_smart_links = [
     re_path(
         route=r'^smart_links/$', name='smart_link_list',
         view=SmartLinkListView.as_view()
@@ -77,6 +83,11 @@ urlpatterns = [
         view=SmartLinkConditionEditView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_document_types)
+urlpatterns.extend(urlpatterns_documents)
+urlpatterns.extend(urlpatterns_smart_links)
 
 api_urls = [
     re_path(
