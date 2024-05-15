@@ -34,6 +34,7 @@
 - Remove Docker Compose `version` tag.
   https://github.com/docker/compose/issues/11628
 - Remove vagrant files and make file targets.
+- Update Copyright year from 2011 to 2024.
 
 4.7 (2024-05-07)
 ================
