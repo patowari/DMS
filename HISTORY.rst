@@ -29,6 +29,8 @@
   use the general purpose template `actions_dropdown.html`.
 - Split menu link resolution into two stages. Add caching to the class
   results of the navigation object inspection.
+- Remove AJAX navigation exclusion for the `.btn-multi-item-action` class
+  and shift the responsibility of interaction from HTML/CSS to JavaScript.
 
 4.7 (2024-05-07)
 ================

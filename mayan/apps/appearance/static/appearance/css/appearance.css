@@ -863,3 +863,14 @@ Input search clearable
 .appearance-link-ajax-refresh {
     padding-right: 10px !important;
 }
+
+/* List toolbar */
+
+#multi-item-actions {
+    display: none;
+}
+
+#multi-item-title {
+    line-height: 16px;
+    padding-top: 8px;
+}

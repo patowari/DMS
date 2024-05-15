@@ -28,15 +28,16 @@
 
         {% if links_multi_menus_results %}
             <div id="multi-item-title-responsible-wrapper">
-                <p class="pull-right" id="multi-item-title" style="line-height: 16px; padding-top: 8px;">{% trans 'Select items to activate bulk actions. Use Shift + click to select many.' %}</p>
+                <p class="pull-right" id="multi-item-title">{% trans 'Select items to activate bulk actions. Use Shift + click to select many.' %}</p>
             </div>
 
-            <div class="pull-right btn-group" id="multi-item-actions" style="display: none;">
+            <div class="pull-right btn-group" id="multi-item-actions">
                 {% trans 'Bulk actions' as action_dropdown_label %}
                 {% with links_multi_menus_results as action_menus_link_results %}
                     {% include 'navigation/actions_dropdown.html' %}
                 {% endwith %}
             </div>
+
         {% endif %}
 
         <div class="clearfix"></div>

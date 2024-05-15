@@ -51,9 +51,7 @@
 
     const partialNavigation = new PartialNavigation({
         initialURL: '{% url common_home_view %}',
-        disabledAnchorClasses: [
-            'btn-multi-item-action', 'disabled', 'pagination-disabled'
-        ],
+        disabledAnchorClasses: ['disabled', 'pagination-disabled'],
         excludeAnchorClasses: ['fancybox', 'new_window', 'non-ajax'],
         redirectionCode: {{ appearance_ajax_redirection_code }},
         maximumAjaxRequests: {{ appearance_throttling_maximum_requests }},

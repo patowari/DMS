@@ -55,16 +55,18 @@ class MayanApp {
             MayanApp.countChecked();
         });
 
-        $('body').on('click', '.btn-multi-item-action', function (event) {
+        $('body').on('click', '#multi-item-actions .navigation-btn-dropdown', function (event) {
+            const $this = $(this);
             let id_list = [];
+
             $('.check-all-slave:checked').each(function (index, value) {
                 // Split the name (ie:"pk_200") and extract only the ID.
-                id_list.push(value.name.split('_')[1]);
+                id_list.push(
+                    value.name.split('_')[1]
+                );
             });
-            event.preventDefault();
-            partialNavigation.setLocation(
-                $(this).attr('href') + '?id_list=' + id_list.join(',')
-            );
+            let url = $this.attr('href') + '?id_list=' + id_list.join(',');
+            $this.attr('href', url);
         });
     }
 
