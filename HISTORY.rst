@@ -31,6 +31,8 @@
 - Remove AJAX navigation exclusion for the `.btn-multi-item-action` class
   and shift the responsibility of interaction from HTML/CSS to JavaScript.
 - Remove devpi-server and related make file targets.
+- Remove Docker Compose `version` tag.
+  https://github.com/docker/compose/issues/11628
 
 4.7 (2024-05-07)
 ================
