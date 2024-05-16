@@ -6,8 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_list_facet, menu_object, menu_return, menu_secondary, menu_tools,
-    menu_topbar
+    menu_list_facet, menu_multi_item, menu_object, menu_return,
+    menu_secondary, menu_tools, menu_topbar
 )
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.views.column_widgets import ObjectLinkWidget, TwoStateWidget
@@ -16,7 +16,8 @@ from .classes import EventTypeNamespace
 from .html_widgets import widget_event_actor_link, widget_event_type_link
 from .links import (
     link_event_list, link_event_list_clear, link_event_list_export,
-    link_event_type_subscription_list, link_notification_list,
+    link_event_type_subscription_list, link_notification_delete_multiple,
+    link_notification_delete_single, link_notification_list,
     link_notification_mark_read, link_notification_mark_read_all,
     link_object_event_list_clear, link_object_event_list_export,
     link_user_object_subscription_list
@@ -190,7 +191,14 @@ class EventsApp(MayanAppConfig):
         # Notification
 
         menu_object.bind_links(
-            links=(link_notification_mark_read,), sources=(Notification,)
+            links=(
+                link_notification_delete_single, link_notification_mark_read,
+            ), sources=(Notification,)
+        )
+        menu_multi_item.bind_links(
+            links=(
+                link_notification_delete_multiple,
+            ), sources=('events:user_notifications_list',)
         )
         menu_secondary.bind_links(
             links=(link_notification_mark_read_all,),

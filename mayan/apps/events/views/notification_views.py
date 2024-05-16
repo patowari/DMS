@@ -4,15 +4,38 @@ from django.template import RequestContext
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.generics import ConfirmView, SingleObjectListView
+from mayan.apps.views.generics import ConfirmView, MultipleObjectDeleteView, SingleObjectListView
 
 from ..icons import (
-    icon_notification_list, icon_notification_mark_read,
-    icon_notification_mark_read_all
+    icon_notification_delete_single, icon_notification_list,
+    icon_notification_mark_read, icon_notification_mark_read_all
 )
 from ..links import link_event_type_subscription_list
 
 from .view_mixins import NotificationViewMixin
+
+
+class NotificationDeleteView(NotificationViewMixin, MultipleObjectDeleteView):
+    error_message = _(
+        message='Error deleting notification "%(instance)s"; %(exception)s'
+    )
+    pk_url_kwarg = 'notification_id'
+    post_action_redirect = reverse_lazy(
+        viewname='events:user_notifications_list'
+    )
+    success_message_plural = _(
+        message='%(count)d notifications deleted successfully.'
+    )
+    success_message_single = _(
+        message='User "%(object)s" deleted successfully.'
+    )
+    success_message_singular = _(
+        message='%(count)d notification deleted successfully.'
+    )
+    title_plural = _(message='Delete the %(count)d selected notifications.')
+    title_single = _(message='Delete notification: %(object)s.')
+    title_singular = _(message='Delete the %(count)d selected notification.')
+    view_icon = icon_notification_delete_single
 
 
 class NotificationListView(NotificationViewMixin, SingleObjectListView):
@@ -34,7 +57,7 @@ class NotificationListView(NotificationViewMixin, SingleObjectListView):
         }
 
 
-class NotificationMarkRead(NotificationViewMixin, ConfirmView):
+class NotificationMarkReadView(NotificationViewMixin, ConfirmView):
     post_action_redirect = reverse_lazy(
         viewname='events:user_notifications_list'
     )
@@ -61,7 +84,7 @@ class NotificationMarkRead(NotificationViewMixin, ConfirmView):
         )
 
 
-class NotificationMarkReadAll(NotificationViewMixin, ConfirmView):
+class NotificationMarkReadAllView(NotificationViewMixin, ConfirmView):
     post_action_redirect = reverse_lazy(
         viewname='events:user_notifications_list'
     )

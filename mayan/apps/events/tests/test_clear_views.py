@@ -6,9 +6,8 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from ..events import event_events_cleared
 from ..permissions import permission_events_clear
 
-from .mixins import (
-    EventsClearViewTestMixin, EventTestMixin, EventTypeTestMixin
-)
+from .mixins.event_mixins import EventsClearViewTestMixin, EventTestMixin
+from .mixins.event_type_mixins import EventTypeTestMixin
 
 
 class EventClearViewTestCase(

@@ -402,6 +402,8 @@ class AccessControlListManager(models.Manager):
 
         acl.permissions.add(permission.stored_permission)
 
+        return acl
+
     def revoke(self, permission, role, obj):
         content_type = ContentType.objects.get_for_model(model=obj)
         acl, created = self.get_or_create(

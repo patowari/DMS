@@ -2,15 +2,10 @@ from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..models import EventSubscription, ObjectEventSubscription
 
-from .mixins import (
-    EventObjectTestMixin, EventTypeTestMixin, NotificationTestMixin
-)
+from .mixins.notification_mixins import NotificationTestMixin
 
 
-class EventTypeNotificationModelTestCase(
-    EventObjectTestMixin, EventTypeTestMixin, NotificationTestMixin,
-    BaseTestCase
-):
+class EventTypeNotificationModelTestCase(NotificationTestMixin, BaseTestCase):
     def setUp(self):
         super().setUp()
 
@@ -33,8 +28,7 @@ class EventTypeNotificationModelTestCase(
 
 
 class ObjectEventNotificationModelTestCase(
-    EventObjectTestMixin, EventTypeTestMixin, NotificationTestMixin,
-    BaseTestCase
+    NotificationTestMixin, BaseTestCase
 ):
     def setUp(self):
         super().setUp()

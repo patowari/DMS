@@ -3,7 +3,9 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework.exceptions import ValidationError
 
 from mayan.apps.events.classes import EventType
-from mayan.apps.events.serializers import EventTypeSerializer
+from mayan.apps.events.serializers.event_type_serializers import (
+    EventTypeSerializer
+)
 from mayan.apps.rest_api import serializers
 from mayan.apps.rest_api.relations import MultiKwargHyperlinkedIdentityField
 

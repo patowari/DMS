@@ -9,10 +9,10 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..permissions import permission_events_view
 
-from .mixins import (
-    EventListAPIViewTestMixin, EventTypeNamespaceAPITestMixin,
-    ObjectEventAPITestMixin
+from .mixins.event_mixins import (
+    EventListAPIViewTestMixin, ObjectEventAPITestMixin
 )
+from .mixins.event_type_mixins import EventTypeNamespaceAPITestMixin
 
 
 class EventListAPIViewTestCase(

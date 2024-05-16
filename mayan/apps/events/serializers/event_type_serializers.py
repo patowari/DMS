@@ -1,15 +1,11 @@
 from django.utils.translation import gettext_lazy as _
 
-from actstream.models import Action
 from rest_framework.reverse import reverse
 
-from mayan.apps.common.serializers import ContentTypeSerializer
 from mayan.apps.rest_api import serializers
-from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.user_management.serializers import UserSerializer
 
-from .classes import EventType
-from .models import Notification, StoredEventType
+from ..classes import EventType
+from ..models import StoredEventType
 
 
 class EventTypeNamespaceSerializer(serializers.Serializer):
@@ -65,52 +61,3 @@ class EventTypeSerializer(serializers.Serializer):
             return super().to_representation(
                 instance=EventType.get(id=instance)
             )
-
-
-class EventSerializer(serializers.ModelSerializer):
-    actor = DynamicSerializerField(
-        label=_(message='Actor'), read_only=True
-    )
-    actor_content_type = ContentTypeSerializer(
-        label=_(message='Actor content type'), read_only=True
-    )
-    target = DynamicSerializerField(
-        label=_(message='Target'), read_only=True
-    )
-    target_content_type = ContentTypeSerializer(
-        label=_(message='Target content type'), read_only=True
-    )
-    verb = EventTypeSerializer(
-        label=_(message='Verb'), read_only=True
-    )
-
-    class Meta:
-        exclude = (
-            'action_object_content_type', 'action_object_object_id'
-        )
-        model = Action
-        read_only_fields = (
-            'action', 'actor_content_type', 'target', 'target_content_type',
-            'verb'
-        )
-
-
-class NotificationSerializer(serializers.HyperlinkedModelSerializer):
-    action = EventSerializer(
-        label=_(message='Action'), read_only=True
-    )
-    user = UserSerializer(
-        label=_(message='User'), read_only=True
-    )
-
-    class Meta:
-        extra_kwargs = {
-            'url': {
-                'label': _(message='URL'),
-                'lookup_url_kwarg': 'notification_id',
-                'view_name': 'rest_api:notification-detail'
-            }
-        }
-        fields = ('action', 'read', 'url', 'user')
-        model = Notification
-        read_only_fields = ('action', 'url', 'user')

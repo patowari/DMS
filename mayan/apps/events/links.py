@@ -10,7 +10,8 @@ from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (
     icon_event_list, icon_event_list_clear, icon_event_list_export,
-    icon_event_types_subscriptions_list, icon_notification_list,
+    icon_event_types_subscriptions_list, icon_notification_delete_multiple,
+    icon_notification_delete_single, icon_notification_list,
     icon_notification_mark_read, icon_notification_mark_read_all,
     icon_object_event_list, icon_object_event_list_clear,
     icon_object_event_list_export,
@@ -72,6 +73,14 @@ link_user_object_subscription_list = Link(
     view='events:user_object_subscription_list'
 )
 
+link_notification_delete_multiple = Link(
+    icon=icon_notification_delete_multiple,
+    text=_(message='Delete'), view='events:notification_delete_multiple'
+)
+link_notification_delete_single = Link(
+    args='object.pk', icon=icon_notification_delete_single,
+    text=_(message='Delete'), view='events:notification_delete_single'
+)
 link_notification_list = Link(
     badge_text=get_unread_notification_count,
     condition=condition_user_is_authenticated,

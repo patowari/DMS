@@ -3,10 +3,12 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..permissions import permission_events_view
 
-from .mixins import (
-    EventObjectTestMixin, EventTypeTestMixin,
-    ObjectEventSubscriptionTestMixin, UserEventViewTestMixin,
-    UserObjectSubscriptionViewTestMixin
+from .mixins.event_mixins import (
+    EventObjectTestMixin, UserEventViewTestMixin
+)
+from .mixins.event_type_mixins import EventTypeTestMixin
+from .mixins.subscription_mixins import (
+    ObjectEventSubscriptionTestMixin, UserObjectSubscriptionViewTestMixin
 )
 
 

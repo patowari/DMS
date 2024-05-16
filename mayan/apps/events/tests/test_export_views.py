@@ -10,9 +10,8 @@ from mayan.apps.storage.models import DownloadFile
 from ..events import event_events_exported
 from ..permissions import permission_events_export
 
-from .mixins import (
-    EventsExportViewTestMixin, EventTestMixin, EventTypeTestMixin
-)
+from .mixins.event_mixins import EventsExportViewTestMixin, EventTestMixin
+from .mixins.event_type_mixins import EventTypeTestMixin
 
 
 class EventExportViewTestCase(

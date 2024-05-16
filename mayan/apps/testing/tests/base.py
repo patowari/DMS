@@ -7,7 +7,7 @@ from django_test_migrations.contrib.unittest_case import MigratorTestCase
 
 from mayan.apps.acls.tests.mixins import ACLTestCaseMixin
 from mayan.apps.converter.tests.mixins import LayerTestCaseMixin
-from mayan.apps.events.tests.mixins import EventTestCaseMixin
+from mayan.apps.events.tests.mixins.event_mixins import EventTestCaseMixin
 from mayan.apps.permissions.tests.mixins import PermissionTestCaseMixin
 from mayan.apps.smart_settings.tests.mixins import SettingTestMixin
 from mayan.apps.user_management.tests.mixins import UserTestMixin
@@ -36,7 +36,7 @@ class BaseTestCaseMixin(
     """
     This is the most basic test case mixin class any test in the project
     should use.
-    TestModelTestCaseMixin must go before TestViewTestCaseMixin to allow
+    `TestModelTestCaseMixin` must go before `TestViewTestCaseMixin` to allow
     the test object to be available when the test view is prepared.
 
     Favor `OpenFileCheckTestCaseMixin` over
