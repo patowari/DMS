@@ -1,10 +1,9 @@
-from django import forms
 from django.utils.encoding import force_str
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _, gettext
 
-from mayan.apps.views.widgets import TextAreaDiv
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .models import DocumentFilePageContent
 
@@ -47,9 +46,9 @@ class DocumentFileContentForm(forms.Form):
             s=''.join(content)
         )
 
-    contents = forms.CharField(
+    contents = form_fields.CharField(
         label=_(message='Contents'),
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'full-height',
                 'data-height-difference': 360
@@ -59,9 +58,9 @@ class DocumentFileContentForm(forms.Form):
 
 
 class DocumentFilePageContentForm(forms.Form):
-    contents = forms.CharField(
+    contents = form_fields.CharField(
         label=_(message='Contents'),
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'full-height',
                 'data-height-difference': 360

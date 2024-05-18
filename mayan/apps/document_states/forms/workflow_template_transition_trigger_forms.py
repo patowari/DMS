@@ -1,26 +1,26 @@
-from django import forms
-from django.forms.formsets import formset_factory
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.forms import form_fields, form_widgets, forms, formsets
 
 
 class WorkflowTransitionTriggerEventRelationshipForm(forms.Form):
-    namespace = forms.CharField(
+    namespace = form_fields.CharField(
         label=_(message='Namespace'), required=False,
-        widget=forms.TextInput(
+        widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    label = forms.CharField(
+    label = form_fields.CharField(
         label=_(message='Label'), required=False,
-        widget=forms.TextInput(
+        widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    relationship = forms.ChoiceField(
+    relationship = form_fields.ChoiceField(
         choices=(
             ('no', _(message='No')),
             ('yes', _(message='Yes')),
-        ), label=_(message='Enabled'), widget=forms.RadioSelect()
+        ), label=_(message='Enabled'), widget=form_widgets.RadioSelect()
     )
 
     def __init__(self, *args, **kwargs):
@@ -52,6 +52,6 @@ class WorkflowTransitionTriggerEventRelationshipForm(forms.Form):
                 )
 
 
-WorkflowTransitionTriggerEventRelationshipFormSet = formset_factory(
+WorkflowTransitionTriggerEventRelationshipFormSet = formsets.formset_factory(
     form=WorkflowTransitionTriggerEventRelationshipForm, extra=0
 )

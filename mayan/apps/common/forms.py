@@ -1,6 +1,6 @@
-from mayan.apps.views.forms import FileDisplayForm
+from mayan.apps.forms import forms
 
 
-class LicenseForm(FileDisplayForm):
+class LicenseForm(forms.FileDisplayForm):
     DIRECTORY = ()
     FILENAME = 'LICENSE'

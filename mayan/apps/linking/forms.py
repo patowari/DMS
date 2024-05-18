@@ -1,8 +1,8 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.classes import ModelField, ModelFieldRelated
 from mayan.apps.documents.models.document_models import Document
+from mayan.apps.forms import forms
 from mayan.apps.templating.fields import ModelTemplateField
 
 from .models import SmartLink, SmartLinkCondition

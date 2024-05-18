@@ -2,13 +2,13 @@ from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
+from mayan.apps.forms import forms
 from mayan.apps.templating.fields import ModelTemplateField
-from mayan.apps.views.forms import ModelForm
 
 from .models import WebLink
 
 
-class WebLinkForm(ModelForm):
+class WebLinkForm(forms.ModelForm):
     fieldsets = (
         (
             _(message='General'), {

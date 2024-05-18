@@ -1,24 +1,24 @@
-from django import forms
-from django.forms.formsets import formset_factory
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.forms import form_fields, form_widgets, forms, formsets
 
 from .models import EventSubscription, ObjectEventSubscription
 
 
 class EventTypeUserRelationshipForm(forms.Form):
-    namespace = forms.CharField(
+    namespace = form_fields.CharField(
         label=_(message='Namespace'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    label = forms.CharField(
+    label = form_fields.CharField(
         label=_(message='Label'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    subscription = forms.ChoiceField(
+    subscription = form_fields.ChoiceField(
         label=_(message='Subscription'),
         widget=forms.RadioSelect(), choices=(
             ('none', _(message='No')),
@@ -61,27 +61,27 @@ class EventTypeUserRelationshipForm(forms.Form):
                 )
 
 
-EventTypeUserRelationshipFormSet = formset_factory(
+EventTypeUserRelationshipFormSet = formsets.formset_factory(
     form=EventTypeUserRelationshipForm, extra=0
 )
 
 
 class ObjectEventTypeUserRelationshipForm(forms.Form):
-    namespace = forms.CharField(
+    namespace = form_fields.CharField(
         label=_(message='Namespace'), required=False,
-        widget=forms.TextInput(
+        widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    label = forms.CharField(
+    label = form_fields.CharField(
         label=_(message='Label'), required=False,
-        widget=forms.TextInput(
+        widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    subscription = forms.ChoiceField(
+    subscription = form_fields.ChoiceField(
         label=_(message='Subscription'),
-        widget=forms.RadioSelect(), choices=(
+        widget=form_widgets.RadioSelect(), choices=(
             ('none', _(message='No')),
             ('subscribed', _(message='Subscribed'))
         )
@@ -124,6 +124,6 @@ class ObjectEventTypeUserRelationshipForm(forms.Form):
                 )
 
 
-ObjectEventTypeUserRelationshipFormSet = formset_factory(
+ObjectEventTypeUserRelationshipFormSet = formsets.formset_factory(
     form=ObjectEventTypeUserRelationshipForm, extra=0
 )

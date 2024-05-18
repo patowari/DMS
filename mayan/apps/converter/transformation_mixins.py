@@ -2,30 +2,28 @@ import logging
 
 from PIL import Image, ImageColor, ImageDraw
 
-from django import forms
 from django.apps import apps
 from django.utils.encoding import force_bytes
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import Form
-from mayan.apps.views.widgets import ColorWidget
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 logger = logging.getLogger(name=__name__)
 
 
 class ImagePasteTransformationMixin:
-    class Form(Form):
-        rotation = forms.IntegerField(
+    class Form(forms.Form):
+        rotation = form_fields.IntegerField(
             help_text=_(
                 message='Number of degrees to rotate the image counter '
                 'clockwise around its center.'
             ), label=_(message='Rotation'), required=False
         )
-        transparency = forms.FloatField(
+        transparency = form_fields.FloatField(
             help_text=_(message='Opacity level of the image in percent'),
             label=_(message='Transparency'), required=False
         )
-        zoom = forms.FloatField(
+        zoom = form_fields.FloatField(
             help_text=_(message='Zoom level in percent.'),
             label=_(message='Zoom'), required=False
         )
@@ -115,12 +113,12 @@ class ImagePasteCoordinatesAbsoluteTransformationMixin(
     name = 'paste_image'
 
     class Form(ImagePasteTransformationMixin.Form):
-        left = forms.IntegerField(
+        left = form_fields.IntegerField(
             help_text=_(
                 message='Horizontal position in pixels from the left.'
             ), label=_(message='Left'), required=False
         )
-        top = forms.IntegerField(
+        top = form_fields.IntegerField(
             help_text=_(message='Vertical position in pixels from the top.'),
             label=_(message='Top'), required=False
         )
@@ -160,12 +158,12 @@ class ImagePasteCoordinatesPercentTransformationMixin(
     name = 'paste_image_percent'
 
     class Form(ImagePasteTransformationMixin.Form):
-        left = forms.FloatField(
+        left = form_fields.FloatField(
             help_text=_(
                 message='Horizontal position in percent from the left.'
             ), label=_(message='Left'), required=False
         )
-        top = forms.FloatField(
+        top = form_fields.FloatField(
             help_text=_(
                 message='Vertical position in percent from the top.'
             ), label=_(message='Top'), required=False
@@ -225,31 +223,31 @@ class ImageWatermarkPercentTransformationMixin(
     name = 'paste_asset_watermark'
 
     class Form(ImagePasteTransformationMixin.Form):
-        left = forms.IntegerField(
+        left = form_fields.IntegerField(
             help_text=_(
                 message='Horizontal start position in pixels from the left.'
             ), label=_(message='Left'), required=False
         )
-        right = forms.IntegerField(
+        right = form_fields.IntegerField(
             help_text=_(
                 message='Horizontal end position in pixels from the right.'
             ), label=_(message='Right'), required=False
         )
-        top = forms.IntegerField(
+        top = form_fields.IntegerField(
             help_text=_(
                 message='Vertical start position in pixels from the top.'
             ), label=_(message='Top'), required=False
         )
-        bottom = forms.IntegerField(
+        bottom = form_fields.IntegerField(
             help_text=_(
                 message='Vertical end position in pixels from the top.'
             ), label=_(message='Bottom'), required=False
         )
-        horizontal_increment = forms.IntegerField(
+        horizontal_increment = form_fields.IntegerField(
             help_text=_(message='Horizontal position increments in pixels.'),
             label=_(message='Horizontal increment'), required=False
         )
-        vertical_increment = forms.IntegerField(
+        vertical_increment = form_fields.IntegerField(
             help_text=_(message='Vertical position increments in pixels.'),
             label=_(message='Vertical increment'), required=False
         )
@@ -309,7 +307,7 @@ class AssetTransformationMixin:
         SuperForm = super().get_form_class()
 
         class FormWithSuperArguments(SuperForm):
-            asset_name = forms.ChoiceField(
+            asset_name = form_fields.ChoiceField(
                 help_text=_(message='Asset name'), label=_(message='Asset'),
                 required=True
             )
@@ -351,24 +349,24 @@ class AssetTransformationMixin:
 
 
 class TransformationDrawRectangleMixin:
-    class Form(Form):
-        fillcolor = forms.CharField(
+    class Form(forms.Form):
+        fillcolor = form_fields.CharField(
             help_text=_(message='Color used to fill the rectangle.'),
             label=_(message='Fill color'), required=False,
-            widget=ColorWidget()
+            widget=form_widgets.ColorWidget()
         )
-        fill_transparency = forms.IntegerField(
+        fill_transparency = form_fields.IntegerField(
             help_text=_(
                 message='Opacity level of the fill color in percent'
             ), label=_(message='Fill transparency'), required=False
         )
-        outlinecolor = forms.CharField(
+        outlinecolor = form_fields.CharField(
             help_text=_(
                 message='Color used for the outline of the rectangle.'
             ), label=_(message='Outline color'), required=False,
-            widget=ColorWidget()
+            widget=form_widgets.ColorWidget()
         )
-        outlinewidth = forms.CharField(
+        outlinewidth = form_fields.CharField(
             help_text=_(message='Width in pixels of the rectangle outline.'),
             label=_(message='Outline width'), required=False
         )

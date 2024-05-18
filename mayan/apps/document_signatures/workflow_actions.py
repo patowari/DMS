@@ -43,7 +43,7 @@ class DocumentSignatureDetachedAction(WorkflowAction):
         fields.update(
             {
                 'key': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoice',
                     'help_text': _(
                         message='Private key that will be used to sign the document '
                         'file.'

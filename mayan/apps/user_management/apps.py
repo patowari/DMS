@@ -15,11 +15,11 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import TemplateContextEntry
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .dashboard_widgets import (
     DashboardWidgetGroupTotal, DashboardWidgetUserTotal
@@ -260,15 +260,15 @@ class UserManagementApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='is_active', include_label=True, is_sortable=True,
-            source=User, widget=TwoStateWidget
+            source=User, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='is_superuser', include_label=True, is_sortable=True,
-            source=User, widget=TwoStateWidget
+            source=User, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='has_usable_password', include_label=True, source=User,
-            widget=TwoStateWidget
+            widget=column_widgets.TwoStateWidget
         )
 
         dashboard_administrator.add_widget(

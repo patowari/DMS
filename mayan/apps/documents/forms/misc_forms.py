@@ -1,21 +1,22 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from ..literals import PAGE_RANGE_ALL, PAGE_RANGE_CHOICES
 
 
 class PrintForm(forms.Form):
-    page_group = forms.ChoiceField(
+    page_group = form_fields.ChoiceField(
         choices=PAGE_RANGE_CHOICES, initial=PAGE_RANGE_ALL,
-        label=_(message='Page group'), widget=forms.RadioSelect
+        label=_(message='Page group'), widget=form_widgets.RadioSelect
     )
-    page_range = forms.CharField(
+    page_range = form_fields.CharField(
         label=_(message='Page range'), required=False
     )
 
 
 class PageNumberForm(forms.Form):
-    page = forms.ModelChoiceField(
+    page = form_fields.ModelChoiceField(
         help_text=_(
             message='Page number from which all the transformations will be cloned. '
             'Existing transformations will be lost.'

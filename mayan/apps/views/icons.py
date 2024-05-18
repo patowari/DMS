@@ -8,20 +8,13 @@ icon_add_all = Icon(
 )
 icon_assign_remove_add = Icon(driver_name='fontawesome', symbol='plus')
 icon_assign_remove_remove = Icon(driver_name='fontawesome', symbol='minus')
-icon_color_random = Icon(driver_name='fontawesome', symbol='random')
 icon_confirm_form_submit = Icon(driver_name='fontawesome', symbol='check')
 icon_confirm_form_cancel = Icon(driver_name='fontawesome', symbol='times')
-icon_fail = Icon(
-    driver_name='fontawesome', symbol='times'
-)
 icon_list_mode_list = Icon(
     driver_name='fontawesome', symbol='list'
 )
 icon_list_mode_items = Icon(
     driver_name='fontawesome', symbol='th-large'
-)
-icon_ok = Icon(
-    driver_name='fontawesome', symbol='check'
 )
 icon_remove_all = Icon(
     driver_name='fontawesome-layers', data=[

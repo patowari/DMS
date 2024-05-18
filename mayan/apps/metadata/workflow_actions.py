@@ -44,7 +44,7 @@ class DocumentMetadataAddAction(WorkflowAction):
         fields.update(
             {
                 'metadata_types': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoiceMultiple',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoiceMultiple',
                     'help_text': _(
                         message='Metadata types to add to the document.'
                     ),
@@ -137,7 +137,7 @@ class DocumentMetadataEditAction(WorkflowAction):
         fields.update(
             {
                 'metadata_type': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoice',
                     'help_text': _(
                         message='Metadata types to edit.'
                     ),

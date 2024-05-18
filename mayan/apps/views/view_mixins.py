@@ -13,10 +13,10 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.common.settings import setting_home_view
 from mayan.apps.databases.utils import check_queryset
+from mayan.apps.forms import form_mixins, forms
 from mayan.apps.permissions.classes import Permission
 
 from .exceptions import ActionError
-from .forms import DynamicForm, FormMixinFieldsets
 from .literals import (
     PK_LIST_SEPARATOR, TEXT_CHOICE_ITEMS, TEXT_CHOICE_LIST,
     TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
@@ -59,7 +59,7 @@ class ExtraDataDeleteViewMixin:
 
 
 class DynamicFormViewMixin:
-    form_class = DynamicForm
+    form_class = forms.DynamicForm
 
     def get_form_kwargs(self):
         data = super().get_form_kwargs()
@@ -233,10 +233,10 @@ class ModelFormFieldsetsViewMixin(ModelFormMixin):
     def get_form_class(self):
         form_class = super().get_form_class()
 
-        if FormMixinFieldsets in form_class.mro():
+        if form_mixins.FormMixinFieldsets in form_class.mro():
             return form_class
         else:
-            class FormFieldsetForm(FormMixinFieldsets, form_class):
+            class FormFieldsetForm(form_mixins.FormMixinFieldsets, form_class):
                 """New class with the form fieldset support."""
 
             FormFieldsetForm.fieldsets = getattr(self, 'fieldsets', None)

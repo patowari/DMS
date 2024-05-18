@@ -15,9 +15,9 @@ from mayan.apps.documents.links.document_type_links import (
     link_document_type_list
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_smart_link_edited
 from .links import (
@@ -136,7 +136,7 @@ class LinkingApp(MayanAppConfig):
         )
         source_column_smart_link_enabled = SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=SmartLink, widget=TwoStateWidget
+            source=SmartLink, widget=column_widgets.TwoStateWidget
         )
         source_column_smart_link_enabled.add_exclude(
             source=ResolvedSmartLink
@@ -147,7 +147,7 @@ class LinkingApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=SmartLinkCondition, widget=TwoStateWidget
+            source=SmartLinkCondition, widget=column_widgets.TwoStateWidget
         )
 
         # Document

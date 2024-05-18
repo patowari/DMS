@@ -1,6 +1,6 @@
-from django import forms
-from django.forms.formsets import formset_factory
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.forms import form_fields, form_widgets, forms, formsets
 
 from ..fields import DocumentVersionPageField, ThumbnailFormField
 
@@ -25,22 +25,22 @@ class DocumentVersionPageForm(forms.Form):
 
 
 class DocumentVersionPageMappingForm(forms.Form):
-    source_content_type = forms.IntegerField(
-        label=_(message='Content type'), widget=forms.HiddenInput
+    source_content_type = form_fields.IntegerField(
+        label=_(message='Content type'), widget=form_widgets.HiddenInput
     )
-    source_object_id = forms.IntegerField(
-        label=_(message='Object ID'), widget=forms.HiddenInput
+    source_object_id = form_fields.IntegerField(
+        label=_(message='Object ID'), widget=form_widgets.HiddenInput
     )
-    source_label = forms.CharField(
+    source_label = form_fields.CharField(
         label=_(message='Source'), required=False,
         widget=forms.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
     source_thumbnail = ThumbnailFormField(required=False)
-    target_page_number = forms.ChoiceField(
-        choices=(), label=_(message='Destination page number'), required=False,
-        widget=forms.widgets.Select(
+    target_page_number = form_fields.ChoiceField(
+        choices=(), label=_(message='Destination page number'),
+        required=False, widget=form_widgets.Select(
             attrs={'size': 1, 'class': 'select2'}
         )
     )
@@ -54,7 +54,7 @@ class DocumentVersionPageMappingForm(forms.Form):
 
 
 class DocumentVersionPageMappingFormSet(
-    FormSetExtraFormKwargsMixin, formset_factory(
+    FormSetExtraFormKwargsMixin, formsets.formset_factory(
         form=DocumentVersionPageMappingForm, extra=0
     )
 ):
@@ -69,8 +69,9 @@ class DocumentVersionPageMappingFormSet(
             if target_page_number != '0':
                 if target_page_number in set_of_target_page_numbers:
                     form.add_error(
-                        error=_(message='Target page number can\'t be repeated.'),
-                        field='target_page_number'
+                        error=_(
+                            message='Target page number can\'t be repeated.'
+                        ), field='target_page_number'
                     )
                 else:
                     set_of_target_page_numbers.add(target_page_number)

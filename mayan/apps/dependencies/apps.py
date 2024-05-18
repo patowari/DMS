@@ -4,8 +4,8 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
     menu_list_facet, menu_return, menu_system, menu_tools
 )
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import Dependency, DependencyGroup, DependencyGroupEntry
 from .links import (
@@ -62,7 +62,7 @@ class DependenciesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='check', include_label=True, label=_(message='Check'), order=7,
-            source=Dependency, widget=TwoStateWidget
+            source=Dependency, widget=column_widgets.TwoStateWidget
         )
 
         SourceColumn(

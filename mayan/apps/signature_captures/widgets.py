@@ -1,7 +1,7 @@
-from django import forms
+from mayan.apps.forms import form_widgets
 
 
-class SignatureCapturesAppWidget(forms.TextInput):
+class SignatureCapturesAppWidget(form_widgets.TextInput):
     template_name = 'signature_captures/widget_signature_capture.html'
 
     def __init__(self, attrs=None):

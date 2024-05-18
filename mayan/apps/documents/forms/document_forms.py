@@ -1,10 +1,9 @@
 import logging
 import os
 
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from ..models.document_models import Document
 from ..settings import setting_language
@@ -40,7 +39,7 @@ class DocumentForm(forms.ModelForm):
         if queryset_filenames:
             self.fields[
                 'document_type_available_filenames'
-            ] = forms.ModelChoiceField(
+            ] = form_fields.ModelChoiceField(
                 queryset=queryset_filenames,
                 required=False,
                 label=_(message='Quick document rename'),
@@ -50,7 +49,7 @@ class DocumentForm(forms.ModelForm):
                     }
                 )
             )
-            self.fields['preserve_extension'] = forms.BooleanField(
+            self.fields['preserve_extension'] = form_fields.BooleanField(
                 label=_(message='Preserve extension'), required=False,
                 help_text=_(
                     message='Takes the file extension and moves it to the end of the '
@@ -93,7 +92,7 @@ class DocumentForm(forms.ModelForm):
         return filename
 
 
-class DocumentPropertiesForm(DetailForm):
+class DocumentPropertiesForm(forms.DetailForm):
     """
     Detail class form to display a document file based properties
     """
@@ -104,7 +103,7 @@ class DocumentPropertiesForm(DetailForm):
             {
                 'label': _(message='Date created'),
                 'field': 'datetime_created',
-                'widget': forms.widgets.DateTimeInput
+                'widget': form_widgets.DateTimeInput
             },
             {
                 'label': _(message='UUID'), 'field': 'uuid'

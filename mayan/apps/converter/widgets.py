@@ -1,11 +1,12 @@
 import base64
 import io
 
-from django import forms
 from django.utils.encoding import force_str
 
+from mayan.apps.forms import form_widgets
 
-class Base64ImageWidget(forms.widgets.Widget):
+
+class Base64ImageWidget(form_widgets.Widget):
     template_name = 'converter/forms/widgets/base64_image.html'
 
     def format_value(self, value):
@@ -24,7 +25,7 @@ class Base64ImageWidget(forms.widgets.Widget):
                 return url
 
 
-class ImageWidget(forms.widgets.Widget):
+class ImageWidget(form_widgets.Widget):
     template_name = 'converter/forms/widgets/widget_image.html'
 
     def format_value(self, value):

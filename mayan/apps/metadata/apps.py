@@ -22,9 +22,9 @@ from mayan.apps.documents.links.document_type_links import (
 )
 from mayan.apps.documents.signals import signal_post_document_type_change
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import MetadataParser, MetadataValidator
 from .column_widgets import DocumentMetadataWidget
@@ -240,7 +240,7 @@ class MetadataApp(MayanAppConfig):
 
         SourceColumn(
             attribute='is_required', include_label=True,
-            source=DocumentMetadata, widget=TwoStateWidget
+            source=DocumentMetadata, widget=column_widgets.TwoStateWidget
         )
 
         SourceColumn(

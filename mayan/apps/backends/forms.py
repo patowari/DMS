@@ -1,14 +1,12 @@
 import json
 
-from django import forms as django_forms
 from django.db.models import Model
 from django.db.models.query import QuerySet
-from django.forms.models import ModelFormMetaclass
 
-from mayan.apps.views.forms import DynamicModelForm
+from mayan.apps.forms import form_widgets, forms
 
 
-class BackendDynamicFormMetaclass(ModelFormMetaclass):
+class BackendDynamicFormMetaclass(forms.ModelFormMetaclass):
     def __new__(mcs, name, bases, attrs):
         new_class = super(BackendDynamicFormMetaclass, mcs).__new__(
             mcs=mcs, name=name, bases=bases, attrs=attrs
@@ -19,16 +17,16 @@ class BackendDynamicFormMetaclass(ModelFormMetaclass):
             widgets = getattr(
                 new_class._meta, 'widgets', {}
             ) or {}
-            widgets['backend_data'] = django_forms.widgets.HiddenInput
+            widgets['backend_data'] = form_widgets.HiddenInput
             new_class._meta.widgets = widgets
 
         return new_class
 
 
 class FormDynamicModelBackend(
-    DynamicModelForm, metaclass=BackendDynamicFormMetaclass
+    forms.DynamicModelForm, metaclass=BackendDynamicFormMetaclass
 ):
-    widgets = {'backend_data': django_forms.widgets.HiddenInput}
+    widgets = {'backend_data': form_widgets.HiddenInput}
 
     def __init__(self, backend_path=None, user=None, *args, **kwargs):
         self.backend_path = backend_path

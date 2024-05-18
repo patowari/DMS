@@ -1,4 +1,4 @@
-from django import forms
+from mayan.apps.forms import forms
 
 from ..fields import DocumentFilePageField
 

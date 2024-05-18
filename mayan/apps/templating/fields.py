@@ -1,8 +1,8 @@
-from django import forms
 from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 import mayan
+from mayan.apps.forms import forms
 
 from .classes import TemplateContextEntry
 from .widgets import ModelTemplateWidget, TemplateWidget

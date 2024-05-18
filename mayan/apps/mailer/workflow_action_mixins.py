@@ -98,7 +98,7 @@ class ObjectEmailActionMixin:
         fields.update(
             {
                 'mailing_profile': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoice',
                     'help_text': _(
                         message='Mailing profile to use when sending '
                         'the email.'

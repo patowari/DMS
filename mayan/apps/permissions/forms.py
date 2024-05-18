@@ -1,9 +1,9 @@
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import forms
 
 from .models import StoredPermission
 
 
-class StoredPermissionDetailForm(DetailForm):
+class StoredPermissionDetailForm(forms.DetailForm):
     class Meta:
         fields = ('namespace', 'name')
         model = StoredPermission

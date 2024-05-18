@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.views.forms import DynamicForm
+from mayan.apps.forms import forms
 from mayan.apps.views.generics import FormView, SingleObjectListView
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
@@ -107,7 +107,7 @@ class WorkflowInstanceTransitionExecuteView(
 ):
     external_object_pk_url_kwarg = 'workflow_instance_id'
     external_object_queryset = WorkflowInstance.valid.all()
-    form_class = DynamicForm
+    form_class = forms.DynamicForm
     template_name = 'appearance/form_container.html'
     view_icon = icon_workflow_instance_transition
 

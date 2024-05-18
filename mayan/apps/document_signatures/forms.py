@@ -1,28 +1,28 @@
 import logging
 
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.django_gpg.models import Key
 from mayan.apps.django_gpg.permissions import permission_key_sign
-from mayan.apps.views.forms import DetailForm, FilteredSelectionForm
+from mayan.apps.forms import form_fields, form_widgets, forms
+
 
 from .models import SignatureBaseModel
 
 logger = logging.getLogger(name=__name__)
 
 
-class DocumentFileSignatureCreateForm(FilteredSelectionForm):
-    key = forms.ModelChoiceField(
+class DocumentFileSignatureCreateForm(forms.FilteredSelectionForm):
+    key = form_fields.ModelChoiceField(
         label=_(message='Key'), queryset=Key.objects.none()
     )
 
-    passphrase = forms.CharField(
+    passphrase = form_fields.CharField(
         help_text=_(
             message='The passphrase to unlock the key and allow it to be used to '
             'sign the document file.'
         ), label=_(message='Passphrase'), required=False,
-        widget=forms.widgets.PasswordInput
+        widget=form_widgets.PasswordInput
     )
 
     class Meta:
@@ -38,7 +38,7 @@ class DocumentFileSignatureCreateForm(FilteredSelectionForm):
         widget_attributes = {'class': 'select2'}
 
 
-class DocumentFileSignatureDetailForm(DetailForm):
+class DocumentFileSignatureDetailForm(forms.DetailForm):
     def __init__(self, *args, **kwargs):
         extra_fields = (
             {
@@ -46,7 +46,7 @@ class DocumentFileSignatureDetailForm(DetailForm):
             },
             {
                 'label': _(message='Signature date'), 'field': 'date_time',
-                'widget': forms.widgets.DateTimeInput
+                'widget': form_widgets.DateTimeInput
             },
             {
                 'label': _(message='Signature key ID'), 'field': 'key_id'
@@ -71,12 +71,12 @@ class DocumentFileSignatureDetailForm(DetailForm):
                 {
                     'label': _(message='Key creation date'),
                     'field': 'key_creation_date',
-                    'widget': forms.widgets.DateTimeInput
+                    'widget': form_widgets.DateTimeInput
                 },
                 {
                     'label': _(message='Key expiration date'),
                     'func': lambda x: key.expiration_date or _(message='None'),
-                    'widget': forms.widgets.DateTimeInput
+                    'widget': form_widgets.DateTimeInput
                 },
                 {
                     'label': _(message='Key length'),

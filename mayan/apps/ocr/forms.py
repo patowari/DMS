@@ -1,17 +1,16 @@
-from django import forms
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _, gettext
 
-from mayan.apps.views.widgets import TextAreaDiv
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .models import DocumentVersionPageOCRContent
 
 
 class DocumentVersionPageOCRContentDetailForm(forms.Form):
-    contents = forms.CharField(
+    contents = form_fields.CharField(
         label=_(message='Contents'),
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'full-height',
                 'data-height-difference': 360
@@ -40,9 +39,9 @@ class DocumentVersionPageOCRContentDetailForm(forms.Form):
 
 
 class DocumentVersionPageOCRContentEditForm(forms.ModelForm):
-    content = forms.CharField(
+    content = form_fields.CharField(
         label=_(message='Contents'),
-        widget=forms.widgets.Textarea(
+        widget=form_widgets.Textarea(
             attrs={
                 'class': 'full-height',
                 'data-height-difference': 360
@@ -60,9 +59,9 @@ class DocumentVersionOCRContentForm(forms.Form):
     Form that concatenates all of a document pages' text content into a
     single textarea widget
     """
-    contents = forms.CharField(
+    contents = form_fields.CharField(
         label=_(message='Contents'),
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'full-height',
                 'data-height-difference': 360

@@ -1,14 +1,13 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import Form
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .literals import MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME
 from .settings import setting_store_results_default_value
 
 
-class SearchFormBase(Form):
-    _save_results = forms.BooleanField(
+class SearchFormBase(forms.Form):
+    _save_results = form_fields.BooleanField(
         help_text=_(
             message='Store the search results to speed up paging and for '
             'later browsing.'
@@ -34,18 +33,18 @@ class AdvancedSearchForm(SearchFormBase):
 
         fieldsets_dict = {}
 
-        self.fields[MATCH_ALL_FIELD_NAME] = forms.ChoiceField(
+        self.fields[MATCH_ALL_FIELD_NAME] = form_fields.ChoiceField(
             choices=MATCH_ALL_FIELD_CHOICES, label=_(message='Match all'),
             help_text=_(message='Return only results that match all fields.'),
-            required=False, widget=forms.RadioSelect,
+            required=False, widget=form_widgets.RadioSelect,
         )
 
         for search_field in self.search_model.search_fields_label_sorted:
             if search_field.concrete and not search_field.field_name == 'id':
-                self.fields[search_field.field_name] = forms.CharField(
+                self.fields[search_field.field_name] = form_fields.CharField(
                     help_text=search_field.get_help_text(),
                     label=search_field.label, required=False,
-                    widget=forms.widgets.TextInput(
+                    widget=form_widgets.TextInput(
                         attrs={'type': 'search'}
                     )
                 )
@@ -96,9 +95,9 @@ class AdvancedSearchForm(SearchFormBase):
 
 
 class SearchForm(SearchFormBase):
-    q = forms.CharField(
+    q = form_fields.CharField(
         max_length=128, label=_(message='Search terms'), required=False,
-        widget=forms.widgets.TextInput(
+        widget=form_widgets.TextInput(
             attrs={'type': 'search'}
         )
     )

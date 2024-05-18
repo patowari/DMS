@@ -12,9 +12,9 @@ from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_announcement_edited
 from .links import (
@@ -75,7 +75,7 @@ class AnnouncementsApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=Announcement, widget=TwoStateWidget
+            source=Announcement, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='start_datetime', empty_value=_(message='None'),

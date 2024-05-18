@@ -11,9 +11,9 @@ from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_return, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import MailerBackend
 from .events import event_email_sent, event_mailing_profile_edited
@@ -147,11 +147,11 @@ class MailerApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='default', include_label=True, is_sortable=True,
-            source=UserMailer, widget=TwoStateWidget
+            source=UserMailer, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=UserMailer, widget=TwoStateWidget
+            source=UserMailer, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='get_backend_class_label', include_label=True,

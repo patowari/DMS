@@ -19,10 +19,10 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import DocumentCreateWizardStep
 from .events import event_source_edited
@@ -168,7 +168,7 @@ class SourcesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=Source, widget=TwoStateWidget
+            source=Source, widget=column_widgets.TwoStateWidget
         )
 
         menu_documents.bind_links(

@@ -1,6 +1,4 @@
-from django import forms
-
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import forms
 
 from .models import Theme, UserThemeSetting
 
@@ -24,7 +22,7 @@ class UserThemeSettingForm(forms.ModelForm):
         }
 
 
-class UserThemeSettingForm_view(DetailForm):
+class UserThemeSettingForm_view(forms.DetailForm):
     class Meta:
         fields = ('theme',)
         model = UserThemeSetting

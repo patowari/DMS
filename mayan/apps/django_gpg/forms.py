@@ -1,13 +1,12 @@
-from django import forms
 from django.utils.html import escape
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .models import Key
 
 
-class KeyDetailForm(DetailForm):
+class KeyDetailForm(forms.DetailForm):
     def __init__(self, *args, **kwargs):
         instance = kwargs['instance']
 
@@ -21,12 +20,12 @@ class KeyDetailForm(DetailForm):
             },
             {
                 'field': 'creation_date', 'label': _(message='Creation date'),
-                'widget': forms.widgets.DateInput
+                'widget': form_widgets.DateInput
             },
             {
                 'func': lambda x: instance.expiration_date or _(message='None'),
                 'label': _(message='Expiration date'),
-                'widget': forms.widgets.DateInput
+                'widget': form_widgets.DateInput
             },
             {
                 'field': 'fingerprint', 'label': _(message='Fingerprint')
@@ -52,7 +51,9 @@ class KeyDetailForm(DetailForm):
 
 
 class KeySearchForm(forms.Form):
-    term = forms.CharField(
+    term = form_fields.CharField(
         label=_(message='Term'),
-        help_text=_(message='Name, e-mail, key ID or key fingerprint to look for.')
+        help_text=_(
+            message='Name, e-mail, key ID or key fingerprint to look for.'
+        )
     )

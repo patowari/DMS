@@ -11,8 +11,8 @@ from mayan.apps.common.menus import (
     menu_multi_item, menu_object, menu_secondary, menu_topbar
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_message_edited
 from .links import (
@@ -71,7 +71,7 @@ class MessagingApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='read', include_label=True, is_sortable=True,
-            source=Message, widget=TwoStateWidget
+            source=Message, widget=column_widgets.TwoStateWidget
         )
 
         menu_multi_item.bind_links(

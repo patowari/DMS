@@ -1,18 +1,17 @@
 import yaml
 
-from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_dump, yaml_load
-from mayan.apps.views.forms import DetailForm, ModelForm
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .fields import ImageField
 from .models import Asset, LayerTransformation
 from .transformations import BaseTransformation
 
 
-class AssetDetailForm(DetailForm):
+class AssetDetailForm(forms.DetailForm):
     preview = ImageField(
         image_alt_text=_(message='Asset preview image'), label=_(
             message='Preview'
@@ -38,14 +37,14 @@ class LayerTransformationSelectForm(forms.Form):
             layer=layer
         )
 
-    transformation = forms.ChoiceField(
+    transformation = form_fields.ChoiceField(
         choices=(), help_text=_(
             message='Available transformations for this layer.'
         ), label=_(message='Transformation')
     )
 
 
-class LayerTransformationForm(ModelForm):
+class LayerTransformationForm(forms.ModelForm):
     class Meta:
         fields = ('arguments', 'order')
         model = LayerTransformation
@@ -70,7 +69,7 @@ class LayerTransformationForm(ModelForm):
             self.fields['arguments'].widget.attrs['class'] = 'hidden'
             self.fields['order'].widget.attrs['class'] = 'hidden'
         else:
-            self.fields['arguments'].widget = forms.widgets.HiddenInput()
+            self.fields['arguments'].widget = form_widgets.HiddenInput()
 
     def get_transformation_class(self):
         if not self._transformation_name:

@@ -1,5 +1,6 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.forms import form_fields, forms
 
 from ..models import WorkflowTransition
 
@@ -12,7 +13,7 @@ class WorkflowInstanceTransitionSelectForm(forms.Form):
             'transition'
         ].queryset = workflow_instance.get_transition_choices(user=user)
 
-    transition = forms.ModelChoiceField(
+    transition = form_fields.ModelChoiceField(
         help_text=_(
             message='Select a transition to execute in the next step.'
         ), label=_(message='Transition'),

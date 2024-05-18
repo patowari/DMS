@@ -1,26 +1,25 @@
 import datetime
 
-from django import forms
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.literals import TIME_DELTA_UNIT_CHOICES
-from mayan.apps.views.widgets import NamedMultiWidget
+from mayan.apps.forms import form_widgets
 
 
-class SplitTimeDeltaWidget(NamedMultiWidget):
+class SplitTimeDeltaWidget(form_widgets.NamedMultiWidget):
     """
     A Widget that splits a timedelta input into two field: one for unit of
     time and another for the amount of units.
     """
     subwidgets = {
-        'amount': forms.widgets.NumberInput(
+        'amount': form_widgets.NumberInput(
             attrs={
                 'maxlength': 4, 'style': 'width: 8em;',
                 'placeholder': _(message='Amount')
             }
         ),
-        'unit': forms.widgets.Select(
+        'unit': form_widgets.Select(
             attrs={'style': 'width: 8em;'}, choices=TIME_DELTA_UNIT_CHOICES
         )
     }

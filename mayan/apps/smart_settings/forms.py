@@ -1,10 +1,10 @@
 import yaml
 
-from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.serialization import yaml_load
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 
 class SettingForm(forms.Form):
@@ -15,16 +15,16 @@ class SettingForm(forms.Form):
         choices = self.setting.get_value_choices()
 
         if choices:
-            self.fields['value'] = forms.ChoiceField(
+            self.fields['value'] = form_fields.ChoiceField(
                 choices=list(
                     zip(choices, choices)
-                ), required=True, widget=forms.widgets.Select(
+                ), required=True, widget=form_widgets.Select(
                     attrs={'class': 'select2'}
                 )
             )
         else:
-            self.fields['value'] = forms.CharField(
-                required=False, widget=forms.widgets.Textarea()
+            self.fields['value'] = form_fields.CharField(
+                required=False, widget=form_widgets.Textarea()
             )
 
         self.fields['value'].label = _(message='Value')

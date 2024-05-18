@@ -1,13 +1,13 @@
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.forms import forms
 from mayan.apps.templating.fields import ModelTemplateField
-from mayan.apps.views.forms import ModelForm
 
 from ..models.workflow_instance_models import WorkflowInstance
 from ..models.workflow_transition_field_models import WorkflowTransitionField
 
 
-class WorkflowTransitionFieldForm(ModelForm):
+class WorkflowTransitionFieldForm(forms.ModelForm):
     fieldsets = (
         (
             _(message='Basic'), {

@@ -1,6 +1,4 @@
-from django import forms
-
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import forms
 
 from .models import UserLocaleProfile
 
@@ -23,7 +21,7 @@ class LocaleProfileForm(forms.ModelForm):
         }
 
 
-class LocaleProfileForm_view(DetailForm):
+class LocaleProfileForm_view(forms.DetailForm):
     class Meta:
         fields = ('language', 'timezone')
         model = UserLocaleProfile

@@ -1,8 +1,7 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.forms import form_fields, form_widgets, forms
 from mayan.apps.user_management.querysets import get_user_queryset
-from mayan.apps.views.widgets import TextAreaDiv
 
 from .models import Message
 
@@ -22,9 +21,9 @@ class MessageCreateForm(forms.ModelForm):
 
 
 class MessageDetailForm(forms.Form):
-    body = forms.CharField(
+    body = form_fields.CharField(
         label=_(message='Body'),
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'views-text-wrap full-height',
                 'data-height-difference': 360

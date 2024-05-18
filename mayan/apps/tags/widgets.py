@@ -1,5 +1,6 @@
-from django import forms
 from django.utils.html import conditional_escape
+
+from mayan.apps.forms import forms
 
 
 class TagFormWidget(forms.SelectMultiple):

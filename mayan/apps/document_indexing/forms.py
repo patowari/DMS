@@ -1,47 +1,45 @@
-from django import forms
-from django.forms.formsets import formset_factory
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
+from mayan.apps.forms import form_fields, form_widgets, forms, formsets
 from mayan.apps.templating.fields import ModelTemplateField
-from mayan.apps.views.forms import FilteredSelectionForm, Form
 
 from .literals import RELATIONSHIP_CHOICES
 from .models.index_template_models import IndexTemplate, IndexTemplateNode
 from .permissions import permission_index_template_rebuild
 
 
-class IndexTemplateEventTriggerRelationshipForm(Form):
-    stored_event_type_id = forms.IntegerField(
-        widget=forms.widgets.HiddenInput()
+class IndexTemplateEventTriggerRelationshipForm(forms.Form):
+    stored_event_type_id = form_fields.IntegerField(
+        widget=form_widgets.HiddenInput()
     )
-    namespace = forms.CharField(
-        label=_(message='Namespace'), required=False, widget=forms.TextInput(
+    namespace = form_fields.CharField(
+        label=_(message='Namespace'), required=False, widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    namespace = forms.CharField(
-        label=_(message='Namespace'), required=False, widget=forms.TextInput(
+    namespace = form_fields.CharField(
+        label=_(message='Namespace'), required=False, widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    label = forms.CharField(
-        label=_(message='Label'), required=False, widget=forms.TextInput(
+    label = form_fields.CharField(
+        label=_(message='Label'), required=False, widget=form_widgets.TextInput(
             attrs={'readonly': 'readonly'}
         )
     )
-    relationship = forms.ChoiceField(
+    relationship = form_fields.ChoiceField(
         choices=RELATIONSHIP_CHOICES, label=_(message='Enabled'),
-        widget=forms.RadioSelect()
+        widget=form_widgets.RadioSelect()
     )
 
 
-IndexTemplateEventTriggerRelationshipFormSet = formset_factory(
+IndexTemplateEventTriggerRelationshipFormSet = formsets.formset_factory(
     form=IndexTemplateEventTriggerRelationshipForm, extra=0
 )
 
 
-class IndexTemplateFilteredForm(FilteredSelectionForm):
+class IndexTemplateFilteredForm(forms.FilteredSelectionForm):
     class Meta:
         allow_multiple = True
         field_name = 'index_templates'
@@ -58,8 +56,8 @@ class IndexTemplateNodeForm(forms.ModelForm):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['index'].widget = forms.widgets.HiddenInput()
-        self.fields['parent'].widget = forms.widgets.HiddenInput()
+        self.fields['index'].widget = form_widgets.HiddenInput()
+        self.fields['parent'].widget = form_widgets.HiddenInput()
         self.fields['expression'] = ModelTemplateField(
             label=_(message='Template'), model=Document,
             model_variable='document', required=False

@@ -1,9 +1,9 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
 import mayan
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.backends.forms import FormDynamicModelBackend
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .classes import MailerBackend
 from .models import UserMailer
@@ -55,7 +55,7 @@ class ObjectMailForm(forms.Form):
         except UserMailer.DoesNotExist:
             pass
 
-    email = forms.CharField(
+    email = form_fields.CharField(
         help_text=_(
             message='Email address of the recipient. Can be multiple '
             'addresses separated by comma or semicolon.'
@@ -63,14 +63,14 @@ class ObjectMailForm(forms.Form):
             validate_email_multiple
         ]
     )
-    subject = forms.CharField(
+    subject = form_fields.CharField(
         label=_(message='Subject'), required=False
     )
-    body = forms.CharField(
-        label=_(message='Body'), widget=forms.widgets.Textarea(),
+    body = form_fields.CharField(
+        label=_(message='Body'), widget=form_widgets.Textarea(),
         required=False
     )
-    mailing_profile = forms.ModelChoiceField(
+    mailing_profile = form_fields.ModelChoiceField(
         help_text=_(
             message='The email profile that will be used to send this email.'
         ), label=_(message='Mailing profile'),
@@ -79,7 +79,7 @@ class ObjectMailForm(forms.Form):
 
 
 class UserMailerBackendSelectionForm(forms.Form):
-    backend = forms.ChoiceField(
+    backend = form_fields.ChoiceField(
         choices=(), help_text=_(
             message='The driver to use when sending emails.'
         ), label=_(message='Backend')
@@ -97,7 +97,7 @@ class UserMailerSetupDynamicForm(FormDynamicModelBackend):
 
 
 class UserMailerTestForm(forms.Form):
-    email = forms.CharField(
+    email = form_fields.CharField(
         help_text=_(
             message='Email address of the recipient. Can be multiple '
             'addresses separated by comma or semicolon.'

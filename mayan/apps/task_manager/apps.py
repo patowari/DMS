@@ -9,8 +9,8 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
 from mayan.apps.common.signals import signal_perform_upgrade
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.column_widgets import TwoStateWidget
 from mayan.celery import app as celery_app
 
 from .classes import CeleryQueue, TaskType, Task, Worker
@@ -89,7 +89,9 @@ class TaskManagerApp(MayanAppConfig):
             self.check_broker_connectivity()
         except Exception as exception:
             print(
-                'Error checking Celery broker connectivity: {}'.format(exception)
+                'Error checking Celery broker connectivity: {}'.format(
+                    exception
+                )
             )
             exit(1)
 
@@ -121,7 +123,7 @@ class TaskManagerApp(MayanAppConfig):
         SourceColumn(
             attribute='default_queue', include_label=True,
             label=_(message='Default queue?'), source=CeleryQueue,
-            widget=TwoStateWidget
+            widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='transient', help_text=_(
@@ -129,7 +131,7 @@ class TaskManagerApp(MayanAppConfig):
                 'queue are lost if the broker is restarted. Transient '
                 'queues use less resources and managed non critical tasks.'
             ), include_label=True, label=_(message='Is transient?'),
-            source=CeleryQueue, widget=TwoStateWidget
+            source=CeleryQueue, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='get_task_type_count', source=CeleryQueue

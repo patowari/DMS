@@ -19,8 +19,8 @@ from mayan.apps.acls.models import AccessControlList
 from mayan.apps.dynamic_search.views.view_mixins import (
     SearchFilterEnabledListViewMixin
 )
+from mayan.apps.forms.forms import ChoiceForm
 
-from .forms import ChoiceForm
 from .icons import (
     icon_add_all, icon_assign_remove_add, icon_assign_remove_remove,
     icon_confirm_form_cancel, icon_confirm_form_submit, icon_remove_all

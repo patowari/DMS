@@ -28,7 +28,7 @@ class CabinetAddAction(WorkflowAction):
         fields.update(
             {
                 'cabinets': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoiceMultiple',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoiceMultiple',
                     'help_text': _(
                         message='Cabinets to which the document will be added.'
                     ),

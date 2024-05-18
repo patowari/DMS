@@ -1,14 +1,12 @@
-from django import forms
-
-from mayan.apps.views.widgets import TextAreaDiv
+from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .classes import Dependency
 
 
 class DependenciesLicensesForm(forms.Form):
-    text = forms.CharField(
+    text = form_fields.CharField(
         label='',
-        widget=TextAreaDiv(
+        widget=form_widgets.TextAreaDiv(
             attrs={
                 'class': 'full-height scrollable',
                 'data-height-difference': 270

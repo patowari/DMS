@@ -1,5 +1,6 @@
-from django import forms
 from django.utils.translation import gettext, gettext_lazy as _
+
+from mayan.apps.forms import form_fields
 
 from .literals import (
     SOURCE_UNCOMPRESS_CHOICE_ALWAYS, SOURCE_UNCOMPRESS_CHOICE_ASK,
@@ -87,7 +88,7 @@ class SourceBackendMixinCompressed:
         )
 
         class CompressedSourceUploadForm(super_upload_form_class):
-            expand = forms.BooleanField(
+            expand = form_fields.BooleanField(
                 label=_(message='Expand compressed files'), required=False,
                 help_text=gettext(
                     'Upload a compressed file\'s contained files as '

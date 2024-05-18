@@ -29,7 +29,7 @@ class AttachTagAction(WorkflowAction):
         fields.update(
             {
                 'tags': {
-                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
+                    'class': 'mayan.apps.forms.form_fields.ModelFormFieldFilteredModelMultipleChoice',
                     'help_text': _(
                         message='Tags to attach to the document.'
                     ),

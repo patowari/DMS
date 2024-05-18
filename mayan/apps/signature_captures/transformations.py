@@ -1,6 +1,5 @@
 import logging
 
-from django import forms
 from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
@@ -8,6 +7,7 @@ from mayan.apps.converter.layers import layer_decorations
 from mayan.apps.converter.transformations import (
     BaseTransformation, ImagePasteCoordinatesPercentTransformationMixin
 )
+from mayan.apps.forms import form_fields
 
 logger = logging.getLogger(name=__name__)
 
@@ -35,7 +35,7 @@ class SignatureCapturePasteTransformation(
         SuperForm = super().get_form_class()
 
         class Form(SuperForm):
-            internal_name = forms.ChoiceField(
+            internal_name = form_fields.ChoiceField(
                 help_text=_(message='Signature capture internal name'),
                 label=_(message='Internal name'),
                 required=True

@@ -4,8 +4,8 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_return, menu_secondary, menu_setup
 )
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import Setting, SettingCluster, SettingNamespace
 from .column_widgets import WidgetSettingValue
@@ -49,11 +49,11 @@ class SmartSettingsApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='get_is_overridden', include_label=True, source=Setting,
-            widget=TwoStateWidget
+            widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='get_has_value_new', include_label=True,
-            source=Setting, widget=TwoStateWidget
+            source=Setting, widget=column_widgets.TwoStateWidget
         )
 
         menu_list_facet.bind_links(

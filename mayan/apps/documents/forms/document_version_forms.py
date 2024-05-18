@@ -1,9 +1,10 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from ..classes import DocumentVersionModification
 from ..fields import DocumentVersionField
 from ..models.document_version_models import DocumentVersion
+
+from mayan.apps.forms import form_fields, forms
 
 
 class DocumentVersionForm(forms.ModelForm):
@@ -13,7 +14,7 @@ class DocumentVersionForm(forms.ModelForm):
 
 
 class DocumentVersionModificationBackendForm(forms.Form):
-    backend = forms.ChoiceField(
+    backend = form_fields.ChoiceField(
         choices=(), help_text=_(
             message='The backend that will be executed against the selected '
             'document version.'

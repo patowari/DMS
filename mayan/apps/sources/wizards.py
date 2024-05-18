@@ -7,9 +7,7 @@ from django.urls import reverse
 from django.utils.decorators import classonlymethod
 from django.utils.translation import gettext_lazy as _
 
-from formtools.wizard.views import SessionWizardView
-
-from mayan.apps.views.forms import Form
+from mayan.apps.forms import forms, wizards
 from mayan.apps.views.view_mixins import ViewIconMixin
 
 from .classes import DocumentCreateWizardStep
@@ -20,7 +18,7 @@ from .icons import (
 )
 
 
-class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
+class DocumentCreateWizard(ViewIconMixin, wizards.SessionWizardView):
     template_name = 'appearance/wizard.html'
     view_icon = icon_document_upload_wizard
 
@@ -29,7 +27,7 @@ class DocumentCreateWizard(ViewIconMixin, SessionWizardView):
         # SessionWizardView needs at least one form in order to be
         # initialized as a view. Declare one empty form and then change the
         # form list in the .dispatch() method.
-        class EmptyForm(Form):
+        class EmptyForm(forms.Form):
             """Empty form."""
 
         cls.form_list = [EmptyForm]

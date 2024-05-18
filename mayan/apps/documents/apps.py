@@ -27,12 +27,12 @@ from mayan.apps.file_caching.links import link_cache_partition_purge
 from mayan.apps.file_caching.permissions import (
     permission_cache_partition_purge
 )
+from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import AJAXTemplate
 from mayan.apps.user_management.dashboards import dashboard_user
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import DocumentFileAction, DocumentVersionModification
 from .column_widgets import ThumbnailWidget
@@ -669,7 +669,7 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=DocumentTypeFilename, widget=TwoStateWidget
+            source=DocumentTypeFilename, widget=column_widgets.TwoStateWidget
         )
 
         # DocumentVersion
@@ -690,7 +690,7 @@ class DocumentsApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='active', include_label=True, is_sortable=True,
-            order=-9, source=DocumentVersion, widget=TwoStateWidget
+            order=-9, source=DocumentVersion, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='comment', include_label=True, is_sortable=True,

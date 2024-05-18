@@ -12,7 +12,6 @@ from django.contrib.auth.views import (
     PasswordResetDoneView, PasswordResetView, RedirectURLMixin
 )
 from django.core.exceptions import PermissionDenied
-from django.forms import formsets
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, resolve_url
 from django.urls import reverse, reverse_lazy
@@ -28,6 +27,7 @@ from stronghold.views import StrongholdPublicMixin
 
 import mayan
 from mayan.apps.common.settings import setting_home_view
+from mayan.apps.forms import formsets
 from mayan.apps.organizations.utils import get_organization_installation_url
 from mayan.apps.user_management.permissions import permission_user_edit
 from mayan.apps.user_management.querysets import (

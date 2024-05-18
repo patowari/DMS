@@ -1,5 +1,4 @@
-from django import forms
-
+from mayan.apps.forms import forms
 from mayan.apps.templating.fields import ModelTemplateField
 
 from ..models.workflow_instance_models import WorkflowInstance

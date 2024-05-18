@@ -17,11 +17,11 @@ from mayan.apps.documents.links.document_type_links import (
 )
 from mayan.apps.documents.signals import signal_post_document_type_change
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.logging.permissions import permission_error_log_entry_view
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .classes import DocumentStateHelper, WorkflowAction
 from .column_widgets import WorkflowLogExtraDataWidget
@@ -421,7 +421,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='initial', include_label=True, is_sortable=True,
-            source=WorkflowState, widget=TwoStateWidget
+            source=WorkflowState, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='completion', include_label=True, is_sortable=True,
@@ -460,7 +460,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=WorkflowStateAction, widget=TwoStateWidget
+            source=WorkflowStateAction, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='get_when_display', include_label=True,
@@ -472,7 +472,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='has_condition', include_label=True,
-            source=WorkflowStateAction, widget=TwoStateWidget
+            source=WorkflowStateAction, widget=column_widgets.TwoStateWidget
         )
 
         # Workflow template state escalation
@@ -483,7 +483,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
-            source=WorkflowStateEscalation, widget=TwoStateWidget
+            source=WorkflowStateEscalation, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='unit', include_label=True,
@@ -499,7 +499,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='has_condition', include_label=True,
-            source=WorkflowStateEscalation, widget=TwoStateWidget
+            source=WorkflowStateEscalation, widget=column_widgets.TwoStateWidget
         )
 
         # Workflow template transition
@@ -518,7 +518,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='has_condition', include_label=True,
-            source=WorkflowTransition, widget=TwoStateWidget
+            source=WorkflowTransition, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='get_field_display', include_label=True,
@@ -550,7 +550,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='required', include_label=True, is_sortable=True,
-            source=WorkflowTransitionField, widget=TwoStateWidget
+            source=WorkflowTransitionField, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='has_default', include_label=True,

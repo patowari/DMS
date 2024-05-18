@@ -118,7 +118,7 @@ class DocumentWorkflowLaunchAction(WorkflowAction):
         fields.update(
             {
                 'workflows': {
-                    'class': 'mayan.apps.views.fields.ModelFormFieldFilteredModelMultipleChoice',
+                    'class': 'mayan.apps.forms.form_fields.ModelFormFieldFilteredModelMultipleChoice',
                     'help_text': _(
                         message='Additional workflows to launch for the document.'
                     ),

@@ -38,6 +38,11 @@
 - Split URL pattern definitions.
 - Support deleting notifications.
 - Reorganize events app modules.
+- Split form related code and moved it to its own app. All imports from
+  `django.forms` are updated to explicit imports from `mayan.apps.forms`
+  modules. New form modules are: `form_fields`, `formsets`, `form_widgets`,
+  `forms`. Breaking change: the setting `VIEWS_SHOW_DROPZONE_SUBMIT_BUTTON`
+  is now named `FORMS_SHOW_DROPZONE_SUBMIT_BUTTON`.
 
 4.7 (2024-05-07)
 ================

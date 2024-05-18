@@ -16,7 +16,7 @@ class BackendMixinCredentials:
         fields.update(
             {
                 'stored_credential_id': {
-                    'class': 'mayan.apps.views.fields.FormFieldFilteredModelChoice',
+                    'class': 'mayan.apps.forms.form_fields.FormFieldFilteredModelChoice',
                     'help_text': _(
                         message='The credential entry to use for '
                         'authentication.'

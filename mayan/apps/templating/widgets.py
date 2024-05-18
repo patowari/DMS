@@ -1,27 +1,26 @@
-from django import forms
 from django.apps import apps
 from django.contrib import admindocs
 from django.utils.translation import gettext as _
 
 from mayan.apps.databases.classes import ModelAttribute
-from mayan.apps.views.widgets import NamedMultiWidget
+from mayan.apps.forms import form_widgets
 
 from .classes import Template
 
 
-class TemplateWidget(NamedMultiWidget):
+class TemplateWidget(form_widgets.NamedMultiWidget):
     builtin_excludes = {
         'tags': ('csrf_token',)
     }
 
     subwidgets = {
-        'builtin_tags': forms.widgets.Select(
+        'builtin_tags': form_widgets.Select(
             attrs={
                 'data-autocopy': 'true',
                 'data-field-template': '${ $this.val() }'
             }
         ),
-        'template': forms.widgets.Textarea(
+        'template': form_widgets.Textarea(
             attrs={'rows': 5, 'data-template-fields': 'template'}
         )
     }
@@ -100,7 +99,7 @@ class TemplateWidget(NamedMultiWidget):
 class ModelTemplateWidget(TemplateWidget):
     def __init__(self, attrs=None, **kwargs):
         super().__init__(attrs=attrs, **kwargs)
-        self.widgets['model_attribute'] = forms.widgets.Select(
+        self.widgets['model_attribute'] = form_widgets.Select(
             attrs={
                 'data-autocopy': 'true',
                 'data-field-template': '{{ ${ $idTemplate.data("model-variable") }.${ $this.val() } }}'

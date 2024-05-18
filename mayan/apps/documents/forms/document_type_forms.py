@@ -1,7 +1,6 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import FilteredSelectionForm
+from mayan.apps.forms import form_widgets, forms
 
 from ..classes import BaseDocumentFilenameGenerator
 from ..models import DocumentType, DocumentTypeFilename
@@ -15,16 +14,15 @@ class DocumentTypeFilenameGeneratorForm(forms.ModelForm):
         )
         model = DocumentType
         widgets = {
-            'filename_generator_backend': forms.widgets.Select(
+            'filename_generator_backend': form_widgets.Select(
                 choices=BaseDocumentFilenameGenerator.get_choices()
             )
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields[
-            'filename_generator_backend'
-        ].choices = BaseDocumentFilenameGenerator.get_choices()
+        field = self.fields['filename_generator_backend']
+        field.choices = BaseDocumentFilenameGenerator.get_choices()
 
 
 class DocumentTypeFilenameForm_create(forms.ModelForm):
@@ -36,7 +34,7 @@ class DocumentTypeFilenameForm_create(forms.ModelForm):
         model = DocumentTypeFilename
 
 
-class DocumentTypeFilteredSelectForm(FilteredSelectionForm):
+class DocumentTypeFilteredSelectForm(forms.FilteredSelectionForm):
     class Meta:
         field_name = 'document_type'
         label = _(message='Document type')

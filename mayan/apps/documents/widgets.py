@@ -1,12 +1,12 @@
-from django import forms
 from django.template.loader import render_to_string
 
 from mayan.apps.converter.transformations import TransformationResize
+from mayan.apps.forms import form_widgets
 
 from .settings import setting_preview_height, setting_preview_width
 
 
-class CarouselWidget(forms.widgets.Widget):
+class CarouselWidget(form_widgets.Widget):
     """
     Display many small representations of pages.
     """
@@ -33,7 +33,7 @@ class DocumentFilePagesCarouselWidget(CarouselWidget):
     target_view = 'documents:document_file_page_view'
 
 
-class ThumbnailFormWidget(forms.widgets.Widget):
+class ThumbnailFormWidget(form_widgets.Widget):
     def render(self, *args, **kwargs):
         instance = kwargs['value']
         if instance:
@@ -63,7 +63,7 @@ class DocumentVersionPagesCarouselWidget(CarouselWidget):
     target_view = 'documents:document_version_page_view'
 
 
-class PageImageWidget(forms.widgets.Widget):
+class PageImageWidget(form_widgets.Widget):
     template_name = 'documents/forms/widgets/page_image_interactive.html'
 
     def format_value(self, value):

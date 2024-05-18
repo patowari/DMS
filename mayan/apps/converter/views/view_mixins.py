@@ -1,6 +1,4 @@
-from django import forms as django_forms
-
-from mayan.apps.views.forms import Form
+from mayan.apps.forms import form_fields, forms
 
 from ..classes import Layer
 from ..forms import LayerTransformationForm
@@ -18,11 +16,11 @@ class ViewMixinDynamicTransformationFormClass:
             # Transformation does not specify a form and does not have
             # a template either. Create a dynamic form based on the argument
             # list.
-            class TransformationForm(Form):
+            class TransformationForm(forms.Form):
                 def __init__(self, *args, **kwargs):
                     super().__init__(*args, **kwargs)
                     for argument in transformation_class.get_arguments():
-                        self.fields[argument] = django_forms.CharField(
+                        self.fields[argument] = form_fields.CharField(
                             required=False
                         )
 

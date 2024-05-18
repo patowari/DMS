@@ -1,11 +1,11 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import forms
 
 from .models import Cache, CachePartition
 
 
-class CacheDetailForm(DetailForm):
+class CacheDetailForm(forms.DetailForm):
     fieldsets = (
         (
             _(message='Identification'), {
@@ -40,7 +40,7 @@ class CacheDetailForm(DetailForm):
         model = Cache
 
 
-class CachePartitionDetailForm(DetailForm):
+class CachePartitionDetailForm(forms.DetailForm):
     class Meta:
         fields = ('cache', 'name')
         model = CachePartition

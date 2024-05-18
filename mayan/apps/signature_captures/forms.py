@@ -1,8 +1,7 @@
-from django import forms
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.converter.fields import ImageField
-from mayan.apps.views.forms import DetailForm
+from mayan.apps.forms import form_widgets, forms
 
 from .models import SignatureCapture
 from .widgets import SignatureCapturesAppWidget
@@ -14,7 +13,7 @@ class SignatureCaptureForm(forms.ModelForm):
         model = SignatureCapture
         widgets = {
             'data': SignatureCapturesAppWidget(),
-            'svg': forms.widgets.HiddenInput(
+            'svg': form_widgets.HiddenInput(
                 attrs={
                     'class': 'signature-captures-capture-svg'
                 }
@@ -22,7 +21,7 @@ class SignatureCaptureForm(forms.ModelForm):
         }
 
 
-class SignatureCaptureDetailForm(DetailForm):
+class SignatureCaptureDetailForm(forms.DetailForm):
     preview = ImageField(
         image_alt_text=_(message='Asset preview image'), label=_(message='Preview')
     )
@@ -35,11 +34,11 @@ class SignatureCaptureDetailForm(DetailForm):
         extra_fields = (
             {
                 'field': 'date_time_created',
-                'widget': forms.widgets.DateTimeInput
+                'widget': form_widgets.DateTimeInput
             },
             {
                 'field': 'date_time_edited',
-                'widget': forms.widgets.DateTimeInput
+                'widget': form_widgets.DateTimeInput
             }
         )
         fields = ('internal_name', 'text', 'user', 'preview')

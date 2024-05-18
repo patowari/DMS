@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# Leo Lado, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: apps.py:21 settings.py:11
+msgid "Views"
+msgstr "Перегляди"
+
+#: forms.py:35
+msgid "Search"
+msgstr "Пошук"
+
+#: forms.py:53
+msgid "Selection"
+msgstr "Вибір"
+
+#: forms.py:231
+msgid "Label"
+msgstr "Мітка"
+
+#: forms.py:237
+msgid "Relationship"
+msgstr "Відношення"
+
+#: generics.py:167
+msgid ""
+"Select entries to be removed. Hold Control to select multiple entries. Once "
+"the selection is complete, click the button below or double click the list "
+"to activate the action."
+msgstr ""
+"Виберіть записи, які потрібно видалити. Утримуйте клавішу Control, щоб "
+"вибрати кілька записів. Після завершення вибору натисніть кнопку нижче або "
+"двічі клацніть по списку, щоб активувати дію."
+
+#: generics.py:172
+msgid ""
+"Select entries to be added. Hold Control to select multiple entries. Once "
+"the selection is complete, click the button below or double click the list "
+"to activate the action."
+msgstr ""
+"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати"
+" кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
+"клацніть по списку, щоб активувати дію."
+
+#: generics.py:326
+msgid "Add all"
+msgstr "Додати все"
+
+#: generics.py:333
+msgid "Add"
+msgstr "Додати"
+
+#: generics.py:344
+msgid "Remove all"
+msgstr "Видалити все"
+
+#: generics.py:351
+msgid "Remove"
+msgstr "Видалити"
+
+#: generics.py:582
+#, python-format
+msgid "Error updating relationship; %s"
+msgstr "Помилка оновлення відношення; %s"
+
+#: generics.py:589
+msgid "Relationships updated successfully"
+msgstr "Відносини успішно оновлені"
+
+#: generics.py:652
+#, python-format
+msgid "Duplicate data error: %(error)s"
+msgstr "Помилка дублювання даних: %(error)s"
+
+#: generics.py:671
+#, python-format
+msgid "%(object)s not created, error: %(error)s"
+msgstr "%(object)s не створено, помилка: %(error)s"
+
+#: generics.py:682
+#, python-format
+msgid "%(object)s created successfully."
+msgstr "%(object)s успішно створено."
+
+#: generics.py:726
+#, python-format
+msgid "%(object)s not deleted, error: %(error)s."
+msgstr "%(object)s не видалено, помилка: %(error)s."
+
+#: generics.py:736
+#, python-format
+msgid "%(object)s deleted successfully."
+msgstr "%(object)s успішно видалено."
+
+#: generics.py:799
+#, python-format
+msgid "Error retrieving %(object)s; %(error)s"
+msgstr "Помилка отримання %(object)s; %(error)s"
+
+#: generics.py:860
+#, python-format
+msgid "%(object)s not updated, error: %(error)s."
+msgstr "%(object)s не оновлено, помилка: %(error)s."
+
+#: generics.py:870
+#, python-format
+msgid "%(object)s updated successfully."
+msgstr "%(object)s успішно оновлено."
+
+#: generics.py:937
+#, python-format
+msgid "%(count)d objects deleted successfully."
+msgstr "%(count)d об'єктів успішно видалено."
+
+#: generics.py:938
+#, python-format
+msgid "\"%(object)s\" deleted successfully."
+msgstr "\"%(object)s\" успішно видалено."
+
+#: generics.py:939
+#, python-format
+msgid "%(count)d object deleted successfully."
+msgstr "%(count)d об'єкт успішно видалено."
+
+#: generics.py:940
+#, python-format
+msgid "Delete %(count)d objects."
+msgstr "Видалити %(count)d об'єктів."
+
+#: generics.py:941
+#, python-format
+msgid "Delete \"%(object)s\"."
+msgstr "Видалити \"%(object)s\"."
+
+#: generics.py:942
+#, python-format
+msgid "Delete %(count)d object."
+msgstr "Видалити об’єкт %(count)d ."
+
+#: settings.py:17
+msgid "The number objects that will be displayed per page."
+msgstr "Кількість об’єктів, які відображатимуться на сторінці."
+
+#: settings.py:23
+msgid "A string specifying the name to use for the paging parameter."
+msgstr ""
+"Рядок, що вказує ім'я, яке слід використовувати для параметра розбивки на "
+"сторінки."
+
+#: settings.py:29
+msgid ""
+"Display a submit button and wait for the submit button to be pressed before "
+"processing up the upload."
+msgstr ""
+"Відображати кнопку відправлення і очікувати натискання кнопки відправлення, "
+"перш ніж обробляти завантаження."
+
+#: templatetags/views_tags.py:30
+msgid "Confirm delete"
+msgstr "Підтвердити видалення"
+
+#: templatetags/views_tags.py:35
+#, python-format
+msgid "Edit %s"
+msgstr "Редагувати %s"
+
+#: templatetags/views_tags.py:38
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#: templatetags/views_tags.py:42
+#, python-format
+msgid "Details for: %s"
+msgstr "Деталі для: %s"
+
+#: templatetags/views_tags.py:46
+#, python-format
+msgid "Edit: %s"
+msgstr "Редагувати: %s"
+
+#: templatetags/views_tags.py:50
+msgid "Create"
+msgstr "Створити"
+
+#: view_mixins.py:366
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Не знайдено жодного %(verbose_name)s, що відповідає запиту."
+
+#: view_mixins.py:392
+#, python-format
+msgid "Unable to perform operation on object %(instance)s; %(exception)s."
+msgstr "Неможливо виконати операцію над об'єктом %(instance)s; %(exception)s."
+
+#: view_mixins.py:396
+#, python-format
+msgid "Operation performed on %(count)d objects."
+msgstr "Операція виконана на %(count)d об'єктів."
+
+#: view_mixins.py:398
+#, python-format
+msgid "Operation performed on %(object)s."
+msgstr "Операція виконана на %(object)s."
+
+#: view_mixins.py:400
+#, python-format
+msgid "Operation performed on %(count)d object."
+msgstr "Операція виконана на %(count)d об'єкті."
+
+#: view_mixins.py:402
+#, python-format
+msgid "Perform operation on %(count)d objects."
+msgstr "Виконайти операцію над об’єктами %(count)d ."
+
+#: view_mixins.py:403
+#, python-format
+msgid "Perform operation on %(object)s."
+msgstr "Виконати операцію на %(object)s ."
+
+#: view_mixins.py:404
+#, python-format
+msgid "Perform operation on %(count)d object."
+msgstr "Виконайти операцію над об’єктом %(count)d ."
+
+#: view_mixins.py:488
+msgid "Object"
+msgstr "Об'єкт"

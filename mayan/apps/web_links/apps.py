@@ -15,9 +15,9 @@ from mayan.apps.documents.links.document_type_links import (
     link_document_type_list
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.classes import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.views.column_widgets import TwoStateWidget
 
 from .events import event_web_link_edited, event_web_link_navigated
 from .links import (
@@ -123,7 +123,7 @@ class WebLinksApp(MayanAppConfig):
         source_column_enabled = SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
             source=WebLink,
-            widget=TwoStateWidget
+            widget=column_widgets.TwoStateWidget
         )
         source_column_enabled.add_exclude(source=ResolvedWebLink)
 

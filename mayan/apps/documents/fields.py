@@ -1,4 +1,4 @@
-from django import forms
+from mayan.apps.forms import form_fields
 
 from .widgets import (
     DocumentFilePagesCarouselWidget, DocumentVersionPagesCarouselWidget,
@@ -6,21 +6,21 @@ from .widgets import (
 )
 
 
-class DocumentFileField(forms.fields.Field):
+class DocumentFileField(form_fields.Field):
     widget = DocumentFilePagesCarouselWidget
 
 
-class DocumentFilePageField(forms.fields.Field):
+class DocumentFilePageField(form_fields.Field):
     widget = PageImageWidget
 
 
-class DocumentVersionField(forms.fields.Field):
+class DocumentVersionField(form_fields.Field):
     widget = DocumentVersionPagesCarouselWidget
 
 
-class DocumentVersionPageField(forms.fields.Field):
+class DocumentVersionPageField(form_fields.Field):
     widget = PageImageWidget
 
 
-class ThumbnailFormField(forms.fields.Field):
+class ThumbnailFormField(form_fields.Field):
     widget = ThumbnailFormWidget

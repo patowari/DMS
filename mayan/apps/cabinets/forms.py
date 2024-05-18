@@ -1,13 +1,9 @@
-import logging
-
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.views.forms import FilteredSelectionForm
-
-logger = logging.getLogger(name=__name__)
+from mayan.apps.forms import forms
 
 
-class CabinetListForm(FilteredSelectionForm):
+class CabinetListForm(forms.FilteredSelectionForm):
     class Meta:
         allow_multiple = True
         field_name = 'cabinets'
