@@ -10,7 +10,7 @@ from .views import (
     GlobalACLListView
 )
 
-urlpatterns = [
+urlpatterns_acls = [
     re_path(
         route=r'^acls/global/', name='global_acl_list',
         view=GlobalACLListView.as_view()
@@ -22,7 +22,10 @@ urlpatterns = [
     re_path(
         route=r'^acls/(?P<acl_id>\d+)/permissions/$', name='acl_permissions',
         view=ACLPermissionAddRemoveView.as_view()
-    ),
+    )
+]
+
+urlpatterns_objects = [
     re_path(
         route=r'^apps/(?P<app_label>[-\w]+)/models/(?P<model_name>[-\w]+)/objects/(?P<object_id>\d+)/acls/$',
         name='acl_list', view=ACLListView.as_view()
@@ -32,6 +35,10 @@ urlpatterns = [
         name='acl_create', view=ACLCreateView.as_view()
     )
 ]
+
+urlpatterns = []
+urlpatterns.extend(urlpatterns_acls)
+urlpatterns.extend(urlpatterns_objects)
 
 api_urls = [
     re_path(
