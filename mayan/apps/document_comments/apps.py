@@ -7,7 +7,7 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_secondary
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .events import (
     event_document_comment_created, event_document_comment_deleted,

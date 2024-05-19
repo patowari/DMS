@@ -1,7 +1,7 @@
 import logging
 
 from mayan.apps.acls.models import AccessControlList
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from ..exceptions import SourceActionExceptionUnknown
 from ..icons import icon_upload_view_link

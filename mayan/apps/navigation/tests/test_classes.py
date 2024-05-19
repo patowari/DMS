@@ -7,7 +7,9 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.permissions.classes import Permission, PermissionNamespace
 from mayan.apps.testing.tests.base import GenericViewTestCase
 
-from ..classes import Link, Menu, SourceColumn
+from ..links import Link
+from ..menus import Menu
+from ..source_columns import SourceColumn
 
 from .literals import (
     TEST_LINK_TEXT, TEST_MENU_NAME, TEST_PERMISSION_LABEL,

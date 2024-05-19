@@ -5,7 +5,7 @@ from mayan.apps.common.menus import (
     menu_list_facet, menu_return, menu_system, menu_tools
 )
 from mayan.apps.forms import column_widgets
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import Dependency, DependencyGroup, DependencyGroupEntry
 from .links import (

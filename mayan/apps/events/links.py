@@ -5,7 +5,7 @@ from mayan.apps.authentication.link_conditions import (
     condition_is_current_user, condition_not_is_current_user,
     condition_user_is_authenticated
 )
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (

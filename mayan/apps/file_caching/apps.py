@@ -10,7 +10,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.dashboards.dashboards import dashboard_administrator
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .dashboard_widgets import (
     DashboardWidgetFileCacheSizeAllocated, DashboardWidgetFileCacheSizeUsed

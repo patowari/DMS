@@ -1,0 +1,410 @@
+from functools import cache
+import logging
+
+from django.core.exceptions import ImproperlyConfigured
+from django.template import RequestContext, Variable, VariableDoesNotExist
+
+from .class_mixins import TemplateObjectMixin
+from .links import ResolvedLink
+from .utils import get_current_view_name
+
+logger = logging.getLogger(name=__name__)
+
+
+class Menu(TemplateObjectMixin):
+    _registry = {}
+
+    @staticmethod
+    def get_result_label(item):
+        """
+        Method to help sort results by label.
+        """
+        if isinstance(item, ResolvedLink):
+            return str(item.link.text)
+        else:
+            return str(item.label)
+
+    @classmethod
+    def get(cls, name):
+        return cls._registry[name]
+
+    @classmethod
+    def remove(cls, name):
+        del cls._registry[name]
+
+    def __init__(
+        self, name, condition=None, icon=None, label=None,
+        non_sorted_sources=None
+    ):
+        if name in self.__class__._registry:
+            raise Exception('A menu with this name already exists')
+
+        self.bound_links = {}
+        self.condition = condition
+        self.excluded_links = {}
+        self._icon = icon
+        self.label = label
+        self.link_positions = {}
+        self.name = name
+        self.non_sorted_sources = non_sorted_sources or []
+        self.proxy_exclusions = set()
+        self.unbound_links = {}
+        self.__class__._registry[name] = self
+
+    def __repr__(self):
+        return '<Menu: {}>'.format(self.name)
+
+    def _map_links_to_source(
+        self, links, source, map_variable, position=None
+    ):
+        source_links = getattr(self, map_variable).setdefault(
+            source, []
+        )
+
+        position = position or len(source_links)
+
+        for link_index, link in enumerate(iterable=links):
+            source_links.append(link)
+            self.link_positions[link] = position + link_index
+
+    def add_proxy_exclusion(self, source):
+        self.proxy_exclusions.add(source)
+
+    def add_unsorted_source(self, source):
+        self.non_sorted_sources.append(source)
+
+    def bind_links(self, links, exclude=None, sources=None, position=None):
+        """
+        Associate a link to a model, a view inside this menu.
+        """
+        try:
+            for source in sources:
+                self._map_links_to_source(
+                    links=links, map_variable='bound_links',
+                    position=position, source=source
+                )
+            for source in exclude:
+                self._map_links_to_source(
+                    links=links, map_variable='excluded_links',
+                    position=position, source=source
+                )
+        except TypeError:
+            # Links without a source are always displayed.
+            self._map_links_to_source(
+                links=links, map_variable='bound_links',
+                position=position, source=sources
+            )
+
+    def get_icon(self, context):
+        return self._icon
+
+    @cache
+    def get_links_for_class(self, resolved_navigation_object_class):
+        matched_links = set()
+
+        try:
+            mro = resolved_navigation_object_class.__mro__
+        except AttributeError:
+            # Not a class, direct instance match.
+            matched_links.update(
+                set(
+                    self.bound_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                ) - set(
+                    self.unbound_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                ) - set(
+                    self.excluded_links.get(
+                        resolved_navigation_object_class, ()
+                    )
+                )
+            )
+        else:
+            # Get proxy results.
+            # Remove the results explicitly excluded.
+            # Execute after the root model results to allow
+            # a proxy to override an existing results.
+            model = resolved_navigation_object_class
+            try:
+                proxy_parent_model = model._meta.proxy_for_model
+            except AttributeError:
+                """It's not a model, treat as a generic class."""
+
+                for super_class in mro[:-1]:
+                    matched_links.update(
+                        set(
+                            self.bound_links.get(
+                                super_class, ()
+                            )
+                        ) - set(
+                            self.unbound_links.get(
+                                super_class, ()
+                            )
+                        ) - set(
+                            self.excluded_links.get(
+                                resolved_navigation_object_class, ()
+                            )
+                        )
+                    )
+            else:
+                if model in self.proxy_exclusions:
+                    # Model is a proxy and can only bind to its own direct
+                    # links.
+                    bound_model = model
+                else:
+                    # Model is a proxy or a concrete model.
+                    bound_model = proxy_parent_model or model
+
+                matched_links.update(
+                    set(
+                        self.bound_links.get(
+                            bound_model, ()
+                        )
+                    ) - set(
+                        self.unbound_links.get(
+                            bound_model, ()
+                        )
+                    ) - set(
+                        self.excluded_links.get(
+                            bound_model, ()
+                        )
+                    )
+                )
+
+        return matched_links
+
+    def get_navigation_object_class(self, resolved_navigation_object):
+        if resolved_navigation_object is None:
+            # None means "always on" menu links.
+            return None
+        elif isinstance(resolved_navigation_object, str):
+            # It is a view name, return the value.
+            return resolved_navigation_object
+        else:
+            try:
+                # Try it as a queryset.
+                model = resolved_navigation_object.model
+            except AttributeError:
+                try:
+                    # Try it as a list.
+                    item = resolved_navigation_object[0]
+                except TypeError:
+                    try:
+                        # Try as a model instance or model.
+                        model = resolved_navigation_object._meta.model
+                    except AttributeError:
+                        # Must be a non model class instance, return the class.
+                        return resolved_navigation_object.__class__
+                    else:
+                        return model
+                else:
+                    # It is a list, return the class of the first item.
+                    return self.get_navigation_object_class(
+                        resolved_navigation_object=item
+                    )
+            else:
+                # It is a queryset, return the model.
+                return self.get_navigation_object_class(
+                    resolved_navigation_object=model
+                )
+
+    def get_resolved_navigation_object_list(self, context, source):
+        resolved_navigation_object_list = []
+
+        if source:
+            resolved_navigation_object_list = [source]
+        else:
+            navigation_object_list = context.get(
+                'navigation_object_list', ('object',)
+            )
+
+            logger.debug(
+                'navigation_object_list: %s', navigation_object_list
+            )
+
+            # Multiple objects
+            for navigation_object in navigation_object_list:
+                try:
+                    resolved_variable = Variable(
+                        var=navigation_object
+                    ).resolve(context=context)
+                except VariableDoesNotExist:
+                    """Non fatal. Proceed with next variable name in list."""
+                else:
+                    resolved_navigation_object_list.append(
+                        resolved_variable
+                    )
+
+        logger.debug(
+            'resolved_navigation_object_list: %s', str(
+                resolved_navigation_object_list
+            )
+        )
+        return resolved_navigation_object_list
+
+    def get_result_position(self, item):
+        """
+        Method to help sort results by position.
+        """
+        if isinstance(item, ResolvedLink):
+            return self.link_positions.get(item.link, 0)
+        else:
+            return self.link_positions.get(item, 0) or 0
+
+    def resolve(
+        self, context=None, request=None, source=None, sort_results=False
+    ):
+        result = []
+        self.matched_link_set = set()
+
+        if not context and not request:
+            raise ImproperlyConfigured(
+                'Must provide a context or a request in order to resolve '
+                'the menu.'
+            )
+
+        if not context:
+            context = RequestContext(request=request)
+
+        if not self.check_condition(context=context):
+            return result
+
+        try:
+            request = self.get_request(context=context, request=request)
+        except VariableDoesNotExist:
+            # Cannot resolve any menus without a request object.
+            # Return an empty list.
+            return result
+
+        current_view_name = get_current_view_name(request=request)
+        if not current_view_name:
+            return result
+
+        resolved_navigation_object_list = self.get_resolved_navigation_object_list(
+            context=context, source=source
+        )
+
+        for resolved_navigation_object in resolved_navigation_object_list:
+            navigation_object_class = self.get_navigation_object_class(
+                resolved_navigation_object=resolved_navigation_object
+            )
+            matched_links = self.get_links_for_class(
+                resolved_navigation_object_class=navigation_object_class
+            )
+
+            result.extend(
+                self.resolve_matched_links(
+                    context=context,
+                    matched_links=matched_links,
+                    resolved_navigation_object=resolved_navigation_object,
+                    as_resolved_object=True
+                )
+            )
+
+        # Resolve view links.
+        navigation_object_class = self.get_navigation_object_class(
+            resolved_navigation_object=current_view_name
+        )
+        matched_links = self.get_links_for_class(
+            resolved_navigation_object_class=navigation_object_class
+        )
+
+        result.extend(
+            self.resolve_matched_links(
+                context=context,
+                matched_links=matched_links,
+                resolved_navigation_object=current_view_name
+            )
+        )
+
+        # Resolve "always one" menu links.
+        navigation_object_class = self.get_navigation_object_class(
+            resolved_navigation_object=None
+        )
+        matched_links = self.get_links_for_class(
+            resolved_navigation_object_class=navigation_object_class
+        )
+
+        result.extend(
+            self.resolve_matched_links(
+                context=context,
+                matched_links=matched_links,
+                resolved_navigation_object=None
+            )
+        )
+
+        # Sort links.
+        if result:
+            unsorted_source = False
+            for resolved_navigation_object in resolved_navigation_object_list:
+                for source in self.non_sorted_sources:
+                    if isinstance(resolved_navigation_object, source):
+                        unsorted_source = True
+                        break
+
+            if sort_results and not unsorted_source:
+                for link_group in result:
+                    link_group['links'].sort(key=Menu.get_result_label)
+            else:
+                for link_group in result:
+                    link_group['links'].sort(key=self.get_result_position)
+
+        return result
+
+    def resolve_matched_links(
+        self, context, matched_links, resolved_navigation_object,
+        as_resolved_object=False
+    ):
+        result = []
+
+        object_resolved_links = []
+
+        # Deduplicate matched links.
+        matched_links = list(
+            set(matched_links).difference(self.matched_link_set)
+        )
+        self.matched_link_set.update(matched_links)
+
+        for link in matched_links:
+            kwargs = {'context': context}
+
+            if as_resolved_object:
+                kwargs['resolved_object'] = resolved_navigation_object
+
+            if isinstance(link, Menu):
+                condition = link.check_condition(**kwargs)
+                if condition:
+                    object_resolved_links.append(link)
+            else:
+                # "Always show" links.
+                resolved_link = link.resolve(**kwargs)
+                if resolved_link:
+                    object_resolved_links.append(resolved_link)
+
+        if object_resolved_links:
+            result.append(
+                {
+                    'links': object_resolved_links,
+                    'object': resolved_navigation_object
+                }
+            )
+
+        return result
+
+    def unbind_links(self, links, sources=None):
+        """
+        Allow unbinding links from sources, used to allow 3rd party apps to
+        change the link binding of core apps.
+        """
+        try:
+            for source in sources:
+                self._map_links_to_source(
+                    links=links, source=source, map_variable='unbound_links'
+                )
+        except TypeError:
+            # Unsourced links display always.
+            self._map_links_to_source(
+                links=links, source=sources, map_variable='unbound_links'
+            )

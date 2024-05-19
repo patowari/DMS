@@ -7,7 +7,7 @@ from mayan.apps.common.menus import menu_list_facet, menu_tools
 from mayan.apps.documents.menus import menu_documents
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.documents.signals import signal_post_document_file_upload
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import DuplicateBackend
 from .handlers import (

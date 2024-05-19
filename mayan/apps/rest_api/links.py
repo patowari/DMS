@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from .icons import (
     icon_api, icon_api_documentation, icon_api_documentation_redoc

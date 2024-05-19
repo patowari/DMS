@@ -10,7 +10,7 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
 from mayan.apps.common.signals import signal_perform_upgrade
 from mayan.apps.forms import column_widgets
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.celery import app as celery_app
 
 from .classes import CeleryQueue, TaskType, Task, Worker

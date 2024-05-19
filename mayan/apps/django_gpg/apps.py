@@ -9,7 +9,7 @@ from mayan.apps.common.menus import (
     menu_object, menu_related, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import KeyStub
 from .events import event_key_downloaded

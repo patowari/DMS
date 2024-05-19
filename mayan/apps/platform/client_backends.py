@@ -11,7 +11,7 @@ from django.utils.translation import gettext_lazy as _
 import mayan
 from mayan.apps.appearance.classes import Icon
 from mayan.apps.common.utils import any_to_bool
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from .classes import ClientBackend
 from .permissions import permission_test_trigger

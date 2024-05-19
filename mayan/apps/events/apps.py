@@ -10,7 +10,7 @@ from mayan.apps.common.menus import (
     menu_secondary, menu_tools, menu_topbar
 )
 from mayan.apps.forms import column_widgets
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import EventTypeNamespace
 from .html_widgets import widget_event_actor_link, widget_event_type_link

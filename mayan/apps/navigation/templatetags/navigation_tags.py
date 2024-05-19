@@ -1,7 +1,8 @@
 from django.template import Library
 from django.utils.module_loading import import_string
 
-from ..classes import Menu, SourceColumn
+from ..menus import Menu
+from ..source_columns import SourceColumn
 
 register = Library()
 

@@ -20,7 +20,7 @@ from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.logging.permissions import permission_error_log_entry_view
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 
 from .classes import DocumentStateHelper, WorkflowAction

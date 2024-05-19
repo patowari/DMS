@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 from mayan.apps.navigation.utils import (
     factory_condition_queryset_access, get_content_type_kwargs_factory
 )

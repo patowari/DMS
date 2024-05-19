@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.authentication.link_conditions import (
     condition_user_is_authenticated
 )
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from .icons import (
     icon_message_create, icon_message_delete, icon_message_list,

@@ -21,7 +21,7 @@
                 {% for link in link_group.links %}
                     {% with 'active' as li_class_active %}
                     {% with ' ' as link_classes %}
-                        {% if link|common_get_type == "<class 'mayan.apps.navigation.classes.Menu'>" %}
+                        {% if link|common_get_type == "<class 'mayan.apps.navigation.menus.Menu'>" %}
                             <div class="panel panel-default">
                                 <div class="panel-heading" id="heading-{{ link.name }}" role="tab" >
                                     <h4 class="panel-title">

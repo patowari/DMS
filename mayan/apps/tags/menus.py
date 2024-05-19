@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Menu
+from mayan.apps.navigation.menus import Menu
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import icon_menu_tags

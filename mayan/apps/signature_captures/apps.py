@@ -12,7 +12,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.databases.classes import ModelFieldRelated
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 
 from .events import (

@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link, Separator
+from mayan.apps.navigation.links import Link, Separator
 
 from .icons import icon_current_user_oidc_details
 from .settings import setting_oidc_user_profile_url

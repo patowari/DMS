@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 from mayan.apps.user_management.link_conditions import (
     condition_user_is_not_super_user
 )

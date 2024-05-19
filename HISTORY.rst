@@ -43,6 +43,9 @@
   modules. New form modules are: `form_fields`, `formsets`, `form_widgets`,
   `forms`. Breaking change: the setting `VIEWS_SHOW_DROPZONE_SUBMIT_BUTTON`
   is now named `FORMS_SHOW_DROPZONE_SUBMIT_BUTTON`.
+- Breaking change for app. Split the `navigation.classes` module into
+  `navigation.links`, `navigation.menus`, `navigation.source_columns`.
+- Fix model proxy menu exclusion.
 
 4.7 (2024-05-07)
 ================

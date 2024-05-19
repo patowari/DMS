@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 from mayan.apps.source_periodic.source_backends.mixins import (
     SourceBackendMixinPeriodic

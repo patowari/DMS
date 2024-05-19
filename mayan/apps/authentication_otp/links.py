@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from .icons import icon_otp_detail, icon_otp_disable, icon_otp_enable
 from .utils import is_otp_backend_enabled

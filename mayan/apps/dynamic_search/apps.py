@@ -9,7 +9,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.common.signals import (
     signal_post_initial_setup, signal_post_upgrade
 )
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .handlers import (
     handler_search_backend_initialize, handler_search_backend_upgrade

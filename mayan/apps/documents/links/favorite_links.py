@@ -4,7 +4,7 @@ from mayan.apps.authentication.link_conditions import (
     condition_user_is_authenticated
 )
 from mayan.apps.authentication.utils import get_context_user
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from ..icons import (
     icon_favorite_document_add, icon_favorite_document_list,

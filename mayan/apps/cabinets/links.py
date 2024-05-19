@@ -3,7 +3,7 @@ import copy
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.links import link_acl_list
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (

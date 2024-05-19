@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.converter.permissions import (
     permission_transformation_delete, permission_transformation_edit
 )
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.links import Link
 
 from ..icons import (
     icon_document_file_delete, icon_document_file_edit,

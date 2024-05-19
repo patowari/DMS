@@ -13,7 +13,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
-from mayan.apps.navigation.classes import SourceColumn
+from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import MailerBackend
 from .events import event_email_sent, event_mailing_profile_edited
