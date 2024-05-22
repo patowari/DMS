@@ -206,12 +206,12 @@ PythonDependency(
 # Documentation
 
 PythonDependency(
-    environment=environment_documentation, module=__name__, name='Sphinx',
-    version_string='==5.3.0'
+    environment=environment_documentation, module=__name__,
+    name='Sphinx', version_string='==7.3.7'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx-sitemap', version_string='==2.2.0'
+    name='sphinx-sitemap', version_string='==2.6.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -219,13 +219,9 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-blockdiag', version_string='==2.0.0'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-spelling', version_string='==7.1.0'
+    name='sphinxcontrib-spelling', version_string='==8.0.0'
 )
 PythonDependency(
     environment=environment_documentation_override, module=__name__,
-    name='jinja2', version_string='==3.0.3'
+    name='jinja2', version_string='==3.1.4'
 )

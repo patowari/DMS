@@ -67,6 +67,11 @@ Current series status
      - Security patches
      - Bug fixes
      - Translations
+   * - 4.7
+     - Fully supported
+     - Yes
+     - Yes
+     - Updated
    * - 4.6
      - Fully supported
      - Yes

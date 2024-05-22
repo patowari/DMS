@@ -258,22 +258,21 @@ extlinks = {
     'django-docs': (
         'https://docs.djangoproject.com/en/{}/%s'.format(
             mayan.__django_version__
-        ), 'Django documentation section: '
-    ),
-    'forum-topic': (
-        'https://forum.mayan-edms.com/viewtopic.php?t=%s', 'Forum topic #'
+        ), 'Django documentation section: %s'
+    ), 'forum-topic': (
+        'https://forum.mayan-edms.com/viewtopic.php?t=%s', 'Forum topic #%s'
     ),
     'github-issue': (
         'https://github.com/mayan-edms/mayan-edms/issues/%s',
-        'GitHub issue #'
+        'GitHub issue #%s'
     ),
     'gitlab-issue': (
         'https://gitlab.com/mayan-edms/mayan-edms/issues/%s',
-        'GitLab issue #'
+        'GitLab issue #%s'
     ),
     'gitlab-merge': (
         'https://gitlab.com/mayan-edms/mayan-edms/merge_requests/%s',
-        'GitLab merge request #'
+        'GitLab merge request #%s'
     )
 }
 
