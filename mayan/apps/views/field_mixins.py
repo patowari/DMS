@@ -14,8 +14,8 @@ class FilteredModelFieldMixin:
                 self.source_queryset = self.source_model._meta.default_manager.all()
             else:
                 raise ImproperlyConfigured(
-                    '{} requires a source_queryset or a source_model to be '
-                    'specified as keyword argument.'.format(
+                    '{} requires a `source_queryset` or a `source_model` to '
+                    'be specified as keyword argument.'.format(
                         self.__class__.__name__
                     )
                 )
