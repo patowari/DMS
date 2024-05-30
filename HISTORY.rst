@@ -1,3 +1,8 @@
+4.4.16 (2024-XX-XX)
+===================
+- Update the menu used to display the GPG key details as well as the document
+  file signature details.
+
 4.4.15 (2024-04-20)
 ===================
 - Remove local version from the platform cache identifiers.
