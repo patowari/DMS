@@ -2,6 +2,8 @@
 ===================
 - Update the menu used to display the GPG key details as well as the document
   file signature details.
+- Reduce the explicit mixins of view `MultipleObjectFormActionView` by
+  making it a subclass of `FormView`.
 
 4.4.15 (2024-04-20)
 ===================
