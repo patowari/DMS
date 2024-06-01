@@ -4,6 +4,7 @@
   file signature details.
 - Reduce the explicit mixins of view `MultipleObjectFormActionView` by
   making it a subclass of `FormView`.
+- Only generate a action view title if none exists in the view context.
 
 4.4.15 (2024-04-20)
 ===================
