@@ -1,4 +1,4 @@
-4.5.13 (2024-XX-XX)
+4.5.13 (2024-06-02)
 ===================
 - Merge changes from version 4.4.16.
 - Fix the docstrings of the credential API endpoints.
