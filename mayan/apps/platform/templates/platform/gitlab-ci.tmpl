@@ -74,8 +74,6 @@ job_docker_test:
     - {{ DOCKER_DIND_IMAGE_VERSION }}
     - {{ DOCKER_POSTGRES_IMAGE_VERSION }}
   stage: stage_test_container
-  tags:
-    - postgres
   variables:
     DOCKER_DRIVER: overlay2
     POSTGRES_DB: "{{ DEFAULT_DATABASE_NAME }}"
@@ -366,8 +364,6 @@ job_postgres_upgrade_test:
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
     - {{ DOCKER_POSTGRES_IMAGE_VERSION }}
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "{{ DEFAULT_DATABASE_NAME }}"
     POSTGRES_PASSWORD: "{{ DEFAULT_DATABASE_PASSWORD }}"
@@ -423,8 +419,6 @@ job_postgres_test:
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - {{ DOCKER_POSTGRES_IMAGE_VERSION }}
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "{{ DEFAULT_DATABASE_NAME }}"
     POSTGRES_PASSWORD: "{{ DEFAULT_DATABASE_PASSWORD }}"

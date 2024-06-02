@@ -6,6 +6,7 @@
   making it a subclass of `FormView`.
 - Only generate an action view title if none exists in the view context.
 - Disable automated menu refresh on development mode.
+- Remove CI worker tags.
 
 4.4.15 (2024-04-20)
 ===================

@@ -81,8 +81,6 @@ job_docker_test:
     - docker:23.0.6-dind
     - postgres:13.14-alpine
   stage: stage_test_container
-  tags:
-    - postgres
   variables:
     DOCKER_DRIVER: overlay2
     POSTGRES_DB: "mayan"
@@ -429,8 +427,6 @@ job_postgres_upgrade_test:
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
     - postgres:13.14-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayanuserpass"
@@ -496,8 +492,6 @@ job_postgres_test:
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - postgres:13.14-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayanuserpass"
