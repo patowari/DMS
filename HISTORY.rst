@@ -2,6 +2,13 @@
 ===================
 - Merge changes from version 4.4.16.
 - Fix the docstrings of the credential API endpoints.
+- Documentation updates:
+
+  - Remove obsolete chapters.
+  - Clear existing app documentation chapter folders when generating the
+    app documentation.
+  - Add previously remove dependency `sphinxcontrib-blockdiag` to the
+    `removals` file.
 
 4.5.12 (2024-04-22)
 ===================
