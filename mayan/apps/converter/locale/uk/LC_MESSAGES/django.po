@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Translators:
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# olenchenko <olenchenko@gmail.com>, 2023
 # Сергій Гарашко, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Leo Lado, 2024
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-27 06:58+0000\n"
+"POT-Creation-Date: 2024-06-02 01:53+0000\n"
 "PO-Revision-Date: 2023-01-05 02:50+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -402,8 +402,8 @@ msgid "Top"
 msgstr "Верх"
 
 #: transformation_mixins.py:157
-msgid "Paste an image (percents coordinates)"
-msgstr "Вставити зображення (координати у відсотках)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-27 06:59+0000\n"
+"POT-Creation-Date: 2024-06-02 01:54+0000\n"
 "PO-Revision-Date: 2023-01-05 02:56+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -78,81 +78,81 @@ msgstr "Премахнете всички"
 msgid "Remove"
 msgstr "Премахнете"
 
-#: generics.py:575
+#: generics.py:573
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Грешка при актуализиране на връзката; %s"
 
-#: generics.py:582
+#: generics.py:580
 msgid "Relationships updated successfully"
 msgstr "Връзките са актуализирани успешно"
 
-#: generics.py:645
+#: generics.py:643
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Грешка в дублиращи данни: %(error)s"
 
-#: generics.py:664
+#: generics.py:662
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s не е създаден, грешка: %(error)s"
 
-#: generics.py:675
+#: generics.py:673
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s е създаден успешно."
 
-#: generics.py:720
+#: generics.py:718
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s не е изтрит, грешка: %(error)s."
 
-#: generics.py:730
+#: generics.py:728
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s изтрит успешно."
 
-#: generics.py:793
+#: generics.py:791
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Грешка при извличане на %(object)s; %(error)s"
 
-#: generics.py:905
+#: generics.py:903
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s не е актуализиран, грешка: %(error)s."
 
-#: generics.py:915
+#: generics.py:913
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s актуализиран успешно."
 
-#: generics.py:982
+#: generics.py:980
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d обекта бяха изтрити успешно."
 
-#: generics.py:983
+#: generics.py:981
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "„%(object)s“ беше изтрит успешно."
 
-#: generics.py:984
+#: generics.py:982
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d обект е изтрит успешно."
 
-#: generics.py:985
+#: generics.py:983
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Изтрийте %(count)d обекта."
 
-#: generics.py:986
+#: generics.py:984
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Изтрийте &quot;%(object)s&quot;."
 
-#: generics.py:987
+#: generics.py:985
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Изтрийте %(count)d обект."
@@ -241,6 +241,6 @@ msgstr "Извършете операция на %(object)s."
 msgid "Perform operation on %(count)d object."
 msgstr "Извършете операция върху обект %(count)d."
 
-#: view_mixins.py:531
+#: view_mixins.py:532
 msgid "Object"
 msgstr "Обект"
