@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Translators:
-# jmcainzos <jmcainzos@vodafone.es>, 2023
+# José Manuel Caínzos <josem.cainzos@gmail.com>, 2023
 # Roberto Rosario, 2024
 # 
 msgid ""

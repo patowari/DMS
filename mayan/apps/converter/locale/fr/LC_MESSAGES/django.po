@@ -12,6 +12,7 @@
 # Yves Dubois <ydubois@gmail.com>, 2023
 # Benoît GROUSSET <benoit@grousset.xyz>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -275,7 +276,7 @@ msgstr ""
 
 #: serializers.py:16 serializers.py:32
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers.py:21
 msgid "Template name"
@@ -400,8 +401,8 @@ msgid "Top"
 msgstr "Haut"
 
 #: transformation_mixins.py:157
-msgid "Paste an image (percents coordinates)"
-msgstr "Coller une image (coordonnées en pourcentage)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."

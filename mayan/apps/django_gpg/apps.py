@@ -6,7 +6,7 @@ from mayan.apps.acls.permissions import (
 )
 from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.menus import (
-    menu_object, menu_related, menu_secondary, menu_setup
+    menu_list_facet, menu_object, menu_related, menu_secondary, menu_setup
 )
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.classes import SourceColumn
@@ -84,7 +84,7 @@ class DjangoGPGApp(MayanAppConfig):
             include_label=True, label=_('User ID'), source=KeyStub
         )
 
-        menu_object.bind_links(
+        menu_list_facet.bind_links(
             links=(link_key_detail,), sources=(Key,)
         )
         menu_object.bind_links(

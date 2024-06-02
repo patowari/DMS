@@ -410,8 +410,8 @@ msgid "Top"
 msgstr "Góra"
 
 #: transformation_mixins.py:157
-msgid "Paste an image (percents coordinates)"
-msgstr "Wklej obraz (współrzędne procentowe)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."

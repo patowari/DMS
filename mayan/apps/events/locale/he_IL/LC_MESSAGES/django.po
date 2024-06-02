@@ -354,7 +354,7 @@ msgstr ""
 
 #: views/subscription_views.py:164
 msgid ""
-"Subscribe to the events of an object to received notifications when those "
+"Subscribe to the events of an object to receive notifications when those "
 "events occur."
 msgstr ""
 

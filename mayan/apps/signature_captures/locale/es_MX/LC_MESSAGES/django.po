@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# jmcainzos <jmcainzos@vodafone.es>, 2023
+# José Manuel Caínzos <josem.cainzos@gmail.com>, 2023
 # Roberto Rosario, 2023
 # 
 msgid ""

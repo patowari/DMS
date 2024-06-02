@@ -411,8 +411,8 @@ msgid "Top"
 msgstr "Oben"
 
 #: transformation_mixins.py:157
-msgid "Paste an image (percents coordinates)"
-msgstr "Ein Bild einfügen (Koordinaten in Prozent)"
+msgid "Paste an image (percent coordinates)"
+msgstr ""
 
 #: transformation_mixins.py:162
 msgid "Horizontal position in percent from the left."

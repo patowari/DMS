@@ -506,6 +506,16 @@
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
 
+4.4.16 (2024-06-01)
+===================
+- Update the menu used to display the GPG key details as well as the document
+  file signature details.
+- Reduce the explicit mixins of view `MultipleObjectFormActionView` by
+  making it a subclass of `FormView`.
+- Only generate an action view title if none exists in the view context.
+- Disable automated menu refresh on development mode.
+- Remove CI worker tags.
+
 4.4.15 (2024-04-20)
 ===================
 - Remove local version from the platform cache identifiers.

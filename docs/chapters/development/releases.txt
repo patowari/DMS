@@ -62,6 +62,8 @@ Release checklist
 
     make check-missing-inits
 
+#. Update the ``config.env`` file values ``DJANGO_SERIES``, ``DOCKER_IMAGE_MAYAN_TAG``.
+
 #. Copy the ``config.env`` values::
 
     make copy-config-env
@@ -105,15 +107,9 @@ Release checklist
     make increase-version PART=<major, minor or micro>
 
 #. Commit as version bump.
-#. Build source package and test:
    ::
 
-       make test-sdist-via-docker-ubuntu
-
-#. Build wheel package and test:
-   ::
-
-       make test-wheel-via-docker-ubuntu
+       git commit -s -m "Bump version to ..."
 
 #. Tag version:
    ::

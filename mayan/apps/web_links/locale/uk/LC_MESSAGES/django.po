@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# olenchenko <olenchenko@gmail.com>, 2023
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Сергій Гарашко, 2023
 # Leo Lado, 2024
