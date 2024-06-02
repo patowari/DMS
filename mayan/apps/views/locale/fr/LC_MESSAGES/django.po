@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Benoît GROUSSET <benoit@grousset.xyz>, 2023
+# 3d8c9ede7eec1ed3d454abc701cf2020_b5d10da <2cc9776490f3745e0e39b80d9b76a349_955453>, 2023
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2023
 # Guillaume Trottier <gui.trottier@gmail.com>, 2023
 # Frédéric Sheedy <sheedf@gmail.com>, 2023
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
+"POT-Creation-Date: 2024-06-02 14:06+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2023\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
@@ -83,81 +83,81 @@ msgstr "Tout retirer"
 msgid "Remove"
 msgstr "Retirer"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Erreur de mise à jour de la relation ; %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "Relations mises à jour avec succès"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Erreur de données en double: %(error)s"
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s n'a pas été créé, erreur : %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s créé avec succès."
 
-#: generics.py:728
+#: generics.py:726
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s n'a pas été supprimé, erreur : %(error)s."
 
-#: generics.py:738
+#: generics.py:736
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s supprimé avec succès."
 
-#: generics.py:801
+#: generics.py:799
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Erreur pour accéder à %(object)s; %(error)s"
 
-#: generics.py:913
+#: generics.py:911
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s n'a pas été mis à jour, erreur : %(error)s."
 
-#: generics.py:923
+#: generics.py:921
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s mis à jour avec succès."
 
-#: generics.py:990
+#: generics.py:988
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "Objets %(count)d objets supprimés avec succès."
 
-#: generics.py:991
+#: generics.py:989
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" supprimé avec succès."
 
-#: generics.py:992
+#: generics.py:990
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr " %(count)d objet supprimé avec succès."
 
-#: generics.py:993
+#: generics.py:991
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Supprimer %(count)d objets ."
 
-#: generics.py:994
+#: generics.py:992
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Supprimez \"%(object)s\"."
 
-#: generics.py:995
+#: generics.py:993
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Supprimez l'objet %(count)d."
@@ -245,6 +245,6 @@ msgstr "Exécutez l'opération sur %(object)s."
 msgid "Perform operation on %(count)d object."
 msgstr "Effectuez l'opération sur un %(count)d objet."
 
-#: view_mixins.py:544
+#: view_mixins.py:545
 msgid "Object"
 msgstr "Objet"

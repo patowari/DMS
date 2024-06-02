@@ -6,14 +6,14 @@
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2023
 # Сергій Гарашко, 2023
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2023
+# olenchenko <olenchenko@gmail.com>, 2023
 # Leo Lado, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
+"POT-Creation-Date: 2024-06-02 14:06+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -145,8 +145,8 @@ msgid "Key"
 msgstr "Ключ"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
-msgstr "Фактичне значення, збережене в початкових метаданих для документа."
+msgid "The actual value stored in the source metadata for the document file."
+msgstr ""
 
 #: models.py:33
 msgid "Value"
@@ -173,8 +173,8 @@ msgid "Sources setup"
 msgstr "Налаштування джерел"
 
 #: permissions.py:12
-msgid "View document source metadata"
-msgstr "Переглянути метадані джерела документа"
+msgid "View document file source metadata"
+msgstr ""
 
 #: permissions.py:18
 msgid "Create new document sources"

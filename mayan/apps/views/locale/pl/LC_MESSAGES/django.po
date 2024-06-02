@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
+"POT-Creation-Date: 2024-06-02 14:06+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -82,81 +82,81 @@ msgstr "Usuń wszystko"
 msgid "Remove"
 msgstr "Usuń"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Błąd uaktualnienia relacji; %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "Relację uaktualniono pomyślnie"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Błąd powielenia danych: %(error)s"
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nie utworzono, błąd: %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s utworzono pomyślnie."
 
-#: generics.py:728
+#: generics.py:726
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s nie usunięto, błąd: %(error)s."
 
-#: generics.py:738
+#: generics.py:736
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s usunięto pomyślnie."
 
-#: generics.py:801
+#: generics.py:799
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr ""
 
-#: generics.py:913
+#: generics.py:911
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s nie zaktualizowano, błąd: %(error)s."
 
-#: generics.py:923
+#: generics.py:921
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s zaktualizowano pomyślnie."
 
-#: generics.py:990
+#: generics.py:988
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr ""
 
-#: generics.py:991
+#: generics.py:989
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr ""
 
-#: generics.py:992
+#: generics.py:990
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr ""
 
-#: generics.py:993
+#: generics.py:991
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr ""
 
-#: generics.py:994
+#: generics.py:992
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr ""
 
-#: generics.py:995
+#: generics.py:993
 #, python-format
 msgid "Delete %(count)d object."
 msgstr ""
@@ -242,6 +242,6 @@ msgstr "Wykonaj operację na %(object)s."
 msgid "Perform operation on %(count)d object."
 msgstr "Wykonaj operację na %(count)d obiekcie."
 
-#: view_mixins.py:544
+#: view_mixins.py:545
 msgid "Object"
 msgstr "Obiekt"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-28 08:30+0000\n"
+"POT-Creation-Date: 2024-06-02 14:06+0000\n"
 "PO-Revision-Date: 2023-09-06 21:36+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2023\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -143,7 +143,7 @@ msgid "Key"
 msgstr "Ключ"
 
 #: models.py:31
-msgid "The actual value stored in the source metadata for the document."
+msgid "The actual value stored in the source metadata for the document file."
 msgstr ""
 
 #: models.py:33
@@ -171,7 +171,7 @@ msgid "Sources setup"
 msgstr "Настройка на източници"
 
 #: permissions.py:12
-msgid "View document source metadata"
+msgid "View document file source metadata"
 msgstr ""
 
 #: permissions.py:18
