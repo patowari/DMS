@@ -1,3 +1,8 @@
+4.5.13 (2024-XX-XX)
+===================
+- Merge changes from version 4.4.16.
+- Fix the docstrings of the credential API endpoints.
+
 4.5.12 (2024-04-22)
 ===================
 - Optimize documents apps migrations 0086 and 0088.
