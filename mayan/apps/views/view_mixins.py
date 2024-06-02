@@ -448,7 +448,7 @@ class ObjectActionViewMixin:
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        if not 'title' in context:
+        if 'title' not in context:
             title = None
 
             if self.view_mode_single:
