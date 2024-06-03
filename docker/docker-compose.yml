@@ -138,7 +138,7 @@ services:
       POSTGRES_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
       POSTGRES_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
       POSTGRES_USER: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
-    image: ${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.14-alpine}
+    image: ${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.15-alpine}
     networks:
       - keycloak
     profiles:
@@ -162,7 +162,7 @@ services:
       POSTGRES_DB: ${MAYAN_DATABASE_NAME:-mayan}
       POSTGRES_PASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
       POSTGRES_USER: ${MAYAN_DATABASE_USER:-mayan}
-    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-13.14-alpine}
+    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-13.15-alpine}
     networks:
       - mayan
     # Enable to allow external access to the database.
@@ -181,7 +181,7 @@ services:
       RABBITMQ_DEFAULT_PASS: ${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}
       RABBITMQ_DEFAULT_VHOST: ${MAYAN_RABBITMQ_VHOST:-mayan}
     hostname: ${MAYAN_DOCKER_RABBITMQ_HOSTNAME:-rabbitmq}
-    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.12.13-management-alpine}
+    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.12.28-management-alpine}
     labels:
       - "traefik.enable=${MAYAN_TRAEFIK_RABBITMQ_ENABLE:-false}"
       - "traefik.http.routers.rabbitmq_admin_http.entrypoints=rabbitmq_admin_http"

@@ -10,6 +10,12 @@
   - twine from 5.0.0 to 5.1.0.
   - safety from 3.1.0 to 3.2.0.
 
+- Update Docker image tags:
+
+  - PostgreSQL from 13.14-alpine to 13.15-alpine.
+  - Python from 3.11.8-slim to 3.11.9-slim.
+  - RabbitMQ from 3.12.13-management-alpine to 3.12.28-management-alpine.
+
 4.6.4 (2024-04-23)
 ==================
 - Merge changes from 4.5.12.
