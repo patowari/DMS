@@ -1,4 +1,4 @@
-4.6.5 (2024-XX-XX)
+4.6.5 (2024-06-03)
 ==================
 - Merge changes from version 4.5.13.
 - Update dependency versions:
