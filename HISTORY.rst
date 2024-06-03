@@ -1,3 +1,15 @@
+4.6.5 (2024-XX-XX)
+==================
+- Merge changes from version 4.5.13.
+- Update dependency versions:
+
+  - Django from 4.2.11 to 4.2.13.
+  - importlib-metadata from 7.0.1 to 7.0.2.
+  - pycountry from 23.12.11 to 24.6.1.
+  - sh from 2.0.6 to 2.0.7.
+  - twine from 5.0.0 to 5.1.0.
+  - safety from 3.1.0 to 3.2.0.
+
 4.6.4 (2024-04-23)
 ==================
 - Merge changes from 4.5.12.
