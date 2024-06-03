@@ -145,7 +145,7 @@ msgstr "Kulcs"
 
 #: models.py:31
 msgid "The actual value stored in the source metadata for the document file."
-msgstr ""
+msgstr "A dokumentumfájl forrás metaadataiban tárolt tényleges érték."
 
 #: models.py:33
 msgid "Value"
@@ -173,7 +173,7 @@ msgstr "Források beállítása"
 
 #: permissions.py:12
 msgid "View document file source metadata"
-msgstr ""
+msgstr "Dokumentumfájl forrás metaadatainak megtekintése"
 
 #: permissions.py:19
 msgid "Create new document sources"

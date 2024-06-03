@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:05+0000\n"
+"POT-Creation-Date: 2024-06-03 22:29+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -100,57 +100,57 @@ msgstr "%(object)s no se pudo crear, error: %(error)s"
 msgid "%(object)s created successfully."
 msgstr "%(object)s creado exitosamente."
 
-#: generics.py:727
+#: generics.py:725
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
 msgstr "%(object)s no se pudo eliminar, error: %(error)s."
 
-#: generics.py:737
+#: generics.py:735
 #, python-format
 msgid "%(object)s deleted successfully."
 msgstr "%(object)s eliminado con éxito."
 
-#: generics.py:800
+#: generics.py:798
 #, python-format
 msgid "Error retrieving %(object)s; %(error)s"
 msgstr "Error accediendo %(object)s; %(error)s"
 
-#: generics.py:912
+#: generics.py:910
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
 msgstr "%(object)s no se pudo actualizar, error: %(error)s."
 
-#: generics.py:922
+#: generics.py:920
 #, python-format
 msgid "%(object)s updated successfully."
 msgstr "%(object)s actualizado con éxito."
 
-#: generics.py:989
+#: generics.py:987
 #, python-format
 msgid "%(count)d objects deleted successfully."
 msgstr "%(count)d objetos se eliminaron correctamente."
 
-#: generics.py:990
+#: generics.py:988
 #, python-format
 msgid "\"%(object)s\" deleted successfully."
 msgstr "\"%(object)s\" eliminado correctamente."
 
-#: generics.py:991
+#: generics.py:989
 #, python-format
 msgid "%(count)d object deleted successfully."
 msgstr "%(count)d objeto eliminado correctamente."
 
-#: generics.py:992
+#: generics.py:990
 #, python-format
 msgid "Delete %(count)d objects."
 msgstr "Eliminar %(count)d objetos."
 
-#: generics.py:993
+#: generics.py:991
 #, python-format
 msgid "Delete \"%(object)s\"."
 msgstr "Eliminar \"%(object)s\":."
 
-#: generics.py:994
+#: generics.py:992
 #, python-format
 msgid "Delete %(count)d object."
 msgstr "Eliminar %(count)d objeto."
@@ -241,6 +241,6 @@ msgstr "Realizar operación en %(object)s."
 msgid "Perform operation on %(count)d object."
 msgstr "Realizar operación en %(count)d objeto."
 
-#: view_mixins.py:539
+#: view_mixins.py:540
 msgid "Object"
 msgstr "Objeto"

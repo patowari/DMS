@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
+"POT-Creation-Date: 2024-06-03 22:27+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Általános"
 
@@ -78,23 +78,23 @@ msgstr "Másolás"
 msgid "Release notes"
 msgstr "Kiadási megjegyzések"
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Beállítás"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Forráskód"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Online áruház"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Támogatás-kérés"
+#: links.py:84
+msgid "Support"
+msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Eszközök"
 

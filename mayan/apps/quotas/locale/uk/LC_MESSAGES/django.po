@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
-# Vasyl Olenchenko <olenchenko@gmail.com>, 2024
+# olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Leo Lado, 2024
 # 

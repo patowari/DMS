@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 17:04+0000\n"
+"POT-Creation-Date: 2024-06-03 22:27+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: apps.py:128 permissions.py:6 settings.py:15
+#: apps.py:131 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Zajednicki"
 
@@ -76,23 +76,23 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Setup"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Izvorni kod"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr ""
 
-#: links.py:83
-msgid "Get support"
-msgstr ""
+#: links.py:84
+msgid "Support"
+msgstr "Podrška"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Alati"
 

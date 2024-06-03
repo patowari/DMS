@@ -410,7 +410,7 @@ msgstr "Partea de sus"
 
 #: transformation_mixins.py:158
 msgid "Paste an image (percent coordinates)"
-msgstr ""
+msgstr "Lipiți o imagine (coordonate procentuale)"
 
 #: transformation_mixins.py:164
 msgid "Horizontal position in percent from the left."
