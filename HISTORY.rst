@@ -206,6 +206,18 @@
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
 
+4.5.13 (2024-06-02)
+===================
+- Merge changes from version 4.4.16.
+- Fix the docstrings of the credential API endpoints.
+- Documentation updates:
+
+  - Remove obsolete chapters.
+  - Clear existing app documentation chapter folders when generating the
+    app documentation.
+  - Add previously remove dependency `sphinxcontrib-blockdiag` to the
+    `removals` file.
+
 4.5.12 (2024-04-22)
 ===================
 - Optimize documents apps migrations 0086 and 0088.
@@ -713,6 +725,16 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.16 (2024-06-01)
+===================
+- Update the menu used to display the GPG key details as well as the document
+  file signature details.
+- Reduce the explicit mixins of view `MultipleObjectFormActionView` by
+  making it a subclass of `FormView`.
+- Only generate an action view title if none exists in the view context.
+- Disable automated menu refresh on development mode.
+- Remove CI worker tags.
 
 4.4.15 (2024-04-20)
 ===================

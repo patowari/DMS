@@ -73,26 +73,26 @@ msgstr "全部移除"
 msgid "Remove"
 msgstr "移除"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "更新关系时出错; %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "关系已成功更新"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "复制数据错误：%(error)s"
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s未创建，错误：%(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s创建成功。"

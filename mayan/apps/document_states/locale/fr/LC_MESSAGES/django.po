@@ -490,7 +490,7 @@ msgstr "Actions d'état du flux de travail"
 
 #: models/workflow_state_escalation_model_mixins.py:26
 msgid "Workflow escalation."
-msgstr ""
+msgstr "Escalade du flux de travail"
 
 #: models/workflow_state_escalation_models.py:38
 msgid ""
@@ -501,7 +501,7 @@ msgstr ""
 
 #: models/workflow_state_escalation_models.py:41
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 #: models/workflow_state_escalation_models.py:45
 msgid ""
@@ -752,7 +752,7 @@ msgstr ""
 #: serializers/workflow_instance_serializers.py:37
 #: serializers/workflow_instance_serializers.py:132
 msgid "Document URL"
-msgstr ""
+msgstr "URL du document"
 
 #: serializers/workflow_instance_serializers.py:49
 msgid "Primary key of the transition to be added."
@@ -794,7 +794,7 @@ msgstr ""
 
 #: serializers/workflow_instance_serializers.py:135
 msgid "Last log entry"
-msgstr ""
+msgstr "Dernière entrée du journal"
 
 #: serializers/workflow_instance_serializers.py:139
 msgid "Log entries URL"
@@ -830,15 +830,15 @@ msgstr ""
 
 #: serializers/workflow_template_serializers.py:28
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers/workflow_template_serializers.py:32
 msgid "States URL"
-msgstr ""
+msgstr "URL des états"
 
 #: serializers/workflow_template_serializers.py:36
 msgid "Transitions URL"
-msgstr ""
+msgstr "URL des transitions"
 
 #: serializers/workflow_template_serializers.py:65
 msgid "Primary key of the document type to add to the workflow."
@@ -877,11 +877,11 @@ msgstr ""
 
 #: serializers/workflow_template_state_serializers.py:11
 msgid "Actions URL"
-msgstr ""
+msgstr "URL des actions"
 
 #: serializers/workflow_template_state_serializers.py:23
 msgid "Escalations URL"
-msgstr ""
+msgstr "URL des escalades"
 
 #: serializers/workflow_template_transition_serializers.py:49
 #: serializers/workflow_template_transition_serializers.py:226
@@ -1491,6 +1491,8 @@ msgid ""
 "The HTTP method to use for the request. Typical choices are OPTIONS, HEAD, "
 "POST, GET, PUT, PATCH, DELETE."
 msgstr ""
+"La méthode HTTP à utiliser pour la requête. Les choix classiques sont "
+"OPTIONS, HEAD, POST, GET, PUT, PATCH, DELETE."
 
 #: workflow_actions.py:208
 msgid "Username"

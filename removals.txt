@@ -20,4 +20,5 @@ pdfminer
 PyPDF2
 pyocr
 pytesseract
+sphinxcontrib-blockdiag
 transifex-client

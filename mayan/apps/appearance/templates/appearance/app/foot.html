@@ -44,13 +44,13 @@
                 callback: function (options) {
                     MayanApp.updateNavbarState();
                 },
-                interval: {% if menu_polling_interval == 'None' %}null{% else %}{{ appearance_menu_polling_interval }}{% endif %},
+                interval: {% if appearance_menu_polling_interval %}{{ appearance_menu_polling_interval }}{% else %}null{% endif %},
                 menuSelector: '#menu-main',
                 name: 'menu_main',
                 url: '{% url "rest_api:template-detail" "menu_main" %}'
             },
             {
-                interval: {% if menu_polling_interval == 'None' %}null{% else %}{{ appearance_menu_polling_interval }}{% endif %},
+                interval: {% if appearance_menu_polling_interval %}{{ appearance_menu_polling_interval }}{% else %}null{% endif %},
                 menuSelector: '#menu-topbar',
                 name: 'menu_topbar',
                 url: '{% url "rest_api:template-detail" "menu_topbar" %}'

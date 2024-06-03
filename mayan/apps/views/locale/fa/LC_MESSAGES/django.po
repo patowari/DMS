@@ -71,26 +71,26 @@ msgstr ""
 msgid "Remove"
 msgstr "برداشتن"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "خطا در به روز رسانی رابطه؛ %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "روابط با موفقیت به روز شد"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr ""
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s ایجاد نشد، خطا: %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s با موفقیت ایجاد شد"

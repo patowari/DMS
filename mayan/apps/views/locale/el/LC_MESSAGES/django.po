@@ -79,26 +79,26 @@ msgstr "Αφαίρεση όλων"
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Σφάλμα κατά την ενημέρωση της σχέσης. %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "Οι σχέσεις ενημερώθηκαν με επιτυχία"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Σφάλμα διπλοκαταχώρησης: %(error)s"
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s δεν δημιουργήθηκε, σφάλμα: %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s δημιουργήθηκε επιτυχώς."

@@ -78,26 +78,26 @@ msgstr "Elimină tot setul"
 msgid "Remove"
 msgstr "Eliminați"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Eroare la actualizarea relației; %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "Relațiile au fost actualizate cu succes"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr "Eroare de date duplicat: %(error)s"
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "Obiectul tip %(object)s nu a fost creat, eroare: %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "Obiectul tip %(object)s a fost creat cu succes."

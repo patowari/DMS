@@ -275,7 +275,7 @@ msgstr ""
 
 #: serializers.py:16 serializers.py:32
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers.py:21
 msgid "Template name"

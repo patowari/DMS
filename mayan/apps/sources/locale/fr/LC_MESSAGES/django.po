@@ -270,7 +270,7 @@ msgstr "Contenu binaire du nouveau fichier."
 
 #: serializers.py:121
 msgid "Actions URL"
-msgstr ""
+msgstr "URL des actions"
 
 #: settings.py:19
 msgid "Arguments to use when creating source backends."

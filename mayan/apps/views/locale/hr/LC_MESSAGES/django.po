@@ -77,26 +77,26 @@ msgstr "Ukloni sve"
 msgid "Remove"
 msgstr "Ukloni"
 
-#: generics.py:583
+#: generics.py:581
 #, python-format
 msgid "Error updating relationship; %s"
 msgstr "Greška pri ažuriranju veze; %s"
 
-#: generics.py:590
+#: generics.py:588
 msgid "Relationships updated successfully"
 msgstr "Veze uspješno ažurirane"
 
-#: generics.py:653
+#: generics.py:651
 #, python-format
 msgid "Duplicate data error: %(error)s"
 msgstr ""
 
-#: generics.py:672
+#: generics.py:670
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
 msgstr "%(object)s nije kreiran, greške: %(error)s"
 
-#: generics.py:683
+#: generics.py:681
 #, python-format
 msgid "%(object)s created successfully."
 msgstr "%(object)s kreiran uspješno."

@@ -177,11 +177,11 @@ msgstr "Nom de l'utilisateur"
 
 #: serializers.py:11
 msgid "Document URL"
-msgstr ""
+msgstr "URL du document"
 
 #: serializers.py:15
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers.py:27
 msgid "URL"

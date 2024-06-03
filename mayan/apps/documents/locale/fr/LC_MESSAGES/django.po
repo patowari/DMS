@@ -1223,7 +1223,7 @@ msgstr ""
 #: serializers/document_version_serializers.py:57
 #: serializers/trashed_document_serializers.py:12
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers/document_file_serializers.py:40
 #: serializers/document_file_serializers.py:107
@@ -1244,7 +1244,7 @@ msgstr ""
 #: serializers/document_file_serializers.py:72
 #: serializers/document_version_serializers.py:104
 msgid "Document URL"
-msgstr ""
+msgstr "URL du document"
 
 #: serializers/document_file_serializers.py:76
 msgid "Download URL"

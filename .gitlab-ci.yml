@@ -9,7 +9,6 @@ stages:
   - stage_build_python
   - stage_test_python
   - stage_build_container
-  - stage_test_container
   - stage_build_documentation
   - stage_push
   - stage_deploy
@@ -60,36 +59,6 @@ job_docker_build:
     APK_CACHE_DIR: ${CI_PROJECT_DIR}/.cache/apk
     PIP_CACHE_DIR: ${CI_PROJECT_DIR}/.cache/pip
 
-job_docker_test:
-  before_script:
-    - set -a && . ./config.env && set +a
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-  image: docker:23.0.6-dind
-  needs:
-    - job_docker_build
-  only:
-    - releases/all/major
-    - releases/all/minor
-    - releases/docker/major
-    - releases/docker/minor
-    - tests/all
-    - tests/docker
-  script:
-    - DOCKER_VERSION=`cat docker/rootfs/version`
-    - SERVICE_POSTGRES_IP=$(cat /etc/hosts | awk '{if ($2 == "postgres") print $1;}')
-    - docker run --rm --add-host="postgres:${SERVICE_POSTGRES_IP}" -e MAYAN_DATABASES="{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'mayan','USER':'mayan','PASSWORD':'mayandbpass','HOST':'postgres'}}" "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" run_tests
-  services:
-    - docker:23.0.6-dind
-    - postgres:13.14-alpine
-  stage: stage_test_container
-  tags:
-    - postgres
-  variables:
-    DOCKER_DRIVER: overlay2
-    POSTGRES_DB: "mayan"
-    POSTGRES_PASSWORD: "mayandbpass"
-    POSTGRES_USER: "mayan"
-
 job_docker_push_major:
   before_script:
     - set -a && . ./config.env && set +a
@@ -102,8 +71,6 @@ job_docker_push_major:
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
   only:
     - releases/all/major
     - releases/docker/major
@@ -141,8 +108,6 @@ job_docker_push_minor:
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
   only:
     - releases/all/minor
     - releases/docker/minor
@@ -178,27 +143,6 @@ job_docker_nightly:
     - docker login --username "${DOCKER_HUB_USERNAME}" --password "${DOCKER_HUB_PASSWORD}" https://registry-1.docker.io
     - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
     - docker push "registry-1.docker.io/mayanedms/mayanedms:${CI_COMMIT_REF_SLUG}"
-  services:
-    - docker:23.0.6-dind
-  stage: stage_push
-  variables:
-    DOCKER_DRIVER: overlay2
-
-job_docker_testing:
-  before_script:
-    - set -a && . ./config.env && set +a
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
-  image: docker:23.0.6-dind
-  needs:
-    - job_docker_test
-  only:
-    - releases/testing
-  script:
-    - DOCKER_VERSION=`cat docker/rootfs/version`
-    - docker pull "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}"
-    - docker login --username "${DOCKER_HUB_USERNAME}" --password "${DOCKER_HUB_PASSWORD}" https://registry-1.docker.io
-    - docker tag "${CI_REGISTRY_IMAGE}:${DOCKER_VERSION}" "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
-    - docker push "registry-1.docker.io/mayanedms/mayanedms:t${DOCKER_VERSION}"
   services:
     - docker:23.0.6-dind
   stage: stage_push
@@ -430,8 +374,6 @@ job_postgres_upgrade_test:
     - mayan-edms.py common_perform_upgrade --no-dependencies
   services:
     - postgres:13.14-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayandbpass"
@@ -497,8 +439,6 @@ job_postgres_test:
     - make test-migrations-all SETTINGS=mayan.settings.testing.gitlab-ci
   services:
     - postgres:13.14-alpine
-  tags:
-    - postgres
   variables:
     POSTGRES_DB: "mayan"
     POSTGRES_PASSWORD: "mayandbpass"

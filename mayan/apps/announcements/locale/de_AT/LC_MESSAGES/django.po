@@ -159,6 +159,9 @@ msgid ""
 "convey information about your organization, announcements or usage "
 "guidelines for your users."
 msgstr ""
+"Ankündigungen werden in der Anmeldeansicht angezeigt. Ankündigungen können "
+"zur Informationsweitergabe an alle Nutzer bezüglich Ihrer Organisation, "
+"Benutzerrichtlinien oder allgemeineiner Ankündigungen verwendet werden."
 
 #: views.py:126
 msgid "No announcements available"

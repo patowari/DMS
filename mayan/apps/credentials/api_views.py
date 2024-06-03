@@ -10,8 +10,8 @@ from .serializers import StoredCredentialSerializer
 
 class APIStoredCredentialListView(generics.ListCreateAPIView):
     """
-    get: Returns a list of all the import setups.
-    post: Create a new import setup.
+    get: Returns a list of all the credentials.
+    post: Create a new credential.
     """
     mayan_object_permission_map = {'GET': permission_credential_view}
     mayan_view_permission_map = {'POST': permission_credential_create}
@@ -26,10 +26,10 @@ class APIStoredCredentialListView(generics.ListCreateAPIView):
 
 class APIStoredCredentialDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
-    delete: Delete the selected import setup.
-    get: Return the details of the selected import setup.
-    patch: Edit the selected import setup.
-    put: Edit the selected import setup.
+    delete: Delete the selected credential.
+    get: Return the details of the selected credential.
+    patch: Edit the selected credential.
+    put: Edit the selected credential.
     """
     lookup_url_kwarg = 'credential_id'
     mayan_object_permission_map = {
