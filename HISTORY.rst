@@ -1,4 +1,4 @@
-4.7.1 (2024-XX-XX)
+4.7.1 (2024-06-04)
 ==================
 - Merge changes and fixes from version 4.6.5.
 - Update PostgreSQL Docker image from tag 14.11-alpine to 14.12-alpine.
