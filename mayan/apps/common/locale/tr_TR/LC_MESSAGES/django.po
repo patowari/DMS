@@ -71,23 +71,23 @@ msgstr "Kopya"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Ayarlar"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Kaynak kod"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Çevrimiçi mağaza"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Destek alın"
+#: links.py:84
+msgid "Support"
+msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Araçlar"
 

@@ -429,7 +429,7 @@ msgstr ""
 "Eroare la adăugarea tipului de metadate \"%(metadata_type)s\" în documentul:"
 " %(document)s; %(exception)s"
 
-#: views/document_views.py:162
+#: views/document_views.py:166
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s successfully added to document "
@@ -438,7 +438,7 @@ msgstr ""
 "Tipul de metadate:%(metadata_type)s a fost adăugat cu succes la documentul "
 "%(document)s."
 
-#: views/document_views.py:172
+#: views/document_views.py:176
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s already present in document %(document)s."
@@ -446,17 +446,17 @@ msgstr ""
 "Tipul de metadate:%(metadata_type)s e deja prezent în documentul "
 "%(document)s."
 
-#: views/document_views.py:189
+#: views/document_views.py:193
 #, python-format
 msgid "Metadata edit request performed on %(count)d document"
 msgstr "Cererea de editare de metadate efectuată pe %(count)ddocument"
 
-#: views/document_views.py:192
+#: views/document_views.py:196
 #, python-format
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Cererea de editare de metadate efectuată pe %(count)ddocumente"
 
-#: views/document_views.py:227
+#: views/document_views.py:231
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -464,18 +464,18 @@ msgstr ""
 "Adăugați tipuri de metadate disponibile pentru tipul acestui document și "
 "atribuiți-le valorile corespunzătoare."
 
-#: views/document_views.py:230
+#: views/document_views.py:234
 msgid "There is no metadata to edit"
 msgstr "Nu există metadate pentru a fi editate"
 
-#: views/document_views.py:232
+#: views/document_views.py:236
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] "Editați metadatele documentului"
 msgstr[1] "Editați metadatele documentelor"
 msgstr[2] "Editați metadatele documentelor"
 
-#: views/document_views.py:243
+#: views/document_views.py:247
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "Editați metadate pentru document:% s"

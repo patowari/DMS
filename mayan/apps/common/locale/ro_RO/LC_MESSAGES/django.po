@@ -71,23 +71,23 @@ msgstr "Copiere"
 msgid "Release notes"
 msgstr "Note de lansare"
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Configurare"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Cod sursă"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Magazin online"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Obțineți sprijin"
+#: links.py:84
+msgid "Support"
+msgstr "Suport tehnic"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Unelte"
 

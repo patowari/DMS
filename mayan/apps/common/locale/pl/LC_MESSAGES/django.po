@@ -73,23 +73,23 @@ msgstr "Skopiuj"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Ustawienia"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Kod źródłowy"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Sklep internetowy"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Uzyskaj wsparcie"
+#: links.py:84
+msgid "Support"
+msgstr "Wsparcie"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Narzędzia"
 

@@ -9,6 +9,7 @@
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -177,11 +178,11 @@ msgstr "Nom de l'utilisateur"
 
 #: serializers.py:11
 msgid "Document URL"
-msgstr ""
+msgstr "URL du document"
 
 #: serializers.py:15
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers.py:27
 msgid "URL"

@@ -428,7 +428,7 @@ msgstr ""
 "Σφάλμα κατά την προσθήκη τύπου μεταδεδομένων \"%(metadata_type)s\" στο "
 "έγγραφο: %(document)s; %(exception)s"
 
-#: views/document_views.py:162
+#: views/document_views.py:166
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s successfully added to document "
@@ -437,25 +437,25 @@ msgstr ""
 "Τύπος μεταδεδομένων: %(metadata_type)s προστέθηκε με επιτυχία στο έγγραφο "
 "%(document)s."
 
-#: views/document_views.py:172
+#: views/document_views.py:176
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s already present in document %(document)s."
 msgstr ""
 "Τύπος μεταδεδομένων: %(metadata_type)s υπάρχει ήδη στο έγγραφο %(document)s."
 
-#: views/document_views.py:189
+#: views/document_views.py:193
 #, python-format
 msgid "Metadata edit request performed on %(count)d document"
 msgstr "Η αίτηση επεξεργασίας μεταδεδομένων εκτελέστηκε σε %(count)d έγγραφο"
 
-#: views/document_views.py:192
+#: views/document_views.py:196
 #, python-format
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr ""
 "Η αίτηση επεξεργασίας μεταδεδομένων πραγματοποιήθηκε σε %(count)d έγγραφα"
 
-#: views/document_views.py:227
+#: views/document_views.py:231
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -463,17 +463,17 @@ msgstr ""
 "Προσθέστε διαθέσιμους τύπους μεταδεδομένων για αυτόν τον τύπο εγγράφου και "
 "εκχωρήστε τους αντίστοιχες τιμές."
 
-#: views/document_views.py:230
+#: views/document_views.py:234
 msgid "There is no metadata to edit"
 msgstr "Δεν υπάρχουν μεταδεδομένα για επεξεργασία"
 
-#: views/document_views.py:232
+#: views/document_views.py:236
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/document_views.py:243
+#: views/document_views.py:247
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "Επεξεργασία μεταδεδομένων για έγγραφο: %s"

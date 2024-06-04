@@ -36,7 +36,7 @@ PythonDependency(
         ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
         (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
         SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    ''', module=__name__, name='django', version_string='==4.2.11'
+    ''', module=__name__, name='django', version_string='==4.2.13'
 )
 PythonDependency(
     legal_text='''
@@ -125,7 +125,7 @@ PythonDependency(
     legal_text='''
         Author: Christian Theune
         License: LGPL 2.1
-    ''', module=__name__, name='pycountry', version_string='==23.12.11'
+    ''', module=__name__, name='pycountry', version_string='==24.6.1'
 )
 PythonDependency(
     module=__name__, name='requests', version_string='==2.31.0'
@@ -154,14 +154,14 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
-    ''', module=__name__, name='sh', version_string='==2.0.6'
+    ''', module=__name__, name='sh', version_string='==2.0.7'
 )
 
 # Build
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==5.0.0'
+    version_string='==5.1.0'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
@@ -200,7 +200,7 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_development,
-    module=__name__, name='safety', version_string='==3.1.0'
+    module=__name__, name='safety', version_string='==3.2.0'
 )
 
 # Documentation

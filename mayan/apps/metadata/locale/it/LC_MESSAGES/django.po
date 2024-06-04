@@ -427,7 +427,7 @@ msgstr ""
 "Errore aggiungendo il tipo metadato \"%(metadata_type)s\" al documento: "
 "%(document)s; %(exception)s"
 
-#: views/document_views.py:162
+#: views/document_views.py:166
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s successfully added to document "
@@ -436,24 +436,24 @@ msgstr ""
 "Tipo metadata: %(metadata_type)s aggiunto con successo al documento "
 "%(document)s."
 
-#: views/document_views.py:172
+#: views/document_views.py:176
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s already present in document %(document)s."
 msgstr ""
 "Tipo Metadata: %(metadata_type)s già presente per il documento %(document)s."
 
-#: views/document_views.py:189
+#: views/document_views.py:193
 #, python-format
 msgid "Metadata edit request performed on %(count)d document"
 msgstr "Richiesta di modifica dei metadati eseguita su un documento %(count)d"
 
-#: views/document_views.py:192
+#: views/document_views.py:196
 #, python-format
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Richiesta di modifica dei metadati eseguita sui documenti %(count)d"
 
-#: views/document_views.py:227
+#: views/document_views.py:231
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -461,18 +461,18 @@ msgstr ""
 "Aggiungi i tipi di metadati disponibili per il tipo di questo documento e "
 "assegna loro i valori corrispondenti."
 
-#: views/document_views.py:230
+#: views/document_views.py:234
 msgid "There is no metadata to edit"
 msgstr "Non ci sono metadati da modificare"
 
-#: views/document_views.py:232
+#: views/document_views.py:236
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: views/document_views.py:243
+#: views/document_views.py:247
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr "Modifica metadata per il documento: %s"

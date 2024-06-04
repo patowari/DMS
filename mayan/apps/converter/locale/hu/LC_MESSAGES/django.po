@@ -414,7 +414,7 @@ msgstr "Felső"
 
 #: transformation_mixins.py:159
 msgid "Paste an image (percent coordinates)"
-msgstr ""
+msgstr "Kép beillesztése (százalékos koordináták)"
 
 #: transformation_mixins.py:165
 msgid "Horizontal position in percent from the left."

@@ -405,20 +405,21 @@ class ObjectActionViewMixin:
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        title = None
+        if 'title' not in context:
+            title = None
 
-        if self.view_mode_single:
-            title = self.title_single % {'object': self.object}
-        elif self.view_mode_multiple:
-            title = ngettext(
-                singular=self.title_singular,
-                plural=self.title_plural,
-                number=self.object_list.count()
-            ) % {
-                'count': self.object_list.count()
-            }
+            if self.view_mode_single:
+                title = self.title_single % {'object': self.object}
+            elif self.view_mode_multiple:
+                title = ngettext(
+                    singular=self.title_singular,
+                    plural=self.title_plural,
+                    number=self.object_list.count()
+                ) % {
+                    'count': self.object_list.count()
+                }
 
-        context['title'] = title
+            context['title'] = title
 
         return context
 

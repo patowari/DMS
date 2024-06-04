@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.navigation.classes import Link
+from mayan.apps.navigation.classes import Link, Separator
 from mayan.apps.navigation.utils import get_content_type_kwargs_factory
 
 from .icons import (
@@ -68,6 +68,7 @@ link_release_notes = Link(
     icon=icon_release_notes, tags='new_window',
     text=_(message='Release notes'), url=URL_RELEASE_NOTES
 )
+link_separator_information = Separator()
 link_setup = Link(
     icon=icon_setup, text=_(message='Setup'), view='common:setup_list'
 )
@@ -80,7 +81,7 @@ link_store = Link(
     url=URL_STORE
 )
 link_support = Link(
-    icon=icon_support, tags='new_window', text=_(message='Get support'),
+    icon=icon_support, tags='new_window', text=_(message='Support'),
     url=URL_SUPPORT
 )
 link_tools = Link(

@@ -134,9 +134,13 @@ class DocumentSignaturesApp(MayanAppConfig):
 
         # Signatures
 
-        menu_object.bind_links(
+        menu_list_facet.bind_links(
             links=(
                 link_document_file_signature_detail,
+            ), sources=(SignatureBaseModel,)
+        )
+        menu_object.bind_links(
+            links=(
                 link_document_file_signature_detached_download,
                 link_document_file_signature_detached_delete,
             ), sources=(SignatureBaseModel,)

@@ -65,7 +65,7 @@ def find_packages(directory):
 
 
 install_requires = """
-django==4.2.11
+django==4.2.13
 CairoSVG==2.7.1
 Pillow==10.3.0
 PyYAML==6.0.1
@@ -105,7 +105,7 @@ importlib-metadata==7.0.2
 jsonschema==4.21.1
 mozilla-django-oidc==4.0.0
 node-semver==0.9.0
-pycountry==23.12.11
+pycountry==24.6.1
 pycryptodome==3.20.0
 pyotp==2.9.0
 pypdf==4.1.0
@@ -117,7 +117,7 @@ qrcode==7.4.2
 requests==2.31.0
 sentry-sdk==1.41.0
 setuptools==69.5.1
-sh==2.0.6
+sh==2.0.7
 swagger-spec-validator==3.0.3
 whitenoise==6.6.0
 """.split()

@@ -71,23 +71,23 @@ msgstr "副本"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "設定"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "原始碼"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "線上商店"
 
-#: links.py:83
-msgid "Get support"
-msgstr "取得協助"
+#: links.py:84
+msgid "Support"
+msgstr "支持"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "工具"
 

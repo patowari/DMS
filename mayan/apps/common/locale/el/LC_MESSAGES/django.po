@@ -69,23 +69,23 @@ msgstr "Αντιγραφή"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Ρυθμίσεις"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Πηγαίος κώδικας"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Ηλεκτρονικό κατάστημα"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Βοήθεια"
+#: links.py:84
+msgid "Support"
+msgstr "Υποστήριξη"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Εργαλεία"
 

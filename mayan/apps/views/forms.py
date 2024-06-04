@@ -171,7 +171,7 @@ class FileDisplayForm(Form):
 class FilteredSelectionForm(Form):
     """
     Form to select the from a list of choice filtered by access. Can be
-    configure to allow single or multiple selection.
+    configured to allow single or multiple selection.
     """
     def __init__(self, *args, **kwargs):
         opts = FilteredSelectionFormOptions(

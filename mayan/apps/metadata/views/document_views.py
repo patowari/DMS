@@ -150,7 +150,11 @@ class DocumentMetadataAddView(
                     ) % {
                         'document': instance,
                         'exception': ', '.join(
-                            getattr(exception, 'messages', exception)
+                            getattr(
+                                exception, 'messages', (
+                                    str(exception),
+                                )
+                            )
                         ),
                         'metadata_type': metadata_type
                     }, request=self.request
@@ -229,9 +233,9 @@ class DocumentMetadataEditView(
             ),
             'no_results_title': _(message='There is no metadata to edit'),
             'title': ngettext(
-                'Edit document metadata',
-                'Edit documents metadata',
-                queryset.count()
+                singular='Edit document metadata',
+                plural='Edit documents metadata',
+                number=queryset.count()
             )
         }
 

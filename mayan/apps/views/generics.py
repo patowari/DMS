@@ -476,10 +476,8 @@ class DynamicFormView(
 
 
 class MultipleObjectFormActionView(
-    ExtraContextViewMixin, ObjectActionViewMixin,
-    ViewPermissionCheckViewMixin, RestrictedQuerysetViewMixin,
-    MultipleObjectViewMixin, FormExtraKwargsViewMixin,
-    RedirectionViewMixin, ViewIconMixin, DjangoFormView
+    ObjectActionViewMixin, RestrictedQuerysetViewMixin,
+    MultipleObjectViewMixin, FormView
 ):
     """
     This view will present a form and upon receiving a POST request

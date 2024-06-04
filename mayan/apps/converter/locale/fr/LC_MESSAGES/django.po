@@ -12,6 +12,7 @@
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -279,7 +280,7 @@ msgstr ""
 
 #: serializers.py:16 serializers.py:32
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers.py:21
 msgid "Template name"

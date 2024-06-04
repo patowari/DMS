@@ -66,23 +66,23 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr ""
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr ""
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr ""
 
-#: links.py:83
-msgid "Get support"
+#: links.py:84
+msgid "Support"
 msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr ""
 

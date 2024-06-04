@@ -205,6 +205,24 @@
 - Expose the document index instance depth and node count values via the API.
 - Add a document type API view to return all documents of that type.
 
+4.6.5 (2024-06-03)
+==================
+- Merge changes from version 4.5.13.
+- Update dependency versions:
+
+  - Django from 4.2.11 to 4.2.13.
+  - importlib-metadata from 7.0.1 to 7.0.2.
+  - pycountry from 23.12.11 to 24.6.1.
+  - sh from 2.0.6 to 2.0.7.
+  - twine from 5.0.0 to 5.1.0.
+  - safety from 3.1.0 to 3.2.0.
+
+- Update Docker image tags:
+
+  - PostgreSQL from 13.14-alpine to 13.15-alpine.
+  - Python from 3.11.8-slim to 3.11.9-slim.
+  - RabbitMQ from 3.12.13-management-alpine to 3.12.28-management-alpine.
+
 4.6.4 (2024-04-23)
 ==================
 - Merge changes from 4.5.12.
@@ -412,6 +430,18 @@
 - Fix double separator in the user menu.
 - Theme updates.
 - Switch from Apache 2.0 to GPL 2.0 license.
+
+4.5.13 (2024-06-02)
+===================
+- Merge changes from version 4.4.16.
+- Fix the docstrings of the credential API endpoints.
+- Documentation updates:
+
+  - Remove obsolete chapters.
+  - Clear existing app documentation chapter folders when generating the
+    app documentation.
+  - Add previously remove dependency `sphinxcontrib-blockdiag` to the
+    `removals` file.
 
 4.5.12 (2024-04-22)
 ===================
@@ -920,6 +950,16 @@
   - Test improvements.
   - Preserve document creation user to allow quota tests to
     access the user uploading the document.
+
+4.4.16 (2024-06-01)
+===================
+- Update the menu used to display the GPG key details as well as the document
+  file signature details.
+- Reduce the explicit mixins of view `MultipleObjectFormActionView` by
+  making it a subclass of `FormView`.
+- Only generate an action view title if none exists in the view context.
+- Disable automated menu refresh on development mode.
+- Remove CI worker tags.
 
 4.4.15 (2024-04-20)
 ===================

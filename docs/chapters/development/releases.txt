@@ -113,7 +113,7 @@ Release checklist
 #. Commit as version bump.
    ::
 
-       git commit -s -m "Version bump to ..."
+       git commit -s -m "Bump version to ..."
 
 #. Tag version:
    ::

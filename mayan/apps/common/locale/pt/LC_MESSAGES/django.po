@@ -11,6 +11,7 @@
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Márcia Ferreira, 2024
+# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
 # 
 msgid ""
 msgstr ""
@@ -74,23 +75,23 @@ msgstr "Cópia"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Configuração"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Código fonte"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Loja online"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Obtenha ajuda"
+#: links.py:84
+msgid "Support"
+msgstr "Suporte"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Ferramentas"
 
