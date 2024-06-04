@@ -13,7 +13,7 @@ icon_home = Icon(
     driver_name='fontawesome', symbol='home'
 )
 icon_knowledge_base = Icon(
-    driver_name='fontawesome', symbol='lightbulb'
+    driver_name='fontawesome', symbol='book-open-reader'
 )
 icon_license = Icon(
     driver_name='fontawesome', symbol='certificate'
