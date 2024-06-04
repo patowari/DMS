@@ -132,6 +132,13 @@ class SettingValueRevertView(MultipleObjectConfirmActionView):
         message='Value of setting "%(object)s" reverted.'
     )
     success_message_singular = _(message='%(count)d setting value reverted.')
+    title_plural = _(
+        message='Revert the value of the %(count)d selected settings.'
+    )
+    title_single = _(message='Revert the value of setting: %(object)s')
+    title_singular = _(
+        message='Revert the value of %(count)d selected setting.'
+    )
     view_icon = icon_setting_revert
     view_permission = permission_settings_edit
 
@@ -141,11 +148,6 @@ class SettingValueRevertView(MultipleObjectConfirmActionView):
         result = {
             'message': _(
                 message='Unsaved changes will be lost.'
-            ),
-            'title': ngettext(
-                singular='Revert the selected setting value?',
-                plural='Revert the selected settings value?',
-                number=len(object_list)
             )
         }
 

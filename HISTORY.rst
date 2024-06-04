@@ -2,6 +2,7 @@
 ==================
 - Merge changes and fixes from version 4.6.5.
 - Update PostgreSQL Docker image from tag 14.11-alpine to 14.12-alpine.
+- Improve the titles of the settings revert view.
 
 4.7 (2024-05-07)
 ================
