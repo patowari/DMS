@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import Http404
 from django.urls import reverse, reverse_lazy
-from django.utils.translation import gettext_lazy as _, ngettext
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import (
     ConfirmView, FormView, MultipleObjectConfirmActionView,
