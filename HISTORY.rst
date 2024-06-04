@@ -3,6 +3,17 @@
 - Merge changes and fixes from version 4.6.5.
 - Update PostgreSQL Docker image from tag 14.11-alpine to 14.12-alpine.
 - Improve the titles of the settings revert view.
+- Update dependency versions:
+
+  - wheel from 0.42.0 to 0.43.0.
+  - mozilla-django-oidc from 4.0.0 to 4.0.1.
+  - importlib-metadata from 7.0.2 to 7.1.0.
+  - requests from 2.31.0 to 2.32.0.
+  - pypdf from 4.1.0 to 4.2.0.
+  - gunicorn from 21.2.0 to 22.0.0.
+  - sentry-sdk from 1.41.0 to 1.45.0.
+  - django-storages from 1.14.2 to 1.14.3.
+  - google-cloud-storage from 2.15.0 to 2.16.0.
 
 4.7 (2024-05-07)
 ================
