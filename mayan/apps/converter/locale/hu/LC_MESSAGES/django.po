@@ -136,7 +136,7 @@ msgstr "Új átalakítás választása"
 
 #: model_mixins.py:120
 msgid "Badly formatted arguments YAML"
-msgstr ""
+msgstr "Rosszul formázott YAML argumentumok"
 
 #: model_mixins.py:131 models.py:168
 msgid "Arguments"
@@ -339,7 +339,7 @@ msgstr ""
 
 #: settings.py:104
 msgid "Whether or not to load truncated image files."
-msgstr ""
+msgstr "Be kell-e tölteni a csonka képfájlokat."
 
 #: storages.py:15
 msgid ""
@@ -596,15 +596,15 @@ msgstr "Tükrözés"
 
 #: transformations.py:587
 msgid "Draw a QRCode (percent coordinates)"
-msgstr ""
+msgstr "Rajzoljon QRCode-ot (százalékos koordináták)"
 
 #: transformations.py:597
 msgid "Value to encode in the QRCode."
-msgstr ""
+msgstr "A QRCode-ba kódolandó érték."
 
 #: transformations.py:598
 msgid "Code value"
-msgstr ""
+msgstr "Kódérték"
 
 #: transformations.py:623
 msgid "Resize"
@@ -809,6 +809,9 @@ msgid ""
 "a YAML dictionary. ie: {\"degrees\": 180}. The document version page is "
 "available as {{ document_version_page }}."
 msgstr ""
+"Adjon meg egy sablont, amely YAML szótárként generálja az átalakítás "
+"argumentumait. pl.: {\"fokok\": 180}. A dokumentumverzió oldala {{ "
+"document_version_page }} néven érhető el."
 
 #: workflow_actions.py:63
 msgid "Add transformation"

@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:24 links.py:38 permissions.py:6
 msgid "Dependencies"
-msgstr ""
+msgstr "Függőségek"
 
 #: apps.py:32 apps.py:69 apps.py:78
 msgid "Label"
@@ -44,7 +44,7 @@ msgstr "Típus"
 
 #: apps.py:49 classes.py:221
 msgid "Other data"
-msgstr ""
+msgstr "Egyéb adatok"
 
 #: apps.py:53
 msgid "Declared by"
@@ -56,7 +56,7 @@ msgstr "Verzió"
 
 #: apps.py:61
 msgid "Environment"
-msgstr ""
+msgstr "Környezet"
 
 #: apps.py:64 classes.py:221
 msgid "Check"
@@ -72,7 +72,7 @@ msgstr "Alkalmazás"
 
 #: classes.py:220 classes.py:966
 msgid "Environments"
-msgstr ""
+msgstr "Környezetek"
 
 #: classes.py:331
 msgid "Need to specify at least one: app_label or module."
@@ -98,11 +98,11 @@ msgstr "Kész."
 
 #: classes.py:439
 msgid "Installed and correct version"
-msgstr ""
+msgstr "Telepített és helyes verzió"
 
 #: classes.py:441
 msgid "Missing or incorrect version"
-msgstr ""
+msgstr "Hiányzó vagy hibás verzió"
 
 #: classes.py:478
 msgid "None"
@@ -110,15 +110,15 @@ msgstr "Nincs"
 
 #: classes.py:487
 msgid "Not specified"
-msgstr ""
+msgstr "Nem meghatározott"
 
 #: classes.py:490
 msgid "Patching files... "
-msgstr ""
+msgstr "Fájlok javítása... "
 
 #: classes.py:518
 msgid "Executables that are called directly by the code."
-msgstr ""
+msgstr "A kód által közvetlenül meghívott végrehajtható fájlok."
 
 #: classes.py:520
 msgid "Binary"
@@ -404,4 +404,4 @@ msgstr "A %s bejegyzés nem található."
 
 #: views.py:145
 msgid "Other packages licenses"
-msgstr ""
+msgstr "Egyéb csomagok licencei"

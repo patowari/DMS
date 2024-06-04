@@ -7,7 +7,6 @@
 # José Manuel Caínzos <josem.cainzos@gmail.com>, 2024
 # Lory977 <helga.carrero@gmail.com>, 2024
 # Roberto Rosario, 2024
-# José Manuel Caínzos <josem.cainzos@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -137,7 +136,7 @@ msgstr "Seleccione nueva transformación"
 
 #: model_mixins.py:120
 msgid "Badly formatted arguments YAML"
-msgstr ""
+msgstr "Argumentos YAML mal formateados"
 
 #: model_mixins.py:131 models.py:168
 msgid "Arguments"
@@ -343,7 +342,7 @@ msgstr ""
 
 #: settings.py:104
 msgid "Whether or not to load truncated image files."
-msgstr ""
+msgstr "Si se cargan o no archivos de imágenes truncadas."
 
 #: storages.py:15
 msgid ""
@@ -601,15 +600,15 @@ msgstr "Espejo"
 
 #: transformations.py:587
 msgid "Draw a QRCode (percent coordinates)"
-msgstr ""
+msgstr "Dibujar un código QR (coordenadas porcentuales)"
 
 #: transformations.py:597
 msgid "Value to encode in the QRCode."
-msgstr ""
+msgstr "Valor a codificar en el QRCode."
 
 #: transformations.py:598
 msgid "Code value"
-msgstr ""
+msgstr "Valor del código"
 
 #: transformations.py:623
 msgid "Resize"
@@ -811,6 +810,9 @@ msgid ""
 "a YAML dictionary. ie: {\"degrees\": 180}. The document version page is "
 "available as {{ document_version_page }}."
 msgstr ""
+"Ingrese una plantilla que generará los argumentos para la transformación "
+"como un diccionario YAML. por ejemplo: {\"degrees\": 180}. La página de "
+"versión del documento está disponible como {{ document_version_page }}."
 
 #: workflow_actions.py:63
 msgid "Add transformation"

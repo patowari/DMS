@@ -233,12 +233,13 @@ msgstr "Objektumtípus"
 
 #: workflow_actions.py:47
 msgid "Type of the object for which the access will be modified."
-msgstr ""
+msgstr "Az objektum típusa, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:57
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
 msgstr ""
+"Annak az objektumnak a numerikus azonosítója, amelyhez a hozzáférés módosul."
 
 #: workflow_actions.py:62 workflow_actions.py:198
 msgid "Roles"
@@ -246,16 +247,18 @@ msgstr "Szerepkörök"
 
 #: workflow_actions.py:64 workflow_actions.py:200
 msgid "Roles whose access will be modified."
-msgstr ""
+msgstr "Szerepkörök, amelyek hozzáférése módosul."
 
 #: workflow_actions.py:71 workflow_actions.py:207
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
+"Engedélyek a fent kiválasztott objektum szerepkörének "
+"megadásához/visszavonásához."
 
 #: workflow_actions.py:78
 msgid "Grant object access"
-msgstr ""
+msgstr "Objektum hozzáférés engedélyezése"
 
 #: workflow_actions.py:133 workflow_actions.py:232
 msgid "Access"

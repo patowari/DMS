@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -21,13 +21,13 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Általános"
 
 #: dependencies.py:193
 msgid "Command line environment with autocompletion."
-msgstr ""
+msgstr "Parancssori környezet automatikus kiegészítéssel."
 
 #: dependencies.py:198
 msgid "Checks proper formatting of the README file."
@@ -92,7 +92,7 @@ msgstr "Eszközök"
 #: literals.py:23
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
-msgstr ""
+msgstr "Ez a funkció elavult, és egy későbbi verzióban eltávolítjuk."
 
 #: literals.py:32
 msgid "Days"
@@ -221,11 +221,11 @@ msgstr ""
 
 #: settings.py:90
 msgid "Name of the dashboard to display in the home view."
-msgstr ""
+msgstr "A kezdőképernyőn megjelenítendő irányítópult neve."
 
 #: settings.py:95
 msgid "Sets the project's name."
-msgstr ""
+msgstr "Beállítja a projekt nevét."
 
 #: templates/common/app/viewport.html:15
 msgid "Click here to fix this."

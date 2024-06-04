@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
@@ -637,17 +637,26 @@ msgstr ""
 msgid "%(count)d setting value reverted."
 msgstr ""
 
-#: views.py:143
+#: views.py:136
+#, python-format
+msgid "Revert the value of the %(count)d selected settings."
+msgstr ""
+
+#: views.py:138
+#, python-format
+msgid "Revert the value of setting: %(object)s"
+msgstr ""
+
+#: views.py:140
+#, python-format
+msgid "Revert the value of %(count)d selected setting."
+msgstr ""
+
+#: views.py:150
 msgid "Unsaved changes will be lost."
 msgstr ""
 
-#: views.py:146
-msgid "Revert the selected setting value?"
-msgid_plural "Revert the selected settings value?"
-msgstr[0] ""
-msgstr[1] ""
-
-#: views.py:185
+#: views.py:187
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
@@ -655,12 +664,12 @@ msgstr ""
 "Einstellungen die durch Umgebungsvariablen vorgenommen wurden sind vorrangig"
 " und können auf dieser Seite nicht geändert werden."
 
-#: views.py:188
+#: views.py:190
 #, python-format
 msgid "Settings in namespace: %s"
 msgstr "Einstellungen für Bereich %s"
 
-#: views.py:198
+#: views.py:200
 #, python-format
 msgid "Namespace: %s, not found"
 msgstr "Bereich %s nicht gefunden"

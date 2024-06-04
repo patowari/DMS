@@ -1109,7 +1109,7 @@ msgstr "Documentos rápido"
 
 #: queues.py:17
 msgid "Documents slow"
-msgstr ""
+msgstr "Documentos lento"
 
 #: queues.py:20
 msgid "Documents file"
@@ -1141,7 +1141,7 @@ msgstr "Subir archivo de documento nuevo"
 
 #: queues.py:49
 msgid "Move a document to the trash"
-msgstr ""
+msgstr "Mover un documento a la papelera"
 
 #: queues.py:53
 msgid "Upload new document"
@@ -1210,7 +1210,7 @@ msgstr "Eliminar versiones de documentos"
 
 #: search.py:31
 msgid "The database ID of the document type."
-msgstr ""
+msgstr "El ID de la base de datos del tipo de documento."
 
 #: search.py:32 serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
@@ -1227,7 +1227,7 @@ msgstr "Descripción del documento"
 
 #: search.py:73 search.py:145
 msgid "The database ID of the document."
-msgstr ""
+msgstr "El ID de la base de datos del documento."
 
 #: search.py:74 search.py:146 serializers/favorite_document_serializers.py:17
 msgid "Document ID"
@@ -1571,7 +1571,7 @@ msgstr "Vista previa de la imagen de la página del documento"
 
 #: templates/documents/errors/document_file_has_no_pages.html:5
 msgid "No file pages"
-msgstr ""
+msgstr "No hay páginas de archivos"
 
 #: templates/documents/errors/document_file_page_transformation_error.html:5
 msgid "Document file page transformation error"
@@ -1974,11 +1974,11 @@ msgstr "Reasignar páginas de la versión del documento: %s"
 
 #: views/document_version_page_views.py:311
 msgid "There are no more pages in this document."
-msgstr ""
+msgstr "No hay más páginas en este documento."
 
 #: views/document_version_page_views.py:327
 msgid "You are already at the first page of this document."
-msgstr ""
+msgstr "Ya estás en la primera página de este documento."
 
 #: views/document_version_views.py:63
 #, python-format
@@ -2149,18 +2149,20 @@ msgstr "No hay documentos disponibles"
 #, python-format
 msgid "Document type change request performed on %(count)d document."
 msgstr ""
+"Solicitud de cambio de tipo de documento realizada en %(count)d documento."
 
 #: views/document_views.py:89
 #, python-format
 msgid "Document type change request performed on %(count)d documents."
 msgstr ""
+"Solicitud de cambio de tipo de documento realizada en %(count)d documentos."
 
 #: views/document_views.py:97
 msgid "Change the type of the selected document."
 msgid_plural "Change the type of the selected documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Cambiar el tipo del documento seleccionado."
+msgstr[1] "Cambiar el tipo de los documentos seleccionados."
+msgstr[2] "Cambiar el tipo de los documentos seleccionados."
 
 #: views/document_views.py:108
 #, python-format
@@ -2269,12 +2271,12 @@ msgstr "No hay documentos creados recientemente."
 #: views/trashed_document_views.py:40
 #, python-format
 msgid "Document \"%(object)s\" queued for trashing."
-msgstr ""
+msgstr "El documento \"%(object)s\" está en cola para eliminarse."
 
 #: views/trashed_document_views.py:43 views/trashed_document_views.py:46
 #, python-format
 msgid "%(count)d documents queued for trashing."
-msgstr ""
+msgstr "%(count)d documentos en cola para su eliminación."
 
 #: views/trashed_document_views.py:48
 #, python-format

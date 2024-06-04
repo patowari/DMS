@@ -197,7 +197,7 @@ msgstr "Básico"
 
 #: forms/workflow_template_transition_field_forms.py:17
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: forms/workflow_template_transition_field_forms.py:21
 msgid "Value"
@@ -572,11 +572,11 @@ msgstr "Error en valor de búsqueda: %s"
 
 #: models/workflow_transition_field_model_mixins.py:110
 msgid "Has a default?"
-msgstr ""
+msgstr "¿Tiene un valor predeterminado?"
 
 #: models/workflow_transition_field_model_mixins.py:118
 msgid "Has a lookup?"
-msgstr ""
+msgstr "¿Tiene una búsqueda?"
 
 #: models/workflow_transition_field_model_mixins.py:129
 msgid "Value is not one of the provided options."
@@ -597,6 +597,7 @@ msgstr "El nombre del campo que se mostrará en la interfaz de usuario."
 #: models/workflow_transition_field_models.py:48
 msgid "Optional default value for the field. Can be a template."
 msgstr ""
+"Valor predeterminado opcional para el campo. Puede ser una plantilla ."
 
 #: models/workflow_transition_field_models.py:49
 msgid "Default"
@@ -1149,10 +1150,13 @@ msgid ""
 "Workflow state escalation allow workflows to execute a transition "
 "automatically after a specific amount of time."
 msgstr ""
+"La escalada de estado de flujo de tareas permite que los flujos de trabajo "
+"ejecuten una transición automáticamente después de un período de tiempo "
+"específico."
 
 #: views/workflow_template_state_escalation_views.py:156
 msgid "There are no escalations for this workflow state."
-msgstr ""
+msgstr "No existen escalamientos para este estado flujo de tareas ."
 
 #: views/workflow_template_state_escalation_views.py:159
 #, python-format
@@ -1295,6 +1299,8 @@ msgstr "Editar la transición del flujo de trabajo: %s"
 msgid ""
 "Create a transition and use it to move a workflow from one state to another."
 msgstr ""
+"Crea una transición y úsala para mover un flujo de tareas de un estado a "
+"otro."
 
 #: views/workflow_template_transition_views.py:150
 msgid "This workflow doesn't have any transitions"
@@ -1543,6 +1549,9 @@ msgid ""
 "Username to use for making the request with HTTP Basic Auth. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Nombre de usuario que se utilizará para realizar la solicitud con "
+"autenticación básica HTTP. El objeto de credencial está disponible como {{ "
+"credential }}."
 
 #: workflow_actions.py:207
 msgid "Password"
@@ -1553,6 +1562,8 @@ msgid ""
 "Password to use for making the request with HTTP Basic Auth. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Contraseña a utilizar para realizar la solicitud con autenticación básica "
+"HTTP. El objeto de credencial está disponible como {{ credential }}."
 
 #: workflow_actions.py:221
 msgid "Headers"
@@ -1563,6 +1574,8 @@ msgid ""
 "Headers to send with the HTTP request. Must be in JSON format. The "
 "credential object is available as {{ credential }}."
 msgstr ""
+"Encabezados para enviar con la solicitud HTTP. Debe estar en formato JSON. "
+"El objeto de credencial está disponible como {{ credential }}."
 
 #: workflow_actions.py:234
 msgid "Payload"
@@ -1582,19 +1595,21 @@ msgstr "Tiempo en segundos para esperar una respuesta."
 
 #: workflow_actions.py:257
 msgid "Store response"
-msgstr ""
+msgstr "Almacenar la respuesta"
 
 #: workflow_actions.py:262
 msgid "Store the response in the workflow context."
-msgstr ""
+msgstr "Almacenar la respuesta en el contexto del flujo de tareas."
 
 #: workflow_actions.py:267
 msgid "Response variable name"
-msgstr ""
+msgstr "Nombre de variable de la respuesta"
 
 #: workflow_actions.py:272
 msgid "Variable used to store the response in the workflow instance context."
 msgstr ""
+"Variable utilizada para almacenar la respuesta en el contexto de instancia "
+"de flujo de tareas."
 
 #: workflow_actions.py:279
 msgid "Perform an HTTP request"
@@ -1602,11 +1617,11 @@ msgstr "Realizar una solicitud HTTP"
 
 #: workflow_actions.py:290
 msgid "Request"
-msgstr ""
+msgstr "Solicitud"
 
 #: workflow_actions.py:298
 msgid "Response"
-msgstr ""
+msgstr "Respuesta"
 
 #: workflow_actions.py:319
 #, python-format

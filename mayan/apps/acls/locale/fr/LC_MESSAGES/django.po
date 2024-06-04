@@ -6,7 +6,7 @@
 # Translators:
 # Roberto Rosario, 2024
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
-# Benoît GROUSSET <benoit@grousset.xyz>, 2024
+# 3d8c9ede7eec1ed3d454abc701cf2020_b5d10da <2cc9776490f3745e0e39b80d9b76a349_955453>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Olivier W, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024

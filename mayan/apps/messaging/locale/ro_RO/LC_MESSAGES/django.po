@@ -287,23 +287,27 @@ msgstr "Marcați %(count)d mesaj selectat ca necitit."
 
 #: workflow_actions.py:20
 msgid "Group name list"
-msgstr ""
+msgstr "Lista de nume de grup"
 
 #: workflow_actions.py:24
 msgid ""
 "Comma separated list of user group names that will receive the message. Can "
 "be a static value or a template."
 msgstr ""
+"Listă separată de virgulă cu numele grupurilor de utilizatori care vor primi"
+" mesajul. Poate fi o valoare statică sau un șablon."
 
 #: workflow_actions.py:34
 msgid "Role name list"
-msgstr ""
+msgstr "Lista de nume de rol"
 
 #: workflow_actions.py:38
 msgid ""
 "Comma separated list of role labels that will receive the message. Can be a "
 "static value or a template."
 msgstr ""
+"Listă separată de virgulă de etichete de rol care vor primi mesajul. Poate "
+"fi o valoare statică sau un șablon."
 
 #: workflow_actions.py:48
 msgid "Username list"
@@ -314,15 +318,19 @@ msgid ""
 "Comma separated list of usernames that will receive the message. Can be a "
 "static value or a template."
 msgstr ""
+"Listă separată de virgulă cu nume de utilizator care vor primi mesajul. "
+"Poate fi o valoare statică sau un șablon."
 
 #: workflow_actions.py:69
 msgid ""
 "Subject of the message to be sent. Can be a static value or a template."
 msgstr ""
+"Subiectul mesajului care urmează să fie trimis. Poate fi o valoare statică "
+"sau un șablon."
 
 #: workflow_actions.py:84
 msgid "The actual text to send. Can be a static value or a template."
-msgstr ""
+msgstr "Textul real de trimis. Poate fi o valoare statică sau un șablon."
 
 #: workflow_actions.py:94
 msgid "Send user message"

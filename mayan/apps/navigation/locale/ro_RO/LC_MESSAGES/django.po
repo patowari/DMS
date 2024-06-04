@@ -39,16 +39,16 @@ msgstr "Comutare  mod listă"
 
 #: templates/navigation/app/list_toolbar.html:14
 msgid "Sort by column"
-msgstr ""
+msgstr "Sortați după coloană"
 
 #: templates/navigation/app/list_toolbar.html:15
 msgid "--- Clear ---"
-msgstr ""
+msgstr "--- Liber---"
 
 #: templates/navigation/app/list_toolbar.html:18
 msgid "(ascending)"
-msgstr ""
+msgstr "(ascendent)"
 
 #: templates/navigation/app/list_toolbar.html:20
 msgid "(descending)"
-msgstr ""
+msgstr "(Descendentă)"

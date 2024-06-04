@@ -37,15 +37,15 @@ msgstr "Dokumentum indexelés"
 
 #: apps.py:155 apps.py:185 apps.py:225 apps.py:259
 msgid "Level"
-msgstr ""
+msgstr "Szint"
 
 #: apps.py:163 apps.py:194 serializers.py:20 serializers.py:60
 msgid "Depth"
-msgstr ""
+msgstr "Mélység"
 
 #: apps.py:167
 msgid "Total nodes"
-msgstr ""
+msgstr "Összes csomópont"
 
 #: apps.py:174
 msgid "Total documents"
@@ -57,7 +57,7 @@ msgstr "Az elemben található egyedi dokumentumok száma."
 
 #: apps.py:202
 msgid "Nodes"
-msgstr ""
+msgstr "Csomópontok"
 
 #: apps.py:213 models/index_instance_models.py:67
 msgid "Documents"
@@ -365,7 +365,7 @@ msgstr "Dokumentum ellenőrző összeg"
 
 #: serializers.py:23 serializers.py:69
 msgid "Node count"
-msgstr ""
+msgstr "Csomópontok száma"
 
 #: serializers.py:27 serializers.py:298
 msgid "Nodes URL"

@@ -144,7 +144,7 @@ msgstr "Color de la etiqueta"
 
 #: search.py:14
 msgid "The database ID of the tag."
-msgstr ""
+msgstr "El ID de la base de datos de la etiqueta."
 
 #: search.py:15 serializers.py:34 serializers.py:43
 msgid "Tag ID"

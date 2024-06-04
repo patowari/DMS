@@ -223,7 +223,7 @@ msgstr "Van alapértelmezése?"
 
 #: serializers.py:52
 msgid "Help text"
-msgstr ""
+msgstr "Súgó szöveg"
 
 #: serializers.py:55 serializers.py:74
 msgid "Name"
@@ -267,7 +267,7 @@ msgstr "Engedély"
 
 #: serializers.py:118
 msgid "Binary content for the new file."
-msgstr ""
+msgstr "Bináris tartalom az új fájlhoz."
 
 #: serializers.py:154
 msgid "Actions URL"

@@ -182,11 +182,11 @@ msgstr "Codificación MIME del archivo de documento "
 
 #: search.py:50
 msgid "The database ID of the cabinet."
-msgstr ""
+msgstr "El ID de la base de datos del gabinete."
 
 #: search.py:51
 msgid "Cabinet ID"
-msgstr ""
+msgstr "ID del gabinete"
 
 #: serializers.py:18
 msgid "List of children cabinets."

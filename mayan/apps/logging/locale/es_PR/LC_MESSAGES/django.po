@@ -31,7 +31,7 @@ msgstr "Sistema"
 
 #: apps.py:64
 msgid "Domain"
-msgstr ""
+msgstr "Dominio"
 
 #: events.py:10
 msgid "Error log deleted"
@@ -56,7 +56,7 @@ msgstr "Borrar los errores"
 #: model_mixins.py:11
 #, python-format
 msgid "Unknown domain name: %s"
-msgstr ""
+msgstr "Nombre de dominio desconocido: %s"
 
 #: model_mixins.py:18
 msgid "Object"
@@ -92,7 +92,7 @@ msgstr "Fecha y hora"
 
 #: models.py:78
 msgid "Domain name"
-msgstr ""
+msgstr "Nombre de dominio"
 
 #: models.py:81
 msgid "Text"

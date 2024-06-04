@@ -89,11 +89,14 @@ msgstr "Generar un paquete de archivos de documentos comprimidos"
 #: settings.py:21
 msgid "Path to the download subclass to use when downloading document files."
 msgstr ""
+"Ruta a la subclase de descarga que se utilizará al descargar archivos de "
+"documentos."
 
 #: settings.py:29
 msgid ""
 "Arguments to pass to the DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
 msgstr ""
+"Argumentos para pasar al DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
 
 #: settings.py:36
 msgid ""

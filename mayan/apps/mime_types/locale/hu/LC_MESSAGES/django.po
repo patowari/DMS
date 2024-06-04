@@ -22,7 +22,7 @@ msgstr ""
 
 #: apps.py:9 settings.py:10
 msgid "MIME types"
-msgstr ""
+msgstr "MIME típusok"
 
 #: backends/file_command.py:26
 msgid "file command not installed or not found."

@@ -199,7 +199,7 @@ msgstr "De bază"
 
 #: forms/workflow_template_transition_field_forms.py:17
 msgid "Field"
-msgstr ""
+msgstr "Câmp"
 
 #: forms/workflow_template_transition_field_forms.py:21
 msgid "Value"
@@ -574,11 +574,11 @@ msgstr "Valoarea erorii de căutare: %s"
 
 #: models/workflow_transition_field_model_mixins.py:110
 msgid "Has a default?"
-msgstr ""
+msgstr "Are o valoare implicită?"
 
 #: models/workflow_transition_field_model_mixins.py:118
 msgid "Has a lookup?"
-msgstr ""
+msgstr "Are o căutare?"
 
 #: models/workflow_transition_field_model_mixins.py:129
 msgid "Value is not one of the provided options."
@@ -598,7 +598,7 @@ msgstr "Numele câmpului care va fi afișat pe interfața de utilizator."
 
 #: models/workflow_transition_field_models.py:48
 msgid "Optional default value for the field. Can be a template."
-msgstr ""
+msgstr "Valoare implicită opțională pentru câmp. Poate fi un șablon."
 
 #: models/workflow_transition_field_models.py:49
 msgid "Default"
@@ -1147,10 +1147,12 @@ msgid ""
 "Workflow state escalation allow workflows to execute a transition "
 "automatically after a specific amount of time."
 msgstr ""
+"Escalarea stării fluxului de lucru permite fluxurilor de lucru să execute "
+"automat o tranziție după o anumită perioadă de timp."
 
 #: views/workflow_template_state_escalation_views.py:156
 msgid "There are no escalations for this workflow state."
-msgstr ""
+msgstr "Nu există escalade pentru această stare de flux de lucru."
 
 #: views/workflow_template_state_escalation_views.py:159
 #, python-format
@@ -1292,6 +1294,8 @@ msgstr "Editați tranziția fluxului de lucru: %s"
 msgid ""
 "Create a transition and use it to move a workflow from one state to another."
 msgstr ""
+"Creați o tranziție și utilizați-o pentru a muta un flux de lucru dintr-o "
+"stare în alta."
 
 #: views/workflow_template_transition_views.py:150
 msgid "This workflow doesn't have any transitions"
@@ -1540,6 +1544,8 @@ msgid ""
 "Username to use for making the request with HTTP Basic Auth. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Nume de utilizator de utilizat pentru a face cererea cu HTTP Basic Auth. "
+"Obiectul acreditării este disponibil ca {{ credential }}."
 
 #: workflow_actions.py:207
 msgid "Password"
@@ -1550,6 +1556,8 @@ msgid ""
 "Password to use for making the request with HTTP Basic Auth. The credential "
 "object is available as {{ credential }}."
 msgstr ""
+"Parola de utilizat pentru a face cererea cu HTTP Basic Auth. Obiectul "
+"acreditării este disponibil ca {{ credential }}."
 
 #: workflow_actions.py:221
 msgid "Headers"
@@ -1560,6 +1568,8 @@ msgid ""
 "Headers to send with the HTTP request. Must be in JSON format. The "
 "credential object is available as {{ credential }}."
 msgstr ""
+"Anteturi de trimis cu cererea HTTP. Trebuie să fie în format JSON. Obiectul "
+"acreditării este disponibil ca {{ credential }}."
 
 #: workflow_actions.py:234
 msgid "Payload"
@@ -1579,19 +1589,21 @@ msgstr "Timp în secunde de așteptare a unui răspuns."
 
 #: workflow_actions.py:257
 msgid "Store response"
-msgstr ""
+msgstr "Răspunsul stocării"
 
 #: workflow_actions.py:262
 msgid "Store the response in the workflow context."
-msgstr ""
+msgstr "Stocați răspunsul în contextul fluxului de lucru."
 
 #: workflow_actions.py:267
 msgid "Response variable name"
-msgstr ""
+msgstr "Numele variabilei de răspuns"
 
 #: workflow_actions.py:272
 msgid "Variable used to store the response in the workflow instance context."
 msgstr ""
+"Variabilă utilizată pentru a stoca răspunsul în contextul instanței fluxului"
+" de lucru."
 
 #: workflow_actions.py:279
 msgid "Perform an HTTP request"
@@ -1599,11 +1611,11 @@ msgstr "Efectuați o solicitare HTTP"
 
 #: workflow_actions.py:290
 msgid "Request"
-msgstr ""
+msgstr "Cerere"
 
 #: workflow_actions.py:298
 msgid "Response"
-msgstr ""
+msgstr "Răspuns"
 
 #: workflow_actions.py:319
 #, python-format

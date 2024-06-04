@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -480,17 +480,17 @@ msgstr[5] ""
 msgid "Edit metadata for document: %s"
 msgstr "تعديل البيانات الوصفية للوثيقة: %s"
 
-#: views/document_views.py:330
+#: views/document_views.py:334
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr "خطأ في تحرير البيانات الوصفية للوثيقة: %(document)s ؛ %(exception)s."
 
-#: views/document_views.py:343
+#: views/document_views.py:347
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr "تم تعديل البيانات الوصفية للوثيقة %s بنجاح"
 
-#: views/document_views.py:368
+#: views/document_views.py:372
 msgid ""
 "Add metadata types this document's type to be able to add them to individual"
 " documents. Once added to individual document, you can then edit their "
@@ -499,26 +499,26 @@ msgstr ""
 "أضف أنواع البيانات الوصفية لنوع هذا المستند لتتمكن من إضافتها إلى المستندات "
 "الفردية. بمجرد إضافتها إلى مستند فردي ، يمكنك بعد ذلك تعديل قيمها."
 
-#: views/document_views.py:373
+#: views/document_views.py:377
 msgid "This document doesn't have any metadata"
 msgstr "لا يحتوي هذا المستند على أي بيانات وصفية"
 
-#: views/document_views.py:376
+#: views/document_views.py:380
 #, python-format
 msgid "Metadata for document: %s"
 msgstr "البيانات الوصفية للوثيقة: %s"
 
-#: views/document_views.py:392
+#: views/document_views.py:396
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "تم إجراء طلب إزالة بيانات التعريف على مستند %(count)d"
 
-#: views/document_views.py:395
+#: views/document_views.py:399
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
 msgstr "تم إجراء طلب إزالة البيانات الوصفية على مستندات %(count)d"
 
-#: views/document_views.py:405
+#: views/document_views.py:409
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] ""
@@ -528,12 +528,12 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: views/document_views.py:416
+#: views/document_views.py:420
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "الغاء البيانات الاولية للوثيقة : %s"
 
-#: views/document_views.py:482
+#: views/document_views.py:486
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
@@ -542,7 +542,7 @@ msgstr ""
 "تمت إزالة نوع البيانات الوصفية &quot;%(metadata_type)s&quot; من الوثيقة: "
 "%(document)s."
 
-#: views/document_views.py:492
+#: views/document_views.py:496
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "

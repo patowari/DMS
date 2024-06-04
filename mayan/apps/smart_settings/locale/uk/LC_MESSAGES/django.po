@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -651,19 +651,26 @@ msgstr "Значення налаштування \"%(object)s\" відновл�
 msgid "%(count)d setting value reverted."
 msgstr "%(count)d значення налаштування скасовано."
 
-#: views.py:143
+#: views.py:136
+#, python-format
+msgid "Revert the value of the %(count)d selected settings."
+msgstr ""
+
+#: views.py:138
+#, python-format
+msgid "Revert the value of setting: %(object)s"
+msgstr ""
+
+#: views.py:140
+#, python-format
+msgid "Revert the value of %(count)d selected setting."
+msgstr ""
+
+#: views.py:150
 msgid "Unsaved changes will be lost."
 msgstr "Незбережені зміни будуть втрачені."
 
-#: views.py:146
-msgid "Revert the selected setting value?"
-msgid_plural "Revert the selected settings value?"
-msgstr[0] "Повернути обране значення налаштування?"
-msgstr[1] "Повернути обране значення налаштувань?"
-msgstr[2] "Повернути обране значення налаштувань?"
-msgstr[3] "Повернути обране значення налаштувань?"
-
-#: views.py:185
+#: views.py:187
 msgid ""
 "Settings inherited from an environment variable take precedence and cannot "
 "be changed in this view. "
@@ -671,12 +678,12 @@ msgstr ""
 "Налаштування, успадковані від змінної середовища, мають пріоритет і не "
 "можуть бути змінені в цьому перегляді."
 
-#: views.py:188
+#: views.py:190
 #, python-format
 msgid "Settings in namespace: %s"
 msgstr "Налаштування в просторі імен: %s"
 
-#: views.py:198
+#: views.py:200
 #, python-format
 msgid "Namespace: %s, not found"
 msgstr "Простір імен: %s, не знайдено"

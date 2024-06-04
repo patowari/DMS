@@ -171,7 +171,7 @@ msgstr "No hay archivos de fuente de origien disponibles"
 
 #: source_backends/stored_file_mixins.py:191
 msgid "Width value to be passed to the image converter backend."
-msgstr ""
+msgstr "Valor de ancho que se pasará al backend del convertidor de imágenes."
 
 #: source_backends/stored_file_mixins.py:197
 msgid "Preview width"
@@ -183,6 +183,9 @@ msgid ""
 "have the image converter calculate the correct aspect ratio for the "
 "specified preview width."
 msgstr ""
+"Valor de altura que se pasará al backend del convertidor de imágenes. Déjelo"
+" en blanco para que el convertidor de imágenes calcule la relación de "
+"aspecto correcta para el ancho de vista previa especificado."
 
 #: source_backends/stored_file_mixins.py:211
 msgid "Preview height"
@@ -193,6 +196,8 @@ msgid ""
 "Maximum file size in bytes for which previews will be generated. Example: "
 "20000 = 20KB."
 msgstr ""
+"Tamaño máximo de archivo en bytes para el que se generarán vistas previas. "
+"Ejemplo: 20000 = 20 KB."
 
 #: source_backends/stored_file_mixins.py:221
 msgid "Max size preview"
@@ -204,7 +209,7 @@ msgstr "Imágenes de archivo"
 
 #: templates/source_stored_files/errors/staging_file_error.html:5
 msgid "Error generating preview"
-msgstr ""
+msgstr "Error generando previsualización"
 
 #: templates/source_stored_files/errors/staging_file_too_large.html:5
 msgid "File too large for preview"

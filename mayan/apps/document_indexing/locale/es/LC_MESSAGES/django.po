@@ -366,7 +366,7 @@ msgstr "Suma de comprobación del documento"
 
 #: serializers.py:23 serializers.py:69
 msgid "Node count"
-msgstr ""
+msgstr "Conteo de nodos"
 
 #: serializers.py:27 serializers.py:298
 msgid "Nodes URL"

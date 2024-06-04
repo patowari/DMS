@@ -138,7 +138,7 @@ msgstr "Selectați o nouă transformare"
 
 #: model_mixins.py:120
 msgid "Badly formatted arguments YAML"
-msgstr ""
+msgstr "Argumente YAML prost formatate"
 
 #: model_mixins.py:131 models.py:168
 msgid "Arguments"
@@ -343,7 +343,7 @@ msgstr ""
 
 #: settings.py:104
 msgid "Whether or not to load truncated image files."
-msgstr ""
+msgstr "Dacă trebuie sau nu să încărcați fișiere de imagine trunchiate."
 
 #: storages.py:15
 msgid ""
@@ -600,15 +600,15 @@ msgstr "Oglindire"
 
 #: transformations.py:587
 msgid "Draw a QRCode (percent coordinates)"
-msgstr ""
+msgstr "Desenați un cod QRC (coordonate procentuale)"
 
 #: transformations.py:597
 msgid "Value to encode in the QRCode."
-msgstr ""
+msgstr "Valoare de codat în QRCode."
 
 #: transformations.py:598
 msgid "Code value"
-msgstr ""
+msgstr "Valoarea codului"
 
 #: transformations.py:623
 msgid "Resize"
@@ -811,6 +811,9 @@ msgid ""
 "a YAML dictionary. ie: {\"degrees\": 180}. The document version page is "
 "available as {{ document_version_page }}."
 msgstr ""
+"Introduceți un șablon care va genera argumentele pentru transformare ca "
+"dicționar YAML. adică: {&quot;grade&quot;: 180}. Pagina versiunii "
+"documentului este disponibilă ca {{ document_version_page }}."
 
 #: workflow_actions.py:63
 msgid "Add transformation"

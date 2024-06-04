@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: lilo.panic, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
@@ -477,18 +477,18 @@ msgstr[3] "Редактировать метаданные документов"
 msgid "Edit metadata for document: %s"
 msgstr "Редактировать метаданные документа:%s"
 
-#: views/document_views.py:330
+#: views/document_views.py:334
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr ""
 "Ошибка при редактировании метаданных документа: %(document)s; %(exception)s."
 
-#: views/document_views.py:343
+#: views/document_views.py:347
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr "Метаданные для документа %s изменены."
 
-#: views/document_views.py:368
+#: views/document_views.py:372
 msgid ""
 "Add metadata types this document's type to be able to add them to individual"
 " documents. Once added to individual document, you can then edit their "
@@ -498,26 +498,26 @@ msgstr ""
 "добавлять их в отдельные документы. После добавления в отдельный документ вы"
 " можете редактировать их значения."
 
-#: views/document_views.py:373
+#: views/document_views.py:377
 msgid "This document doesn't have any metadata"
 msgstr "Документ не имеет метаданных"
 
-#: views/document_views.py:376
+#: views/document_views.py:380
 #, python-format
 msgid "Metadata for document: %s"
 msgstr "Метаданные документа: %s"
 
-#: views/document_views.py:392
+#: views/document_views.py:396
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "Запрос на удаление метаданных выполнен для %(count)d документа"
 
-#: views/document_views.py:395
+#: views/document_views.py:399
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
 msgstr "Запрос на удаление метаданных выполнен для %(count)d документов"
 
-#: views/document_views.py:405
+#: views/document_views.py:409
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] "Удалить типы метаданных из документа"
@@ -525,19 +525,19 @@ msgstr[1] "Удалить типы метаданных из документо�
 msgstr[2] "Удалить типы метаданных из документов"
 msgstr[3] "Удалить типы метаданных из документов"
 
-#: views/document_views.py:416
+#: views/document_views.py:420
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "Удалить типы метаданных из документа: %s"
 
-#: views/document_views.py:482
+#: views/document_views.py:486
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
 "%(document)s."
 msgstr "Тип метаданных \"%(metadata_type)s\" удален из документа: %(document)s."
 
-#: views/document_views.py:492
+#: views/document_views.py:496
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "
