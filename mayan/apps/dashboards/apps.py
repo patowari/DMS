@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_object, menu_return, menu_tools
 from mayan.apps.navigation.source_columns import SourceColumn
 

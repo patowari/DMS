@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_object, menu_secondary, menu_tools
 from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.source_columns import SourceColumn

@@ -1,4 +1,4 @@
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 
 
 class MOTDApp(MayanAppConfig):

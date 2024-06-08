@@ -2,7 +2,7 @@ from django.apps import apps
 from django.db.models.signals import post_delete
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet, menu_tools
 from mayan.apps.documents.menus import menu_documents
 from mayan.apps.documents.permissions import permission_document_view

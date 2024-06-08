@@ -2,7 +2,7 @@ from django.apps import apps
 from django.db.models.signals import pre_delete, pre_save
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 
 from .handlers import handler_document_cache_delete, handler_node_cache_delete
 

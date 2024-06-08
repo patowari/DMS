@@ -54,6 +54,8 @@
   `dev-setup`. Update the OS target to include the OS name `ubuntu`.
 - Fix file caching app class name from `FileCachingConfig` to
   `FileCachingAppConfig`.
+- Add new app named "App manager" that displays the list of the discovered
+  and active Mayan EDMS apps in an installation.
 
 4.7.1 (2024-06-04)
 ==================

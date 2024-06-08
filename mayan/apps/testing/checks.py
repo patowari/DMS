@@ -2,7 +2,7 @@ from django.apps import apps
 from django.core import checks
 from django.test.runner import DiscoverRunner
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 
 
 def check_app_tests(app_configs=None, **kwargs):

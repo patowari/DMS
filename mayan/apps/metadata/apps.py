@@ -8,7 +8,7 @@ from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.permissions import (
     permission_acl_edit, permission_acl_view
 )
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
     menu_list_facet, menu_multi_item, menu_object, menu_related, menu_return,

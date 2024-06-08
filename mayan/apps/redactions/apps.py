@@ -4,7 +4,7 @@ from django.apps import apps
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.classes import ModelPermission
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet
 
 from .links import link_redaction_list

@@ -4,7 +4,7 @@ import uuid
 
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 
 from .backends.base import LockingBackend
 from .literals import COMMAND_NAME_LOCK_MANAGER_PURGE_LOCKS, TEST_LOCK_NAME

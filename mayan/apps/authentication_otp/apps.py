@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_secondary, menu_user
 from mayan.apps.events.classes import ModelEventType
 

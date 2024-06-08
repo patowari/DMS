@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     # User management app must go before authentication to ensure the Group
     # and User models are properly setup using runtime methods.
     'mayan.apps.user_management.apps.UserManagementApp',
+    'mayan.apps.app_manager.apps.AppManagerAppConfig',
     'mayan.apps.authentication.apps.AuthenticationApp',
     'mayan.apps.authentication_oidc.apps.AuthenticationOIDCApp',
     'mayan.apps.authentication_otp.apps.AuthenticationOTPApp',

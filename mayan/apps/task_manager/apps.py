@@ -6,7 +6,7 @@ from django.apps import apps
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
 from mayan.apps.common.signals import signal_perform_upgrade
 from mayan.apps.forms import column_widgets

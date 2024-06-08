@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.common.apps import MayanAppConfig
+from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.converter.classes import AppImageErrorImage
 
 from .literals import IMAGE_ERROR_NAME_BASE_ERROR
