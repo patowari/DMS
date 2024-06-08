@@ -19,6 +19,6 @@ setting_user_language_default = setting_namespace.do_setting_add(
 setting_user_timezone_default = setting_namespace.do_setting_add(
     choices=get_timezone_option_list(), default=settings.TIME_ZONE,
     global_name='LOCALES_USER_DEFAULT_TIMEZONE', help_text=_(
-        message='Default profile language for new user accounts.'
+        message='Default profile timezone for new user accounts.'
     )
 )

@@ -84,11 +84,11 @@ msgstr "¿Tiene una contraseña utilizable?"
 
 #: apps.py:173
 msgid "All the groups"
-msgstr ""
+msgstr "Todos los grupos"
 
 #: apps.py:177
 msgid "All the users"
-msgstr ""
+msgstr "Todos los usuarios"
 
 #: dashboard_widgets.py:14
 msgid "Total users"

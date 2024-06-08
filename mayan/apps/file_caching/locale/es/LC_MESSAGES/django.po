@@ -50,7 +50,7 @@ msgstr "Partición de caché purgada"
 
 #: forms.py:11
 msgid "Identification"
-msgstr ""
+msgstr "Identificación"
 
 #: forms.py:15
 msgid "Storage"
@@ -58,7 +58,7 @@ msgstr "Almacenamiento"
 
 #: forms.py:19
 msgid "Configuration"
-msgstr ""
+msgstr "Configuración"
 
 #: forms.py:25
 msgid "Objects"

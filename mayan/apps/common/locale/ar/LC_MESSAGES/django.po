@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "المشتركة"
 
@@ -70,23 +70,23 @@ msgstr "نسخ"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "التثبيت "
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "مصدر الرمز"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "متجر عالمي"
 
-#: links.py:83
-msgid "Get support"
-msgstr "الدعم الفني"
+#: links.py:84
+msgid "Support"
+msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "الأدوات"
 

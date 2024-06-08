@@ -114,7 +114,7 @@ The PostgreSQL settings ``max_connections`` can be configure via the
 environment variable ``MAYAN_DOCKER_POSTGRESQL_MAX_CONNECTIONS``. The default
 value is now 150 connections.
 
-The PosgreSQL container supports loading custom initialziation SQL via a new
+The PosgreSQL container supports loading custom initialization SQL via a new
 ``initdb.d`` volume.
 
 The PostgreSQL image was updated from 13.14-alpine to 14.11-alpine. An update

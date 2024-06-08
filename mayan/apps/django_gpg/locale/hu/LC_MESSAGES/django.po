@@ -60,15 +60,15 @@ msgstr "GNU adatvédelmi őr – PGP implementáció."
 
 #: events.py:6 links.py:42 permissions.py:6
 msgid "Key management"
-msgstr ""
+msgstr "Kulcskezelés"
 
 #: events.py:10
 msgid "Key created"
-msgstr ""
+msgstr "Kulcs létrehozva"
 
 #: events.py:14
 msgid "Key downloaded"
-msgstr ""
+msgstr "Kulcs letöltve"
 
 #: forms.py:27
 msgid "None"
@@ -76,11 +76,11 @@ msgstr "Nincs"
 
 #: forms.py:32 models.py:36
 msgid "Fingerprint"
-msgstr ""
+msgstr "Ujjlenyomat"
 
 #: forms.py:38 models.py:42
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmus"
 
 #: forms.py:56
 msgid "Term"
@@ -104,7 +104,7 @@ msgstr "Letöltés"
 
 #: links.py:32 permissions.py:28
 msgid "Query keyservers"
-msgstr ""
+msgstr "Kulcsszerverek lekérdezése"
 
 #: links.py:37
 msgid "Import"
@@ -116,19 +116,19 @@ msgstr "Kulcs feltöltése"
 
 #: links.py:50 views.py:213
 msgid "Private keys"
-msgstr ""
+msgstr "Privát kulcsok"
 
 #: links.py:54 views.py:238
 msgid "Public keys"
-msgstr ""
+msgstr "Nyilvános kulcsok"
 
 #: literals.py:23 literals.py:31
 msgid "Public"
-msgstr ""
+msgstr "Nyilvános"
 
 #: literals.py:24 literals.py:32
 msgid "Secret"
-msgstr ""
+msgstr "Titok"
 
 #: literals.py:41 literals.py:50
 msgid "RSA"
@@ -144,27 +144,29 @@ msgstr "Elgamal"
 
 #: literals.py:70
 msgid "Bad signature."
-msgstr ""
+msgstr "Rossz aláírás."
 
 #: literals.py:73
 msgid "Document not signed or invalid signature."
-msgstr ""
+msgstr "A dokumentum nincs aláírva, vagy érvénytelen az aláírás."
 
 #: literals.py:76
 msgid "Signature error."
-msgstr ""
+msgstr "Aláírási hiba."
 
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
 msgstr ""
+"A dokumentum alá van írva, de nem áll rendelkezésre nyilvános kulcs az "
+"ellenőrzéshez."
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
-msgstr ""
+msgstr "A dokumentum aláírva, az aláírás jó."
 
 #: literals.py:88
 msgid "Document is signed with a valid signature."
-msgstr ""
+msgstr "A dokumentumot érvényes aláírással írták alá."
 
 #: models.py:24
 msgid "ASCII armored version of the key."
@@ -180,7 +182,7 @@ msgstr "Kulcs"
 
 #: models.py:56
 msgid "Keys"
-msgstr ""
+msgstr "Kulcsok"
 
 #: models.py:71
 msgid "Invalid key data"

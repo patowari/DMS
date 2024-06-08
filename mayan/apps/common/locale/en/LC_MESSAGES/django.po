@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2020-07-09 04:05+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr ""
 
@@ -66,23 +66,23 @@ msgstr ""
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr ""
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr ""
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr ""
 
-#: links.py:83
-msgid "Get support"
+#: links.py:84
+msgid "Support"
 msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr ""
 

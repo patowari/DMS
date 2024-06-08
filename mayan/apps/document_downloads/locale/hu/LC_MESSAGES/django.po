@@ -23,7 +23,7 @@ msgstr ""
 
 #: apps.py:23 permissions.py:6 settings.py:14
 msgid "Document downloads"
-msgstr ""
+msgstr "Dokumentumletöltések"
 
 #: classes.py:49
 msgid "Document_file_bundle.zip"
@@ -76,11 +76,11 @@ msgstr ""
 
 #: literals.py:13
 msgid "Document files ready for download."
-msgstr ""
+msgstr "Dokumentumfájlok letöltésre készen."
 
 #: permissions.py:10
 msgid "Download document files"
-msgstr ""
+msgstr "Dokumentumfájlok letöltése"
 
 #: queues.py:13
 msgid "Generate a compressed document file bundle"
@@ -89,11 +89,15 @@ msgstr "Tömörített dokumentumfájl-csomag létrehozása"
 #: settings.py:21
 msgid "Path to the download subclass to use when downloading document files."
 msgstr ""
+"A dokumentumfájlok letöltésekor használandó letöltési alosztály elérési "
+"útja."
 
 #: settings.py:29
 msgid ""
 "Arguments to pass to the DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND."
 msgstr ""
+"A DOCUMENT_DOWNLOADS_DOCUMENT_FILE_DOWNLOAD_BACKEND-nek átadandó "
+"argumentumok."
 
 #: settings.py:36
 msgid ""

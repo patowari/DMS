@@ -87,11 +87,11 @@ msgstr "Are parola utilizabilă?"
 
 #: apps.py:173
 msgid "All the groups"
-msgstr ""
+msgstr "Toate grupurile"
 
 #: apps.py:177
 msgid "All the users"
-msgstr ""
+msgstr "Toți utilizatorii"
 
 #: dashboard_widgets.py:14
 msgid "Total users"

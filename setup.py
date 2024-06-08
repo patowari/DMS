@@ -105,7 +105,7 @@ importlib-metadata==7.1.0
 jsonschema==4.22.0
 mozilla-django-oidc==4.0.1
 node-semver==0.9.0
-pycountry==23.12.11
+pycountry==24.6.1
 pycryptodome==3.20.0
 pyotp==2.9.0
 pypdf==4.2.0
@@ -114,10 +114,10 @@ python-magic==0.4.27
 python_gnupg==0.5.2
 pytz==2024.1
 qrcode==7.4.2
-requests==2.31.0
+requests==2.32.3
 sentry-sdk==2.1.1
 setuptools==69.5.1
-sh==2.0.6
+sh==2.0.7
 swagger-spec-validator==3.0.3
 whitenoise==6.6.0
 """.split()

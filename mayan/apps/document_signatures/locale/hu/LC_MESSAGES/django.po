@@ -242,7 +242,7 @@ msgstr "Leválasztott dokumentumaláírások letöltése"
 
 #: permissions.py:26
 msgid "Upload detached document signatures"
-msgstr ""
+msgstr "Leválasztott dokumentumaláírások feltöltése"
 
 #: permissions.py:30
 msgid "Verify document signatures"
@@ -250,7 +250,7 @@ msgstr "Dokumentum aláírások ellenőrzése"
 
 #: permissions.py:34
 msgid "View document signatures"
-msgstr ""
+msgstr "Dokumentum aláírások megtekintése"
 
 #: queues.py:10
 msgid "Signatures slow"
@@ -282,7 +282,7 @@ msgstr "Dokumentumfájl URL"
 
 #: serializers.py:59
 msgid "Primary key of the secret key used to sign the document file."
-msgstr ""
+msgstr "A dokumentumfájl aláírásához használt titkos kulcs elsődleges kulcsa."
 
 #: serializers.py:110
 msgid "URL"
@@ -310,15 +310,15 @@ msgstr "Leválasztott aláírások"
 
 #: views.py:75 views.py:145
 msgid "Passphrase is needed to unlock this key."
-msgstr ""
+msgstr "A kulcs feloldásához jelszóra van szükség."
 
 #: views.py:88 views.py:158
 msgid "Passphrase is incorrect."
-msgstr ""
+msgstr "A jelszó hibás."
 
 #: views.py:101 views.py:171
 msgid "Document file signed successfully."
-msgstr ""
+msgstr "A dokumentumfájl aláírása sikeresen megtörtént."
 
 #: views.py:111
 #, python-format
@@ -333,17 +333,17 @@ msgstr " A \"%s\" dokumentumfájlt aláírása beágyazott aláírással"
 #: views.py:205
 #, python-format
 msgid "Delete detached signature: %s"
-msgstr ""
+msgstr "A leválasztott aláírás törlése: %s"
 
 #: views.py:257
 #, python-format
 msgid "Upload detached signature for document file: %s"
-msgstr ""
+msgstr "Leválasztott aláírás feltöltése ehhez a dokumentumfájlhoz: %s"
 
 #: views.py:287
 #, python-format
 msgid "Details for signature: %s"
-msgstr ""
+msgstr "Ennek az aláírásnak a részletei: %s"
 
 #: views.py:312
 msgid ""
@@ -357,12 +357,12 @@ msgstr ""
 
 #: views.py:341
 msgid "There are no signatures for this document file."
-msgstr ""
+msgstr "Ehhez a dokumentumfájlhoz nincsenek aláírások."
 
 #: views.py:345
 #, python-format
 msgid "Signatures for document file: %s"
-msgstr ""
+msgstr "Ennek a dokumentumfájlnak az aláírásai: %s"
 
 #: views.py:356 views.py:378
 msgid "On large databases this operation may take some time to execute."
@@ -370,7 +370,7 @@ msgstr "A nagy adatbázisok esetében a művelet sokáig is tarthat."
 
 #: views.py:358
 msgid "Refresh all signatures information?"
-msgstr ""
+msgstr "Frissíti az összes aláírási információt?"
 
 #: views.py:370
 msgid "Signature information refresh queued successfully."
@@ -378,7 +378,7 @@ msgstr "Az aláírási információk frissítése sikeresen sorba került."
 
 #: views.py:380
 msgid "Verify all document for signatures?"
-msgstr ""
+msgstr "Ellenőrzi az összes dokumentumot aláírás céljából?"
 
 #: views.py:391
 msgid "Signature verification queued successfully."
@@ -390,11 +390,11 @@ msgstr "Dokumentum aláírása (leválasztott)"
 
 #: workflow_actions.py:48
 msgid "Private key that will be used to sign the document file."
-msgstr ""
+msgstr "Privát kulcs, amely a dokumentumfájl aláírására szolgál."
 
 #: workflow_actions.py:55
 msgid "Private key"
-msgstr ""
+msgstr "Privát kulcs"
 
 #: workflow_actions.py:81
 msgid ""
@@ -407,4 +407,4 @@ msgstr ""
 
 #: workflow_actions.py:102
 msgid "Sign document (embedded)"
-msgstr ""
+msgstr "Dokumentum aláírása (beágyazott)"

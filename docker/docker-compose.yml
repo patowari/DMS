@@ -7,7 +7,7 @@ x-mayan-container:
     MAYAN_DATABASES: "{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'${MAYAN_DATABASE_NAME:-mayan}','PASSWORD':'${MAYAN_DATABASE_PASSWORD:-mayandbpass}','USER':'${MAYAN_DATABASE_USER:-mayan}','HOST':'${MAYAN_DATABASE_HOST:-postgresql}','PORT':${MAYAN_DATABASE_PORT:-},'CONN_MAX_AGE':${MAYAN_DATABASE_CONN_MAX_AGE:-0},${MAYAN_DATABASE_EXTRA_OPTIONS:-}}}"
     MAYAN_LOCK_MANAGER_BACKEND: mayan.apps.lock_manager.backends.redis_lock.RedisLock
     MAYAN_LOCK_MANAGER_BACKEND_ARGUMENTS: "{'redis_url':'redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@redis:6379/${MAYAN_REDIS_LOCK_MANAGER_DATABASE:-2}'}"
-  image: ${MAYAN_DOCKER_IMAGE_NAME:-mayanedms/mayanedms}:${MAYAN_DOCKER_IMAGE_TAG:-s4.6}
+  image: ${MAYAN_DOCKER_IMAGE_NAME:-mayanedms/mayanedms}:${MAYAN_DOCKER_IMAGE_TAG:-s4.7}
   logging:
     driver: "json-file"
     options:
@@ -136,7 +136,7 @@ services:
       POSTGRES_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
       POSTGRES_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
       POSTGRES_USER: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
-    image: ${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.14-alpine}
+    image: ${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.15-alpine}
     networks:
       - keycloak
     profiles:
@@ -168,7 +168,7 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.11-alpine}
+    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.12-alpine}
     networks:
       - mayan
     # Enable to allow external access to the database.
@@ -195,7 +195,7 @@ services:
       PGHOST: ${MAYAN_DATABASE_HOST:-postgresql}
       PGPASSWORD: ${MAYAN_DATABASE_PASSWORD:-mayandbpass}
       PGUSER: ${MAYAN_DATABASE_USER:-mayan}
-    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.11-alpine}
+    image: ${MAYAN_DOCKER_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_POSTGRESQL_TAG:-14.12-alpine}
     networks:
       - mayan
     profiles:
@@ -210,7 +210,7 @@ services:
       RABBITMQ_DEFAULT_PASS: ${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}
       RABBITMQ_DEFAULT_VHOST: ${MAYAN_RABBITMQ_VHOST:-mayan}
     hostname: ${MAYAN_DOCKER_RABBITMQ_HOSTNAME:-rabbitmq}
-    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.12.13-management-alpine}
+    image: ${MAYAN_DOCKER_RABBITMQ_IMAGE:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_TAG:-3.12.14-management-alpine}
     labels:
       - "traefik.enable=${MAYAN_TRAEFIK_RABBITMQ_ENABLE:-false}"
       - "traefik.http.routers.rabbitmq_admin_http.entrypoints=rabbitmq_admin_http"

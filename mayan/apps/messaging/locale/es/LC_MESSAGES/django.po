@@ -284,23 +284,27 @@ msgstr "Marcar %(count)d mensaje seleccionado como no leído."
 
 #: workflow_actions.py:20
 msgid "Group name list"
-msgstr ""
+msgstr "Lista de nombres de grupo"
 
 #: workflow_actions.py:24
 msgid ""
 "Comma separated list of user group names that will receive the message. Can "
 "be a static value or a template."
 msgstr ""
+"Lista separada por comas de nombres de grupos de usuarios que recibirán el "
+"mensaje. Puede ser un valor estático o una plantilla ."
 
 #: workflow_actions.py:34
 msgid "Role name list"
-msgstr ""
+msgstr "Lista de nombres de roles"
 
 #: workflow_actions.py:38
 msgid ""
 "Comma separated list of role labels that will receive the message. Can be a "
 "static value or a template."
 msgstr ""
+"Lista separada por comas de etiquetas de roles que recibirán el mensaje. "
+"Puede ser un valor estático o una plantilla ."
 
 #: workflow_actions.py:48
 msgid "Username list"
@@ -311,15 +315,18 @@ msgid ""
 "Comma separated list of usernames that will receive the message. Can be a "
 "static value or a template."
 msgstr ""
+"Lista separada por comas de nombres de usuario que recibirán el mensaje. "
+"Puede ser un valor estático o una plantilla ."
 
 #: workflow_actions.py:69
 msgid ""
 "Subject of the message to be sent. Can be a static value or a template."
 msgstr ""
+"Asunto del mensaje a enviar. Puede ser un valor estático o una plantilla ."
 
 #: workflow_actions.py:84
 msgid "The actual text to send. Can be a static value or a template."
-msgstr ""
+msgstr "El texto real a enviar. Puede ser un valor estático o una plantilla ."
 
 #: workflow_actions.py:94
 msgid "Send user message"

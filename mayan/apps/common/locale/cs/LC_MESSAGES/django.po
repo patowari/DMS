@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Společný"
 
@@ -69,23 +69,23 @@ msgstr "kopírovat"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Nastavení"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Zdrojový kód"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Internetový obchod"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Získat podporu"
+#: links.py:84
+msgid "Support"
+msgstr "Podpora"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Nástroje"
 

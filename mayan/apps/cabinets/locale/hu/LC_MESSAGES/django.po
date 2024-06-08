@@ -184,11 +184,11 @@ msgstr "Dokumentumfájl MIME típusa"
 
 #: search.py:50
 msgid "The database ID of the cabinet."
-msgstr ""
+msgstr "Az irattartó adatbázis-azonosítója."
 
 #: search.py:51
 msgid "Cabinet ID"
-msgstr ""
+msgstr "Irattartó azonosító"
 
 #: serializers.py:18
 msgid "List of children cabinets."
@@ -235,12 +235,12 @@ msgstr "Az irattartóból eltávolítandó dokumentum elsődleges kulcsa."
 
 #: templates/cabinets/cabinet_details.html:17
 msgid "Navigation:"
-msgstr ""
+msgstr "Navigáció:"
 
 #: views.py:64
 #, python-format
 msgid "Add new level to: %s"
-msgstr ""
+msgstr "Új szint hozzáadása ehhez: %s"
 
 #: views.py:89
 #, python-format

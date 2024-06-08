@@ -142,7 +142,7 @@ msgstr "Cheie"
 
 #: models.py:30
 msgid "The actual value stored in the source metadata for the document file."
-msgstr ""
+msgstr "Valoarea reală stocată în metadatele sursă pentru fișierul document."
 
 #: models.py:32
 msgid "Value"
@@ -174,7 +174,7 @@ msgstr "Configurare surse"
 
 #: permissions.py:12
 msgid "View document file source metadata"
-msgstr ""
+msgstr "Vizualizați metadatele sursei fișierului documentului"
 
 #: permissions.py:19
 msgid "Create new document sources"
@@ -206,11 +206,11 @@ msgstr "Interval de verificare a sursei"
 
 #: search.py:11 search.py:23
 msgid "Source metadata key"
-msgstr ""
+msgstr "Cheia metadatelor sursă"
 
 #: search.py:16 search.py:26
 msgid "Source metadata value"
-msgstr ""
+msgstr "Valoarea metadatelor sursă"
 
 #: serializers.py:22 serializers.py:107
 msgid "URL"
@@ -285,6 +285,8 @@ msgid ""
 "The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
 " the oldest source cache files. Specify the size in bytes."
 msgstr ""
+"Pragul la care SOURCES_CACHE_STORAGE_BACKEND va începe ștergerea celor mai "
+"vechi fișiere cache sursă. Specificați dimensiunea în octeți."
 
 #: settings.py:37
 msgid "Path to the Storage subclass used to store cached source image files."
@@ -372,7 +374,7 @@ msgstr ""
 
 #: storages.py:20
 msgid "Sources cache"
-msgstr ""
+msgstr "Cacheul surselor"
 
 #: tests/arguments.py:8
 msgid "Python file like object."

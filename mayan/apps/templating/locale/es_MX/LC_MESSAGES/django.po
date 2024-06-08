@@ -26,7 +26,7 @@ msgstr "Sistema de plantillas"
 
 #: apps.py:39
 msgid "Current date and time"
-msgstr ""
+msgstr "Fecha y hora actuales"
 
 #: fields.py:28
 #, python-format
@@ -41,7 +41,7 @@ msgstr ""
 #: fields.py:43
 #, python-format
 msgid "Available template context variables: %s"
-msgstr ""
+msgstr "Variables de contexto plantilla disponibles: %s"
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."

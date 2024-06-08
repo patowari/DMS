@@ -125,10 +125,10 @@ PythonDependency(
     legal_text='''
         Author: Christian Theune
         License: LGPL 2.1
-    ''', module=__name__, name='pycountry', version_string='==23.12.11'
+    ''', module=__name__, name='pycountry', version_string='==24.6.1'
 )
 PythonDependency(
-    module=__name__, name='requests', version_string='==2.31.0'
+    module=__name__, name='requests', version_string='==2.32.3'
 )
 PythonDependency(
     module=__name__, name='setuptools', version_string='==69.5.1'
@@ -154,14 +154,14 @@ PythonDependency(
         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
-    ''', module=__name__, name='sh', version_string='==2.0.6'
+    ''', module=__name__, name='sh', version_string='==2.0.7'
 )
 
 # Build
 
 PythonDependency(
     environment=environment_build, module=__name__, name='twine',
-    version_string='==5.0.0'
+    version_string='==5.1.0'
 )
 PythonDependency(
     environments=(environment_build, environment_documentation),
@@ -202,12 +202,12 @@ PythonDependency(
 # Documentation
 
 PythonDependency(
-    environment=environment_documentation, module=__name__, name='Sphinx',
-    version_string='==5.3.0'
+    environment=environment_documentation, module=__name__,
+    name='Sphinx', version_string='==7.3.7'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx-sitemap', version_string='==2.2.0'
+    name='sphinx-sitemap', version_string='==2.6.0'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -215,13 +215,9 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-blockdiag', version_string='==2.0.0'
-)
-PythonDependency(
-    environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-spelling', version_string='==7.1.0'
+    name='sphinxcontrib-spelling', version_string='==8.0.0'
 )
 PythonDependency(
     environment=environment_documentation_override, module=__name__,
-    name='jinja2', version_string='==3.0.3'
+    name='jinja2', version_string='==3.1.4'
 )

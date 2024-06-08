@@ -152,7 +152,7 @@ msgstr "Aláírásrögzítő felhasználó felhasználóneve"
 
 #: search.py:34
 msgid "Document type label"
-msgstr ""
+msgstr "Dokumentumtípus címke"
 
 #: search.py:37
 msgid "Document label"

@@ -7,12 +7,12 @@
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
 # 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
-# Luc Didry, 2024
 # Roberto Rosario, 2024
 # Olivier W, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
+# Luc Didry, 2024
 # 
 msgid ""
 msgstr ""
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-07 07:29+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Yves Dubois <ydubois@gmail.com>, 2024\n"
+"Last-Translator: Luc Didry, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,7 +204,7 @@ msgstr "De base"
 
 #: forms/workflow_template_transition_field_forms.py:17
 msgid "Field"
-msgstr ""
+msgstr "Champ"
 
 #: forms/workflow_template_transition_field_forms.py:21
 msgid "Value"
@@ -481,7 +481,7 @@ msgstr "Actions d'état du flux de travail"
 
 #: models/workflow_state_escalation_model_mixins.py:35
 msgid "Workflow escalation."
-msgstr ""
+msgstr "Escalade du flux de travail"
 
 #: models/workflow_state_escalation_models.py:42
 msgid ""
@@ -492,7 +492,7 @@ msgstr ""
 
 #: models/workflow_state_escalation_models.py:45
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 #: models/workflow_state_escalation_models.py:49
 msgid ""
@@ -592,7 +592,7 @@ msgstr "Le nom du champ qui sera affiché sur l'interface utilisateur."
 
 #: models/workflow_transition_field_models.py:48
 msgid "Optional default value for the field. Can be a template."
-msgstr ""
+msgstr "Valeur par défaut optionnelle pour le champ. Peut être un template."
 
 #: models/workflow_transition_field_models.py:49
 msgid "Default"
@@ -772,7 +772,7 @@ msgstr ""
 #: serializers/workflow_instance_serializers.py:43
 #: serializers/workflow_instance_serializers.py:157
 msgid "Document URL"
-msgstr ""
+msgstr "URL du document"
 
 #: serializers/workflow_instance_serializers.py:55
 msgid "Primary key of the transition to be added."
@@ -814,7 +814,7 @@ msgstr ""
 
 #: serializers/workflow_instance_serializers.py:160
 msgid "Last log entry"
-msgstr ""
+msgstr "Dernière entrée du journal"
 
 #: serializers/workflow_instance_serializers.py:164
 msgid "Log entries URL"
@@ -855,15 +855,15 @@ msgstr "URL des documents"
 
 #: serializers/workflow_template_serializers.py:33
 msgid "Image URL"
-msgstr ""
+msgstr "URL de l’image"
 
 #: serializers/workflow_template_serializers.py:37
 msgid "States URL"
-msgstr ""
+msgstr "URL des états"
 
 #: serializers/workflow_template_serializers.py:41
 msgid "Transitions URL"
-msgstr ""
+msgstr "URL des transitions"
 
 #: serializers/workflow_template_serializers.py:70
 msgid "Primary key of the document type to add to the workflow."
@@ -902,11 +902,11 @@ msgstr ""
 
 #: serializers/workflow_template_state_serializers.py:11
 msgid "Actions URL"
-msgstr ""
+msgstr "URL des actions"
 
 #: serializers/workflow_template_state_serializers.py:35
 msgid "Escalations URL"
-msgstr ""
+msgstr "URL des escalades"
 
 #: serializers/workflow_template_transition_field_serializers.py:37
 #: serializers/workflow_template_transition_trigger_serializers.py:50
@@ -1513,6 +1513,8 @@ msgid ""
 "The HTTP method to use for the request. Typical choices are OPTIONS, HEAD, "
 "POST, GET, PUT, PATCH, DELETE."
 msgstr ""
+"La méthode HTTP à utiliser pour la requête. Les choix classiques sont "
+"OPTIONS, HEAD, POST, GET, PUT, PATCH, DELETE."
 
 #: workflow_actions.py:193
 msgid "Username"
@@ -1562,7 +1564,7 @@ msgstr "Durée en secondes d'attente d'une réponse."
 
 #: workflow_actions.py:257
 msgid "Store response"
-msgstr ""
+msgstr "Enregistrer la réponse"
 
 #: workflow_actions.py:262
 msgid "Store the response in the workflow context."
@@ -1582,11 +1584,11 @@ msgstr "Effectuer une requête HTTP"
 
 #: workflow_actions.py:290
 msgid "Request"
-msgstr ""
+msgstr "Requête"
 
 #: workflow_actions.py:298
 msgid "Response"
-msgstr ""
+msgstr "Réponse"
 
 #: workflow_actions.py:319
 #, python-format

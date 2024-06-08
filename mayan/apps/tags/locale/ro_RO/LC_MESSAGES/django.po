@@ -147,7 +147,7 @@ msgstr "Culoarea etichetei"
 
 #: search.py:14
 msgid "The database ID of the tag."
-msgstr ""
+msgstr "ID-ul bazei de date al etichetei."
 
 #: search.py:15 serializers.py:34 serializers.py:43
 msgid "Tag ID"

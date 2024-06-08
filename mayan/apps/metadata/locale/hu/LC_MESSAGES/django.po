@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
 "Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
@@ -282,6 +282,8 @@ msgstr "Alapéretelmezett"
 #: models/metadata_type_models.py:48
 msgid "Enter a template to render. Must result in a comma delimited string."
 msgstr ""
+"Adjon meg egy sablont a megjelenítéshez. Vesszővel tagolt karakterláncot "
+"kell eredményeznie."
 
 #: models/metadata_type_models.py:50
 msgid "Lookup"
@@ -325,7 +327,7 @@ msgstr ""
 
 #: models/metadata_type_models.py:130
 msgid "Value is not one of the provided options."
-msgstr ""
+msgstr "Az érték nem tartozik a rendelkezésre álló lehetőségek közé."
 
 #: models/metadata_type_models.py:145
 #, python-format
@@ -418,14 +420,14 @@ msgstr ""
 "Hiba a \"%(metadata_type)s\" metaadattípus hozzáadásakor a dokumentumhoz: "
 "%(document)s ; %(exception)s"
 
-#: views/document_views.py:162
+#: views/document_views.py:166
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s successfully added to document "
 "%(document)s."
 msgstr ""
 
-#: views/document_views.py:172
+#: views/document_views.py:176
 #, python-format
 msgid ""
 "Metadata type: %(metadata_type)s already present in document %(document)s."
@@ -433,17 +435,17 @@ msgstr ""
 "A metaadattípus: %(metadata_type)s már megtalálható a %(document)s "
 "dokumentumban."
 
-#: views/document_views.py:189
+#: views/document_views.py:193
 #, python-format
 msgid "Metadata edit request performed on %(count)d document"
 msgstr "Metaadat szerkesztési kérés végrehajtva %(count)d dokumentumon"
 
-#: views/document_views.py:192
+#: views/document_views.py:196
 #, python-format
 msgid "Metadata edit request performed on %(count)d documents"
 msgstr "Metaadat szerkesztési kérés végrehajtva %(count)d dokumentumokon"
 
-#: views/document_views.py:227
+#: views/document_views.py:231
 msgid ""
 "Add metadata types available for this document's type and assign them "
 "corresponding values."
@@ -451,70 +453,70 @@ msgstr ""
 "A dokumentumtípushoz rendelkezésre álló metaadattípusok hozzáadása, és a "
 "megfelelő értékek hozzárendelése."
 
-#: views/document_views.py:230
+#: views/document_views.py:234
 msgid "There is no metadata to edit"
 msgstr ""
 
-#: views/document_views.py:232
+#: views/document_views.py:236
 msgid "Edit document metadata"
 msgid_plural "Edit documents metadata"
 msgstr[0] "Dokumentum metaadatainak szerkesztése"
 msgstr[1] "Dokumentumok metaadatainak szerkesztése"
 
-#: views/document_views.py:243
+#: views/document_views.py:247
 #, python-format
 msgid "Edit metadata for document: %s"
 msgstr ""
 
-#: views/document_views.py:330
+#: views/document_views.py:334
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
 msgstr ""
 
-#: views/document_views.py:343
+#: views/document_views.py:347
 #, python-format
 msgid "Metadata for document %s edited successfully."
 msgstr ""
 
-#: views/document_views.py:368
+#: views/document_views.py:372
 msgid ""
 "Add metadata types this document's type to be able to add them to individual"
 " documents. Once added to individual document, you can then edit their "
 "values."
 msgstr ""
 
-#: views/document_views.py:373
+#: views/document_views.py:377
 msgid "This document doesn't have any metadata"
 msgstr ""
 
-#: views/document_views.py:376
+#: views/document_views.py:380
 #, python-format
 msgid "Metadata for document: %s"
 msgstr ""
 
-#: views/document_views.py:392
+#: views/document_views.py:396
 #, python-format
 msgid "Metadata remove request performed on %(count)d document"
 msgstr "A metaadat eltávolítási kérelem végrehajtva %(count)d dokumentumon"
 
-#: views/document_views.py:395
+#: views/document_views.py:399
 #, python-format
 msgid "Metadata remove request performed on %(count)d documents"
 msgstr ""
 "A metaadat eltávolítási kérelmet végrehajtották %(count)d dokumentumon"
 
-#: views/document_views.py:405
+#: views/document_views.py:409
 msgid "Remove metadata types from the document"
 msgid_plural "Remove metadata types from the documents"
 msgstr[0] "Távolítsa el a metaadattípusokat a dokumentumból"
 msgstr[1] "Metaadattípusok eltávolítása a dokumentumokból"
 
-#: views/document_views.py:416
+#: views/document_views.py:420
 #, python-format
 msgid "Remove metadata types from the document: %s"
 msgstr "Metaadattípusok eltávolítása a dokumentumból: %s"
 
-#: views/document_views.py:482
+#: views/document_views.py:486
 #, python-format
 msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
@@ -523,7 +525,7 @@ msgstr ""
 "Sikeresen eltávolította a \"%(metadata_type)s\" metaadattípust a következő "
 "dokumentumból: %(document)s ."
 
-#: views/document_views.py:492
+#: views/document_views.py:496
 #, python-format
 msgid ""
 "Error removing metadata type \"%(metadata_type)s\" from document: "

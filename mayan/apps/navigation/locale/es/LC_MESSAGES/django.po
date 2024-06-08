@@ -38,16 +38,16 @@ msgstr "Alternar desplegable"
 
 #: templates/navigation/app/list_toolbar.html:14
 msgid "Sort by column"
-msgstr ""
+msgstr "Ordenar por columna"
 
 #: templates/navigation/app/list_toolbar.html:15
 msgid "--- Clear ---"
-msgstr ""
+msgstr "--- Limpiar ---"
 
 #: templates/navigation/app/list_toolbar.html:18
 msgid "(ascending)"
-msgstr ""
+msgstr "(ascendente)"
 
 #: templates/navigation/app/list_toolbar.html:20
 msgid "(descending)"
-msgstr ""
+msgstr "(descendente)"

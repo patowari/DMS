@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Загальне"
 
@@ -69,23 +69,23 @@ msgstr "Копія"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "Налаштування"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "Джерело коду"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "Онлайн-магазин"
 
-#: links.py:83
-msgid "Get support"
-msgstr "Отримати підтримку"
+#: links.py:84
+msgid "Support"
+msgstr ""
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "Інструменти"
 

@@ -24,6 +24,8 @@ if __name__ == '__main__':
 
     path_docs_apps = Path(BASE_DIR, '..', 'docs', 'apps')
 
+    shutil.rmtree(path=path_docs_apps, ignore_errors=True)
+
     app_list = []
 
     for app_config in apps.get_app_configs():

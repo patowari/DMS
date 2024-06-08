@@ -5,16 +5,16 @@
 # Translators:
 # Translators:
 # Ford Guo <agile.guo@gmail.com>, 2024
-# Roberto Rosario, 2024
 # Leon Chu, 2024
+# Roberto Rosario, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-06-04 06:20+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Leon Chu, 2024\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:130 permissions.py:6 settings.py:15
+#: apps.py:133 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Common"
 
@@ -70,23 +70,23 @@ msgstr "複製"
 msgid "Release notes"
 msgstr ""
 
-#: links.py:72
+#: links.py:73
 msgid "Setup"
 msgstr "設定"
 
-#: links.py:75
+#: links.py:76
 msgid "Source code"
 msgstr "原始碼"
 
-#: links.py:79
+#: links.py:80
 msgid "Online store"
 msgstr "線上商店"
 
-#: links.py:83
-msgid "Get support"
-msgstr "取得協助"
+#: links.py:84
+msgid "Support"
+msgstr "支持"
 
-#: links.py:87 views.py:136
+#: links.py:88 views.py:136
 msgid "Tools"
 msgstr "工具"
 

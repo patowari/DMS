@@ -15,8 +15,8 @@ from mayan.apps.templating.classes import AJAXTemplate
 
 from .handlers import handler_pre_initial_setup, handler_pre_upgrade
 from .links import (
-    link_about, link_knowledge_base, link_license, link_setup, link_support,
-    link_tools
+    link_about, link_knowledge_base, link_license, link_separator_information,
+    link_setup, link_support, link_tools
 )
 from .menus import menu_system, menu_topbar, menu_user
 from .settings import setting_home_view
@@ -148,11 +148,10 @@ class CommonApp(MayanAppConfig):
 
         menu_system.bind_links(
             links=(
-                link_tools, link_setup, link_knowledge_base, link_support,
-                link_about, link_license
+                link_tools, link_setup, link_separator_information,
+                link_knowledge_base, link_support, link_about, link_license
             )
         )
-
         menu_topbar.bind_links(
             links=(menu_system, menu_user),
             position=10

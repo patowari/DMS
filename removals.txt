@@ -27,5 +27,6 @@ pyocr
 pytesseract
 ruff
 sphinx-autobuild
+sphinxcontrib-blockdiag
 tornado
 transifex-client

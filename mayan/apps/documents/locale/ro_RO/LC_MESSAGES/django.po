@@ -1109,7 +1109,7 @@ msgstr "Documente mod rapid"
 
 #: queues.py:17
 msgid "Documents slow"
-msgstr ""
+msgstr "Documentele lente"
 
 #: queues.py:20
 msgid "Documents file"
@@ -1141,7 +1141,7 @@ msgstr "Încărcați fișierul document nou"
 
 #: queues.py:49
 msgid "Move a document to the trash"
-msgstr ""
+msgstr "Mutați un document în coșul de gunoi"
 
 #: queues.py:53
 msgid "Upload new document"
@@ -1210,7 +1210,7 @@ msgstr "Ștergeți o versiune a documentului"
 
 #: search.py:31
 msgid "The database ID of the document type."
-msgstr ""
+msgstr "ID-ul bazei de date al tipului de document."
 
 #: search.py:32 serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
@@ -1227,7 +1227,7 @@ msgstr "Descrierea documentului"
 
 #: search.py:73 search.py:145
 msgid "The database ID of the document."
-msgstr ""
+msgstr "ID-ul bazei de date al documentului."
 
 #: search.py:74 search.py:146 serializers/favorite_document_serializers.py:17
 msgid "Document ID"
@@ -1569,7 +1569,7 @@ msgstr "Previzualizare imagine pagină document"
 
 #: templates/documents/errors/document_file_has_no_pages.html:5
 msgid "No file pages"
-msgstr ""
+msgstr "Fără pagini de fișiere"
 
 #: templates/documents/errors/document_file_page_transformation_error.html:5
 msgid "Document file page transformation error"
@@ -1966,11 +1966,11 @@ msgstr "Remapează paginile versiunii documentului: %s"
 
 #: views/document_version_page_views.py:311
 msgid "There are no more pages in this document."
-msgstr ""
+msgstr "Nu mai există pagini în acest document."
 
 #: views/document_version_page_views.py:327
 msgid "You are already at the first page of this document."
-msgstr ""
+msgstr "Sunteți deja pe prima pagină a acestui document."
 
 #: views/document_version_views.py:63
 #, python-format
@@ -2147,18 +2147,22 @@ msgstr "Nu există documente disponibile"
 #, python-format
 msgid "Document type change request performed on %(count)d document."
 msgstr ""
+"Solicitarea de modificare a tipului de document efectuată pe documentul "
+"%(count)d ."
 
 #: views/document_views.py:89
 #, python-format
 msgid "Document type change request performed on %(count)d documents."
 msgstr ""
+"Solicitarea de modificare a tipului de document efectuată pe documentele "
+"%(count)d ."
 
 #: views/document_views.py:97
 msgid "Change the type of the selected document."
 msgid_plural "Change the type of the selected documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Schimbați tipul documentului selectat."
+msgstr[1] "Schimbați tipul documentelor selectate."
+msgstr[2] "Schimbați tipul documentelor selectate."
 
 #: views/document_views.py:108
 #, python-format
@@ -2266,12 +2270,12 @@ msgstr "Nu există documente create recent"
 #: views/trashed_document_views.py:40
 #, python-format
 msgid "Document \"%(object)s\" queued for trashing."
-msgstr ""
+msgstr "Documentul „ %(object)s ” a fost pus în coadă pentru eliminare."
 
 #: views/trashed_document_views.py:43 views/trashed_document_views.py:46
 #, python-format
 msgid "%(count)d documents queued for trashing."
-msgstr ""
+msgstr "%(count)d documente puse în coadă pentru aruncare la gunoi."
 
 #: views/trashed_document_views.py:48
 #, python-format

@@ -64,7 +64,7 @@ msgstr "Objektum"
 
 #: model_mixins.py:26
 msgid "App label"
-msgstr ""
+msgstr "Alkalmazáscímke"
 
 #: models.py:21 models.py:41
 msgid "Internal name"

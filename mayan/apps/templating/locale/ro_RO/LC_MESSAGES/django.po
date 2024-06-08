@@ -27,7 +27,7 @@ msgstr "Lucru cu șabloane"
 
 #: apps.py:39
 msgid "Current date and time"
-msgstr ""
+msgstr "Data și ora curentă"
 
 #: fields.py:28
 #, python-format
@@ -42,7 +42,7 @@ msgstr ""
 #: fields.py:43
 #, python-format
 msgid "Available template context variables: %s"
-msgstr ""
+msgstr "Variabilele de context ale șablonului disponibile: %s"
 
 #: forms.py:9
 msgid "Resulting text from the evaluated template."

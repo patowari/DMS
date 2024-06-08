@@ -120,11 +120,11 @@ msgstr ""
 
 #: models.py:27
 msgid "Stylesheet"
-msgstr ""
+msgstr "Stíluslap"
 
 #: models.py:32 models.py:69
 msgid "Theme"
-msgstr ""
+msgstr "Téma"
 
 #: models.py:65
 msgid "User"
@@ -144,32 +144,34 @@ msgstr "Új témák létrehozása"
 
 #: permissions.py:13
 msgid "Delete themes"
-msgstr ""
+msgstr "Témák törlése"
 
 #: permissions.py:16
 msgid "Edit themes"
-msgstr ""
+msgstr "Témák szerkesztése"
 
 #: permissions.py:19
 msgid "View existing themes"
-msgstr ""
+msgstr "Meglévő témák megtekintése"
 
 #: settings.py:18
 msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
+msgstr "Egyéni HTTP válaszkód AJAX átirányításokhoz."
 
 #: settings.py:24
 msgid "Maximum number of characters that will be displayed as the view title."
-msgstr ""
+msgstr "A nézet címeként megjelenő karakterek maximális száma."
 
 #: settings.py:34
 msgid "Position where the system messages will be displayed."
-msgstr ""
+msgstr "Az a hely, ahol a rendszerüzenetek megjelennek."
 
 #: settings.py:40
 msgid ""
 "Delay in milliseconds after which the menus will be checked for updates."
 msgstr ""
+"Késleltetés ezredmásodpercben, amely után a rendszer ellenőrzi a menük "
+"frissítéseit."
 
 #: settings.py:47
 msgid ""
@@ -183,6 +185,8 @@ msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
 msgstr ""
+"Az az idő ezredmásodpercben, amely után a korlátozott kérés törlődik, "
+"lehetővé téve egy további kérés végrehajtását."
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -198,11 +202,11 @@ msgstr "Oldal nem található"
 
 #: templates/404.html:20
 msgid "The requested page could not be found."
-msgstr ""
+msgstr "A keresett oldal nem található."
 
 #: templates/404.html:28
 msgid "Possible reasons"
-msgstr ""
+msgstr "Lehetséges okok"
 
 #: templates/404.html:32
 msgid "The location of the item is incorrect."
@@ -210,7 +214,7 @@ msgstr "Az elem helye helytelen."
 
 #: templates/404.html:33
 msgid "The location is correct, but the item no longer exists."
-msgstr ""
+msgstr "A hely megfelelő, de az elem már nem létezik."
 
 #: templates/404.html:34
 msgid ""
@@ -223,15 +227,15 @@ msgstr ""
 #: templates/500.html:5 templates/500.html:18
 #: templates/appearance/root.html:46
 msgid "Server error"
-msgstr ""
+msgstr "Szerver hiba"
 
 #: templates/500.html:20
 msgid "There's been an unexpected error."
-msgstr ""
+msgstr "Váratlan hiba történt."
 
 #: templates/500.html:28
 msgid "What to do next?"
-msgstr ""
+msgstr "Mi legyen a következő?"
 
 #: templates/500.html:32
 msgid "Refresh the page."
@@ -243,7 +247,7 @@ msgstr "Várjon egy kicsit. Lehetséges, hogy a rendszer túlterhelt."
 
 #: templates/500.html:34
 msgid "Contact your system administrator."
-msgstr ""
+msgstr "Forduljon a rendszergazdához."
 
 #: templates/500.html:35
 msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
@@ -370,7 +374,7 @@ msgstr "Kezdés"
 
 #: templates/appearance/home.html:30
 msgid "Before you can fully use Mayan EDMS you need the following:"
-msgstr ""
+msgstr "A Mayan EDMS teljes körű használatához a következőkre van szüksége:"
 
 #: templates/appearance/menus/topbar.html:11
 msgid "Toggle navigation"

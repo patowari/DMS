@@ -32,7 +32,7 @@ msgstr "Sistem"
 
 #: apps.py:64
 msgid "Domain"
-msgstr ""
+msgstr "Domeniu"
 
 #: events.py:10
 msgid "Error log deleted"
@@ -57,7 +57,7 @@ msgstr "Ștergeți erorile"
 #: model_mixins.py:11
 #, python-format
 msgid "Unknown domain name: %s"
-msgstr ""
+msgstr "Nume de domeniu necunoscut: %s"
 
 #: model_mixins.py:18
 msgid "Object"
@@ -93,7 +93,7 @@ msgstr "Data și ora"
 
 #: models.py:78
 msgid "Domain name"
-msgstr ""
+msgstr "Numele domeniului"
 
 #: models.py:81
 msgid "Text"

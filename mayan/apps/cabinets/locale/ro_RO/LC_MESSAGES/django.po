@@ -184,11 +184,11 @@ msgstr "Tipul MIME al fișierului document"
 
 #: search.py:50
 msgid "The database ID of the cabinet."
-msgstr ""
+msgstr "ID-ul bazei de date al cabinetului."
 
 #: search.py:51
 msgid "Cabinet ID"
-msgstr ""
+msgstr "ID cabinet"
 
 #: serializers.py:18
 msgid "List of children cabinets."

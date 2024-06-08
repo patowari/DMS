@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-06-04 06:21+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: René Rovsing Bach <reroba@outlook.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
@@ -71,7 +71,7 @@ msgid ""
 msgstr ""
 
 #: settings.py:22
-msgid "Default profile language for new user accounts."
+msgid "Default profile timezone for new user accounts."
 msgstr ""
 
 #: views.py:52
