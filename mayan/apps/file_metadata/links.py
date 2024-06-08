@@ -47,7 +47,7 @@ link_document_type_file_metadata_settings = Link(
     icon=icon_document_type_file_metadata_settings,
     kwargs={'document_type_id': 'resolved_object.id'},
     permission=permission_document_type_file_metadata_setup,
-    text=_(message='Setup file metadata'),
+    text=_(message='File metadata setup'),
     view='file_metadata:document_type_file_metadata_settings'
 )
 link_document_type_file_metadata_submit = Link(

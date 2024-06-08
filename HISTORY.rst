@@ -46,6 +46,7 @@
 - Breaking change for app. Split the `navigation.classes` module into
   `navigation.links`, `navigation.menus`, `navigation.source_columns`.
 - Fix model proxy menu exclusion.
+- Update the document type file metadata and OCR link labels for clarity.
 
 4.7.1 (2024-06-04)
 ==================

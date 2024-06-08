@@ -22,10 +22,9 @@ from .permissions import (
 # Document type
 
 link_document_type_ocr_settings = Link(
-    args='resolved_object.id',
-    icon=icon_document_type_ocr_settings,
-    permission=permission_document_type_ocr_setup, text=_(message='Setup OCR'),
-    view='ocr:document_type_ocr_settings'
+    args='resolved_object.id', icon=icon_document_type_ocr_settings,
+    permission=permission_document_type_ocr_setup,
+    text=_(message='OCR setup'), view='ocr:document_type_ocr_settings'
 )
 link_document_type_submit = Link(
     icon=icon_document_type_ocr_submit,
