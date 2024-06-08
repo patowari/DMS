@@ -2,25 +2,28 @@
 ================
 - Update dependency versions:
 
-  - Wheel from 0.42.0 to 0.43.0
-  - django-auth-ldap from 4.6.0 to 4.8.0
-  - mozilla-django-oidc from 4.0.0 to 4.0.1
-  - django from 4.2.11 to 4.2.13
-  - importlib-metadata from 7.0.2 to 7.1.0
-  - ipython from 8.22.2 to 8.24.0
-  - safety from 3.1.0 to 3.2.0
-  - pypdf from 4.1.0 to 4.2.0
-  - packaging from 21.3 to 24.0
-  - gunicorn from 21.2.0 to 22.0.0
-  - sentry-sdk from 1.41.0 to 2.1.1
-  - djangorestframework from 3.14.0 to 3.15.1
-  - jsonschema from 4.21.1 to 4.22.0
-  - boto3 from 1.33.7 to 1.34.105
-  - django-storages from 1.14.2 to 1.14.3
-  - google-cloud-storage from 2.15.0 to 2.16.0
+  - boto3 from 1.33.7 to 1.34.122
   - celery from 5.3.6 to 5.4.0
-  - coverage from 6.5.0 to 7.4.4
-  - coveralls from 3.3.1 to 4.0.0
+  - coverage from 6.5.0 to 7.5.3
+  - coveralls from 3.3.1 to 4.0.1
+  - django from 4.2.11 to 4.2.13
+  - django-auth-ldap from 4.6.0 to 4.8.0
+  - django-debug-toolbar from 4.3.0 to 4.4.2
+  - django-model-utils from 4.4.0 to 4.5.1
+  - django-storages from 1.14.2 to 1.14.3
+  - djangorestframework from 3.14.0 to 3.15.1
+  - google-cloud-storage from 2.15.0 to 2.16.0
+  - gunicorn from 21.2.0 to 22.0.0
+  - importlib-metadata from 7.0.2 to 7.1.0
+  - ipython from 8.22.2 to 8.25.0
+  - jsonschema from 4.21.1 to 4.22.0
+  - mozilla-django-oidc from 4.0.0 to 4.0.1
+  - packaging from 21.3 to 24.0
+  - pypdf from 4.1.0 to 4.2.0
+  - safety from 3.1.0 to 3.2.2
+  - sentry-sdk from 1.41.0 to 2.5.1
+  - setuptools from 69.5.1 to 70.0.0
+  - Wheel from 0.42.0 to 0.43.0
 
 - Rename `menu_about` to `menu_system` to reflect it true purpose.
 - Update the system menu icon.

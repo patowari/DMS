@@ -1,6 +1,6 @@
-django-debug-toolbar==4.3.0
+django-debug-toolbar==4.4.2
 django-extensions==3.2.3
 django-silk==5.1.0
-ipython==8.24.0
+ipython==8.25.0
 readme==0.7.1
-safety==3.2.0
+safety==3.2.2
