@@ -25,7 +25,7 @@ from .links import (
 from .permissions import permission_cache_purge, permission_cache_view
 
 
-class FileCachingConfig(MayanAppConfig):
+class FileCachingAppConfig(MayanAppConfig):
     app_namespace = 'file_caching'
     app_url = 'file_caching'
     has_tests = True

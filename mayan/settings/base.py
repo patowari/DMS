@@ -93,7 +93,7 @@ INSTALLED_APPS = (
     'mayan.apps.dependencies.apps.DependenciesApp',
     'mayan.apps.django_gpg.apps.DjangoGPGApp',
     'mayan.apps.dynamic_search.apps.DynamicSearchApp',
-    'mayan.apps.file_caching.apps.FileCachingConfig',
+    'mayan.apps.file_caching.apps.FileCachingAppConfig',
     'mayan.apps.forms.apps.FormsApp',
     'mayan.apps.locales.apps.LocalesApp',
     'mayan.apps.lock_manager.apps.LockManagerApp',
