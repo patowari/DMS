@@ -15,6 +15,8 @@ DOCKER_IMAGE_DATE_TIME ?= `date -Iseconds  --utc`
 DOCKER_IMAGE_LABELS ?= --label org.opencontainers.image.created="$(DOCKER_IMAGE_DATE_TIME)" --label org.opencontainers.image.version=$(IMAGE_VERSION) $(DOCKER_IMAGE_LABELS_EXTRA)
 MAYAN_TEST_MEDIA_ROOT ?= /tmp/mayan-test
 
+# Build
+
 docker-buildkitd-config-create:
 	@echo "debug = true" > /tmp/buildkitd.toml
 	@if [ $(DOCKER_MIRROR) ]; then \
@@ -40,6 +42,8 @@ docker-docker-compose-update: ## Update the Docker Compose file from the platfor
 docker-docker-compose-update: copy-config-env
 	./manage.py platform_template docker_docker_compose > docker/docker-compose.yml
 
+# Registry
+
 docker-registry-push: ## Push a built image to the test Docker registry.
 	docker tag $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) $(DOCKER_HOST_REGISTRY_NAME):$(DOCKER_HOST_REGISTRY_PORT)/$(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION)
 	docker push $(DOCKER_HOST_REGISTRY_NAME):$(DOCKER_HOST_REGISTRY_PORT)/$(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION)
@@ -58,6 +62,8 @@ docker-registry-tags: ## Show the tags for the image in the test Docker registry
 
 docker-registry-run: # Launch a test Docker registry.
 	docker run --detach --name registry --publish 5000:5000 registry:2
+
+# Test
 
 docker-shell: ## Launch a bash instance inside a running container. Pass the container name via DOCKER_CONTAINER.
 	docker exec --env TERM=$(TERM) --env "COLUMNS=$(CONSOLE_COLUMNS)" --env "LINES=$(CONSOLE_LINES)" --interactive --tty $(DOCKER_CONTAINER) /bin/bash
@@ -78,13 +84,7 @@ docker-runtest-cleanup: ## Delete the test container and the test volume.
 docker-runtest-all: ## Executed the test suite in a test container.
 	docker run --rm $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) run_tests
 
-docker-compose-build:
-	docker-compose --file docker/docker-compose.yml --project-name mayan-edms build
-
-docker-compose-up:
-	docker-compose --file docker/docker-compose.yml --project-name mayan-edms up
-
-# Test database containers
+# Test and staging containers
 
 docker-elastic-start: ## Start an Elastic Search test container.
 docker-elastic-start:

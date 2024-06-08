@@ -288,14 +288,17 @@ check-missing-inits: ## Find missing __init__.py files from modules.
 check-missing-inits:
 	@contrib/scripts/find_missing_inits.py
 
-setup-dev-environment: ## Bootstrap a virtualenv by install all dependencies to start developing.
-setup-dev-environment: setup-dev-operating-system-packages setup-dev-python-libraries
-
-setup-dev-operating-system-packages:  ## Install the operating system packages needed for development.
-	sudo apt-get install --yes clamav exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
-
 copy-config-env:
 	@contrib/scripts/copy_config_env.py > mayan/settings/literals.py
+
+# Development environment
+
+dev-setup: ## Bootstrap a virtualenv by install all dependencies to start developing.
+dev-setup: dev-setup-os-ubuntu dev-setup-python
+
+dev-setup-os-ubuntu:  ## Install the operating system packages needed for development.
+	sudo apt-get install --yes clamav exiftool gcc gettext gnupg1 graphviz libcairo2 libffi-dev libfuse2 libjpeg-dev libldap2-dev libpng-dev libsasl2-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
+
 
 -include docker/Makefile
 -include gitlab-ci/Makefile

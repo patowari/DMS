@@ -36,17 +36,17 @@ python-wheel-testing: clean python-sdist-testing
 	pip wheel --no-index --no-deps --wheel-dir dist dist/*.tar.gz
 	ls -l dist
 
-setup-dev-python-libraries: ## Install the Python libraries needed for development.
+dev-setup-python: ## Install the Python libraries needed for development.
 	pip install --requirement requirements.txt --requirement requirements/development.txt --requirement requirements/testing-base.txt --requirement requirements/documentation.txt --requirement requirements/build.txt
 
-setup-python-mysql:
+dev-setup-python-mysql: ## Install the Python MySQL library.
 	@pip install mysqlclient==$(PYTHON_MYSQL_VERSION)
 
-setup-python-oracle:
+dev-setup-python-oracle: ## Install the Python Oracle library.
 	@pip install cx_Oracle==$(PYTHON_ORACLE_VERSION)
 
-setup-python-postgresql:
+dev-setup-python-postgresql: ## Install the Python PostgreSQL library.
 	@pip install psycopg==$(PYTHON_PSYCOPG_VERSION)
 
-setup-python-redis:
+dev-setup-python-redis:
 	@pip install redis==$(PYTHON_REDIS_VERSION)
