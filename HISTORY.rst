@@ -66,6 +66,8 @@
 - Breaking change: Remove Debian Chinese and Korean font packages from the
   default Docker image. Removed package names: `fonts-arphic-uming`,
   `fonts-arphic-ukai`, `fonts-unfonts-core`.
+- Document template helper updates: Fixed the latest file help. Added a
+  helper that returns the active version.
 
 4.7.1 (2024-06-04)
 ==================

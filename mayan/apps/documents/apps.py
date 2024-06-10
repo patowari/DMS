@@ -427,12 +427,17 @@ class DocumentsApp(MayanAppConfig):
         ModelProperty(
             description=_(message='Return the latest file of the document.'),
             model=Document, label=_(message='Latest file'),
-            name='latest_file'
+            name='file_latest'
         )
         ModelProperty(
             description=_(message='Return the document instance.'),
             model=DocumentFilePage, label=_(message='Document'),
             name='document'
+        )
+        ModelProperty(
+            description=_(message='Return the active version of the document.'),
+            model=Document, label=_(message='Active version'),
+            name='version_active'
         )
 
         ModelPermission.register(
