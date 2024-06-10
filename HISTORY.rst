@@ -25,6 +25,10 @@
   - setuptools from 69.5.1 to 70.0.0
   - Wheel from 0.42.0 to 0.43.0
 
+- Docker image tags:
+
+  - Redis from 7.0.15-alpine to 7.2.5-alpine
+
 - Rename `menu_about` to `menu_system` to reflect it true purpose.
 - Update the system menu icon.
 - Remove hardcoded dropdown markup in `partials/list/toolbar.html`. Instead
