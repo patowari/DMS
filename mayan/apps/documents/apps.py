@@ -633,8 +633,8 @@ class DocumentsApp(MayanAppConfig):
             order=-9, source=DocumentFile
         )
         SourceColumn(
-            attribute='size', include_label=True, is_sortable=True,
-            source=DocumentFile
+            attribute='get_size_display', include_label=True,
+            is_sortable=True, sort_field='size', source=DocumentFile
         )
 
         # DocumentFilePage

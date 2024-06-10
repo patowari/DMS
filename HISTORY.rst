@@ -62,6 +62,7 @@
   and active Mayan EDMS apps in an installation.
 - Increase the Celery workers maximum memory per child from 400MB to 500MB.
 - Decrease the Celery workers maximum tasks per child from 1000 to 500.
+- Humanize the document file size column.
 
 4.7.1 (2024-06-04)
 ==================

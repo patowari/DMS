@@ -4,6 +4,7 @@ import logging
 import shutil
 
 from django.apps import apps
+from django.template.defaultfilters import filesizeformat
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
@@ -363,6 +364,11 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
     def get_label(self):
         return self.filename
     get_label.short_description = _(message='Label')
+
+    def get_size_display(self):
+        return filesizeformat(bytes_=self.size)
+
+    get_size_display.short_description = _(message='Size')
 
     @property
     def is_in_trash(self):
