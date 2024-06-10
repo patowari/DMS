@@ -100,9 +100,7 @@ class CacheBusinessLogicMixin:
     def get_total_size_display(self):
         total_size = self.get_total_size()
 
-        size_humanized = filesizeformat(
-            bytes_=total_size
-        )
+        size_humanized = filesizeformat(bytes_=total_size)
 
         size_percent = total_size / self.maximum_size * 100
 
