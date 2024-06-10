@@ -63,6 +63,9 @@
 - Increase the Celery workers maximum memory per child from 400MB to 500MB.
 - Decrease the Celery workers maximum tasks per child from 1000 to 500.
 - Humanize the document file size column.
+- Breaking change: Remove Debian Chinese and Korean font packages from the
+  default Docker image. Removed package names: `fonts-arphic-uming`,
+  `fonts-arphic-ukai`, `fonts-unfonts-core`.
 
 4.7.1 (2024-06-04)
 ==================
