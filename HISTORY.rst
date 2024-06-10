@@ -56,6 +56,8 @@
   `FileCachingAppConfig`.
 - Add new app named "App manager" that displays the list of the discovered
   and active Mayan EDMS apps in an installation.
+- Increase the Celery workers maximum memory per child from 400MB to 500MB.
+- Decrease the Celery workers maximum tasks per child from 1000 to 500.
 
 4.7.1 (2024-06-04)
 ==================
