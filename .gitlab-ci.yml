@@ -30,10 +30,10 @@ job_docker_build:
     - pip install --requirement requirements/common.txt
     - cat requirements/base.txt | grep -v 'django-auth-ldap'| pip install -r /dev/stdin
   cache:
-    - key: apk-cache-4.7
+    - key: apk-cache-4.8
       paths:
         - ${APK_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: docker:23.0.6-dind
@@ -67,7 +67,7 @@ job_docker_push_major:
     - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
-    - key: apk-cache-4.7
+    - key: apk-cache-4.8
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
@@ -104,7 +104,7 @@ job_docker_push_minor:
     - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
-    - key: apk-cache-4.7
+    - key: apk-cache-4.8
       paths:
         - ${APK_CACHE_DIR}
   image: docker:23.0.6-dind
@@ -169,10 +169,10 @@ job_documentation_build:
     - pip install pip==${PYTHON_PIP_VERSION}
     - pip install wheel==${PYTHON_WHEEL_VERSION}
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: debian:12.5-slim
@@ -209,10 +209,10 @@ job_documentation_push:
     - eval $(ssh-agent -s)
     - echo "${DOCUMENTATION_SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: debian:12.5-slim
@@ -247,10 +247,10 @@ job_python_build:
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: debian:12.5-slim
@@ -292,10 +292,10 @@ job_python_push_pypi:
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: debian:12.5-slim
@@ -331,10 +331,10 @@ job_python_push_pypi:
     - pip install pip==${PYTHON_PIP_VERSION}
     - pip install --requirement requirements.txt --requirement requirements/testing-base.txt --requirement requirements/build.txt
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
-    - key: pip-cache-4.7
+    - key: pip-cache-4.8
       paths:
         - ${PIP_CACHE_DIR}
   image: debian:12.5-slim
@@ -395,7 +395,7 @@ job_demo_deploy:
     - eval $(ssh-agent -s)
     - echo "${DEMO_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
   environment:
@@ -437,7 +437,7 @@ job_staging_deploy:
     - eval $(ssh-agent -s)
     - echo "${STAGING_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null
   cache:
-    - key: apt-cache-4.7
+    - key: apt-cache-4.8
       paths:
         - ${APT_CACHE_DIR}
   environment:
