@@ -66,6 +66,7 @@ class DocumentTemplateSandboxView(ExternalObjectViewMixin, FormView):
             error_message = _(
                 message='Template error; %(exception)s'
             ) % {'exception': exception}
-            messages.error(message=error_message, request=self.request)
+
+            result = error_message
 
         return {'result': result, 'template': template_string}

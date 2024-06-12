@@ -68,6 +68,18 @@
   `fonts-arphic-ukai`, `fonts-unfonts-core`.
 - Document template helper updates: Fixed the latest file help. Added a
   helper that returns the active version.
+- Templating updates:
+
+  - Add template preview with syntax highlight.
+  - Change the font family of the template to be monospaced.
+  - Synchronize the scrolling of the template edit and preview fields.
+  - Ensure the overscroll of the edit and preview fields does not affect
+    the parent element.
+  - Restrict the scrolling of the edit, preview, and result fields to
+    vertical only.
+  - Add the setting `TEMPLATING_WIDGET_HIGHLIGHT_THEME` to change the
+    highlight style theme.
+  - Return errors in the result fields instead of a view message.
 
 4.7.1 (2024-06-04)
 ==================

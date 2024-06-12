@@ -22,6 +22,50 @@ jQuery(document).ready(function() {
             'selectionEnd', templateCursorPosition + fieldText.length
         );
 
+        $idTemplate.trigger('change');
+
         $this.val('');
     });
+
+    /* Update the code preview */
+
+    const templatingPreviewRefresh = function () {
+        const $this = $('textarea.templating-widget-code');
+        const $preview = $('code.templating-widget-code');
+
+        let content = $this.val();
+        $preview.text(content);
+        $preview.removeAttr('data-highlighted');
+        hljs.highlightElement($preview[0]);
+    }
+
+    $('textarea.templating-widget-code').on('input change keyup', function (event) {
+        templatingPreviewRefresh();
+    });
+
+    templatingPreviewRefresh();
+
+    /* Synchronize the scrolling */
+
+    const syncScroll = function(event) {
+        const $other = $syncScrollSelector.not(this)
+        const other = $other.get(0);
+
+        $other.off('scroll', syncScroll);
+
+        let percentage = this.scrollTop / (this.scrollHeight - this.offsetHeight);
+
+        other.scrollTop = (other.scrollHeight - other.offsetHeight) * percentage;
+
+        setTimeout(
+            function(){
+                $other.on('scroll', syncScroll);
+            }, 25
+        );
+
+    }
+
+    const $syncScrollSelector = $('textarea.templating-widget-code, code.templating-widget-code');
+
+    $syncScrollSelector.on('scroll', syncScroll);
 });

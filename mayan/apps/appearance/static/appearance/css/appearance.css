@@ -874,3 +874,13 @@ Input search clearable
     line-height: 16px;
     padding-top: 8px;
 }
+
+/* Coding and Pre */
+
+.appearance-overscroll-contain {
+    overscroll-behavior: contain;
+}
+
+.appearance-resize-vertical {
+    resize: vertical;
+}

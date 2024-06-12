@@ -8,6 +8,10 @@ from mayan.apps.forms import form_widgets
 from .classes import Template
 
 
+class FormWidgetCode(form_widgets.Textarea):
+    template_name='templating/forms/widgets/code.html'
+
+
 class TemplateWidget(form_widgets.NamedMultiWidget):
     builtin_excludes = {
         'tags': ('csrf_token',)
@@ -20,13 +24,43 @@ class TemplateWidget(form_widgets.NamedMultiWidget):
                 'data-field-template': '${ $this.val() }'
             }
         ),
-        'template': form_widgets.Textarea(
-            attrs={'rows': 5, 'data-template-fields': 'template'}
+        'template': FormWidgetCode(
+            attrs={
+                'data-template-fields': 'template',
+                'rows': 5
+            }
         )
     }
 
     class Media:
         js = ('templating/js/template_widget.js',)
+
+    def decompress(self, value):
+        choices_builtin = []
+        choices_builtin.append(
+            (
+                _(message='Filters'), self.get_builtin_choices(
+                    klass='filters', name_template='{{{{ | {} }}}}'
+                )
+            )
+        )
+        choices_builtin.append(
+            (
+                _(message='Tags'), self.get_builtin_choices(
+                    klass='tags', name_template='{{% {} %}}'
+                )
+            )
+        )
+        choices_builtin.insert(
+            0, (
+                '', _(message='<Filters and tags>')
+            )
+        )
+
+        self.widgets['builtin_tags'].choices = choices_builtin
+        return {
+            'builtin_tags': None, 'template': value
+        }
 
     def get_builtin_choices(self, klass, name_template='{}'):
         result = []
@@ -61,33 +95,6 @@ class TemplateWidget(form_widgets.NamedMultiWidget):
         result['widget']['subwidgets'][0]['attrs']['required'] = False
         return result
 
-    def decompress(self, value):
-        choices_builtin = []
-        choices_builtin.append(
-            (
-                _(message='Filters'), self.get_builtin_choices(
-                    klass='filters', name_template='{{{{ | {} }}}}'
-                )
-            )
-        )
-        choices_builtin.append(
-            (
-                _(message='Tags'), self.get_builtin_choices(
-                    klass='tags', name_template='{{% {} %}}'
-                )
-            )
-        )
-        choices_builtin.insert(
-            0, (
-                '', _(message='<Filters and tags>')
-            )
-        )
-
-        self.widgets['builtin_tags'].choices = choices_builtin
-        return {
-            'builtin_tags': None, 'template': value
-        }
-
     def value_from_datadict(self, querydict, files, name):
         template = querydict.get(
             '{}_template'.format(name)
@@ -106,12 +113,6 @@ class ModelTemplateWidget(TemplateWidget):
             }
         )
         self.subwidgets_order.insert(0, 'model_attribute')
-
-    def get_context(self, name, value, attrs):
-        result = super().get_context(attrs=attrs, name=name, value=value)
-        # Set model_attribute autocopy sub widget as not required.
-        result['widget']['subwidgets'][1]['attrs']['required'] = False
-        return result
 
     def decompress(self, value):
         result = super().decompress(value=value)
@@ -132,4 +133,10 @@ class ModelTemplateWidget(TemplateWidget):
 
         result['model_attribute'] = None
 
+        return result
+
+    def get_context(self, name, value, attrs):
+        result = super().get_context(attrs=attrs, name=name, value=value)
+        # Set model_attribute autocopy sub widget as not required.
+        result['widget']['subwidgets'][1]['attrs']['required'] = False
         return result

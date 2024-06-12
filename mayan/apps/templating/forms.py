@@ -9,7 +9,10 @@ class DocumentTemplateSandboxForm(forms.Form):
     result = form_fields.CharField(
         help_text=_(message='Resulting text from the evaluated template.'),
         label=_(message='Result'), required=False, widget=form_widgets.Textarea(
-            attrs={'readonly': 'readonly', 'rows': 5}
+            attrs={
+                'class': 'appearance-overscroll-contain resize-vertical',
+                'readonly': 'readonly', 'rows': 5
+            }
         )
     )
 
@@ -18,8 +21,9 @@ class DocumentTemplateSandboxForm(forms.Form):
         self.model_variable = kwargs.pop('model_variable')
         super().__init__(*args, **kwargs)
         self.fields['template'] = ModelTemplateField(
-            initial_help_text=_(message='The template string to be evaluated.'),
-            label=_(message='Template'), model=self.model,
+            initial_help_text=_(
+                message='The template string to be evaluated.'
+            ), label=_(message='Template'), model=self.model,
             model_variable=self.model_variable, required=True
         )
         self.order_fields(
