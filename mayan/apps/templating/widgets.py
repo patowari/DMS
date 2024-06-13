@@ -9,7 +9,7 @@ from .classes import Template
 
 
 class FormWidgetCode(form_widgets.Textarea):
-    template_name='templating/forms/widgets/code.html'
+    template_name = 'templating/forms/widgets/code.html'
 
 
 class TemplateWidget(form_widgets.NamedMultiWidget):
