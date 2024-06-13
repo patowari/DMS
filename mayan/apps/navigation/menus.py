@@ -98,6 +98,36 @@ class Menu(TemplateObjectMixin):
     def get_icon(self, context):
         return self._icon
 
+    def do_matched_links_update(
+        self, matched_links, bound_object, unbound_object, excluded_object
+    ):
+        # Add bound links that match the object.
+        # Remove unbound links that match the object.
+        # Remove unbound global unbound links.
+        # Remove excluded links that match the object.
+
+        matched_links.update(
+            set(
+                self.bound_links.get(
+                    bound_object, ()
+                )
+            ) - set(
+                self.unbound_links.get(
+                    unbound_object, ()
+                )
+            ) - set(
+                self.unbound_links.get(
+                    None, ()
+                )
+            ) - set(
+                self.excluded_links.get(
+                    excluded_object, ()
+                )
+            )
+        )
+
+        return matched_links
+
     @cache
     def get_links_for_class(self, resolved_navigation_object_class):
         matched_links = set()
@@ -106,20 +136,13 @@ class Menu(TemplateObjectMixin):
             mro = resolved_navigation_object_class.__mro__
         except AttributeError:
             # Not a class, direct instance match.
-            matched_links.update(
-                set(
-                    self.bound_links.get(
-                        resolved_navigation_object_class, ()
-                    )
-                ) - set(
-                    self.unbound_links.get(
-                        resolved_navigation_object_class, ()
-                    )
-                ) - set(
-                    self.excluded_links.get(
-                        resolved_navigation_object_class, ()
-                    )
-                )
+            bound_object = resolved_navigation_object_class
+            unbound_object = resolved_navigation_object_class
+            excluded_object = resolved_navigation_object_class
+
+            matched_links = self.do_matched_links_update(
+                matched_links=matched_links, bound_object=bound_object,
+                unbound_object=unbound_object, excluded_object=excluded_object
             )
         else:
             # Get proxy results.
@@ -133,20 +156,14 @@ class Menu(TemplateObjectMixin):
                 """It's not a model, treat as a generic class."""
 
                 for super_class in mro[:-1]:
-                    matched_links.update(
-                        set(
-                            self.bound_links.get(
-                                super_class, ()
-                            )
-                        ) - set(
-                            self.unbound_links.get(
-                                super_class, ()
-                            )
-                        ) - set(
-                            self.excluded_links.get(
-                                resolved_navigation_object_class, ()
-                            )
-                        )
+
+                    bound_object = super_class
+                    unbound_object = super_class
+                    excluded_object = resolved_navigation_object_class
+
+                    matched_links = self.do_matched_links_update(
+                        matched_links=matched_links, bound_object=bound_object,
+                        unbound_object=unbound_object, excluded_object=excluded_object
                     )
             else:
                 if model in self.proxy_exclusions:
@@ -157,20 +174,13 @@ class Menu(TemplateObjectMixin):
                     # Model is a proxy or a concrete model.
                     bound_model = proxy_parent_model or model
 
-                matched_links.update(
-                    set(
-                        self.bound_links.get(
-                            bound_model, ()
-                        )
-                    ) - set(
-                        self.unbound_links.get(
-                            bound_model, ()
-                        )
-                    ) - set(
-                        self.excluded_links.get(
-                            bound_model, ()
-                        )
-                    )
+                bound_object = bound_model
+                unbound_object = bound_model
+                excluded_object = bound_model
+
+                matched_links = self.do_matched_links_update(
+                    matched_links=matched_links, bound_object=bound_object,
+                    unbound_object=unbound_object, excluded_object=excluded_object
                 )
 
         return matched_links
@@ -257,7 +267,6 @@ class Menu(TemplateObjectMixin):
         self, context=None, request=None, source=None, sort_results=False
     ):
         result = []
-        self.matched_link_set = set()
 
         if not context and not request:
             raise ImproperlyConfigured(
@@ -361,12 +370,6 @@ class Menu(TemplateObjectMixin):
 
         object_resolved_links = []
 
-        # Deduplicate matched links.
-        matched_links = list(
-            set(matched_links).difference(self.matched_link_set)
-        )
-        self.matched_link_set.update(matched_links)
-
         for link in matched_links:
             kwargs = {'context': context}
 
@@ -395,16 +398,18 @@ class Menu(TemplateObjectMixin):
 
     def unbind_links(self, links, sources=None):
         """
-        Allow unbinding links from sources, used to allow 3rd party apps to
-        change the link binding of core apps.
+        Allow unbinding links from sources. Used to allow 3rd party apps to
+        change the link binding of core apps without changing the core apps.
         """
-        try:
+        if sources is None:
+            # Unsourced links display always.
+            self._map_links_to_source(
+                links=links, source=None, map_variable='unbound_links'
+            )
+        else:
             for source in sources:
                 self._map_links_to_source(
                     links=links, source=source, map_variable='unbound_links'
                 )
-        except TypeError:
-            # Unsourced links display always.
-            self._map_links_to_source(
-                links=links, source=sources, map_variable='unbound_links'
-            )
+
+        self.get_links_for_class.cache_clear()
