@@ -81,6 +81,8 @@
     highlight style theme.
   - Return errors in the result fields instead of a view message.
 
+- Remove KeyCloak from the Docker Compose file.
+
 4.7.1 (2024-06-04)
 ==================
 - Merge changes and fixes from version 4.6.5.
