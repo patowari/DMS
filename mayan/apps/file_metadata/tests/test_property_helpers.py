@@ -7,7 +7,8 @@ from .mixins import DocumentFileMetadataTestMixin
 class DocumentPropertyHelperTestCase(
     DocumentFileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
 ):
-    _test_document_file_metadata_create_auto = True
+    _test_document_file_metadata_entry_create_auto = True
+    _test_document_file_metadata_driver_create_auto = True
 
     def test_basic(self):
         self._clear_events()
@@ -37,7 +38,7 @@ class DocumentPropertyHelperTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_no_source_metadata(self):
+    def test_no_file_metadata(self):
         self._test_document_file_metadata.delete()
 
         self._clear_events()
@@ -52,7 +53,7 @@ class DocumentPropertyHelperTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_wrong_source_metadata_name(self):
+    def test_wrong_file_metadata_name(self):
         self._test_document_file_metadata.delete()
 
         self._clear_events()
@@ -71,7 +72,8 @@ class DocumentPropertyHelperTestCase(
 class DocumentFilePropertyHelperTestCase(
     DocumentFileMetadataTestMixin, PropertyHelperTestMixin, BaseTestCase
 ):
-    _test_document_file_metadata_create_auto = True
+    _test_document_file_metadata_entry_create_auto = True
+    _test_document_file_metadata_driver_create_auto = True
 
     def test_basic(self):
         self._clear_events()
@@ -86,7 +88,7 @@ class DocumentFilePropertyHelperTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_no_source_metadata(self):
+    def test_no_file_metadata(self):
         self._test_document_file_metadata.delete()
 
         self._clear_events()
@@ -101,7 +103,7 @@ class DocumentFilePropertyHelperTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_wrong_source_metadata_name(self):
+    def test_wrong_file_metadata_name(self):
         self._test_document_file_metadata.delete()
 
         self._clear_events()

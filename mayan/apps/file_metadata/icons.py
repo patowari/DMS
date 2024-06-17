@@ -5,6 +5,9 @@ from mayan.apps.appearance.classes import Icon
 icon_file_metadata = Icon(
     driver_name='fontawesome', symbol='chess-board'
 )
+icon_file_metadata_driver = Icon(
+    driver_name='fontawesome', symbol='chess-board'
+)
 
 # Document file
 
@@ -22,7 +25,10 @@ icon_document_file_metadata_driver_list = Icon(
 
 # Document type
 
-icon_document_type_file_metadata_settings = Icon(
+icon_document_type_file_metadata_driver_configuration_edit = Icon(
+    driver_name='fontawesome', symbol='pencil-alt'
+)
+icon_document_type_file_metadata_driver_configuration_list = Icon(
     driver_name='fontawesome', symbol='chess-board'
 )
 icon_document_type_file_metadata_submit = Icon(

@@ -11,29 +11,14 @@ from mayan.apps.common.utils import (
 )
 
 from .exceptions import FileMetadataError
+from .settings import setting_auto_process
 
 logger = logging.getLogger(name=__name__)
 
 
 class FileMetadataDriverCollection:
-    _driver_enabled_list = []
     _driver_to_mime_type_dict = {}
     _mime_type_to_driver_dict = {}
-
-    @classmethod
-    def do_driver_disable(cls, driver):
-        if driver in cls._driver_to_mime_type_dict:
-            cls._driver_enabled_list.remove(driver)
-
-    @classmethod
-    def do_driver_disable_all(cls):
-        cls._driver_enabled_list = []
-
-    @classmethod
-    def do_driver_enable(cls, driver):
-        if driver in cls._driver_to_mime_type_dict:
-            if driver not in cls._driver_enabled_list:
-                cls._driver_enabled_list.append(driver)
 
     @classmethod
     def do_driver_register(cls, klass):
@@ -50,8 +35,6 @@ class FileMetadataDriverCollection:
             ).append(klass)
 
         klass.dotted_path = get_class_full_name(klass=klass)
-
-        cls.do_driver_enable(driver=klass)
 
     @classmethod
     def get_all(cls, sorted=False):
@@ -81,11 +64,7 @@ class FileMetadataDriverCollection:
             )
         )
 
-        result = [
-            driver_class for driver_class in driver_class_list if driver_class in cls._driver_enabled_list
-        ]
-
-        return result
+        return driver_class_list
 
 
 class FileMetadataDriverMetaclass(type):
@@ -119,15 +98,31 @@ class FileMetadataDriver(
 
     @classmethod
     def do_model_instance_populate(cls):
+        DocumentType = apps.get_model(
+            app_label='documents', model_name='DocumentType'
+        )
+        DocumentTypeDriverConfiguration = apps.get_model(
+            app_label='file_metadata', model_name='DocumentTypeDriverConfiguration'
+        )
         StoredDriver = apps.get_model(
             app_label='file_metadata', model_name='StoredDriver'
         )
-        model_instance, created = StoredDriver.objects.get_or_create(
+
+        model_instance, created = StoredDriver.objects.update_or_create(
             driver_path=cls.dotted_path, defaults={
-                'internal_name': cls.internal_name
+                'internal_name': cls.internal_name, 'exists': True
             }
         )
         cls.model_instance = model_instance
+
+        if created:
+            enabled = setting_auto_process.value
+
+            for document_type in DocumentType.objects.all():
+                DocumentTypeDriverConfiguration.objects.update_or_create(
+                    defaults={'enabled': enabled},
+                    document_type=document_type, stored_driver=model_instance
+                )
 
     @classmethod
     def get_mime_type_list_display(cls):
@@ -155,6 +150,10 @@ class FileMetadataDriver(
             database. Can be safely ignored under that situation.
             """
         else:
+            # Reset all `StoredDriver` in case a file metadata app was
+            # disabled.
+            StoredDriver.objects.update(exists=False)
+
             for driver in cls.collection.get_all():
                 driver.do_model_instance_populate()
 

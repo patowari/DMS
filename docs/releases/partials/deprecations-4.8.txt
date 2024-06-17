@@ -1,0 +1,3 @@
+- The file metadata setting `FILE_METADATA_AUTO_PROCESS`
+  will be removed in a future version. New document types
+  will default to all file metadata drivers to be enabled.

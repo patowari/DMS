@@ -5,7 +5,11 @@ from mayan.apps.common.utils import convert_to_internal_name
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_type_models import DocumentType
 
-from .managers import DocumentTypeSettingsManager, FileMetadataEntryManager
+from .managers import (
+    FileMetadataEntryManager,
+    ModelManagerDocumentTypeDriverConfigurationValid,
+    ModelManagerStoredDriverValid
+)
 from .model_mixins import (
     DocumentFileDriverEntryBusinessLogicMixin, StoredDriverBusinessLogicMixin
 )
@@ -33,30 +37,35 @@ class DocumentFileDriverEntry(
         return str(self.driver)
 
 
-class DocumentTypeSettings(models.Model):
-    """
-    Model to store the file metadata settings for a document type.
-    """
-    document_type = models.OneToOneField(
-        on_delete=models.CASCADE, related_name='file_metadata_settings',
-        to=DocumentType, unique=True, verbose_name=_(message='Document type')
+class DocumentTypeDriverConfiguration(models.Model):
+    document_type = models.ForeignKey(
+        on_delete=models.CASCADE,
+        related_name='file_metadata_driver_configurations',
+        to=DocumentType, verbose_name=_(message='Document type')
     )
-    auto_process = models.BooleanField(
+    stored_driver = models.ForeignKey(
+        on_delete=models.CASCADE,
+        related_name='document_type_configurations',
+        to='StoredDriver', verbose_name=_(message='Driver')
+    )
+    enabled = models.BooleanField(
         default=True, help_text=_(
-            message='Automatically queue newly created documents for '
-            'processing.'
-        ), verbose_name=_(message='Auto process')
+            'Enable this driver to process document files of the selected '
+            'document type.'
+        ), verbose_name=_(message='Enabled')
     )
 
-    objects = DocumentTypeSettingsManager()
+    objects = models.Manager()
+    valid = ModelManagerDocumentTypeDriverConfigurationValid()
+
+    def __str__(self):
+        return str(self.stored_driver)
 
     class Meta:
-        verbose_name = _(message='Document type settings')
-        verbose_name_plural = _(message='Document types settings')
-
-    def natural_key(self):
-        return self.document_type.natural_key()
-    natural_key.dependencies = ['documents.DocumentType']
+        ordering = ('stored_driver',)
+        unique_together = ('document_type', 'stored_driver')
+        verbose_name = _(message='Document type driver settings')
+        verbose_name_plural = _(message='Document type driver settings')
 
 
 class FileMetadataEntry(models.Model):
@@ -123,6 +132,14 @@ class StoredDriver(StoredDriverBusinessLogicMixin, models.Model):
         db_index=True, max_length=128, unique=True,
         verbose_name=_(message='Internal name')
     )
+    exists = models.BooleanField(
+        default=True, help_text=_(
+            'The class defined by this instance is valid and active.'
+        ), verbose_name=_(message='Valid')
+    )
+
+    objects = models.Manager()
+    valid = ModelManagerStoredDriverValid()
 
     class Meta:
         ordering = ('internal_name',)

@@ -10,6 +10,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_file_upload
 from mayan.apps.events.classes import ModelEventType
+from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import FileMetadataDriver
@@ -18,15 +19,16 @@ from .events import (
     event_file_metadata_document_file_submitted
 )
 from .handlers import (
-    handler_initialize_new_document_type_file_metadata_settings,
-    process_document_file_metadata
+    handler_initialize_new_document_type_file_metadata_driver_configuration,
+    handler_post_document_file_upload
 )
 from .links import (
     link_document_file_metadata_driver_attribute_list,
     link_document_file_metadata_driver_list,
     link_document_file_metadata_single_submit,
     link_document_file_metadata_submit_multiple,
-    link_document_type_file_metadata_settings,
+    link_document_type_file_metadata_driver_configuration_edit,
+    link_document_type_file_metadata_driver_configuration_list,
     link_document_type_file_metadata_submit, link_file_metadata_driver_list
 )
 from .methods import (
@@ -63,13 +65,12 @@ class FileMetadataApp(MayanAppConfig):
         DocumentFile = apps.get_model(
             app_label='documents', model_name='DocumentFile'
         )
-        DocumentTypeSettings = self.get_model(
-            model_name='DocumentTypeSettings'
+        DocumentTypeDriverConfiguration = self.get_model(
+            model_name='DocumentTypeDriverConfiguration'
         )
         DocumentType = apps.get_model(
             app_label='documents', model_name='DocumentType'
         )
-
         Document.add_to_class(
             name='file_metadata_value_of',
             value=DocumentFileMetadataHelper.constructor
@@ -122,9 +123,6 @@ class FileMetadataApp(MayanAppConfig):
                 permission_file_metadata_submit,
                 permission_file_metadata_view
             )
-        )
-        ModelPermission.register_inheritance(
-            model=DocumentTypeSettings, related='document_type'
         )
         ModelPermission.register_inheritance(
             model=DocumentFileDriverEntry, related='document_file'
@@ -181,6 +179,18 @@ class FileMetadataApp(MayanAppConfig):
             label=_(message='Description'), source=FileMetadataDriver
         )
 
+        # DocumentTypeDriverConfiguration
+
+        SourceColumn(
+            attribute='stored_driver', include_label=True,
+            source=DocumentTypeDriverConfiguration
+        )
+        SourceColumn(
+            attribute='enabled', include_label=True,
+            source=DocumentTypeDriverConfiguration,
+            widget=column_widgets.TwoStateWidget
+        )
+
         menu_tools.bind_links(
             links=(
                 link_document_type_file_metadata_submit,
@@ -214,20 +224,27 @@ class FileMetadataApp(MayanAppConfig):
             sources=(DocumentFileDriverEntry,)
         )
 
+        menu_object.bind_links(
+            links=(
+                link_document_type_file_metadata_driver_configuration_edit,
+            ), sources=(DocumentTypeDriverConfiguration,)
+        )
+
         # Document type
 
         menu_list_facet.bind_links(
-            links=(link_document_type_file_metadata_settings,),
-            sources=(DocumentType,)
+            links=(
+                link_document_type_file_metadata_driver_configuration_list,
+            ), sources=(DocumentType,)
         )
 
         post_save.connect(
-            dispatch_uid='file_metadata_handler_initialize_new_document_type_file_metadata_settings',
-            receiver=handler_initialize_new_document_type_file_metadata_settings,
+            dispatch_uid='file_metadata_handler_initialize_new_document_type_file_metadata_driver_configuration',
+            receiver=handler_initialize_new_document_type_file_metadata_driver_configuration,
             sender=DocumentType
         )
         signal_post_document_file_upload.connect(
-            dispatch_uid='file_metadata_process_document_file_metadata',
-            receiver=process_document_file_metadata,
+            dispatch_uid='file_metadata_handler_post_document_file_upload',
+            receiver=handler_post_document_file_upload,
             sender=DocumentFile
         )

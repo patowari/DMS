@@ -82,6 +82,7 @@
   - Return errors in the result fields instead of a view message.
 
 - Remove KeyCloak from the Docker Compose file.
+- Support enabling or disabling file metadata driver per document type.
 
 4.7.1 (2024-06-04)
 ==================

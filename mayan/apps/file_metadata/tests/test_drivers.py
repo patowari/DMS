@@ -19,6 +19,8 @@ from .mixins import DocumentFileMetadataTestMixin
 class EXIFToolDriverTestCase(
     DocumentFileMetadataTestMixin, GenericDocumentTestCase
 ):
+    _test_document_file_metadata_driver_create_auto = True
+    _test_document_file_metadata_driver_enable_auto = True
     _test_document_file_metadata_driver_path = EXIFToolDriver.dotted_path
     _test_document_filename = TEST_FILE_PDF_FILENAME
 
@@ -34,6 +36,8 @@ class EXIFToolDriverTestCase(
 class ExtractMSGDriverTestCase(
     DocumentFileMetadataTestMixin, GenericDocumentTestCase
 ):
+    _test_document_file_metadata_driver_create_auto = True
+    _test_document_file_metadata_driver_enable_auto = True
     _test_document_file_metadata_driver_path = ExtractMSGToolDriver.dotted_path
     _test_document_filename = TEST_ARCHIVE_MSG_STRANGE_DATE_PATH
 

@@ -1,33 +1,20 @@
-from django.contrib import messages
-from django.http import HttpResponseRedirect
 from django.template import RequestContext
-from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _, ngettext
 
-from mayan.apps.documents.forms.document_type_forms import (
-    DocumentTypeFilteredSelectForm
-)
 from mayan.apps.documents.models.document_file_models import DocumentFile
-from mayan.apps.documents.models.document_models import Document
-from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.views.generics import (
-    FormView, MultipleObjectConfirmActionView, SingleObjectEditView,
-    SingleObjectListView
+    MultipleObjectConfirmActionView, SingleObjectListView
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from .classes import FileMetadataDriver
-from .icons import (
-    icon_document_file_metadata_single_submit,
-    icon_document_type_file_metadata_settings,
-    icon_document_type_file_metadata_submit, icon_file_metadata,
+from ..icons import (
     icon_document_file_metadata_driver_list,
-    icon_file_metadata_driver_attribute_list, icon_file_metadata_driver_list
+    icon_document_file_metadata_single_submit, icon_file_metadata,
+    icon_file_metadata_driver_attribute_list
 )
-from .links import link_document_file_metadata_single_submit
-from .models import DocumentFileDriverEntry
-from .permissions import (
-    permission_document_type_file_metadata_setup,
+from ..links import link_document_file_metadata_single_submit
+from ..models import DocumentFileDriverEntry
+from ..permissions import (
     permission_file_metadata_submit, permission_file_metadata_view
 )
 
@@ -146,94 +133,3 @@ class DocumentFileMetadataSubmitView(MultipleObjectConfirmActionView):
 
     def object_action(self, form, instance):
         instance.submit_for_file_metadata_processing(user=self.request.user)
-
-
-class DocumentTypeFileMetadataSettingsEditView(
-    ExternalObjectViewMixin, SingleObjectEditView
-):
-    external_object_class = DocumentType
-    external_object_permission = permission_document_type_file_metadata_setup
-    external_object_pk_url_kwarg = 'document_type_id'
-    fields = ('auto_process',)
-    post_action_redirect = reverse_lazy(
-        viewname='documents:document_type_list'
-    )
-    view_icon = icon_document_type_file_metadata_settings
-
-    def get_extra_context(self):
-        return {
-            'object': self.external_object,
-            'title': _(
-                message='Edit file metadata settings for document type: %s'
-            ) % self.external_object
-        }
-
-    def get_object(self, queryset=None):
-        return self.external_object.file_metadata_settings
-
-
-class DocumentTypeFileMetadataSubmitView(FormView):
-    extra_context = {
-        'title': _(
-            message='Submit all documents of a type for file metadata processing.'
-        )
-    }
-    form_class = DocumentTypeFilteredSelectForm
-    post_action_redirect = reverse_lazy(viewname='common:tools_list')
-    view_icon = icon_document_type_file_metadata_submit
-
-    def get_form_extra_kwargs(self):
-        return {
-            'allow_multiple': True,
-            'permission': permission_file_metadata_submit,
-            'user': self.request.user
-        }
-
-    def form_valid(self, form):
-        queryset_documents = Document.valid.all()
-
-        count = 0
-        for document_type in form.cleaned_data['document_type']:
-            for document in document_type.documents.filter(pk__in=queryset_documents.values('pk')):
-                document.submit_for_file_metadata_processing(
-                    user=self.request.user
-                )
-                count += 1
-
-        messages.success(
-            message=_(
-                message='%(count)d documents added to the file metadata processing '
-                'queue.'
-            ) % {
-                'count': count
-            }, request=self.request
-        )
-
-        return HttpResponseRedirect(
-            redirect_to=self.get_success_url()
-        )
-
-
-class FileMetadataDriverListView(SingleObjectListView):
-    view_icon = icon_file_metadata_driver_list
-    view_permission = permission_file_metadata_view
-
-    def get_extra_context(self):
-        return {
-            'hide_object': True,
-            'no_results_icon': icon_file_metadata,
-            'no_results_text': _(
-                message='File metadata drivers extract embedded information '
-                'from document files. File metadata drivers are configure '
-                'in code only.'
-            ),
-            'no_results_title': _(
-                message='No file metadata drivers available.'
-            ),
-            'title': _(
-                message='File metadata drivers'
-            )
-        }
-
-    def get_source_queryset(self):
-        return FileMetadataDriver.collection.get_all(sorted=True)

@@ -32,15 +32,21 @@ def task_document_file_metadata_process(
         driver_class_list = FileMetadataDriver.collection.get_driver_for_mime_type(
             mime_type=document_file.mimetype
         )
+        document_type = document_file.document.document_type
 
         document_file_metadata_driver_task_list = []
         for driver_class in driver_class_list:
-            document_file_metadata_driver_task_list.append(
-                task_metadata_driver_process.s(
-                    document_file_id=document_file_id,
-                    stored_driver_id=driver_class.model_instance.pk
-                )
+            queryset = driver_class.model_instance.document_type_configurations.filter(
+                document_type=document_type, enabled=True
             )
+
+            if queryset.exists():
+                document_file_metadata_driver_task_list.append(
+                    task_metadata_driver_process.s(
+                        document_file_id=document_file_id,
+                        stored_driver_id=driver_class.model_instance.pk
+                    )
+                )
 
         chord(document_file_metadata_driver_task_list)(
             task_document_file_metadata_finished.s(

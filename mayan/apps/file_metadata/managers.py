@@ -1,6 +1,5 @@
 import logging
 
-from django.apps import apps
 from django.db import models
 
 from mayan.apps.databases.manager_mixins import ManagerMinixCreateBulk
@@ -15,16 +14,17 @@ class FileMetadataEntryManager(ManagerMinixCreateBulk, models.Manager):
     """
 
 
-class DocumentTypeSettingsManager(models.Manager):
-    def get_by_natural_key(self, document_type_natural_key):
-        DocumentType = apps.get_model(
-            app_label='documents', model_name='DocumentType'
-        )
-        try:
-            document_type = DocumentType.objects.get_by_natural_key(
-                document_type_natural_key
-            )
-        except DocumentType.DoesNotExist:
-            raise self.model.DoesNotExist
+class ModelManagerDocumentTypeDriverConfigurationValid(models.Manager):
+    def get_queryset(self):
+        queryset = super().get_queryset()
 
-        return self.get(document_type__pk=document_type.pk)
+        return queryset.filter(
+            stored_driver__exists=True
+        )
+
+
+class ModelManagerStoredDriverValid(models.Manager):
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        return queryset.filter(exists=True)

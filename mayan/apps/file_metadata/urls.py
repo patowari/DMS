@@ -1,17 +1,26 @@
 from django.urls import re_path
 
-from .views import (
+from .views.document_file_views import (
     DocumentFileMetadataDriverAttributeListView,
-    DocumentFileMetadataDriverListView, DocumentFileMetadataSubmitView,
-    DocumentTypeFileMetadataSettingsEditView,
-    DocumentTypeFileMetadataSubmitView, FileMetadataDriverListView
+    DocumentFileMetadataDriverListView, DocumentFileMetadataSubmitView
 )
+from .views.document_type_views import (
+    DocumentTypeFileMetadataDriverConfigurationEditView,
+    DocumentTypeFileMetadataDriverConfigurationListView,
+    DocumentTypeFileMetadataSubmitView,
+)
+from .views.tool_views import FileMetadataDriverListView
 
 urlpatterns_document_types = [
     re_path(
-        route=r'^document_types/(?P<document_type_id>\d+)/file_metadata/settings/$',
-        name='document_type_file_metadata_settings',
-        view=DocumentTypeFileMetadataSettingsEditView.as_view()
+        route=r'^document_types/(?P<document_type_id>\d+)/file_metadata/drivers/$',
+        name='document_type_file_metadata_driver_configuration_list',
+        view=DocumentTypeFileMetadataDriverConfigurationListView.as_view()
+    ),
+    re_path(
+        route=r'^document_types/(?P<document_type_id>\d+)/file_metadata/drivers/(?P<stored_driver_id>\d+)/$',
+        name='document_type_file_metadata_driver_configuration_edit',
+        view=DocumentTypeFileMetadataDriverConfigurationEditView.as_view()
     ),
     re_path(
         route=r'^document_types/submit/$',
