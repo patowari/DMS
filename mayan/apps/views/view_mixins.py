@@ -314,15 +314,15 @@ class MultipleObjectViewMixin(SingleObjectMixin):
         """
         Returns the list of objects the view is displaying.
 
-        By default this requires `self.queryset` and a `pk`, `slug` ro
-        `pk_list' argument in the URLconf, but subclasses can override this
+        By default this requires `self.queryset` and a `pk`, `slug` or
+        `pk_list' argument in the `URLconf`, but subclasses can override this
         to return any object.
         """
-        self.view_mode_single = False
         self.view_mode_multiple = False
+        self.view_mode_single = False
 
         # Use a custom queryset if provided; this is required for subclasses
-        # like DateDetailView.
+        # like `DateDetailView`.
         if queryset is None:
             queryset = self.get_queryset()
 
