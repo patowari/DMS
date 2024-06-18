@@ -82,9 +82,7 @@ class SearchFilterEnabledListViewMixin(
             search_model = self.get_search_model_from_queryset(queryset=queryset)
             if search_model:
                 context.update(
-                    {
-                        'search_model': search_model
-                    }
+                    {'search_model': search_model}
                 )
 
                 query_dict = self.get_search_query()
