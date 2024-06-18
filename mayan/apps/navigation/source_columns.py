@@ -397,9 +397,9 @@ class SourceColumn(TemplateObjectMixin):
                 """
             else:
                 widget_instance = self.widget(
-                    column=self, request=request
+                    column=self, request=request, value=result
                 )
-                return widget_instance.render(value=result)
+                return widget_instance.render()
 
         if not result:
             if self.empty_value:

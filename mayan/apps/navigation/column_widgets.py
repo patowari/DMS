@@ -8,9 +8,10 @@ class SourceColumnWidget:
     template_name = None
     template_string = None
 
-    def __init__(self, column, request):
+    def __init__(self, column, request, value):
         self.column = column
         self.request = request
+        self.value = value
 
     def get_extra_context(self):
         return {}
@@ -21,13 +22,12 @@ class SourceColumnWidget:
     def get_template_string(self):
         return self.template_string
 
-    def render(self, value=None):
+    def render(self):
         template_name = self.get_template_name()
         template_string = self.get_template_string()
 
-        self.value = value
         context = {
-            'column': self.column, 'value': value
+            'column': self.column, 'value': self.value
         }
         context.update(
             self.get_extra_context()
