@@ -123,3 +123,8 @@ class DocumentMetadata(
             )
 
         return super().save(*args, **kwargs)
+
+
+class DocumentMetadataSearchResult(DocumentMetadata):
+    class Meta:
+        proxy = True

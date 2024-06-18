@@ -17,6 +17,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.databases.classes import (
     ModelFieldRelated, ModelProperty, ModelQueryFields
 )
+from mayan.apps.documents.column_widgets import SourceColumnWidgetDocumentLink
 from mayan.apps.documents.links.document_type_links import (
     link_document_type_list
 )
@@ -27,7 +28,9 @@ from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
 
 from .classes import MetadataParser, MetadataValidator
-from .column_widgets import DocumentMetadataWidget
+from .column_widgets import (
+    DocumentMetadataWidget, SourceColumnWidgetMetadataDocumentThumbnail
+)
 from .events import (
     event_document_metadata_added, event_document_metadata_edited,
     event_document_metadata_removed, event_metadata_type_edited,
@@ -82,21 +85,22 @@ class MetadataApp(MayanAppConfig):
         DocumentFilePageSearchResult = apps.get_model(
             app_label='documents', model_name='DocumentFilePageSearchResult'
         )
+        DocumentMetadata = self.get_model(model_name='DocumentMetadata')
+        DocumentMetadataSearchResult = self.get_model(
+            model_name='DocumentMetadataSearchResult'
+        )
+        DocumentType = apps.get_model(
+            app_label='documents', model_name='DocumentType'
+        )
+        DocumentTypeMetadataType = self.get_model(
+            model_name='DocumentTypeMetadataType'
+        )
         DocumentVersionSearchResult = apps.get_model(
             app_label='documents', model_name='DocumentVersionSearchResult'
         )
         DocumentVersionPageSearchResult = apps.get_model(
             app_label='documents',
             model_name='DocumentVersionPageSearchResult'
-        )
-
-        DocumentType = apps.get_model(
-            app_label='documents', model_name='DocumentType'
-        )
-
-        DocumentMetadata = self.get_model(model_name='DocumentMetadata')
-        DocumentTypeMetadataType = self.get_model(
-            model_name='DocumentTypeMetadataType'
         )
         MetadataType = self.get_model(model_name='MetadataType')
 
@@ -205,6 +209,8 @@ class MetadataApp(MayanAppConfig):
 
         # Columns
 
+        # Document
+
         SourceColumn(
             source=Document, label=_(message='Metadata'),
             widget=DocumentMetadataWidget
@@ -229,6 +235,8 @@ class MetadataApp(MayanAppConfig):
             widget=DocumentMetadataWidget
         )
 
+        # Document Metadata
+
         SourceColumn(
             attribute='metadata_type', is_identifier=True,
             is_sortable=True, source=DocumentMetadata
@@ -237,11 +245,23 @@ class MetadataApp(MayanAppConfig):
             attribute='value', include_label=True, is_sortable=True,
             source=DocumentMetadata
         )
-
         SourceColumn(
             attribute='is_required', include_label=True,
             source=DocumentMetadata, widget=column_widgets.TwoStateWidget
         )
+        SourceColumn(
+            label=_(message='Document link'), order=98,
+            source=DocumentMetadataSearchResult,
+            widget=SourceColumnWidgetDocumentLink
+        )
+        SourceColumn(
+            html_extra_classes='text-center document-thumbnail-list',
+            label=_(message='Document thumbnail'), order=99,
+            source=DocumentMetadataSearchResult,
+            widget=SourceColumnWidgetMetadataDocumentThumbnail
+        )
+
+        # Metadata type
 
         SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,

@@ -1,6 +1,7 @@
 from django.apps import apps
 from django.core.exceptions import PermissionDenied
 
+from mayan.apps.documents.column_widgets import ThumbnailWidget
 from mayan.apps.navigation.column_widgets import SourceColumnWidget
 
 from .permissions import permission_document_metadata_view
@@ -32,3 +33,8 @@ class DocumentMetadataWidget(SourceColumnWidget):
             )
 
         return {'queryset': queryset}
+
+
+class SourceColumnWidgetMetadataDocumentThumbnail(ThumbnailWidget):
+    def get_document(self):
+        return self.value.document

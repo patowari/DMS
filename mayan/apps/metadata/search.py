@@ -1,5 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.documents.search import search_model_document
 from mayan.apps.dynamic_search.search_models import SearchModel
 
@@ -13,6 +14,30 @@ search_model_document.add_model_field(
 search_model_document.add_model_field(
     field='metadata__value', label=_(message='Metadata value')
 )
+
+# Document metadata
+
+search_model_document_metadata = SearchModel(
+    app_label='metadata', label=_(message='Document metadata'),
+    model_name='DocumentMetadataSearchResult',
+    permission=permission_document_view,
+    serializer_path='mayan.apps.metadata.serializers.DocumentMetadataSerializer'
+)
+
+search_model_document_metadata.add_proxy_model(
+    app_label='metadata', model_name='DocumentMetadata'
+)
+
+search_model_document_metadata.add_model_field(
+    field='document__document_type__id',
+    label=_(message='Document type ID')
+)
+search_model_document_metadata.add_model_field(
+    field='document__document_type__label',
+    label=_(message='Document type label')
+)
+search_model_document_metadata.add_model_field(field='metadata_type__name')
+search_model_document_metadata.add_model_field(field='value')
 
 # Metadata type
 
