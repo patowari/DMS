@@ -11,10 +11,6 @@
         url('../fonts/IM_Fell_English_SC.ttf') format('truetype');
 }
 
-.navbar-brand {
-    font-family: "IM Fell English SC", serif;
-}
-
 #appearance-main-viewport {
     margin-top: 60px;
 }
@@ -23,19 +19,6 @@
 .link-text-span {
     padding-left: 10px;
     padding-right: 20px;
-}
-
-/* Make facet list group horizontal on small or smaller */
-@media (max-width: 767px) {
-    ul.list-group:after {
-        clear: both;
-        content: "";
-        display: block;
-    }
-
-    .list-group-item {
-        float: left;
-    }
 }
 
 /* Flex grid container for responsible list of items */
@@ -78,39 +61,6 @@
     transform: translate(3px, 5px) !important;
 }
 
-/*
- * Fix dropdowns inside responsive tables. On small viewports, the dropdown
- * menu float is set to none in order to show centered with the dropdown
- * button and the position is set to static to force the table to expand.
- */
-@media (max-width: 767px) {
-    .table-responsive .dropdown-menu {
-        float: none;
-        position: static !important;
-    }
-}
-@media (min-width: 768px) {
-    .table-responsive {
-        overflow: inherit;
-    }
-
-    .table-responsive .dropdown-menu {
-        float: left;
-    }
-}
-
-/* Avoid sidebar ul-li displaying disc decoration on small screens. */
-@media (max-width: 767px) {
-    .list-group {
-        list-style-type: none;
-    }
-}
-
-hr {
-    margin-top: 5px;
-    margin-bottom: 11px;
-}
-
 /* Customized Bootstrap btn-lg to work with flex grid */
 .appearance-btn-lg {
     border-top: 2px solid rgba(255, 255, 255, 0.7);
@@ -139,44 +89,6 @@ a i {
 /* Notifications */
 #toast-container > div {
     opacity: 1;
-}
-
-/* Collapse navigation on medium or smaller */
-@media (max-width: 991px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-    .navbar-fixed-top {
-        border-width: 0 0 1px;
-        top: 0;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-    .collapse.in {
-        display:block !important;
-    }
 }
 
 /* List item view */
@@ -318,21 +230,6 @@ a i {
  * Main content
  */
 
-/* Remove scroll bar caused by bootstraps -15px on .row margins */
-.zero-margin {
-    margin-left: -5px;
-    margin-right: 0px;
-}
-
-/* Remove scroll bar caused by bootstraps -15px on .row margins */
-/*
- * Used by the generic_form template to avoid displaying a second scrollbar
- * for the viewport when it has a carousel.
- */
-.zero-margin .row-avoid-second-scrollbar {
-    margin-bottom: -15px;
-}
-
 @media (min-width: 768px) {
     #appearance-main-viewport {
         margin-left: 210px;
@@ -381,61 +278,6 @@ a i {
     background-color: transparent;
     border: 2px solid transparent;
     color: inherit;
-}
-
-/* Bootstrap button outline override. */
-.btn-outline {
-    background-color: transparent;
-    color: inherit;
-}
-
-.btn-primary.btn-outline {
-    color: #428bca;
-}
-
-.btn-success.btn-outline {
-    color: #5cb85c;
-}
-
-.btn-info.btn-outline {
-    color: #5bc0de;
-}
-
-.btn-warning.btn-outline {
-    color: #f0ad4e;
-}
-
-.btn-danger.btn-outline {
-    color: #d9534f;
-}
-
-.btn-default.btn-outline:hover,
-.btn-primary.btn-outline:hover,
-.btn-success.btn-outline:hover,
-.btn-info.btn-outline:hover,
-.btn-warning.btn-outline:hover,
-.btn-danger.btn-outline:hover {
-    color: #fff;
-}
-
-.btn-list > .btn {
-    margin-bottom: 2px;
-}
-
-.btn-list > .btn:not(:last-child) {
-    margin-right: 4px;
-}
-
-.btn-xs {
-    padding: 1px 5px 0px;
-}
-
-/*
- * Top navigation
- * Hide default border to remove 1px line.
- */
-.navbar-fixed-top {
-    border: 0;
 }
 
 /* menu_main */
@@ -494,11 +336,6 @@ a i {
     transition: background-color 0.3s;
     width: 100%;
     z-index: 50;
-}
-
-/* Navbar-brand mobile */
-.navbar-brand {
-    margin-left: 26px;
 }
 
 /* Main menu footer */
@@ -647,10 +484,6 @@ a i {
     color: white;
     padding: 9px;
     text-decoration: none;
-}
-
-.navbar-fixed-top {
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .toolbar {

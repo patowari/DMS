@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'mayan.apps.events.apps.EventsApp',
     # Placed at the top so it can override any template.
     'mayan.apps.appearance.apps.AppearanceApp',
+    'mayan.apps.appearance_bootstrap.apps.AppearanceBootstrapApp',
     # Django
     'django.contrib.admin',
     'django.contrib.auth',

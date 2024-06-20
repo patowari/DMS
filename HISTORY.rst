@@ -85,6 +85,8 @@
 - Support enabling or disabling file metadata driver per document type.
 - Pass the value to `SourceColumnWidget` subclasses during initialization
   instead of during rendering.
+- Split Bootstrap specific markup and style into the `appearance_bootstrap`
+  app.
 
 4.7.1 (2024-06-04)
 ==================
