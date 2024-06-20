@@ -12,7 +12,7 @@ __all__ = django_forms_widgets_all + (
 
 
 class ColorWidget(TextInput):
-    template_name = 'forms/widget_color_picker.html'
+    template_name = 'forms/forms/widgets/widget_color_picker.html'
 
     def __init__(self, attrs=None):
         attrs = attrs or {}
@@ -41,7 +41,7 @@ class DisableableSelectWidget(SelectMultiple):
 
 
 class DropzoneWidget(Widget):
-    template_name = 'appearance/forms/widgets/dropzone.html'
+    template_name = 'forms/forms/widgets/dropzone.html'
 
 
 class NamedMultiWidget(Widget):

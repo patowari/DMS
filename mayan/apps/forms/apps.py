@@ -11,7 +11,7 @@ class FormsApp(MayanAppConfig):
     label = 'mayan_forms'  # Clash with Django's forms app.
     name = 'mayan.apps.forms'
     static_media_ignore_patterns = (
-        'views/node_modules/dropzone/index.js',
-        'views/node_modules/dropzone/component.json'
+        'mayan_forms/node_modules/dropzone/index.js',
+        'mayan_forms/node_modules/dropzone/component.json'
     )
     verbose_name = _(message='Forms')
