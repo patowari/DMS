@@ -7,7 +7,7 @@ from .permissions import permission_index_instance_view
 search_model_index_instance_node = SearchModel(
     app_label='document_indexing', model_name='IndexInstanceNodeSearchResult',
     permission=permission_index_instance_view,
-    serializer_path='mayan.apps.document_indexing.serializers.IndexInstanceNodeSerializer'
+    serializer_path='mayan.apps.document_indexing.serializers.index_instance_serializers.IndexInstanceNodeSerializer'
 )
 search_model_index_instance_node.add_proxy_model(
     app_label='document_indexing', model_name='IndexInstanceNode'
