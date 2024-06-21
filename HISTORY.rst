@@ -88,6 +88,8 @@
 - Split Bootstrap specific markup and style into the `appearance_bootstrap`
   app.
 - Split document indexing serializers into separate modules.
+- Update the message delete view to use the `MultipleObjectDeleteView`
+  instead of `MultipleObjectConfirmActionView`.
 
 4.7.1 (2024-06-04)
 ==================

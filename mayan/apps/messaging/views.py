@@ -7,8 +7,8 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.views.generics import (
-    ConfirmView, MultipleObjectConfirmActionView, SingleObjectCreateView,
-    SingleObjectDetailView, SingleObjectListView
+    ConfirmView, MultipleObjectConfirmActionView, MultipleObjectDeleteView,
+    SingleObjectCreateView, SingleObjectDetailView, SingleObjectListView
 )
 
 from .forms import MessageCreateForm, MessageDetailForm
@@ -45,39 +45,29 @@ class MessageCreateView(SingleObjectCreateView):
         }
 
 
-class MessageDeleteView(MultipleObjectConfirmActionView):
-    error_message = _(message='Error deleting message "%(instance)s"; %(exception)s')
+class MessageDeleteView(MultipleObjectDeleteView):
+    error_message = _(
+        message='Error deleting message "%(instance)s"; %(exception)s'
+    )
     object_permission = permission_message_delete
     pk_url_kwarg = 'message_id'
     post_action_redirect = reverse_lazy(viewname='messaging:message_list')
-    success_message_plural = _(message='%(count)d messages deleted successfully.')
-    success_message_single = _(message='Message "%(object)s" deleted successfully.')
-    success_message_singular = _(message='%(count)d message deleted successfully.')
+    success_message_plural = _(
+        message='%(count)d messages deleted successfully.'
+    )
+    success_message_single = _(
+        message='Message "%(object)s" deleted successfully.'
+    )
+    success_message_singular = _(
+        message='%(count)d message deleted successfully.'
+    )
     title_plural = _(message='Delete the %(count)d selected messages.')
     title_single = _(message='Delete message: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected message.')
     view_icon = icon_message_delete
 
-    def get_extra_context(self):
-        context = {
-            'delete_view': True,
-        }
-
-        if self.object_list.count() == 1:
-            context.update(
-                {
-                    'object': self.object_list.first()
-                }
-            )
-
-        return context
-
     def get_source_queryset(self):
         return self.request.user.messages.all()
-
-    def object_action(self, instance, form=None):
-        instance._event_actor = self.request.user
-        instance.delete()
 
 
 class MessageDetailView(SingleObjectDetailView):
