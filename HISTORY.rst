@@ -94,6 +94,8 @@
 - Improve the logic to show or hide the filter clear icon.
 - The filter clear icon is now shown if a filter has a value after a refresh
   or full page load.
+- Added persistent view mode setting. This features stores the user selected
+  view mode for a specific view.
 
 4.7.1 (2024-06-04)
 ==================

@@ -22,6 +22,7 @@ from .literals import (
     TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
     TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
 )
+from .models import UserViewSettings
 
 
 class ContentTypeViewMixin:
@@ -215,13 +216,30 @@ class ListModeViewMixin:
         else:
             default_mode = TEXT_CHOICE_LIST
 
-        list_mode = self.request.GET.get(
-            TEXT_LIST_AS_ITEMS_PARAMETER, default_mode
+        user_list_mode = self.request.GET.get(TEXT_LIST_AS_ITEMS_PARAMETER)
+
+        resolver_match = self.request.resolver_match
+
+        view_name = '{}:{}'.format(
+            resolver_match.namespace, resolver_match.url_name
         )
+
+        if user_list_mode:
+            UserViewSettings.objects.update_or_create(
+                defaults={'mode': user_list_mode}, view_name=view_name,
+                user=self.request.user
+            )
+            final_list_mode = user_list_mode
+        else:
+            user_view_settings, created = UserViewSettings.objects.get_or_create(
+                defaults={'mode': default_mode}, view_name=view_name,
+                user=self.request.user
+            )
+            final_list_mode = user_view_settings.mode
 
         context.update(
             {
-                TEXT_LIST_AS_ITEMS_VARIABLE_NAME: list_mode == TEXT_CHOICE_ITEMS
+                TEXT_LIST_AS_ITEMS_VARIABLE_NAME: final_list_mode == TEXT_CHOICE_ITEMS
             }
         )
         return context
