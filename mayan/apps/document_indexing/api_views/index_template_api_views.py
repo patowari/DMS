@@ -11,7 +11,7 @@ from ..permissions import (
     permission_index_template_edit, permission_index_template_rebuild,
     permission_index_template_view
 )
-from ..serializers import (
+from ..serializers.index_template_serializers import (
     DocumentTypeAddSerializer, DocumentTypeRemoveSerializer,
     IndexTemplateSerializer
 )

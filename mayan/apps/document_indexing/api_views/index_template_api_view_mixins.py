@@ -9,7 +9,7 @@ from ..models.index_template_models import IndexTemplate
 from ..permissions import (
     permission_index_template_edit, permission_index_template_view
 )
-from ..serializers import (
+from ..serializers.index_template_serializers import (
     IndexTemplateNodeSerializer, IndexTemplateNodeWriteSerializer
 )
 

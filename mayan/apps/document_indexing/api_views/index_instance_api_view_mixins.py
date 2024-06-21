@@ -4,7 +4,9 @@ from mayan.apps.acls.models import AccessControlList
 
 from ..models.index_instance_models import IndexInstance
 from ..permissions import permission_index_instance_view
-from ..serializers import IndexInstanceNodeSerializer
+from ..serializers.index_instance_serializers import (
+    IndexInstanceNodeSerializer
+)
 
 
 class APIIndexInstanceNodeViewMixin:

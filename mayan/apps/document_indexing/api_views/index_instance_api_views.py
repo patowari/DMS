@@ -10,7 +10,9 @@ from mayan.apps.rest_api.api_view_mixins import ExternalObjectAPIViewMixin
 
 from ..models.index_instance_models import IndexInstance
 from ..permissions import permission_index_instance_view
-from ..serializers import IndexInstanceNodeSerializer, IndexInstanceSerializer
+from ..serializers.index_instance_serializers import (
+    IndexInstanceNodeSerializer, IndexInstanceSerializer
+)
 
 from .index_instance_api_view_mixins import APIIndexInstanceNodeViewMixin
 

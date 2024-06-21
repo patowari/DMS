@@ -95,7 +95,7 @@ class DocumentIndexingApp(MayanAppConfig):
 
         DynamicSerializerField.add_serializer(
             klass=IndexTemplate,
-            serializer_class='mayan.apps.document_indexing.serializers.IndexTemplateSerializer'
+            serializer_class='mayan.apps.document_indexing.serializers.index_template_serializers.IndexTemplateSerializer'
         )
 
         EventModelRegistry.register(model=IndexTemplate)
