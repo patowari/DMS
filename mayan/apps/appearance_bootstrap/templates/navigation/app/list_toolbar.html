@@ -2,6 +2,18 @@
 {% load i18n %}
 
 {% load navigation_tags %}
+{% load views_tags %}
+
+<div class="pull-left">
+    <div class="btn-toolbar" role="toolbar" style="margin-right: 10px;">
+        <div class="btn-group">
+
+            <a class="btn btn-default btn-sm" href="{% views_get_list_mode_querystring %}" title="{% trans 'Toggle list display mode' %}">
+                {% views_get_list_mode_icon as list_mode_icon %}{{ list_mode_icon.render }}
+            </a>
+        </div>
+    </div>
+</div>
 
 {% if object_list %}
     {% navigation_get_source_columns_sortable source=object_list.0 as source_columns %}

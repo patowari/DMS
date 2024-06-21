@@ -90,6 +90,10 @@
 - Split document indexing serializers into separate modules.
 - Update the message delete view to use the `MultipleObjectDeleteView`
   instead of `MultipleObjectConfirmActionView`.
+- Tweak FontAwesome icon spacing and composition styling.
+- Improve the logic to show or hide the filter clear icon.
+- The filter clear icon is now shown if a filter has a value after a refresh
+  or full page load.
 
 4.7.1 (2024-06-04)
 ==================

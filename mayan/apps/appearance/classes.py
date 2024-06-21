@@ -74,13 +74,16 @@ class FontAwesomeDualDriver(IconDriver):
             'data': (
                 {
                     'class': 'fas fa-circle',
-                    'transform': 'down-3 right-10',
+                    'transform': 'shrink-2 down-4 right-6',
                     'mask': 'fas fa-{}'.format(self.primary_symbol)
                 },
-                {'class': 'far fa-circle', 'transform': 'down-3 right-10'},
+                {
+                    'class': 'far fa-circle',
+                    'transform': 'shrink-2 down-4 right-6'
+                },
                 {
                     'class': 'fas fa-{}'.format(self.secondary_symbol),
-                    'transform': 'shrink-6 down-3 right-10'
+                    'transform': 'shrink-8 down-4 right-6'
                 }
             )
         }

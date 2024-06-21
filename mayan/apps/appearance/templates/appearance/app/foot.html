@@ -67,10 +67,18 @@
 
     jQuery(document).ready(function() {
         app.initialize();
-    });
 
-    jQuery(document).ready(function() {
-        $('body').on('keyup', '.appearance-input-search-clearable input[type="search"]', function (event) {
+        $('#ajax-content').on('change', function (event) {
+            const $this = $(this);
+            const $inputAappearanceSearchClearable = $this.find('.appearance-input-search-clearable input[type="search"]');
+            const $spanInputSearchClear = $inputAappearanceSearchClearable.next('.appearance-input-search-clear');
+
+            if ($inputAappearanceSearchClearable.val()) {
+                $spanInputSearchClear.show();
+            }
+        });
+
+        $('body').on('input', '.appearance-input-search-clearable input[type="search"]', function (event) {
             const $this = $(this);
             const $spanInputSearchClear = $this.next('.appearance-input-search-clear');
 
