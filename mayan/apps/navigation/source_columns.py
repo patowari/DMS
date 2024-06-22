@@ -376,8 +376,8 @@ class SourceColumn(TemplateObjectMixin):
                 )
             except Exception as exception:
                 raise AttributeError(
-                    'Unable to resolve SourceColumn attribute `{}` for object `{}`.'.format(
-                        self.attribute, context['object']
+                    'Unable to resolve SourceColumn attribute `{}` for object `{}`; {}.'.format(
+                        self.attribute, context['object'], exception
                     )
                 ) from exception
         elif self.func:

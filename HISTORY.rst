@@ -97,6 +97,7 @@
 - Added persistent view mode setting. This features stores the user selected
   view mode for a specific view.
 - Add view to show the detail of each user view modes.
+- Show more information when a source column attribute can't be resolved.
 
 4.7.1 (2024-06-04)
 ==================
