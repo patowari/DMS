@@ -18,11 +18,11 @@ from mayan.apps.permissions.classes import Permission
 
 from .exceptions import ActionError
 from .literals import (
-    PK_LIST_SEPARATOR, TEXT_CHOICE_ITEMS, TEXT_CHOICE_LIST,
+    PK_LIST_SEPARATOR, LIST_MODE_CHOICE_ITEM, LIST_MODE_CHOICE_LIST,
     TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
     TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
 )
-from .models import UserViewSettings
+from .models import UserViewMode
 
 
 class ContentTypeViewMixin:
@@ -85,7 +85,7 @@ class DynamicFieldSetFormViewMixin(DynamicFormViewMixin):
 class ExternalObjectBaseMixin:
     """
     Mixin to allow views to load an object with minimal code but with all
-    the filtering and configurability possible. This object is often use as
+    the filtering and configurability possible. This object is often used as
     the main or master object in multi object views.
     """
     external_object_class = None
@@ -212,9 +212,9 @@ class ListModeViewMixin:
         context = super().get_context_data(**kwargs)
 
         if context.get(TEXT_LIST_AS_ITEMS_VARIABLE_NAME):
-            default_mode = TEXT_CHOICE_ITEMS
+            default_mode = LIST_MODE_CHOICE_ITEM
         else:
-            default_mode = TEXT_CHOICE_LIST
+            default_mode = LIST_MODE_CHOICE_LIST
 
         user_list_mode = self.request.GET.get(TEXT_LIST_AS_ITEMS_PARAMETER)
 
@@ -225,21 +225,26 @@ class ListModeViewMixin:
         )
 
         if user_list_mode:
-            UserViewSettings.objects.update_or_create(
-                defaults={'mode': user_list_mode}, view_name=view_name,
+            UserViewMode.objects.update_or_create(
+                defaults={
+                    'app_label': resolver_match.app_name,
+                    'value': user_list_mode
+                }, name=view_name,
                 user=self.request.user
             )
             final_list_mode = user_list_mode
         else:
-            user_view_settings, created = UserViewSettings.objects.get_or_create(
-                defaults={'mode': default_mode}, view_name=view_name,
-                user=self.request.user
+            user_view_mode, created = UserViewMode.objects.get_or_create(
+                defaults={
+                    'app_label': resolver_match.app_name,
+                    'value': default_mode
+                }, name=view_name, user=self.request.user
             )
-            final_list_mode = user_view_settings.mode
+            final_list_mode = user_view_mode.value
 
         context.update(
             {
-                TEXT_LIST_AS_ITEMS_VARIABLE_NAME: final_list_mode == TEXT_CHOICE_ITEMS
+                TEXT_LIST_AS_ITEMS_VARIABLE_NAME: final_list_mode == LIST_MODE_CHOICE_ITEM
             }
         )
         return context
