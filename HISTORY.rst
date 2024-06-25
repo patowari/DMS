@@ -98,6 +98,8 @@
   view mode for a specific view.
 - Add view to show the detail of each user view modes.
 - Show more information when a source column attribute can't be resolved.
+- Remove the specialized and custom animated list toolbar checkbox and
+  instead use a styled standard HTML checkbox.
 
 4.7.1 (2024-06-04)
 ==================
