@@ -36,31 +36,6 @@ class FontAwesomeDriver(IconDriver):
         return {'symbol': self.symbol}
 
 
-class FontAwesomeDualClassesDriver(IconDriver):
-    name = 'fontawesome-dual-classes'
-    template_name = 'appearance/icons/font_awesome/layers.html'
-
-    def __init__(self, primary_class, secondary_class):
-        self.primary_class = primary_class
-        self.secondary_class = secondary_class
-
-    def get_context(self):
-        return {
-            'data': (
-                {
-                    'class': 'fas fa-circle',
-                    'transform': 'down-3 right-10',
-                    'mask': '{}'.format(self.primary_class)
-                },
-                {'class': 'far fa-circle', 'transform': 'down-3 right-10'},
-                {
-                    'class': '{}'.format(self.secondary_class),
-                    'transform': 'shrink-6 down-3 right-10'
-                }
-            )
-        }
-
-
 class FontAwesomeDualDriver(IconDriver):
     name = 'fontawesome-dual'
     template_name = 'appearance/icons/font_awesome/layers.html'
@@ -148,7 +123,6 @@ class Icon:
 
 IconDriver.register(driver_class=FontAwesomeCSSDriver)
 IconDriver.register(driver_class=FontAwesomeDriver)
-IconDriver.register(driver_class=FontAwesomeDualClassesDriver)
 IconDriver.register(driver_class=FontAwesomeDualDriver)
 IconDriver.register(driver_class=FontAwesomeLayersDriver)
 IconDriver.register(driver_class=FontAwesomeMasksDriver)

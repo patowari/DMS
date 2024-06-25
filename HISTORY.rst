@@ -100,6 +100,8 @@
 - Show more information when a source column attribute can't be resolved.
 - Remove the specialized and custom animated list toolbar checkbox and
   instead use a styled standard HTML checkbox.
+- Remove the icons class `fontawesome-dual-classes`. Replaced the two last
+  uses with `fontawesome-dual`.
 
 4.7.1 (2024-06-04)
 ==================

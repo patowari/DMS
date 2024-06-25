@@ -304,8 +304,8 @@ icon_document_recently_created_list = Icon(
 # Trashed document
 
 icon_trash_can_empty = Icon(
-    driver_name='fontawesome-dual-classes', primary_class='fas fa-trash-alt',
-    secondary_class='fas fa-minus'
+    driver_name='fontawesome-dual', primary_symbol='trash-alt',
+    secondary_symbol='minus'
 )
 icon_trashed_document_delete = Icon(
     driver_name='fontawesome', symbol='times'
