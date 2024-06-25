@@ -1,12 +1,11 @@
 {% load i18n %}
-{% load static %}
 
 {% load appearance_tags %}
 {% load common_tags %}
 {% load navigation_tags %}
-{% load smart_settings_tags %}
 
 {% spaceless %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
     <head>
@@ -17,7 +16,8 @@
             {% endblock base_title %}
         </title>
 
-        {% include 'appearance/app/head.html' %}
+        <style id="style-javascript"></style>
+        {% appearance_app_templates template_name='head' %}
 
         {% block stylesheets %}{% endblock %}
 
@@ -39,9 +39,7 @@
     </head>
     <body id="body-plain">
         {% block content %}{% endblock %}
-        <script src="{% static 'appearance/node_modules/jquery/dist/jquery.min.js' %}" type="text/javascript"></script>
-        <script src="{% static 'appearance_bootstrap/node_modules/bootstrap/dist/js/bootstrap.min.js' %}" type="text/javascript"></script>
-        <script src="{% static 'appearance/node_modules/@fortawesome/fontawesome-free/js/all.min.js' %}" data-auto-replace-svg="nest" type="text/javascript"></script>
     </body>
 </html>
+
 {% endspaceless %}

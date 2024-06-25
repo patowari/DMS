@@ -87,11 +87,11 @@ def appearance_get_form_media_js(form=None):
 
 @register.simple_tag
 def appearance_get_icon(icon_path, **kwargs):
-    clean_kwargs = {}
+    extra_context = {}
 
     for key, value in kwargs.items():
         if '__' in key:
-            subdictionary = clean_kwargs
+            subdictionary = extra_context
             parts = key.split('__')
             for part in parts:
                 subdictionary.setdefault(
@@ -102,9 +102,10 @@ def appearance_get_icon(icon_path, **kwargs):
 
             dictionary_pointer[part] = value
         else:
-            clean_kwargs[key] = value
+            extra_context[key] = value
 
-    return import_string(dotted_path=icon_path).render(**clean_kwargs)
+    icon_class = import_string(dotted_path=icon_path)
+    return icon_class.render(**extra_context)
 
 
 @register.simple_tag

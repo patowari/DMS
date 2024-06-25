@@ -6,7 +6,7 @@
 
 {% if page_obj %}
     <div class="pull-left">
-        <div class="btn-toolbar" role="toolbar" style="margin-right: 10px;">
+        <div class="btn-toolbar" role="toolbar">
             <div class="btn-group">
                 {% if page_obj.has_previous %}
                     <a alt="{% trans 'Previous page' %}" class="btn btn-default btn-sm" href="{% views_get_paging_query_string page_number=page_obj.previous_page_number %}">&lsaquo;&lsaquo;</a>

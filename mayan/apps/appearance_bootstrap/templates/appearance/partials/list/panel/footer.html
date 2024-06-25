@@ -13,9 +13,9 @@
 
                 {% if facet_menus_link_results and object_menus_link_results %}
                     {% if not setting_common_collapse_list_menu_list_facet or not setting_common_collapse_list_menu_object %}
-                    <hr />
+                        <hr />
                     {% else %}
-                    <span style="margin-left: 20px;"></span>
+                        <span class="appearance-panel-footer-spacer"></span>
                     {% endif %}
 
                     {% include 'appearance/partials/list/column_object_links.html' %}

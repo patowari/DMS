@@ -5,9 +5,8 @@
 {% load views_tags %}
 
 <div class="pull-left">
-    <div class="btn-toolbar" role="toolbar" style="margin-right: 10px;">
+    <div class="btn-toolbar" role="toolbar">
         <div class="btn-group">
-
             <a class="btn btn-default btn-sm" href="{% views_get_list_mode_querystring %}" title="{% trans 'Toggle list display mode' %}">
                 {% views_get_list_mode_icon as list_mode_icon %}{{ list_mode_icon.render }}
             </a>
@@ -20,7 +19,7 @@
 
     {% if source_columns %}
         <div class="pull-left">
-            <div class="btn-toolbar" role="toolbar" style="padding-right: 10px;">
+            <div class="btn-toolbar" role="toolbar">
                 <form action="" id="navigation-form-sort-field" method="get">
                     <select class="form-control input-sm" name="sort-search">
                         <option value="" disabled selected>{% trans 'Sort by column' %}</option>

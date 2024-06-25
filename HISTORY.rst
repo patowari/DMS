@@ -102,6 +102,9 @@
   instead use a styled standard HTML checkbox.
 - Remove the icons class `fontawesome-dual-classes`. Replaced the two last
   uses with `fontawesome-dual`.
+- Move inline styles.
+- Rename icon class `fontawesomecss` to `fontawesome-css`.
+- Remove icons class `fontawesome-stack`.
 
 4.7.1 (2024-06-04)
 ==================

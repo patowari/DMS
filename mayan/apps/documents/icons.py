@@ -24,7 +24,7 @@ icon_dashboard_total_document = Icon(
 # Misc
 
 icon_document_image_loading = Icon(
-    driver_name='fontawesomecss', css_classes='far fa-clock fa-2x fa-spin'
+    driver_name='fontawesome-css', css_classes='far fa-clock fa-2x fa-spin'
 )
 icon_document_return = Icon(
     driver_name='fontawesome-dual', primary_symbol='book',

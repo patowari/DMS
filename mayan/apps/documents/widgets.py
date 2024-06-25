@@ -14,9 +14,7 @@ class CarouselWidget(form_widgets.Widget):
     target_view = None
 
     def __init__(self, attrs=None):
-        default_attrs = {
-            'target_view': self.target_view
-        }
+        default_attrs = {'target_view': self.target_view}
 
         if attrs:
             default_attrs.update(attrs)

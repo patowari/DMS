@@ -4,10 +4,14 @@
     .container-btn-secondary .btn {
         margin-bottom: 5px;
     }
+
+    .no-result-icon {
+        font-size: 200%;
+    }
 </style>
 
 <div class="text-center">
-    <div style="font-size: 150%;">
+    <div class="no-result-icon">
         {% if no_results_icon %}
             {{ no_results_icon.render }}
         {% else %}
