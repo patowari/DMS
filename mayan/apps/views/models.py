@@ -21,7 +21,7 @@ class UserViewMode(ModelMixinUserViewModeBusinessLogic, models.Model):
     value = models.CharField(
         db_index=True, help_text=_(
             'Stored value used to identify the display mode of the view.'
-        ), max_length=4, verbose_name=_(message='Value')
+        ), max_length=5, verbose_name=_(message='Value')
     )
 
     class Meta:
