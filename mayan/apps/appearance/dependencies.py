@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.classes import (
-    GoogleFontDependency, JavaScriptDependency, PythonDependency
+    JavaScriptDependency, PythonDependency
 )
 
 JavaScriptDependency(
