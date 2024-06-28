@@ -53,7 +53,7 @@ def navigation_get_source_columns(
 
 
 @register.simple_tag
-def navigation_get_source_columns_sortable(source,):
+def navigation_get_source_columns_sortable(source):
     return SourceColumn.get_sortable_for_source(source=source)
 
 
