@@ -13,7 +13,6 @@ from mayan.apps.views.generics import (
 )
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
-from ..forms import FormDocumentTypeFileMetadataDriverConfiguration
 from ..icons import (
     icon_document_type_file_metadata_driver_configuration_edit,
     icon_document_type_file_metadata_driver_configuration_list,
@@ -25,14 +24,16 @@ from ..permissions import (
     permission_file_metadata_submit
 )
 
+from .view_mixins import ViewMixinDynamicConfigurationFormClass
+
 
 class DocumentTypeFileMetadataDriverConfigurationEditView(
-    ExternalObjectViewMixin, SingleObjectEditView
+    ExternalObjectViewMixin, ViewMixinDynamicConfigurationFormClass,
+    SingleObjectEditView
 ):
     external_object_class = DocumentType
     external_object_permission = permission_document_type_file_metadata_setup
     external_object_pk_url_kwarg = 'document_type_id'
-    form_class = FormDocumentTypeFileMetadataDriverConfiguration
     # Use a slug because Django does not support `pk_field`.
     slug_field = 'stored_driver_id'
     slug_url_kwarg = 'stored_driver_id'

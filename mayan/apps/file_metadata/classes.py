@@ -3,15 +3,17 @@ import logging
 from django.apps import apps
 from django.db.utils import OperationalError, ProgrammingError
 from django.utils.functional import classproperty
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
+from mayan.apps.templating.classes import Template
 from mayan.apps.common.utils import (
     convert_to_internal_name, deduplicate_dictionary_values,
     get_class_full_name
 )
 
 from .exceptions import FileMetadataError
-from .settings import setting_auto_process
+from .settings import setting_auto_process, setting_drivers_arguments
 
 logger = logging.getLogger(name=__name__)
 
@@ -38,14 +40,9 @@ class FileMetadataDriverCollection:
 
     @classmethod
     def get_all(cls, sorted=False):
-        result = set()
-        for mime_type, drivers in cls._mime_type_to_driver_dict.items():
-            result.update(
-                list(drivers)
-            )
-
-        result = list(result)
-
+        result = list(
+            cls._driver_to_mime_type_dict.keys()
+        )
         if sorted:
             result.sort(key=lambda driver: driver.label)
 
@@ -69,9 +66,7 @@ class FileMetadataDriverCollection:
 
 class FileMetadataDriverMetaclass(type):
     def __new__(mcs, name, bases, attrs):
-        new_class = super().__new__(
-            mcs, name, bases, attrs
-        )
+        new_class = super().__new__(mcs, name, bases, attrs)
 
         if not new_class.__module__ == __name__:
             FileMetadataDriverCollection.do_driver_register(klass=new_class)
@@ -83,7 +78,13 @@ class FileMetadataDriver(
     AppsModuleLoaderMixin, metaclass=FileMetadataDriverMetaclass
 ):
     _loader_module_name = 'drivers'
+    argument_name_list = ()
     description = ''
+    # Workaround a Django bug that causes the template system to call the
+    # class which would cause it to create an instance without required
+    # arguments and lead to an empty entry in list views.
+    # https://stackoverflow.com/questions/6861601/cannot-resolve-callable-context-variable
+    do_not_call_in_templates = True
     internal_name = None
     label = None
     mime_type_list = ()
@@ -125,6 +126,75 @@ class FileMetadataDriver(
                 )
 
     @classmethod
+    def get_argument_name_list(cls):
+        return cls.argument_name_list
+
+    @classmethod
+    def get_argument_values_for_document_file(cls, document_file):
+        document_type = document_file.document.document_type
+
+        configuration_instance = document_type.file_metadata_driver_configurations.get(
+            stored_driver__internal_name=cls.internal_name
+        )
+
+        document_type_arguments = configuration_instance.get_arguments()
+
+        context = {'document_file': document_file}
+
+        argument_values_rendered = {}
+
+        for key, value in document_type_arguments.items():
+            template = Template(template_string=value)
+            template_result = template.render(context=context)
+            argument_values_rendered[key] = template_result
+
+        return argument_values_rendered
+
+    @classmethod
+    def get_argument_values_from_settings(cls):
+        result = {}
+
+        raw_argument_values = setting_drivers_arguments.value.get(
+            cls.internal_name, {}
+        )
+
+        argument_name_list = cls.get_argument_name_list()
+
+        for argument_name in argument_name_list:
+            value = raw_argument_values.get(argument_name)
+            if value:
+                result[argument_name] = value
+
+        return result
+
+    @classmethod
+    def get_argument_values_from_settings_display(cls):
+        try:
+            arguments = cls.get_argument_values_from_settings()
+        except Exception as exception:
+            arguments = {
+                '__error__': _(
+                    message='Badly formatted arguments YAML; %s'
+                ) % exception
+            }
+
+        result = []
+
+        argument_name_list = cls.get_argument_name_list()
+
+        for argument_name in argument_name_list:
+            value = arguments.get(argument_name)
+            result.append(
+                '{}: {}'.format(argument_name, value)
+            )
+
+        return ', '.join(result)
+
+    @classmethod
+    def get_form_class(cls):
+        return getattr(cls, 'Form', None)
+
+    @classmethod
     def get_mime_type_list_display(cls):
         return ', '.join(cls.mime_type_list)
 
@@ -157,14 +227,6 @@ class FileMetadataDriver(
             for driver in cls.collection.get_all():
                 driver.do_model_instance_populate()
 
-    def __init__(self, auto_initialize=True, **kwargs):
-        self.auto_initialize = auto_initialize
-
-    def initialize(self):
-        """
-        Driver specific initialization code.
-        """
-
     def process(self, document_file):
         logger.info('Starting processing document file: %s', document_file)
 
@@ -172,7 +234,9 @@ class FileMetadataDriver(
             app_label='file_metadata', model_name='FileMetadataEntry'
         )
 
-        file_metadata_dictionary = self._process(document_file=document_file) or {}
+        file_metadata_dictionary = self._process(document_file=document_file)
+
+        file_metadata_dictionary = file_metadata_dictionary or {}
 
         internal_name_dictionary = {}
         for key in file_metadata_dictionary.keys():

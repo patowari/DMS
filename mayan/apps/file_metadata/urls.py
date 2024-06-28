@@ -18,7 +18,7 @@ urlpatterns_document_types = [
         view=DocumentTypeFileMetadataDriverConfigurationListView.as_view()
     ),
     re_path(
-        route=r'^document_types/(?P<document_type_id>\d+)/file_metadata/drivers/(?P<stored_driver_id>\d+)/$',
+        route=r'^document_types/(?P<document_type_id>\d+)/file_metadata/drivers/(?P<stored_driver_id>\d+)/edit/$',
         name='document_type_file_metadata_driver_configuration_edit',
         view=DocumentTypeFileMetadataDriverConfigurationEditView.as_view()
     ),

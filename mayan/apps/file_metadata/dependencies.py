@@ -4,12 +4,11 @@ from mayan.apps.dependencies.classes import BinaryDependency
 
 from .drivers.exiftool import EXIFToolDriver
 
-exiftool = EXIFToolDriver(auto_initialize=False)
-exiftool.read_settings()
+arguments = EXIFToolDriver.get_argument_values_from_settings()
 
 BinaryDependency(
     help_text=_(
         message='Library and program to read and write meta information in '
         'multimedia files.'
-    ), module=__name__, name='exiftool', path=exiftool.exiftool_path
+    ), module=__name__, name='exiftool', path=arguments['exiftool_path']
 )

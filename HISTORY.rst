@@ -105,6 +105,8 @@
 - Move inline styles.
 - Rename icon class `fontawesomecss` to `fontawesome-css`.
 - Remove icons class `fontawesome-stack`.
+- Add file metadata Ollama app. This app is able to interface with Ollama
+  models and share via messages any type of document information.
 
 4.7.1 (2024-06-04)
 ==================

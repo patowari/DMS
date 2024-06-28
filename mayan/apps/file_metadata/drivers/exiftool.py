@@ -9,7 +9,6 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.storage.utils import TemporaryDirectory
 
 from ..classes import FileMetadataDriver
-from ..settings import setting_drivers_arguments
 
 from .literals import DEFAULT_EXIF_PATH
 
@@ -17,23 +16,28 @@ logger = logging.getLogger(name=__name__)
 
 
 class EXIFToolDriver(FileMetadataDriver):
+    argument_name_list = ('exiftool_path',)
     description = _(message='Read meta information stored in files.')
     internal_name = 'exiftool'
     label = _(message='EXIF Tool')
     mime_type_list = ('*',)
 
-    def __init__(self, **kwargs):
+    @classmethod
+    def get_argument_values_from_settings(cls):
+        result = {'exiftool_path': DEFAULT_EXIF_PATH}
+
+        setting_arguments = super().get_argument_values_from_settings()
+
+        if setting_arguments:
+            result.update(setting_arguments)
+
+        return result
+
+    def __init__(self, exiftool_path, **kwargs):
         super().__init__(**kwargs)
 
-        self.read_settings()
-
-        if self.auto_initialize:
-            try:
-                self.command_exiftool = sh.Command(path=self.exiftool_path)
-            except sh.CommandNotFound:
-                self.command_exiftool = None
-            else:
-                self.command_exiftool = self.command_exiftool.bake('-j')
+        self.command_exiftool = sh.Command(path=self.exiftool_path)
+        self.command_exiftool = self.command_exiftool.bake('-j')
 
     def _process(self, document_file):
         if self.command_exiftool:
@@ -63,8 +67,3 @@ class EXIFToolDriver(FileMetadataDriver):
                 'EXIFTool binary not found, not processing document '
                 'file: %s', document_file
             )
-
-    def read_settings(self):
-        self.exiftool_path = setting_drivers_arguments.value.get(
-            'exif_driver', {}
-        ).get('exiftool_path', DEFAULT_EXIF_PATH)

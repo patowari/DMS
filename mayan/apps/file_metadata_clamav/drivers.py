@@ -6,7 +6,6 @@ import sh
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.file_metadata.classes import FileMetadataDriver
-from mayan.apps.file_metadata.settings import setting_drivers_arguments
 from mayan.apps.storage.utils import TemporaryDirectory
 
 from .literals import DEFAULT_PATH_CLAMSCAN
@@ -16,21 +15,27 @@ logger = logging.getLogger(name=__name__)
 
 
 class ClamScanDriver(FileMetadataDriver):
+    argument_name_list = ('path_clamscan',)
     description = _(message='Command line anti-virus scanner.')
     label = _(message='ClamScan')
     internal_name = 'clamscan'
     mime_type_list = ('*',)
 
-    def __init__(self, **kwargs):
+    @classmethod
+    def get_argument_values_from_settings(cls):
+        result = {'path_clamscan': DEFAULT_PATH_CLAMSCAN}
+
+        setting_arguments = super().get_argument_values_from_settings()
+
+        if setting_arguments:
+            result.update(setting_arguments)
+
+        return result
+
+    def __init__(self, path_clamscan, **kwargs):
         super().__init__(**kwargs)
 
-        self.read_settings()
-
-        if self.auto_initialize:
-            try:
-                self.command_clamscan = sh.Command(path=self.path_clamscan)
-            except sh.CommandNotFound:
-                self.command_clamscan = None
+        self.command_clamscan = sh.Command(path=self.path_clamscan)
 
     def _process(self, document_file):
         if self.command_clamscan:
@@ -74,8 +79,3 @@ class ClamScanDriver(FileMetadataDriver):
                 'clamscan binary not found, not processing document '
                 'file: %s', document_file
             )
-
-    def read_settings(self):
-        self.path_clamscan = setting_drivers_arguments.value.get(
-            'clamscan_driver', {}
-        ).get('path_clamscan', DEFAULT_PATH_CLAMSCAN)

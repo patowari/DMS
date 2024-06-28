@@ -4,10 +4,9 @@ from mayan.apps.dependencies.classes import BinaryDependency
 
 from .drivers import ClamScanDriver
 
-clamscan = ClamScanDriver(auto_initialize=False)
-clamscan.read_settings()
+arguments = ClamScanDriver.get_argument_values_from_settings()
 
 BinaryDependency(
     help_text=_(message='Command line anti-virus scanner.'), module=__name__,
-    name='clamscan', path=clamscan.path_clamscan
+    name='clamscan', path=arguments['path_clamscan']
 )

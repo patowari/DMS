@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import convert_to_internal_name
+from mayan.apps.common.validators import YAMLValidator
 from mayan.apps.documents.models.document_file_models import DocumentFile
 from mayan.apps.documents.models.document_type_models import DocumentType
 
@@ -11,7 +12,8 @@ from .managers import (
     ModelManagerStoredDriverValid
 )
 from .model_mixins import (
-    DocumentFileDriverEntryBusinessLogicMixin, StoredDriverBusinessLogicMixin
+    DocumentFileDriverEntryBusinessLogicMixin,
+    DocumentTypeDriverConfiguration, StoredDriverBusinessLogicMixin
 )
 
 
@@ -37,7 +39,17 @@ class DocumentFileDriverEntry(
         return str(self.driver)
 
 
-class DocumentTypeDriverConfiguration(models.Model):
+class DocumentTypeDriverConfiguration(
+    DocumentTypeDriverConfiguration, models.Model
+):
+    arguments = models.TextField(
+        blank=True, help_text=_(
+            message='Enter the arguments for the drive for the specific '
+            'document type as a YAML dictionary. ie: {"degrees": 180}'
+        ), validators=[
+            YAMLValidator()
+        ], verbose_name=_(message='Arguments')
+    )
     document_type = models.ForeignKey(
         on_delete=models.CASCADE,
         related_name='file_metadata_driver_configurations',

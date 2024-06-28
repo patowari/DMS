@@ -141,6 +141,8 @@ class FileMetadataApp(MayanAppConfig):
             name='file_metadata_value_of.< underscore separated driver name and property name >'
         )
 
+        # FileMetadataEntry
+
         SourceColumn(
             attribute='internal_name', is_identifier=True,
             source=FileMetadataEntry
@@ -149,6 +151,33 @@ class FileMetadataApp(MayanAppConfig):
         SourceColumn(
             attribute='value', include_label=True, source=FileMetadataEntry
         )
+
+        # FileMetadataDriver
+
+        SourceColumn(
+            attribute='label', include_label=True, label=_(message='Label'),
+            source=FileMetadataDriver
+        )
+        SourceColumn(
+            attribute='get_mime_type_list_display', include_label=True,
+            label=_(message='MIME types'), source=FileMetadataDriver
+        )
+        SourceColumn(
+            attribute='internal_name', include_label=True,
+            label=_(message='Internal name'), source=FileMetadataDriver
+        )
+        SourceColumn(
+            attribute='description', include_label=True,
+            label=_(message='Description'), source=FileMetadataDriver
+        )
+        SourceColumn(
+            attribute='get_argument_values_from_settings_display',
+            include_label=True, label=_(message='Arguments'),
+            source=FileMetadataDriver
+        )
+
+        # DocumentFileDriverEntry
+
         SourceColumn(
             attribute='driver', is_identifier=True,
             source=DocumentFileDriverEntry
@@ -161,34 +190,21 @@ class FileMetadataApp(MayanAppConfig):
             attribute='get_attribute_count', include_label=True,
             source=DocumentFileDriverEntry
         )
-        SourceColumn(
-            attribute='label', include_label=True, label=_(message='Label'),
-            source=FileMetadataDriver
-        )
-        SourceColumn(
-            attribute='get_mime_type_list_display', include_label=True,
-            label=_(message='MIME types'),
-            source=FileMetadataDriver
-        )
-        SourceColumn(
-            attribute='internal_name', include_label=True,
-            label=_(message='Internal name'), source=FileMetadataDriver
-        )
-        SourceColumn(
-            attribute='description', include_label=True,
-            label=_(message='Description'), source=FileMetadataDriver
-        )
 
         # DocumentTypeDriverConfiguration
 
         SourceColumn(
-            attribute='stored_driver', include_label=True,
+            attribute='stored_driver', is_identifier=True,
             source=DocumentTypeDriverConfiguration
         )
         SourceColumn(
             attribute='enabled', include_label=True,
             source=DocumentTypeDriverConfiguration,
             widget=column_widgets.TwoStateWidget
+        )
+        SourceColumn(
+            attribute='get_arguments_display', include_label=True,
+            source=DocumentTypeDriverConfiguration
         )
 
         menu_tools.bind_links(

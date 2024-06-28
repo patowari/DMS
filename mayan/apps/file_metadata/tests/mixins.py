@@ -16,8 +16,8 @@ from .literals import (
 
 
 class FileMetadataTestMixin:
-    _test_document_file_metadata_driver_path = TEST_DRIVER_CLASS_PATH
     _test_document_file_metadata_driver_create_auto = False
+    _test_document_file_metadata_driver_path = TEST_DRIVER_CLASS_PATH
 
     def setUp(self):
         super().setUp()
@@ -34,6 +34,7 @@ class FileMetadataTestMixin:
 class DocumentTypeMetadataTestMixin(
     DocumentTypeTestMixin, FileMetadataTestMixin
 ):
+    _test_document_file_metadata_driver_arguments = None
     _test_document_file_metadata_driver_enable_auto = False
 
     def setUp(self):
@@ -43,6 +44,17 @@ class DocumentTypeMetadataTestMixin(
             self._test_file_metadata_driver_enable()
         else:
             self._test_file_metadata_driver_disable()
+
+        if self._test_document_file_metadata_driver_arguments is not None:
+            queryset = self._test_document_file_metadata_driver.model_instance.document_type_configurations.filter(
+                document_type=self._test_document_type
+            )
+
+            queryset.update(
+                arguments=self._test_document_file_metadata_driver_arguments
+            )
+
+        breakpoint()
 
     def _test_file_metadata_driver_disable(self):
         self._test_document_file_metadata_driver.model_instance.document_type_configurations.filter(
