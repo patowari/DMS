@@ -123,13 +123,9 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
         else:
             return result
 
-    @method_event(
-        action_object='document',
-        event_manager_class=EventManagerMethodAfter,
-        event=event_document_file_edited,
-        target='self'
-    )
     def _introspect(self):
+        actor = getattr(self, '_event_actor', None)
+
         try:
             self.checksum_update(save=False)
             super().save(
@@ -154,6 +150,10 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
             )
             raise
         else:
+            event_document_file_edited.commit(
+                action_object=self.document, actor=actor, target=self
+            )
+
             self.upload_complete()
 
     def _open(self, raw=False, **kwargs):

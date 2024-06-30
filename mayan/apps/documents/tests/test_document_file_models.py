@@ -1,5 +1,10 @@
 from pathlib import Path
 
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
+
 from ..events import (
     event_document_file_created, event_document_file_deleted,
     event_document_file_edited, event_document_version_created,
@@ -29,7 +34,7 @@ class DocumentFileTestCase(DocumentFileTestMixin, GenericDocumentTestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_case_user)
@@ -42,23 +47,37 @@ class DocumentFileTestCase(DocumentFileTestMixin, GenericDocumentTestCase):
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, self._test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, self._test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
+        self.assertEqual(events[2].actor, self._test_document_file)
+        self.assertEqual(events[2].target, self._test_document_file)
         self.assertEqual(
-            events[3].action_object, self._test_document_version
+            events[2].verb, event_file_metadata_document_file_submitted.id
         )
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, self._test_document_version_page)
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, self._test_document_file)
+        self.assertEqual(events[3].target, self._test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[4].action_object, self._test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(events[4].target, self._test_document_version)
-        self.assertEqual(events[4].verb, event_document_version_edited.id)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(
+            events[5].action_object, self._test_document_version
+        )
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, self._test_document_version_page)
+        self.assertEqual(
+            events[5].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[6].action_object, self._test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, self._test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
 
     def test_document_file_delete(self):
         document_file_count = self._test_document.files.count()

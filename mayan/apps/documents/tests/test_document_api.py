@@ -1,5 +1,9 @@
 from rest_framework import status
 
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
 from ..events import (
@@ -433,7 +437,7 @@ class DocumentAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         # Document created
 
@@ -456,37 +460,53 @@ class DocumentAPIViewTestCase(DocumentAPIViewTestMixin, BaseAPITestCase):
         self.assertEqual(events[2].target, self._test_document.file_latest)
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
-        # Document version created
+        # File metadata processing
 
         self.assertEqual(events[3].action_object, self._test_document)
-        self.assertEqual(events[3].actor, self._test_case_user)
+        self.assertEqual(events[3].actor, self._test_document.file_latest)
+        self.assertEqual(events[3].target, self._test_document.file_latest)
         self.assertEqual(
-            events[3].target, self._test_document.version_active
+            events[3].verb, event_file_metadata_document_file_submitted.id
         )
-        self.assertEqual(events[3].verb, event_document_version_created.id)
 
-        # Document version page created
+        self.assertEqual(events[4].action_object, self._test_document)
+        self.assertEqual(events[4].actor, self._test_document.file_latest)
+        self.assertEqual(events[4].target, self._test_document.file_latest)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
+        )
 
-        self.assertEqual(
-            events[4].actor, self._test_case_user
-        )
-        self.assertEqual(
-            events[4].action_object, self._test_document.version_active
-        )
-        self.assertEqual(
-            events[4].target,
-            self._test_document.version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
-        )
+        # Document version created
 
         self.assertEqual(events[5].action_object, self._test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
         self.assertEqual(
             events[5].target, self._test_document.version_active
         )
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        # Document version page created
+
+        self.assertEqual(
+            events[6].actor, self._test_case_user
+        )
+        self.assertEqual(
+            events[6].action_object, self._test_document.version_active
+        )
+        self.assertEqual(
+            events[6].target,
+            self._test_document.version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, self._test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(
+            events[7].target, self._test_document.version_active
+        )
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
 
 class DocumentChangeTypeAPIViewTestCase(

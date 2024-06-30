@@ -161,7 +161,7 @@ class DocumentFile(
     def save(self, skip_introspection=False, *args, **kwargs):
         """
         Overloaded save method that updates the document file's checksum,
-        mimetype, and page count when created.
+        MIME type, and page count when created.
         """
         self._event_keep_attributes = ('_event_actor',)
         new_document_file = not self.pk

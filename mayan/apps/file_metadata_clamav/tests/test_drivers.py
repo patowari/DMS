@@ -13,6 +13,8 @@ from .literals import (
 class ClamScanDriverTestCase(
     DocumentFileMetadataTestMixin, GenericDocumentTestCase
 ):
+    _test_document_file_metadata_driver_enable_auto = True
+    _test_document_file_metadata_driver_create_auto = True
     _test_document_file_metadata_driver_path = ClamScanDriver.dotted_path
 
     def test_driver_entries(self):

@@ -13,6 +13,10 @@ from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
 )
 from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
 from mayan.apps.sources.events import event_source_created
 from mayan.apps.sources.models import Source
 from mayan.apps.sources.permissions import permission_sources_create
@@ -177,7 +181,7 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -195,21 +199,35 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
-        self.assertEqual(events[3].action_object, test_document_version)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version_page)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(events[4].target, test_document_version)
-        self.assertEqual(events[4].verb, event_document_version_edited.id)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document_version)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version_page)
+        self.assertEqual(
+            events[5].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
 
     def test_basic_with_full_access_trashed_document(self):
         self._test_source_create()
@@ -302,7 +320,7 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -320,21 +338,35 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
-        self.assertEqual(events[3].action_object, test_document_version)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version_page)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(events[4].target, test_document_version)
-        self.assertEqual(events[4].verb, event_document_version_edited.id)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document_version)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version_page)
+        self.assertEqual(
+            events[5].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
 
     def test_document_file_action_append(self):
         self._test_source_create()
@@ -381,7 +413,7 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -400,28 +432,42 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
-        self.assertEqual(events[3].action_object, test_document_version)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version_page_first)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[2].verb, event_file_metadata_document_file_submitted.id
         )
 
-        self.assertEqual(events[4].action_object, test_document_version)
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page_last)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document_version)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version_page_first)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[5].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[5].action_object, test_document)
-        self.assertEqual(events[5].actor, self._test_case_user)
-        self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page_last)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
     def test_document_file_action_keep(self):
         self._test_source_create()
@@ -464,7 +510,7 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 2)
+        self.assertEqual(events.count(), 4)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -478,6 +524,20 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(events[1].actor, self._test_case_user)
         self.assertEqual(events[1].target, test_document_file)
         self.assertEqual(events[1].verb, event_document_file_edited.id)
+
+        self.assertEqual(events[2].action_object, test_document)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
 
     def test_document_file_action_new(self):
         self._test_source_create()
@@ -523,7 +583,7 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 5)
+        self.assertEqual(events.count(), 7)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -541,21 +601,35 @@ class SANEScannerSourceBackendActionDocumentFileUploadViewTestCase(
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, self._test_case_user)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
-        self.assertEqual(events[3].action_object, test_document_version)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version_page)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[3].action_object, test_document)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[4].action_object, test_document)
         self.assertEqual(events[4].actor, self._test_case_user)
         self.assertEqual(events[4].target, test_document_version)
-        self.assertEqual(events[4].verb, event_document_version_edited.id)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document_version)
+        self.assertEqual(events[5].actor, self._test_case_user)
+        self.assertEqual(events[5].target, test_document_version_page)
+        self.assertEqual(
+            events[5].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
 
 
 class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
@@ -652,7 +726,7 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -675,21 +749,35 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_file)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
         self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
     def test_language(self):
         self._test_source_create()
@@ -717,7 +805,7 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         self.assertEqual(Document.objects.first().language, 'deu')
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -740,21 +828,35 @@ class SANEScannerSourceBackendActionDocumentUploadViewTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, self._test_case_user)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, self._test_case_user)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_file)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, self._test_case_user)
         self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, self._test_case_user)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, self._test_case_user)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
 
 class SANEScannerSourceViewTestCase(

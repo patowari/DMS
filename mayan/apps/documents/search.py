@@ -173,8 +173,10 @@ search_model_document_version_page.add_model_field(
     label=_(message='Document type label')
 )
 search_model_document_version_page.add_model_field(
-    field='document_version__document__label', label=_(message='Document label')
+    field='document_version__document__label',
+    label=_(message='Document label')
 )
 search_model_document_version_page.add_model_field(
-    field='document_version__document__uuid', label=_(message='Document UUID')
+    field='document_version__document__uuid',
+    label=_(message='Document UUID')
 )

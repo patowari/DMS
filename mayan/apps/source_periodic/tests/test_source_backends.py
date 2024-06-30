@@ -8,6 +8,10 @@ from mayan.apps.documents.events import (
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
 from mayan.apps.sources.events import (
     event_source_created, event_source_edited
 )
@@ -103,7 +107,7 @@ class PeriodicSourceBackendActionTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -120,14 +124,28 @@ class PeriodicSourceBackendActionTestCase(
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, test_document_version)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_edited.id)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_version)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     @mock.patch(target='mayan.apps.source_periodic.tests.source_backends.SourceBackendTestPeriodic.action_file_delete')
     def test_dry_run_true(self, mocked_action_file_delete):
@@ -148,7 +166,7 @@ class PeriodicSourceBackendActionTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -165,14 +183,28 @@ class PeriodicSourceBackendActionTestCase(
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, test_document_version)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_edited.id)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_version)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     @mock.patch(target='mayan.apps.source_periodic.tests.source_backends.SourceBackendTestPeriodic.action_file_delete')
     def test_dry_run_missing(self, mocked_action_file_delete):
@@ -191,7 +223,7 @@ class PeriodicSourceBackendActionTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -208,14 +240,28 @@ class PeriodicSourceBackendActionTestCase(
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, test_document_version)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_edited.id)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_version)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
 
 class PeriodicSourceBackendConfigActionTestCase(
@@ -248,7 +294,7 @@ class PeriodicSourceBackendConfigActionTestCase(
         self.assertEqual(test_document.language, TEST_DOCUMENT_LANGUAGE)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 6)
 
         test_document_file = test_document.file_latest
         test_document_version = test_document.version_active
@@ -264,11 +310,25 @@ class PeriodicSourceBackendConfigActionTestCase(
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, test_document_version)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_edited.id)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_version)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)

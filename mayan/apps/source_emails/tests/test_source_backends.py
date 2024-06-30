@@ -6,6 +6,10 @@ from mayan.apps.documents.events import (
 )
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
 
 from .literals import (
     TEST_EMAIL_ATTACHMENT_AND_INLINE, TEST_EMAIL_BASE64_FILENAME,
@@ -47,7 +51,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -70,21 +74,35 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, test_document_version_page)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_file)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, test_document_version)
         self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, test_document_version_page)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_version)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
     def test_decode_email_no_content_type(self):
         self._test_source_content = TEST_EMAIL_NO_CONTENT_TYPE
@@ -103,7 +121,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -126,21 +144,35 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, test_document_version)
-        self.assertEqual(events[4].actor, test_document_version_page)
-        self.assertEqual(events[4].target, test_document_version_page)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_file)
+        self.assertEqual(events[4].target, test_document_file)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_document)
         self.assertEqual(events[5].actor, test_document_version)
         self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, test_document_version)
+        self.assertEqual(events[6].actor, test_document_version_page)
+        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_version)
+        self.assertEqual(events[7].target, test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
     def test_decode_email_zero_length_attachment(self):
         self._test_source_content = TEST_EMAIL_ZERO_LENGTH_ATTACHMENT
@@ -181,7 +213,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 14)
 
         test_documents = Document.objects.all()
 
@@ -201,47 +233,75 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_documents[0])
-        self.assertEqual(events[3].actor, test_documents[0].version_active)
-        self.assertEqual(events[3].target, test_documents[0].version_active)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].actor, test_documents[0].file_latest)
+        self.assertEqual(events[3].target, test_documents[0].file_latest)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
 
+        self.assertEqual(events[4].action_object, test_documents[0])
+        self.assertEqual(events[4].actor, test_documents[0].file_latest)
+        self.assertEqual(events[4].target, test_documents[0].file_latest)
         self.assertEqual(
-            events[4].action_object, test_documents[0].version_active
-        )
-        self.assertEqual(
-            events[4].actor, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].target, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_documents[0])
         self.assertEqual(events[5].actor, test_documents[0].version_active)
         self.assertEqual(events[5].target, test_documents[0].version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_document_type)
-        self.assertEqual(events[6].actor, test_documents[1])
-        self.assertEqual(events[6].target, test_documents[1])
-        self.assertEqual(events[6].verb, event_document_created.id)
+        self.assertEqual(
+            events[6].action_object, test_documents[0].version_active
+        )
+        self.assertEqual(
+            events[6].actor, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].target, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
-        self.assertEqual(events[7].action_object, test_documents[1])
-        self.assertEqual(events[7].actor, test_documents[1].file_latest)
-        self.assertEqual(events[7].target, test_documents[1].file_latest)
-        self.assertEqual(events[7].verb, event_document_file_created.id)
+        self.assertEqual(events[7].action_object, test_documents[0])
+        self.assertEqual(events[7].actor, test_documents[0].version_active)
+        self.assertEqual(events[7].target, test_documents[0].version_active)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
-        self.assertEqual(events[8].action_object, test_documents[1])
-        self.assertEqual(events[8].actor, test_documents[1].version_active)
-        self.assertEqual(events[8].target, test_documents[1].version_active)
-        self.assertEqual(events[8].verb, event_document_version_created.id)
+        self.assertEqual(events[8].action_object, self._test_document_type)
+        self.assertEqual(events[8].actor, test_documents[1])
+        self.assertEqual(events[8].target, test_documents[1])
+        self.assertEqual(events[8].verb, event_document_created.id)
 
         self.assertEqual(events[9].action_object, test_documents[1])
-        self.assertEqual(events[9].actor, test_documents[1].version_active)
-        self.assertEqual(events[9].target, test_documents[1].version_active)
-        self.assertEqual(events[9].verb, event_document_version_edited.id)
+        self.assertEqual(events[9].actor, test_documents[1].file_latest)
+        self.assertEqual(events[9].target, test_documents[1].file_latest)
+        self.assertEqual(events[9].verb, event_document_file_created.id)
+
+        self.assertEqual(events[10].action_object, test_documents[1])
+        self.assertEqual(events[10].actor, test_documents[1].file_latest)
+        self.assertEqual(events[10].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[10].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[11].action_object, test_documents[1])
+        self.assertEqual(events[11].actor, test_documents[1].file_latest)
+        self.assertEqual(events[11].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[11].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[12].action_object, test_documents[1])
+        self.assertEqual(events[12].actor, test_documents[1].version_active)
+        self.assertEqual(events[12].target, test_documents[1].version_active)
+        self.assertEqual(events[12].verb, event_document_version_created.id)
+
+        self.assertEqual(events[13].action_object, test_documents[1])
+        self.assertEqual(events[13].actor, test_documents[1].version_active)
+        self.assertEqual(events[13].target, test_documents[1].version_active)
+        self.assertEqual(events[13].verb, event_document_version_edited.id)
 
     def test_decode_email_with_attachment_and_inline_image(self):
         self._test_source_content = TEST_EMAIL_ATTACHMENT_AND_INLINE
@@ -268,7 +328,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 14)
 
         test_documents = Document.objects.all()
 
@@ -288,47 +348,75 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_documents[0])
-        self.assertEqual(events[3].actor, test_documents[0].version_active)
-        self.assertEqual(events[3].target, test_documents[0].version_active)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].actor, test_documents[0].file_latest)
+        self.assertEqual(events[3].target, test_documents[0].file_latest)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
 
+        self.assertEqual(events[4].action_object, test_documents[0])
+        self.assertEqual(events[4].actor, test_documents[0].file_latest)
+        self.assertEqual(events[4].target, test_documents[0].file_latest)
         self.assertEqual(
-            events[4].action_object, test_documents[0].version_active
-        )
-        self.assertEqual(
-            events[4].actor, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].target, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_documents[0])
         self.assertEqual(events[5].actor, test_documents[0].version_active)
         self.assertEqual(events[5].target, test_documents[0].version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_document_type)
-        self.assertEqual(events[6].actor, test_documents[1])
-        self.assertEqual(events[6].target, test_documents[1])
-        self.assertEqual(events[6].verb, event_document_created.id)
+        self.assertEqual(
+            events[6].action_object, test_documents[0].version_active
+        )
+        self.assertEqual(
+            events[6].actor, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].target, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
-        self.assertEqual(events[7].action_object, test_documents[1])
-        self.assertEqual(events[7].actor, test_documents[1].file_latest)
-        self.assertEqual(events[7].target, test_documents[1].file_latest)
-        self.assertEqual(events[7].verb, event_document_file_created.id)
+        self.assertEqual(events[7].action_object, test_documents[0])
+        self.assertEqual(events[7].actor, test_documents[0].version_active)
+        self.assertEqual(events[7].target, test_documents[0].version_active)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
-        self.assertEqual(events[8].action_object, test_documents[1])
-        self.assertEqual(events[8].actor, test_documents[1].version_active)
-        self.assertEqual(events[8].target, test_documents[1].version_active)
-        self.assertEqual(events[8].verb, event_document_version_created.id)
+        self.assertEqual(events[8].action_object, self._test_document_type)
+        self.assertEqual(events[8].actor, test_documents[1])
+        self.assertEqual(events[8].target, test_documents[1])
+        self.assertEqual(events[8].verb, event_document_created.id)
 
         self.assertEqual(events[9].action_object, test_documents[1])
-        self.assertEqual(events[9].actor, test_documents[1].version_active)
-        self.assertEqual(events[9].target, test_documents[1].version_active)
-        self.assertEqual(events[9].verb, event_document_version_edited.id)
+        self.assertEqual(events[9].actor, test_documents[1].file_latest)
+        self.assertEqual(events[9].target, test_documents[1].file_latest)
+        self.assertEqual(events[9].verb, event_document_file_created.id)
+
+        self.assertEqual(events[10].action_object, test_documents[1])
+        self.assertEqual(events[10].actor, test_documents[1].file_latest)
+        self.assertEqual(events[10].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[10].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[11].action_object, test_documents[1])
+        self.assertEqual(events[11].actor, test_documents[1].file_latest)
+        self.assertEqual(events[11].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[11].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[12].action_object, test_documents[1])
+        self.assertEqual(events[12].actor, test_documents[1].version_active)
+        self.assertEqual(events[12].target, test_documents[1].version_active)
+        self.assertEqual(events[12].verb, event_document_version_created.id)
+
+        self.assertEqual(events[13].action_object, test_documents[1])
+        self.assertEqual(events[13].actor, test_documents[1].version_active)
+        self.assertEqual(events[13].target, test_documents[1].version_active)
+        self.assertEqual(events[13].verb, event_document_version_edited.id)
 
     def test_document_upload_no_body(self):
         self._test_source_content = TEST_EMAIL_ATTACHMENT_AND_INLINE
@@ -348,7 +436,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 4)
+        self.assertEqual(events.count(), 6)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -365,14 +453,28 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[1].verb, event_document_file_created.id)
 
         self.assertEqual(events[2].action_object, test_document)
-        self.assertEqual(events[2].actor, test_document_version)
-        self.assertEqual(events[2].target, test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
+        self.assertEqual(events[2].actor, test_document_file)
+        self.assertEqual(events[2].target, test_document_file)
+        self.assertEqual(
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
 
         self.assertEqual(events[3].action_object, test_document)
-        self.assertEqual(events[3].actor, test_document_version)
-        self.assertEqual(events[3].target, test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_edited.id)
+        self.assertEqual(events[3].actor, test_document_file)
+        self.assertEqual(events[3].target, test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[4].action_object, test_document)
+        self.assertEqual(events[4].actor, test_document_version)
+        self.assertEqual(events[4].target, test_document_version)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, test_document)
+        self.assertEqual(events[5].actor, test_document_version)
+        self.assertEqual(events[5].target, test_document_version)
+        self.assertEqual(events[5].verb, event_document_version_edited.id)
 
     def test_document_upload_with_body(self):
         self._test_source_content = TEST_EMAIL_ATTACHMENT_AND_INLINE
@@ -410,7 +512,7 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 14)
 
         test_documents = Document.objects.all()
 
@@ -430,47 +532,75 @@ class EmailSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, test_documents[0])
-        self.assertEqual(events[3].actor, test_documents[0].version_active)
-        self.assertEqual(events[3].target, test_documents[0].version_active)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
+        self.assertEqual(events[3].actor, test_documents[0].file_latest)
+        self.assertEqual(events[3].target, test_documents[0].file_latest)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
 
+        self.assertEqual(events[4].action_object, test_documents[0])
+        self.assertEqual(events[4].actor, test_documents[0].file_latest)
+        self.assertEqual(events[4].target, test_documents[0].file_latest)
         self.assertEqual(
-            events[4].action_object, test_documents[0].version_active
-        )
-        self.assertEqual(
-            events[4].actor, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].target, test_documents[0].version_active.pages.first()
-        )
-        self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, test_documents[0])
         self.assertEqual(events[5].actor, test_documents[0].version_active)
         self.assertEqual(events[5].target, test_documents[0].version_active)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
 
-        self.assertEqual(events[6].action_object, self._test_document_type)
-        self.assertEqual(events[6].actor, test_documents[1])
-        self.assertEqual(events[6].target, test_documents[1])
-        self.assertEqual(events[6].verb, event_document_created.id)
+        self.assertEqual(
+            events[6].action_object, test_documents[0].version_active
+        )
+        self.assertEqual(
+            events[6].actor, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].target, test_documents[0].version_active.pages.first()
+        )
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
 
-        self.assertEqual(events[7].action_object, test_documents[1])
-        self.assertEqual(events[7].actor, test_documents[1].file_latest)
-        self.assertEqual(events[7].target, test_documents[1].file_latest)
-        self.assertEqual(events[7].verb, event_document_file_created.id)
+        self.assertEqual(events[7].action_object, test_documents[0])
+        self.assertEqual(events[7].actor, test_documents[0].version_active)
+        self.assertEqual(events[7].target, test_documents[0].version_active)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
-        self.assertEqual(events[8].action_object, test_documents[1])
-        self.assertEqual(events[8].actor, test_documents[1].version_active)
-        self.assertEqual(events[8].target, test_documents[1].version_active)
-        self.assertEqual(events[8].verb, event_document_version_created.id)
+        self.assertEqual(events[8].action_object, self._test_document_type)
+        self.assertEqual(events[8].actor, test_documents[1])
+        self.assertEqual(events[8].target, test_documents[1])
+        self.assertEqual(events[8].verb, event_document_created.id)
 
         self.assertEqual(events[9].action_object, test_documents[1])
-        self.assertEqual(events[9].actor, test_documents[1].version_active)
-        self.assertEqual(events[9].target, test_documents[1].version_active)
-        self.assertEqual(events[9].verb, event_document_version_edited.id)
+        self.assertEqual(events[9].actor, test_documents[1].file_latest)
+        self.assertEqual(events[9].target, test_documents[1].file_latest)
+        self.assertEqual(events[9].verb, event_document_file_created.id)
+
+        self.assertEqual(events[10].action_object, test_documents[1])
+        self.assertEqual(events[10].actor, test_documents[1].file_latest)
+        self.assertEqual(events[10].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[10].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[11].action_object, test_documents[1])
+        self.assertEqual(events[11].actor, test_documents[1].file_latest)
+        self.assertEqual(events[11].target, test_documents[1].file_latest)
+        self.assertEqual(
+            events[11].verb, event_file_metadata_document_file_finished.id
+        )
+
+        self.assertEqual(events[12].action_object, test_documents[1])
+        self.assertEqual(events[12].actor, test_documents[1].version_active)
+        self.assertEqual(events[12].target, test_documents[1].version_active)
+        self.assertEqual(events[12].verb, event_document_version_created.id)
+
+        self.assertEqual(events[13].action_object, test_documents[1])
+        self.assertEqual(events[13].actor, test_documents[1].version_active)
+        self.assertEqual(events[13].target, test_documents[1].version_active)
+        self.assertEqual(events[13].verb, event_document_version_edited.id)
 
 
 class IMAPSourceBackendActionDocumentUploadTestCase(
@@ -505,7 +635,7 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -543,26 +673,40 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_false(self):
         test_document_count = Document.objects.count()
@@ -592,7 +736,7 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -630,26 +774,40 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_none(self):
         test_document_count = Document.objects.count()
@@ -679,7 +837,7 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -717,26 +875,40 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_true(self):
         test_document_count = Document.objects.count()
@@ -766,7 +938,7 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 9)
+        self.assertEqual(events.count(), 11)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -799,26 +971,40 @@ class IMAPSourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[4].verb, event_document_file_edited.id)
 
         self.assertEqual(events[5].action_object, test_document)
-        self.assertEqual(events[5].actor, test_document_version)
-        self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_created.id)
-
-        self.assertEqual(events[6].action_object, test_document_version)
-        self.assertEqual(events[6].actor, test_document_version_page)
-        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(events[5].actor, test_document_file)
+        self.assertEqual(events[5].target, test_document_file)
         self.assertEqual(
-            events[6].verb, event_document_version_page_created.id
+            events[5].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
+        self.assertEqual(
+            events[6].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[7].action_object, test_document)
         self.assertEqual(events[7].actor, test_document_version)
         self.assertEqual(events[7].target, test_document_version)
-        self.assertEqual(events[7].verb, event_document_version_edited.id)
+        self.assertEqual(events[7].verb, event_document_version_created.id)
 
-        self.assertEqual(events[8].action_object, self._test_source)
-        self.assertEqual(events[8].actor, self._test_stored_credential)
-        self.assertEqual(events[8].target, self._test_stored_credential)
-        self.assertEqual(events[8].verb, event_credential_used.id)
+        self.assertEqual(events[8].action_object, test_document_version)
+        self.assertEqual(events[8].actor, test_document_version_page)
+        self.assertEqual(events[8].target, test_document_version_page)
+        self.assertEqual(
+            events[8].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[9].action_object, test_document)
+        self.assertEqual(events[9].actor, test_document_version)
+        self.assertEqual(events[9].target, test_document_version)
+        self.assertEqual(events[9].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[10].action_object, self._test_source)
+        self.assertEqual(events[10].actor, self._test_stored_credential)
+        self.assertEqual(events[10].target, self._test_stored_credential)
+        self.assertEqual(events[10].verb, event_credential_used.id)
 
 
 class POP3SourceBackendActionDocumentUploadTestCase(
@@ -853,7 +1039,7 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -891,26 +1077,40 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_false(self):
         test_document_count = Document.objects.count()
@@ -940,7 +1140,7 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -978,26 +1178,40 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_none(self):
         test_document_count = Document.objects.count()
@@ -1027,7 +1241,7 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 10)
+        self.assertEqual(events.count(), 12)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -1065,26 +1279,40 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[5].verb, event_document_file_edited.id)
 
         self.assertEqual(events[6].action_object, test_document)
-        self.assertEqual(events[6].actor, test_document_version)
-        self.assertEqual(events[6].target, test_document_version)
-        self.assertEqual(events[6].verb, event_document_version_created.id)
-
-        self.assertEqual(events[7].action_object, test_document_version)
-        self.assertEqual(events[7].actor, test_document_version_page)
-        self.assertEqual(events[7].target, test_document_version_page)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
         self.assertEqual(
-            events[7].verb, event_document_version_page_created.id
+            events[6].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[7].action_object, test_document)
+        self.assertEqual(events[7].actor, test_document_file)
+        self.assertEqual(events[7].target, test_document_file)
+        self.assertEqual(
+            events[7].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[8].action_object, test_document)
         self.assertEqual(events[8].actor, test_document_version)
         self.assertEqual(events[8].target, test_document_version)
-        self.assertEqual(events[8].verb, event_document_version_edited.id)
+        self.assertEqual(events[8].verb, event_document_version_created.id)
 
-        self.assertEqual(events[9].action_object, self._test_source)
-        self.assertEqual(events[9].actor, self._test_stored_credential)
-        self.assertEqual(events[9].target, self._test_stored_credential)
-        self.assertEqual(events[9].verb, event_credential_used.id)
+        self.assertEqual(events[9].action_object, test_document_version)
+        self.assertEqual(events[9].actor, test_document_version_page)
+        self.assertEqual(events[9].target, test_document_version_page)
+        self.assertEqual(
+            events[9].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[10].action_object, test_document)
+        self.assertEqual(events[10].actor, test_document_version)
+        self.assertEqual(events[10].target, test_document_version)
+        self.assertEqual(events[10].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[11].action_object, self._test_source)
+        self.assertEqual(events[11].actor, self._test_stored_credential)
+        self.assertEqual(events[11].target, self._test_stored_credential)
+        self.assertEqual(events[11].verb, event_credential_used.id)
 
     def test_dry_run_true(self):
         test_document_count = Document.objects.count()
@@ -1114,7 +1342,7 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         )
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 9)
+        self.assertEqual(events.count(), 11)
 
         test_document = Document.objects.first()
         test_document_file = test_document.file_latest
@@ -1147,23 +1375,37 @@ class POP3SourceBackendActionDocumentUploadTestCase(
         self.assertEqual(events[4].verb, event_document_file_edited.id)
 
         self.assertEqual(events[5].action_object, test_document)
-        self.assertEqual(events[5].actor, test_document_version)
-        self.assertEqual(events[5].target, test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_created.id)
-
-        self.assertEqual(events[6].action_object, test_document_version)
-        self.assertEqual(events[6].actor, test_document_version_page)
-        self.assertEqual(events[6].target, test_document_version_page)
+        self.assertEqual(events[5].actor, test_document_file)
+        self.assertEqual(events[5].target, test_document_file)
         self.assertEqual(
-            events[6].verb, event_document_version_page_created.id
+            events[5].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[6].action_object, test_document)
+        self.assertEqual(events[6].actor, test_document_file)
+        self.assertEqual(events[6].target, test_document_file)
+        self.assertEqual(
+            events[6].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[7].action_object, test_document)
         self.assertEqual(events[7].actor, test_document_version)
         self.assertEqual(events[7].target, test_document_version)
-        self.assertEqual(events[7].verb, event_document_version_edited.id)
+        self.assertEqual(events[7].verb, event_document_version_created.id)
 
-        self.assertEqual(events[8].action_object, self._test_source)
-        self.assertEqual(events[8].actor, self._test_stored_credential)
-        self.assertEqual(events[8].target, self._test_stored_credential)
-        self.assertEqual(events[8].verb, event_credential_used.id)
+        self.assertEqual(events[8].action_object, test_document_version)
+        self.assertEqual(events[8].actor, test_document_version_page)
+        self.assertEqual(events[8].target, test_document_version_page)
+        self.assertEqual(
+            events[8].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[9].action_object, test_document)
+        self.assertEqual(events[9].actor, test_document_version)
+        self.assertEqual(events[9].target, test_document_version)
+        self.assertEqual(events[9].verb, event_document_version_edited.id)
+
+        self.assertEqual(events[10].action_object, self._test_source)
+        self.assertEqual(events[10].actor, self._test_stored_credential)
+        self.assertEqual(events[10].target, self._test_stored_credential)
+        self.assertEqual(events[10].verb, event_credential_used.id)

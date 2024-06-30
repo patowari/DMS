@@ -19,6 +19,10 @@ from mayan.apps.documents.events import (
     event_document_version_page_created
 )
 from mayan.apps.documents.tests.base import BaseTestCase, GenericViewTestCase
+from mayan.apps.file_metadata.events import (
+    event_file_metadata_document_file_finished,
+    event_file_metadata_document_file_submitted
+)
 
 from ..events import (
     event_detached_signature_created, event_embedded_signature_created
@@ -96,7 +100,7 @@ class DocumentSignatureWorkflowActionTestCase(
         _test_document_version_page = _test_document_version.pages.first()
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 6)
+        self.assertEqual(events.count(), 8)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, _test_document_file)
@@ -109,29 +113,43 @@ class DocumentSignatureWorkflowActionTestCase(
         self.assertEqual(events[1].verb, event_document_file_edited.id)
 
         self.assertEqual(events[2].action_object, self._test_document)
-        self.assertEqual(events[2].actor, _test_document_version)
-        self.assertEqual(events[2].target, _test_document_version)
-        self.assertEqual(events[2].verb, event_document_version_created.id)
-
-        self.assertEqual(events[3].action_object, _test_document_version)
-        self.assertEqual(events[3].actor, _test_document_version_page)
-        self.assertEqual(events[3].target, _test_document_version_page)
+        self.assertEqual(events[2].actor, _test_document_file)
+        self.assertEqual(events[2].target, _test_document_file)
         self.assertEqual(
-            events[3].verb, event_document_version_page_created.id
+            events[2].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[3].action_object, self._test_document)
+        self.assertEqual(events[3].actor, _test_document_file)
+        self.assertEqual(events[3].target, _test_document_file)
+        self.assertEqual(
+            events[3].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[4].action_object, self._test_document)
         self.assertEqual(events[4].actor, _test_document_version)
         self.assertEqual(events[4].target, _test_document_version)
-        self.assertEqual(events[4].verb, event_document_version_edited.id)
+        self.assertEqual(events[4].verb, event_document_version_created.id)
+
+        self.assertEqual(events[5].action_object, _test_document_version)
+        self.assertEqual(events[5].actor, _test_document_version_page)
+        self.assertEqual(events[5].target, _test_document_version_page)
+        self.assertEqual(
+            events[5].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[6].action_object, self._test_document)
+        self.assertEqual(events[6].actor, _test_document_version)
+        self.assertEqual(events[6].target, _test_document_version)
+        self.assertEqual(events[6].verb, event_document_version_edited.id)
 
         self.assertEqual(
-            events[5].action_object,
+            events[7].action_object,
             self._test_document.file_latest.signatures.first().embeddedsignature
         )
-        self.assertEqual(events[5].actor, self._test_document_file)
-        self.assertEqual(events[5].target, self._test_document_file)
-        self.assertEqual(events[5].verb, event_embedded_signature_created.id)
+        self.assertEqual(events[7].actor, self._test_document_file)
+        self.assertEqual(events[7].target, self._test_document_file)
+        self.assertEqual(events[7].verb, event_embedded_signature_created.id)
 
 
 class DocumentSignatureWorkflowActionTransitionTestCase(
@@ -232,7 +250,7 @@ class DocumentSignatureWorkflowActionTransitionTestCase(
         _test_document_version_page = _test_document_version.pages.first()
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 7)
+        self.assertEqual(events.count(), 9)
 
         self.assertEqual(events[0].action_object, self._test_document)
         self.assertEqual(events[0].actor, self._test_workflow_instance)
@@ -252,29 +270,43 @@ class DocumentSignatureWorkflowActionTransitionTestCase(
         self.assertEqual(events[2].verb, event_document_file_edited.id)
 
         self.assertEqual(events[3].action_object, self._test_document)
-        self.assertEqual(events[3].actor, _test_document_version)
-        self.assertEqual(events[3].target, _test_document_version)
-        self.assertEqual(events[3].verb, event_document_version_created.id)
-
-        self.assertEqual(events[4].action_object, _test_document_version)
-        self.assertEqual(events[4].actor, _test_document_version_page)
-        self.assertEqual(events[4].target, _test_document_version_page)
+        self.assertEqual(events[3].actor, _test_document_file)
+        self.assertEqual(events[3].target, _test_document_file)
         self.assertEqual(
-            events[4].verb, event_document_version_page_created.id
+            events[3].verb, event_file_metadata_document_file_submitted.id
+        )
+
+        self.assertEqual(events[4].action_object, self._test_document)
+        self.assertEqual(events[4].actor, _test_document_file)
+        self.assertEqual(events[4].target, _test_document_file)
+        self.assertEqual(
+            events[4].verb, event_file_metadata_document_file_finished.id
         )
 
         self.assertEqual(events[5].action_object, self._test_document)
         self.assertEqual(events[5].actor, _test_document_version)
         self.assertEqual(events[5].target, _test_document_version)
-        self.assertEqual(events[5].verb, event_document_version_edited.id)
+        self.assertEqual(events[5].verb, event_document_version_created.id)
+
+        self.assertEqual(events[6].action_object, _test_document_version)
+        self.assertEqual(events[6].actor, _test_document_version_page)
+        self.assertEqual(events[6].target, _test_document_version_page)
+        self.assertEqual(
+            events[6].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[7].action_object, self._test_document)
+        self.assertEqual(events[7].actor, _test_document_version)
+        self.assertEqual(events[7].target, _test_document_version)
+        self.assertEqual(events[7].verb, event_document_version_edited.id)
 
         self.assertEqual(
-            events[6].action_object,
+            events[8].action_object,
             self._test_document.file_latest.signatures.first().embeddedsignature
         )
-        self.assertEqual(events[6].actor, self._test_document_file)
-        self.assertEqual(events[6].target, self._test_document_file)
-        self.assertEqual(events[6].verb, event_embedded_signature_created.id)
+        self.assertEqual(events[8].actor, self._test_document_file)
+        self.assertEqual(events[8].target, self._test_document_file)
+        self.assertEqual(events[8].verb, event_embedded_signature_created.id)
 
 
 class DocumentSignatureWorkflowActionViewTestCase(

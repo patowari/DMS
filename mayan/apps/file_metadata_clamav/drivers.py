@@ -35,7 +35,7 @@ class ClamScanDriver(FileMetadataDriver):
     def __init__(self, path_clamscan, **kwargs):
         super().__init__(**kwargs)
 
-        self.command_clamscan = sh.Command(path=self.path_clamscan)
+        self.command_clamscan = sh.Command(path=path_clamscan)
 
     def _process(self, document_file):
         if self.command_clamscan:

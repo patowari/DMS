@@ -36,7 +36,7 @@ class EXIFToolDriver(FileMetadataDriver):
     def __init__(self, exiftool_path, **kwargs):
         super().__init__(**kwargs)
 
-        self.command_exiftool = sh.Command(path=self.exiftool_path)
+        self.command_exiftool = sh.Command(path=exiftool_path)
         self.command_exiftool = self.command_exiftool.bake('-j')
 
     def _process(self, document_file):
