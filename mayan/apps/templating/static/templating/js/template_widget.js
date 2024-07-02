@@ -1,6 +1,8 @@
 'use strict';
 
 jQuery(document).ready(function() {
+    /* Inject filters and tags */
+
     $('[data-autocopy="true"]').change(function(event) {
         const $this = $(this);
         const $idTemplate = $this.siblings('[data-template-fields="template"]');
@@ -29,21 +31,20 @@ jQuery(document).ready(function() {
 
     /* Update the code preview */
 
-    const templatingPreviewRefresh = function () {
-        const $this = $('textarea.templating-widget-code');
-        const $preview = $('code.templating-widget-code');
+    const templatingPreviewRefresh = function (event) {
+        const $this = $(this);
+        const $preview = $this.parent().find('code.templating-widget-code');
 
         let content = $this.val();
+
         $preview.text(content);
         $preview.removeAttr('data-highlighted');
         hljs.highlightElement($preview[0]);
     }
 
-    $('textarea.templating-widget-code').on('input change keyup', function (event) {
-        templatingPreviewRefresh();
-    });
+    $('textarea.templating-widget-code').on('input change keyup', templatingPreviewRefresh);
 
-    templatingPreviewRefresh();
+    hljs.highlightAll();
 
     /* Synchronize the scrolling */
 
