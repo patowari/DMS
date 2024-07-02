@@ -33,12 +33,13 @@ class Menu(TemplateObjectMixin):
         del cls._registry[name]
 
     def __init__(
-        self, name, condition=None, icon=None, label=None,
-        non_sorted_sources=None
+        self, name, cache_class_associations=True, condition=None, icon=None,
+        label=None, non_sorted_sources=None
     ):
         if name in self.__class__._registry:
             raise Exception('A menu with this name already exists')
 
+        self.cache_class_associations = cache_class_associations
         self.bound_links = {}
         self.condition = condition
         self.excluded_links = {}
@@ -129,7 +130,12 @@ class Menu(TemplateObjectMixin):
         return matched_links
 
     @cache
-    def get_links_for_class(self, resolved_navigation_object_class):
+    def get_links_for_class_cached(self, resolved_navigation_object_class):
+        return self.get_links_for_class_non_cached(
+            resolved_navigation_object_class=resolved_navigation_object_class
+        )
+
+    def get_links_for_class_non_cached(self, resolved_navigation_object_class):
         matched_links = set()
 
         try:
@@ -137,12 +143,12 @@ class Menu(TemplateObjectMixin):
         except AttributeError:
             # Not a class, direct instance match.
             bound_object = resolved_navigation_object_class
-            unbound_object = resolved_navigation_object_class
             excluded_object = resolved_navigation_object_class
+            unbound_object = resolved_navigation_object_class
 
             matched_links = self.do_matched_links_update(
-                matched_links=matched_links, bound_object=bound_object,
-                unbound_object=unbound_object, excluded_object=excluded_object
+                bound_object=bound_object, excluded_object=excluded_object,
+                matched_links=matched_links, unbound_object=unbound_object
             )
         else:
             # Get proxy results.
@@ -156,14 +162,15 @@ class Menu(TemplateObjectMixin):
                 """It's not a model, treat as a generic class."""
 
                 for super_class in mro[:-1]:
-
                     bound_object = super_class
-                    unbound_object = super_class
                     excluded_object = resolved_navigation_object_class
+                    unbound_object = super_class
 
                     matched_links = self.do_matched_links_update(
-                        matched_links=matched_links, bound_object=bound_object,
-                        unbound_object=unbound_object, excluded_object=excluded_object
+                        bound_object=bound_object,
+                        excluded_object=excluded_object,
+                        matched_links=matched_links,
+                        unbound_object=unbound_object
                     )
             else:
                 if model in self.proxy_exclusions:
@@ -179,8 +186,10 @@ class Menu(TemplateObjectMixin):
                 excluded_object = bound_model
 
                 matched_links = self.do_matched_links_update(
-                    matched_links=matched_links, bound_object=bound_object,
-                    unbound_object=unbound_object, excluded_object=excluded_object
+                    bound_object=bound_object,
+                    excluded_object=excluded_object,
+                    matched_links=matched_links,
+                    unbound_object=unbound_object
                 )
 
         return matched_links
@@ -268,6 +277,11 @@ class Menu(TemplateObjectMixin):
     ):
         result = []
 
+        if self.cache_class_associations:
+            function_get_links_for_class = self.get_links_for_class_cached
+        else:
+            function_get_links_for_class = self.get_links_for_class_non_cached
+
         if not context and not request:
             raise ImproperlyConfigured(
                 'Must provide a context or a request in order to resolve '
@@ -299,7 +313,7 @@ class Menu(TemplateObjectMixin):
             navigation_object_class = self.get_navigation_object_class(
                 resolved_navigation_object=resolved_navigation_object
             )
-            matched_links = self.get_links_for_class(
+            matched_links = function_get_links_for_class(
                 resolved_navigation_object_class=navigation_object_class
             )
 
@@ -316,7 +330,7 @@ class Menu(TemplateObjectMixin):
         navigation_object_class = self.get_navigation_object_class(
             resolved_navigation_object=current_view_name
         )
-        matched_links = self.get_links_for_class(
+        matched_links = function_get_links_for_class(
             resolved_navigation_object_class=navigation_object_class
         )
 
@@ -332,7 +346,7 @@ class Menu(TemplateObjectMixin):
         navigation_object_class = self.get_navigation_object_class(
             resolved_navigation_object=None
         )
-        matched_links = self.get_links_for_class(
+        matched_links = function_get_links_for_class(
             resolved_navigation_object_class=navigation_object_class
         )
 
@@ -412,4 +426,4 @@ class Menu(TemplateObjectMixin):
                     links=links, source=source, map_variable='unbound_links'
                 )
 
-        self.get_links_for_class.cache_clear()
+        self.get_links_for_class_cached.cache_clear()
