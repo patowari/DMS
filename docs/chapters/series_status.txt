@@ -87,27 +87,27 @@ Current series status
      - Yes
      - Updated
    * - 4.4
-     - End of life
+     - End of life, July 2024
      - No
      - No
-     - Not available and not updated
+     - Not available
    * - 4.3
-     - End of life
+     - End of life, May 2024
      - No
      - No
-     - Not available and not updated
+     - Not available
    * - 4.2
-     - End of life
+     - End of life, January 2024
      - No
      - No
-     - Not available and not updated
+     - Not available
    * - 4.1
-     - End of life
+     - End of life, September 2023
      - No
      - No
-     - Not available and not updated
+     - Not available
    * - 4.0
-     - End of life
+     - End of life, January 2023
      - No
      - No
-     - Not available and not updated
+     - Not available
