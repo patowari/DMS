@@ -107,6 +107,10 @@
 - Remove icons class `fontawesome-stack`.
 - Add file metadata Ollama app. This app is able to interface with Ollama
   models and share via messages any type of document information.
+- Rename the internal name of the file metadata events for correctness.
+  Renamed from `document_version_submit` to `document_file_submitted`,
+  `document_version_finish` to `document_file_finished`. Renamed using
+  migration 0018. There is no user impact.
 
 4.7.1 (2024-06-04)
 ==================
