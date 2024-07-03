@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'mayan.apps.file_metadata.apps.FileMetadataApp',
     'mayan.apps.file_metadata_clamav.apps.FileMetadataClamAVApp',
     'mayan.apps.file_metadata_eml.apps.FileMetadataEMLApp',
+    'mayan.apps.file_metadata_exif.apps.FileMetadataEXIFApp',
     'mayan.apps.file_metadata_ollama.apps.FileMetadataOllamaApp',
     'mayan.apps.linking.apps.LinkingApp',
     'mayan.apps.mailer.apps.MailerApp',

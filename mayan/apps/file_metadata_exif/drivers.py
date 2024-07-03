@@ -6,18 +6,20 @@ import sh
 
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.file_metadata.classes import FileMetadataDriver
 from mayan.apps.storage.utils import TemporaryDirectory
-
-from ..classes import FileMetadataDriver
 
 from .literals import DEFAULT_EXIF_PATH
 
 logger = logging.getLogger(name=__name__)
 
 
-class EXIFToolDriver(FileMetadataDriver):
+class FileMetadataDriverEXIF(FileMetadataDriver):
     argument_name_list = ('exiftool_path',)
     description = _(message='Read meta information stored in files.')
+    dotted_path_previous_list = (
+        'mayan.apps.file_metadata.drivers.exiftool.EXIFToolDriver',
+    )
     internal_name = 'exiftool'
     label = _(message='EXIF Tool')
     mime_type_list = ('*',)

@@ -2,9 +2,9 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.classes import BinaryDependency
 
-from .drivers.exiftool import EXIFToolDriver
+from .drivers import FileMetadataDriverEXIF
 
-arguments = EXIFToolDriver.get_argument_values_from_settings()
+arguments = FileMetadataDriverEXIF.get_argument_values_from_settings()
 
 BinaryDependency(
     help_text=_(

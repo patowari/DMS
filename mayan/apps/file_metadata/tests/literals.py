@@ -16,8 +16,3 @@ TEST_MSG_FILE_METADATA_DOTTED_NAME_TO = 'extract_msg__to'
 
 TEST_MSG_FILE_METADATA_VALUE_SUBJECT = 'MSG Test File'
 TEST_MSG_FILE_METADATA_VALUE_TO = 'time2talk@online-convert.com <time2talk@online-convert.com>'
-
-# PDF
-
-TEST_PDF_FILE_METADATA_DOTTED_NAME = 'exiftool__producer'
-TEST_PDF_FILE_METADATA_VALUE = 'pdfTeX-1.40.10'

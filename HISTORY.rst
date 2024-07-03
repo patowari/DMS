@@ -111,6 +111,9 @@
   Renamed from `document_version_submit` to `document_file_submitted`,
   `document_version_finish` to `document_file_finished`. Renamed using
   migration 0018. There is no user impact.
+- Add support for file metadata driver migrations.
+- Split the file metadata EXIF driver to its own app named
+  `mayan.apps.file_metadata_exif.apps.FileMetadataEXIFApp`.
 
 4.7.1 (2024-06-04)
 ==================

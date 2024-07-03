@@ -1,7 +1,7 @@
 import logging
 
 from django.apps import apps
-from django.db.utils import OperationalError, ProgrammingError
+from django.db.utils import IntegrityError, OperationalError, ProgrammingError
 from django.utils.functional import classproperty
 from django.utils.translation import gettext_lazy as _
 
@@ -85,6 +85,7 @@ class FileMetadataDriver(
     # arguments and lead to an empty entry in list views.
     # https://stackoverflow.com/questions/6861601/cannot-resolve-callable-context-variable
     do_not_call_in_templates = True
+    dotted_path_previous_list = ()
     internal_name = None
     label = None
     mime_type_list = ()
@@ -109,11 +110,28 @@ class FileMetadataDriver(
             app_label='file_metadata', model_name='StoredDriver'
         )
 
-        model_instance, created = StoredDriver.objects.update_or_create(
-            driver_path=cls.dotted_path, defaults={
-                'internal_name': cls.internal_name, 'exists': True
-            }
-        )
+        try:
+            model_instance, created = StoredDriver.objects.update_or_create(
+                driver_path=cls.dotted_path, defaults={
+                    'exists': True, 'internal_name': cls.internal_name
+                }
+            )
+        except IntegrityError:
+            # May be a driver that moved to another location.
+            model_instance = StoredDriver.objects.get(
+                internal_name=cls.internal_name
+            )
+
+            if model_instance.driver_path in cls.dotted_path_previous_list:
+                model_instance.driver_path = cls.dotted_path
+                model_instance.exists = True
+                model_instance.save()
+
+                created = False
+            else:
+                # Unknown situation, re-raise original error.
+                raise
+
         cls.model_instance = model_instance
 
         if created:
