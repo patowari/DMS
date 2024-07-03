@@ -114,6 +114,8 @@
 - Add support for file metadata driver migrations.
 - Split the file metadata EXIF driver to its own app named
   `mayan.apps.file_metadata_exif.apps.FileMetadataEXIFApp`.
+- Split the file metadata extract MSG driver to its own app named
+  `mayan.apps.file_metadata_msg.apps.FileMetadataMSGApp`.
 
 4.7.1 (2024-06-04)
 ==================

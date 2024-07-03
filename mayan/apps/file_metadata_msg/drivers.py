@@ -4,17 +4,19 @@ import extract_msg
 
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.file_metadata.classes import FileMetadataDriver
 from mayan.apps.storage.literals import MSG_MIME_TYPES
-
-from ..classes import FileMetadataDriver
 
 logger = logging.getLogger(__name__)
 
 
-class ExtractMSGToolDriver(FileMetadataDriver):
+class FileMetadataDriverExtractMSGTool(FileMetadataDriver):
     description = _(
         message='Extracts information from emails saved in Microsoft '
         'Outlook\'s .msg files.'
+    )
+    dotted_path_previous_list = (
+        'mayan.apps.file_metadata.drivers.extract_msg.ExtractMSGToolDriver',
     )
     internal_name = 'extract_msg'
     label = _(message='Extract msg')
