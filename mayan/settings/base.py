@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'mayan.apps.organizations.apps.OrganizationsApp',
     'mayan.apps.permissions.apps.PermissionsApp',
     'mayan.apps.platform.apps.PlatformApp',
+    'mayan.apps.platform_docker.apps.PlatformDockerApp',
     'mayan.apps.quotas.apps.QuotasApp',
     'mayan.apps.rest_api.apps.RESTAPIApp',
     'mayan.apps.smart_settings.apps.SmartSettingsApp',

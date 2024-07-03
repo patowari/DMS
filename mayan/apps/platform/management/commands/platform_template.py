@@ -1,6 +1,6 @@
 from django.core import management
 
-from ...classes import PlatformTemplate
+from ...platform_templates import PlatformTemplate
 
 
 class Command(management.BaseCommand):
@@ -24,12 +24,12 @@ class Command(management.BaseCommand):
             self.stdout.write(msg='----')
 
             maximum_name_length = max(
-                len(template_class.name) for template_class in PlatformTemplate.all()
+                len(template_class.name) for template_class in PlatformTemplate.get_all()
             )
 
             space_padding = maximum_name_length + 2
 
-            for template_class in PlatformTemplate.all():
+            for template_class in PlatformTemplate.get_all():
                 template = template_class()
                 self.stdout.write(
                     msg='* {:<{}}{}'.format(

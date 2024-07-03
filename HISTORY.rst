@@ -116,6 +116,8 @@
   `mayan.apps.file_metadata_exif.apps.FileMetadataEXIFApp`.
 - Split the file metadata extract MSG driver to its own app named
   `mayan.apps.file_metadata_msg.apps.FileMetadataMSGApp`.
+- Split the Docker templates into their own call named
+  `mayan.apps.platform_docker`.
 
 4.7.1 (2024-06-04)
 ==================
