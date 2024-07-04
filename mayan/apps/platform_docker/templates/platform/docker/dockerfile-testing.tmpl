@@ -6,7 +6,7 @@
 #              Mayan EDMS.
 ####
 
-FROM {{ DOCKER_LINUX_IMAGE_VERSION }} as base_image
+FROM {{ DOCKER_LINUX_IMAGE_VERSION }} AS base_image
 
 LABEL io.artifacthub.package.keywords="Python,Django,document management,OCR,PDF"
 LABEL io.artifacthub.package.readme-url="https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/README.md"
@@ -101,7 +101,7 @@ apt-get update \
 ####
 
 # Reuse image.
-FROM base_image as builder_image
+FROM base_image AS builder_image
 
 # Python libraries caching.
 ARG PIP_INDEX_URL
