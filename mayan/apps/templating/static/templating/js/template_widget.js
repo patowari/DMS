@@ -42,9 +42,11 @@ jQuery(document).ready(function() {
         hljs.highlightElement($preview[0]);
     }
 
-    $('textarea.templating-widget-code').on('input change keyup', templatingPreviewRefresh);
+    $('textarea.templating-widget-code').on(
+        'input change keyup', templatingPreviewRefresh
+    );
 
-    hljs.highlightAll();
+    $('textarea.templating-widget-code').each(templatingPreviewRefresh);
 
     /* Synchronize the scrolling */
 
