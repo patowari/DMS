@@ -123,6 +123,7 @@
   https://github.com/moby/buildkit/issues/2343.
 - Add `to_base64` template filter. Also accepts an optional `altchars`
   argument.
+- Support configurable Docker Compose RabbitMQ port, Redis host, Redis port.
 
 4.7.1 (2024-06-04)
 ==================

@@ -2,11 +2,11 @@ x-mayan-container:
   &mayan-container
   env_file: .env
   environment:
-    MAYAN_CELERY_BROKER_URL: amqp://${MAYAN_RABBITMQ_USER:-mayan}:${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}@${MAYAN_DOCKER_RABBITMQ_HOSTNAME:-rabbitmq}:5672/${MAYAN_RABBITMQ_VHOST:-mayan}
-    MAYAN_CELERY_RESULT_BACKEND: redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@redis:6379/${MAYAN_REDIS_RESULT_DATABASE:-1}
+    MAYAN_CELERY_BROKER_URL: amqp://${MAYAN_RABBITMQ_USER:-mayan}:${MAYAN_RABBITMQ_PASSWORD:-mayanrabbitpass}@${MAYAN_DOCKER_RABBITMQ_HOSTNAME:-rabbitmq}:${MAYAN_DOCKER_RABBITMQ_PORT:-5672}/${MAYAN_RABBITMQ_VHOST:-mayan}
+    MAYAN_CELERY_RESULT_BACKEND: redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@${MAYAN_DOCKER_REDIS_HOSTNAME:-redis}:${MAYAN_DOCKER_REDIS_PORT:-6379}/${MAYAN_REDIS_RESULT_DATABASE:-1}
     MAYAN_DATABASES: "{'default':{'ENGINE':'django.db.backends.postgresql','NAME':'${MAYAN_DATABASE_NAME:-mayan}','PASSWORD':'${MAYAN_DATABASE_PASSWORD:-mayandbpass}','USER':'${MAYAN_DATABASE_USER:-mayan}','HOST':'${MAYAN_DATABASE_HOST:-postgresql}','PORT':${MAYAN_DATABASE_PORT:-},'CONN_MAX_AGE':${MAYAN_DATABASE_CONN_MAX_AGE:-0},${MAYAN_DATABASE_EXTRA_OPTIONS:-}}}"
     MAYAN_LOCK_MANAGER_BACKEND: mayan.apps.lock_manager.backends.redis_lock.RedisLock
-    MAYAN_LOCK_MANAGER_BACKEND_ARGUMENTS: "{'redis_url':'redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@redis:6379/${MAYAN_REDIS_LOCK_MANAGER_DATABASE:-2}'}"
+    MAYAN_LOCK_MANAGER_BACKEND_ARGUMENTS: "{'redis_url':'redis://:${MAYAN_REDIS_PASSWORD:-mayanredispassword}@${MAYAN_DOCKER_REDIS_HOSTNAME:-redis}:${MAYAN_DOCKER_REDIS_PORT:-6379}/${MAYAN_REDIS_LOCK_MANAGER_DATABASE:-2}'}"
   image: ${MAYAN_DOCKER_IMAGE_NAME:-mayanedms/mayanedms}:${MAYAN_DOCKER_IMAGE_TAG:-s4.7}
   logging:
     driver: "json-file"
@@ -53,10 +53,6 @@ x-mayan-traefik-labels:
     - "traefik.http.services.mayan_frontend_http.loadbalancer.server.port=8000"
 
 networks:
-  keycloak:
-    driver: bridge
-    # Change to true when using Traefik for increased security.
-    internal: false
   mayan:
     driver: bridge
     # Change to true when using Traefik for increased security.
@@ -92,58 +88,6 @@ services:
         hard: -1
     volumes:
       - ${MAYAN_ELASTICSEARCH_VOLUME:-elasticsearch}:/usr/share/elasticsearch/data
-
-  keycloak:
-    command:
-      - start
-    environment:
-      KEYCLOAK_ADMIN: ${MAYAN_KEYCLOAK_ADMIN:-admin}
-      KEYCLOAK_ADMIN_PASSWORD: ${MAYAN_KEYCLOAK_ADMIN_PASSWORD:-admin}
-      KC_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
-      KC_DB_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
-      KC_DB_URL_DATABASE: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
-      KC_DB_URL_HOST: ${MAYAN_KEYCLOAK_DATABASE_HOST:-keycloak-postgres}
-      KC_DB_USERNAME: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
-      KC_HOSTNAME_URL: http://127.0.0.1:8081/
-      KC_HOSTNAME_STRICT: false
-      KC_HTTP_ENABLED: true
-    image: ${MAYAN_DOCKER_KEYCLOAK_IMAGE:-keycloak/keycloak}:${MAYAN_DOCKER_KEYCLOAK_TAG:-20.0.5-0}
-    labels:
-      - "traefik.enable=${MAYAN_TRAEFIK_KEYCLOAK_ENABLE:-false}"
-      - "traefik.http.middlewares.keycloak_http_redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.keycloak_http_redirect.redirectscheme.permanent=false"
-      - "traefik.http.routers.keycloak_http.entrypoints=http"
-      - "traefik.http.routers.keycloak_http.middlewares=keycloak_http_redirect"
-      - "traefik.http.routers.keycloak_http.rule=Host(`${MAYAN_TRAEFIK_EXTERNAL_DOMAIN}`)"
-      - "traefik.http.routers.keycloak_https.entrypoints=https"
-      - "traefik.http.routers.keycloak_https.rule=Host(`${MAYAN_TRAEFIK_EXTERNAL_DOMAIN}`)"
-      - "traefik.http.routers.keycloak_https.service=keycloak_http"
-      - "traefik.http.routers.keycloak_https.tls=true"
-      - "traefik.http.routers.keycloak_https.tls.certresolver=letsencrypt"
-      - "traefik.http.services.keycloak_http.loadbalancer.server.port=${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}"
-    networks:
-      - keycloak
-      - mayan
-    # Disable ports if using Traefik.
-    ports:
-      - "${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}:${MAYAN_TRAEFIK_KEYCLOAK_HTTP_PORT:-8081}"
-    profiles:
-      - keycloak
-    restart: unless-stopped
-
-  keycloak-postgres:
-    environment:
-      POSTGRES_DB: ${MAYAN_KEYCLOAK_DATABASE_NAME:-keycloak}
-      POSTGRES_PASSWORD: ${MAYAN_KEYCLOAK_DATABASE_PASSWORD:-keycloakdbpass}
-      POSTGRES_USER: ${MAYAN_DATABASE_KEYCLOAK_USER:-keycloak}
-    image: ${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_IMAGE:-postgres}:${MAYAN_DOCKER_KEYCLOAK_POSTGRESQL_TAG:-13.15-alpine}
-    networks:
-      - keycloak
-    profiles:
-      - keycloak_postgresql
-    restart: unless-stopped
-    volumes:
-      - ${MAYAN_KEYCLOAK_POSTGRESQL_VOLUME:-keycloak-postgres}:/var/lib/postgresql/data
 
   postgresql:
     command:
@@ -251,7 +195,7 @@ services:
       - "256"
       - --requirepass
       - "${MAYAN_REDIS_PASSWORD:-mayanredispassword}"
-    image: ${MAYAN_DOCKER_REDIS_IMAGE:-redis}:${MAYAN_DOCKER_REDIS_TAG:-7.0.15-alpine}
+    image: ${MAYAN_DOCKER_REDIS_IMAGE:-redis}:${MAYAN_DOCKER_REDIS_TAG:-7.2.5-alpine}
     networks:
       - mayan
     profiles:
@@ -428,7 +372,6 @@ services:
 volumes:
   app:
   elasticsearch:
-  keycloak-postgres:
   postgres:
   postgres-backups:
   postgres-initdb:
