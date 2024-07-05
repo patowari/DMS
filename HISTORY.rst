@@ -118,6 +118,9 @@
   `mayan.apps.file_metadata_msg.apps.FileMetadataMSGApp`.
 - Split the Docker templates into their own call named
   `mayan.apps.platform_docker`.
+- Update GitLab CI Docker in Docker image from 23.0.6-dind to 27.0.3-dind due
+  to bugs https://github.com/docker/buildx/issues/593 and
+  https://github.com/moby/buildkit/issues/2343.
 
 4.7.1 (2024-06-04)
 ==================

@@ -31,7 +31,7 @@ docker-build: docker-dockerfile-update docker-buildkitd-config-create
 	docker context rm tls-context || true
 	docker context create tls-context
 	docker buildx create --bootstrap --config /tmp/buildkitd.toml --driver docker-container --name mirrored --use tls-context
-	DOCKER_BUILDKIT=1 docker build --build-arg APT_PROXY=$(APT_PROXY) --build-arg PIP_INDEX_URL=$(PIP_INDEX_URL) --build-arg PIP_TRUSTED_HOST=$(PIP_TRUSTED_HOST) --build-arg HTTP_PROXY=$(HTTP_PROXY) --build-arg HTTPS_PROXY=$(HTTPS_PROXY) --builder mirrored --file docker/Dockerfile $(DOCKER_IMAGE_LABELS) --load --tag $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) .
+	DOCKER_BUILDKIT=1 docker build --build-arg APT_PROXY=$(APT_PROXY) --build-arg PIP_INDEX_URL=$(PIP_INDEX_URL) --build-arg PIP_TRUSTED_HOST=$(PIP_TRUSTED_HOST) --build-arg HTTP_PROXY=$(HTTP_PROXY) --build-arg HTTPS_PROXY=$(HTTPS_PROXY) --builder mirrored --file docker/Dockerfile $(DOCKER_IMAGE_LABELS) --output type=docker --tag $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) .
 	docker buildx stop mirrored
 
 docker-dockerfile-update: ## Update the Dockerfile file from the platform template.
