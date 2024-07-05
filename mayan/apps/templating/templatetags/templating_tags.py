@@ -1,3 +1,4 @@
+import base64
 from datetime import timedelta
 import re
 
@@ -135,3 +136,13 @@ def tag_timedelta(date, **kwargs):
     Takes a datetime object and applies a timedelta.
     """
     return date + timedelta(**kwargs)
+
+
+@register.filter
+def to_base64(value, altchars=None):
+    """
+    Convert a value to base64 encoding. Accepts optional `altchars` argument.
+    """
+    if altchars:
+        altchars = bytes(encoding='utf-8', source=altchars)
+    return base64.b64encode(s=value, altchars=altchars).decode('utf-8')

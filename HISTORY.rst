@@ -121,6 +121,8 @@
 - Update GitLab CI Docker in Docker image from 23.0.6-dind to 27.0.3-dind due
   to bugs https://github.com/docker/buildx/issues/593 and
   https://github.com/moby/buildkit/issues/2343.
+- Add `to_base64` template filter. Also accepts an optional `altchars`
+  argument.
 
 4.7.1 (2024-06-04)
 ==================
