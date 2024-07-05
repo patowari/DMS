@@ -27,10 +27,10 @@ class FormDocumentTypeFileMetadataDriverConfiguration(forms.ModelForm):
         # the argument JSON object.
         result = {}
 
-        arguments = self.instance.get_arguments()
+        argument_name_list = self.instance.stored_driver.driver_class.get_argument_name_list()
 
-        for argument in arguments:
-            if self.cleaned_data[argument] is not None:
-                result[argument] = self.cleaned_data[argument]
+        for argument_name in argument_name_list:
+            if self.cleaned_data[argument_name] is not None:
+                result[argument_name] = self.cleaned_data[argument_name]
 
         self.cleaned_data['arguments'] = yaml_dump(data=result)
