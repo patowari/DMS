@@ -19,13 +19,7 @@ class ViewMixinDynamicConfigurationFormClass:
             class FormDriverArguments(forms.Form):
                 def __init__(self, *args, **kwargs):
                     super().__init__(*args, **kwargs)
-                    argument_value_list = obj.get_arguments()
-
-                    argument_name_list = list(
-                        argument_value_list.keys()
-                    )
-
-                    argument_name_list.sort()
+                    argument_name_list = obj.stored_driver.driver_class.get_argument_name_list()
 
                     for argument_name in argument_name_list:
                         default_value = argument_values_from_settings.get(
