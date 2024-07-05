@@ -36,6 +36,9 @@ search_model_document_metadata.add_model_field(
     field='document__document_type__label',
     label=_(message='Document type label')
 )
+search_model_document_metadata.add_model_field(
+    field='metadata_type__id', label=_(message='Metadata type ID')
+)
 search_model_document_metadata.add_model_field(field='metadata_type__name')
 search_model_document_metadata.add_model_field(field='value')
 
