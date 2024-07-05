@@ -1,3 +1,4 @@
+from functools import cache
 import logging
 import sys
 import traceback
@@ -31,6 +32,19 @@ class MayanAppConfig(AppConfig):
 
         return sorted(
             list_apps, key=lambda x: str(x.verbose_name)
+        )
+
+    @classmethod
+    @cache
+    def get_by_namespace(cls, namespace):
+        for app_config in apps.get_app_configs():
+            app_namespace = getattr(app_config, 'app_namespace', None)
+
+            if app_namespace == namespace:
+                return app_config
+
+        raise KeyError(
+            'No app found with `namespace` "{}"'.format(namespace)
         )
 
     def configure_urls(self):

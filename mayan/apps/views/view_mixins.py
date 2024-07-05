@@ -227,7 +227,7 @@ class ListModeViewMixin:
         if user_list_mode:
             UserViewMode.objects.update_or_create(
                 defaults={
-                    'app_label': resolver_match.app_name,
+                    'namespace': resolver_match.namespace,
                     'value': user_list_mode
                 }, name=view_name,
                 user=self.request.user
@@ -236,7 +236,7 @@ class ListModeViewMixin:
         else:
             user_view_mode, created = UserViewMode.objects.get_or_create(
                 defaults={
-                    'app_label': resolver_match.app_name,
+                    'namespace': resolver_match.namespace,
                     'value': default_mode
                 }, name=view_name, user=self.request.user
             )

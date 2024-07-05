@@ -1,13 +1,23 @@
-from django.apps import apps
 from django.utils.translation import gettext_lazy as _
+
+from mayan.apps.app_manager.apps import MayanAppConfig
 
 from .literals import LIST_MODE_CHOICES
 
 
 class ModelMixinUserViewModeBusinessLogic:
     def get_app_config(self):
-        app_config = apps.get_app_config(app_label=self.app_label)
+        app_config = MayanAppConfig.get_by_namespace(namespace=self.namespace)
+
         return app_config
+
+    get_app_config.help_text = _(message='The app to which the view belongs.')
+    get_app_config.short_description = _(message='App')
+
+    def get_app_config_verbose_name(self):
+        app_config = self.get_app_config()
+
+        return app_config.verbose_name
 
     get_app_config.help_text = _(message='The app to which the view belongs.')
     get_app_config.short_description = _(message='App')

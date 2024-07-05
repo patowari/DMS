@@ -6,8 +6,8 @@ from .model_mixins import ModelMixinUserViewModeBusinessLogic
 
 
 class UserViewMode(ModelMixinUserViewModeBusinessLogic, models.Model):
-    app_label = models.CharField(
-        db_index=True, max_length=200, verbose_name=_(message='App label')
+    namespace = models.CharField(
+        db_index=True, max_length=200, verbose_name=_(message='Namespace')
     )
     name = models.CharField(
         db_index=True,
