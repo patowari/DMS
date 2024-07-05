@@ -6,11 +6,11 @@ from django.utils.functional import classproperty
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
-from mayan.apps.templating.classes import Template
 from mayan.apps.common.utils import (
     convert_to_internal_name, deduplicate_dictionary_values,
     get_class_full_name
 )
+from mayan.apps.templating.classes import Template
 
 from .exceptions import FileMetadataError
 from .settings import setting_auto_process, setting_drivers_arguments
