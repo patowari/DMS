@@ -30,14 +30,6 @@ class DocumentTypeBusinessLogicMixin:
 
         return document
 
-    def get_document_count(self, user):
-        queryset = AccessControlList.objects.restrict_queryset(
-            permission=permission_document_view, queryset=self.documents,
-            user=user
-        )
-
-        return queryset.count()
-
     def get_upload_filename(self, instance, filename):
         generator_klass = BaseDocumentFilenameGenerator.get(
             name=self.filename_generator_backend

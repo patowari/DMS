@@ -585,12 +585,6 @@ class DocumentsApp(MayanAppConfig):
             attribute='label', is_identifier=True, is_sortable=True,
             source=DocumentType
         )
-        SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'),
-            source=DocumentType
-        )
 
         # DocumentTypeFilename
 
