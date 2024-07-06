@@ -5,9 +5,12 @@ from .api_views import (
     APIDocumentTagRemoveView, APITagDetailView, APITagDocumentListView,
     APITagListView
 )
-from .views import (
-    DocumentTagListView, TagAttachActionView, TagCreateView, TagDeleteView,
-    TagDocumentListView, TagEditView, TagListView, TagRemoveActionView
+from .views.document_views import (
+    DocumentTagListView, TagAttachActionView, TagRemoveActionView
+)
+from .views.tag_views import (
+    TagCreateView, TagDeleteView, TagDocumentListView, TagEditView,
+    TagListView
 )
 
 urlpatterns_documents = [
