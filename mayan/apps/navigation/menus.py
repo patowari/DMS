@@ -173,13 +173,8 @@ class Menu(TemplateObjectMixin):
                         unbound_object=unbound_object
                     )
             else:
-                if model in self.proxy_exclusions:
-                    # Model is a proxy and can only bind to its own direct
-                    # links.
-                    bound_model = model
-                else:
-                    # Model is a proxy or a concrete model.
-                    bound_model = proxy_parent_model or model
+                # It is a model.
+                bound_model = model
 
                 bound_object = bound_model
                 unbound_object = bound_model
