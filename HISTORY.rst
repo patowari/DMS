@@ -127,6 +127,9 @@
 - Remove document count column of document types. This information is already
   available via the chart "Total documents per document type" and does not
   impact the database as much as the removed column.
+- Remove templating field help text link to upstream Django template
+  documentation. Closes GitLab issue #1172. Thanks to
+  Daniel Stolpe (@d.stolpe) for the report.
 
 4.7.1 (2024-06-04)
 ==================

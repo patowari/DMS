@@ -25,8 +25,7 @@ class TemplateField(forms.CharField):
         format_kwargs = {
             'initial_help_text': self.initial_help_text,
             'template_help_text': _(
-                message='Use Django\'s default templating language '
-                '(https://docs.djangoproject.com/en/%(django_version)s/ref/templates/builtins/). '
+                message='Use Django\'s default templating language. '
             ) % {
                 'django_version': mayan.__django_version__
             }
