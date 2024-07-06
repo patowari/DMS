@@ -66,8 +66,8 @@ class ModelTemplateField(TemplateField):
         super().__init__(*args, **kwargs)
 
         self.widget.attrs['app_label'] = self.model._meta.app_label
-        self.widget.attrs['model_name'] = self.model._meta.model_name
         self.widget.attrs['data-model-variable'] = self.model_variable
+        self.widget.attrs['model_name'] = self.model._meta.model_name
 
     def get_context_variable_help_text(self, **kwargs):
         model_verbose_name = getattr(self.model._meta, 'verbose_name', None)
