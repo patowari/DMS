@@ -71,4 +71,23 @@ jQuery(document).ready(function() {
     const $syncScrollSelector = $('textarea.templating-widget-code, code.templating-widget-code');
 
     $syncScrollSelector.on('scroll', syncScroll);
+
+    const templatingEntryTemplate = function (object) {
+        if (!object.id) {
+            return object.text;
+        }
+
+        const entryParts = object.text.split('-');
+        const name = entryParts[0];
+        const description = entryParts.slice(1).join('-');
+
+        return $(
+            '<strong> ' + appearanceSanitizeHTML(name) + '</strong> - <span>' + appearanceSanitizeHTML(description) + '</span>'
+        );
+    }
+
+    $('.select2-templating').select2({
+        templateResult: templatingEntryTemplate,
+        width: '100%'
+    });
 });

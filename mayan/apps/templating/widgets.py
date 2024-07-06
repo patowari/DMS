@@ -92,6 +92,7 @@ class TemplateWidget(form_widgets.NamedMultiWidget):
     def get_context(self, name, value, attrs):
         result = super().get_context(attrs=attrs, name=name, value=value)
         # Set builtin_tags autocopy sub widget as not required.
+        result['widget']['subwidgets'][0]['attrs']['class'] = 'form-control select2-templating'
         result['widget']['subwidgets'][0]['attrs']['required'] = False
         return result
 
@@ -138,5 +139,6 @@ class ModelTemplateWidget(TemplateWidget):
     def get_context(self, name, value, attrs):
         result = super().get_context(attrs=attrs, name=name, value=value)
         # Set model_attribute autocopy sub widget as not required.
+        result['widget']['subwidgets'][1]['attrs']['class'] = 'form-control select2-templating'
         result['widget']['subwidgets'][1]['attrs']['required'] = False
         return result

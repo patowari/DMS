@@ -130,6 +130,8 @@
 - Remove templating field help text link to upstream Django template
   documentation. Closes GitLab issue #1172. Thanks to
   Daniel Stolpe (@d.stolpe) for the report.
+- Add select2 support and a custom select2 HTML template to the templating
+  field's model attributes and filter/tags dropdowns.
 
 4.7.1 (2024-06-04)
 ==================
