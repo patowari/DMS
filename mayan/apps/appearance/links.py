@@ -17,7 +17,8 @@ from .permissions import (
 )
 
 link_ajax_refresh = Link(
-    icon=icon_ajax_refresh, html_extra_classes='appearance-link-ajax-refresh'
+    icon=icon_ajax_refresh, html_extra_classes='appearance-link-ajax-refresh',
+    title=_(message='Reload the current content')
 )
 
 link_user_theme_settings_detail = Link(

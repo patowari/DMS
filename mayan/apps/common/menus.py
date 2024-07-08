@@ -13,11 +13,11 @@ menu_related = Menu(label=_(message='Related'), name='related')
 menu_secondary = Menu(label=_(message='Secondary'), name='secondary')
 menu_setup = Menu(name='setup')
 menu_system = Menu(
-    icon=icon_menu_system, label=_(message='System'), name='about'
+    icon=icon_menu_system, name='about', title=_(message='System')
 )
 menu_return = Menu(label=_(message='Return'), name='return')
 menu_tools = Menu(name='tools')
 menu_topbar = Menu(name='topbar')
 menu_user = Menu(
-    icon=icon_menu_user, name='user', label=_(message='User')
+    icon=icon_menu_user, name='user', title=_(message='User')
 )

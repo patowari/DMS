@@ -84,7 +84,7 @@ link_notification_delete_single = Link(
 link_notification_list = Link(
     badge_text=get_unread_notification_count,
     condition=condition_user_is_authenticated,
-    icon=icon_notification_list, text='',
+    icon=icon_notification_list, title=_(message='Notifications'),
     view='events:user_notifications_list'
 )
 link_notification_mark_read = Link(

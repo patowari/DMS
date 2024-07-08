@@ -137,6 +137,9 @@
   document file metadata entries, submit document files for processing.
 - Support link hover title.
 - Support menus without text.
+- Remove text from the user and system menus.
+- Add hover title for the reload button, system menu, user menu, and messages
+  link.
 
 4.7.1 (2024-06-04)
 ==================
