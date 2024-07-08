@@ -42,6 +42,8 @@ class DocumentFileDriverEntry(
 class DocumentTypeDriverConfiguration(
     DocumentTypeDriverConfiguration, models.Model
 ):
+    _ordering_fields = ('enabled',)
+
     arguments = models.TextField(
         blank=True, help_text=_(
             message='Enter the arguments for the drive for the specific '
@@ -81,6 +83,8 @@ class DocumentTypeDriverConfiguration(
 
 
 class FileMetadataEntry(models.Model):
+    _ordering_fields = ('internal_name', 'key', 'value')
+
     document_file_driver_entry = models.ForeignKey(
         on_delete=models.CASCADE, related_name='entries',
         to=DocumentFileDriverEntry,
@@ -137,6 +141,8 @@ class FileMetadataEntry(models.Model):
 
 
 class StoredDriver(StoredDriverBusinessLogicMixin, models.Model):
+    _ordering_fields = ('internal_name',)
+
     driver_path = models.CharField(
         max_length=255, unique=True, verbose_name=_(message='Driver path')
     )

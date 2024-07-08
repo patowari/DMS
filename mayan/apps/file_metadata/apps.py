@@ -48,6 +48,7 @@ from .property_helpers import (
 class FileMetadataApp(MayanAppConfig):
     app_namespace = 'file_metadata'
     app_url = 'file_metadata'
+    has_rest_api = True
     has_tests = True
     name = 'mayan.apps.file_metadata'
     verbose_name = _(message='File metadata')
@@ -94,6 +95,7 @@ class FileMetadataApp(MayanAppConfig):
         )
 
         FileMetadataDriver.load_modules()
+        FileMetadataDriver.initialize()
 
         ModelEventType.register(
             model=Document, event_types=(
@@ -126,6 +128,9 @@ class FileMetadataApp(MayanAppConfig):
         )
         ModelPermission.register_inheritance(
             model=DocumentFileDriverEntry, related='document_file'
+        )
+        ModelPermission.register_inheritance(
+            model=DocumentTypeDriverConfiguration, related='document_type'
         )
 
         ModelProperty(

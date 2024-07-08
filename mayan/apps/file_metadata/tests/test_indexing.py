@@ -5,11 +5,11 @@ from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from .literals import (
     TEST_FILE_METADATA_INDEX_NODE_TEMPLATE, TEST_FILE_METADATA_VALUE
 )
-from .mixins import DocumentTypeMetadataTestMixin
+from .mixins.document_type_mixins import DocumentTypeFileMetadataTestMixin
 
 
 class IndexingTestCase(
-    DocumentTypeMetadataTestMixin, IndexTemplateTestMixin,
+    DocumentTypeFileMetadataTestMixin, IndexTemplateTestMixin,
     GenericDocumentTestCase
 ):
     _test_document_file_metadata_driver_create_auto = True

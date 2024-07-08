@@ -2,7 +2,9 @@ from mayan.apps.common.tests.literals import (
     TEST_ARCHIVE_MSG_STRANGE_DATE_PATH
 )
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.file_metadata.tests.mixins import DocumentFileMetadataTestMixin
+from mayan.apps.file_metadata.tests.mixins.document_file_mixins import (
+    DocumentFileMetadataTestMixin
+)
 
 from ..drivers import FileMetadataDriverExtractMSGTool
 

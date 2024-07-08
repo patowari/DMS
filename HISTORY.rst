@@ -132,6 +132,9 @@
   Daniel Stolpe (@d.stolpe) for the report.
 - Add select2 support and a custom select2 HTML template to the templating
   field's model attributes and filter/tags dropdowns.
+- Add file metadata API views. Add API view to display registered file
+  metadata drivers, document type configuration, document file driver list,
+  document file metadata entries, submit document files for processing.
 
 4.7.1 (2024-06-04)
 ==================

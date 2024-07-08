@@ -2,7 +2,7 @@ from mayan.apps.common.tests.literals import (
     TEST_ARCHIVE_EML_SAMPLE_PATH
 )
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.file_metadata.tests.mixins import (
+from mayan.apps.file_metadata.tests.mixins.document_file_mixins import (
     DocumentFileMetadataTestMixin
 )
 

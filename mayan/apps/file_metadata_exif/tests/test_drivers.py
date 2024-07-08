@@ -1,6 +1,6 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 from mayan.apps.documents.tests.literals import TEST_FILE_PDF_FILENAME
-from mayan.apps.file_metadata.tests.mixins import (
+from mayan.apps.file_metadata.tests.mixins.document_file_mixins import (
     DocumentFileMetadataTestMixin
 )
 

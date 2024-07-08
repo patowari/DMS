@@ -9,11 +9,11 @@ from ..permissions import (
     permission_file_metadata_submit
 )
 
-from .mixins import DocumentTypeViewTestMixin
+from .mixins.document_type_mixins import DocumentTypeFileMetadataViewTestMixin
 
 
 class DocumentTypeViewTestCase(
-    DocumentTypeViewTestMixin, GenericDocumentViewTestCase
+    DocumentTypeFileMetadataViewTestMixin, GenericDocumentViewTestCase
 ):
     _test_document_file_metadata_driver_create_auto = True
     _test_document_file_metadata_driver_enable_auto = True

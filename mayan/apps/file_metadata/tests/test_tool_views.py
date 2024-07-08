@@ -2,11 +2,11 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 
 from ..permissions import permission_file_metadata_view
 
-from .mixins import FileMetadataDriverTestMixin
+from .mixins.file_metadata_mixins import FileMetadataDriverTestViewMixin
 
 
 class FileMetadataDriverViewTestCase(
-    FileMetadataDriverTestMixin, GenericViewTestCase
+    FileMetadataDriverTestViewMixin, GenericViewTestCase
 ):
     def test_file_metadata_driver_list_view_no_permission(self):
         self._clear_events()

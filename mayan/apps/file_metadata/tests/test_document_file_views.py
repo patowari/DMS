@@ -9,7 +9,7 @@ from ..permissions import (
 )
 
 from .literals import TEST_FILE_METADATA_KEY
-from .mixins import DocumentFileMetadataViewTestMixin
+from .mixins.document_file_mixins import DocumentFileMetadataViewTestMixin
 
 
 class DocumentFileMetadataViewTestCase(

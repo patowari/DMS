@@ -217,7 +217,7 @@ class FileMetadataDriver(
         return ', '.join(cls.mime_type_list)
 
     @classmethod
-    def post_load_modules(cls):
+    def initialize(cls):
         StoredDriver = apps.get_model(
             app_label='file_metadata', model_name='StoredDriver'
         )
