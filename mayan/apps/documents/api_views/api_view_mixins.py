@@ -48,7 +48,8 @@ class ParentObjectDocumentFileAPIViewMixin(ParentObjectDocumentAPIViewMixin):
         )
 
     def get_document_file_queryset(self):
-        return self.get_document().files.all()
+        document = self.get_document()
+        return document.files.all()
 
 
 class ParentObjectDocumentFilePageAPIViewMixin(
@@ -68,7 +69,8 @@ class ParentObjectDocumentFilePageAPIViewMixin(
         )
 
     def get_document_file_page_queryset(self):
-        return self.get_document_file().pages.all()
+        document_file = self.get_document_file()
+        return document_file.pages.all()
 
 
 class ParentObjectDocumentTypeAPIViewMixin:
@@ -110,7 +112,8 @@ class ParentObjectDocumentVersionAPIViewMixin(ParentObjectDocumentAPIViewMixin):
         )
 
     def get_document_version_queryset(self):
-        return self.get_document().versions.all()
+        document = self.get_document()
+        return document.versions.all()
 
 
 class ParentObjectDocumentVersionPageAPIViewMixin(
@@ -130,4 +133,5 @@ class ParentObjectDocumentVersionPageAPIViewMixin(
         )
 
     def get_document_version_page_queryset(self):
-        return self.get_document_version().pages.all()
+        document_version = self.get_document_version()
+        return document_version.pages.all()

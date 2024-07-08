@@ -56,4 +56,7 @@ class AppsModuleLoaderMixin:
 
     @classmethod
     def post_load_modules(cls):
-        return
+        """
+        Optional method that will get executed when the method `load_modules`
+        completes.
+        """

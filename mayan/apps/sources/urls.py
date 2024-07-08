@@ -51,7 +51,6 @@ urlpatterns_document_files = [
 ]
 
 urlpatterns_sources = [
-
     re_path(
         route=r'^sources/$', name='source_list',
         view=SourceListView.as_view()

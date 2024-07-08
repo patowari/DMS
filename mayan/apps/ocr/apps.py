@@ -197,9 +197,7 @@ class OCRApp(MayanAppConfig):
         )
 
         menu_tools.bind_links(
-            links=(
-                link_document_type_submit,
-            )
+            links=(link_document_type_submit,)
         )
 
         post_save.connect(
