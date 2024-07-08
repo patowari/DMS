@@ -205,8 +205,7 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_source_link_unbinding(self):
         self.menu.bind_links(
-            sources=(self.TestModel,),
-            links=(self.link,)
+            links=(self.link,), sources=(self.TestModel,)
         )
 
         response = self.get(viewname=self._test_view_name)
@@ -270,6 +269,130 @@ class MenuClassTestCase(GenericViewTestCase):
 
         self.assertEqual(
             self.menu.resolve(context=context), []
+        )
+
+    def test_proxy_model_menu_proxy_exclusion(self):
+        TestModelProxy = self._create_test_model(
+            base_class=self.TestModel, options={'proxy': True}
+        )
+
+        test_model_proxy_object = TestModelProxy.objects.create()
+
+        self.menu.bind_links(
+            links=(self.link,), sources=(self.TestModel,)
+        )
+        self.menu.add_proxy_exclusion(source=TestModelProxy)
+
+        response = self.get(viewname=self._test_view_name)
+        context = Context(
+            {
+                'object': test_model_proxy_object,
+                'request': response.wsgi_request
+            }
+        )
+
+        resolved_menu = self.menu.resolve(context=context)
+
+        self.assertEqual(
+            resolved_menu, []
+        )
+
+    def test_proxy_model_bind_link_exclude(self):
+        TestModelProxy = self._create_test_model(
+            base_class=self.TestModel, options={'proxy': True}
+        )
+
+        test_model_proxy_object = TestModelProxy.objects.create()
+
+        self.menu.bind_links(
+            exclude=(TestModelProxy,), links=(self.link,),
+            sources=(self.TestModel,)
+        )
+
+        response = self.get(viewname=self._test_view_name)
+        context = Context(
+            {
+                'object': test_model_proxy_object,
+                'request': response.wsgi_request
+            }
+        )
+
+        resolved_menu = self.menu.resolve(context=context)
+
+        self.assertEqual(
+            resolved_menu, []
+        )
+
+    def test_proxy_model_bind_link_exclude_with_proxy_links(self):
+        TestModelProxy = self._create_test_model(
+            base_class=self.TestModel, options={'proxy': True}
+        )
+
+        test_model_proxy_object = TestModelProxy.objects.create()
+
+        self.link_proxy = Link(text=TEST_LINK_TEXT, view=self._test_view_name)
+
+        self.menu.bind_links(
+            exclude=(TestModelProxy,), links=(self.link,),
+            sources=(self.TestModel,)
+        )
+        self.menu.bind_links(
+            links=(self.link_proxy,), sources=(TestModelProxy,)
+        )
+
+        response = self.get(viewname=self._test_view_name)
+        context = Context(
+            {
+                'object': test_model_proxy_object,
+                'request': response.wsgi_request
+            }
+        )
+
+        resolved_menu = self.menu.resolve(context=context)
+
+        self.assertEqual(
+            len(
+                resolved_menu[0]['links']
+            ), 1
+        )
+        self.assertEqual(
+            resolved_menu[0]['links'][0].link, self.link_proxy
+        )
+        self.assertEqual(
+            resolved_menu[0]['object'], test_model_proxy_object
+        )
+
+    def test_proxy_model_inheritance(self):
+        TestModelProxy = self._create_test_model(
+            base_class=self.TestModel, options={'proxy': True}
+        )
+
+        test_model_proxy_object = TestModelProxy.objects.create()
+
+        self.menu.bind_links(
+            links=(self.link,), sources=(self.TestModel,)
+        )
+
+        response = self.get(viewname=self._test_view_name)
+        context = Context(
+            {
+                'object': test_model_proxy_object,
+                'request': response.wsgi_request
+            }
+        )
+
+        resolved_menu = self.menu.resolve(context=context)
+
+        self.assertEqual(
+            len(
+                resolved_menu[0]['links']
+            ), 1
+        )
+        self.assertEqual(
+            resolved_menu[0]['links'][0].link, self.link
+        )
+        self.assertEqual(
+            resolved_menu[0]['object'], test_model_proxy_object
         )
 
 

@@ -69,6 +69,7 @@ class Menu(TemplateObjectMixin):
             self.link_positions[link] = position + link_index
 
     def add_proxy_exclusion(self, source):
+        # Avoid this source proxy model from binding to all links in the menu.
         self.proxy_exclusions.add(source)
 
     def add_unsorted_source(self, source):
@@ -77,6 +78,7 @@ class Menu(TemplateObjectMixin):
     def bind_links(self, links, exclude=None, sources=None, position=None):
         """
         Associate a link to a model, a view inside this menu.
+        - exclude: Avoid a proxy model from resolving the bound links.
         """
         try:
             for source in sources:
@@ -174,18 +176,23 @@ class Menu(TemplateObjectMixin):
                     )
             else:
                 # It is a model.
-                bound_model = model
-
-                bound_object = bound_model
-                unbound_object = bound_model
-                excluded_object = bound_model
-
                 matched_links = self.do_matched_links_update(
-                    bound_object=bound_object,
-                    excluded_object=excluded_object,
+                    bound_object=model,
+                    excluded_object=model,
                     matched_links=matched_links,
-                    unbound_object=unbound_object
+                    unbound_object=model
                 )
+
+                if proxy_parent_model:
+                    # It is a model proxy. Add parent links except for
+                    # menu exclusions and bind excludes.
+                    if model not in self.proxy_exclusions:
+                        matched_links = self.do_matched_links_update(
+                            bound_object=proxy_parent_model,
+                            excluded_object=model,
+                            matched_links=matched_links,
+                            unbound_object=proxy_parent_model
+                        )
 
         return matched_links
 
