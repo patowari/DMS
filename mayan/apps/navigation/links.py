@@ -37,7 +37,7 @@ class Link(TemplateObjectMixin):
         condition=None, conditional_active=None, conditional_disable=None,
         description=None, html_data=None, html_extra_classes=None, icon=None,
         keep_query=False, kwargs=None, name=None, permission=None, query=None,
-        remove_from_query=None, tags=None, url=None
+        remove_from_query=None, tags=None, title=None, url=None
     ):
         self.args = args or []
         self.badge_text = badge_text
@@ -57,6 +57,7 @@ class Link(TemplateObjectMixin):
         self.remove_from_query = remove_from_query or []
         self.tags = tags
         self.text = text
+        self.title = title
         self.view = view
         self.url = url
 
@@ -308,6 +309,10 @@ class ResolvedLink:
             return self.link.text(context=self.context)
         except TypeError:
             return self.link.text
+
+    @property
+    def title(self):
+        return self.link.title
 
 
 class Separator(Link):

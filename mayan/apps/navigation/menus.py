@@ -34,7 +34,7 @@ class Menu(TemplateObjectMixin):
 
     def __init__(
         self, name, cache_class_associations=True, condition=None, icon=None,
-        label=None, non_sorted_sources=None
+        label=None, non_sorted_sources=None, title=None
     ):
         if name in self.__class__._registry:
             raise Exception('A menu with this name already exists')
@@ -49,6 +49,7 @@ class Menu(TemplateObjectMixin):
         self.name = name
         self.non_sorted_sources = non_sorted_sources or []
         self.proxy_exclusions = set()
+        self.title = title
         self.unbound_links = {}
         self.__class__._registry[name] = self
 

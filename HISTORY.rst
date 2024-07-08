@@ -135,6 +135,8 @@
 - Add file metadata API views. Add API view to display registered file
   metadata drivers, document type configuration, document file driver list,
   document file metadata entries, submit document files for processing.
+- Support link hover title.
+- Support menus without text.
 
 4.7.1 (2024-06-04)
 ==================
