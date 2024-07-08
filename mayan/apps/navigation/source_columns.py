@@ -3,7 +3,7 @@ import logging
 from django.contrib.admin.utils import help_text_for_field, label_for_field
 from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.db.models.constants import LOOKUP_SEP
-from django.template import VariableDoesNotExist
+from django.template import Variable, VariableDoesNotExist
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import get_related_field, resolve_attribute
@@ -189,7 +189,7 @@ class SourceColumn(TemplateObjectMixin):
         self.is_object_absolute_url = is_object_absolute_url
         self.is_identifier = is_identifier
         self.is_sortable = is_sortable
-        self.kwargs = kwargs or {}
+        self._kwargs = kwargs or {}
         self.name = name
         self.order = order or 0
         self.sort_field = sort_field
@@ -270,6 +270,17 @@ class SourceColumn(TemplateObjectMixin):
 
     def add_exclude(self, source):
         self.excludes.add(source)
+
+    def do_kwargs_resolve(self, context):
+        try:
+            kwargs = self._kwargs(context)
+        except TypeError:
+            # Is not a callable.
+            kwargs = self._kwargs
+
+        return {
+            key: Variable(var=value).resolve(context=context) for key, value in kwargs.items()
+        }
 
     def get_absolute_url(self, obj):
         if self.is_object_absolute_url:
@@ -368,10 +379,12 @@ class SourceColumn(TemplateObjectMixin):
             return icon_sort_up
 
     def resolve(self, context):
+        kwargs = self.do_kwargs_resolve(context=context)
+
         if self.attribute:
             try:
                 result = resolve_attribute(
-                    attribute=self.attribute, kwargs=self.kwargs,
+                    attribute=self.attribute, kwargs=kwargs,
                     obj=context['object']
                 )
             except Exception as exception:
@@ -381,7 +394,7 @@ class SourceColumn(TemplateObjectMixin):
                     )
                 ) from exception
         elif self.func:
-            result = self.func(context=context, **self.kwargs)
+            result = self.func(context=context, **kwargs)
         else:
             result = context['object']
 

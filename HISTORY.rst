@@ -140,6 +140,8 @@
 - Remove text from the user and system menus.
 - Add hover title for the reload button, system menu, user menu, and messages
   link.
+- Improve `SourceColumn` resolution of `kwargs`. Keyword arguments can now
+  access the template context reducing the need for lambdas.
 
 4.7.1 (2024-06-04)
 ==================
