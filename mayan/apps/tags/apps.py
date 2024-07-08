@@ -164,9 +164,8 @@ class TagsApp(MayanAppConfig):
             attribute='get_preview_widget', include_label=True, source=Tag
         )
         source_column_tag_document_count = SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), source=Tag
+            attribute='get_document_count', kwargs={'user': 'request.user'},
+            include_label=True, label=_(message='Documents'), source=Tag
         )
         source_column_tag_document_count.add_exclude(source=DocumentTag)
 

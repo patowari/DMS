@@ -159,9 +159,8 @@ class CabinetsApp(MayanAppConfig):
         )
 
         SourceColumn(
-            func=lambda context: context['object'].get_descendants_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'),
+            attribute='get_descendants_document_count', include_label=True,
+            kwargs={'user': 'request.user'}, label=_(message='Documents'),
             source=Cabinet
         )
 

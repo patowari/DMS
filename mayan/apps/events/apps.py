@@ -122,22 +122,24 @@ class EventsApp(MayanAppConfig):
             is_sortable=True, label=_(message='Date and time'), source=Notification
         )
         SourceColumn(
-            func=widget_event_actor_link, label=_(message='Actor'),
-            include_label=True, kwargs={'attribute': 'action'},
+            func=widget_event_actor_link, include_label=True,
+            label=_(message='Actor'), kwargs={'attribute': '"action"'},
             source=Notification
         )
         SourceColumn(
-            func=widget_event_type_link, label=_(message='Event'),
-            include_label=True, kwargs={'attribute': 'action'},
+            func=widget_event_type_link, include_label=True,
+            label=_(message='Event'), kwargs={'attribute': '"action"'},
             source=Notification
         )
         SourceColumn(
-            attribute='action.target', label=_(message='Target'), include_label=True,
-            source=Notification, widget=column_widgets.ObjectLinkWidget
+            attribute='action.target', include_label=True,
+            label=_(message='Target'), source=Notification,
+            widget=column_widgets.ObjectLinkWidget
         )
         SourceColumn(
-            attribute='action.action_object', label=_(message='Action object'),
-            include_label=True, source=Notification, widget=column_widgets.ObjectLinkWidget
+            attribute='action.action_object', include_label=True,
+            label=_(message='Action object'), source=Notification,
+            widget=column_widgets.ObjectLinkWidget
         )
         SourceColumn(
             attribute='read', include_label=True, is_sortable=True,

@@ -27,6 +27,9 @@ class Dashboard:
     def add_widget(self, widget, order=0):
         self.widgets[widget] = {'widget': widget, 'order': order}
 
+    def get_widget_count(self):
+        return len(self.widgets)
+
     def get_widgets(self):
         """
         Returns a list of widgets sorted by their 'order'.

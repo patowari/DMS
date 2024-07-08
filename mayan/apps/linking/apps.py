@@ -115,12 +115,15 @@ class LinkingApp(MayanAppConfig):
             model=SmartLinkCondition, related='smart_link',
         )
 
+        # ResolvedSmartLink
+
         SourceColumn(
-            func=lambda context: context['object'].get_label_for(
-                document=context['document']
-            ), is_identifier=True, label=_(message='Label'),
+            attribute='get_label_for', is_identifier=True,
+            kwargs={'document': 'document'}, label=_(message='Label'),
             source=ResolvedSmartLink
         )
+
+        # SmartLink
 
         source_column_smart_link_label = SourceColumn(
             attribute='label', is_identifier=True, is_sortable=True,
@@ -131,16 +134,21 @@ class LinkingApp(MayanAppConfig):
             attribute='dynamic_label', include_label=True, is_sortable=True,
             source=SmartLink
         )
-        source_column_smart_link_dynamic_label.add_exclude(
-            source=ResolvedSmartLink
-        )
         source_column_smart_link_enabled = SourceColumn(
             attribute='enabled', include_label=True, is_sortable=True,
             source=SmartLink, widget=column_widgets.TwoStateWidget
         )
+
+        # ResolvedSmartLink
+        source_column_smart_link_dynamic_label.add_exclude(
+            source=ResolvedSmartLink
+        )
         source_column_smart_link_enabled.add_exclude(
             source=ResolvedSmartLink
         )
+
+        # SmartLinkCondition
+
         SourceColumn(
             attribute='get_full_label', is_identifier=True,
             source=SmartLinkCondition

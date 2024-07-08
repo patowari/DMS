@@ -102,10 +102,8 @@ class PermissionsApp(MayanAppConfig):
             source=Role
         )
         SourceColumn(
-            func=lambda context: context['object'].get_group_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Group count'),
-            source=Role
+            attribute='get_group_count', kwargs={'user': 'request.user'},
+            include_label=True, label=_(message='Group count'), source=Role
         )
 
         dashboard_administrator.add_widget(

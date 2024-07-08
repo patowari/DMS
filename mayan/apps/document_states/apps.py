@@ -342,10 +342,9 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowRuntimeProxy
         )
         SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), order=99,
-            source=WorkflowRuntimeProxy
+            attribute='get_document_count', include_label=True,
+            kwargs={'user': 'request.user'}, label=_(message='Documents'),
+            order=99, source=WorkflowRuntimeProxy
         )
 
         # Workflow instance
@@ -446,10 +445,9 @@ class DocumentStatesApp(MayanAppConfig):
         )
 
         SourceColumn(
-            func=lambda context: context['object'].get_document_count(
-                user=context['request'].user
-            ), include_label=True, label=_(message='Documents'), order=99,
-            source=WorkflowStateRuntimeProxy
+            attribute='get_document_count', include_label=True,
+            kwargs={'user': 'request.user'}, label=_(message='Documents'),
+            order=99, source=WorkflowStateRuntimeProxy
         )
 
         # Workflow template state action

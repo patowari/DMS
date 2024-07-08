@@ -21,9 +21,8 @@ class DashboardsApp(MayanAppConfig):
         super().ready()
 
         SourceColumn(
-            func=lambda context: len(context['object'].widgets),
-            label=_(message='Widgets'), include_label=True,
-            source=Dashboard
+            attribute='get_widget_count', label=_(message='Widgets'),
+            include_label=True, source=Dashboard
         )
         SourceColumn(
             attribute='label', label=_(message='Label'), is_identifier=True,
