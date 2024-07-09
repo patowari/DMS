@@ -4,30 +4,48 @@
 
   - boto3 from 1.33.7 to 1.34.122
   - celery from 5.3.6 to 5.4.0
-  - coverage from 6.5.0 to 7.5.3
+  - coverage from 6.5.0 to 7.5.4
   - coveralls from 3.3.1 to 4.0.1
-  - django from 4.2.11 to 4.2.13
+  - django from 4.2.11 to 4.2.14
   - django-auth-ldap from 4.6.0 to 4.8.0
-  - django-debug-toolbar from 4.3.0 to 4.4.2
+  - django-cors-headers from 4.3.1 to 4.4.0
+  - django-debug-toolbar from 4.3.0 to 4.4.5
   - django-model-utils from 4.4.0 to 4.5.1
-  - django-storages from 1.14.2 to 1.14.3
-  - djangorestframework from 3.14.0 to 3.15.1
-  - google-cloud-storage from 2.15.0 to 2.16.0
+  - django-solo from 2.2.0 to 2.3.0
+  - django-storages from 1.14.2 to 1.14.4
+  - django-test-migrations from 1.3.0 to 1.4.0
+  - djangorestframework from 3.14.0 to 3.15.2
+  - extract-msg from 0.48.5 to 0.48.7
+  - google-cloud-storage from 2.15.0 to 2.17.0
   - gunicorn from 21.2.0 to 22.0.0
-  - importlib-metadata from 7.0.2 to 7.1.0
-  - ipython from 8.22.2 to 8.25.0
+  - importlib-metadata from 7.0.2 to 8.0.0
+  - ipython from 8.22.2 to 8.26.0
   - jsonschema from 4.21.1 to 4.22.0
   - mozilla-django-oidc from 4.0.0 to 4.0.1
-  - packaging from 21.3 to 24.0
+  - packaging from 21.3 to 24.1
+  - Pillow from 10.3.0 to 10.4.0
+  - pip from 24.0 to 24.1.2
+  - psutil from 5.9.8 to 6.0.0
+  - psycopg from 3.1.14 to 3.2.1
   - pypdf from 4.1.0 to 4.2.0
-  - safety from 3.1.0 to 3.2.2
-  - sentry-sdk from 1.41.0 to 2.5.1
-  - setuptools from 69.5.1 to 70.0.0
-  - Wheel from 0.42.0 to 0.43.0
+  - redis from 5.0.3 to 5.0.7.
+  - safety from 3.1.0 to 3.2.4
+  - sentry-sdk from 1.41.0 to 2.8.0
+  - setuptools from 69.5.1 to 70.3.0
+  - twine from 5.1.0 to 5.1.1
+  - wheel from 0.42.0 to 0.43.0
+  - whitenoise from 6.6.0 to 6.7.0
 
 - Docker image tags:
 
-  - Redis from 7.0.15-alpine to 7.2.5-alpine
+  - Debian from 12.5-slim to 12.6-slim.
+  - ElasticSearch from 7.17.20 to 7.17.22.
+  - Update GitLab CI Docker in Docker image from 23.0.6-dind to 27.0.3-dind-alpine3.20 due
+    to bugs https://github.com/docker/buildx/issues/593 and
+    https://github.com/moby/buildkit/issues/2343.
+  - PostgreSQL from 14.12-alpine to 14.12-alpine3.20
+  - RabbitMQ from 3.12.14-management-alpine to 3.13.4-management-alpine.
+  - Redis from 7.0.15-alpine to 7.2.5-alpine3.20.
 
 - Rename `menu_about` to `menu_system` to reflect it true purpose.
 - Update the system menu icon.
@@ -118,9 +136,6 @@
   `mayan.apps.file_metadata_msg.apps.FileMetadataMSGApp`.
 - Split the Docker templates into their own call named
   `mayan.apps.platform_docker`.
-- Update GitLab CI Docker in Docker image from 23.0.6-dind to 27.0.3-dind due
-  to bugs https://github.com/docker/buildx/issues/593 and
-  https://github.com/moby/buildkit/issues/2343.
 - Add `to_base64` template filter. Also accepts an optional `altchars`
   argument.
 - Support configurable Docker Compose RabbitMQ port, Redis host, Redis port.
