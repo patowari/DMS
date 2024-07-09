@@ -56,7 +56,9 @@ class FileMetadataEntryBusinessLogicMixin:
         )
 
     get_full_path.short_description = _(message='Full path')
-    get_full_path.help_text = _(message='Path used to access the value of the file metadata entry.')
+    get_full_path.help_text = _(
+        message='Path used to access the value of the file metadata entry.'
+    )
 
 
 class StoredDriverBusinessLogicMixin:
