@@ -85,6 +85,8 @@ class DocumentTypeViewTestCase(
         self.assertEqual(events.count(), 0)
 
     def test_document_type_submit_view_no_permission(self):
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
+
         file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
 
         self._clear_events()
@@ -105,6 +107,8 @@ class DocumentTypeViewTestCase(
             obj=self._test_document_type,
             permission=permission_file_metadata_submit
         )
+
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
 
         file_metadata_driver_count = self._test_document.file_latest.file_metadata_drivers.count()
 
@@ -140,6 +144,8 @@ class DocumentTypeViewTestCase(
             obj=self._test_document_type,
             permission=permission_file_metadata_submit
         )
+
+        self._test_document.file_latest.file_metadata_drivers.all().delete()
 
         self._test_document.delete()
 

@@ -15,8 +15,8 @@ class DocumentFileMetadataTestMixin(
     _test_document_file_metadata_driver_entry = None
     _test_document_file_metadata_entry_create_auto = False
 
-    def setUp(self):
-        super().setUp()
+    def _upload_test_document(self, *args, **kwargs):
+        super()._upload_test_document(*args, **kwargs)
 
         if self._test_document_file_metadata_entry_create_auto:
             if not self._test_document_file_metadata_driver_create_auto:

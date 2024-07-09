@@ -8,7 +8,7 @@ from .file_metadata_mixins import FileMetadataTestMixin
 class DocumentTypeFileMetadataTestMixin(
     DocumentTypeTestMixin, FileMetadataTestMixin
 ):
-    _test_document_file_metadata_driver_arguments = None
+    _test_document_file_metadata_document_type_driver_arguments = None
     _test_document_file_metadata_driver_enable_auto = False
 
     def setUp(self):
@@ -17,19 +17,24 @@ class DocumentTypeFileMetadataTestMixin(
         if self._test_document_file_metadata_driver:
             self._test_document_file_metadata_driver.do_model_instance_populate()
 
-            if self._test_document_file_metadata_driver_enable_auto:
-                self._test_file_metadata_driver_enable()
-            else:
-                self._test_file_metadata_driver_disable()
+    def _create_test_document_type(self):
+        super()._create_test_document_type()
 
-            if self._test_document_file_metadata_driver_arguments is not None:
-                queryset = self._test_document_file_metadata_driver.model_instance.document_type_configurations.filter(
-                    document_type=self._test_document_type
-                )
+        if self._test_document_file_metadata_driver:
+            if self._test_document_file_metadata_driver_enable_auto is not None:
+                if self._test_document_file_metadata_driver_enable_auto:
+                    self._test_file_metadata_driver_enable()
+                else:
+                    self._test_file_metadata_driver_disable()
 
-                queryset.update(
-                    arguments=self._test_document_file_metadata_driver_arguments
-                )
+                if self._test_document_file_metadata_document_type_driver_arguments is not None:
+                    queryset = self._test_document_file_metadata_driver.model_instance.document_type_configurations.filter(
+                        document_type=self._test_document_type
+                    )
+
+                    queryset.update(
+                        arguments=self._test_document_file_metadata_document_type_driver_arguments
+                    )
 
             self._test_document_type_file_metadata_driver_configuration = self._test_document_type.file_metadata_driver_configurations.first()
 

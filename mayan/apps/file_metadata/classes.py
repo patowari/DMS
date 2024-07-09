@@ -86,6 +86,15 @@ class FileMetadataDriver(
     # https://stackoverflow.com/questions/6861601/cannot-resolve-callable-context-variable
     do_not_call_in_templates = True
     dotted_path_previous_list = ()
+    enabled = None
+    """
+    Default value the `enabled` field when driver is populated or new
+    document types are added.
+    `None` the final value will be up to the setting `setting_auto_process`.
+    `True` will be enabled.
+    `False` will not be enabled.
+    Don't access the property directly, use cls.get_enabled_value().
+    """
     internal_name = None
     label = None
     mime_type_list = ()
@@ -135,8 +144,7 @@ class FileMetadataDriver(
         cls.model_instance = model_instance
 
         if created:
-            enabled = setting_auto_process.value
-
+            enabled = cls.get_enabled_value()
             for document_type in DocumentType.objects.all():
                 DocumentTypeDriverConfiguration.objects.update_or_create(
                     defaults={'enabled': enabled},
@@ -207,6 +215,39 @@ class FileMetadataDriver(
             )
 
         return ', '.join(result)
+
+    @classmethod
+    def get_enabled_value_from_settings(cls):
+        raw_argument_values = setting_drivers_arguments.value.get(
+            cls.internal_name, {}
+        )
+
+        return raw_argument_values.get('enabled', None)
+
+    @classmethod
+    def get_enabled_value(cls):
+        """
+        Calculate the final value of the class enabled field when populated
+        or for new document types.
+
+        - `None` the final value will be up to the setting
+          `setting_auto_process`.
+        - `True` will be enabled.
+        - `False` will not be enabled.
+
+        The value itself an be overridden by the setting
+        `FILE_METADATA_DRIVERS_ARGUMENTS` to change the behavior per driver.
+        """
+
+        enabled_from_settings = cls.get_enabled_value_from_settings()
+
+        if enabled_from_settings is None:
+            if cls.enabled is None:
+                return setting_auto_process.value
+            else:
+                return cls.enabled
+        else:
+            return enabled_from_settings
 
     @classmethod
     def get_form_class(cls):

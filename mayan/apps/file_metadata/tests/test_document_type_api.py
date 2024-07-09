@@ -11,6 +11,7 @@ class DocumentTypeFileMetadataAPIViewTestCase(
     DocumentTypeFileMetadataAPIViewTestMixin, BaseAPITestCase
 ):
     _test_document_file_metadata_driver_create_auto = True
+    _test_document_file_metadata_driver_enable_auto = True
 
     def test_document_type_file_metadata_driver_configuration_detail_api_view_no_permission(self):
         self._clear_events()
@@ -35,7 +36,8 @@ class DocumentTypeFileMetadataAPIViewTestCase(
             response.data['arguments'], ''
         )
         self.assertEqual(
-            response.data['enabled'], False
+            response.data['enabled'],
+            self._test_document_type_file_metadata_driver_configuration.enabled
         )
         self.assertEqual(
             response.data['stored_driver']['driver_path'], self._test_document_file_metadata_driver_path
@@ -51,7 +53,7 @@ class DocumentTypeFileMetadataAPIViewTestCase(
         enabled = self._test_document_type_file_metadata_driver_configuration.enabled
 
         response = self._request_document_type_file_metadata_driver_configuration_detail_api_view(
-            data={'arguments': '{"test":"test"}', 'enabled': True},
+            data={'arguments': '{"test":"test"}', 'enabled': not enabled},
             method='patch'
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
@@ -80,7 +82,7 @@ class DocumentTypeFileMetadataAPIViewTestCase(
         self._clear_events()
 
         response = self._request_document_type_file_metadata_driver_configuration_detail_api_view(
-            data={'arguments': '{"test":"test"}', 'enabled': True},
+            data={'arguments': '{"test":"test"}', 'enabled': not enabled},
             method='patch'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -104,7 +106,7 @@ class DocumentTypeFileMetadataAPIViewTestCase(
         enabled = self._test_document_type_file_metadata_driver_configuration.enabled
 
         response = self._request_document_type_file_metadata_driver_configuration_detail_api_view(
-            data={'arguments': '{"test":"test"}', 'enabled': True},
+            data={'arguments': '{"test":"test"}', 'enabled': not enabled},
             method='put'
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
@@ -133,7 +135,7 @@ class DocumentTypeFileMetadataAPIViewTestCase(
         self._clear_events()
 
         response = self._request_document_type_file_metadata_driver_configuration_detail_api_view(
-            data={'arguments': '{"test":"test"}', 'enabled': True},
+            data={'arguments': '{"test":"test"}', 'enabled': not enabled},
             method='put'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -177,7 +179,8 @@ class DocumentTypeFileMetadataAPIViewTestCase(
             response.data['results'][0]['arguments'], ''
         )
         self.assertEqual(
-            response.data['results'][0]['enabled'], False
+            response.data['results'][0]['enabled'],
+            self._test_document_type_file_metadata_driver_configuration.enabled
         )
         self.assertEqual(
             response.data['results'][0]['stored_driver']['driver_path'],

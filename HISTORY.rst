@@ -142,6 +142,7 @@
   link.
 - Improve `SourceColumn` resolution of `kwargs`. Keyword arguments can now
   access the template context reducing the need for lambdas.
+- Add per file metadata option to enable the driver for new document types.
 
 4.7.1 (2024-06-04)
 ==================

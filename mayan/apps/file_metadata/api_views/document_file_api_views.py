@@ -78,8 +78,6 @@ class APIDocumentFileMetadataEntryDetailView(
         return document_file_metadata_driver.entries.all()
 
 
-# ~ class APIDocumentTagAttachView(generics.ObjectActionAPIView):
-
 class APIDocumentFileMetadataSubmitView(
     ParentObjectDocumentFileDriverAPIViewMixin, generics.ObjectActionAPIView
 ):

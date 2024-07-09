@@ -180,6 +180,15 @@ class FileMetadataApp(MayanAppConfig):
             include_label=True, label=_(message='Arguments'),
             source=FileMetadataDriver
         )
+        SourceColumn(
+            attribute='get_enabled_value',
+            help_text=_(
+                'Whether or not this driver will be enabled by default for '
+                'new document types.'
+            ),
+            include_label=True, label=_(message='Enabled by default?'),
+            source=FileMetadataDriver, widget=column_widgets.TwoStateWidget
+        )
 
         # DocumentFileDriverEntry
 

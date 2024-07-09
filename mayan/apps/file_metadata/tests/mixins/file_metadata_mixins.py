@@ -20,6 +20,8 @@ class FileMetadataTestMixin:
                 dotted_path=self._test_document_file_metadata_driver_path
             )
 
+            self._test_document_file_metadata_driver.do_model_instance_populate()
+
 
 class FileMetadataDriverAPIViewTestMixin(FileMetadataTestMixin):
     def _request_file_metadata_driver_detail_api_view(self):
