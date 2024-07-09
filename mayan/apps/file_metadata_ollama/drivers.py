@@ -9,9 +9,10 @@ from mayan.apps.file_metadata.classes import FileMetadataDriver
 from .literals import DEFAULT_TIMEOUT
 
 
-class OllamaChatDriver(FileMetadataDriver):
+class FileMetadataDriverOllamaChat(FileMetadataDriver):
     argument_name_list = ('host', 'messages', 'model', 'timeout')
     description = _(message='Analyze content using Ollama.')
+    enabled = False
     internal_name = 'ollama_chat'
     label = _(message='Ollama Chat AI driver')
     mime_type_list = ('*',)
