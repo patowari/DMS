@@ -48,6 +48,17 @@ class DocumentTypeDriverConfiguration:
     get_arguments_display.short_description = _(message='Arguments')
 
 
+class FileMetadataEntryBusinessLogicMixin:
+    def get_full_path(self):
+        return '{}__{}'.format(
+            self.document_file_driver_entry.driver.internal_name,
+            self.internal_name
+        )
+
+    get_full_path.short_description = _(message='Full path')
+    get_full_path.help_text = _(message='Path used to access the value of the file metadata entry.')
+
+
 class StoredDriverBusinessLogicMixin:
     @cached_property
     def driver_class(self):

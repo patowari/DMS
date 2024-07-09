@@ -13,7 +13,8 @@ from .managers import (
 )
 from .model_mixins import (
     DocumentFileDriverEntryBusinessLogicMixin,
-    DocumentTypeDriverConfiguration, StoredDriverBusinessLogicMixin
+    DocumentTypeDriverConfiguration, FileMetadataEntryBusinessLogicMixin,
+    StoredDriverBusinessLogicMixin
 )
 
 
@@ -82,7 +83,7 @@ class DocumentTypeDriverConfiguration(
         verbose_name_plural = _(message='Document type driver settings')
 
 
-class FileMetadataEntry(models.Model):
+class FileMetadataEntry(FileMetadataEntryBusinessLogicMixin, models.Model):
     _ordering_fields = ('internal_name', 'key', 'value')
 
     document_file_driver_entry = models.ForeignKey(

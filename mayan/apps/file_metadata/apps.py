@@ -156,6 +156,9 @@ class FileMetadataApp(MayanAppConfig):
             attribute='key', is_sortable=True, source=FileMetadataEntry
         )
         SourceColumn(
+            attribute='get_full_path', source=FileMetadataEntry
+        )
+        SourceColumn(
             attribute='value', include_label=True, is_sortable=True,
             source=FileMetadataEntry
         )

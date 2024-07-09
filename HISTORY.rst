@@ -148,6 +148,8 @@
   This change is required as the driver list view now may contain low
   level credentials.
 - Make file metadata view columns sortable.
+- Add a column to the document file metadata list showing the full path to
+  an entry including the driver's internal name.
 
 4.7.1 (2024-06-04)
 ==================
