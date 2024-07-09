@@ -147,6 +147,7 @@
   detected file metadata drivers from "view file metadata" to "view settings".
   This change is required as the driver list view now may contain low
   level credentials.
+- Make file metadata view columns sortable.
 
 4.7.1 (2024-06-04)
 ==================

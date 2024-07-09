@@ -149,12 +149,15 @@ class FileMetadataApp(MayanAppConfig):
         # FileMetadataEntry
 
         SourceColumn(
-            attribute='internal_name', is_identifier=True,
+            attribute='internal_name', is_identifier=True, is_sortable=True,
             source=FileMetadataEntry
         )
-        SourceColumn(attribute='key', source=FileMetadataEntry)
         SourceColumn(
-            attribute='value', include_label=True, source=FileMetadataEntry
+            attribute='key', is_sortable=True, source=FileMetadataEntry
+        )
+        SourceColumn(
+            attribute='value', include_label=True, is_sortable=True,
+            source=FileMetadataEntry
         )
 
         # FileMetadataDriver
@@ -198,7 +201,7 @@ class FileMetadataApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='driver__internal_name', include_label=True,
-            source=DocumentFileDriverEntry
+            is_sortable=True, source=DocumentFileDriverEntry
         )
         SourceColumn(
             attribute='get_attribute_count', include_label=True,
@@ -212,7 +215,7 @@ class FileMetadataApp(MayanAppConfig):
             source=DocumentTypeDriverConfiguration
         )
         SourceColumn(
-            attribute='enabled', include_label=True,
+            attribute='enabled', include_label=True, is_sortable=True,
             source=DocumentTypeDriverConfiguration,
             widget=column_widgets.TwoStateWidget
         )
