@@ -1,6 +1,5 @@
+from mayan.apps.smart_settings.permissions import permission_settings_view
 from mayan.apps.testing.tests.base import GenericViewTestCase
-
-from ..permissions import permission_file_metadata_view
 
 from .mixins.file_metadata_mixins import FileMetadataDriverTestViewMixin
 
@@ -19,7 +18,7 @@ class FileMetadataDriverViewTestCase(
 
     def test_file_metadata_driver_list_view_with_permission(self):
         self.grant_permission(
-            permission=permission_file_metadata_view
+            permission=permission_settings_view
         )
 
         self._clear_events()

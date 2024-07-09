@@ -1,15 +1,15 @@
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.smart_settings.permissions import permission_settings_view
 from mayan.apps.views.generics import SingleObjectListView
 
 from ..classes import FileMetadataDriver
 from ..icons import icon_file_metadata, icon_file_metadata_driver_list
-from ..permissions import permission_file_metadata_view
 
 
 class FileMetadataDriverListView(SingleObjectListView):
     view_icon = icon_file_metadata_driver_list
-    view_permission = permission_file_metadata_view
+    view_permission = permission_settings_view
 
     def get_extra_context(self):
         return {
