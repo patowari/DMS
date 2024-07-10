@@ -1,5 +1,6 @@
 import hashlib
 
+from django.apps import apps
 from django.core import serializers
 from django.utils.translation import gettext_lazy as _
 
@@ -32,6 +33,22 @@ class WorkflowTransitionBusinessLogicMixin:
             'tail_name': self.origin_state.get_graph_id()
         }
         diagram.edge(**edge_kwargs)
+
+    def do_execute(
+        self, workflow_instance, comment=None, extra_data=None, user=None
+    ):
+        WorkflowInstanceLogEntry = apps.get_model(
+            app_label='document_states', model_name='WorkflowInstanceLogEntry'
+        )
+
+        workflow_instance_log_entry = WorkflowInstanceLogEntry(
+            comment=comment, extra_data=extra_data, transition=self,
+            user=user, workflow_instance=workflow_instance
+        )
+        workflow_instance_log_entry._event_actor = user
+        workflow_instance_log_entry.save()
+
+        return workflow_instance_log_entry
 
     def get_field_display(self):
         field_list = [

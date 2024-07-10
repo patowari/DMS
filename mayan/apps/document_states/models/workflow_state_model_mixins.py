@@ -16,23 +16,35 @@ from ..literals import (
 
 
 class WorkflowStateBusinessLogicMixin:
-    def do_active_set(self, workflow_instance):
+    def do_active_set(self, log_entry=None, workflow_instance=None):
+        # TODO: Update one initial entry log patch is merged.
+        # Break pattern by allowing `workflow_instance` and log_entry=None
+        # until initial entry log patch is merged.
         queryset = self.entry_actions.filter(enabled=True)
         self.do_queryset_actions_execute(
-            queryset=queryset, workflow_instance=workflow_instance
+            log_entry=log_entry, queryset=queryset,
+            workflow_instance=workflow_instance
         )
 
-    def do_active_unset(self, workflow_instance):
+    def do_active_unset(self, log_entry):
         queryset = self.exit_actions.filter(enabled=True)
         self.do_queryset_actions_execute(
-            queryset=queryset, workflow_instance=workflow_instance
+            log_entry=log_entry, queryset=queryset
         )
 
-    def do_queryset_actions_execute(self, queryset, workflow_instance):
+    def do_queryset_actions_execute(
+        self, queryset, log_entry=None, workflow_instance=None
+    ):
+        # TODO: Update one initial entry log patch is merged.
+        # Break pattern by allowing `workflow_instance` and log_entry=None
+        # until initial entry log patch is merged.
+        if log_entry:
+            workflow_instance = log_entry.workflow_instance
+
         for action in queryset:
             context = workflow_instance.get_context()
             context.update(
-                {'action': action}
+                {'action': action, 'log_entry': log_entry}
             )
 
             try:

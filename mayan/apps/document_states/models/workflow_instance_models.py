@@ -152,16 +152,7 @@ class WorkflowInstanceLogEntry(
             target=self.workflow_instance
         )
 
-        context = self.workflow_instance.get_context()
-        context.update(
-            {'entry_log': self}
-        )
-
-        self.transition.origin_state.do_active_unset(
-            workflow_instance=self.workflow_instance
-        )
-        self.transition.destination_state.do_active_set(
-            workflow_instance=self.workflow_instance
-        )
+        self.transition.origin_state.do_active_unset(log_entry=self)
+        self.transition.destination_state.do_active_set(log_entry=self)
 
         return result

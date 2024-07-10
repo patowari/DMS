@@ -45,9 +45,6 @@ class WorkflowInstanceBusinessLogicMixin:
     def do_transition(
         self, transition, comment=None, extra_data=None, user=None
     ):
-        WorkflowInstanceLogEntry = apps.get_model(
-            app_label='document_states', model_name='WorkflowInstanceLogEntry'
-        )
         comment = comment or ''
         extra_data = extra_data or {}
 
@@ -58,14 +55,10 @@ class WorkflowInstanceBusinessLogicMixin:
                 if extra_data:
                     self.do_context_update(context=extra_data)
 
-                workflow_instance_log_entry = WorkflowInstanceLogEntry(
+                return transition.do_execute(
                     comment=comment, extra_data=json.dumps(obj=extra_data),
-                    transition=transition, user=user, workflow_instance=self
+                    user=user, workflow_instance=self
                 )
-                workflow_instance_log_entry._event_actor = user
-                workflow_instance_log_entry.save()
-
-                return workflow_instance_log_entry
         except AttributeError:
             # No initial state has been set for this workflow.
             if settings.DEBUG:

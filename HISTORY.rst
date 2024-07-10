@@ -165,6 +165,11 @@
 - Make file metadata view columns sortable.
 - Add a column to the document file metadata list showing the full path to
   an entry including the driver's internal name.
+- Pass the workflow instance log entry to the workflow instance states. This
+  is to allow states to have access to the log entry that triggered the
+  workflow transition regardless of the current state or transition.
+  The workflow state action context is now composed of the keys:
+  `workflow_instance`, `workflow_instance_context`, `action`, and `log_entry`.
 
 4.7.1 (2024-06-04)
 ==================

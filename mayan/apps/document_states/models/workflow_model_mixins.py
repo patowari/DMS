@@ -164,6 +164,9 @@ class WorkflowBusinessLogicMixin:
                     initial_state.do_active_set(
                         workflow_instance=workflow_instance
                     )
+                    # TODO: Update once initial entry log patch is merged.
+                    # Break pattern by passing `workflow_instance`
+                    # until initial entry logs patch is merged.
             except IntegrityError:
                 logger.info(
                     'Workflow %s already launched for document %s',

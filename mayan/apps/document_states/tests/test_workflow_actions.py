@@ -34,7 +34,8 @@ from .literals import (
     TEST_HEADERS_JSON, TEST_HEADERS_JSON_TEMPLATE,
     TEST_HEADERS_JSON_TEMPLATE_KEY, TEST_HEADERS_KEY, TEST_HEADERS_VALUE,
     TEST_PAYLOAD_JSON, TEST_PAYLOAD_TEMPLATE_DOCUMENT_LABEL,
-    TEST_SERVER_PASSWORD, TEST_SERVER_USERNAME
+    TEST_SERVER_PASSWORD, TEST_SERVER_USERNAME,
+    TEST_WORKFLOW_TEMPLATE_STATE_ACTION_GENERIC_DOTTED_PATH
 )
 from .mixins.workflow_template_state_action_mixins import (
     WorkflowTemplateStateActionLaunchViewTestMixin,
@@ -733,3 +734,29 @@ class DocumentWorkflowLaunchActionViewTestCase(
         self.assertEqual(events[2].actor, self._test_workflow_instance)
         self.assertEqual(events[2].target, self._test_workflow_instance)
         self.assertEqual(events[2].verb, event_workflow_instance_created.id)
+
+
+class WorkflowActionTestCase(
+    WorkflowTemplateStateActionTestMixin,
+    WorkflowTemplateTransitionTestMixin, BaseTestCase
+):
+    _test_workflow_template_state_action_path = TEST_WORKFLOW_TEMPLATE_STATE_ACTION_GENERIC_DOTTED_PATH
+    auto_create_test_workflow_template_state_action = False
+
+    def test_context(self):
+        self._create_test_workflow_template_state()
+        self._create_test_workflow_template_transition()
+        self._create_test_workflow_template_state_action(workflow_state_index=1)
+
+        self._clear_events()
+
+        self._test_workflow_instance.do_transition(
+            transition=self._test_workflow_template_transition
+        )
+
+        context = self._test_workflow_instance._test_workflow_state_action_context
+
+        self.assertTrue('workflow_instance' in context)
+        self.assertTrue('workflow_instance_context' in context)
+        self.assertTrue('action' in context)
+        self.assertTrue('log_entry' in context)
