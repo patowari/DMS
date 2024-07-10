@@ -1,4 +1,4 @@
-4.8 (XXXX-XX-XX)
+4.8 (2024-07-XX)
 ================
 - Update dependency versions:
 
