@@ -8,7 +8,7 @@ class FormsApp(MayanAppConfig):
     app_url = 'forms'
     has_javascript_translations = True
     has_static_media = True
-    label = 'mayan_forms'  # Clash with Django's forms app.
+    label = 'mayan_forms'  # Avoid clash with Django's `forms` app.
     name = 'mayan.apps.forms'
     static_media_ignore_patterns = (
         'mayan_forms/node_modules/dropzone/index.js',
