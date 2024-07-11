@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:45+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: admin.py:13 apps.py:169 serializers/file_metadata_serializers.py:16
 msgid "Label"
@@ -61,11 +60,12 @@ msgstr "Descripción"
 #: apps.py:186 model_mixins.py:48 models.py:54
 #: serializers/file_metadata_serializers.py:10
 msgid "Arguments"
-msgstr ""
+msgstr "Argumentos"
 
 #: apps.py:192
 msgid ""
-"Whether or not this driver will be enabled by default for new document types."
+"Whether or not this driver will be enabled by default for new document "
+"types."
 msgstr ""
 
 #: apps.py:195
@@ -97,11 +97,11 @@ msgstr "Enviar para metadatos de archivo"
 
 #: links.py:53
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: links.py:60
 msgid "File metadata driver setup"
-msgstr "Controladores de metadatos de archivos"
+msgstr ""
 
 #: links.py:66
 msgid "File metadata processing per type"
@@ -123,11 +123,11 @@ msgstr "Conteo de atributos"
 
 #: model_mixins.py:58
 msgid "Full path"
-msgstr ""
+msgstr "Ruta completa"
 
 #: model_mixins.py:60
 msgid "Path used to access the value of the file metadata entry."
-msgstr "Valor de la entrada de metadatos del archivo."
+msgstr ""
 
 #: models.py:26 models.py:64 models.py:165
 msgid "Driver"
@@ -162,11 +162,11 @@ msgstr ""
 
 #: models.py:70
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 #: models.py:82 models.py:83
 msgid "Document type driver settings"
-msgstr "Configuración del tipo de documento"
+msgstr ""
 
 #: models.py:96
 msgid "Normalized name of the file metadata entry."
@@ -216,7 +216,8 @@ msgstr "Controladores"
 
 #: permissions.py:10
 msgid "Change document type file metadata settings"
-msgstr "Cambiar la configuración de metadatos del archivo de tipo de documento"
+msgstr ""
+"Cambiar la configuración de metadatos del archivo de tipo de documento"
 
 #: permissions.py:15
 msgid "Submit document for file metadata processing"
@@ -247,7 +248,7 @@ msgstr "Atributo de metadatos del archivo"
 #: serializers/document_file_serializers.py:70
 #: serializers/document_type_serializers.py:22
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
@@ -268,8 +269,8 @@ msgstr "Argumentos para pasar a los controladores."
 
 #: views/document_file_views.py:42
 msgid ""
-"File metadata are the attributes of the document's file. They can range from "
-"camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from"
+" camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
@@ -307,7 +308,8 @@ msgstr "No hay metadatos de archivo disponibles para este controlador."
 
 #: views/document_file_views.py:89
 #, python-format
-msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid ""
+"File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "Atributos de metadatos de archivo para: %(document_file)s con controlador: "
 "%(driver)s"
@@ -316,7 +318,8 @@ msgstr ""
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
-"%(count)d archivos de documentos enviados a la cola de metadatos de archivos."
+"%(count)d archivos de documentos enviados a la cola de metadatos de "
+"archivos."
 
 #: views/document_file_views.py:114
 #, python-format
@@ -328,8 +331,8 @@ msgstr ""
 msgid "Submit the selected document file to the file metadata queue?"
 msgid_plural "Submit the selected documents files to the file metadata queue?"
 msgstr[0] ""
-"¿Someter el archivo del documento seleccionado a la cola de tareas metadatos "
-"del archivo?"
+"¿Someter el archivo del documento seleccionado a la cola de tareas metadatos"
+" del archivo?"
 msgstr[1] ""
 "¿Someter los archivos de documentos seleccionados a la cola de tareas de "
 "metadatos de archivos?"
@@ -338,40 +341,31 @@ msgstr[2] ""
 "metadatos de archivos?"
 
 #: views/document_type_views.py:48
-#, fuzzy, python-format
-#| msgid ""
-#| "Edit file metadata driver \"%(file_metadata_driver)s\" settings for "
-#| "document type: %(document_type)s"
+#, python-format
 msgid ""
-"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document "
-"type: %(document_type)s"
+"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document"
+" type: %(document_type)s"
 msgstr ""
-"Editar la configuración de metadatos del archivo para el tipo de documento: "
-"%s"
 
 #: views/document_type_views.py:84
-msgid "File metadata drivers extract embedded information from document files."
+msgid ""
+"File metadata drivers extract embedded information from document files."
 msgstr ""
-"Los controladores de metadatos de archivos extraen información integrada de "
-"archivos de documentos. Los controladores de metadatos de archivos se "
-"configuran únicamente en código."
 
 #: views/document_type_views.py:88
 msgid "No file metadata drivers available for this document type."
-msgstr "No hay metadatos de archivo disponibles para este controlador."
+msgstr ""
 
 #: views/document_type_views.py:92
 #, python-format
 msgid "File metadata driver configuration for document type \"%s\"."
 msgstr ""
-"Editar la configuración de metadatos del archivo para el tipo de documento: "
-"%s"
 
 #: views/document_type_views.py:106
 msgid "Submit all documents of a type for file metadata processing."
 msgstr ""
-"Enviar todos los documentos de un tipo para el procesamiento de metadatos de "
-"archivos."
+"Enviar todos los documentos de un tipo para el procesamiento de metadatos de"
+" archivos."
 
 #: views/document_type_views.py:134
 #, python-format
@@ -382,8 +376,8 @@ msgstr ""
 
 #: views/tool_views.py:19
 msgid ""
-"File metadata drivers extract embedded information from document files. File "
-"metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File"
+" metadata drivers are configure in code only."
 msgstr ""
 "Los controladores de metadatos de archivos extraen información integrada de "
 "archivos de documentos. Los controladores de metadatos de archivos se "
@@ -395,7 +389,7 @@ msgstr "No hay controladores de metadatos de archivos disponibles."
 
 #: views/tool_views.py:26
 msgid "File metadata drivers enabled and detected."
-msgstr "No hay controladores de metadatos de archivos disponibles."
+msgstr ""
 
 #: views/view_mixins.py:34
 #, python-format

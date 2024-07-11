@@ -1,31 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Сергій Гарашко, 2024
-# olenchenko <olenchenko@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# olenchenko <olenchenko@gmail.com>, 2024
+# Сергій Гарашко, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
 #: models.py:65 queues.py:9 settings.py:14 views/source_views.py:279
@@ -286,8 +282,8 @@ msgstr "Аргументи для використання при створен
 
 #: settings.py:29
 msgid ""
-"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting "
-"the oldest source cache files. Specify the size in bytes."
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
+" the oldest source cache files. Specify the size in bytes."
 msgstr ""
 
 #: settings.py:37
@@ -314,14 +310,14 @@ msgstr "Документ, до якого буде вивантажено нов
 #: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 "Якщо увімкнено, заглушка документа створюється негайно і повертається. Файл "
 "документа обробляється асинхронно. Якщо вимкнено, весь процес відбувається "
-"асинхронно без повернення даних. Увімкнення негайного режиму вимикає обробку "
-"стиснених файлів."
+"асинхронно без повернення даних. Увімкнення негайного режиму вимикає обробку"
+" стиснених файлів."
 
 #: source_backend_actions/mixins/arguments.py:31
 msgid "ID of the document to which a new file will be uploaded to."
@@ -375,8 +371,8 @@ msgid ""
 "Unable to initialize the staging folder file image storage. Check the "
 "settings {} and {} for formatting errors."
 msgstr ""
-"Неможливо ініціалізувати сховище файлів проміжної папки. Перевірте параметри "
-"{} і {} на наявність помилок форматування."
+"Неможливо ініціалізувати сховище файлів проміжної папки. Перевірте параметри"
+" {} і {} на наявність помилок форматування."
 
 #: storages.py:20
 msgid "Sources cache"
@@ -425,7 +421,8 @@ msgstr ""
 #: views/document_file_views.py:126
 #, python-format
 msgid "Error executing document file upload task; %(exception)s"
-msgstr "Помилка виконання завдання завантаження файлу документа; %(exception)s"
+msgstr ""
+"Помилка виконання завдання завантаження файлу документа; %(exception)s"
 
 #: views/document_file_views.py:145
 msgid "New document file queued for upload and will be available shortly."
@@ -516,8 +513,8 @@ msgstr ""
 
 #: views/source_views.py:323
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -545,8 +542,8 @@ msgstr "Виберати тип документа"
 
 #: wizards.py:66
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
 "Інтерактивні джерела документів не визначено або не ввімкнено. Перш ніж "
 "продовжити, створіть їх."

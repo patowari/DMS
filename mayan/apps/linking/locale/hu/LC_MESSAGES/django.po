@@ -1,25 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:34+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:47
@@ -198,8 +197,8 @@ msgstr "Külsős dokumentum attribútum"
 
 #: models.py:111
 msgid ""
-"The expression using document properties to be evaluated against the foreign "
-"document field."
+"The expression using document properties to be evaluated against the foreign"
+" document field."
 msgstr ""
 "A dokumentumtulajdonságokat használó kifejezés, amelyet a külsős "
 "dokumentummezővel szemben kell kiértékelni."
@@ -360,8 +359,8 @@ msgid ""
 "in different indexes and are of different types."
 msgstr ""
 "Az intelligens hivatkozások lehetővé teszik a dokumentumok közötti "
-"kapcsolatok meghatározását még akkor is, ha azok különböző indexekben vannak "
-"és különböző típusúak."
+"kapcsolatok meghatározását még akkor is, ha azok különböző indexekben vannak"
+" és különböző típusúak."
 
 #: views/smart_link_views.py:182
 msgid "There are no resolved smart links for this document"

@@ -1,31 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # Alex Chigrin <chalex84@mail.ru>, 2024
-# Panasoft, 2024
 # Sergey Glita <gsv70@mail.ru>, 2024
 # lilo.panic, 2024
+# Panasoft, 2024
+# Roberto Rosario, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:19
 #: links.py:50 links.py:90 links.py:98 links.py:287 links.py:311
@@ -56,8 +54,8 @@ msgid ""
 "following fields: datetime, transition, user, and comment."
 msgstr ""
 "Возвращает последнюю запись журнала экземпляра рабочего процесса. Сама "
-"запись журнала имеет следующие поля: \"datetime\", \"transition\", \"user\", "
-"\"comment\"."
+"запись журнала имеет следующие поля: \"datetime\", \"transition\", \"user\","
+" \"comment\"."
 
 #: apps.py:304
 msgid "Get last log entry"
@@ -257,7 +255,8 @@ msgstr "Типы документов"
 msgid "Delete"
 msgstr "Удалить"
 
-#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219 links.py:265
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
+#: links.py:265
 msgid "Edit"
 msgstr "Редактировать"
 
@@ -445,8 +444,8 @@ msgstr "Прокси рабочего процесса"
 #: models/workflow_state_action_models.py:31
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do "
-"not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do"
+" not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -658,10 +657,10 @@ msgstr "Поля перехода рабочего процесса"
 #: models/workflow_transition_models.py:28
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not "
-"return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be "
-"the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not"
+" return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be"
+" the logical true."
 msgstr ""
 "Условие, которое определяет, включен этот переход или нет. Условие "
 "оценивается по экземпляру рабочего процесса. Условия, которые не возвращают "
@@ -963,8 +962,8 @@ msgstr ""
 msgid ""
 "File path to the graphviz dot program used to generate workflow previews."
 msgstr ""
-"Путь к файлу программы graphviz dot, используемой для создания предпросмотра "
-"рабочего процесса."
+"Путь к файлу программы graphviz dot, используемой для создания предпросмотра"
+" рабочего процесса."
 
 #: settings.py:28
 msgid ""
@@ -995,8 +994,8 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and "
-"{} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and"
+" {} for formatting errors."
 msgstr ""
 "Невозможно инициализировать хранилище предпросмотра рабочего процесса. "
 "Проверьте настройки {} и {} на наличие ошибок форматирования."
@@ -1007,8 +1006,8 @@ msgstr "Изображения предпросмотра рабочего пр�
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document "
-"execute those workflows. "
+"Assign workflows to the document type of this document to have this document"
+" execute those workflows. "
 msgstr ""
 "Назначьте рабочие процессы типу этого документа, чтобы этот документ "
 "выполнял эти рабочие процессы."
@@ -1024,7 +1023,8 @@ msgstr "Рабочие процессы документа: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is transitioned."
+"This view will show the state changes as a workflow instance is "
+"transitioned."
 msgstr ""
 "В этом представлении будут отображаться изменения состояния при переходе "
 "экземпляра рабочего процесса."
@@ -1058,10 +1058,8 @@ msgstr "Выбрать"
 
 #: views/workflow_instance_views.py:226
 #, python-format
-msgid ""
-"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
-msgstr ""
-"Выбрать переход рабочего процесса \"%(workflow)s\" документа \"%(document)s\""
+msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgstr "Выбрать переход рабочего процесса \"%(workflow)s\" документа \"%(document)s\""
 
 #: views/workflow_proxy_views.py:37
 msgid ""
@@ -1149,8 +1147,8 @@ msgstr "Редактировать действие: %s"
 
 #: views/workflow_template_state_views.py:185
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or "
-"leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or"
+" leaves the state in which they reside."
 msgstr ""
 "Действия состояния рабочего процесса - это макросы, которые выполняются, "
 "когда документы входят в состояние или покидают его."
@@ -1214,8 +1212,8 @@ msgstr "Редактировать поле перехода: %s"
 
 #: views/workflow_template_transition_field_views.py:149
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This "
-"additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This"
+" additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "Поля перехода рабочего процесса позволяют добавлять данные в контекст "
@@ -1487,7 +1485,8 @@ msgstr "Свойства документа"
 
 #: workflow_actions.py:123
 msgid "Additional workflows to launch for the document."
-msgstr "Дополнительные рабочие процессы, которые будут запущены для документа."
+msgstr ""
+"Дополнительные рабочие процессы, которые будут запущены для документа."
 
 #: workflow_actions.py:174
 msgid "The URL to access."

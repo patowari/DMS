@@ -1,29 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Apariencia"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -73,7 +72,8 @@ msgstr ""
 "La ubicación es correcta, pero su cuenta no tiene el permiso requerido para "
 "acceder a ella."
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Error de servidor"
 
@@ -98,19 +98,17 @@ msgid "Contact your system administrator."
 msgstr "Póngase en contacto con el administrador de su sistema."
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
-"Verifique los registros de mensajes con las etiquetas \"ERROR\", \"CRÍTICO\" "
-"o \"FATAL\"."
+"Verifique los registros de mensajes con las etiquetas \"ERROR\", \"CRÍTICO\""
+" o \"FATAL\"."
 
 #: templates/500.html:36
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
-"Abra un ticket utilizando el <a href=\"%(issue_url)s\">monitor de problemas</"
-"a> ."
+"Abra un ticket utilizando el <a href=\"%(issue_url)s\">monitor de "
+"problemas</a> ."
 
 #: templates/appearance/about.html:10
 msgid "About"
@@ -142,8 +140,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 "Para artículos, tutoriales y solución de problemas, suscríbase a la <a "
 "class=\"new_window\" href=\"%(link_knowledge_base_url)s\">base de "
@@ -340,16 +338,16 @@ msgstr "Cambiar el modo de visualización de la lista"
 
 #: templates/navigation/app/list_toolbar.html:25
 msgid "Sort by column"
-msgstr ""
+msgstr "Ordenar por columna"
 
 #: templates/navigation/app/list_toolbar.html:26
 msgid "--- Clear ---"
-msgstr ""
+msgstr "--- Limpiar ---"
 
 #: templates/navigation/app/list_toolbar.html:29
 msgid "(ascending)"
-msgstr ""
+msgstr "(ascendente)"
 
 #: templates/navigation/app/list_toolbar.html:31
 msgid "(descending)"
-msgstr ""
+msgstr "(descendente)"

@@ -1,33 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
-# Caner Başaran <basaran.caner@gmail.com>, 2024
 # Emine Öztürk <oemine075@gmail.com>, 2024
+# Caner Başaran <basaran.caner@gmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
 # Bedreddin Şahbaz, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
-"teams/13584/tr_TR/)\n"
-"Language: tr_TR\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Görünüm"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -77,7 +75,8 @@ msgstr ""
 "Konum doğru olabilir, ancak hesabınıza erişmek için gerekli izne sahip "
 "değilsiniz."
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Server hatası"
 
@@ -102,9 +101,7 @@ msgid "Contact your system administrator."
 msgstr "Sistem yöneticinize başvurun."
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "\"ERROR\", \"CRITICAL\" veya \"FATAL\" etiketli mesajlar için logları "
 "kontrol edin."
@@ -142,8 +139,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75

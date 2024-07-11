@@ -1,34 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# olenchenko <olenchenko@gmail.com>, 2024
-# Leo Lado, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
-#
+# Leo Lado, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Leo Lado, 2024\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Вигляд"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -78,7 +73,8 @@ msgstr ""
 "Місцезнаходження правильне, але ваш обліковий запис не має необхідного "
 "дозволу на доступ до нього."
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Помилка на сервері"
 
@@ -103,9 +99,7 @@ msgid "Contact your system administrator."
 msgstr "Зверніться до вашого системного адміністратора."
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Перевірте журнали для повідомлень з тегами \"ПОМИЛКА\", \"КРИТИЧНО\", "
 "\"ФАТАЛЬНО\"."
@@ -114,8 +108,8 @@ msgstr ""
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
-"Відкрити формуляр, використовуючи  <a href=\"%(issue_url)s\"> трекер випуску "
-"</a>."
+"Відкрити формуляр, використовуючи  <a href=\"%(issue_url)s\"> трекер випуску"
+" </a>."
 
 #: templates/appearance/about.html:10
 msgid "About"
@@ -145,8 +139,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75

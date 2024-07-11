@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
@@ -40,8 +39,8 @@ msgstr "¿Cola principal?"
 #: apps.py:130
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
 "Las colas transitorias no son persistentes. Las tareas en una cola "
 "transitoria se pierden si se reinicia el intermediario. Las colas "
@@ -121,8 +120,8 @@ msgstr "Concurrencia"
 
 #: apps.py:210
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
 "El valor de amistad determina la prioridad del proceso. Un valor más alto "
 "reduce la prioridad. El valor predeterminado es 0."
@@ -167,16 +166,16 @@ msgstr ""
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
-"Valor predeterminado: \"amqp://\". URL del intermediario predeterminado Debe "
-"ser una URL en forma de: transporte://usuario:contraseña@servidor:puerto/"
-"virtual_host Solo se requiere la parte de esquema (transporte: //), el resto "
-"es opcional y se predetermina a los valores predeterminados de transporte "
-"específico."
+"Valor predeterminado: \"amqp://\". URL del intermediario predeterminado Debe"
+" ser una URL en forma de: "
+"transporte://usuario:contraseña@servidor:puerto/virtual_host Solo se "
+"requiere la parte de esquema (transporte: //), el resto es opcional y se "
+"predetermina a los valores predeterminados de transporte específico."
 
 #: settings.py:32
 msgid ""
@@ -184,14 +183,15 @@ msgid ""
 "settings. The valid values for this option vary by transport."
 msgstr ""
 "Valor predeterminado: \"Deshabilitado\". Alterna el uso de SSL en la "
-"conexión del agente y la configuración de SSL. Los valores válidos para esta "
-"opción varían según el transporte."
+"conexión del agente y la configuración de SSL. Los valores válidos para esta"
+" opción varían según el transporte."
 
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
 "Predeterminado: Sin back-end de resultados habilitado por defecto. El "
 "backend utilizado para almacenar resultados de tareas (lápidas). Consulte "

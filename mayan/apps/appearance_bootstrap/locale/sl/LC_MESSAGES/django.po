@@ -1,31 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Jože Detečnik <joze.detecnik@3tav.si>, 2024
 # Roberto Rosario, 2024
-#
+# Jože Detečnik <joze.detecnik@3tav.si>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/"
-"sl/)\n"
-"Language: sl\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2024\n"
+"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Videz"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -73,7 +71,8 @@ msgid ""
 "permission to access it."
 msgstr ""
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Napaka strežnika"
 
@@ -98,9 +97,7 @@ msgid "Contact your system administrator."
 msgstr ""
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 
 #: templates/500.html:36
@@ -136,8 +133,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75

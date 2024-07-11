@@ -1,35 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Marcin Lozynski <mlozynski@wp.pl>, 2024
 # mic <winterfall24@gmail.com>, 2024
-# tomkolp, 2024
-# edasmax <edasmax@gmail.com>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
-"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
-"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Wygląd"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -79,7 +75,8 @@ msgstr ""
 "Lokalizacja jest poprawna, ale twoje konto nie ma wymaganych uprawnień, aby "
 "uzyskać do niej dostęp."
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Błąd serwera"
 
@@ -104,9 +101,7 @@ msgid "Contact your system administrator."
 msgstr "Skontaktuj się z administratorem systemu."
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Sprawdź, czy w dziennikach nie ma wiadomości zawierających tagi „ERROR”, "
 "„CRITICAL” lub „FATAL”."
@@ -146,8 +141,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75

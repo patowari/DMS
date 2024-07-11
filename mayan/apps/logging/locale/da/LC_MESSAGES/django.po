@@ -2,23 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Rasmus Kierudsen <tebrasso@gmail.com>, 2024
 # Mads L. Nielsen <sirlundgaard@gmail.com>, 2024
-#
+# Rasmus Kierudsen <tebrasso@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:34+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Mads L. Nielsen <sirlundgaard@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Rasmus Kierudsen <tebrasso@gmail.com>, 2024\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:24 events.py:6 permissions.py:6 settings.py:12
@@ -172,7 +172,8 @@ msgstr ""
 
 #: views.py:95
 msgid ""
-"This view displays the error log of an object. An empty list is a good thing."
+"This view displays the error log of an object. An empty list is a good "
+"thing."
 msgstr ""
 
 #: views.py:103

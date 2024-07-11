@@ -2,28 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:53 apps.py:89 events.py:6 permissions.py:6 settings.py:11
 msgid "Document parsing"
@@ -31,7 +27,8 @@ msgstr "Розбір документа"
 
 #: apps.py:113
 msgid "A generator returning the document file's pages parsed content."
-msgstr "Генератор, що повертає проаналізований вміст сторінок файлу документа."
+msgstr ""
+"Генератор, що повертає проаналізований вміст сторінок файлу документа."
 
 #: apps.py:114 links.py:26 links.py:49 models.py:27 search.py:18
 msgid "Content"
@@ -164,16 +161,16 @@ msgstr ""
 
 #: settings.py:24
 msgid ""
-"File path to poppler's pdftotext program used to extract text from PDF files."
+"File path to poppler's pdftotext program used to extract text from PDF "
+"files."
 msgstr ""
-"Шлях до файлу програми pdftotext Poppler, яка використовується для отримання "
-"тексту з файлів PDF."
+"Шлях до файлу програми pdftotext Poppler, яка використовується для отримання"
+" тексту з файлів PDF."
 
 #: views.py:38
 #, python-format
 msgid "Error deleting document version content \"%(instance)s\"; %(exception)s"
-msgstr ""
-"Помилка видалення вмісту версії документа \"%(instance)s\" %(exception)s"
+msgstr "Помилка видалення вмісту версії документа \"%(instance)s\" %(exception)s"
 
 #: views.py:45
 #, python-format

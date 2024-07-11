@@ -1,26 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # e6bc1d20d3f0031709c3c11db1061ebc_be0a371 <8b4e580508477646e97982ebad39e3af_312311>, 2024
-# bwakkie <bwakkie@gmail.com>, 2024
 # Roberto Rosario, 2024
+# bwakkie <bwakkie@gmail.com>, 2024
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: admin.py:24
@@ -235,9 +235,11 @@ msgid "Slug"
 msgstr "Slug"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
 msgstr ""
-"Maakt deze index zichtbaar en 'up-to-date' wanneer documentgegevens wijzigen."
+"Maakt deze index zichtbaar en 'up-to-date' wanneer documentgegevens "
+"wijzigen."
 
 #: models/index_template_models.py:57 models/index_template_models.py:97
 msgid "Index template"
@@ -280,10 +282,11 @@ msgstr ""
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
-"Selecteer deze optie, wanneer deze node alleen documenten dient te bevatten. "
+"Selecteer deze optie, wanneer deze node alleen documenten dient te bevatten."
+" "
 
 #: models/index_template_models.py:174
 msgid "Link documents"
@@ -410,8 +413,8 @@ msgstr ""
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
 "URL van het API-eindpunt met de lijstdocumenttypen die aan deze "
 "indexsjabloon zijn gekoppeld."
@@ -535,8 +538,8 @@ msgstr "Indexeringen gekoppeld aan documenttype: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
 "Indexen groeperen documenten automatisch in niveaus. Indexen worden "
 "gedefinieerd met behulp van een sjabloon waarvan de markeringen worden "

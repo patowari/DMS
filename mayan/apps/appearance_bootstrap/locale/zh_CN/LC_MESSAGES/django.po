@@ -1,33 +1,32 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# bo feng <87289884@qq.com>, 2024
-# Ford Guo <agile.guo@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Leon Chu, 2024
 # yan songwei <yansw@vip.163.com>, 2024
-#
+# Roberto Rosario, 2024
+# Ford Guo <agile.guo@gmail.com>, 2024
+# bo feng <87289884@qq.com>, 2024
+# Leon Chu, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: yan songwei <yansw@vip.163.com>, 2024\n"
-"Language-Team: Chinese (China) (https://app.transifex.com/rosarior/"
-"teams/13584/zh_CN/)\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Leon Chu, 2024\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "外觀"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -75,7 +74,8 @@ msgid ""
 "permission to access it."
 msgstr "位置正確，但是你的帳戶没有存取權限。"
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "伺服器錯誤"
 
@@ -100,11 +100,8 @@ msgid "Contact your system administrator."
 msgstr "请与系统管理员联系。"
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
-msgstr ""
-"檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯誤或“ FATAL”嚴重錯誤的訊息。"
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgstr "檢查日誌中是否帶有“ ERROR”錯誤，“ CRITICAL”中型錯誤或“ FATAL”嚴重錯誤的訊息。"
 
 #: templates/500.html:36
 #, python-format
@@ -139,8 +136,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -248,8 +245,7 @@ msgid ""
 "Total (%(start)s - %(end)s out of %(total)s) (Page %(page_number)s of "
 "%(total_pages)s)"
 msgstr ""
-"总计（%(start)s  -  %(end)s，%(total)s）（第%(page_number)s页，"
-"总%(total_pages)s页）"
+"总计（%(start)s  -  %(end)s，%(total)s）（第%(page_number)s页，总%(total_pages)s页）"
 
 #: templates/appearance/partials/list/header.html:14
 #: templates/appearance/partials/list/header.html:17

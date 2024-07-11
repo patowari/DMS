@@ -2,31 +2,29 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Marcin Lozynski <mlozynski@wp.pl>, 2024
-# edasmax <edasmax@gmail.com>, 2024
-# Przemysław Bodio <przemyslawbodio.dev@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # mic <winterfall24@gmail.com>, 2024
-#
+# Roberto Rosario, 2024
+# edasmax <edasmax@gmail.com>, 2024
+# Marcin Lozynski <mlozynski@wp.pl>, 2024
+# Przemysław Bodio <przemyslawbodio.dev@gmail.com>, 2024
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
+# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:46+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: mic <winterfall24@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
-"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
-"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:16 settings.py:10
 msgid "Views"
@@ -38,8 +36,8 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
-"Wybierz wpisy do usunięcia. Przytrzymaj Control, aby wybrać wiele wpisów. Po "
-"zakończeniu wyboru kliknij przycisk poniżej lub kliknij dwukrotnie listę, "
+"Wybierz wpisy do usunięcia. Przytrzymaj Control, aby wybrać wiele wpisów. Po"
+" zakończeniu wyboru kliknij przycisk poniżej lub kliknij dwukrotnie listę, "
 "aby aktywować akcję."
 
 #: generics.py:172
@@ -149,11 +147,11 @@ msgstr ""
 
 #: links.py:13
 msgid "View modes"
-msgstr "Widoki"
+msgstr ""
 
 #: literals.py:10
 msgid "Items"
-msgstr ""
+msgstr "Pozycje"
 
 #: literals.py:11
 msgid "List"
@@ -165,7 +163,7 @@ msgstr ""
 
 #: model_mixins.py:15 model_mixins.py:23
 msgid "App"
-msgstr ""
+msgstr "App"
 
 #: model_mixins.py:31
 #, python-format
@@ -178,11 +176,11 @@ msgstr ""
 
 #: model_mixins.py:34 models.py:24
 msgid "Value"
-msgstr ""
+msgstr "Wartość"
 
 #: models.py:10
 msgid "Namespace"
-msgstr ""
+msgstr "Przestrzeń nazw"
 
 #: models.py:14
 msgid "Full name of the view including the namespace."
@@ -190,11 +188,11 @@ msgstr ""
 
 #: models.py:15
 msgid "Name"
-msgstr ""
+msgstr "Nazwa"
 
 #: models.py:19
 msgid "User"
-msgstr ""
+msgstr "Użytkownik"
 
 #: models.py:23
 msgid "Stored value used to identify the display mode of the view."

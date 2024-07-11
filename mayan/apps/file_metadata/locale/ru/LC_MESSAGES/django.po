@@ -2,28 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Sergey Glita <gsv70@mail.ru>, 2024
 # Roberto Rosario, 2024
+# Sergey Glita <gsv70@mail.ru>, 2024
 # lilo.panic, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:45+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: admin.py:13 apps.py:169 serializers/file_metadata_serializers.py:16
 msgid "Label"
@@ -65,11 +63,12 @@ msgstr "Описание"
 #: apps.py:186 model_mixins.py:48 models.py:54
 #: serializers/file_metadata_serializers.py:10
 msgid "Arguments"
-msgstr ""
+msgstr "Аргументы"
 
 #: apps.py:192
 msgid ""
-"Whether or not this driver will be enabled by default for new document types."
+"Whether or not this driver will be enabled by default for new document "
+"types."
 msgstr ""
 
 #: apps.py:195
@@ -99,11 +98,11 @@ msgstr "Обработать метаданные файла"
 
 #: links.py:53
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: links.py:60
 msgid "File metadata driver setup"
-msgstr "Драйверы метаданных файлов для: %s"
+msgstr ""
 
 #: links.py:66
 msgid "File metadata processing per type"
@@ -123,11 +122,11 @@ msgstr "Количество атрибутов"
 
 #: model_mixins.py:58
 msgid "Full path"
-msgstr ""
+msgstr "Полный путь"
 
 #: model_mixins.py:60
 msgid "Path used to access the value of the file metadata entry."
-msgstr "Значение записи метаданных файла."
+msgstr ""
 
 #: models.py:26 models.py:64 models.py:165
 msgid "Driver"
@@ -162,11 +161,11 @@ msgstr ""
 
 #: models.py:70
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #: models.py:82 models.py:83
 msgid "Document type driver settings"
-msgstr "Настройки типа документа"
+msgstr ""
 
 #: models.py:96
 msgid "Normalized name of the file metadata entry."
@@ -245,7 +244,7 @@ msgstr "Ключ метаданных файла"
 #: serializers/document_file_serializers.py:70
 #: serializers/document_type_serializers.py:22
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
@@ -266,8 +265,8 @@ msgstr "Аргументы, передаваемые в драйверы."
 
 #: views/document_file_views.py:42
 msgid ""
-"File metadata are the attributes of the document's file. They can range from "
-"camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from"
+" camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
@@ -304,7 +303,8 @@ msgstr "Для этого драйвера нет доступных метад�
 
 #: views/document_file_views.py:89
 #, python-format
-msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid ""
+"File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr "Атрибуты метаданных файла для: %(document_file)s, драйвер: %(driver)s"
 
 #: views/document_file_views.py:111
@@ -326,31 +326,30 @@ msgstr[2] "Отправить выбранные файлы документа �
 msgstr[3] "Отправить выбранные файлы документа на обработку метаданных файла?"
 
 #: views/document_type_views.py:48
-#, fuzzy, python-format
-#| msgid ""
-#| "Edit file metadata driver \"%(file_metadata_driver)s\" settings for "
-#| "document type: %(document_type)s"
+#, python-format
 msgid ""
-"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document "
-"type: %(document_type)s"
-msgstr "Настройки метаданных файла для типа документа: %s"
+"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document"
+" type: %(document_type)s"
+msgstr ""
 
 #: views/document_type_views.py:84
-msgid "File metadata drivers extract embedded information from document files."
+msgid ""
+"File metadata drivers extract embedded information from document files."
 msgstr ""
 
 #: views/document_type_views.py:88
 msgid "No file metadata drivers available for this document type."
-msgstr "Для этого драйвера нет доступных метаданных файла."
+msgstr ""
 
 #: views/document_type_views.py:92
 #, python-format
 msgid "File metadata driver configuration for document type \"%s\"."
-msgstr "Настройки метаданных файла для типа документа: %s"
+msgstr ""
 
 #: views/document_type_views.py:106
 msgid "Submit all documents of a type for file metadata processing."
-msgstr "Отправить все документы указанного типа на обработку метаданных файла."
+msgstr ""
+"Отправить все документы указанного типа на обработку метаданных файла."
 
 #: views/document_type_views.py:134
 #, python-format
@@ -360,8 +359,8 @@ msgstr ""
 
 #: views/tool_views.py:19
 msgid ""
-"File metadata drivers extract embedded information from document files. File "
-"metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File"
+" metadata drivers are configure in code only."
 msgstr ""
 
 #: views/tool_views.py:24
@@ -370,7 +369,7 @@ msgstr ""
 
 #: views/tool_views.py:26
 msgid "File metadata drivers enabled and detected."
-msgstr "Драйверы метаданных файлов для: %s"
+msgstr ""
 
 #: views/view_mixins.py:34
 #, python-format

@@ -1,31 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Frédéric Sheedy <sheedf@gmail.com>, 2024
-# Yves Dubois <ydubois@gmail.com>, 2024
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
-#
+# Roberto Rosario, 2024
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
+# Yves Dubois <ydubois@gmail.com>, 2024
+# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:45+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Guillaume Trottier <gui.trottier@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:33 events.py:11 links.py:53 links.py:102 permissions.py:6
 #: settings.py:8 views/event_views.py:29
@@ -56,7 +55,8 @@ msgstr "Objet de l'action"
 msgid "Namespace"
 msgstr "Espace de nommage"
 
-#: apps.py:115 forms.py:16 forms.py:77 serializers/event_type_serializers.py:17
+#: apps.py:115 forms.py:16 forms.py:77
+#: serializers/event_type_serializers.py:17
 #: serializers/event_type_serializers.py:42
 msgid "Label"
 msgstr "Libellé"
@@ -87,8 +87,8 @@ msgid ""
 "The event list has been exported and is available for download using the "
 "link: %(download_url)s or from the downloads area (%(download_list_url)s)."
 msgstr ""
-"La liste des événements a été exportée et peut être téléchargée via le "
-"lien : %(download_url)s ou depuis la zone de téléchargement "
+"La liste des événements a été exportée et peut être téléchargée via le lien "
+": %(download_url)s ou depuis la zone de téléchargement "
 "(%(download_list_url)s)."
 
 #: events.py:15
@@ -133,7 +133,7 @@ msgstr "Abonnements aux événements de l'objet"
 
 #: links.py:78 links.py:82
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: links.py:87 models.py:87 views/notification_views.py:56
 msgid "Notifications"
@@ -307,8 +307,8 @@ msgstr "Événements de type : %s"
 
 #: views/export_views.py:28
 msgid ""
-"The process will be performed in the background. The exported events will be "
-"available in the downloads area."
+"The process will be performed in the background. The exported events will be"
+" available in the downloads area."
 msgstr ""
 "Le processus sera exécuté en arrière-plan. Les événements exportés seront "
 "disponibles dans la zone de téléchargement."
@@ -335,28 +335,24 @@ msgid "Error deleting notification \"%(instance)s\"; %(exception)s"
 msgstr ""
 
 #: views/notification_views.py:27
-#, fuzzy, python-format
-#| msgid "%(count)d notifications deleted successfully."
+#, python-format
 msgid "%(count)d notifications deleted successfully."
-msgstr "Abonnements aux événements mises à jour avec succès"
+msgstr ""
 
 #: views/notification_views.py:30
-#, fuzzy, python-format
-#| msgid "User \"%(object)s\" deleted successfully."
+#, python-format
 msgid "User \"%(object)s\" deleted successfully."
-msgstr "Abonnements aux événements mises à jour avec succès"
+msgstr "L'utilisateur \"%(object)s\" a été supprimé avec succès."
 
 #: views/notification_views.py:33
-#, fuzzy, python-format
-#| msgid "%(count)d notification deleted successfully."
+#, python-format
 msgid "%(count)d notification deleted successfully."
-msgstr "Abonnements aux événements mises à jour avec succès"
+msgstr ""
 
 #: views/notification_views.py:35
-#, fuzzy, python-format
-#| msgid "Delete the %(count)d selected notifications."
+#, python-format
 msgid "Delete the %(count)d selected notifications."
-msgstr "Marquer la notification sélectionnée comme lue?"
+msgstr ""
 
 #: views/notification_views.py:36
 #, python-format
@@ -364,10 +360,9 @@ msgid "Delete notification: %(object)s."
 msgstr ""
 
 #: views/notification_views.py:37
-#, fuzzy, python-format
-#| msgid "Delete the %(count)d selected notification."
+#, python-format
 msgid "Delete the %(count)d selected notification."
-msgstr "Marquer la notification sélectionnée comme lue?"
+msgstr ""
 
 #: views/notification_views.py:52
 msgid "Subscribe to global or object events to receive notifications."

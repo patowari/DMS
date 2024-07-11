@@ -2,29 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # Márcia Ferreira, 2024
-#
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
-"pt/)\n"
-"Language: pt\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
@@ -45,8 +43,8 @@ msgstr "Fila padrão?"
 #: apps.py:130
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
 
 #: apps.py:133
@@ -117,8 +115,8 @@ msgstr ""
 
 #: apps.py:210
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
 
 #: apps.py:213
@@ -159,14 +157,14 @@ msgstr "\"AMQPLAIN\" default. Defina o método de login personalizado do amqp."
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
 "Valor padrão: \"amqp://\". URL do intermediário padrão. Deve ser uma URL em "
-"forma de: \"transport://userid:password@hostname:port/virtual_host\". Apenas "
-"a parte de esquema (transport://) é requerida, o resto é opcional e "
+"forma de: \"transport://userid:password@hostname:port/virtual_host\". Apenas"
+" a parte de esquema (transport://) é requerida, o resto é opcional e "
 "determina os valores padrão específicos de transportes."
 
 #: settings.py:32
@@ -181,12 +179,13 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
 "Valor padrão: Sem back-end de resultado habilitado por padrão. O back-end "
-"usado para armazenar resultados de tarefas (tombstones). Consulte http://"
-"docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"usado para armazenar resultados de tarefas (tombstones). Consulte "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
 "backend. "
 
 #: tests/literals.py:11

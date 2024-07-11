@@ -1,29 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
-# Giovanni Tricarico <gtricarico92@gmail.com>, 2024
-# Roberto Rosario, 2024
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
+# Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
-#
+# Roberto Rosario, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Marco Camplese <marco.camplese.mc@gmail.com>, 2024\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: it\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: admin.py:24
 msgid "None"
@@ -237,10 +236,11 @@ msgid "Slug"
 msgstr "Titolo URL (Slug)"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
 msgstr ""
-"Fa sì che questo indice possa essere visibile e aggiornato quando i dati del "
-"documento cambiano."
+"Fa sì che questo indice possa essere visibile e aggiornato quando i dati del"
+" documento cambiano."
 
 #: models/index_template_models.py:57 models/index_template_models.py:97
 msgid "Index template"
@@ -282,11 +282,11 @@ msgstr ""
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
-"Selezionare questa opzione per questo specifico nodo quale contenitore per i "
-"documenti e non come un genitore per ulteriori nodi."
+"Selezionare questa opzione per questo specifico nodo quale contenitore per i"
+" documenti e non come un genitore per ulteriori nodi."
 
 #: models/index_template_models.py:174
 msgid "Link documents"
@@ -413,8 +413,8 @@ msgstr ""
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
 
 #: serializers/index_template_serializers.py:154
@@ -526,8 +526,8 @@ msgstr "Indici collegati al tipo di documento: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
 
 #: views/index_template_views.py:94

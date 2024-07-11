@@ -2,28 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Marcin Lozynski <mlozynski@wp.pl>, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
-# tomkolp, 2024
+# Marcin Lozynski <mlozynski@wp.pl>, 2024
 # edasmax <edasmax@gmail.com>, 2024
-#
+# tomkolp, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: edasmax <edasmax@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: tomkolp, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
-"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
-"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:23 permissions.py:6 settings.py:14
 msgid "Document downloads"
@@ -71,9 +69,9 @@ msgstr "Szybkie pobieranie"
 
 #: literals.py:7
 msgid ""
-"The document files have been compressed and are available for download using "
-"the link: {{ download_url }} or from the downloads area "
-"({{ download_list_url }})."
+"The document files have been compressed and are available for download using"
+" the link: {{ download_url }} or from the downloads area ({{ "
+"download_list_url }})."
 msgstr ""
 
 #: literals.py:13
@@ -105,8 +103,8 @@ msgstr ""
 
 #: settings.py:45
 msgid ""
-"Template for the document download message subject line. Can't include HTML. "
-"Available variables: {}"
+"Template for the document download message subject line. Can't include HTML."
+" Available variables: {}"
 msgstr ""
 
 #: views.py:32

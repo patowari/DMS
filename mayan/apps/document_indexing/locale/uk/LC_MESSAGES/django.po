@@ -1,31 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# olenchenko <olenchenko@gmail.com>, 2024
 # Сергій Гарашко, 2024
 # Leo Lado, 2024
-# olenchenko <olenchenko@gmail.com>, 2024
-#
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: olenchenko <olenchenko@gmail.com>, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: admin.py:24
 msgid "None"
@@ -241,8 +237,10 @@ msgid "Slug"
 msgstr "Слимак"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
-msgstr "Цей індекс стає видимим і оновлюється, коли змінюються дані документа."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
+msgstr ""
+"Цей індекс стає видимим і оновлюється, коли змінюються дані документа."
 
 #: models/index_template_models.py:57 models/index_template_models.py:97
 msgid "Index template"
@@ -271,8 +269,8 @@ msgstr "Індекс"
 #: models/index_template_models.py:155
 msgid "Enter a template to render. Use Django's default templating language."
 msgstr ""
-"Введіть шаблон для відображення. Використовуйте стандартну мову шаблонізації "
-"Django."
+"Введіть шаблон для відображення. Використовуйте стандартну мову шаблонізації"
+" Django."
 
 #: models/index_template_models.py:158
 msgid "Indexing expression"
@@ -281,12 +279,13 @@ msgstr "Індексація виразу"
 #: models/index_template_models.py:163
 msgid "Causes this node to be visible and updated when document data changes."
 msgstr ""
-"Примушує цей вузол бути видимим і оновлюватися під час зміни даних документа."
+"Примушує цей вузол бути видимим і оновлюватися під час зміни даних "
+"документа."
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
 "Позначте цей параметр, щоб цей вузол діяв як контейнер для документів, а не "
 "як батьківський для інших вузлів."
@@ -416,8 +415,8 @@ msgstr "Родич"
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
 "URL API-точки, яка показує список типів документів, пов'язаних з цим "
 "шаблоном індексу."
@@ -501,8 +500,8 @@ msgid ""
 "Assign the document type of this document to an index to have it appear in "
 "instances of those indexes organization units. "
 msgstr ""
-"Призначити тип документа для цього документа для індексу, щоб він з'явився в "
-"екземплярах тих індексів організаційних одиниць."
+"Призначити тип документа для цього документа для індексу, щоб він з'явився в"
+" екземплярах тих індексів організаційних одиниць."
 
 #: views/index_instance_views.py:147
 msgid "This document is not in any index"
@@ -538,8 +537,8 @@ msgstr "Індекси, пов’язані з типом документа: %s
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
 "Індекси автоматично групують документ за рівнями. Індекси визначаються за "
 "допомогою шаблону, маркери якого замінюються прямими властивостями "

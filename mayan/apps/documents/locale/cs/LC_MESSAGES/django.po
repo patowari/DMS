@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Jiri Fait <fait@orkasolutions.cz>, 2024
-# Michal Švábík <snadno@lehce.cz>, 2024
 # Jiří Podhorecký, 2024
-#
+# Michal Švábík <snadno@lehce.cz>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Jiří Podhorecký, 2024\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
-"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: apps.py:220 apps.py:1061 events.py:6 menus.py:8
 #: models/document_models.py:112 permissions.py:6 settings.py:33
@@ -111,11 +110,11 @@ msgstr "Nejnovější soubor"
 
 #: apps.py:950
 msgid "Return the active version of the document."
-msgstr "Určuje aktivní verzi dokumentu."
+msgstr ""
 
 #: apps.py:951
 msgid "Active version"
-msgstr "Verze dokumentu"
+msgstr ""
 
 #: apps.py:999
 msgid "Type"
@@ -143,11 +142,11 @@ msgstr "UUID plus originál"
 
 #: classes.py:92
 msgid ""
-"Generates an immutable, random UUID (RFC 4122) for each file and appends the "
-"original filename of the uploaded file."
+"Generates an immutable, random UUID (RFC 4122) for each file and appends the"
+" original filename of the uploaded file."
 msgstr ""
-"Pro každý soubor generuje neměnné, náhodné UUID (RFC 4122) a připojí původní "
-"název souboru nahraného souboru."
+"Pro každý soubor generuje neměnné, náhodné UUID (RFC 4122) a připojí původní"
+" název souboru nahraného souboru."
 
 #: dashboard_widgets.py:29
 msgid "Total pages"
@@ -467,19 +466,23 @@ msgstr "Vymazání transformací"
 msgid "Clone transformations"
 msgstr "Klonování transformací"
 
-#: links/document_file_page_links.py:43 links/document_version_page_links.py:62
+#: links/document_file_page_links.py:43
+#: links/document_version_page_links.py:62
 msgid "First page"
 msgstr "První strana"
 
-#: links/document_file_page_links.py:49 links/document_version_page_links.py:68
+#: links/document_file_page_links.py:49
+#: links/document_version_page_links.py:68
 msgid "Last page"
 msgstr "Poslední strana"
 
-#: links/document_file_page_links.py:57 links/document_version_page_links.py:76
+#: links/document_file_page_links.py:57
+#: links/document_version_page_links.py:76
 msgid "Previous page"
 msgstr "Předchozí strana"
 
-#: links/document_file_page_links.py:63 links/document_version_page_links.py:82
+#: links/document_file_page_links.py:63
+#: links/document_version_page_links.py:82
 msgid "Next page"
 msgstr "Další strana"
 
@@ -578,7 +581,8 @@ msgstr "Upravit"
 msgid "Remap pages"
 msgstr "Přemapovat stránky"
 
-#: links/document_version_page_links.py:96 models/document_version_models.py:54
+#: links/document_version_page_links.py:96
+#: models/document_version_models.py:54
 #: models/document_version_page_models.py:36 search.py:128
 msgid "Document version"
 msgstr "Verze dokumentu"
@@ -718,12 +722,12 @@ msgstr "Název souboru"
 
 #: models/document_file_models.py:80
 msgid ""
-"The document file's file mimetype. MIME types are a standard way to describe "
-"the format of a file, in this case the file format of the document. Some "
+"The document file's file mimetype. MIME types are a standard way to describe"
+" the format of a file, in this case the file format of the document. Some "
 "examples: \"text/plain\" or \"image/jpeg\". "
 msgstr ""
-"Mimetype souboru souboru dokumentu. Typy MIME jsou standardním způsobem, jak "
-"popsat formát souboru, v tomto případě formát souboru dokumentu. Několik "
+"Mimetype souboru souboru dokumentu. Typy MIME jsou standardním způsobem, jak"
+" popsat formát souboru, v tomto případě formát souboru dokumentu. Několik "
 "příkladů: „text/plain“ nebo „image/jpeg“."
 
 #: models/document_file_models.py:88
@@ -774,8 +778,8 @@ msgid ""
 "A short text identifying the document. By default, will be set to the "
 "filename of the first file uploaded to the document."
 msgstr ""
-"Krátký text identifikující dokument. Ve výchozím nastavení bude nastaveno na "
-"název souboru prvního souboru nahraného do dokumentu."
+"Krátký text identifikující dokument. Ve výchozím nastavení bude nastaveno na"
+" název souboru prvního souboru nahraného do dokumentu."
 
 #: models/document_models.py:67
 msgid "An optional short text describing a document."
@@ -857,7 +861,8 @@ msgstr "Argumenty backendu generátoru názvu souboru"
 
 #: models/document_type_models.py:66
 msgid ""
-"Amount of time after which documents of this type will be moved to the trash."
+"Amount of time after which documents of this type will be moved to the "
+"trash."
 msgstr "Doba, po které budou dokumenty tohoto typu přesunuty do koše."
 
 #: models/document_type_models.py:68
@@ -884,8 +889,8 @@ msgstr "Čsová jednotka smazání"
 
 #: models/document_type_models.py:87
 msgid ""
-"Delete documents that do not contain any files after a configured expiration "
-"interval."
+"Delete documents that do not contain any files after a configured expiration"
+" interval."
 msgstr ""
 
 #: models/document_type_models.py:89
@@ -894,9 +899,9 @@ msgstr ""
 
 #: models/document_type_models.py:93
 msgid ""
-"Time (in seconds) after which a document stub will be considered invalid and "
-"deleted, if pruning is enabled. This an optimization setting and should only "
-"be changed for specific circumstances."
+"Time (in seconds) after which a document stub will be considered invalid and"
+" deleted, if pruning is enabled. This an optimization setting and should "
+"only be changed for specific circumstances."
 msgstr ""
 
 #: models/document_type_models.py:97
@@ -1353,8 +1358,8 @@ msgstr ""
 #: settings.py:49
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document file page image cache files. Specify "
-"the size in bytes."
+"will start deleting the oldest document file page image cache files. Specify"
+" the size in bytes."
 msgstr ""
 "Prah, při kterém DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND začne "
 "odstraňovat nejstarší soubory mezipaměti obrazu stránky souboru. Zadejte "
@@ -1374,8 +1379,8 @@ msgid ""
 "Path to the Storage subclass to use when storing the cached document file "
 "page image files."
 msgstr ""
-"Cesta k podtřídě Storage, která se má použít při ukládání obrazových souborů "
-"stránky se soubory dokumentu v mezipaměti."
+"Cesta k podtřídě Storage, která se má použít při ukládání obrazových souborů"
+" stránky se soubory dokumentu v mezipaměti."
 
 #: settings.py:78
 msgid ""
@@ -1388,9 +1393,9 @@ msgstr "Maximální počet oblíbených dokumentů, na uživatele"
 
 #: settings.py:90
 msgid ""
-"Size of blocks to use when calculating the document file's checksum. A value "
-"of 0 disables the block calculation and the entire file will be loaded into "
-"memory."
+"Size of blocks to use when calculating the document file's checksum. A value"
+" of 0 disables the block calculation and the entire file will be loaded into"
+" memory."
 msgstr ""
 "Velikost bloků, které se mají použít při výpočtu kontrolního součtu souboru "
 "dokumentu. Hodnota 0 zakáže výpočet bloku a celý soubor bude načten do "
@@ -1406,15 +1411,15 @@ msgstr "Seznam podporovaných jazyků dokumentů. Ve formátu ISO639-3."
 
 #: settings.py:107
 msgid ""
-"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document version page image cache versions. "
+"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
+" will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 
 #: settings.py:116
 msgid ""
-"Path to the Storage subclass to use when storing the cached document version "
-"page image versions."
+"Path to the Storage subclass to use when storing the cached document version"
+" page image versions."
 msgstr ""
 "Cesta k podtřídě Úložiště, která se má použít při ukládání verzí obrázku "
 "stránky verze dokumentu v mezipaměti."
@@ -1503,8 +1508,8 @@ msgstr ""
 
 #: storages.py:21
 msgid ""
-"Unable to initialize the document file storage. Check the settings {} and {} "
-"for formatting errors."
+"Unable to initialize the document file storage. Check the settings {} and {}"
+" for formatting errors."
 msgstr ""
 "Nelze inicializovat úložiště souborů dokumentů. Zkontrolujte nastavení {} a "
 "{}, zda nedošlo k chybám ve formátování."
@@ -1576,8 +1581,8 @@ msgstr "Neznámý jazyk &quot;%s&quot;"
 
 #: views/document_file_page_views.py:53
 msgid ""
-"This could mean that the document file is of a format that is not supported, "
-"that it is corrupted, or that the upload process was interrupted. Use the "
+"This could mean that the document file is of a format that is not supported,"
+" that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 
@@ -1743,8 +1748,8 @@ msgstr ""
 #: views/document_file_views.py:400
 #, python-format
 msgid ""
-"Error cloning the page transformations for document file: %(document_file)s; "
-"%(error)s."
+"Error cloning the page transformations for document file: %(document_file)s;"
+" %(error)s."
 msgstr ""
 
 #: views/document_file_views.py:409 views/document_version_views.py:419
@@ -1781,13 +1786,13 @@ msgstr "Dokumenty typu: %s"
 #: views/document_type_views.py:76
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
-"system will depend on them. Define a document type for each type of physical "
-"document you intend to upload. Example document types: invoice, receipt, "
+"system will depend on them. Define a document type for each type of physical"
+" document you intend to upload. Example document types: invoice, receipt, "
 "manual, prescription, balance sheet."
 msgstr ""
-"Typy dokumentů jsou nejzákladnější konfigurační jednotky. Vše v systému bude "
-"záviset na nich. Definujte typ dokumentu pro každý typ fyzického dokumentu, "
-"který chcete odeslat. Příklady typů dokumentů: faktura, účtenka, příručka, "
+"Typy dokumentů jsou nejzákladnější konfigurační jednotky. Vše v systému bude"
+" záviset na nich. Definujte typ dokumentu pro každý typ fyzického dokumentu,"
+" který chcete odeslat. Příklady typů dokumentů: faktura, účtenka, příručka, "
 "předpis, rozvaha."
 
 #: views/document_type_views.py:82
@@ -1822,8 +1827,7 @@ msgstr ""
 
 #: views/document_type_views.py:206
 #, python-format
-msgid ""
-"Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
+msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr ""
 "Upravit rychlou jmenovku „%(filename)s“ z typu dokumentu „%(document_type)s“"
 
@@ -1996,7 +2000,8 @@ msgstr ""
 
 #: views/document_version_views.py:335
 #, python-format
-msgid "Transformation clear request processed for %(count)d document versions."
+msgid ""
+"Transformation clear request processed for %(count)d document versions."
 msgstr ""
 
 #: views/document_version_views.py:343
@@ -2155,8 +2160,8 @@ msgstr "Tisk: %s"
 
 #: views/recently_accessed_document_views.py:25
 msgid ""
-"This view will list the latest documents viewed or manipulated in any way by "
-"this user account."
+"This view will list the latest documents viewed or manipulated in any way by"
+" this user account."
 msgstr ""
 "V tomto zobrazení budou uvedeny nejnovější dokumenty, které byly tímto "
 "uživatelským účtem jakýmkoli způsobem prohlíženy nebo jakýmkoli jiným "

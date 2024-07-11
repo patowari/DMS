@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
-# Roberto Rosario, 2024
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
+# Roberto Rosario, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
-"bg/)\n"
-"Language: bg\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:19
@@ -52,8 +51,8 @@ msgid ""
 "Return the last workflow instance log entry. The log entry itself has the "
 "following fields: datetime, transition, user, and comment."
 msgstr ""
-"Върнете последния запис в дневника с етапа на работния поток. Самият запис в "
-"дневника има следните полета: дата, преход, потребител и коментар."
+"Върнете последния запис в дневника с етапа на работния поток. Самият запис в"
+" дневника има следните полета: дата, преход, потребител и коментар."
 
 #: apps.py:304
 msgid "Get last log entry"
@@ -252,7 +251,8 @@ msgstr "Типове документи"
 msgid "Delete"
 msgstr "Изтрийте"
 
-#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219 links.py:265
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
+#: links.py:265
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -439,8 +439,8 @@ msgstr "Прокси сървъри за изпълнение на работн�
 #: models/workflow_state_action_models.py:31
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do "
-"not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do"
+" not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -531,8 +531,8 @@ msgid ""
 "The state at which the workflow will start in. Only one state can be the "
 "initial state."
 msgstr ""
-"Състоянието, в което ще започне работният поток. Само едно състояние може да "
-"бъде първоначално състояние."
+"Състоянието, в което ще започне работният поток. Само едно състояние може да"
+" бъде първоначално състояние."
 
 #: models/workflow_state_models.py:48
 msgid "Initial"
@@ -655,15 +655,15 @@ msgstr "Полета за преход на работния поток"
 #: models/workflow_transition_models.py:28
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not "
-"return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be "
-"the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not"
+" return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be"
+" the logical true."
 msgstr ""
 "Условието, което ще определи дали този преход е активиран или не. Условието "
 "се оценява спрямо етапа на работния поток. Условия, които не връщат никаква "
-"стойност, които връщат логическото Python Не, или празен низ (&#39;&#39;) се "
-"считат за логически неверни, всяка друга стойност се счита за логически "
+"стойност, които връщат логическото Python Не, или празен низ (&#39;&#39;) се"
+" считат за логически неверни, всяка друга стойност се счита за логически "
 "вярна."
 
 #: models/workflow_transition_models.py:42
@@ -992,8 +992,8 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and "
-"{} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and"
+" {} for formatting errors."
 msgstr ""
 "Не може да се инициализира съхранението на визуализация на работния поток. "
 "Проверете настройките {} и {} за грешки във форматирането."
@@ -1004,8 +1004,8 @@ msgstr "Визуализации на работния поток"
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document "
-"execute those workflows. "
+"Assign workflows to the document type of this document to have this document"
+" execute those workflows. "
 msgstr ""
 "Задайте работни потоци към типа на документа, за да може този документ да "
 "изпълнява тези работни потоци."
@@ -1021,7 +1021,8 @@ msgstr "Работни потоци за документ: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is transitioned."
+"This view will show the state changes as a workflow instance is "
+"transitioned."
 msgstr ""
 "Този изглед ще покаже промените в състоянието при преминаване на етап на "
 "работен поток."
@@ -1056,11 +1057,10 @@ msgstr "Изберете"
 
 #: views/workflow_instance_views.py:226
 #, python-format
-msgid ""
-"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
-"Изберете преход за работен поток &quot;%(workflow)s&quot; на документ &quot;"
-"%(document)s&quot;"
+"Изберете преход за работен поток &quot;%(workflow)s&quot; на документ "
+"&quot;%(document)s&quot;"
 
 #: views/workflow_proxy_views.py:37
 msgid ""
@@ -1147,8 +1147,8 @@ msgstr "Редактиране на действие за състояние н�
 
 #: views/workflow_template_state_views.py:185
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or "
-"leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or"
+" leaves the state in which they reside."
 msgstr ""
 "Действията за състояние на работен поток са макроси, които се изпълняват, "
 "когато документите влизат или напускат състоянието, в което пребивават."
@@ -1212,8 +1212,8 @@ msgstr "Редактиране на поле за преход на работн
 
 #: views/workflow_template_transition_field_views.py:149
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This "
-"additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This"
+" additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "Полетата за преход на работния поток позволяват добавяне на данни в "
@@ -1234,8 +1234,8 @@ msgstr "Полета за преход на работния поток: %s"
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
 msgstr ""
-"Грешка при актуализиране на събитията задействащи прехода на работния поток; "
-"%s"
+"Грешка при актуализиране на събитията задействащи прехода на работния поток;"
+" %s"
 
 #: views/workflow_template_transition_trigger_views.py:46
 msgid "Workflow transition trigger events updated successfully"
@@ -1308,8 +1308,8 @@ msgstr "Работни потоци прикачени към този тип д
 #, python-format
 msgid "Error launching workflows for document \"%(instance)s\"; %(exception)s"
 msgstr ""
-"Грешка при стартиране на работни потоци за документ &quot;"
-"%(instance)s&quot;; %(exception)s"
+"Грешка при стартиране на работни потоци за документ "
+"&quot;%(instance)s&quot;; %(exception)s"
 
 #: views/workflow_template_views.py:80
 #, python-format
@@ -1346,8 +1346,8 @@ msgid ""
 "Workflows already launched or workflows not applicable to some documents "
 "when multiple documents are selected, will be silently ignored."
 msgstr ""
-"Вече стартираните работни потоци или работните потоци, които не са приложими "
-"за някои документи, когато са избрани множество документи, ще бъдат тихо "
+"Вече стартираните работни потоци или работните потоци, които не са приложими"
+" за някои документи, когато са избрани множество документи, ще бъдат тихо "
 "игнорирани."
 
 #: views/workflow_template_views.py:112
@@ -1414,8 +1414,8 @@ msgid ""
 "instances of that workflow for documents of the document type just removed."
 msgstr ""
 "Премахването на тип документ от работен поток също ще премахне всички "
-"работещи копия на този работен поток за документи от току-що премахнатия тип "
-"документ."
+"работещи копия на този работен поток за документи от току-що премахнатия тип"
+" документ."
 
 #: views/workflow_template_views.py:231
 #, python-format

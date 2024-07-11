@@ -1,32 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
-# Olivier W, 2024
-# Roberto Rosario, 2024
-# Guillaume Trottier <gui.trottier@gmail.com>, 2024
-# Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
+# Roberto Rosario, 2024
+# Olivier W, 2024
+# Guillaume Trottier <gui.trottier@gmail.com>, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
-#
+# Frédéric Sheedy <sheedf@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:34+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:59 apps.py:80
 msgid "Mailer"
@@ -42,8 +41,8 @@ msgstr "De"
 
 #: classes.py:44
 msgid ""
-"The sender's address. Some system will refuse to send messages if this value "
-"is not set."
+"The sender's address. Some system will refuse to send messages if this value"
+" is not set."
 msgstr ""
 "L'adresse de l'expéditeur. Certains systèmes refuseront d’envoyer des "
 "messages si cette valeur n’est pas définie."
@@ -74,8 +73,8 @@ msgstr "Profil de messagerie modifié"
 
 #: forms.py:60 forms.py:102
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon."
 msgstr ""
 "Adresse électronique du destinataire. Il peut s'agir de plusieurs adresses "
 "séparées par une virgule ou un point-virgule."
@@ -225,11 +224,11 @@ msgid ""
 "server. In most email documentation this type of TLS connection is referred "
 "to as SSL. It is generally used on port 465. If you are experiencing "
 "problems, see the explicit TLS setting \"Use TLS\". Note that \"Use TLS\" "
-"and \"Use SSL\" are mutually exclusive, so only set one of those settings to "
-"True."
+"and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
+" True."
 msgstr ""
-"Faut-il utiliser une connexion implicite TLS (sécurisée) pour dialoguer avec "
-"le serveur SMTP. Dans la plupart des documents électroniques, ce type de "
+"Faut-il utiliser une connexion implicite TLS (sécurisée) pour dialoguer avec"
+" le serveur SMTP. Dans la plupart des documents électroniques, ce type de "
 "connexion TLS est appelé SSL. Il est généralement utilisé sur le port 465. "
 "Si vous rencontrez des problèmes, consultez le paramètre TLS explicite "
 "\"Utiliser TLS\". Notez que \"Utiliser TLS\" et \"Utiliser SSL\" sont "
@@ -373,7 +372,8 @@ msgstr "Objet"
 #, python-format
 msgid "%(count)d document file queued for email delivery"
 msgstr ""
-"%(count)d fichier de document mis en file d'attente pour l'envoi par courriel"
+"%(count)d fichier de document mis en file d'attente pour l'envoi par "
+"courriel"
 
 #: views/document_file_views.py:20
 #, python-format
@@ -386,8 +386,8 @@ msgstr ""
 #, python-format
 msgid "%(count)d document file link queued for email delivery"
 msgstr ""
-"%(count)d lien de fichier de document mis en file d'attente pour l'envoi par "
-"courriel"
+"%(count)d lien de fichier de document mis en file d'attente pour l'envoi par"
+" courriel"
 
 #: views/document_file_views.py:35
 #, python-format
@@ -413,8 +413,8 @@ msgstr ""
 #, python-format
 msgid "%(count)d document version link queued for email delivery"
 msgstr ""
-"%(count)d lien de version de document mis en file d'attente pour l'envoi par "
-"courriel"
+"%(count)d lien de version de document mis en file d'attente pour l'envoi par"
+" courriel"
 
 #: views/document_version_views.py:37
 #, python-format
@@ -477,12 +477,13 @@ msgstr "Tester le profil de diffusion: %s"
 
 #: workflow_action_mixins.py:18
 msgid ""
-"Email address of the recipient. Can be multiple addresses separated by comma "
-"or semicolon. A template can be used to reference properties of the document."
+"Email address of the recipient. Can be multiple addresses separated by comma"
+" or semicolon. A template can be used to reference properties of the "
+"document."
 msgstr ""
 "Adresse courriel du destinataire. Peut être plusieurs adresses séparées par "
-"une virgule ou un point-virgule. Un modèle peut être utilisé pour référencer "
-"les propriétés du document."
+"une virgule ou un point-virgule. Un modèle peut être utilisé pour référencer"
+" les propriétés du document."
 
 #: workflow_action_mixins.py:27
 msgid "CC"
@@ -512,8 +513,8 @@ msgid ""
 "multiple addresses separated by comma or semicolon. A template can be used "
 "to reference properties of the document."
 msgstr ""
-"Adresse utilisée dans l'en-tête «Répondre à» lors de l'envoi du courriel. Il "
-"peut s'agir de plusieurs adresses séparées par une virgule ou un point-"
+"Adresse utilisée dans l'en-tête «Répondre à» lors de l'envoi du courriel. Il"
+" peut s'agir de plusieurs adresses séparées par une virgule ou un point-"
 "virgule. Un modèle peut être utilisé pour faire référence aux propriétés du "
 "document."
 

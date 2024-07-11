@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 settings.py:11
@@ -154,7 +153,8 @@ msgstr "Jelszó visszaállítása"
 #: templates/authentication/password_reset_complete.html:15
 msgid "Password reset complete! Click the link below to login."
 msgstr ""
-"A jelszó visszaállítása kész! Kattintson az alábbi linkre a bejelentkezéshez."
+"A jelszó visszaállítása kész! Kattintson az alábbi linkre a "
+"bejelentkezéshez."
 
 #: templates/authentication/password_reset_complete.html:17
 msgid "Login page"
@@ -201,8 +201,8 @@ msgstr "Jelszómódosítási kérés végrehajtva a %(count)d felhasználókon"
 
 #: views/authentication_views.py:386
 msgid ""
-"Changing the password of staff or super user accounts via the user interface "
-"is not allowed. Use administration tools to perform this operation."
+"Changing the password of staff or super user accounts via the user interface"
+" is not allowed. Use administration tools to perform this operation."
 msgstr ""
 "A személyzeti vagy szuper felhasználói fiókok jelszavának megváltoztatása a "
 "felhasználói felületen keresztül nem megengedett. A művelet végrehajtásához "

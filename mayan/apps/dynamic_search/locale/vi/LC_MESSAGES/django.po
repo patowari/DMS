@@ -1,25 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Thanh Long Hoàng <hoangthanhlong@gmail.com>, 2024\n"
-"Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/"
-"vi/)\n"
-"Language: vi\n"
+"Language-Team: Vietnamese (https://app.transifex.com/rosarior/teams/13584/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:36
@@ -218,8 +217,8 @@ msgstr ""
 #, python-format
 msgid ""
 "Query results exceed the current limit of %d. Results will not be reliable "
-"if multiple scopes are used. Narrow down the search criteria or increase the "
-"value of the results limit setting `%s`."
+"if multiple scopes are used. Narrow down the search criteria or increase the"
+" value of the results limit setting `%s`."
 msgstr ""
 
 #: scoped_queries.py:364
@@ -456,8 +455,8 @@ msgstr ""
 
 #: views/saved_resultset_views.py:68
 msgid ""
-"Saved resultsets are objects that store the results of a previous search for "
-"a determined amount of time."
+"Saved resultsets are objects that store the results of a previous search for"
+" a determined amount of time."
 msgstr ""
 
 #: views/saved_resultset_views.py:71

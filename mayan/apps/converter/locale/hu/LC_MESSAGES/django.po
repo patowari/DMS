@@ -1,25 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
-"hu/)\n"
-"Language: hu\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:37 events.py:6 permissions.py:6 queues.py:7 settings.py:22
@@ -99,8 +98,8 @@ msgstr "A \"%s\" egy érvénytelen bejegyzés."
 msgid ""
 "Decorations are visual elements that add contextual information to images."
 msgstr ""
-"A dekorációk olyan vizuális elemek, amelyek kontextuális információkat adnak "
-"a képekhez."
+"A dekorációk olyan vizuális elemek, amelyek kontextuális információkat adnak"
+" a képekhez."
 
 #: layers.py:14
 msgid "Decorations"
@@ -122,7 +121,8 @@ msgstr "Törlés"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "Tartalmak"
 
@@ -214,8 +214,7 @@ msgstr ""
 msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
-msgstr ""
-"Adja meg az átalakítás argumentumait YAML-szótárként. pl: {\"fok\": 180}"
+msgstr "Adja meg az átalakítás argumentumait YAML-szótárként. pl: {\"fok\": 180}"
 
 #: models.py:179
 msgid "Layer transformation"
@@ -319,8 +318,8 @@ msgstr "A grafikus konverziós háttérrendszer konfigurációs beállításai."
 #: settings.py:80
 msgid "Time in seconds that the browser should cache the supplied image."
 msgstr ""
-"Az az idő másodpercben, ameddig a böngészőnek gyorsítótárba kell helyeznie a "
-"mellékelt képet."
+"Az az idő másodpercben, ameddig a böngészőnek gyorsítótárba kell helyeznie a"
+" mellékelt képet."
 
 #: settings.py:88
 msgid ""
@@ -352,8 +351,8 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {} "
-"and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {}"
+" and {} for formatting errors."
 msgstr ""
 "Nem sikerült inicializálni a konverter eszköz gyorsítótárát. Ellenőrizze a "
 "beállításokat, valamint a {} és {} formázási hibákat."
@@ -777,8 +776,7 @@ msgstr "Kiválasztás"
 #: views/transformation_views.py:323
 #, python-format
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
-msgstr ""
-"Új \"%(layer)s\" réteg átalakítás választása a következőhöz: %(object)s"
+msgstr "Új \"%(layer)s\" réteg átalakítás választása a következőhöz: %(object)s"
 
 #: workflow_actions.py:29
 msgid "Pages"
@@ -786,12 +784,12 @@ msgstr "Oldalak"
 
 #: workflow_actions.py:32
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas and/"
-"or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas "
+"and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Oldalak, amelyekhez az új átalakítások hozzáadódnak. Vesszővel válassza el, "
-"és/vagy használjon kötőjelet a tartományokhoz. Hagyja üresen az összes oldal "
-"kiválasztásához."
+"és/vagy használjon kötőjelet a tartományokhoz. Hagyja üresen az összes oldal"
+" kiválasztásához."
 
 #: workflow_actions.py:39
 msgid "Transformation class"
@@ -812,8 +810,8 @@ msgid ""
 "available as {{ document_version_page }}."
 msgstr ""
 "Adjon meg egy sablont, amely YAML szótárként generálja az átalakítás "
-"argumentumait. pl.: {\"fokok\": 180}. A dokumentumverzió oldala "
-"{{ document_version_page }} néven érhető el."
+"argumentumait. pl.: {\"fokok\": 180}. A dokumentumverzió oldala {{ "
+"document_version_page }} néven érhető el."
 
 #: workflow_actions.py:63
 msgid "Add transformation"

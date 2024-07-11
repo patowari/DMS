@@ -2,28 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:46+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
-"uk/)\n"
-"Language: uk\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:16 settings.py:10
 msgid "Views"
@@ -45,8 +41,8 @@ msgid ""
 "the selection is complete, click the button below or double click the list "
 "to activate the action."
 msgstr ""
-"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати "
-"кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
+"Виберіть записи, які потрібно додати. Утримуйте клавішу Control, щоб вибрати"
+" кілька записів. Після завершення вибору натисніть кнопку нижче або двічі "
 "клацніть по списку, щоб активувати дію."
 
 #: generics.py:326
@@ -146,7 +142,7 @@ msgstr "Видалити об’єкт %(count)d ."
 
 #: links.py:13
 msgid "View modes"
-msgstr "Перегляди"
+msgstr ""
 
 #: literals.py:10
 msgid "Items"
@@ -162,7 +158,7 @@ msgstr ""
 
 #: model_mixins.py:15 model_mixins.py:23
 msgid "App"
-msgstr ""
+msgstr "Додаток"
 
 #: model_mixins.py:31
 #, python-format
@@ -175,11 +171,11 @@ msgstr ""
 
 #: model_mixins.py:34 models.py:24
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #: models.py:10
 msgid "Namespace"
-msgstr ""
+msgstr "Простір імен"
 
 #: models.py:14
 msgid "Full name of the view including the namespace."
@@ -187,11 +183,11 @@ msgstr ""
 
 #: models.py:15
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: models.py:19
 msgid "User"
-msgstr ""
+msgstr "Користувач"
 
 #: models.py:23
 msgid "Stored value used to identify the display mode of the view."

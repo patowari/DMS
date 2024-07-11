@@ -1,37 +1,35 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
+# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Olivier W, 2024
-# Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
-# 3d8c9ede7eec1ed3d454abc701cf2020_b5d10da <2cc9776490f3745e0e39b80d9b76a349_955453>, 2024
-# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
-# 0041b687dd284925c1885ba94464aacd_fde037b <fc746b00d74cefecce9698255909a24f_28512>, 2024
-# SadE54 <yannsuisini@gmail.com>, 2024
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
+# Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-#
+# 3d8c9ede7eec1ed3d454abc701cf2020_b5d10da <2cc9776490f3745e0e39b80d9b76a349_955453>, 2024
+# SadE54 <yannsuisini@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: SadE54 <yannsuisini@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:15
 msgid "Appearance (Bootstrap)"
-msgstr "Apparence"
+msgstr ""
 
 #: dependencies.py:8
 msgid "Lato font"
@@ -82,7 +80,8 @@ msgstr ""
 "L'emplacement est correct, mais votre compte ne dispose pas de "
 "l'autorisation requise pour y accéder."
 
-#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
+#: templates/500.html:5 templates/500.html:18
+#: templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Erreur du serveur"
 
@@ -107,9 +106,7 @@ msgid "Contact your system administrator."
 msgstr "Contactez votre administrateur système."
 
 #: templates/500.html:35
-msgid ""
-"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
-"\"FATAL\"."
+msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
 msgstr ""
 "Vérifiez les journaux pour les messages avec les balises \"ERROR\", "
 "\"CRITICAL\" ou \"FATAL\"."
@@ -145,15 +142,15 @@ msgid ""
 "href=\"%(link_mailing_list_url)s\"> Mailing list</a>."
 msgstr ""
 "Pour recevoir les dernières nouvelles, abonnez-vous à la <a "
-"class=\"new_window\" href=\"%(link_mailing_list_url)s\">liste de diffusion</"
-"a> ."
+"class=\"new_window\" href=\"%(link_mailing_list_url)s\">liste de "
+"diffusion</a> ."
 
 #: templates/appearance/about.html:66
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
-"a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
+"base</a>."
 msgstr ""
 
 #: templates/appearance/about.html:75

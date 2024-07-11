@@ -1,37 +1,35 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
-# Roberto Rosario, 2024
-# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@gmail.com>, 2024
 # Vítor Figueiró <vfigueiro@gmail.com>, 2024
+# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
+# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# Rodrigo de Almeida Sottomaior Macedo <sottomaiormacedotec@sottomaiormacedo.tech>, 2024
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Roberto Rosario, 2024
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Márcia Ferreira, 2024
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
-#
+# Márcia Ferreira, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
-"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/"
-"teams/13584/pt_BR/)\n"
-"Language: pt_BR\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Márcia Ferreira, 2024\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:37 events.py:6 permissions.py:6 queues.py:7 settings.py:22
 msgid "Converter"
@@ -69,7 +67,8 @@ msgstr ""
 
 #: dependencies.py:14
 msgid "Utility from the poppler-utils package used to inspect PDF files."
-msgstr "Utilidade do pacote poppler-utils usada para inspecionar arquivos PDF."
+msgstr ""
+"Utilidade do pacote poppler-utils usada para inspecionar arquivos PDF."
 
 #: dependencies.py:19
 msgid ""
@@ -131,7 +130,8 @@ msgstr "Excluir"
 msgid "Edit"
 msgstr "Editar"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "Recursos"
 
@@ -296,8 +296,8 @@ msgid ""
 "The threshold at which the CONVERTER_ASSET_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest asset cache files. Specify the size in bytes."
 msgstr ""
-"O limite no qual CONVERTER_ASSET_CACHE_STORAGE_BACKEND começará a excluir os "
-"arquivos de cache de ativos mais antigos. Especifique o tamanho em bytes."
+"O limite no qual CONVERTER_ASSET_CACHE_STORAGE_BACKEND começará a excluir os"
+" arquivos de cache de ativos mais antigos. Especifique o tamanho em bytes."
 
 #: settings.py:40
 msgid ""
@@ -362,11 +362,11 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {} "
-"and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {}"
+" and {} for formatting errors."
 msgstr ""
-"Não foi possível inicializar o armazenamento em cache do ativo do conversor. "
-"Verifique as configurações {} e {} para erros de formatação."
+"Não foi possível inicializar o armazenamento em cache do ativo do conversor."
+" Verifique as configurações {} e {} para erros de formatação."
 
 #: storages.py:34
 msgid "Assets cache"
@@ -780,8 +780,7 @@ msgstr "Selecionar"
 #: views/transformation_views.py:323
 #, python-format
 msgid "Select new layer \"%(layer)s\" transformation for: %(object)s"
-msgstr ""
-"Selecionar nova transformação de camada \"%(layer)s\"  para: %(object)s"
+msgstr "Selecionar nova transformação de camada \"%(layer)s\"  para: %(object)s"
 
 #: workflow_actions.py:29
 msgid "Pages"
@@ -789,8 +788,8 @@ msgstr "Páginas"
 
 #: workflow_actions.py:32
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas and/"
-"or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas "
+"and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Páginas às quais as novas transformações serão adicionadas. Separe por "
 "vírgulas e / ou use travessões para os intervalos. Deixe em branco para "

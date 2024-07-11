@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
+# Roberto Rosario, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
-"bg/)\n"
-"Language: bg\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:37 events.py:6 permissions.py:6 queues.py:7 settings.py:22
@@ -69,8 +68,8 @@ msgid ""
 "Utility from the popper-utils package used to extract pages from PDF files "
 "into PPM format images."
 msgstr ""
-"Помощна програма от пакета popper-utils, използвана за извличане на страници "
-"от PDF файлове в изображения във формат PPM."
+"Помощна програма от пакета popper-utils, използвана за извличане на страници"
+" от PDF файлове в изображения във формат PPM."
 
 #: events.py:10
 msgid "Asset created"
@@ -124,7 +123,8 @@ msgstr "Изтрийте"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: links.py:52 links.py:60 models.py:54 storages.py:21 views/asset_views.py:144
+#: links.py:52 links.py:60 models.py:54 storages.py:21
+#: views/asset_views.py:144
 msgid "Assets"
 msgstr "Активи"
 
@@ -217,8 +217,8 @@ msgid ""
 "Enter the arguments for the transformation as a YAML dictionary. ie: "
 "{\"degrees\": 180}"
 msgstr ""
-"Въведете аргументите за преобразуването като YAML речник. т.е.: {&quot;"
-"градуси&quot;: 180}"
+"Въведете аргументите за преобразуването като YAML речник. т.е.: "
+"{&quot;градуси&quot;: 180}"
 
 #: models.py:179
 msgid "Layer transformation"
@@ -296,8 +296,8 @@ msgstr ""
 msgid ""
 "Path to the Storage subclass to use when storing the cached asset files."
 msgstr ""
-"Път към подкласа Storage, който да се използва при съхраняване на кешираните "
-"файлове с активи."
+"Път към подкласа Storage, който да се използва при съхраняване на кешираните"
+" файлове с активи."
 
 #: settings.py:48
 msgid "Arguments to pass to the CONVERTER_ASSET_CACHE_STORAGE_BACKEND."
@@ -337,8 +337,8 @@ msgid ""
 "Time in seconds after which the image generation task will stop running and "
 "raise an error."
 msgstr ""
-"Време в секунди, след което задачата за генериране на изображения ще спре да "
-"се изпълнява и ще предизвика грешка."
+"Време в секунди, след което задачата за генериране на изображения ще спре да"
+" се изпълнява и ще предизвика грешка."
 
 #: settings.py:104
 msgid "Whether or not to load truncated image files."
@@ -354,8 +354,8 @@ msgstr ""
 
 #: storages.py:28
 msgid ""
-"Unable to initialize the converter asset cachestorage. Check the settings {} "
-"and {} for formatting errors."
+"Unable to initialize the converter asset cachestorage. Check the settings {}"
+" and {} for formatting errors."
 msgstr ""
 "Не може да се инициализира кеширането на активи на конвертора. Проверете "
 "настройките {} и {} за грешки при форматирането."
@@ -737,8 +737,8 @@ msgid ""
 "Create layer \"%(layer)s\" transformation \"%(transformation)s\" for: "
 "%(object)s"
 msgstr ""
-"Създайте слой &quot;%(layer)s&quot; трансформация &quot;"
-"%(transformation)s&quot; за: %(object)s"
+"Създайте слой &quot;%(layer)s&quot; трансформация "
+"&quot;%(transformation)s&quot; за: %(object)s"
 
 #: views/transformation_views.py:131
 #, python-format
@@ -782,8 +782,8 @@ msgstr "Страници"
 
 #: workflow_actions.py:32
 msgid ""
-"Pages to which the new transformations will be added. Separate by commas and/"
-"or use a dashes for a ranges. Leave blank to select all pages."
+"Pages to which the new transformations will be added. Separate by commas "
+"and/or use a dashes for a ranges. Leave blank to select all pages."
 msgstr ""
 "Страници, към които ще бъдат добавени новите трансформации. Разделете със "
 "запетаи и / или използвайте тирета за диапазони. Оставете празно, за да "

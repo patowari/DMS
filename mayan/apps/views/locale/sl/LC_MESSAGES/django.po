@@ -2,26 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Roberto Rosario, 2024
 # Jože Detečnik <joze.detecnik@3tav.si>, 2024
-#
+# Roberto Rosario, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:46+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2024\n"
-"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/"
-"sl/)\n"
-"Language: sl\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
+"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: apps.py:16 settings.py:10
 msgid "Views"
@@ -44,8 +42,8 @@ msgid ""
 "to activate the action."
 msgstr ""
 "Izberite vnose, ki jih želite dodati. Pridržite tipko Ctrl, da izberete več "
-"vnosov. Ko je izbor končan, kliknite spodnji gumb ali dvokliknite seznam, da "
-"aktivirate dejanje."
+"vnosov. Ko je izbor končan, kliknite spodnji gumb ali dvokliknite seznam, da"
+" aktivirate dejanje."
 
 #: generics.py:326
 msgid "Add all"
@@ -144,7 +142,7 @@ msgstr ""
 
 #: links.py:13
 msgid "View modes"
-msgstr "Pogledi"
+msgstr ""
 
 #: literals.py:10
 msgid "Items"
@@ -177,7 +175,7 @@ msgstr ""
 
 #: models.py:10
 msgid "Namespace"
-msgstr ""
+msgstr "Imenski prostor"
 
 #: models.py:14
 msgid "Full name of the view including the namespace."
@@ -185,7 +183,7 @@ msgstr ""
 
 #: models.py:15
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: models.py:19
 msgid "User"

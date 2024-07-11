@@ -1,26 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Ovadia Ovadia, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
-"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/"
-"teams/13584/he_IL/)\n"
-"Language: he_IL\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
-"1 == 0) ? 1: 2;\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: admin.py:24
 msgid "None"
@@ -232,7 +230,8 @@ msgid "Slug"
 msgstr "חילזון"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
 msgstr ""
 
 #: models/index_template_models.py:57 models/index_template_models.py:97
@@ -273,8 +272,8 @@ msgstr ""
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
 
 #: models/index_template_models.py:174
@@ -402,8 +401,8 @@ msgstr "אב (בהיררכיה)"
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
 
 #: serializers/index_template_serializers.py:154
@@ -514,12 +513,12 @@ msgstr ""
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
-"אינדקסים מקבצים מסמכים באופן אוטומטי לרמות היררכיה. אינדקסים מוגדרים באמצעות "
-"תבנית שהסמנים שלה מוחלפים במאפיינים ישירים של מסמכים כמו תווית או תיאור, או "
-"של מאפיינים מורחבים כמו מטא דאטה."
+"אינדקסים מקבצים מסמכים באופן אוטומטי לרמות היררכיה. אינדקסים מוגדרים באמצעות"
+" תבנית שהסמנים שלה מוחלפים במאפיינים ישירים של מסמכים כמו תווית או תיאור, או"
+" של מאפיינים מורחבים כמו מטא דאטה."
 
 #: views/index_template_views.py:94
 msgid "There are no index templates."

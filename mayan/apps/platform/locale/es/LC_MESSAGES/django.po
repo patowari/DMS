@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:15 permissions.py:6 settings.py:17
 msgid "Platform"
@@ -47,16 +46,16 @@ msgstr "Plantilla que muestra las colas de un trabajador."
 
 #: settings.py:23
 msgid ""
-"List of client backends to launch after startup. Use full dotted path to the "
-"client backend classes."
+"List of client backends to launch after startup. Use full dotted path to the"
+" client backend classes."
 msgstr ""
 "Lista de backends de cliente para iniciar después del arranque. Utilice la "
 "ruta de separada por puntos a las clases de backend del cliente."
 
 #: settings.py:30
 msgid ""
-"Arguments for the client backends. Use the client backend dotted path as the "
-"dictionary key for the arguments in dictionary format."
+"Arguments for the client backends. Use the client backend dotted path as the"
+" dictionary key for the arguments in dictionary format."
 msgstr ""
 "Argumentos para los backends del cliente. Utilice la ruta separada por "
 "puntos del backend del cliente como llave para los argumentos en formato de "

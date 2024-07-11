@@ -1,31 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
-# lilo.panic, 2024
-# Sergey Glita <gsv70@mail.ru>, 2024
-# Roberto Rosario, 2024
-# Alex Chigrin <chalex84@mail.ru>, 2024
-# Ilya Pavlov <spirkaa@gmail.com>, 2024
 # Panasoft, 2024
-#
+# Alex Chigrin <chalex84@mail.ru>, 2024
+# Roberto Rosario, 2024
+# Sergey Glita <gsv70@mail.ru>, 2024
+# lilo.panic, 2024
+# Ilya Pavlov <spirkaa@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Panasoft, 2024\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: admin.py:24
 msgid "None"
@@ -240,7 +238,8 @@ msgid "Slug"
 msgstr "Идентификатор"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
 msgstr ""
 "Делает индекс доступным для просмотра и обновляющимся при изменении данных "
 "документа."
@@ -285,8 +284,8 @@ msgstr ""
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
 "Этот узел будет контейнером для документов и не будет иметь дочерних узлов."
 
@@ -415,8 +414,8 @@ msgstr ""
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
 "URL-адрес API, показывающий список типов документов, связанных с этим "
 "шаблоном индекса."
@@ -534,8 +533,8 @@ msgstr "Индексы, связанные с типом документа: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
 "Индексы автоматически группируют документы по уровням. Индексы определяются "
 "с использованием шаблонов, маркеры которых заменяются прямыми свойствами "
@@ -566,7 +565,8 @@ msgid ""
 "updates in the index."
 msgstr ""
 "Только документы выбранных типов будут учитываться при построении индекса. "
-"Только события документов выбранных типов будут запускать обновление индекса."
+"Только события документов выбранных типов будут запускать обновление "
+"индекса."
 
 #: views/index_template_views.py:157
 #, python-format

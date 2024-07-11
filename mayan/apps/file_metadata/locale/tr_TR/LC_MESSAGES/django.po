@@ -2,25 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
+# emreunal <bywant@gmail.com>, 2024
+# abc Def <hdogan1974@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-# emreunal <bywant@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 11:15+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: emreunal <bywant@gmail.com>, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
-"teams/13584/tr_TR/)\n"
-"Language: tr_TR\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: admin.py:13 apps.py:169 serializers/file_metadata_serializers.py:16
@@ -63,11 +63,12 @@ msgstr "Açıklama"
 #: apps.py:186 model_mixins.py:48 models.py:54
 #: serializers/file_metadata_serializers.py:10
 msgid "Arguments"
-msgstr ""
+msgstr "Argümanlar"
 
 #: apps.py:192
 msgid ""
-"Whether or not this driver will be enabled by default for new document types."
+"Whether or not this driver will be enabled by default for new document "
+"types."
 msgstr ""
 
 #: apps.py:195
@@ -97,7 +98,7 @@ msgstr ""
 
 #: links.py:53
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #: links.py:60
 msgid "File metadata driver setup"
@@ -121,7 +122,7 @@ msgstr ""
 
 #: model_mixins.py:58
 msgid "Full path"
-msgstr ""
+msgstr "Tam yol"
 
 #: model_mixins.py:60
 msgid "Path used to access the value of the file metadata entry."
@@ -160,11 +161,11 @@ msgstr ""
 
 #: models.py:70
 msgid "Enabled"
-msgstr ""
+msgstr "Etkin"
 
 #: models.py:82 models.py:83
 msgid "Document type driver settings"
-msgstr "Belge türü ayarları"
+msgstr ""
 
 #: models.py:96
 msgid "Normalized name of the file metadata entry."
@@ -243,7 +244,7 @@ msgstr ""
 #: serializers/document_file_serializers.py:70
 #: serializers/document_type_serializers.py:22
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
@@ -262,8 +263,8 @@ msgstr ""
 
 #: views/document_file_views.py:42
 msgid ""
-"File metadata are the attributes of the document's file. They can range from "
-"camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from"
+" camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
@@ -291,7 +292,8 @@ msgstr ""
 
 #: views/document_file_views.py:89
 #, python-format
-msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid ""
+"File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 
 #: views/document_file_views.py:111
@@ -313,12 +315,13 @@ msgstr[1] ""
 #: views/document_type_views.py:48
 #, python-format
 msgid ""
-"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document "
-"type: %(document_type)s"
+"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document"
+" type: %(document_type)s"
 msgstr ""
 
 #: views/document_type_views.py:84
-msgid "File metadata drivers extract embedded information from document files."
+msgid ""
+"File metadata drivers extract embedded information from document files."
 msgstr ""
 
 #: views/document_type_views.py:88
@@ -341,8 +344,8 @@ msgstr ""
 
 #: views/tool_views.py:19
 msgid ""
-"File metadata drivers extract embedded information from document files. File "
-"metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File"
+" metadata drivers are configure in code only."
 msgstr ""
 
 #: views/tool_views.py:24

@@ -1,24 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Erjon Sulaj <erjon1282@gmail.com>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Erjon Sulaj <erjon1282@gmail.com>, 2024\n"
-"Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/"
-"sq/)\n"
-"Language: sq\n"
+"Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:33 events.py:11 links.py:53 links.py:102 permissions.py:6
@@ -50,7 +49,8 @@ msgstr ""
 msgid "Namespace"
 msgstr ""
 
-#: apps.py:115 forms.py:16 forms.py:77 serializers/event_type_serializers.py:17
+#: apps.py:115 forms.py:16 forms.py:77
+#: serializers/event_type_serializers.py:17
 #: serializers/event_type_serializers.py:42
 msgid "Label"
 msgstr "Etiketa"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: links.py:78 links.py:82
 msgid "Delete"
-msgstr ""
+msgstr "Fshij"
 
 #: links.py:87 models.py:87 views/notification_views.py:56
 msgid "Notifications"
@@ -296,8 +296,8 @@ msgstr ""
 
 #: views/export_views.py:28
 msgid ""
-"The process will be performed in the background. The exported events will be "
-"available in the downloads area."
+"The process will be performed in the background. The exported events will be"
+" available in the downloads area."
 msgstr ""
 
 #: views/export_views.py:51

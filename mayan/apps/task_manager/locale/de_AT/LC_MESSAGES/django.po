@@ -2,28 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
+# Berny <berny@bernhard-marx.de>, 2024
 # Marvin Haschker <marvin@haschker.me>, 2024
+# Roberto Rosario, 2024
 # Felix <felix.com@gmx.com>, 2024
 # Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
-# Berny <berny@bernhard-marx.de>, 2024
-# Roberto Rosario, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
-"teams/13584/de_AT/)\n"
-"Language: de_AT\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:32 permissions.py:6
@@ -45,13 +44,13 @@ msgstr "Standardwarteschlange"
 #: apps.py:130
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non "
-"critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non"
+" critical tasks."
 msgstr ""
 "Flüchtige Warteschlangen sind nicht persistent. Tasks einer flüchtigen "
 "Warteschlange gehen bei Neustart des Brokers verloren. Flüchtige "
-"Warteschlangen benötigen weniger Ressourcen und werden für unkritische Tasks "
-"verwendet."
+"Warteschlangen benötigen weniger Ressourcen und werden für unkritische Tasks"
+" verwendet."
 
 #: apps.py:133
 msgid "Is transient?"
@@ -94,8 +93,8 @@ msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
-"Maximaler residenter Speicher, den ein Worker ausführen kann, bevor er durch "
-"einen neuen Prozess ersetzt wird."
+"Maximaler residenter Speicher, den ein Worker ausführen kann, bevor er durch"
+" einen neuen Prozess ersetzt wird."
 
 #: apps.py:194
 msgid "Maximum memory per child"
@@ -127,11 +126,11 @@ msgstr "Nebenläufigkeit"
 
 #: apps.py:210
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers "
-"the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers"
+" the priority. The default value is 0."
 msgstr ""
-"Der Nice Wert bestimmt die Priorität eines Prozesses. Ein höherer Wert setzt "
-"die Priorität herunter. Standard ist 0."
+"Der Nice Wert bestimmt die Priorität eines Prozesses. Ein höherer Wert setzt"
+" die Priorität herunter. Standard ist 0."
 
 #: apps.py:213
 msgid "Nice level"
@@ -173,15 +172,13 @@ msgstr ""
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
-"transport://userid:password@hostname:port/virtual_host Only the scheme part "
-"(transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
+" transport://userid:password@hostname:port/virtual_host Only the scheme part"
+" (transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
-"Standard: \"amqp://\". Die Standard Broker-URL. Muss in folgender Form "
-"angegeben werden: transport://userid:password@hostname:port/virtual_host\n"
-"Nur das Schema (transport://) muss angegeben werden, der Rest ist optional "
-"und verweist auf die Standardwerte."
+"Standard: \"amqp://\". Die Standard Broker-URL. Muss in folgender Form angegeben werden: transport://userid:password@hostname:port/virtual_host\n"
+"Nur das Schema (transport://) muss angegeben werden, der Rest ist optional und verweist auf die Standardwerte."
 
 #: settings.py:32
 msgid ""
@@ -195,12 +192,14 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
-"userguide/configuration.html#result-backend"
+"task results (tombstones). Refer to "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 msgstr ""
 "Standard: Es ist standardmäßig kein Ergebnisbackend aktiviert. Das Backend "
-"speichert die Aufgabenergebnisse (tombstones). Siehe: http://docs."
-"celeryproject.org/en/v4.1.0/userguide/configuration.html#result-backend"
+"speichert die Aufgabenergebnisse (tombstones). Siehe: "
+"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
+"backend"
 
 #: tests/literals.py:11
 msgid "Test queue"

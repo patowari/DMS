@@ -2,31 +2,29 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Roberto Rosario, 2024
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
 # Márcia Ferreira, 2024
-#
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/"
-"teams/13584/pt_BR/)\n"
-"Language: pt_BR\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
-"1000000 == 0 ? 1 : 2;\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:53 apps.py:89 events.py:6 permissions.py:6 settings.py:11
 msgid "Document parsing"
@@ -34,7 +32,8 @@ msgstr "Análise de documentos"
 
 #: apps.py:113
 msgid "A generator returning the document file's pages parsed content."
-msgstr "Um gerador que devolve o conteúdo analisado das páginas do documento. "
+msgstr ""
+"Um gerador que devolve o conteúdo analisado das páginas do documento. "
 
 #: apps.py:114 links.py:26 links.py:49 models.py:27 search.py:18
 msgid "Content"
@@ -45,8 +44,8 @@ msgid ""
 "Utility from the poppler-utils package used to extract content from PDF "
 "files."
 msgstr ""
-"Utilidade do pacto de poppler-utils usada para extrair conteúdo de ficheiros "
-"PDF."
+"Utilidade do pacto de poppler-utils usada para extrair conteúdo de ficheiros"
+" PDF."
 
 #: events.py:10
 msgid "Document file parsed content deleted"
@@ -170,7 +169,8 @@ msgstr ""
 
 #: settings.py:24
 msgid ""
-"File path to poppler's pdftotext program used to extract text from PDF files."
+"File path to poppler's pdftotext program used to extract text from PDF "
+"files."
 msgstr ""
 "Caminho para o programa poppler pdftotext usado para extrair texto de "
 "arquivos PDF."
@@ -185,7 +185,8 @@ msgstr ""
 #: views.py:45
 #, python-format
 msgid "Content of %(count)d document versions deleted successfully."
-msgstr "Conteúdo de %(count)d das versões do documento eliminadas com sucesso."
+msgstr ""
+"Conteúdo de %(count)d das versões do documento eliminadas com sucesso."
 
 #: views.py:48
 #, python-format

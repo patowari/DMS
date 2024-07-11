@@ -1,26 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # José Manuel Caínzos <josem.cainzos@gmail.com>, 2024
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: admin.py:24
 msgid "None"
@@ -235,7 +234,8 @@ msgid "Slug"
 msgstr "Identificador"
 
 #: models/index_template_models.py:44
-msgid "Causes this index to be visible and updated when document data changes."
+msgid ""
+"Causes this index to be visible and updated when document data changes."
 msgstr ""
 "Hace que este índice sea visible y actualizado cuando los datos de "
 "documentos cambien."
@@ -268,8 +268,8 @@ msgstr "Índice"
 msgid "Enter a template to render. Use Django's default templating language."
 msgstr ""
 "Ingrese una plantilla para renderizar. Utilice el lenguaje de plantillas "
-"predeterminado de Django (https://docs.djangoproject.com/en/1.11/ref/"
-"templates/builtins/)"
+"predeterminado de Django "
+"(https://docs.djangoproject.com/en/1.11/ref/templates/builtins/)"
 
 #: models/index_template_models.py:158
 msgid "Indexing expression"
@@ -283,11 +283,11 @@ msgstr ""
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not "
-"as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not"
+" as a parent for further nodes."
 msgstr ""
-"Marque esta opción para que el nodo actúe como un contenedor de documentos y "
-"no como un padre para otros nodos secundarios."
+"Marque esta opción para que el nodo actúe como un contenedor de documentos y"
+" no como un padre para otros nodos secundarios."
 
 #: models/index_template_models.py:174
 msgid "Link documents"
@@ -414,11 +414,11 @@ msgstr "Padre"
 
 #: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this "
-"index template."
+"URL of the API endpoint showing the list document types associated with this"
+" index template."
 msgstr ""
-"URL de la API que muestra la lista de tipos de documentos asociados con esta "
-"plantilla de índice."
+"URL de la API que muestra la lista de tipos de documentos asociados con esta"
+" plantilla de índice."
 
 #: serializers/index_template_serializers.py:154
 msgid "Document types URL"
@@ -536,8 +536,8 @@ msgstr "Índices vinculados al tipo de documento: %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like "
-"label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like"
+" label or description, or that of extended properties like metadata."
 msgstr ""
 "Los índices agrupan el documento automáticamente en niveles. Los índices se "
 "definen utilizando una plantilla cuyos marcadores se reemplazan con "

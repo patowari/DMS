@@ -2,23 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Roberto Rosario, 2024
 # Mehdi Amani <MehdiAmani@toorintan.com>, 2024
-#
+# Roberto Rosario, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: Mehdi Amani <MehdiAmani@toorintan.com>, 2024\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
+"Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Persian (https://app.transifex.com/rosarior/teams/13584/fa/)\n"
-"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:16 settings.py:10
@@ -140,7 +140,7 @@ msgstr ""
 
 #: literals.py:10
 msgid "Items"
-msgstr ""
+msgstr "اقلام"
 
 #: literals.py:11
 msgid "List"
@@ -165,11 +165,11 @@ msgstr ""
 
 #: model_mixins.py:34 models.py:24
 msgid "Value"
-msgstr ""
+msgstr "ارزش"
 
 #: models.py:10
 msgid "Namespace"
-msgstr ""
+msgstr "فضای نام"
 
 #: models.py:14
 msgid "Full name of the view including the namespace."
@@ -177,11 +177,11 @@ msgstr ""
 
 #: models.py:15
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
 #: models.py:19
 msgid "User"
-msgstr ""
+msgstr "کاربر"
 
 #: models.py:23
 msgid "Stored value used to identify the display mode of the view."

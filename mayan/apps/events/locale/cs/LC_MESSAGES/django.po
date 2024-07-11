@@ -1,26 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
+# Jiri Fait <fait@orkasolutions.cz>, 2024
 # Michal Švábík <snadno@lehce.cz>, 2024
 # Jiří Podhorecký, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:45+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
-"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: apps.py:33 events.py:11 links.py:53 links.py:102 permissions.py:6
 #: settings.py:8 views/event_views.py:29
@@ -51,7 +51,8 @@ msgstr "Objekt činnosti"
 msgid "Namespace"
 msgstr "Jmenný prostor"
 
-#: apps.py:115 forms.py:16 forms.py:77 serializers/event_type_serializers.py:17
+#: apps.py:115 forms.py:16 forms.py:77
+#: serializers/event_type_serializers.py:17
 #: serializers/event_type_serializers.py:42
 msgid "Label"
 msgstr "Jmenovka"
@@ -125,7 +126,7 @@ msgstr "Předplatné událostí objektu"
 
 #: links.py:78 links.py:82
 msgid "Delete"
-msgstr ""
+msgstr "Odstranit"
 
 #: links.py:87 models.py:87 views/notification_views.py:56
 msgid "Notifications"
@@ -298,8 +299,8 @@ msgstr "Události typu: %s"
 
 #: views/export_views.py:28
 msgid ""
-"The process will be performed in the background. The exported events will be "
-"available in the downloads area."
+"The process will be performed in the background. The exported events will be"
+" available in the downloads area."
 msgstr ""
 "Proces bude probíhat na pozadí. Exportované události budou k dispozici v "
 "oblasti stahování."
@@ -324,28 +325,24 @@ msgid "Error deleting notification \"%(instance)s\"; %(exception)s"
 msgstr ""
 
 #: views/notification_views.py:27
-#, fuzzy, python-format
-#| msgid "%(count)d notifications deleted successfully."
+#, python-format
 msgid "%(count)d notifications deleted successfully."
-msgstr "Předplatné činností bylo úspěšně aktualizováno"
+msgstr ""
 
 #: views/notification_views.py:30
-#, fuzzy, python-format
-#| msgid "User \"%(object)s\" deleted successfully."
+#, python-format
 msgid "User \"%(object)s\" deleted successfully."
-msgstr "Předplatné činností bylo úspěšně aktualizováno"
+msgstr ""
 
 #: views/notification_views.py:33
-#, fuzzy, python-format
-#| msgid "%(count)d notification deleted successfully."
+#, python-format
 msgid "%(count)d notification deleted successfully."
-msgstr "Předplatné činností bylo úspěšně aktualizováno"
+msgstr ""
 
 #: views/notification_views.py:35
-#, fuzzy, python-format
-#| msgid "Delete the %(count)d selected notifications."
+#, python-format
 msgid "Delete the %(count)d selected notifications."
-msgstr "Označit vybrané oznámení jako přečtené?"
+msgstr ""
 
 #: views/notification_views.py:36
 #, python-format
@@ -353,16 +350,15 @@ msgid "Delete notification: %(object)s."
 msgstr ""
 
 #: views/notification_views.py:37
-#, fuzzy, python-format
-#| msgid "Delete the %(count)d selected notification."
+#, python-format
 msgid "Delete the %(count)d selected notification."
-msgstr "Označit vybrané oznámení jako přečtené?"
+msgstr ""
 
 #: views/notification_views.py:52
 msgid "Subscribe to global or object events to receive notifications."
 msgstr ""
-"Přihlaste se k odběru globálních událostí nebo událostí objektů a dostávejte "
-"oznámení."
+"Přihlaste se k odběru globálních událostí nebo událostí objektů a dostávejte"
+" oznámení."
 
 #: views/notification_views.py:55
 msgid "There are no notifications"

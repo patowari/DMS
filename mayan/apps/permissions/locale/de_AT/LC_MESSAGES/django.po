@@ -1,30 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Marvin Haschker <marvin@haschker.me>, 2024
+# Berny <berny@bernhard-marx.de>, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
-# Berny <berny@bernhard-marx.de>, 2024
 # Roberto Rosario, 2024
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
-"teams/13584/de_AT/)\n"
-"Language: de_AT\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:43 events.py:6 models.py:33 models.py:90 permissions.py:6
@@ -246,8 +245,8 @@ msgid ""
 "controls lists. Access controls list are permissions granted to a role for "
 "specific objects which its group members inherit."
 msgstr ""
-"Rolle sind Autorisierungseinheiten. Sie sind Benutzergruppen zugeordnet, die "
-"die Rollenberechtigungen für das gesamte System erben. Rollen können auch "
+"Rolle sind Autorisierungseinheiten. Sie sind Benutzergruppen zugeordnet, die"
+" die Rollenberechtigungen für das gesamte System erben. Rollen können auch "
 "Bestandteil von Zugriffsberechtigungslisten sein. "
 "Zugriffsberechtigungslisten beinhalten Berechtigungen für spezifische "
 "Objekte."

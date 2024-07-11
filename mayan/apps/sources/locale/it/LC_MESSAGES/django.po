@@ -1,29 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Translators:
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
-# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
-# Giovanni Tricarico <gtricarico92@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
+# Giovanni Tricarico <gtricarico92@gmail.com>, 2024
+# Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Roberto Rosario, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Language: it\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
 #: models.py:65 queues.py:9 settings.py:14 views/source_views.py:279
@@ -282,8 +281,8 @@ msgstr ""
 
 #: settings.py:29
 msgid ""
-"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting "
-"the oldest source cache files. Specify the size in bytes."
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
+" the oldest source cache files. Specify the size in bytes."
 msgstr ""
 
 #: settings.py:37
@@ -305,8 +304,8 @@ msgstr ""
 #: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process "
-"happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process"
+" happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -434,13 +433,13 @@ msgstr ""
 
 #: views/document_views.py:74
 msgid "New document queued for upload and will be available shortly."
-msgstr "Nuovo documento in coda per il caricamento e sarà disponibile a breve."
+msgstr ""
+"Nuovo documento in coda per il caricamento e sarà disponibile a breve."
 
 #: views/document_views.py:94
 #, python-format
 msgid "Upload a document of type \"%(document_type)s\" from source: %(source)s"
-msgstr ""
-"Carica un documento di tipo \"%(document_type)s\" dalla fonte: %(source)s"
+msgstr "Carica un documento di tipo \"%(document_type)s\" dalla fonte: %(source)s"
 
 #: views/source_views.py:76
 #, python-format
@@ -495,8 +494,8 @@ msgstr ""
 
 #: views/source_views.py:323
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources "
-"that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources"
+" that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -518,11 +517,11 @@ msgstr "Seleziona il tipo di documento"
 
 #: wizards.py:66
 msgid ""
-"No interactive document sources have been defined or none have been enabled, "
-"create one before proceeding."
+"No interactive document sources have been defined or none have been enabled,"
+" create one before proceeding."
 msgstr ""
-"Nessuna fonte interattiva dei documenti è stata definita o non ne sono state "
-"attivate."
+"Nessuna fonte interattiva dei documenti è stata definita o non ne sono state"
+" attivate."
 
 #: wizards.py:83
 #, python-format

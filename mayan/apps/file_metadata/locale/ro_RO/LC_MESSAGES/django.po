@@ -2,27 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Badea Gabriel <gcbadea@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Harald Ersch, 2024
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:45+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Harald Ersch, 2024\n"
-"Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/"
-"teams/13584/ro_RO/)\n"
-"Language: ro_RO\n"
+"Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
-"2:1));\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: admin.py:13 apps.py:169 serializers/file_metadata_serializers.py:16
 msgid "Label"
@@ -64,11 +62,12 @@ msgstr "Descriere"
 #: apps.py:186 model_mixins.py:48 models.py:54
 #: serializers/file_metadata_serializers.py:10
 msgid "Arguments"
-msgstr ""
+msgstr "Argumente"
 
 #: apps.py:192
 msgid ""
-"Whether or not this driver will be enabled by default for new document types."
+"Whether or not this driver will be enabled by default for new document "
+"types."
 msgstr ""
 
 #: apps.py:195
@@ -98,11 +97,11 @@ msgstr "Trimiteți pentru metadatele fișierului"
 
 #: links.py:53
 msgid "Edit"
-msgstr ""
+msgstr "Editați"
 
 #: links.py:60
 msgid "File metadata driver setup"
-msgstr "Drivere de metadate ale fișierelor"
+msgstr ""
 
 #: links.py:66
 msgid "File metadata processing per type"
@@ -122,11 +121,11 @@ msgstr "Număr de atribute"
 
 #: model_mixins.py:58
 msgid "Full path"
-msgstr ""
+msgstr "Calea completă"
 
 #: model_mixins.py:60
 msgid "Path used to access the value of the file metadata entry."
-msgstr "Valoarea intrării de metadate a fișierului."
+msgstr ""
 
 #: models.py:26 models.py:64 models.py:165
 msgid "Driver"
@@ -161,11 +160,11 @@ msgstr ""
 
 #: models.py:70
 msgid "Enabled"
-msgstr ""
+msgstr "Activat"
 
 #: models.py:82 models.py:83
 msgid "Document type driver settings"
-msgstr "Setările tipului de document"
+msgstr ""
 
 #: models.py:96
 msgid "Normalized name of the file metadata entry."
@@ -245,7 +244,7 @@ msgstr "Cheia metadatelor fișierului"
 #: serializers/document_file_serializers.py:70
 #: serializers/document_type_serializers.py:22
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
@@ -266,19 +265,19 @@ msgstr "Argumente de transmis driverului"
 
 #: views/document_file_views.py:42
 msgid ""
-"File metadata are the attributes of the document's file. They can range from "
-"camera information used to take a photo to the author that created a file. "
+"File metadata are the attributes of the document's file. They can range from"
+" camera information used to take a photo to the author that created a file. "
 "File metadata are set when the document's file was first created. File "
 "metadata attributes reside in the file itself. They are not the same as the "
 "document metadata, which are user defined and reside in the database."
 msgstr ""
-"Metadatele fișierelor sunt atributele fișierului documentului. Ele pot varia "
-"de la informațiile despre cameră folosite pentru a face o fotografie până la "
-"autorul care a creat un fișier. Metadatele fișierelor sunt setate când "
-"fișierul documentului a fost creat pentru prima dată. Atributele de metadate "
-"ale fișierelor se află în fișierul propriu-zis. Ele nu sunt aceleași ca și "
-"metadatele documentului, care sunt definite de utilizator și se află în baza "
-"de date."
+"Metadatele fișierelor sunt atributele fișierului documentului. Ele pot varia"
+" de la informațiile despre cameră folosite pentru a face o fotografie până "
+"la autorul care a creat un fișier. Metadatele fișierelor sunt setate când "
+"fișierul documentului a fost creat pentru prima dată. Atributele de metadate"
+" ale fișierelor se află în fișierul propriu-zis. Ele nu sunt aceleași ca și "
+"metadatele documentului, care sunt definite de utilizator și se află în baza"
+" de date."
 
 #: views/document_file_views.py:50
 msgid "No file metadata available."
@@ -296,8 +295,8 @@ msgid ""
 "document."
 msgstr ""
 "Acest lucru ar putea însemna că detectarea metadatelor fișierului nu s-a "
-"finalizat sau că driverul nu acceptă niciun câmp de metadate pentru tipul de "
-"fișier al acestui document."
+"finalizat sau că driverul nu acceptă niciun câmp de metadate pentru tipul de"
+" fișier al acestui document."
 
 #: views/document_file_views.py:85
 msgid "No file metadata available for this driver."
@@ -305,7 +304,8 @@ msgstr "Nu sunt disponibile metadate ale fișierului pentru acest driver."
 
 #: views/document_file_views.py:89
 #, python-format
-msgid "File metadata attributes for: %(document_file)s with driver: %(driver)s"
+msgid ""
+"File metadata attributes for: %(document_file)s with driver: %(driver)s"
 msgstr ""
 "Atributele metadate ale fișierului pentru: %(document_file)s cu driver: "
 "%(driver)s"
@@ -334,30 +334,25 @@ msgstr[2] ""
 "fișierelor?"
 
 #: views/document_type_views.py:48
-#, fuzzy, python-format
-#| msgid ""
-#| "Edit file metadata driver \"%(file_metadata_driver)s\" settings for "
-#| "document type: %(document_type)s"
+#, python-format
 msgid ""
-"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document "
-"type: %(document_type)s"
-msgstr "Editați setările metadatelor fișierului pentru tipul de document: %s"
+"Edit file metadata driver \"%(file_metadata_driver)s\" settings for document"
+" type: %(document_type)s"
+msgstr ""
 
 #: views/document_type_views.py:84
-msgid "File metadata drivers extract embedded information from document files."
+msgid ""
+"File metadata drivers extract embedded information from document files."
 msgstr ""
-"Driverele de metadate ale fișierelor extrag informații încorporate din "
-"fișierele document. Driverele de metadate ale fișierelor sunt configurate "
-"numai în cod."
 
 #: views/document_type_views.py:88
 msgid "No file metadata drivers available for this document type."
-msgstr "Nu sunt disponibile metadate ale fișierului pentru acest driver."
+msgstr ""
 
 #: views/document_type_views.py:92
 #, python-format
 msgid "File metadata driver configuration for document type \"%s\"."
-msgstr "Editați setările metadatelor fișierului pentru tipul de document: %s"
+msgstr ""
 
 #: views/document_type_views.py:106
 msgid "Submit all documents of a type for file metadata processing."
@@ -373,8 +368,8 @@ msgstr ""
 
 #: views/tool_views.py:19
 msgid ""
-"File metadata drivers extract embedded information from document files. File "
-"metadata drivers are configure in code only."
+"File metadata drivers extract embedded information from document files. File"
+" metadata drivers are configure in code only."
 msgstr ""
 "Driverele de metadate ale fișierelor extrag informații încorporate din "
 "fișierele document. Driverele de metadate ale fișierelor sunt configurate "
@@ -386,7 +381,7 @@ msgstr "Nu sunt disponibile drivere pentru metadate ale fișierelor."
 
 #: views/tool_views.py:26
 msgid "File metadata drivers enabled and detected."
-msgstr "Nu sunt disponibile drivere pentru metadate ale fișierelor."
+msgstr ""
 
 #: views/view_mixins.py:34
 #, python-format

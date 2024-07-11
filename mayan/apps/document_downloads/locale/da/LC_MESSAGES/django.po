@@ -2,18 +2,18 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-05-07 07:30+0000\n"
+"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Language-Team: Danish (https://app.transifex.com/rosarior/teams/13584/da/)\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:23 permissions.py:6 settings.py:14
@@ -62,9 +62,9 @@ msgstr ""
 
 #: literals.py:7
 msgid ""
-"The document files have been compressed and are available for download using "
-"the link: {{ download_url }} or from the downloads area "
-"({{ download_list_url }})."
+"The document files have been compressed and are available for download using"
+" the link: {{ download_url }} or from the downloads area ({{ "
+"download_list_url }})."
 msgstr ""
 
 #: literals.py:13
@@ -96,8 +96,8 @@ msgstr ""
 
 #: settings.py:45
 msgid ""
-"Template for the document download message subject line. Can't include HTML. "
-"Available variables: {}"
+"Template for the document download message subject line. Can't include HTML."
+" Available variables: {}"
 msgstr ""
 
 #: views.py:32
