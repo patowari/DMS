@@ -1,5 +1,6 @@
 from functools import cache
 import logging
+from pathlib import Path
 import sys
 import traceback
 
@@ -15,6 +16,8 @@ from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.organizations.settings import (
     setting_organization_url_base_path
 )
+from mayan.settings import BASE_DIR
+
 from .links import link_app_list
 
 logger = logging.getLogger(name=__name__)
@@ -23,11 +26,14 @@ logger = logging.getLogger(name=__name__)
 class MayanAppConfig(AppConfig):
     app_namespace = None
     app_url = None
+    has_app_translations = True
+    has_rest_api = False
+    has_tests = False
 
     @classmethod
     def get_all(cls):
         list_apps = [
-            i for i in apps.get_app_configs() if issubclass(i.__class__, MayanAppConfig)
+            app for app in apps.get_app_configs() if issubclass(app.__class__, MayanAppConfig)
         ]
 
         return sorted(
@@ -146,6 +152,12 @@ class MayanAppConfig(AppConfig):
 
     get_app_url.short_description = _(message='App URL')
 
+    def get_has_app_translations(self):
+        return getattr(self, 'has_app_translations', True)
+
+    def get_has_javascript_translations(self):
+        return getattr(self, 'has_javascript_translations', False)
+
     def get_has_rest_api(self):
         return getattr(self, 'has_rest_api', False)
 
@@ -165,6 +177,14 @@ class MayanAppConfig(AppConfig):
         return self.verbose_name
 
     get_verbose_name.short_description = _(message='Verbose name')
+
+    @property
+    def mayan_path(self):
+        return Path(self.path)
+
+    @property
+    def mayan_path_relative(self):
+        return self.mayan_path.relative_to(BASE_DIR.parent)
 
     def ready(self):
         logger.debug('Initializing app: %s', self.name)
