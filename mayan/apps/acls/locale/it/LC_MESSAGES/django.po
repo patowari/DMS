@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Paul Audhep <audhep@gmail.com>, 2024
@@ -10,20 +10,21 @@
 # Roberto Rosario, 2024
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Daniele Bortoluzzi <daniele@elkos.it>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Daniele Bortoluzzi <daniele@elkos.it>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
@@ -57,7 +58,7 @@ msgstr "ACL cancellata"
 msgid "ACL edited"
 msgstr "ACL modificata"
 
-#: forms.py:13 models.py:58 serializers.py:79 views.py:73
+#: forms.py:12 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Ruolo"
 
@@ -189,8 +190,8 @@ msgid ""
 msgstr ""
 "ACL sta per Access Control List ed è un metodo preciso per controllare "
 "l'accesso degli utenti agli oggetti nel sistema. Gli ACL consentono di "
-"concedere un'autorizzazione a un ruolo ma solo per un specifico oggetto o un"
-" set di oggetti."
+"concedere un'autorizzazione a un ruolo ma solo per un specifico oggetto o un "
+"set di oggetti."
 
 #: views.py:157
 #, python-format
@@ -239,8 +240,7 @@ msgid "Type of the object for which the access will be modified."
 msgstr "Tipo dell'oggetto per il quale l'accesso sarà modificato"
 
 #: workflow_actions.py:57
-msgid ""
-"Numeric identifier of the object for which the access will be modified."
+msgid "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 "Identificativo numerico dell'oggetto per il quale l'accesso sarà modificato"
 

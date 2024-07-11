@@ -1,28 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Hmayag Antonian <hmayag@freemail.gr>, 2024
 # pyrotech <anastasios@tutamail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
-msgid "Appearance"
+#: apps.py:15
+msgid "Appearance (Bootstrap)"
 msgstr "Εμφάνιση"
 
 #: dependencies.py:8
@@ -36,150 +36,6 @@ msgstr "Bootstrap"
 #: dependencies.py:16
 msgid "Bootswatch"
 msgstr "Bootswatch"
-
-#: dependencies.py:30
-msgid "Fancybox"
-msgstr "Fancybox"
-
-#: dependencies.py:34
-msgid "FontAwesome"
-msgstr "FontAwesome"
-
-#: dependencies.py:38
-msgid "jQuery"
-msgstr "jQuery"
-
-#: dependencies.py:42
-msgid "JQuery Form"
-msgstr "JQuery Form"
-
-#: dependencies.py:46
-msgid "JQuery Match Height"
-msgstr "JQuery Match Height"
-
-#: dependencies.py:50
-msgid "Select 2"
-msgstr "Select 2"
-
-#: dependencies.py:54
-msgid "Toastr"
-msgstr "Toastr"
-
-#: events.py:10
-msgid "Theme created"
-msgstr "Το θέμα δημιουργήθηκε"
-
-#: events.py:13
-msgid "Theme edited"
-msgstr "Το θέμα τροποποιήθηκε"
-
-#: events.py:16
-msgid "User theme edited"
-msgstr ""
-
-#: links.py:26
-msgid "Theme settings"
-msgstr "Ρυθμίσεις θέματος"
-
-#: links.py:33
-msgid "Edit theme settings"
-msgstr "Τροποποίηση ρυθμίσεων θέματος"
-
-#: links.py:39 views.py:34
-msgid "Create new theme"
-msgstr "Δημιουργία νέου θέματος"
-
-#: links.py:44
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#: links.py:48
-msgid "Edit"
-msgstr "Τροποποίηση"
-
-#: links.py:52 links.py:60 models.py:33 views.py:103
-msgid "Themes"
-msgstr "Θέματα"
-
-#: models.py:20
-msgid "A short text describing the theme."
-msgstr "Σύντομη περιγραφή θέματος."
-
-#: models.py:21
-msgid "Label"
-msgstr "Ετικέτα"
-
-#: models.py:25
-msgid ""
-"The CSS stylesheet to change the appearance of the different user interface "
-"elements."
-msgstr ""
-"Το CSS stylesheet για αλλαγή της εμφάνισης των διαφόρων στοιχείων διεπαφής "
-"χρήστη."
-
-#: models.py:27
-msgid "Stylesheet"
-msgstr "Stylesheet"
-
-#: models.py:32 models.py:69
-msgid "Theme"
-msgstr "Θέμα"
-
-#: models.py:65
-msgid "User"
-msgstr "Χρήστης"
-
-#: models.py:73
-msgid "User theme setting"
-msgstr "Ρύθμιση θέματος χρήστη"
-
-#: models.py:74
-msgid "User theme settings"
-msgstr "Ρυθμίσεις θέματος χρήστη"
-
-#: permissions.py:10
-msgid "Create new themes"
-msgstr "Δημιουργία νέων θεμάτων"
-
-#: permissions.py:13
-msgid "Delete themes"
-msgstr "Διαγραφή θεμάτων"
-
-#: permissions.py:16
-msgid "Edit themes"
-msgstr "Τροποποίηση θεμάτων"
-
-#: permissions.py:19
-msgid "View existing themes"
-msgstr "Προβολή υπαρχόντων θεμάτων"
-
-#: settings.py:18
-msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
-
-#: settings.py:24
-msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "Μέγιστος αριθμός χαρακτήρων που θα προβληθών ως τίτλος προβολής."
-
-#: settings.py:34
-msgid "Position where the system messages will be displayed."
-msgstr ""
-
-#: settings.py:40
-msgid ""
-"Delay in milliseconds after which the menus will be checked for updates."
-msgstr ""
-
-#: settings.py:47
-msgid ""
-"Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
-
-#: settings.py:54
-msgid ""
-"Time in milliseconds after which a throttled request will clear allowing an "
-"additional request to be performed."
-msgstr ""
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -217,8 +73,7 @@ msgstr ""
 "Η τοποθεσία είναι σωστή, όμως ο λογαριασμός σας δεν έχει το απαιτούμενο "
 "δικαίωμα πρόσβασης."
 
-#: templates/500.html:5 templates/500.html:18
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Σφάλμα διακομηστή"
 
@@ -243,7 +98,9 @@ msgid "Contact your system administrator."
 msgstr "Επικοινωνήστε με τον διαχειριστή του συστήματος."
 
 #: templates/500.html:35
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
 "Ελέγξτε τις καταγραφές - logs - για μηνύματα με τις ακόλουθες επισημάνσεις "
 "\"ERROR\", \"CRITICAL\" or \"FATAL\"."
@@ -283,8 +140,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -402,7 +259,7 @@ msgstr ""
 msgid "Total: %(total)s"
 msgstr "Σύνολο: %(total)s"
 
-#: templates/appearance/partials/list/no_results.html:18
+#: templates/appearance/partials/list/no_results.html:22
 msgid "No results"
 msgstr "Κανένα αποτέλεσμα"
 
@@ -424,26 +281,18 @@ msgstr "Αναγνωριστικό"
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: templates/appearance/partials/list/toolbar.html:14
+#: templates/appearance/partials/list/toolbar.html:15
 msgid "Select/Deselect all"
 msgstr "Επιλογή/Αποεπιλογή όλων"
 
-#: templates/appearance/partials/list/toolbar.html:18
-msgid "Toggle list display mode"
-msgstr "Εναλλαγή προβολής λίστας"
-
-#: templates/appearance/partials/list/toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:28
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr "Επιλέξτε αντικείμενα για την ενεργοποίηση μαζικών ενεργειών."
 
-#: templates/appearance/partials/list/toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:32
 msgid "Bulk actions"
 msgstr "Μαζικές ενέργειες"
-
-#: templates/appearance/partials/list/toolbar.html:38
-msgid "Toggle Dropdown"
-msgstr "Εναλλαγή αναδυόμενης λίστας"
 
 #: templates/appearance/partials/sidebar.html:17
 msgid "Object"
@@ -453,49 +302,34 @@ msgstr "Αντικείμενο"
 msgid "Open main menu"
 msgstr "Άνοιγμα κεντρικού μενού"
 
-#: templates/appearance/root.html:51
+#: templates/appearance/root.html:53
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: templates/appearance/root.html:59
+#: templates/appearance/root.html:61
 msgid "Server communication error"
 msgstr "Σφάλμα επικοινωνίας διακομιστή"
 
-#: templates/appearance/root.html:61
+#: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
 msgstr "Ελέγξτε την σύνδεση δικτύου σας και δοκιμάστε ξανά σε λίγα λεπτά."
 
-#: templatetags/appearance_tags.py:77
-msgid "None"
-msgstr "Κανένα"
+#: templates/navigation/app/list_toolbar.html:10
+msgid "Toggle list display mode"
+msgstr "Εναλλαγή προβολής λίστας"
 
-#: views.py:59
-#, python-format
-msgid "Delete theme: %s"
-msgstr "Διαγραφή θέματος: %s"
-
-#: views.py:76
-#, python-format
-msgid "Edit theme: %s"
-msgstr "Τροποποίηση θέματος: %s"
-
-#: views.py:97
-msgid ""
-"Themes allow changing the visual appearance without requiring code changes."
-msgstr ""
-"Τα θέματα επιτρέπουν την αλλαγή της εμφάνισης χωρίς να απαιτείται  αλλαγή "
-"στον κώδικα."
-
-#: views.py:101
-msgid "There are no themes"
-msgstr "Δεν υπάρχουν διαθέσιμα θέματα"
-
-#: views.py:127
-#, python-format
-msgid "Theme settings for user: %s"
+#: templates/navigation/app/list_toolbar.html:25
+msgid "Sort by column"
 msgstr ""
 
-#: views.py:150
-#, python-format
-msgid "Edit theme settings for user: %s"
+#: templates/navigation/app/list_toolbar.html:26
+msgid "--- Clear ---"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:29
+msgid "(ascending)"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:31
+msgid "(descending)"
 msgstr ""

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # yan songwei <yansw@vip.163.com>, 2024
@@ -10,19 +10,20 @@
 # xisafe <root@xisafe.com>, 2024
 # Roberto Rosario, 2024
 # Leon Chu, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
+"teams/13584/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: admin.py:24
@@ -30,7 +31,7 @@ msgid "None"
 msgstr "没有"
 
 #: admin.py:26 links.py:88 models/index_template_models.py:50
-#: serializers.py:315
+#: serializers/index_template_serializers.py:196
 msgid "Document types"
 msgstr "文件類型"
 
@@ -42,7 +43,8 @@ msgstr "文档索引"
 msgid "Level"
 msgstr "级别"
 
-#: apps.py:163 apps.py:194 serializers.py:20 serializers.py:60
+#: apps.py:163 apps.py:194 serializers/index_instance_serializers.py:12
+#: serializers/index_instance_serializers.py:52
 msgid "Depth"
 msgstr ""
 
@@ -74,29 +76,29 @@ msgstr "索引範例已建立"
 msgid "Index template edited"
 msgstr "索引範例已編輯"
 
-#: forms.py:19 forms.py:24
+#: forms.py:17 forms.py:22
 msgid "Namespace"
 msgstr "命名空间"
 
-#: forms.py:29 models/index_template_models.py:35
+#: forms.py:27 models/index_template_models.py:35
 msgid "Label"
 msgstr "標籤"
 
-#: forms.py:34 models/index_template_models.py:46
+#: forms.py:32 models/index_template_models.py:46
 #: models/index_template_models.py:166
 msgid "Enabled"
 msgstr "啟用"
 
-#: forms.py:48
+#: forms.py:46
 msgid "Index templates to be queued for rebuilding."
 msgstr "索引範例將被加入重建隊列"
 
-#: forms.py:49 links.py:37 models/index_template_models.py:58
+#: forms.py:47 links.py:37 models/index_template_models.py:58
 #: views/index_template_views.py:95
 msgid "Index templates"
 msgstr "索引模板"
 
-#: forms.py:64
+#: forms.py:62
 msgid "Template"
 msgstr "範本"
 
@@ -233,8 +235,7 @@ msgid "Slug"
 msgstr "标称"
 
 #: models/index_template_models.py:44
-msgid ""
-"Causes this index to be visible and updated when document data changes."
+msgid "Causes this index to be visible and updated when document data changes."
 msgstr "使文档数据更改时，此索引可见并更新。"
 
 #: models/index_template_models.py:57 models/index_template_models.py:97
@@ -275,8 +276,8 @@ msgstr "使文档数据更改时，此节点可见并更新。"
 
 #: models/index_template_models.py:171
 msgid ""
-"Check this option to have this node act as a container for documents and not"
-" as a parent for further nodes."
+"Check this option to have this node act as a container for documents and not "
+"as a parent for further nodes."
 msgstr "检查当前节点是否为文档容器，而不是作为别处节点的父节点。"
 
 #: models/index_template_models.py:174
@@ -355,91 +356,102 @@ msgstr "文件UUID"
 msgid "Document checksum"
 msgstr "文件校驗碼"
 
-#: serializers.py:23 serializers.py:69
+#: serializers/index_instance_serializers.py:15
+#: serializers/index_instance_serializers.py:61
 msgid "Node count"
 msgstr ""
 
-#: serializers.py:27 serializers.py:298
+#: serializers/index_instance_serializers.py:19
+#: serializers/index_template_serializers.py:179
 msgid "Nodes URL"
 msgstr ""
 
-#: serializers.py:30 serializers.py:76 serializers.py:146 serializers.py:209
-#: serializers.py:309
+#: serializers/index_instance_serializers.py:22
+#: serializers/index_instance_serializers.py:68
+#: serializers/index_template_serializers.py:27
+#: serializers/index_template_serializers.py:90
+#: serializers/index_template_serializers.py:190
 msgid "URL"
 msgstr "网址"
 
-#: serializers.py:57
+#: serializers/index_instance_serializers.py:49
 msgid "Children URL"
 msgstr ""
 
-#: serializers.py:63
+#: serializers/index_instance_serializers.py:55
 msgid "Documents URL"
 msgstr ""
 
-#: serializers.py:66 serializers.py:140 serializers.py:200
+#: serializers/index_instance_serializers.py:58
+#: serializers/index_template_serializers.py:21
+#: serializers/index_template_serializers.py:81
 msgid "Index URL"
 msgstr ""
 
-#: serializers.py:73 serializers.py:143 serializers.py:206
+#: serializers/index_instance_serializers.py:65
+#: serializers/index_template_serializers.py:24
+#: serializers/index_template_serializers.py:87
 msgid "Parent URL"
 msgstr ""
 
-#: serializers.py:137 serializers.py:197
+#: serializers/index_template_serializers.py:18
+#: serializers/index_template_serializers.py:78
 msgid "Children"
 msgstr ""
 
-#: serializers.py:203
+#: serializers/index_template_serializers.py:84
 msgid "Parent"
 msgstr ""
 
-#: serializers.py:271
+#: serializers/index_template_serializers.py:152
 msgid ""
-"URL of the API endpoint showing the list document types associated with this"
-" index template."
+"URL of the API endpoint showing the list document types associated with this "
+"index template."
 msgstr "顯示於文件種類於索引範例的API節點的URL"
 
-#: serializers.py:273
+#: serializers/index_template_serializers.py:154
 msgid "Document types URL"
 msgstr ""
 
-#: serializers.py:279
+#: serializers/index_template_serializers.py:160
 msgid "URL of the API endpoint to add document types to this index template."
 msgstr ""
 
-#: serializers.py:281
+#: serializers/index_template_serializers.py:162
 msgid "Document types add URL"
 msgstr ""
 
-#: serializers.py:287
+#: serializers/index_template_serializers.py:168
 msgid ""
 "URL of the API endpoint to remove document types from this index template."
 msgstr ""
 
-#: serializers.py:289
+#: serializers/index_template_serializers.py:170
 msgid "Document types remove URL"
 msgstr ""
 
-#: serializers.py:294
+#: serializers/index_template_serializers.py:175
 msgid "Index template root node ID"
 msgstr ""
 
-#: serializers.py:301
+#: serializers/index_template_serializers.py:182
 msgid "Rebuild URL"
 msgstr ""
 
-#: serializers.py:305
+#: serializers/index_template_serializers.py:186
 msgid "Reset URL"
 msgstr ""
 
-#: serializers.py:353
+#: serializers/index_template_serializers.py:234
 msgid "Primary key of the document type to add to the index template."
 msgstr ""
 
-#: serializers.py:355 serializers.py:365
+#: serializers/index_template_serializers.py:236
+#: serializers/index_template_serializers.py:246
 msgid "Document type ID"
 msgstr ""
 
-#: serializers.py:363
+#: serializers/index_template_serializers.py:244
 msgid "Primary key of the document type to remove from the index template."
 msgstr ""
 
@@ -501,8 +513,8 @@ msgstr "連結到文件類型的索引 : %s"
 #: views/index_template_views.py:88
 msgid ""
 "Indexes group document automatically into levels. Indexes are defined using "
-"template whose markers are replaced with direct properties of documents like"
-" label or description, or that of extended properties like metadata."
+"template whose markers are replaced with direct properties of documents like "
+"label or description, or that of extended properties like metadata."
 msgstr ""
 
 #: views/index_template_views.py:94
@@ -527,7 +539,9 @@ msgid ""
 "Only the documents of the types selected will be shown in the index when "
 "built. Only the events of the documents of the types select will trigger "
 "updates in the index."
-msgstr "构建时，只有所选类型的文档才会显示在索引中。只有所选类型的文档的事件才会触发索引中的更新。"
+msgstr ""
+"构建时，只有所选类型的文档才会显示在索引中。只有所选类型的文档的事件才会触发"
+"索引中的更新。"
 
 #: views/index_template_views.py:157
 #, python-format

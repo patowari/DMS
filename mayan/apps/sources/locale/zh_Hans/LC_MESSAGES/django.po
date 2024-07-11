@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Leon Chu, 2024
 # yan songwei <yansw@vip.163.com>, 2024
 # Ford Guo <agile.guo@gmail.com>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
+"Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/"
+"teams/13584/zh-Hans/)\n"
+"Language: zh-Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh-Hans\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
@@ -37,7 +38,9 @@ msgid ""
 "Document sources are the way in which new documents are feed to Mayan EDMS, "
 "create at least a web form source to be able to upload documents from a "
 "browser."
-msgstr "文档源是将新文档提供给Mayan EDMS的方式，至少创建一个网页表单源以便能够从浏览器上传文档。"
+msgstr ""
+"文档源是将新文档提供给Mayan EDMS的方式，至少创建一个网页表单源以便能够从浏览"
+"器上传文档。"
 
 #: apps.py:135
 msgid ""
@@ -65,32 +68,32 @@ msgstr ""
 msgid "Source edited"
 msgstr ""
 
-#: forms.py:25
+#: forms.py:24
 msgid "An optional comment to explain the upload."
 msgstr ""
 
-#: forms.py:26
+#: forms.py:25
 msgid "Comment"
 msgstr "评论"
 
-#: forms.py:32
+#: forms.py:31
 msgid "Action"
 msgstr "操作"
 
-#: forms.py:33
+#: forms.py:32
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr ""
 
-#: forms.py:54
+#: forms.py:53
 msgid "The backend used to create the new source."
 msgstr ""
 
-#: forms.py:55
+#: forms.py:54
 msgid "Backend"
 msgstr "后端"
 
-#: forms.py:71
+#: forms.py:70
 msgid "File"
 msgstr "文件"
 
@@ -276,8 +279,8 @@ msgstr ""
 
 #: settings.py:29
 msgid ""
-"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
-" the oldest source cache files. Specify the size in bytes."
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting "
+"the oldest source cache files. Specify the size in bytes."
 msgstr ""
 
 #: settings.py:37
@@ -299,8 +302,8 @@ msgstr ""
 #: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -477,8 +480,8 @@ msgstr ""
 
 #: views/source_views.py:323
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -498,29 +501,29 @@ msgstr ""
 msgid "Select document type"
 msgstr "选择文档类型"
 
-#: wizards.py:68
+#: wizards.py:66
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr "没有定义交互式文档源或没有启用任何交互式文档源，在继续之前创建一个。"
 
-#: wizards.py:85
+#: wizards.py:83
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "步骤%(step)d ：%(step_label)s，总步骤%(total_steps)d"
 
-#: wizards.py:91
+#: wizards.py:89
 msgid "Document upload wizard"
 msgstr "文档上传向导"
 
-#: wizards.py:100
+#: wizards.py:98
 msgid "First"
 msgstr ""
 
-#: wizards.py:106
+#: wizards.py:104
 msgid "Previous"
 msgstr "前"
 
-#: wizards.py:113
+#: wizards.py:111
 msgid "Next"
 msgstr "后"

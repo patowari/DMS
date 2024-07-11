@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Yves Dubois <ydubois@gmail.com>, 2024
@@ -14,30 +14,31 @@
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Franck Boucher <boucher.fk@gmail.com>, 2024
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 06:20+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:133 permissions.py:6 settings.py:15
+#: apps.py:26 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Commun"
 
-#: dependencies.py:193
+#: dependencies.py:189
 msgid "Command line environment with autocompletion."
 msgstr "Environnement de ligne de commande avec autocomplétion."
 
-#: dependencies.py:198
+#: dependencies.py:194
 msgid "Checks proper formatting of the README file."
 msgstr "Vérifie le formatage du fichier README."
 
@@ -116,25 +117,25 @@ msgstr "Heures"
 msgid "Minutes"
 msgstr "Minutes"
 
-#: menus.py:8
-msgid "System"
-msgstr "Système"
-
-#: menus.py:10 menus.py:11
+#: menus.py:7 menus.py:8
 msgid "Facet"
 msgstr "Facette"
 
-#: menus.py:14
+#: menus.py:11
 msgid "Actions"
 msgstr "Actions"
 
-#: menus.py:15
+#: menus.py:12
 msgid "Related"
 msgstr "En rapport"
 
-#: menus.py:16
+#: menus.py:13
 msgid "Secondary"
 msgstr "Secondaire"
+
+#: menus.py:16
+msgid "System"
+msgstr "Système"
 
 #: menus.py:18
 msgid "Return"
@@ -157,13 +158,13 @@ msgid ""
 "In list mode, show the \"list facet\" menu options as a dropdown menu "
 "instead of individual buttons."
 msgstr ""
-"En mode liste, affichez les options du menu «facette de liste» sous forme de"
-" menu déroulant au lieu de boutons individuels."
+"En mode liste, affichez les options du menu «facette de liste» sous forme de "
+"menu déroulant au lieu de boutons individuels."
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of"
-" individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of "
+"individual buttons."
 msgstr ""
 "En mode liste, affichez les options du menu «objet» sous forme de menu "
 "déroulant au lieu de boutons individuels."
@@ -179,8 +180,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "Une liste de chaînes désignant toutes les applications qui doivent être "
 "supprimées de la liste normalement installée par Mayan EDMS. Chaque chaîne "
@@ -192,8 +193,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. These apps will be installed after the default "
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
@@ -201,15 +202,15 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
 #: settings.py:81
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also"
-" the view to which users will be redirected after log in."
+"Name of the view attached to the brand anchor in the main menu. This is also "
+"the view to which users will be redirected after log in."
 msgstr ""
 "Nom de la page attaché au lien de marque dans le menu principal. C'est "
 "également la page vers laquelle les utilisateurs seront redirigés après la "

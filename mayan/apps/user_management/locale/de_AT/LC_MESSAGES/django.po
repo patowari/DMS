@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Tobias Paepke <tobias.paepke@paepke.net>, 2024
@@ -12,19 +12,20 @@
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Berny <berny@bernhard-marx.de>, 2024
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
+"teams/13584/de_AT/)\n"
+"Language: de_AT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:60 events.py:6 permissions.py:6
@@ -251,8 +252,8 @@ msgstr ""
 #: serializers.py:66
 msgid "URL of the API endpoint showing the list groups this user belongs to."
 msgstr ""
-"Die URL dieses API-Endpunkts zeigt eine Liste der Gruppen, in welcher dieser"
-" Benutzer Mitglied ist."
+"Die URL dieses API-Endpunkts zeigt eine Liste der Gruppen, in welcher dieser "
+"Benutzer Mitglied ist."
 
 #: serializers.py:68
 msgid "Groups URL"
@@ -372,8 +373,8 @@ msgstr "%(count)dausgewählten Nutzer löschen."
 
 #: views/user_views.py:81
 msgid ""
-"Warning! You are about to delete your own user account. You will lose access"
-" to the system. This process is not reversible."
+"Warning! You are about to delete your own user account. You will lose access "
+"to the system. This process is not reversible."
 msgstr ""
 "Warnung! Sie sind dabei Ihr eigenes Benutzerkonto zu löschen. Sie werden "
 "keinen Zugang zum System mehr haben. Dieser Vorgang ist nicht umkehrbar."

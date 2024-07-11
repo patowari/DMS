@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
@@ -16,42 +16,51 @@
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Márcia Ferreira, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 06:21+0000\n"
+"POT-Creation-Date: 2024-07-11 13:45+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
+"pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:71 apps.py:209 apps.py:215 apps.py:219 apps.py:224 apps.py:228
-#: events.py:6 links.py:53 permissions.py:6 queues.py:7
-#: workflow_actions.py:162
+#: apps.py:74 apps.py:215 apps.py:221 apps.py:225 apps.py:230 apps.py:234
+#: events.py:6 links.py:53 permissions.py:6 queues.py:7 workflow_actions.py:162
 msgid "Metadata"
 msgstr "Metadados"
 
-#: apps.py:141
+#: apps.py:145
 msgid "Return the value of a specific document metadata."
 msgstr "Retorna o valor de um metadado específico do documento."
 
-#: apps.py:142
+#: apps.py:146
 msgid "Metadata value of"
 msgstr "Valor de metadados de"
 
-#: apps.py:147
+#: apps.py:151
 msgid "Metadata type name"
 msgstr "Nome de tipos de metadado"
 
-#: apps.py:151 search.py:14
+#: apps.py:155 search.py:15
 msgid "Metadata value"
 msgstr "Valor de metadados"
+
+#: apps.py:253
+msgid "Document link"
+msgstr "Documento"
+
+#: apps.py:259
+msgid "Document thumbnail"
+msgstr "Tipo de documento"
 
 #: events.py:10
 msgid "Document metadata added"
@@ -77,37 +86,37 @@ msgstr "Tipo de metadado editado"
 msgid "Metadata type relationship updated"
 msgstr "Relacionamento de tipo de metadado atualizado"
 
-#: forms.py:15
+#: forms.py:13
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:18 models/metadata_type_models.py:35
+#: forms.py:16 models/metadata_type_models.py:35
 msgid "Name"
 msgstr "Nome"
 
-#: forms.py:26 models/metadata_instance_models.py:43 workflow_actions.py:112
+#: forms.py:24 models/metadata_instance_models.py:43 workflow_actions.py:112
 msgid "Value"
 msgstr "Valor"
 
-#: forms.py:31
+#: forms.py:29
 msgid "Update"
 msgstr "Atualizar"
 
-#: forms.py:51 forms.py:232 models/document_type_metadata_type_models.py:31
+#: forms.py:49 forms.py:232 models/document_type_metadata_type_models.py:31
 msgid "Required"
 msgstr "Obrigatório"
 
-#: forms.py:83
+#: forms.py:81
 #, python-format
 msgid "Lookup value error: %s"
 msgstr "Erro de valor de busca: %s"
 
-#: forms.py:96
+#: forms.py:94
 #, python-format
 msgid "Default value error: %s"
 msgstr "Erro de valor padrão: %s"
 
-#: forms.py:117 models/metadata_type_models.py:120
+#: forms.py:115 models/metadata_type_models.py:120
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "\"%s\" é obrigatório para este tipo de documento."
@@ -117,7 +126,7 @@ msgid "Metadata types to be added to the selected documents."
 msgstr "Tipos de metadados a serem adicionados aos documentos selecionados."
 
 #: forms.py:137 models/document_type_metadata_type_models.py:28
-#: models/metadata_type_models.py:83 search.py:11 serializers.py:52
+#: models/metadata_type_models.py:83 search.py:12 serializers.py:52
 #: serializers.py:114 workflow_actions.py:148
 msgid "Metadata type"
 msgstr "Tipo de metadados"
@@ -254,6 +263,7 @@ msgstr ""
 "O valor atualmente armazenado no campo de tipo de metadado para o documento."
 
 #: models/metadata_instance_models.py:49 models/metadata_instance_models.py:50
+#: search.py:21
 msgid "Document metadata"
 msgstr "Metadados do documento"
 
@@ -321,8 +331,7 @@ msgstr "Argumentos de validador"
 
 #: models/metadata_type_models.py:67
 msgid ""
-"The parser will reformat the value entered to conform to the expected "
-"format."
+"The parser will reformat the value entered to conform to the expected format."
 msgstr ""
 "O analisador irá reformatar o valor inserido para estar em conformidade com "
 "o formato esperado."
@@ -388,6 +397,18 @@ msgstr "Remover tipo de metadados"
 msgid "Add required metadata type"
 msgstr "Adicionar tipo de metadado obrigatório"
 
+#: search.py:33
+msgid "Document type ID"
+msgstr "Tipo de documento"
+
+#: search.py:37
+msgid "Document type label"
+msgstr "Tipo de documento"
+
+#: search.py:40 serializers.py:57 serializers.py:107
+msgid "Metadata type ID"
+msgstr "Tipo de ID de metadata"
+
 #: serializers.py:32 serializers.py:61 serializers.py:117
 msgid "URL"
 msgstr "URL"
@@ -395,10 +416,6 @@ msgstr "URL"
 #: serializers.py:56
 msgid "Primary key of the metadata type to be added."
 msgstr "Chave primária do tipo de metadados a ser adicionado."
-
-#: serializers.py:57 serializers.py:107
-msgid "Metadata type ID"
-msgstr "Tipo de ID de metadata"
 
 #: serializers.py:105
 msgid "Primary key of the metadata type to be added to the document."
@@ -412,8 +429,7 @@ msgstr "Solicitação de adicionar metadados executada em %(count)d documento"
 #: views/document_views.py:49
 #, python-format
 msgid "Metadata add request performed on %(count)d documents"
-msgstr ""
-"Solicitação de inserção de metadados realizada em %(count)d documentos"
+msgstr "Solicitação de inserção de metadados realizada em %(count)d documentos"
 
 #: views/document_views.py:58
 msgid "Add metadata types to document"
@@ -439,8 +455,7 @@ msgstr ""
 #: views/document_views.py:166
 #, python-format
 msgid ""
-"Metadata type: %(metadata_type)s successfully added to document "
-"%(document)s."
+"Metadata type: %(metadata_type)s successfully added to document %(document)s."
 msgstr ""
 "Tipo de metadados: %(metadata_type)s  adicionado com sucesso ao documento "
 "%(document)s."
@@ -489,8 +504,7 @@ msgstr "Editar os metadados do documento: %s"
 #: views/document_views.py:334
 #, python-format
 msgid "Error editing metadata for document: %(document)s; %(exception)s."
-msgstr ""
-"Erro editando metadados para o documento: %(document)s; %(exception)s."
+msgstr "Erro editando metadados para o documento: %(document)s; %(exception)s."
 
 #: views/document_views.py:347
 #, python-format
@@ -499,9 +513,8 @@ msgstr "Metadados do documento %s alterados com sucesso."
 
 #: views/document_views.py:372
 msgid ""
-"Add metadata types this document's type to be able to add them to individual"
-" documents. Once added to individual document, you can then edit their "
-"values."
+"Add metadata types this document's type to be able to add them to individual "
+"documents. Once added to individual document, you can then edit their values."
 msgstr ""
 "Adicione tipos de metadado para este tipo de documento para poder adicioná-"
 "los aos documentos individuais. Uma vez adicionados aos documentos "
@@ -544,8 +557,8 @@ msgid ""
 "Successfully remove metadata type \"%(metadata_type)s\" from document: "
 "%(document)s."
 msgstr ""
-"Removido com sucesso o tipo de  metadado \"%(metadata_type)s\" do documento:"
-" %(document)s."
+"Removido com sucesso o tipo de  metadado \"%(metadata_type)s\" do documento: "
+"%(document)s."
 
 #: views/document_views.py:496
 #, python-format
@@ -602,8 +615,8 @@ msgstr "Editar o tipo de metadado: %s"
 
 #: views/metadata_type_views.py:104
 msgid ""
-"Metadata types are user defined properties that can be assigned values. Once"
-" created they must be associated to document types, either as optional or "
+"Metadata types are user defined properties that can be assigned values. Once "
+"created they must be associated to document types, either as optional or "
 "required, for each. Setting a metadata type as required for a document type "
 "will block the upload of documents of that type until a metadata value is "
 "provided."

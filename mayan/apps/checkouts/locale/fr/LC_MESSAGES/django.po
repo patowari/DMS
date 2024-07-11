@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Bruno CAPELETO <bruno.capeleto@abcreseau.com>, 2024
@@ -9,20 +9,21 @@
 # Thierry Schott <DarkDare@users.noreply.github.com>, 2024
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Frédéric Sheedy <sheedf@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
@@ -56,31 +57,31 @@ msgstr "Document non verrouillé."
 msgid "Document already checked out."
 msgstr "Document déjà verrouillé."
 
-#: forms.py:26
+#: forms.py:25
 msgid "Document status"
 msgstr "Statut du document"
 
-#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
+#: forms.py:36 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Utilisateur"
 
-#: forms.py:41
+#: forms.py:40
 msgid "Check out time"
 msgstr "Heure du verrouillage"
 
-#: forms.py:46
+#: forms.py:45
 msgid "Check out expiration"
 msgstr "Expiration du verrouillage"
 
-#: forms.py:51
+#: forms.py:50
 msgid "New files allowed?"
 msgstr "Nouveaux fichiers autorisés?"
 
-#: forms.py:52
+#: forms.py:51
 msgid "Yes"
 msgstr "Oui"
 
-#: forms.py:52
+#: forms.py:51
 msgid "No"
 msgstr "Non"
 
@@ -156,8 +157,7 @@ msgstr "Verrouillages du document"
 #: models.py:70
 msgid "Check out expiration date and time must be in the future."
 msgstr ""
-"La date et l'heure d'expiration du verrouillage doit se situer dans le "
-"futur."
+"La date et l'heure d'expiration du verrouillage doit se situer dans le futur."
 
 #: permissions.py:10
 msgid "Check in documents"
@@ -282,6 +282,6 @@ msgstr ""
 msgid "No documents have been checked out"
 msgstr "Aucun document n'a été verrouillé"
 
-#: widgets.py:20
+#: widgets.py:19
 msgid "Amount"
 msgstr "Nombre"

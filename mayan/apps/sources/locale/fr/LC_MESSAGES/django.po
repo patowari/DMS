@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
@@ -14,20 +14,21 @@
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Olivier W, 2024
 # Luc Didry, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Luc Didry, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
 #: models.py:65 queues.py:9 settings.py:14 views/source_views.py:279
@@ -45,8 +46,8 @@ msgid ""
 "browser."
 msgstr ""
 "Les sources de documents sont les manières par lesquelles les nouveaux "
-"documents seront intégrés dans Mayan EDMS ; créez au moins un formulaire web"
-" pour pouvoir télécharger des documents depuis le navigateur."
+"documents seront intégrés dans Mayan EDMS ; créez au moins un formulaire web "
+"pour pouvoir télécharger des documents depuis le navigateur."
 
 #: apps.py:135
 msgid ""
@@ -74,34 +75,34 @@ msgstr "Source créée"
 msgid "Source edited"
 msgstr "Source modifiée"
 
-#: forms.py:25
+#: forms.py:24
 msgid "An optional comment to explain the upload."
 msgstr "Un commentaire facultatif pour expliquer le téléchargement."
 
-#: forms.py:26
+#: forms.py:25
 msgid "Comment"
 msgstr "Commentaire"
 
-#: forms.py:32
+#: forms.py:31
 msgid "Action"
 msgstr "Action"
 
-#: forms.py:33
+#: forms.py:32
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr ""
-"L'action à exécutée en ce qui concerne les pages du nouveau fichier en cours"
-" de téléversement."
+"L'action à exécutée en ce qui concerne les pages du nouveau fichier en cours "
+"de téléversement."
 
-#: forms.py:54
+#: forms.py:53
 msgid "The backend used to create the new source."
 msgstr "Le moteur utilisé pour créer la nouvelle source."
 
-#: forms.py:55
+#: forms.py:54
 msgid "Backend"
 msgstr "Backend"
 
-#: forms.py:71
+#: forms.py:70
 msgid "File"
 msgstr "Fichier"
 
@@ -287,8 +288,8 @@ msgstr ""
 
 #: settings.py:29
 msgid ""
-"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
-" the oldest source cache files. Specify the size in bytes."
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting "
+"the oldest source cache files. Specify the size in bytes."
 msgstr ""
 
 #: settings.py:37
@@ -310,8 +311,8 @@ msgstr ""
 #: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -426,8 +427,8 @@ msgstr ""
 #, python-format
 msgid "Upload a new file for document \"%(document)s\" from source: %(source)s"
 msgstr ""
-"Téléverser un nouveau fichier pour le document \"%(document)s\", à partir de"
-" la source: %(source)s"
+"Téléverser un nouveau fichier pour le document \"%(document)s\", à partir de "
+"la source: %(source)s"
 
 #: views/document_file_views.py:175
 msgid "Submit"
@@ -504,8 +505,8 @@ msgstr ""
 
 #: views/source_views.py:323
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -530,31 +531,31 @@ msgstr ""
 msgid "Select document type"
 msgstr "Sélectionner le type du document"
 
-#: wizards.py:68
+#: wizards.py:66
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr ""
 "Aucune source interactive d'import de documents n'a été définie ou activée, "
 "créez-en une avant de continuer."
 
-#: wizards.py:85
+#: wizards.py:83
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "Étape %(step)d de %(total_steps)d : %(step_label)s"
 
-#: wizards.py:91
+#: wizards.py:89
 msgid "Document upload wizard"
 msgstr "Assistant de téléversement de document"
 
-#: wizards.py:100
+#: wizards.py:98
 msgid "First"
 msgstr "Premier"
 
-#: wizards.py:106
+#: wizards.py:104
 msgid "Previous"
 msgstr "Précédent"
 
-#: wizards.py:113
+#: wizards.py:111
 msgid "Next"
 msgstr "Suivant"

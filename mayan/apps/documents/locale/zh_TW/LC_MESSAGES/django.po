@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # dave cheng, 2024
@@ -11,77 +11,48 @@
 # Ford Guo <agile.guo@gmail.com>, 2024
 # Leon Chu, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
+"teams/13584/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:220 apps.py:285 apps.py:662 events.py:6 menus.py:8
+#: apps.py:220 apps.py:1061 events.py:6 menus.py:8
 #: models/document_models.py:112 permissions.py:6 settings.py:33
 #: statistics.py:286
 msgid "Documents"
 msgstr "文件"
 
-#: apps.py:306
-msgid "Create a document type"
-msgstr "创建文档类型"
-
-#: apps.py:308
-msgid ""
-"Every uploaded document must be assigned a document type, it is the basic "
-"way Mayan EDMS categorizes documents."
-msgstr "必须为每个上传的文档分配文档类型，这是Mayan EDMS对文档进行分类的基本方式。"
-
-#: apps.py:402
-msgid "File comments"
-msgstr "檔案附註"
-
-#: apps.py:406
-msgid "File encodings"
-msgstr "檔案編碼"
-
-#: apps.py:410
-msgid "File MIME types"
+#: apps.py:236 models/favorite_document_models.py:33
+msgid "Date and time added"
 msgstr ""
 
-#: apps.py:414
-msgid "File timestamps"
-msgstr "檔案時戳"
-
-#: apps.py:419 links/document_file_page_links.py:76
+#: apps.py:278 links/document_file_page_links.py:76
 #: models/document_file_models.py:107 models/document_file_page_models.py:28
 #: search.py:54
 msgid "Document file"
 msgstr "文件檔案"
 
-#: apps.py:423 models/document_file_page_models.py:32
+#: apps.py:282 models/document_file_page_models.py:32
 #: models/document_version_page_models.py:42
 msgid "Page number"
 msgstr "页码"
 
-#: apps.py:428
-msgid "Return the latest file of the document."
-msgstr "回到文件最新的檔案"
-
-#: apps.py:429
-msgid "Latest file"
-msgstr ""
-
-#: apps.py:433
+#: apps.py:287
 msgid "Return the document instance."
 msgstr ""
 
-#: apps.py:434 links/document_file_links.py:71
+#: apps.py:288 links/document_file_links.py:71
 #: links/document_file_page_links.py:70 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:58
 #: models/document_models.py:111 models/document_version_models.py:30
@@ -92,29 +63,68 @@ msgstr ""
 msgid "Document"
 msgstr "文件"
 
-#: apps.py:570 apps.py:615 apps.py:648 apps.py:683 apps.py:708
+#: apps.py:343 apps.py:376 apps.py:762 apps.py:787 apps.py:994
 msgid "Thumbnail"
 msgstr "缩略图"
 
-#: apps.py:575
-msgid "Type"
-msgstr "類型"
-
-#: apps.py:580 apps.py:620 apps.py:688 forms/document_file_forms.py:89
+#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:88
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "页面"
 
-#: apps.py:590 models/favorite_document_models.py:33
-msgid "Date and time added"
-msgstr ""
-
-#: apps.py:601
+#: apps.py:469
 msgid "Access date and time"
 msgstr ""
 
-#: classes.py:65 forms/document_file_forms.py:40
+#: apps.py:534
+msgid "Create a document type"
+msgstr "创建文档类型"
+
+#: apps.py:536
+msgid ""
+"Every uploaded document must be assigned a document type, it is the basic "
+"way Mayan EDMS categorizes documents."
+msgstr ""
+"必须为每个上传的文档分配文档类型，这是Mayan EDMS对文档进行分类的基本方式。"
+
+#: apps.py:929
+msgid "File comments"
+msgstr "檔案附註"
+
+#: apps.py:933
+msgid "File encodings"
+msgstr "檔案編碼"
+
+#: apps.py:937
+msgid "File MIME types"
+msgstr ""
+
+#: apps.py:941
+msgid "File timestamps"
+msgstr "檔案時戳"
+
+#: apps.py:945
+msgid "Return the latest file of the document."
+msgstr "回到文件最新的檔案"
+
+#: apps.py:946
+msgid "Latest file"
+msgstr ""
+
+#: apps.py:950
+msgid "Return the active version of the document."
+msgstr "回到文件最新的檔案"
+
+#: apps.py:951
+msgid "Active version"
+msgstr "文件版本"
+
+#: apps.py:999
+msgid "Type"
+msgstr "類型"
+
+#: classes.py:65 forms/document_file_forms.py:39
 msgid "Original"
 msgstr ""
 
@@ -122,7 +132,7 @@ msgstr ""
 msgid "Keeps the original filename of the uploaded file."
 msgstr ""
 
-#: classes.py:77 forms/document_forms.py:110 models/document_models.py:50
+#: classes.py:77 forms/document_forms.py:109 models/document_models.py:50
 msgid "UUID"
 msgstr "UUID"
 
@@ -136,8 +146,8 @@ msgstr ""
 
 #: classes.py:92
 msgid ""
-"Generates an immutable, random UUID (RFC 4122) for each file and appends the"
-" original filename of the uploaded file."
+"Generates an immutable, random UUID (RFC 4122) for each file and appends the "
+"original filename of the uploaded file."
 msgstr ""
 
 #: dashboard_widgets.py:29
@@ -296,81 +306,84 @@ msgstr ""
 msgid "Document version uploaded (historic)"
 msgstr ""
 
-#: forms/document_file_forms.py:44
+#: forms/document_file_forms.py:43
 msgid "Detected"
 msgstr ""
 
-#: forms/document_file_forms.py:48
+#: forms/document_file_forms.py:47
 msgid "Storage"
 msgstr "存储"
 
-#: forms/document_file_forms.py:52
+#: forms/document_file_forms.py:51
 msgid "Other"
 msgstr ""
 
-#: forms/document_file_forms.py:61
+#: forms/document_file_forms.py:60
 msgid "Date added"
 msgstr "日期已添加"
 
-#: forms/document_file_forms.py:66 models/document_file_models.py:84
+#: forms/document_file_forms.py:65 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "MIME类型"
 
-#: forms/document_file_forms.py:70 models/document_file_models.py:90
+#: forms/document_file_forms.py:69 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "编码"
 
-#: forms/document_file_forms.py:74 models/document_file_models.py:102
+#: forms/document_file_forms.py:73 models/document_file_model_mixins.py:371
+#: models/document_file_models.py:102
 msgid "Size"
 msgstr ""
 
-#: forms/document_file_forms.py:80
+#: forms/document_file_forms.py:79
 msgid "Exists in storage"
 msgstr "在存储中存在"
 
-#: forms/document_file_forms.py:83
+#: forms/document_file_forms.py:82
 msgid "Path in storage"
 msgstr ""
 
-#: forms/document_file_forms.py:86 models/document_file_models.py:97
+#: forms/document_file_forms.py:85 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "校验码"
 
-#: forms/document_forms.py:46
+#: forms/document_forms.py:45
 msgid "Quick document rename"
 msgstr "快速文档重命名"
 
-#: forms/document_forms.py:54
+#: forms/document_forms.py:53
 msgid "Preserve extension"
 msgstr "保留扩展名"
 
-#: forms/document_forms.py:56
+#: forms/document_forms.py:55
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
-msgstr "获取文件扩展名并将其移动到文件名的末尾，允许依赖文件扩展名的操作系统正确打开文档。"
+msgstr ""
+"获取文件扩展名并将其移动到文件名的末尾，允许依赖文件扩展名的操作系统正确打开"
+"文档。"
 
-#: forms/document_forms.py:105
+#: forms/document_forms.py:104
 msgid "Date created"
 msgstr ""
 
-#: forms/document_forms.py:113 models/document_models.py:78
+#: forms/document_forms.py:112 models/document_models.py:78
 msgid "Language"
 msgstr "语言"
 
-#: forms/document_type_forms.py:42 models/document_models.py:55
+#: forms/document_type_forms.py:40 models/document_models.py:55
 #: models/document_type_models.py:104 models/document_type_models.py:153
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
 msgstr "文件類型"
 
-#: forms/document_version_forms.py:18
+#: forms/document_version_forms.py:19
 msgid ""
 "The backend that will be executed against the selected document version."
 msgstr ""
 
-#: forms/document_version_forms.py:20
+#: forms/document_version_forms.py:21
 msgid "Backend"
 msgstr "后端"
 
@@ -391,19 +404,19 @@ msgstr "来源"
 msgid "Destination page number"
 msgstr ""
 
-#: forms/document_version_page_forms.py:72
+#: forms/document_version_page_forms.py:73
 msgid "Target page number can't be repeated."
 msgstr ""
 
-#: forms/misc_forms.py:10
+#: forms/misc_forms.py:11
 msgid "Page group"
 msgstr ""
 
-#: forms/misc_forms.py:13 literals.py:99
+#: forms/misc_forms.py:14 literals.py:99
 msgid "Page range"
 msgstr "页面范围"
 
-#: forms/misc_forms.py:20
+#: forms/misc_forms.py:21
 msgid ""
 "Page number from which all the transformations will be cloned. Existing "
 "transformations will be lost."
@@ -452,23 +465,19 @@ msgstr "清除转换"
 msgid "Clone transformations"
 msgstr "克隆转换"
 
-#: links/document_file_page_links.py:43
-#: links/document_version_page_links.py:62
+#: links/document_file_page_links.py:43 links/document_version_page_links.py:62
 msgid "First page"
 msgstr "首页"
 
-#: links/document_file_page_links.py:49
-#: links/document_version_page_links.py:68
+#: links/document_file_page_links.py:49 links/document_version_page_links.py:68
 msgid "Last page"
 msgstr "末页"
 
-#: links/document_file_page_links.py:57
-#: links/document_version_page_links.py:76
+#: links/document_file_page_links.py:57 links/document_version_page_links.py:76
 msgid "Previous page"
 msgstr "上一页"
 
-#: links/document_file_page_links.py:63
-#: links/document_version_page_links.py:82
+#: links/document_file_page_links.py:63 links/document_version_page_links.py:82
 msgid "Next page"
 msgstr "下一页"
 
@@ -567,8 +576,7 @@ msgstr ""
 msgid "Remap pages"
 msgstr ""
 
-#: links/document_version_page_links.py:96
-#: models/document_version_models.py:54
+#: links/document_version_page_links.py:96 models/document_version_models.py:54
 #: models/document_version_page_models.py:36 search.py:128
 msgid "Document version"
 msgstr "文件版本"
@@ -667,7 +675,7 @@ msgstr "十二月"
 msgid "All pages"
 msgstr "所有页面"
 
-#: models/document_file_model_mixins.py:365
+#: models/document_file_model_mixins.py:366
 #: models/document_file_page_model_mixins.py:244
 #: models/document_model_mixins.py:179 models/document_models.py:63
 #: models/document_type_models.py:43 models/document_type_models.py:156
@@ -678,7 +686,7 @@ msgstr "所有页面"
 msgid "Label"
 msgstr "標籤"
 
-#: models/document_file_model_mixins.py:506
+#: models/document_file_model_mixins.py:512
 msgid "Controls what happens when a new document file is uploaded."
 msgstr ""
 
@@ -708,8 +716,8 @@ msgstr "文件名"
 
 #: models/document_file_models.py:80
 msgid ""
-"The document file's file mimetype. MIME types are a standard way to describe"
-" the format of a file, in this case the file format of the document. Some "
+"The document file's file mimetype. MIME types are a standard way to describe "
+"the format of a file, in this case the file format of the document. Some "
 "examples: \"text/plain\" or \"image/jpeg\". "
 msgstr ""
 
@@ -799,7 +807,9 @@ msgid ""
 "A document stub is a document with an entry on the database but no file "
 "uploaded. This could be an interrupted upload or a deferred upload via the "
 "API."
-msgstr "文档存根是一个在数据库上有条目但没有上传文件的文档。这可能是因为通过API中断上传或延迟上传。"
+msgstr ""
+"文档存根是一个在数据库上有条目但没有上传文件的文档。这可能是因为通过API中断上"
+"传或延迟上传。"
 
 #: models/document_models.py:96
 msgid "Is stub?"
@@ -833,8 +843,7 @@ msgstr ""
 
 #: models/document_type_models.py:66
 msgid ""
-"Amount of time after which documents of this type will be moved to the "
-"trash."
+"Amount of time after which documents of this type will be moved to the trash."
 msgstr "将此类文档移至垃圾箱的时间。"
 
 #: models/document_type_models.py:68
@@ -861,8 +870,8 @@ msgstr "删除时间的单位"
 
 #: models/document_type_models.py:87
 msgid ""
-"Delete documents that do not contain any files after a configured expiration"
-" interval."
+"Delete documents that do not contain any files after a configured expiration "
+"interval."
 msgstr ""
 
 #: models/document_type_models.py:89
@@ -871,9 +880,9 @@ msgstr ""
 
 #: models/document_type_models.py:93
 msgid ""
-"Time (in seconds) after which a document stub will be considered invalid and"
-" deleted, if pruning is enabled. This an optimization setting and should "
-"only be changed for specific circumstances."
+"Time (in seconds) after which a document stub will be considered invalid and "
+"deleted, if pruning is enabled. This an optimization setting and should only "
+"be changed for specific circumstances."
 msgstr ""
 
 #: models/document_type_models.py:97
@@ -1190,11 +1199,11 @@ msgstr ""
 msgid "Document ID"
 msgstr ""
 
-#: search.py:77 search.py:106 search.py:149 search.py:176
+#: search.py:77 search.py:106 search.py:149 search.py:177
 msgid "Document label"
 msgstr "文件標籤"
 
-#: search.py:80 search.py:112 search.py:155 search.py:179
+#: search.py:80 search.py:112 search.py:155 search.py:181
 msgid "Document UUID"
 msgstr "文件UUID"
 
@@ -1329,8 +1338,8 @@ msgstr ""
 #: settings.py:49
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document file page image cache files. Specify"
-" the size in bytes."
+"will start deleting the oldest document file page image cache files. Specify "
+"the size in bytes."
 msgstr ""
 
 #: settings.py:57
@@ -1358,9 +1367,9 @@ msgstr "每个用户要记住的收藏文档最大数量。"
 
 #: settings.py:90
 msgid ""
-"Size of blocks to use when calculating the document file's checksum. A value"
-" of 0 disables the block calculation and the entire file will be loaded into"
-" memory."
+"Size of blocks to use when calculating the document file's checksum. A value "
+"of 0 disables the block calculation and the entire file will be loaded into "
+"memory."
 msgstr ""
 
 #: settings.py:97
@@ -1373,15 +1382,15 @@ msgstr "支持的文档语言列表。采用ISO639-3格式。"
 
 #: settings.py:107
 msgid ""
-"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
-" will start deleting the oldest document version page image cache versions. "
+"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
+"will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 
 #: settings.py:116
 msgid ""
-"Path to the Storage subclass to use when storing the cached document version"
-" page image versions."
+"Path to the Storage subclass to use when storing the cached document version "
+"page image versions."
 msgstr ""
 
 #: settings.py:124
@@ -1461,8 +1470,8 @@ msgstr ""
 
 #: storages.py:21
 msgid ""
-"Unable to initialize the document file storage. Check the settings {} and {}"
-" for formatting errors."
+"Unable to initialize the document file storage. Check the settings {} and {} "
+"for formatting errors."
 msgstr ""
 
 #: storages.py:35
@@ -1531,8 +1540,8 @@ msgstr ""
 
 #: views/document_file_page_views.py:53
 msgid ""
-"This could mean that the document file is of a format that is not supported,"
-" that it is corrupted, or that the upload process was interrupted. Use the "
+"This could mean that the document file is of a format that is not supported, "
+"that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 
@@ -1689,8 +1698,8 @@ msgstr ""
 #: views/document_file_views.py:400
 #, python-format
 msgid ""
-"Error cloning the page transformations for document file: %(document_file)s;"
-" %(error)s."
+"Error cloning the page transformations for document file: %(document_file)s; "
+"%(error)s."
 msgstr ""
 
 #: views/document_file_views.py:409 views/document_version_views.py:419
@@ -1727,11 +1736,12 @@ msgstr "文档类型：%s"
 #: views/document_type_views.py:76
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
-"system will depend on them. Define a document type for each type of physical"
-" document you intend to upload. Example document types: invoice, receipt, "
+"system will depend on them. Define a document type for each type of physical "
+"document you intend to upload. Example document types: invoice, receipt, "
 "manual, prescription, balance sheet."
 msgstr ""
-"文档类型是最基本的配置单元。系统中的所有东西都将取决于它们。为要上传的每种物理文档定义文档类型。示例文档类型：发票，收据，手册，处方，资产负债表。"
+"文档类型是最基本的配置单元。系统中的所有东西都将取决于它们。为要上传的每种物"
+"理文档定义文档类型。示例文档类型：发票，收据，手册，处方，资产负债表。"
 
 #: views/document_type_views.py:82
 msgid "No document types available"
@@ -1764,7 +1774,8 @@ msgstr "从文档类型“%(document_type)s”删除快速标签：%(label)s？"
 
 #: views/document_type_views.py:206
 #, python-format
-msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
+msgid ""
+"Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr "从文档类型“%(document_type)s”编辑快速标签“%(filename)s”"
 
 #: views/document_type_views.py:244
@@ -1772,7 +1783,9 @@ msgid ""
 "Quick labels are predetermined filenames that allow the quick renaming of "
 "documents as they are uploaded by selecting them from a list. Quick labels "
 "can also be used after the documents have been uploaded."
-msgstr "快速标签是预定的文件名，允许通过从列表中选择文档来快速重命名文档。上传文档后也可以使用快速标签。"
+msgstr ""
+"快速标签是预定的文件名，允许通过从列表中选择文档来快速重命名文档。上传文档后"
+"也可以使用快速标签。"
 
 #: views/document_type_views.py:250
 msgid "There are no quick labels for this document type"
@@ -1928,8 +1941,7 @@ msgstr ""
 
 #: views/document_version_views.py:335
 #, python-format
-msgid ""
-"Transformation clear request processed for %(count)d document versions."
+msgid "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 
 #: views/document_version_views.py:343
@@ -1972,7 +1984,9 @@ msgid ""
 "This could mean that no documents have been uploaded or that your user "
 "account has not been granted the view permission for any document or "
 "document type."
-msgstr "这可能意味着没有上传任何文档，或者您的用户帐户未被授予任何文档或文档类型的查看权限。"
+msgstr ""
+"这可能意味着没有上传任何文档，或者您的用户帐户未被授予任何文档或文档类型的查"
+"看权限。"
 
 #: views/document_views.py:70
 msgid "No documents available"
@@ -2071,8 +2085,8 @@ msgstr "打印：%s"
 
 #: views/recently_accessed_document_views.py:25
 msgid ""
-"This view will list the latest documents viewed or manipulated in any way by"
-" this user account."
+"This view will list the latest documents viewed or manipulated in any way by "
+"this user account."
 msgstr "此视图将列出此用户帐户以任何方式查看或操作的最新文档。"
 
 #: views/recently_accessed_document_views.py:29
@@ -2153,7 +2167,9 @@ msgid ""
 "To avoid loss of data, documents are not deleted instantly. First, they are "
 "placed in the trash can. From here they can be then finally deleted or "
 "restored."
-msgstr "为避免数据丢失，不会立即删除文档。首先，它们放在垃圾桶里。从这里可以最终删除或恢复它们。"
+msgstr ""
+"为避免数据丢失，不会立即删除文档。首先，它们放在垃圾桶里。从这里可以最终删除"
+"或恢复它们。"
 
 #: views/trashed_document_views.py:162
 msgid "There are no documents in the trash can"

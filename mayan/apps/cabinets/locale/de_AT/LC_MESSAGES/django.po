@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Siegfried Albrecht, 2024
 # Björn E <b1pum@web.de>, 2024
@@ -13,29 +13,30 @@
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
 # Jesaja Everling <jeverling@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Jesaja Everling <jeverling@gmail.com>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
+"teams/13584/de_AT/)\n"
+"Language: de_AT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: apps.py:53 apps.py:172 apps.py:176 apps.py:181 apps.py:186 apps.py:191
+#: events.py:6 forms.py:10 links.py:30 menus.py:14 models.py:54 models.py:160
 #: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Aktenschränke"
 
-#: apps.py:164 models.py:43
+#: apps.py:163 models.py:43
 msgid "Documents"
 msgstr "Dokumente"
 
@@ -206,8 +207,7 @@ msgid "Children"
 msgstr "Untergeordnete Aktenschränke"
 
 #: serializers.py:23
-msgid ""
-"URL of the API endpoint showing the list documents inside this cabinet."
+msgid "URL of the API endpoint showing the list documents inside this cabinet."
 msgstr ""
 "Die URL dieses API-Endpunkts zeigt eine Liste der Dokumente in diesem "
 "Aktenschrank."

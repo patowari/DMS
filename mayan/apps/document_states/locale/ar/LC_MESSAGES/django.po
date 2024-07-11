@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Bashar Al-Abdulhadi, 2024
@@ -12,22 +12,23 @@
 # Mahmood Ali, 2024
 # WM Shinkada <shinkadawasim@gmail.com>, 2024
 # Marwan Rahhal <Marwanr@sssit.net>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:20
+#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:19
 #: links.py:50 links.py:90 links.py:98 links.py:287 links.py:311
 #: models/workflow_models.py:60 queues.py:11 settings.py:14
 #: views/workflow_proxy_views.py:70 views/workflow_template_views.py:284
@@ -80,61 +81,61 @@ msgstr "تغير المسار"
 msgid "Get last transition"
 msgstr "احصل على آخر انتقال"
 
-#: apps.py:335 apps.py:360 apps.py:371 apps.py:378
+#: apps.py:335 apps.py:359 apps.py:370 apps.py:377
 msgid "None"
 msgstr "لا شيء"
 
-#: apps.py:347 apps.py:451
+#: apps.py:346 apps.py:449
 msgid "Documents"
 msgstr "الوثائق"
 
-#: apps.py:355 serializers/workflow_instance_serializers.py:153
+#: apps.py:354 serializers/workflow_instance_serializers.py:153
 msgid "Current state"
 msgstr "الوضع الحالي"
 
-#: apps.py:361 apps.py:391 models/workflow_instance_models.py:105
+#: apps.py:360 apps.py:390 models/workflow_instance_models.py:105
 #: serializers/workflow_instance_serializers.py:77
 msgid "User"
 msgstr "مستخدم"
 
-#: apps.py:366
+#: apps.py:365
 msgid "Last transition"
 msgstr "الانتقال الأخير"
 
-#: apps.py:372 apps.py:387
+#: apps.py:371 apps.py:386
 msgid "Date and time"
 msgstr "الوقت والتاريخ"
 
-#: apps.py:379 models/workflow_state_models.py:54
+#: apps.py:378 models/workflow_state_models.py:54
 msgid "Completion"
 msgstr "إكمال"
 
-#: apps.py:412
+#: apps.py:411
 msgid "Additional details"
 msgstr "تفاصيل إضافية"
 
-#: apps.py:467
+#: apps.py:465
 msgid "When?"
 msgstr "متي؟"
 
-#: apps.py:471
+#: apps.py:469
 msgid "Action type"
 msgstr "نوع الإجراء"
 
-#: apps.py:531
+#: apps.py:529
 msgid ""
 "Triggers are system events that will cause the transition to be applied."
 msgstr "سيتم تطبيق الانتقال عن طريق محددات مسبقة "
 
-#: apps.py:533
+#: apps.py:531
 msgid "Triggers"
 msgstr "محفزات"
 
-#: apps.py:549 models/workflow_transition_field_models.py:33
+#: apps.py:547 models/workflow_transition_field_models.py:33
 msgid "Type"
 msgstr "النوع"
 
-#: apps.py:565
+#: apps.py:563
 msgid "Widget"
 msgstr "القطعة"
 
@@ -167,11 +168,11 @@ msgstr "إنشاء المسار"
 msgid "Workflow edited"
 msgstr "تعديل المسار"
 
-#: forms/workflow_instance_forms.py:17
+#: forms/workflow_instance_forms.py:18
 msgid "Select a transition to execute in the next step."
 msgstr "حدد انتقالًا لتنفيذه في الخطوة التالية."
 
-#: forms/workflow_instance_forms.py:18 links.py:293
+#: forms/workflow_instance_forms.py:19 links.py:293
 #: models/workflow_instance_models.py:101
 #: models/workflow_state_escalation_models.py:38
 #: models/workflow_transition_field_models.py:30
@@ -180,7 +181,7 @@ msgstr "حدد انتقالًا لتنفيذه في الخطوة التالية.
 msgid "Transition"
 msgstr "انتقال"
 
-#: forms/workflow_template_forms.py:27
+#: forms/workflow_template_forms.py:26
 msgid "Workflow template preview image"
 msgstr ""
 
@@ -252,8 +253,7 @@ msgstr "أنواع الوثائق"
 msgid "Delete"
 msgstr "حذف"
 
-#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
-#: links.py:265
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219 links.py:265
 msgid "Edit"
 msgstr "تعديل"
 
@@ -265,7 +265,7 @@ msgstr "تشغيل المسار"
 msgid "Preview"
 msgstr "استعراض "
 
-#: links.py:129 models/workflow_state_model_mixins.py:105
+#: links.py:129 models/workflow_state_model_mixins.py:117
 msgid "Actions"
 msgstr "الإجراءات"
 
@@ -277,7 +277,7 @@ msgstr "خلق العمل"
 msgid "Create escalation"
 msgstr ""
 
-#: links.py:167 models/workflow_state_model_mixins.py:145
+#: links.py:167 models/workflow_state_model_mixins.py:157
 msgid "Escalations"
 msgstr ""
 
@@ -309,7 +309,7 @@ msgstr "تفعيل المسارات"
 msgid "Create field"
 msgstr "إنشاء الحقل"
 
-#: links.py:272 models/workflow_transition_model_mixins.py:44
+#: links.py:272 models/workflow_transition_model_mixins.py:61
 msgid "Fields"
 msgstr "مجالات"
 
@@ -440,8 +440,8 @@ msgstr " وقت تشغيل المسار"
 #: models/workflow_state_action_models.py:31
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do"
-" not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do "
+"not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -648,14 +648,14 @@ msgstr "حقول انتقال المسار"
 #: models/workflow_transition_models.py:28
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not"
-" return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be"
-" the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not "
+"return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be "
+"the logical true."
 msgstr ""
-"الشرط الذي سيحدد ما إذا كان هذا الانتقال ممكّنًا أم لا. يتم تقييم الشرط "
-"مقابل مثيل سير العمل. تعتبر الشروط التي لا تُرجع أي قيمة  ، وتعتبر أي قيمة "
-"أخرى هي الحقيقة المنطقية."
+"الشرط الذي سيحدد ما إذا كان هذا الانتقال ممكّنًا أم لا. يتم تقييم الشرط مقابل "
+"مثيل سير العمل. تعتبر الشروط التي لا تُرجع أي قيمة  ، وتعتبر أي قيمة أخرى هي "
+"الحقيقة المنطقية."
 
 #: models/workflow_transition_models.py:42
 msgid "A short text to describe the transition."
@@ -680,7 +680,7 @@ msgid "Workflow transitions"
 msgstr "تغيرات المسار"
 
 #: models/workflow_transition_trigger_models.py:31
-#: serializers/workflow_template_transition_trigger_serializers.py:19
+#: serializers/workflow_template_transition_trigger_serializers.py:21
 msgid "Event type"
 msgstr "نوع الحدث"
 
@@ -783,7 +783,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:84
 #: serializers/workflow_template_transition_field_serializers.py:13
 #: serializers/workflow_template_transition_serializers.py:45
-#: serializers/workflow_template_transition_trigger_serializers.py:26
+#: serializers/workflow_template_transition_trigger_serializers.py:28
 #: workflow_actions.py:171
 msgid "URL"
 msgstr "URL"
@@ -797,7 +797,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:62
 #: serializers/workflow_template_transition_field_serializers.py:29
 #: serializers/workflow_template_transition_serializers.py:52
-#: serializers/workflow_template_transition_trigger_serializers.py:42
+#: serializers/workflow_template_transition_trigger_serializers.py:44
 msgid "Workflow template URL"
 msgstr ""
 
@@ -826,8 +826,8 @@ msgid ""
 "API URL pointing to a workflow in relation to the document to which it is "
 "attached. This URL is different than the canonical workflow URL."
 msgstr ""
-"يشير عنوان URL الخاص بواجهة برمجة التطبيقات إلى سير عمل يتعلق بالوثيقةالمرفق"
-" به. يختلف عنوان URL هذا عن عنوان URL الأساسي لسير العمل."
+"يشير عنوان URL الخاص بواجهة برمجة التطبيقات إلى سير عمل يتعلق بالوثيقةالمرفق "
+"به. يختلف عنوان URL هذا عن عنوان URL الأساسي لسير العمل."
 
 #: serializers/workflow_template_serializers.py:13
 msgid "Document types add URL"
@@ -902,12 +902,12 @@ msgid "Escalations URL"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:37
-#: serializers/workflow_template_transition_trigger_serializers.py:50
+#: serializers/workflow_template_transition_trigger_serializers.py:52
 msgid "Workflow transition ID"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:41
-#: serializers/workflow_template_transition_trigger_serializers.py:54
+#: serializers/workflow_template_transition_trigger_serializers.py:56
 msgid "Workflow transition URL"
 msgstr ""
 
@@ -935,11 +935,11 @@ msgstr ""
 msgid "Trigger list URL"
 msgstr ""
 
-#: serializers/workflow_template_transition_trigger_serializers.py:22
+#: serializers/workflow_template_transition_trigger_serializers.py:24
 msgid "Event Type ID"
 msgstr "معرف نوع الحدث"
 
-#: serializers/workflow_template_transition_trigger_serializers.py:116
+#: serializers/workflow_template_transition_trigger_serializers.py:118
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
 msgstr "معرف الحدث غير معروف او غير صالح `%s`"
@@ -954,8 +954,8 @@ msgid ""
 "The threshold at which the WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND will start "
 "deleting the oldest workflow image cache files. Specify the size in bytes."
 msgstr ""
-"الحد الذي سيبدأ عنده WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND في حذف أقدم ملفات"
-" ذاكرة التخزين المؤقت لصورة مسار العمل. حدد الحجم بالبايت."
+"الحد الذي سيبدأ عنده WORKFLOWS_IMAGE_CACHE_STORAGE_BACKEND في حذف أقدم ملفات "
+"ذاكرة التخزين المؤقت لصورة مسار العمل. حدد الحجم بالبايت."
 
 #: settings.py:37
 msgid ""
@@ -977,8 +977,8 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and"
-" {} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and "
+"{} for formatting errors."
 msgstr ""
 "غير قادر على تهيئة تخزين معاينةالمسار. تحقق من إعدادات {} و {} لأخطاء "
 "التنسيق."
@@ -989,8 +989,8 @@ msgstr "معاينة المسار"
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document"
-" execute those workflows. "
+"Assign workflows to the document type of this document to have this document "
+"execute those workflows. "
 msgstr "يجب تحديد مسارات الوثيقة أولاً ! لتفعيل المسارات للوثيقة"
 
 #: views/workflow_instance_views.py:45
@@ -1004,8 +1004,7 @@ msgstr "سير عمل الوثيقة: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is "
-"transitioned."
+"This view will show the state changes as a workflow instance is transitioned."
 msgstr "ستُظهر طريقة العرض هذه التغييرات حال انتقال المسار."
 
 #: views/workflow_instance_views.py:81
@@ -1037,7 +1036,8 @@ msgstr "إختيار"
 
 #: views/workflow_instance_views.py:226
 #, python-format
-msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgid ""
+"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
 
 #: views/workflow_proxy_views.py:37
@@ -1073,21 +1073,6 @@ msgstr "لا توجد وثائق في المسار"
 #, python-format
 msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "الوثائق الموجودة في المسار &quot;%s&quot; ، الحالة &quot;%s&quot;"
-
-#: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:347
-msgid "Create states and link them using transitions."
-msgstr "إنشاء حالات وربطها باستخدام التحولات."
-
-#: views/workflow_proxy_views.py:129
-msgid "This workflow doesn't have any state"
-msgstr "المسار هذا ليس له أي حالة"
-
-#: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:354
-#, python-format
-msgid "States of workflow: %s"
-msgstr "حالات المسار: %s"
 
 #: views/workflow_template_state_escalation_views.py:43
 #, python-format
@@ -1136,8 +1121,8 @@ msgstr "تعديل إجراء حالة المسار: %s"
 
 #: views/workflow_template_state_views.py:185
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or"
-" leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or "
+"leaves the state in which they reside."
 msgstr ""
 "إجراءات حالة المسار هي وحدات ماكرو يتم تنفيذها عند دخول الوثائق أو حذف "
 "حالتها."
@@ -1171,9 +1156,18 @@ msgstr "حذف المسار: %s؟"
 msgid "Edit workflow state: %s"
 msgstr "تعديل حالة المسار: %s"
 
+#: views/workflow_template_state_views.py:347
+msgid "Create states and link them using transitions."
+msgstr "إنشاء حالات وربطها باستخدام التحولات."
+
 #: views/workflow_template_state_views.py:350
 msgid "This workflow doesn't have any states"
 msgstr "المسار هذا ليس له أي حالات"
+
+#: views/workflow_template_state_views.py:354
+#, python-format
+msgid "States of workflow: %s"
+msgstr "حالات المسار: %s"
 
 #: views/workflow_template_transition_field_views.py:42
 #, python-format
@@ -1192,8 +1186,8 @@ msgstr "تعديل حقل انتقال المسار: %s"
 
 #: views/workflow_template_transition_field_views.py:149
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This"
-" additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This "
+"additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "تسمح حقول انتقال سير العمل بإضافة البيانات إلى سياق سير العمل. يمكن بعد ذلك "

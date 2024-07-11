@@ -2,24 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # bwakkie <bwakkie@gmail.com>, 2024
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:33 events.py:6 permissions.py:6 queues.py:7 settings.py:11
@@ -102,19 +102,19 @@ msgstr ""
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:113 model_mixins.py:326
+#: model_mixins.py:111 model_mixins.py:324
 msgid "Current size"
 msgstr "Huidige omvang"
 
-#: model_mixins.py:115
+#: model_mixins.py:113
 msgid "Current size of the cache."
 msgstr "Huidige omvang van de cache."
 
-#: model_mixins.py:123
+#: model_mixins.py:121
 msgid "Label"
 msgstr "Label"
 
-#: model_mixins.py:328
+#: model_mixins.py:326
 msgid "Current size of the cache partition."
 msgstr ""
 
@@ -196,8 +196,8 @@ msgstr ""
 
 #: settings.py:17
 msgid ""
-"Number of times a cache will retry failed attempts to prune files to free up"
-" space for new a file being requested, before giving up."
+"Number of times a cache will retry failed attempts to prune files to free up "
+"space for new a file being requested, before giving up."
 msgstr ""
 "Aantal keren dat een cache pogingen doet om bestanden op te schonen om "
 "ruimte vrij te maken voor een nieuw bestand dat wordt aangevraagd alvorens "
@@ -205,8 +205,8 @@ msgstr ""
 
 #: settings.py:25
 msgid ""
-"Number of times a cache will attempt to prune files to free up space for new"
-" a file being requested, before giving up."
+"Number of times a cache will attempt to prune files to free up space for new "
+"a file being requested, before giving up."
 msgstr ""
 
 #: views.py:36

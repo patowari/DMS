@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
@@ -10,22 +10,24 @@
 # Sergey Glita <gsv70@mail.ru>, 2024
 # lilo.panic, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:20
+#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:19
 #: links.py:50 links.py:90 links.py:98 links.py:287 links.py:311
 #: models/workflow_models.py:60 queues.py:11 settings.py:14
 #: views/workflow_proxy_views.py:70 views/workflow_template_views.py:284
@@ -54,8 +56,8 @@ msgid ""
 "following fields: datetime, transition, user, and comment."
 msgstr ""
 "Возвращает последнюю запись журнала экземпляра рабочего процесса. Сама "
-"запись журнала имеет следующие поля: \"datetime\", \"transition\", \"user\","
-" \"comment\"."
+"запись журнала имеет следующие поля: \"datetime\", \"transition\", \"user\", "
+"\"comment\"."
 
 #: apps.py:304
 msgid "Get last log entry"
@@ -81,63 +83,63 @@ msgstr "Возвращает переход экземпляра рабочег�
 msgid "Get last transition"
 msgstr "Получить последний переход"
 
-#: apps.py:335 apps.py:360 apps.py:371 apps.py:378
+#: apps.py:335 apps.py:359 apps.py:370 apps.py:377
 msgid "None"
 msgstr "Нет"
 
-#: apps.py:347 apps.py:451
+#: apps.py:346 apps.py:449
 msgid "Documents"
 msgstr "Документы"
 
-#: apps.py:355 serializers/workflow_instance_serializers.py:153
+#: apps.py:354 serializers/workflow_instance_serializers.py:153
 msgid "Current state"
 msgstr "Текущее состояние"
 
-#: apps.py:361 apps.py:391 models/workflow_instance_models.py:105
+#: apps.py:360 apps.py:390 models/workflow_instance_models.py:105
 #: serializers/workflow_instance_serializers.py:77
 msgid "User"
 msgstr "Пользователь"
 
-#: apps.py:366
+#: apps.py:365
 msgid "Last transition"
 msgstr "Последний переход"
 
-#: apps.py:372 apps.py:387
+#: apps.py:371 apps.py:386
 msgid "Date and time"
 msgstr "Дата и время"
 
-#: apps.py:379 models/workflow_state_models.py:54
+#: apps.py:378 models/workflow_state_models.py:54
 msgid "Completion"
 msgstr "Завершение"
 
-#: apps.py:412
+#: apps.py:411
 msgid "Additional details"
 msgstr "Дополнительная информация"
 
-#: apps.py:467
+#: apps.py:465
 msgid "When?"
 msgstr "Когда?"
 
-#: apps.py:471
+#: apps.py:469
 msgid "Action type"
 msgstr "Тип действия"
 
-#: apps.py:531
+#: apps.py:529
 msgid ""
 "Triggers are system events that will cause the transition to be applied."
 msgstr ""
 "Триггеры - это события, которые вызывают автоматическое выполнение этого "
 "перехода."
 
-#: apps.py:533
+#: apps.py:531
 msgid "Triggers"
 msgstr "Триггеры"
 
-#: apps.py:549 models/workflow_transition_field_models.py:33
+#: apps.py:547 models/workflow_transition_field_models.py:33
 msgid "Type"
 msgstr "Тип"
 
-#: apps.py:565
+#: apps.py:563
 msgid "Widget"
 msgstr "Виджет"
 
@@ -170,11 +172,11 @@ msgstr "Рабочий процесс создан"
 msgid "Workflow edited"
 msgstr "Рабочий процесс изменен"
 
-#: forms/workflow_instance_forms.py:17
+#: forms/workflow_instance_forms.py:18
 msgid "Select a transition to execute in the next step."
 msgstr "Выберите переход для выполнения на следующем шаге."
 
-#: forms/workflow_instance_forms.py:18 links.py:293
+#: forms/workflow_instance_forms.py:19 links.py:293
 #: models/workflow_instance_models.py:101
 #: models/workflow_state_escalation_models.py:38
 #: models/workflow_transition_field_models.py:30
@@ -183,7 +185,7 @@ msgstr "Выберите переход для выполнения на сле�
 msgid "Transition"
 msgstr "Переход"
 
-#: forms/workflow_template_forms.py:27
+#: forms/workflow_template_forms.py:26
 msgid "Workflow template preview image"
 msgstr ""
 
@@ -255,8 +257,7 @@ msgstr "Типы документов"
 msgid "Delete"
 msgstr "Удалить"
 
-#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
-#: links.py:265
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219 links.py:265
 msgid "Edit"
 msgstr "Редактировать"
 
@@ -268,7 +269,7 @@ msgstr "Запустить рабочий процесс"
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: links.py:129 models/workflow_state_model_mixins.py:105
+#: links.py:129 models/workflow_state_model_mixins.py:117
 msgid "Actions"
 msgstr "Действия"
 
@@ -280,7 +281,7 @@ msgstr "Создать действие"
 msgid "Create escalation"
 msgstr ""
 
-#: links.py:167 models/workflow_state_model_mixins.py:145
+#: links.py:167 models/workflow_state_model_mixins.py:157
 msgid "Escalations"
 msgstr ""
 
@@ -312,7 +313,7 @@ msgstr "Запустить рабочие процессы"
 msgid "Create field"
 msgstr "Создать поле"
 
-#: links.py:272 models/workflow_transition_model_mixins.py:44
+#: links.py:272 models/workflow_transition_model_mixins.py:61
 msgid "Fields"
 msgstr "Поля"
 
@@ -444,8 +445,8 @@ msgstr "Прокси рабочего процесса"
 #: models/workflow_state_action_models.py:31
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do"
-" not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do "
+"not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -657,10 +658,10 @@ msgstr "Поля перехода рабочего процесса"
 #: models/workflow_transition_models.py:28
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not"
-" return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be"
-" the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not "
+"return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be "
+"the logical true."
 msgstr ""
 "Условие, которое определяет, включен этот переход или нет. Условие "
 "оценивается по экземпляру рабочего процесса. Условия, которые не возвращают "
@@ -691,7 +692,7 @@ msgid "Workflow transitions"
 msgstr "Переходы рабочего процесса"
 
 #: models/workflow_transition_trigger_models.py:31
-#: serializers/workflow_template_transition_trigger_serializers.py:19
+#: serializers/workflow_template_transition_trigger_serializers.py:21
 msgid "Event type"
 msgstr "Тип события"
 
@@ -794,7 +795,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:84
 #: serializers/workflow_template_transition_field_serializers.py:13
 #: serializers/workflow_template_transition_serializers.py:45
-#: serializers/workflow_template_transition_trigger_serializers.py:26
+#: serializers/workflow_template_transition_trigger_serializers.py:28
 #: workflow_actions.py:171
 msgid "URL"
 msgstr "URL"
@@ -808,7 +809,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:62
 #: serializers/workflow_template_transition_field_serializers.py:29
 #: serializers/workflow_template_transition_serializers.py:52
-#: serializers/workflow_template_transition_trigger_serializers.py:42
+#: serializers/workflow_template_transition_trigger_serializers.py:44
 msgid "Workflow template URL"
 msgstr ""
 
@@ -916,12 +917,12 @@ msgid "Escalations URL"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:37
-#: serializers/workflow_template_transition_trigger_serializers.py:50
+#: serializers/workflow_template_transition_trigger_serializers.py:52
 msgid "Workflow transition ID"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:41
-#: serializers/workflow_template_transition_trigger_serializers.py:54
+#: serializers/workflow_template_transition_trigger_serializers.py:56
 msgid "Workflow transition URL"
 msgstr ""
 
@@ -949,11 +950,11 @@ msgstr ""
 msgid "Trigger list URL"
 msgstr ""
 
-#: serializers/workflow_template_transition_trigger_serializers.py:22
+#: serializers/workflow_template_transition_trigger_serializers.py:24
 msgid "Event Type ID"
 msgstr ""
 
-#: serializers/workflow_template_transition_trigger_serializers.py:116
+#: serializers/workflow_template_transition_trigger_serializers.py:118
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
 msgstr ""
@@ -962,8 +963,8 @@ msgstr ""
 msgid ""
 "File path to the graphviz dot program used to generate workflow previews."
 msgstr ""
-"Путь к файлу программы graphviz dot, используемой для создания предпросмотра"
-" рабочего процесса."
+"Путь к файлу программы graphviz dot, используемой для создания предпросмотра "
+"рабочего процесса."
 
 #: settings.py:28
 msgid ""
@@ -994,8 +995,8 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and"
-" {} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and "
+"{} for formatting errors."
 msgstr ""
 "Невозможно инициализировать хранилище предпросмотра рабочего процесса. "
 "Проверьте настройки {} и {} на наличие ошибок форматирования."
@@ -1006,8 +1007,8 @@ msgstr "Изображения предпросмотра рабочего пр�
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document"
-" execute those workflows. "
+"Assign workflows to the document type of this document to have this document "
+"execute those workflows. "
 msgstr ""
 "Назначьте рабочие процессы типу этого документа, чтобы этот документ "
 "выполнял эти рабочие процессы."
@@ -1023,8 +1024,7 @@ msgstr "Рабочие процессы документа: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is "
-"transitioned."
+"This view will show the state changes as a workflow instance is transitioned."
 msgstr ""
 "В этом представлении будут отображаться изменения состояния при переходе "
 "экземпляра рабочего процесса."
@@ -1058,8 +1058,10 @@ msgstr "Выбрать"
 
 #: views/workflow_instance_views.py:226
 #, python-format
-msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
-msgstr "Выбрать переход рабочего процесса \"%(workflow)s\" документа \"%(document)s\""
+msgid ""
+"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgstr ""
+"Выбрать переход рабочего процесса \"%(workflow)s\" документа \"%(document)s\""
 
 #: views/workflow_proxy_views.py:37
 msgid ""
@@ -1099,21 +1101,6 @@ msgstr "В этом состоянии рабочего процесса нет 
 #, python-format
 msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "Документы в процессе \"%s\" в состоянии \"%s\""
-
-#: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:347
-msgid "Create states and link them using transitions."
-msgstr "Создайте состояния и свяжите их с помощью переходов."
-
-#: views/workflow_proxy_views.py:129
-msgid "This workflow doesn't have any state"
-msgstr "У этого рабочего процесса нет состояний"
-
-#: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:354
-#, python-format
-msgid "States of workflow: %s"
-msgstr "Состояния рабочего процесса: %s"
 
 #: views/workflow_template_state_escalation_views.py:43
 #, python-format
@@ -1162,8 +1149,8 @@ msgstr "Редактировать действие: %s"
 
 #: views/workflow_template_state_views.py:185
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or"
-" leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or "
+"leaves the state in which they reside."
 msgstr ""
 "Действия состояния рабочего процесса - это макросы, которые выполняются, "
 "когда документы входят в состояние или покидают его."
@@ -1197,9 +1184,18 @@ msgstr "Удалить состояние рабочего процесса: %s?
 msgid "Edit workflow state: %s"
 msgstr "Редактировать состояние: %s"
 
+#: views/workflow_template_state_views.py:347
+msgid "Create states and link them using transitions."
+msgstr "Создайте состояния и свяжите их с помощью переходов."
+
 #: views/workflow_template_state_views.py:350
 msgid "This workflow doesn't have any states"
 msgstr "У этого рабочего процесса нет состояний"
+
+#: views/workflow_template_state_views.py:354
+#, python-format
+msgid "States of workflow: %s"
+msgstr "Состояния рабочего процесса: %s"
 
 #: views/workflow_template_transition_field_views.py:42
 #, python-format
@@ -1218,8 +1214,8 @@ msgstr "Редактировать поле перехода: %s"
 
 #: views/workflow_template_transition_field_views.py:149
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This"
-" additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This "
+"additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "Поля перехода рабочего процесса позволяют добавлять данные в контекст "
@@ -1491,8 +1487,7 @@ msgstr "Свойства документа"
 
 #: workflow_actions.py:123
 msgid "Additional workflows to launch for the document."
-msgstr ""
-"Дополнительные рабочие процессы, которые будут запущены для документа."
+msgstr "Дополнительные рабочие процессы, которые будут запущены для документа."
 
 #: workflow_actions.py:174
 msgid "The URL to access."

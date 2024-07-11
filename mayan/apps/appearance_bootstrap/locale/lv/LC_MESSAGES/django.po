@@ -1,27 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Māris Teivāns <maris.teivans@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lv\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
-#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
-msgid "Appearance"
+#: apps.py:15
+msgid "Appearance (Bootstrap)"
 msgstr "Izskats"
 
 #: dependencies.py:8
@@ -35,149 +36,6 @@ msgstr "Bootstrap"
 #: dependencies.py:16
 msgid "Bootswatch"
 msgstr "Bootswatch"
-
-#: dependencies.py:30
-msgid "Fancybox"
-msgstr "Fancybox"
-
-#: dependencies.py:34
-msgid "FontAwesome"
-msgstr "FontAwesome"
-
-#: dependencies.py:38
-msgid "jQuery"
-msgstr "jQuery"
-
-#: dependencies.py:42
-msgid "JQuery Form"
-msgstr "JQuery veidlapa"
-
-#: dependencies.py:46
-msgid "JQuery Match Height"
-msgstr "JQuery Match Height"
-
-#: dependencies.py:50
-msgid "Select 2"
-msgstr "Select 2"
-
-#: dependencies.py:54
-msgid "Toastr"
-msgstr "Toastr"
-
-#: events.py:10
-msgid "Theme created"
-msgstr "Tēma ir izveidota"
-
-#: events.py:13
-msgid "Theme edited"
-msgstr "Tēma ir rediģēta"
-
-#: events.py:16
-msgid "User theme edited"
-msgstr ""
-
-#: links.py:26
-msgid "Theme settings"
-msgstr "Tēmas iestatījumi"
-
-#: links.py:33
-msgid "Edit theme settings"
-msgstr "Rediģēt tēmas iestatījumus"
-
-#: links.py:39 views.py:34
-msgid "Create new theme"
-msgstr "Izveidot jaunu tēmu"
-
-#: links.py:44
-msgid "Delete"
-msgstr "Dzēst"
-
-#: links.py:48
-msgid "Edit"
-msgstr "Rediģēt"
-
-#: links.py:52 links.py:60 models.py:33 views.py:103
-msgid "Themes"
-msgstr "Tēmas"
-
-#: models.py:20
-msgid "A short text describing the theme."
-msgstr "Īss teksts, kas apraksta tēmu."
-
-#: models.py:21
-msgid "Label"
-msgstr "Etiķete"
-
-#: models.py:25
-msgid ""
-"The CSS stylesheet to change the appearance of the different user interface "
-"elements."
-msgstr ""
-"CSS stila lapa, lai mainītu dažādu lietotāja interfeisa elementu izskatu."
-
-#: models.py:27
-msgid "Stylesheet"
-msgstr "Stila lapa"
-
-#: models.py:32 models.py:69
-msgid "Theme"
-msgstr "Tēma"
-
-#: models.py:65
-msgid "User"
-msgstr "Lietotājs"
-
-#: models.py:73
-msgid "User theme setting"
-msgstr "Lietotāja tēmas iestatījums"
-
-#: models.py:74
-msgid "User theme settings"
-msgstr "Lietotāja tēmas iestatījumi"
-
-#: permissions.py:10
-msgid "Create new themes"
-msgstr "Izveidot jaunas tēmas"
-
-#: permissions.py:13
-msgid "Delete themes"
-msgstr "Dzēst tēmas"
-
-#: permissions.py:16
-msgid "Edit themes"
-msgstr "Rediģēt tēmas"
-
-#: permissions.py:19
-msgid "View existing themes"
-msgstr "Skatīt esošās tēmas"
-
-#: settings.py:18
-msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
-
-#: settings.py:24
-msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "Maksimālais rakstzīmju skaits, kas tiks attēlots kā skata nosaukums."
-
-#: settings.py:34
-msgid "Position where the system messages will be displayed."
-msgstr ""
-
-#: settings.py:40
-msgid ""
-"Delay in milliseconds after which the menus will be checked for updates."
-msgstr ""
-
-#: settings.py:47
-msgid ""
-"Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
-
-#: settings.py:54
-msgid ""
-"Time in milliseconds after which a throttled request will clear allowing an "
-"additional request to be performed."
-msgstr ""
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -215,8 +73,7 @@ msgstr ""
 "Atrašanās vieta ir pareiza, taču jūsu kontam nav vajadzīgās atļaujas, lai "
 "tai piekļūtu."
 
-#: templates/500.html:5 templates/500.html:18
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Servera kļūda"
 
@@ -241,7 +98,9 @@ msgid "Contact your system administrator."
 msgstr "Sazinieties ar sistēmas administratoru."
 
 #: templates/500.html:35
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
 "Pārbaudiet, vai žurnālos nav ziņojumu ar tagiem \"ERROR\", \"CRITICAL\" vai "
 "\"FATAL\"."
@@ -250,8 +109,8 @@ msgstr ""
 #, python-format
 msgid "Open a ticket using the <a href=\"%(issue_url)s\">issue tracker</a>."
 msgstr ""
-"Atveriet biļeti, izmantojot <a href=\"%(issue_url)s\">problēmu "
-"izsekotāju</a> ."
+"Atveriet biļeti, izmantojot <a href=\"%(issue_url)s\">problēmu izsekotāju</"
+"a> ."
 
 #: templates/appearance/about.html:10
 msgid "About"
@@ -281,8 +140,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -399,7 +258,7 @@ msgstr ""
 msgid "Total: %(total)s"
 msgstr "Kopā: %(total)s"
 
-#: templates/appearance/partials/list/no_results.html:18
+#: templates/appearance/partials/list/no_results.html:22
 msgid "No results"
 msgstr "Nav rezultātu"
 
@@ -421,28 +280,20 @@ msgstr "Identifikators"
 msgid "Actions"
 msgstr "Darbības"
 
-#: templates/appearance/partials/list/toolbar.html:14
+#: templates/appearance/partials/list/toolbar.html:15
 msgid "Select/Deselect all"
 msgstr "Atlasīt / noņemt atlasi visiem"
 
-#: templates/appearance/partials/list/toolbar.html:18
-msgid "Toggle list display mode"
-msgstr "Pārslēgt saraksta skata režīmu"
-
-#: templates/appearance/partials/list/toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:28
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Atlasiet vienumus, lai aktivizētu lielapjoma darbības. Izmantojiet taustiņu "
 "kombināciju Shift + noklikšķiniet, lai atlasītu daudzus."
 
-#: templates/appearance/partials/list/toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:32
 msgid "Bulk actions"
 msgstr "Lielapjoma darbības"
-
-#: templates/appearance/partials/list/toolbar.html:38
-msgid "Toggle Dropdown"
-msgstr "Toggle Dropdown"
 
 #: templates/appearance/partials/sidebar.html:17
 msgid "Object"
@@ -452,47 +303,34 @@ msgstr "Objekts"
 msgid "Open main menu"
 msgstr "Atvērt galveno izvēlni"
 
-#: templates/appearance/root.html:51
+#: templates/appearance/root.html:53
 msgid "Close"
 msgstr "Aizvērt"
 
-#: templates/appearance/root.html:59
+#: templates/appearance/root.html:61
 msgid "Server communication error"
 msgstr "Servera sakaru kļūda"
 
-#: templates/appearance/root.html:61
+#: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
 msgstr "Pārbaudiet tīkla savienojumu un pēc brīža mēģiniet vēlreiz."
 
-#: templatetags/appearance_tags.py:77
-msgid "None"
-msgstr "Nav neviens"
+#: templates/navigation/app/list_toolbar.html:10
+msgid "Toggle list display mode"
+msgstr "Pārslēgt saraksta skata režīmu"
 
-#: views.py:59
-#, python-format
-msgid "Delete theme: %s"
-msgstr "Dzēst tēmu: %s"
-
-#: views.py:76
-#, python-format
-msgid "Edit theme: %s"
-msgstr "Rediģēt tēmu: %s"
-
-#: views.py:97
-msgid ""
-"Themes allow changing the visual appearance without requiring code changes."
-msgstr "Tēmas ļauj mainīt vizuālo izskatu, neprasot koda izmaiņas."
-
-#: views.py:101
-msgid "There are no themes"
-msgstr "Nav tēmu"
-
-#: views.py:127
-#, python-format
-msgid "Theme settings for user: %s"
+#: templates/navigation/app/list_toolbar.html:25
+msgid "Sort by column"
 msgstr ""
 
-#: views.py:150
-#, python-format
-msgid "Edit theme settings for user: %s"
+#: templates/navigation/app/list_toolbar.html:26
+msgid "--- Clear ---"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:29
+msgid "(ascending)"
+msgstr ""
+
+#: templates/navigation/app/list_toolbar.html:31
+msgid "(descending)"
 msgstr ""

@@ -2,25 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
+"bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:38 events.py:6 permissions.py:6
@@ -43,7 +44,7 @@ msgstr "Съобщението е създадено"
 msgid "Message edited"
 msgstr "Съобщението е редактирано"
 
-#: forms.py:26 models.py:40 workflow_actions.py:79
+#: forms.py:25 models.py:40 workflow_actions.py:79
 msgid "Body"
 msgstr "Съдържание"
 
@@ -54,6 +55,10 @@ msgstr "Създаване на съобщение"
 #: links.py:54 links.py:60
 msgid "Delete"
 msgstr "Изтрийте"
+
+#: links.py:66 models.py:57 views.py:118
+msgid "Messages"
+msgstr "Съобщения"
 
 #: links.py:70 links.py:81
 msgid "Mark as read"
@@ -115,10 +120,6 @@ msgstr "Дата и час на създаване"
 msgid "Message"
 msgstr "Съобщение"
 
-#: models.py:57 views.py:128
-msgid "Messages"
-msgstr "Съобщения"
-
 #: permissions.py:10
 msgid "Create messages"
 msgstr "Създаване на съобщения"
@@ -159,134 +160,134 @@ msgstr "Потребител №"
 msgid "URL"
 msgstr "URL"
 
-#: views.py:49
+#: views.py:50
 #, python-format
 msgid "Error deleting message \"%(instance)s\"; %(exception)s"
 msgstr ""
 "Грешка при изтриване на съобщение &quot;%(instance)s&quot;; %(exception)s"
 
-#: views.py:53
+#: views.py:56
 #, python-format
 msgid "%(count)d messages deleted successfully."
 msgstr "%(count)d съобщения бяха изтрити успешно."
 
-#: views.py:54
+#: views.py:59
 #, python-format
 msgid "Message \"%(object)s\" deleted successfully."
 msgstr "Съобщението &quot;%(object)s&quot; беше изтрито успешно."
 
-#: views.py:55
+#: views.py:62
 #, python-format
 msgid "%(count)d message deleted successfully."
 msgstr "%(count)d съобщение беше изтрито успешно."
 
-#: views.py:56
+#: views.py:64
 #, python-format
 msgid "Delete the %(count)d selected messages."
 msgstr "Изтрийте %(count)dизбрани съобщения."
 
-#: views.py:57
+#: views.py:65
 #, python-format
 msgid "Delete message: %(object)s."
 msgstr "Изтриване на съобщение: %(object)s."
 
-#: views.py:58
+#: views.py:66
 #, python-format
 msgid "Delete the %(count)d selected message."
 msgstr "Изтрийте %(count)dизбрано съобщение."
 
-#: views.py:100
+#: views.py:90
 #, python-format
 msgid "Details of message: %s"
 msgstr "Подробности за съобщението: %s"
 
-#: views.py:124
+#: views.py:114
 msgid "Here you will find text messages from other users or from the system."
 msgstr ""
 "Тук ще намерите текстови съобщения от други потребители или от системата."
 
-#: views.py:127
+#: views.py:117
 msgid "There are no messages"
 msgstr "Няма съобщения"
 
-#: views.py:137
+#: views.py:127
 #, python-format
 msgid "Error marking message \"%(instance)s\" as read; %(exception)s"
 msgstr ""
 "Грешка при маркирането на съобщението „%(instance)s“ като прочетено; "
 "%(exception)s"
 
-#: views.py:143
+#: views.py:133
 #, python-format
 msgid "%(count)d messages marked as read successfully."
 msgstr "%(count)d съобщения, отбелязани като прочетени успешно."
 
-#: views.py:146
+#: views.py:136
 #, python-format
 msgid "Message \"%(object)s\" marked as read successfully."
 msgstr "Съобщението „%(object)s“ е отбелязано като прочетено успешно."
 
-#: views.py:149
+#: views.py:139
 #, python-format
 msgid "%(count)d message marked as read successfully."
 msgstr "%(count)d съобщение, означено като успешно прочетено."
 
-#: views.py:151
+#: views.py:141
 #, python-format
 msgid "Mark the %(count)d selected messages as read."
 msgstr "Маркирайте %(count)d избрани съобщения като прочетени."
 
-#: views.py:152
+#: views.py:142
 #, python-format
 msgid "Mark the message \"%(object)s\" as read."
 msgstr "Маркирайте съобщението &quot;%(object)s&quot; като прочетено."
 
-#: views.py:153
+#: views.py:143
 #, python-format
 msgid "Mark the %(count)d selected message as read."
 msgstr "Маркирайте %(count)d избрано съобщение като прочетено."
 
-#: views.py:181
+#: views.py:171
 msgid "Mark all message as read?"
 msgstr "Да се означат ли всички съобщения като прочетени?"
 
-#: views.py:197
+#: views.py:187
 msgid "All messages marked as read."
 msgstr "Всички съобщения са означени като прочетени."
 
-#: views.py:204
+#: views.py:194
 #, python-format
 msgid "Error marking message \"%(instance)s\" as unread; %(exception)s"
 msgstr ""
 "Грешка при маркирането на съобщението „%(instance)s“ като непрочетено; "
 "%(exception)s"
 
-#: views.py:210
+#: views.py:200
 #, python-format
 msgid "%(count)d messages marked as unread successfully."
 msgstr "%(count)d съобщения, успешно отбелязани като непрочетени."
 
-#: views.py:213
+#: views.py:203
 #, python-format
 msgid "Message \"%(object)s\" marked as unread successfully."
 msgstr "Съобщението „%(object)s“ бе отбелязано като непрочетено успешно."
 
-#: views.py:216
+#: views.py:206
 #, python-format
 msgid "%(count)d message marked as unread successfully."
 msgstr "%(count)d съобщение, успешно означено като непрочетено."
 
-#: views.py:218
+#: views.py:208
 #, python-format
 msgid "Mark the %(count)d selected messages as unread."
 msgstr "Маркирайте избраните съобщения %(count)d като непрочетени."
 
-#: views.py:219
+#: views.py:209
 #, python-format
 msgid "Mark the message \"%(object)s\" as unread."
 msgstr "Маркирайте съобщението \"%(object)s\" като непрочетено."
 
-#: views.py:220
+#: views.py:210
 #, python-format
 msgid "Mark the %(count)d selected message as unread."
 msgstr "Маркирайте избраното съобщение %(count)d като непрочетено."
@@ -322,8 +323,7 @@ msgid ""
 msgstr ""
 
 #: workflow_actions.py:69
-msgid ""
-"Subject of the message to be sent. Can be a static value or a template."
+msgid "Subject of the message to be sent. Can be a static value or a template."
 msgstr ""
 
 #: workflow_actions.py:84

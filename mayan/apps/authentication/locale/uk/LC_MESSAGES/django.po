@@ -1,25 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Leo Lado, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
+"uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
@@ -41,19 +45,19 @@ msgstr "Користувач увійшов в систему"
 msgid "User logged out"
 msgstr "Користувач вийшов із системи"
 
-#: forms.py:34
+#: forms.py:33
 msgid "Remember me"
 msgstr "Запам'ятати мене"
 
-#: forms.py:81
+#: forms.py:80
 msgid "Permanent"
 msgstr "На постійній основі."
 
-#: forms.py:82
+#: forms.py:81
 msgid "If selected, disables ending impersonation."
 msgstr "Якщо вибрано, то виключає закінчення дій від імені."
 
-#: forms.py:93
+#: forms.py:92
 msgid "User"
 msgstr "Користувач"
 
@@ -197,12 +201,12 @@ msgstr "Запит на зміну пароля виконується %(count)d
 
 #: views/authentication_views.py:386
 msgid ""
-"Changing the password of staff or super user accounts via the user interface"
-" is not allowed. Use administration tools to perform this operation."
+"Changing the password of staff or super user accounts via the user interface "
+"is not allowed. Use administration tools to perform this operation."
 msgstr ""
 "Змінювати пароль облікових записів персоналу або суперкористувача через "
-"інтерфейс користувача заборонено. Для виконання цієї операції використовуйте"
-" інструменти адміністрування."
+"інтерфейс користувача заборонено. Для виконання цієї операції використовуйте "
+"інструменти адміністрування."
 
 #: views/authentication_views.py:400
 msgid "Change user password"

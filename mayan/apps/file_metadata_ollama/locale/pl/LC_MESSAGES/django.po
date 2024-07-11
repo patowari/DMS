@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-13 14:31+0000\n"
+"POT-Creation-Date: 2024-07-11 10:34+0000\n"
 "PO-Revision-Date: 2024-01-02 18:58+0000\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "Language: pl\n"
@@ -18,14 +18,14 @@ msgstr ""
 "(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
 "n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:11
-msgid "File metadata EML"
+#: apps.py:10
+msgid "File metadata Ollama"
 msgstr ""
 
-#: drivers.py:15
-msgid "Extracts information from emails saved in .eml files."
+#: drivers.py:14
+msgid "Analyze content using Ollama."
 msgstr ""
 
-#: drivers.py:18
-msgid "EML Python driver"
+#: drivers.py:17
+msgid "Ollama Chat AI driver"
 msgstr ""

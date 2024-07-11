@@ -1,24 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Hmayag Antonian <hmayag@freemail.gr>, 2024
 # pyrotech <anastasios@tutamail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:41 events.py:6 links.py:32
@@ -53,31 +53,31 @@ msgstr "Έγγραφο δεν δεσμεύτηκε."
 msgid "Document already checked out."
 msgstr "Έγγραφο ήδη δεσμευμένο."
 
-#: forms.py:26
+#: forms.py:25
 msgid "Document status"
 msgstr "Κατάσταση εγγράφου"
 
-#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
+#: forms.py:36 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Χρήστης"
 
-#: forms.py:41
+#: forms.py:40
 msgid "Check out time"
 msgstr "Ώρα δέσμευσης"
 
-#: forms.py:46
+#: forms.py:45
 msgid "Check out expiration"
 msgstr "Λήξη δέσμευσης"
 
-#: forms.py:51
+#: forms.py:50
 msgid "New files allowed?"
 msgstr ""
 
-#: forms.py:52
+#: forms.py:51
 msgid "Yes"
 msgstr "Ναι"
 
-#: forms.py:52
+#: forms.py:51
 msgid "No"
 msgstr "Όχι"
 
@@ -276,6 +276,6 @@ msgstr ""
 msgid "No documents have been checked out"
 msgstr "Δεν υπάρχουν δεσμευμένα έγγραφα"
 
-#: widgets.py:20
+#: widgets.py:19
 msgid "Amount"
 msgstr "Διάρκεια"

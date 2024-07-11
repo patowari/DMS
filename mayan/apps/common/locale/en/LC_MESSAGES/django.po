@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 06:20+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2020-07-09 04:05+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:133 permissions.py:6 settings.py:15
+#: apps.py:26 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr ""
 
-#: dependencies.py:193
+#: dependencies.py:189
 msgid "Command line environment with autocompletion."
 msgstr ""
 
-#: dependencies.py:198
+#: dependencies.py:194
 msgid "Checks proper formatting of the README file."
 msgstr ""
 
@@ -103,24 +103,24 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: menus.py:8
-msgid "System"
-msgstr ""
-
-#: menus.py:10 menus.py:11
+#: menus.py:7 menus.py:8
 msgid "Facet"
 msgstr ""
 
-#: menus.py:14
+#: menus.py:11
 msgid "Actions"
 msgstr ""
 
-#: menus.py:15
+#: menus.py:12
 msgid "Related"
 msgstr ""
 
-#: menus.py:16
+#: menus.py:13
 msgid "Secondary"
+msgstr ""
+
+#: menus.py:16
+msgid "System"
 msgstr ""
 
 #: menus.py:18

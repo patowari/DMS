@@ -2,26 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # dave cheng, 2024
 # Roberto Rosario, 2024
 # Ford Guo <agile.guo@gmail.com>, 2024
 # Leon Chu, 2024
 # yan songwei <yansw@vip.163.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: yan songwei <yansw@vip.163.com>, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
+"teams/13584/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
@@ -128,8 +129,8 @@ msgstr "二进制"
 
 #: classes.py:537
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end"
-" functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end "
+"functionality."
 msgstr "JavaScript库从NPM注册表中已下载，并用于前端功能。"
 
 #: classes.py:540
@@ -302,8 +303,8 @@ msgstr ""
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure"
-" your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure "
+"your installation has a connection to the internet; %(exception)s"
 msgstr ""
 
 #: management/commands/dependencies_check.py:13
@@ -339,8 +340,8 @@ msgstr ""
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment"
-" technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment "
+"technologies, such as container or virtual machine images."
 msgstr ""
 
 #: views.py:51

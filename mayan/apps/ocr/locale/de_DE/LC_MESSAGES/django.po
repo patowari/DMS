@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Berny <berny@bernhard-marx.de>, 2024
@@ -9,22 +9,23 @@
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
 # Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 13:45+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024\n"
-"Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
+"Language-Team: German (Germany) (https://app.transifex.com/rosarior/"
+"teams/13584/de_DE/)\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:56 apps.py:91 events.py:6 links.py:54 links.py:80 permissions.py:6
+#: apps.py:56 apps.py:91 events.py:6 links.py:53 links.py:79 permissions.py:6
 #: queues.py:6 search.py:18 settings.py:11 workflow_actions.py:53
 msgid "OCR"
 msgstr "OCR-Schrifterkennung"
@@ -64,39 +65,38 @@ msgstr "Dokumentenversion, die in die OCR-Warteschlange eingereiht ist"
 
 #: events.py:22
 msgid "Document version OCR finished"
-msgstr ""
-"Dokumentenversion, für die die OCR-Schrifterkennung durchgeführt wurde"
+msgstr "Dokumentenversion, für die die OCR-Schrifterkennung durchgeführt wurde"
 
-#: forms.py:13 forms.py:44 forms.py:64
+#: forms.py:12 forms.py:43 forms.py:63
 msgid "Contents"
 msgstr "Inhalte"
 
-#: forms.py:99
+#: forms.py:98
 #, python-format
 msgid "Page %(page_number)d"
 msgstr "Seite %(page_number)d"
 
 #: links.py:27
-msgid "Setup OCR"
-msgstr "OCR Einrichtung"
+msgid "OCR setup"
+msgstr "OCR Inhalt"
 
-#: links.py:33
+#: links.py:32
 msgid "OCR documents per type"
 msgstr "Texterkennung pro Dokumententyp durchführen"
 
-#: links.py:40 links.py:47
+#: links.py:39 links.py:46
 msgid "Delete OCR content"
 msgstr "OCR-Inhalt löschen"
 
-#: links.py:60
+#: links.py:59
 msgid "Download OCR text"
 msgstr "OCR-Text herunterladen"
 
-#: links.py:65 links.py:70
+#: links.py:64 links.py:69
 msgid "Submit for OCR"
 msgstr "In die OCR-Verarbeitung einstellen"
 
-#: links.py:86
+#: links.py:85
 msgid "Edit OCR"
 msgstr "OCR-Inhalt bearbeiten"
 

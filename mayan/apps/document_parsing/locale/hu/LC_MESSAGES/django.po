@@ -2,24 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Dezső József <dejo60@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:53 apps.py:89 events.py:6 permissions.py:6 settings.py:11
@@ -41,8 +42,8 @@ msgid ""
 "Utility from the poppler-utils package used to extract content from PDF "
 "files."
 msgstr ""
-"Segédprogram a poppler-utils csomagból, amellyel a tartalom kinyerhető a "
-"PDF-fájlokból."
+"Segédprogram a poppler-utils csomagból, amellyel a tartalom kinyerhető a PDF-"
+"fájlokból."
 
 #: events.py:10
 msgid "Document file parsed content deleted"
@@ -56,12 +57,12 @@ msgstr "A dokumentumfájl elemzésre beküldve"
 msgid "Document file parsing finished"
 msgstr "A dokumentumfájl elemzése befejeződött"
 
-#: forms.py:41
+#: forms.py:40
 #, python-format
 msgid "Page %(page_number)d"
 msgstr "%(page_number)d oldal"
 
-#: forms.py:51 forms.py:63
+#: forms.py:50 forms.py:62
 msgid "Contents"
 msgstr "Tartalom"
 
@@ -161,13 +162,12 @@ msgstr "Dokumentumfájl tartalom"
 #: settings.py:18
 msgid "Set new document types to perform parsing automatically by default."
 msgstr ""
-"Állítsa be az új dokumentumtípusokat úgy, hogy azokon alapértelmezés szerint"
-" automatikusan végrehajtódjon az elemzés."
+"Állítsa be az új dokumentumtípusokat úgy, hogy azokon alapértelmezés szerint "
+"automatikusan végrehajtódjon az elemzés."
 
 #: settings.py:24
 msgid ""
-"File path to poppler's pdftotext program used to extract text from PDF "
-"files."
+"File path to poppler's pdftotext program used to extract text from PDF files."
 msgstr ""
 "elérési útvonal a poppler féle pdftotext programhoz ami PDF-ből szöveget "
 "nyer ki"
@@ -244,8 +244,7 @@ msgstr "A \"%s\" dokumentumfájl elküldése az elemzési sorba"
 #: views.py:191
 #, python-format
 msgid "Edit parsing settings for document type: %s."
-msgstr ""
-"A következő dokumentumtípus elemzési beállításainak szerkesztése: %s ."
+msgstr "A következő dokumentumtípus elemzési beállításainak szerkesztése: %s ."
 
 #: views.py:201
 msgid "Submit all documents of a type for parsing"

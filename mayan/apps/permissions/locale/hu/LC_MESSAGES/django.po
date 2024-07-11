@@ -1,31 +1,32 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:43 events.py:6 models.py:33 models.py:90 permissions.py:6
 msgid "Permissions"
 msgstr "Engedélyek"
 
-#: apps.py:107 model_mixins.py:35
+#: apps.py:106 model_mixins.py:35
 msgid "Group count"
 msgstr ""
 
@@ -240,9 +241,9 @@ msgid ""
 msgstr ""
 "A szerepkörök jogosultsági egységek. Olyan felhasználói csoportokat "
 "tartalmaznak, amelyek a teljes rendszer szerepkör-engedélyeit öröklik. A "
-"szerepkörök a hozzáférési listák részei is lehetnek. A hozzáférési lista egy"
-" szerepkörnek adott jogosultságokat jelent bizonyos objektumokhoz, amelyeket"
-" a csoporttagok örökölnek."
+"szerepkörök a hozzáférési listák részei is lehetnek. A hozzáférési lista egy "
+"szerepkörnek adott jogosultságokat jelent bizonyos objektumokhoz, amelyeket "
+"a csoporttagok örökölnek."
 
 #: views.py:120
 msgid "There are no roles"
@@ -261,8 +262,8 @@ msgid ""
 "Add groups to be part of a role. They will inherit the role's permissions "
 "and access controls."
 msgstr ""
-"Csoportok hozzáadása, hogy egy szerep része legyen. Ezek öröklik a szerepkör"
-" engedélyeit és hozzáférési vezérlőit."
+"Csoportok hozzáadása, hogy egy szerep része legyen. Ezek öröklik a szerepkör "
+"engedélyeit és hozzáférési vezérlőit."
 
 #: views.py:148
 #, python-format

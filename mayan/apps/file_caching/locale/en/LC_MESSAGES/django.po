@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,19 +96,19 @@ msgstr ""
 msgid "Total cached files."
 msgstr ""
 
-#: model_mixins.py:113 model_mixins.py:326
+#: model_mixins.py:111 model_mixins.py:324
 msgid "Current size"
 msgstr ""
 
-#: model_mixins.py:115
+#: model_mixins.py:113
 msgid "Current size of the cache."
 msgstr ""
 
-#: model_mixins.py:123
+#: model_mixins.py:121
 msgid "Label"
 msgstr ""
 
-#: model_mixins.py:328
+#: model_mixins.py:326
 msgid "Current size of the cache partition."
 msgstr ""
 

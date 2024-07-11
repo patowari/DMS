@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
@@ -10,79 +10,48 @@
 # abc Def <hdogan1974@gmail.com>, 2024
 # Bedreddin Şahbaz, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
+"teams/13584/tr_TR/)\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:220 apps.py:285 apps.py:662 events.py:6 menus.py:8
+#: apps.py:220 apps.py:1061 events.py:6 menus.py:8
 #: models/document_models.py:112 permissions.py:6 settings.py:33
 #: statistics.py:286
 msgid "Documents"
 msgstr "Belgeler"
 
-#: apps.py:306
-msgid "Create a document type"
+#: apps.py:236 models/favorite_document_models.py:33
+msgid "Date and time added"
 msgstr ""
 
-#: apps.py:308
-msgid ""
-"Every uploaded document must be assigned a document type, it is the basic "
-"way Mayan EDMS categorizes documents."
-msgstr ""
-"Yüklenen her belgeye bir belge türü atanmalıdır; bu, Mayan EDMS'in belgeleri"
-" sınıflandırmasının temel şeklidir."
-
-#: apps.py:402
-msgid "File comments"
-msgstr ""
-
-#: apps.py:406
-msgid "File encodings"
-msgstr ""
-
-#: apps.py:410
-msgid "File MIME types"
-msgstr ""
-
-#: apps.py:414
-msgid "File timestamps"
-msgstr ""
-
-#: apps.py:419 links/document_file_page_links.py:76
+#: apps.py:278 links/document_file_page_links.py:76
 #: models/document_file_models.py:107 models/document_file_page_models.py:28
 #: search.py:54
 msgid "Document file"
 msgstr "Belge dosyası"
 
-#: apps.py:423 models/document_file_page_models.py:32
+#: apps.py:282 models/document_file_page_models.py:32
 #: models/document_version_page_models.py:42
 msgid "Page number"
 msgstr "Sayfa numarası"
 
-#: apps.py:428
-msgid "Return the latest file of the document."
-msgstr ""
-
-#: apps.py:429
-msgid "Latest file"
-msgstr ""
-
-#: apps.py:433
+#: apps.py:287
 msgid "Return the document instance."
 msgstr ""
 
-#: apps.py:434 links/document_file_links.py:71
+#: apps.py:288 links/document_file_links.py:71
 #: links/document_file_page_links.py:70 links/document_version_links.py:73
 #: links/document_version_page_links.py:90 models/document_file_models.py:58
 #: models/document_models.py:111 models/document_version_models.py:30
@@ -93,29 +62,69 @@ msgstr ""
 msgid "Document"
 msgstr "Belge"
 
-#: apps.py:570 apps.py:615 apps.py:648 apps.py:683 apps.py:708
+#: apps.py:343 apps.py:376 apps.py:762 apps.py:787 apps.py:994
 msgid "Thumbnail"
 msgstr "Küçük Resim"
 
-#: apps.py:575
-msgid "Type"
-msgstr "Tür"
-
-#: apps.py:580 apps.py:620 apps.py:688 forms/document_file_forms.py:89
+#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:88
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
 msgstr "Sayfalar"
 
-#: apps.py:590 models/favorite_document_models.py:33
-msgid "Date and time added"
-msgstr ""
-
-#: apps.py:601
+#: apps.py:469
 msgid "Access date and time"
 msgstr ""
 
-#: classes.py:65 forms/document_file_forms.py:40
+#: apps.py:534
+msgid "Create a document type"
+msgstr ""
+
+#: apps.py:536
+msgid ""
+"Every uploaded document must be assigned a document type, it is the basic "
+"way Mayan EDMS categorizes documents."
+msgstr ""
+"Yüklenen her belgeye bir belge türü atanmalıdır; bu, Mayan EDMS'in belgeleri "
+"sınıflandırmasının temel şeklidir."
+
+#: apps.py:929
+msgid "File comments"
+msgstr ""
+
+#: apps.py:933
+msgid "File encodings"
+msgstr ""
+
+#: apps.py:937
+msgid "File MIME types"
+msgstr ""
+
+#: apps.py:941
+msgid "File timestamps"
+msgstr ""
+
+#: apps.py:945
+msgid "Return the latest file of the document."
+msgstr ""
+
+#: apps.py:946
+msgid "Latest file"
+msgstr ""
+
+#: apps.py:950
+msgid "Return the active version of the document."
+msgstr "Belgenin türünü değiştirin: %s"
+
+#: apps.py:951
+msgid "Active version"
+msgstr "Doküman sürümü"
+
+#: apps.py:999
+msgid "Type"
+msgstr "Tür"
+
+#: classes.py:65 forms/document_file_forms.py:39
 msgid "Original"
 msgstr ""
 
@@ -123,7 +132,7 @@ msgstr ""
 msgid "Keeps the original filename of the uploaded file."
 msgstr ""
 
-#: classes.py:77 forms/document_forms.py:110 models/document_models.py:50
+#: classes.py:77 forms/document_forms.py:109 models/document_models.py:50
 msgid "UUID"
 msgstr "UUID"
 
@@ -137,8 +146,8 @@ msgstr ""
 
 #: classes.py:92
 msgid ""
-"Generates an immutable, random UUID (RFC 4122) for each file and appends the"
-" original filename of the uploaded file."
+"Generates an immutable, random UUID (RFC 4122) for each file and appends the "
+"original filename of the uploaded file."
 msgstr ""
 
 #: dashboard_widgets.py:29
@@ -297,81 +306,82 @@ msgstr ""
 msgid "Document version uploaded (historic)"
 msgstr ""
 
-#: forms/document_file_forms.py:44
+#: forms/document_file_forms.py:43
 msgid "Detected"
 msgstr ""
 
-#: forms/document_file_forms.py:48
+#: forms/document_file_forms.py:47
 msgid "Storage"
 msgstr "Depolama"
 
-#: forms/document_file_forms.py:52
+#: forms/document_file_forms.py:51
 msgid "Other"
 msgstr ""
 
-#: forms/document_file_forms.py:61
+#: forms/document_file_forms.py:60
 msgid "Date added"
 msgstr "Ekleme Tarihi"
 
-#: forms/document_file_forms.py:66 models/document_file_models.py:84
+#: forms/document_file_forms.py:65 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "MIME türü"
 
-#: forms/document_file_forms.py:70 models/document_file_models.py:90
+#: forms/document_file_forms.py:69 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "Kodlama"
 
-#: forms/document_file_forms.py:74 models/document_file_models.py:102
+#: forms/document_file_forms.py:73 models/document_file_model_mixins.py:371
+#: models/document_file_models.py:102
 msgid "Size"
 msgstr "Boyut"
 
-#: forms/document_file_forms.py:80
+#: forms/document_file_forms.py:79
 msgid "Exists in storage"
 msgstr "Depoda varolan varlıklar"
 
-#: forms/document_file_forms.py:83
+#: forms/document_file_forms.py:82
 msgid "Path in storage"
 msgstr ""
 
-#: forms/document_file_forms.py:86 models/document_file_models.py:97
+#: forms/document_file_forms.py:85 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "Sağlama"
 
-#: forms/document_forms.py:46
+#: forms/document_forms.py:45
 msgid "Quick document rename"
 msgstr "Hızlı belge yeniden adlandırma"
 
-#: forms/document_forms.py:54
+#: forms/document_forms.py:53
 msgid "Preserve extension"
 msgstr ""
 
-#: forms/document_forms.py:56
+#: forms/document_forms.py:55
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open document correctly."
 msgstr ""
 
-#: forms/document_forms.py:105
+#: forms/document_forms.py:104
 msgid "Date created"
 msgstr ""
 
-#: forms/document_forms.py:113 models/document_models.py:78
+#: forms/document_forms.py:112 models/document_models.py:78
 msgid "Language"
 msgstr "Dil"
 
-#: forms/document_type_forms.py:42 models/document_models.py:55
+#: forms/document_type_forms.py:40 models/document_models.py:55
 #: models/document_type_models.py:104 models/document_type_models.py:153
 #: serializers/document_serializers.py:28 workflow_actions.py:18
 #: workflow_actions.py:34
 msgid "Document type"
 msgstr "Belge Türü"
 
-#: forms/document_version_forms.py:18
+#: forms/document_version_forms.py:19
 msgid ""
 "The backend that will be executed against the selected document version."
 msgstr ""
 
-#: forms/document_version_forms.py:20
+#: forms/document_version_forms.py:21
 msgid "Backend"
 msgstr "Backend"
 
@@ -392,19 +402,19 @@ msgstr "Kaynak"
 msgid "Destination page number"
 msgstr ""
 
-#: forms/document_version_page_forms.py:72
+#: forms/document_version_page_forms.py:73
 msgid "Target page number can't be repeated."
 msgstr ""
 
-#: forms/misc_forms.py:10
+#: forms/misc_forms.py:11
 msgid "Page group"
 msgstr ""
 
-#: forms/misc_forms.py:13 literals.py:99
+#: forms/misc_forms.py:14 literals.py:99
 msgid "Page range"
 msgstr "Sayfa aralığı"
 
-#: forms/misc_forms.py:20
+#: forms/misc_forms.py:21
 msgid ""
 "Page number from which all the transformations will be cloned. Existing "
 "transformations will be lost."
@@ -453,23 +463,19 @@ msgstr "Dönüşümleri temizle"
 msgid "Clone transformations"
 msgstr ""
 
-#: links/document_file_page_links.py:43
-#: links/document_version_page_links.py:62
+#: links/document_file_page_links.py:43 links/document_version_page_links.py:62
 msgid "First page"
 msgstr "İlk sayfa"
 
-#: links/document_file_page_links.py:49
-#: links/document_version_page_links.py:68
+#: links/document_file_page_links.py:49 links/document_version_page_links.py:68
 msgid "Last page"
 msgstr "Son Sayfa"
 
-#: links/document_file_page_links.py:57
-#: links/document_version_page_links.py:76
+#: links/document_file_page_links.py:57 links/document_version_page_links.py:76
 msgid "Previous page"
 msgstr "Önceki sayfa"
 
-#: links/document_file_page_links.py:63
-#: links/document_version_page_links.py:82
+#: links/document_file_page_links.py:63 links/document_version_page_links.py:82
 msgid "Next page"
 msgstr "Sonraki Sayfa"
 
@@ -568,8 +574,7 @@ msgstr ""
 msgid "Remap pages"
 msgstr ""
 
-#: links/document_version_page_links.py:96
-#: models/document_version_models.py:54
+#: links/document_version_page_links.py:96 models/document_version_models.py:54
 #: models/document_version_page_models.py:36 search.py:128
 msgid "Document version"
 msgstr "Doküman sürümü"
@@ -668,7 +673,7 @@ msgstr ""
 msgid "All pages"
 msgstr ""
 
-#: models/document_file_model_mixins.py:365
+#: models/document_file_model_mixins.py:366
 #: models/document_file_page_model_mixins.py:244
 #: models/document_model_mixins.py:179 models/document_models.py:63
 #: models/document_type_models.py:43 models/document_type_models.py:156
@@ -679,7 +684,7 @@ msgstr ""
 msgid "Label"
 msgstr "Etiket"
 
-#: models/document_file_model_mixins.py:506
+#: models/document_file_model_mixins.py:512
 msgid "Controls what happens when a new document file is uploaded."
 msgstr ""
 
@@ -709,8 +714,8 @@ msgstr "Dosya adı"
 
 #: models/document_file_models.py:80
 msgid ""
-"The document file's file mimetype. MIME types are a standard way to describe"
-" the format of a file, in this case the file format of the document. Some "
+"The document file's file mimetype. MIME types are a standard way to describe "
+"the format of a file, in this case the file format of the document. Some "
 "examples: \"text/plain\" or \"image/jpeg\". "
 msgstr ""
 
@@ -837,8 +842,7 @@ msgstr ""
 
 #: models/document_type_models.py:66
 msgid ""
-"Amount of time after which documents of this type will be moved to the "
-"trash."
+"Amount of time after which documents of this type will be moved to the trash."
 msgstr ""
 
 #: models/document_type_models.py:68
@@ -865,8 +869,8 @@ msgstr ""
 
 #: models/document_type_models.py:87
 msgid ""
-"Delete documents that do not contain any files after a configured expiration"
-" interval."
+"Delete documents that do not contain any files after a configured expiration "
+"interval."
 msgstr ""
 
 #: models/document_type_models.py:89
@@ -875,9 +879,9 @@ msgstr ""
 
 #: models/document_type_models.py:93
 msgid ""
-"Time (in seconds) after which a document stub will be considered invalid and"
-" deleted, if pruning is enabled. This an optimization setting and should "
-"only be changed for specific circumstances."
+"Time (in seconds) after which a document stub will be considered invalid and "
+"deleted, if pruning is enabled. This an optimization setting and should only "
+"be changed for specific circumstances."
 msgstr ""
 
 #: models/document_type_models.py:97
@@ -1194,11 +1198,11 @@ msgstr ""
 msgid "Document ID"
 msgstr "Belge ID"
 
-#: search.py:77 search.py:106 search.py:149 search.py:176
+#: search.py:77 search.py:106 search.py:149 search.py:177
 msgid "Document label"
 msgstr "Belge Etiketi"
 
-#: search.py:80 search.py:112 search.py:155 search.py:179
+#: search.py:80 search.py:112 search.py:155 search.py:181
 msgid "Document UUID"
 msgstr "Belge UUID"
 
@@ -1333,8 +1337,8 @@ msgstr ""
 #: settings.py:49
 msgid ""
 "The threshold at which the DOCUMENTS_FILE_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
-"will start deleting the oldest document file page image cache files. Specify"
-" the size in bytes."
+"will start deleting the oldest document file page image cache files. Specify "
+"the size in bytes."
 msgstr ""
 
 #: settings.py:57
@@ -1362,9 +1366,9 @@ msgstr ""
 
 #: settings.py:90
 msgid ""
-"Size of blocks to use when calculating the document file's checksum. A value"
-" of 0 disables the block calculation and the entire file will be loaded into"
-" memory."
+"Size of blocks to use when calculating the document file's checksum. A value "
+"of 0 disables the block calculation and the entire file will be loaded into "
+"memory."
 msgstr ""
 
 #: settings.py:97
@@ -1377,15 +1381,15 @@ msgstr ""
 
 #: settings.py:107
 msgid ""
-"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND"
-" will start deleting the oldest document version page image cache versions. "
+"The threshold at which the DOCUMENT_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND "
+"will start deleting the oldest document version page image cache versions. "
 "Specify the size in bytes."
 msgstr ""
 
 #: settings.py:116
 msgid ""
-"Path to the Storage subclass to use when storing the cached document version"
-" page image versions."
+"Path to the Storage subclass to use when storing the cached document version "
+"page image versions."
 msgstr ""
 
 #: settings.py:124
@@ -1432,8 +1436,8 @@ msgstr ""
 #: settings.py:198
 msgid "Amount in percent zoom in or out a document page per user interaction."
 msgstr ""
-"Kullanıcı etkileşimi başına belge sayfasında yakınlaştırma veya uzaklaştırma"
-" yüzdesi."
+"Kullanıcı etkileşimi başına belge sayfasında yakınlaştırma veya uzaklaştırma "
+"yüzdesi."
 
 #: statistics.py:291
 msgid "New documents per month"
@@ -1473,8 +1477,8 @@ msgstr ""
 
 #: storages.py:21
 msgid ""
-"Unable to initialize the document file storage. Check the settings {} and {}"
-" for formatting errors."
+"Unable to initialize the document file storage. Check the settings {} and {} "
+"for formatting errors."
 msgstr ""
 
 #: storages.py:35
@@ -1540,8 +1544,8 @@ msgstr ""
 
 #: views/document_file_page_views.py:53
 msgid ""
-"This could mean that the document file is of a format that is not supported,"
-" that it is corrupted, or that the upload process was interrupted. Use the "
+"This could mean that the document file is of a format that is not supported, "
+"that it is corrupted, or that the upload process was interrupted. Use the "
 "document file introspection link to attempt detection the page count again."
 msgstr ""
 
@@ -1700,8 +1704,8 @@ msgstr ""
 #: views/document_file_views.py:400
 #, python-format
 msgid ""
-"Error cloning the page transformations for document file: %(document_file)s;"
-" %(error)s."
+"Error cloning the page transformations for document file: %(document_file)s; "
+"%(error)s."
 msgstr ""
 
 #: views/document_file_views.py:409 views/document_version_views.py:419
@@ -1738,8 +1742,8 @@ msgstr ""
 #: views/document_type_views.py:76
 msgid ""
 "Document types are the most basic units of configuration. Everything in the "
-"system will depend on them. Define a document type for each type of physical"
-" document you intend to upload. Example document types: invoice, receipt, "
+"system will depend on them. Define a document type for each type of physical "
+"document you intend to upload. Example document types: invoice, receipt, "
 "manual, prescription, balance sheet."
 msgstr ""
 
@@ -1774,7 +1778,8 @@ msgstr "Hızlı etiketi silin: %(label)s, Belge türünün \"%(document_type)s\"
 
 #: views/document_type_views.py:206
 #, python-format
-msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
+msgid ""
+"Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
 msgstr ""
 "\"%(filename)s\" hızlı etiketini %(document_type)sBelge türünden düzenleyin"
 
@@ -1939,8 +1944,7 @@ msgstr ""
 
 #: views/document_version_views.py:335
 #, python-format
-msgid ""
-"Transformation clear request processed for %(count)d document versions."
+msgid "Transformation clear request processed for %(count)d document versions."
 msgstr ""
 
 #: views/document_version_views.py:343
@@ -2088,8 +2092,8 @@ msgstr "Yazdırma: %s"
 
 #: views/recently_accessed_document_views.py:25
 msgid ""
-"This view will list the latest documents viewed or manipulated in any way by"
-" this user account."
+"This view will list the latest documents viewed or manipulated in any way by "
+"this user account."
 msgstr ""
 "Burada bu kullanıcı tarafından en son bakılan ya da değiştirilen belgelerin "
 "listesini görüntüleyebilirsiniz."

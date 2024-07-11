@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Przemysław Bodio <przemyslawbodio.dev@gmail.com>, 2024
@@ -11,22 +11,24 @@
 # Roberto Rosario, 2024
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: tomkolp, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:20
+#: apps.py:95 apps.py:148 events.py:6 forms/workflow_template_forms.py:19
 #: links.py:50 links.py:90 links.py:98 links.py:287 links.py:311
 #: models/workflow_models.py:60 queues.py:11 settings.py:14
 #: views/workflow_proxy_views.py:70 views/workflow_template_views.py:284
@@ -81,62 +83,62 @@ msgstr "Zwróć przejście instancji obiegu dokumentów."
 msgid "Get last transition"
 msgstr "Uzyskaj ostatnie przejście"
 
-#: apps.py:335 apps.py:360 apps.py:371 apps.py:378
+#: apps.py:335 apps.py:359 apps.py:370 apps.py:377
 msgid "None"
 msgstr "Brak"
 
-#: apps.py:347 apps.py:451
+#: apps.py:346 apps.py:449
 msgid "Documents"
 msgstr "Dokumenty"
 
-#: apps.py:355 serializers/workflow_instance_serializers.py:153
+#: apps.py:354 serializers/workflow_instance_serializers.py:153
 msgid "Current state"
 msgstr "Aktualny stan"
 
-#: apps.py:361 apps.py:391 models/workflow_instance_models.py:105
+#: apps.py:360 apps.py:390 models/workflow_instance_models.py:105
 #: serializers/workflow_instance_serializers.py:77
 msgid "User"
 msgstr "Użytkownik"
 
-#: apps.py:366
+#: apps.py:365
 msgid "Last transition"
 msgstr "Ostatnie przejście"
 
-#: apps.py:372 apps.py:387
+#: apps.py:371 apps.py:386
 msgid "Date and time"
 msgstr "Data i godzina"
 
-#: apps.py:379 models/workflow_state_models.py:54
+#: apps.py:378 models/workflow_state_models.py:54
 msgid "Completion"
 msgstr "Ukończenie"
 
-#: apps.py:412
+#: apps.py:411
 msgid "Additional details"
 msgstr "Dodatkowe szczegóły"
 
-#: apps.py:467
+#: apps.py:465
 msgid "When?"
 msgstr "Kiedy?"
 
-#: apps.py:471
+#: apps.py:469
 msgid "Action type"
 msgstr "Rodzaj działania"
 
-#: apps.py:531
+#: apps.py:529
 msgid ""
 "Triggers are system events that will cause the transition to be applied."
 msgstr ""
 "Wyzwalacze to zdarzenia systemowe, które spowodują zastosowanie przejścia."
 
-#: apps.py:533
+#: apps.py:531
 msgid "Triggers"
 msgstr "Wyzwalacze"
 
-#: apps.py:549 models/workflow_transition_field_models.py:33
+#: apps.py:547 models/workflow_transition_field_models.py:33
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:565
+#: apps.py:563
 msgid "Widget"
 msgstr "Widżet"
 
@@ -169,11 +171,11 @@ msgstr "Utworzono obieg dokumentów"
 msgid "Workflow edited"
 msgstr "Edytowano obieg dokumentów"
 
-#: forms/workflow_instance_forms.py:17
+#: forms/workflow_instance_forms.py:18
 msgid "Select a transition to execute in the next step."
 msgstr "Wybierz przejście do wykonania w następnym kroku."
 
-#: forms/workflow_instance_forms.py:18 links.py:293
+#: forms/workflow_instance_forms.py:19 links.py:293
 #: models/workflow_instance_models.py:101
 #: models/workflow_state_escalation_models.py:38
 #: models/workflow_transition_field_models.py:30
@@ -182,7 +184,7 @@ msgstr "Wybierz przejście do wykonania w następnym kroku."
 msgid "Transition"
 msgstr "Przejście"
 
-#: forms/workflow_template_forms.py:27
+#: forms/workflow_template_forms.py:26
 msgid "Workflow template preview image"
 msgstr ""
 
@@ -254,8 +256,7 @@ msgstr "Typy dokumentów"
 msgid "Delete"
 msgstr "Usuń"
 
-#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219
-#: links.py:265
+#: links.py:80 links.py:122 links.py:160 links.py:190 links.py:219 links.py:265
 msgid "Edit"
 msgstr "Edytuj"
 
@@ -267,7 +268,7 @@ msgstr "Uruchom obieg dokumentów"
 msgid "Preview"
 msgstr "Podgląd"
 
-#: links.py:129 models/workflow_state_model_mixins.py:105
+#: links.py:129 models/workflow_state_model_mixins.py:117
 msgid "Actions"
 msgstr "Akcje"
 
@@ -279,7 +280,7 @@ msgstr "Utwórz akcję"
 msgid "Create escalation"
 msgstr ""
 
-#: links.py:167 models/workflow_state_model_mixins.py:145
+#: links.py:167 models/workflow_state_model_mixins.py:157
 msgid "Escalations"
 msgstr ""
 
@@ -311,7 +312,7 @@ msgstr "Uruchom obiegi dokumentów"
 msgid "Create field"
 msgstr "Utwórz pole"
 
-#: links.py:272 models/workflow_transition_model_mixins.py:44
+#: links.py:272 models/workflow_transition_model_mixins.py:61
 msgid "Fields"
 msgstr "Pola"
 
@@ -442,8 +443,8 @@ msgstr "Proxy środowiska uruchomieniowego obiegu dokumentów"
 #: models/workflow_state_action_models.py:31
 msgid ""
 "The condition that will determine if this state action is executed or not. "
-"The condition is evaluated against the workflow instance. Conditions that do"
-" not return any value, that return the Python logical None, or an empty "
+"The condition is evaluated against the workflow instance. Conditions that do "
+"not return any value, that return the Python logical None, or an empty "
 "string ('') are considered to be logical false, any other value is "
 "considered to be the logical true."
 msgstr ""
@@ -653,10 +654,10 @@ msgstr "Pola przejścia obiegu dokumentów"
 #: models/workflow_transition_models.py:28
 msgid ""
 "The condition that will determine if this transition is enabled or not. The "
-"condition is evaluated against the workflow instance. Conditions that do not"
-" return any value, that return the Python logical None, or an empty string "
-"('') are considered to be logical false, any other value is considered to be"
-" the logical true."
+"condition is evaluated against the workflow instance. Conditions that do not "
+"return any value, that return the Python logical None, or an empty string "
+"('') are considered to be logical false, any other value is considered to be "
+"the logical true."
 msgstr ""
 "Warunek określający czy przejście przepływu obiegu dokumentów jest "
 "aktywowane. Warunek jest wyliczany względem wystąpienia obiegu dokumentów. "
@@ -686,7 +687,7 @@ msgid "Workflow transitions"
 msgstr "Przejścia obiegu dokumentów"
 
 #: models/workflow_transition_trigger_models.py:31
-#: serializers/workflow_template_transition_trigger_serializers.py:19
+#: serializers/workflow_template_transition_trigger_serializers.py:21
 msgid "Event type"
 msgstr "Typ zdarzenia"
 
@@ -789,7 +790,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:84
 #: serializers/workflow_template_transition_field_serializers.py:13
 #: serializers/workflow_template_transition_serializers.py:45
-#: serializers/workflow_template_transition_trigger_serializers.py:26
+#: serializers/workflow_template_transition_trigger_serializers.py:28
 #: workflow_actions.py:171
 msgid "URL"
 msgstr "URL"
@@ -803,7 +804,7 @@ msgstr ""
 #: serializers/workflow_template_state_serializers.py:62
 #: serializers/workflow_template_transition_field_serializers.py:29
 #: serializers/workflow_template_transition_serializers.py:52
-#: serializers/workflow_template_transition_trigger_serializers.py:42
+#: serializers/workflow_template_transition_trigger_serializers.py:44
 msgid "Workflow template URL"
 msgstr ""
 
@@ -909,12 +910,12 @@ msgid "Escalations URL"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:37
-#: serializers/workflow_template_transition_trigger_serializers.py:50
+#: serializers/workflow_template_transition_trigger_serializers.py:52
 msgid "Workflow transition ID"
 msgstr ""
 
 #: serializers/workflow_template_transition_field_serializers.py:41
-#: serializers/workflow_template_transition_trigger_serializers.py:54
+#: serializers/workflow_template_transition_trigger_serializers.py:56
 msgid "Workflow transition URL"
 msgstr ""
 
@@ -942,11 +943,11 @@ msgstr ""
 msgid "Trigger list URL"
 msgstr ""
 
-#: serializers/workflow_template_transition_trigger_serializers.py:22
+#: serializers/workflow_template_transition_trigger_serializers.py:24
 msgid "Event Type ID"
 msgstr ""
 
-#: serializers/workflow_template_transition_trigger_serializers.py:116
+#: serializers/workflow_template_transition_trigger_serializers.py:118
 #, python-format
 msgid "Unknown or invalid event type ID `%s`"
 msgstr ""
@@ -987,8 +988,8 @@ msgstr ""
 
 #: storages.py:14
 msgid ""
-"Unable to initialize the workflow preview storage. Check the settings {} and"
-" {} for formatting errors."
+"Unable to initialize the workflow preview storage. Check the settings {} and "
+"{} for formatting errors."
 msgstr ""
 "Nie można zainicjować magazynu podglądu obiegu dokumentów. Sprawdź "
 "ustawienia {} i {} pod kątem błędów formatowania."
@@ -999,8 +1000,8 @@ msgstr "Podgląd obrazów obiegu dokumentów"
 
 #: views/workflow_instance_views.py:41
 msgid ""
-"Assign workflows to the document type of this document to have this document"
-" execute those workflows. "
+"Assign workflows to the document type of this document to have this document "
+"execute those workflows. "
 msgstr ""
 "Przypisz obiegi dokumentów do typu dokumentu tego dokumentu, aby ten "
 "dokument mógł wykonać obiegi dokumentów."
@@ -1016,8 +1017,7 @@ msgstr "Obiegi dokumentu: %s"
 
 #: views/workflow_instance_views.py:77
 msgid ""
-"This view will show the state changes as a workflow instance is "
-"transitioned."
+"This view will show the state changes as a workflow instance is transitioned."
 msgstr ""
 "Ten widok pokaże zmiany stanu po wykonaniu przejścia obiegu dokumentów."
 
@@ -1038,8 +1038,7 @@ msgstr "Dokument „%s” został pomyślnie przeniesiony"
 #: views/workflow_instance_views.py:149
 #, python-format
 msgid "Execute transition \"%(transition)s\" for workflow: %(workflow)s"
-msgstr ""
-"Wykonaj przejście „%(transition)s” dla obiegu dokumentów: %(workflow)s"
+msgstr "Wykonaj przejście „%(transition)s” dla obiegu dokumentów: %(workflow)s"
 
 #: views/workflow_instance_views.py:165
 msgid "Optional comment to attach to the transition."
@@ -1051,7 +1050,8 @@ msgstr "Wybierz"
 
 #: views/workflow_instance_views.py:226
 #, python-format
-msgid "Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
+msgid ""
+"Select transition for workflow \"%(workflow)s\" of document \"%(document)s\""
 msgstr ""
 
 #: views/workflow_proxy_views.py:37
@@ -1092,21 +1092,6 @@ msgstr "Brak dokumentów w tym stanie obiegu dokumentów"
 #, python-format
 msgid "Documents in the workflow \"%s\", state \"%s\""
 msgstr "Dokumenty w obiegu dokumentów „%s”, wpisz „%s”"
-
-#: views/workflow_proxy_views.py:126
-#: views/workflow_template_state_views.py:347
-msgid "Create states and link them using transitions."
-msgstr "Twórz stany i łącz je za pomocą przejść."
-
-#: views/workflow_proxy_views.py:129
-msgid "This workflow doesn't have any state"
-msgstr "Ten obieg dokumentów nie ma żadnego stanu"
-
-#: views/workflow_proxy_views.py:132
-#: views/workflow_template_state_views.py:354
-#, python-format
-msgid "States of workflow: %s"
-msgstr "Stany obiegu dokumentów: %s"
 
 #: views/workflow_template_state_escalation_views.py:43
 #, python-format
@@ -1155,8 +1140,8 @@ msgstr "Edytuj działanie stanu obiegu dokumentów: %s"
 
 #: views/workflow_template_state_views.py:185
 msgid ""
-"Workflow state actions are macros that get executed when documents enters or"
-" leaves the state in which they reside."
+"Workflow state actions are macros that get executed when documents enters or "
+"leaves the state in which they reside."
 msgstr ""
 "Akcje stanu obiegu dokumentów to makra, które są wykonywane, gdy dokumenty "
 "wchodzą lub wychodzą ze stanu, w którym się znajdują."
@@ -1190,9 +1175,18 @@ msgstr "Usunąć stan obiegu dokumentów: %s?"
 msgid "Edit workflow state: %s"
 msgstr "Edytuj stan obiegu dokumentów: %s"
 
+#: views/workflow_template_state_views.py:347
+msgid "Create states and link them using transitions."
+msgstr "Twórz stany i łącz je za pomocą przejść."
+
 #: views/workflow_template_state_views.py:350
 msgid "This workflow doesn't have any states"
 msgstr "Ten obieg dokumentów nie ma żadnych stanów"
+
+#: views/workflow_template_state_views.py:354
+#, python-format
+msgid "States of workflow: %s"
+msgstr "Stany obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_field_views.py:42
 #, python-format
@@ -1211,8 +1205,8 @@ msgstr "Edytuj pole przejścia obiegu dokumentów: %s"
 
 #: views/workflow_template_transition_field_views.py:149
 msgid ""
-"Workflow transition fields allow adding data to the workflow's context. This"
-" additional context data can then be used by other elements of the workflow "
+"Workflow transition fields allow adding data to the workflow's context. This "
+"additional context data can then be used by other elements of the workflow "
 "system like the workflow state actions."
 msgstr ""
 "Pola przejścia obiegu dokumentów umożliwiają dodawanie danych do kontekstu "

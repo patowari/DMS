@@ -2,24 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Ford Guo <agile.guo@gmail.com>, 2024
 # Roberto Rosario, 2024
 # Leon Chu, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leon Chu, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
+"teams/13584/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:14
@@ -144,8 +145,8 @@ msgstr ""
 #: source_backends/stored_file_mixins.py:92
 msgid ""
 "This could mean that the source file list is empty. It could also mean that "
-"the operating system user account being used for Mayan EDMS doesn't have the"
-" necessary file system permissions to access the source files."
+"the operating system user account being used for Mayan EDMS doesn't have the "
+"necessary file system permissions to access the source files."
 msgstr ""
 
 #: source_backends/stored_file_mixins.py:97

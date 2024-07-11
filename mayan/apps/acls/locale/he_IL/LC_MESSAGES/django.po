@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2024
 # Ovadia Ovadia, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
-"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/"
+"teams/13584/he_IL/)\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he_IL\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: 2;\n"
 
 #: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
@@ -54,7 +56,7 @@ msgstr "רשימת בקרת גישה (ACL) נמחקה"
 msgid "ACL edited"
 msgstr "רשימת בקרת גישה (ACL) נערכה"
 
-#: forms.py:13 models.py:58 serializers.py:79 views.py:73
+#: forms.py:12 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "תפקיד"
 
@@ -159,8 +161,8 @@ msgid ""
 "An ACL for \"%(object)s\" using role \"%(role)s\" already exists. Edit that "
 "ACL entry instead."
 msgstr ""
-"רשימת בקרת גישה (ACL) עבור %(object)s לתפקיד %(role)s קיימת כבר.  אפשר לערוך"
-" אותה. "
+"רשימת בקרת גישה (ACL) עבור %(object)s לתפקיד %(role)s קיימת כבר.  אפשר לערוך "
+"אותה. "
 
 #: views.py:59
 #, python-format
@@ -232,8 +234,7 @@ msgid "Type of the object for which the access will be modified."
 msgstr "סוג הרכיב שעבורו הגישה תתעדכן."
 
 #: workflow_actions.py:57
-msgid ""
-"Numeric identifier of the object for which the access will be modified."
+msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "מזהה מספרי של הרכיב שעבורו הגישה תתעדכן."
 
 #: workflow_actions.py:62 workflow_actions.py:198

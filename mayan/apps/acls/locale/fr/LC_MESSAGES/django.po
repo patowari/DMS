@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
@@ -12,20 +12,21 @@
 # Yves Dubois <ydubois@gmail.com>, 2024
 # Frédéric Sheedy <sheedf@gmail.com>, 2024
 # Guillaume Trottier <gui.trottier@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Guillaume Trottier <gui.trottier@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/rosarior/teams/13584/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
@@ -59,7 +60,7 @@ msgstr "Droits supprimé"
 msgid "ACL edited"
 msgstr "Droits modifié"
 
-#: forms.py:13 models.py:58 serializers.py:79 views.py:73
+#: forms.py:12 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "Rôle"
 
@@ -82,7 +83,8 @@ msgstr "Droits globaux"
 #: managers.py:276
 #, python-format
 msgid "Object \"%s\" is not a model and cannot be checked for access."
-msgstr "L'objet \"%s\" n'est pas un modèle et l'accès ne peut pas être vérifié."
+msgstr ""
+"L'objet \"%s\" n'est pas un modèle et l'accès ne peut pas être vérifié."
 
 #: managers.py:293
 #, python-format
@@ -217,10 +219,10 @@ msgid ""
 "to be removed from the parent object's ACL or from them role via the Setup "
 "menu."
 msgstr ""
-"Les autorisations désactivées sont héritées d'un objet parent ou directement"
-" accordées au rôle et ne peuvent pas être supprimées de cette vue. Les "
-"autorisations héritées doivent être supprimées de l'ACL de l'objet parent ou"
-" de leur rôle via le menu Configuration."
+"Les autorisations désactivées sont héritées d'un objet parent ou directement "
+"accordées au rôle et ne peuvent pas être supprimées de cette vue. Les "
+"autorisations héritées doivent être supprimées de l'ACL de l'objet parent ou "
+"de leur rôle via le menu Configuration."
 
 #: views.py:271
 msgid "There are no ACLs"
@@ -239,8 +241,7 @@ msgid "Type of the object for which the access will be modified."
 msgstr "Type d'objet pour lequel les droits d'accès vont être modifiés."
 
 #: workflow_actions.py:57
-msgid ""
-"Numeric identifier of the object for which the access will be modified."
+msgid "Numeric identifier of the object for which the access will be modified."
 msgstr ""
 "Identifiant numérique de l'objet pour lequel les droits d'accès vont être "
 "modifiés."
@@ -257,8 +258,7 @@ msgstr "Rôles pour lesquels les droits d'accès vont être modifiés."
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
 msgstr ""
-"Autorisations à accorder/révoquer au rôle pour l'objet sélectionné ci-"
-"dessus."
+"Autorisations à accorder/révoquer au rôle pour l'objet sélectionné ci-dessus."
 
 #: workflow_actions.py:78
 msgid "Grant object access"

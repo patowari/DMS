@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-02 19:06+0000\n"
+"POT-Creation-Date: 2024-07-11 13:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:11
-msgid "File metadata ClamAV"
+#: apps.py:147
+msgid "App class full path"
 msgstr ""
 
-#: dependencies.py:11 drivers.py:19
-msgid "Command line anti-virus scanner."
+#: apps.py:153
+msgid "App URL"
 msgstr ""
 
-#: drivers.py:20
-msgid "ClamScan"
+#: apps.py:164
+msgid "Has REST API"
+msgstr ""
+
+#: apps.py:169
+msgid "Has tests"
+msgstr ""
+
+#: apps.py:174
+msgid "Name"
+msgstr ""
+
+#: apps.py:179
+msgid "Verbose name"
+msgstr ""
+
+#: apps.py:198
+msgid "App manager"
+msgstr ""
+
+#: links.py:8
+msgid "Apps"
+msgstr ""
+
+#: views.py:16
+msgid "Detected and active Mayan EDMS apps."
+msgstr ""
+
+#: views.py:17
+msgid "System apps"
 msgstr ""

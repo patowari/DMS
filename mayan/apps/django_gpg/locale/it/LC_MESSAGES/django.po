@@ -1,40 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Pierpaolo Baldan <pierpaolo.baldan@gmail.com>, 2024
 # Marco Camplese <marco.camplese.mc@gmail.com>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/rosarior/teams/13584/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:33
 msgid "Django GPG"
 msgstr "Django GPG"
 
-#: apps.py:55 apps.py:61 forms.py:16
+#: apps.py:55 apps.py:61 forms.py:15
 msgid "Key ID"
 msgstr "ID chiave"
 
-#: apps.py:65 forms.py:42 models.py:49
+#: apps.py:65 forms.py:41 models.py:49
 msgid "Type"
 msgstr "Tipo"
 
-#: apps.py:69 forms.py:23 models.py:28
+#: apps.py:69 forms.py:22 models.py:28
 msgid "Creation date"
 msgstr "Data di creazione"
 
@@ -42,15 +43,15 @@ msgstr "Data di creazione"
 msgid "No expiration"
 msgstr "Nessuna scadenza"
 
-#: apps.py:75 forms.py:28 models.py:32
+#: apps.py:75 forms.py:27 models.py:32
 msgid "Expiration date"
 msgstr "Data scadenza"
 
-#: apps.py:79 forms.py:35 models.py:39
+#: apps.py:79 forms.py:34 models.py:39
 msgid "Length"
 msgstr "Lunghezza"
 
-#: apps.py:84 forms.py:20 models.py:45
+#: apps.py:84 forms.py:19 models.py:45
 msgid "User ID"
 msgstr "User ID"
 
@@ -70,19 +71,19 @@ msgstr ""
 msgid "Key downloaded"
 msgstr ""
 
-#: forms.py:27
+#: forms.py:26
 msgid "None"
 msgstr "Nessuno"
 
-#: forms.py:32 models.py:36
+#: forms.py:31 models.py:36
 msgid "Fingerprint"
 msgstr "Impronta"
 
-#: forms.py:38 models.py:42
+#: forms.py:37 models.py:42
 msgid "Algorithm"
 msgstr "Algoritmo"
 
-#: forms.py:56
+#: forms.py:55
 msgid "Term"
 msgstr "Scadenza"
 
@@ -157,8 +158,8 @@ msgstr "Errore di firma"
 #: literals.py:80
 msgid "Document is signed but no public key is available for verification."
 msgstr ""
-"Il documento è stato firmato, ma la chiave pubblica non è disponibile per la"
-" verifica"
+"Il documento è stato firmato, ma la chiave pubblica non è disponibile per la "
+"verifica"
 
 #: literals.py:85
 msgid "Document is signed, and signature is good."
@@ -285,8 +286,8 @@ msgstr "Carica nuova chiave"
 
 #: views.py:206
 msgid ""
-"Private keys are used to signed documents. Private keys can only be uploaded"
-" by the user. The view to upload private and public keys is the same."
+"Private keys are used to signed documents. Private keys can only be uploaded "
+"by the user. The view to upload private and public keys is the same."
 msgstr ""
 
 #: views.py:211
@@ -295,8 +296,8 @@ msgstr ""
 
 #: views.py:230
 msgid ""
-"Public keys are used to verify signed documents. Public keys can be uploaded"
-" by the user or downloaded from keyservers. The view to upload private and "
+"Public keys are used to verify signed documents. Public keys can be uploaded "
+"by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 

@@ -2,35 +2,36 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Sebastian Fait <seba.fait@gmail.com>, 2024
 # Jiri Fait <fait@orkasolutions.cz>, 2024
 # Jiří Podhorecký, 2024
 # Michal Švábík <snadno@lehce.cz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: apps.py:53 apps.py:172 apps.py:176 apps.py:181 apps.py:186 apps.py:191
+#: events.py:6 forms.py:10 links.py:30 menus.py:14 models.py:54 models.py:160
 #: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Kabinety"
 
-#: apps.py:164 models.py:43
+#: apps.py:163 models.py:43
 msgid "Documents"
 msgstr "Dokumenty"
 
@@ -200,8 +201,7 @@ msgid "Children"
 msgstr ""
 
 #: serializers.py:23
-msgid ""
-"URL of the API endpoint showing the list documents inside this cabinet."
+msgid "URL of the API endpoint showing the list documents inside this cabinet."
 msgstr ""
 "URL koncového bodu API zobrazující seznam dokumentů uvnitř tohoto kabinetu."
 
@@ -253,8 +253,8 @@ msgid ""
 "documents to a cabinet, select the cabinet view of a document view."
 msgstr ""
 "Úrovně kabinetu mohou obsahovat dokumenty nebo jiné podúrovně kabinetu. "
-"Chcete-li do kabinetu přidat dokumenty, vyberte zobrazení kabinetu v pohledu"
-" na dokument."
+"Chcete-li do kabinetu přidat dokumenty, vyberte zobrazení kabinetu v pohledu "
+"na dokument."
 
 #: views.py:132
 msgid "This cabinet level is empty"
@@ -275,8 +275,8 @@ msgid ""
 "Cabinets are a multi-level method to organize documents. Each cabinet can "
 "contain documents as well as other sub level cabinets."
 msgstr ""
-"Kabinety jsou víceúrovňovou metodou organizace dokumentů. Každý kabinet může"
-" obsahovat dokumenty i jiné kabinety další podúrovně."
+"Kabinety jsou víceúrovňovou metodou organizace dokumentů. Každý kabinet může "
+"obsahovat dokumenty i jiné kabinety další podúrovně."
 
 #: views.py:179
 msgid "No cabinets available"

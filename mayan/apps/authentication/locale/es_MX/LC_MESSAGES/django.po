@@ -1,24 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/teams/13584/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (https://app.transifex.com/rosarior/"
+"teams/13584/es_MX/)\n"
+"Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_MX\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: apps.py:35 events.py:6 permissions.py:6 settings.py:11
 msgid "Authentication"
@@ -40,19 +42,19 @@ msgstr "Usuario conectado"
 msgid "User logged out"
 msgstr "Usuario desconectado"
 
-#: forms.py:34
+#: forms.py:33
 msgid "Remember me"
 msgstr "Recuérdame"
 
-#: forms.py:81
+#: forms.py:80
 msgid "Permanent"
 msgstr "Permanente"
 
-#: forms.py:82
+#: forms.py:81
 msgid "If selected, disables ending impersonation."
 msgstr "Si se selecciona, deshabilita terminar la personificación."
 
-#: forms.py:93
+#: forms.py:92
 msgid "User"
 msgstr "Usuario"
 
@@ -198,8 +200,8 @@ msgstr "Solicitud de cambio de contraseña realizada para %(count)d usuarios"
 
 #: views/authentication_views.py:386
 msgid ""
-"Changing the password of staff or super user accounts via the user interface"
-" is not allowed. Use administration tools to perform this operation."
+"Changing the password of staff or super user accounts via the user interface "
+"is not allowed. Use administration tools to perform this operation."
 msgstr ""
 "No se permite cambiar la contraseña de las cuentas del personal o del "
 "superusuario a través de la interfaz de usuario. Utilice herramientas de "
@@ -225,7 +227,8 @@ msgstr "Restablecimiento de contraseña exitoso para el usuario: %s."
 #: views/authentication_views.py:441
 #, python-format
 msgid "Error resetting password for user \"%(user)s\": %(error)s"
-msgstr "Error restaurando la contraseña para el usuario \"%(user)s\": %(error)s "
+msgstr ""
+"Error restaurando la contraseña para el usuario \"%(user)s\": %(error)s "
 
 #: views/impersonation_views.py:87
 #, python-format

@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # Dezső József <dejo60@gmail.com>, 2024
 # molnars <szabolcs.molnar@gmail.com>, 2024
 # Csaba Tarjányi, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Csaba Tarjányi, 2024\n"
-"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/hu/)\n"
+"Language-Team: Hungarian (https://app.transifex.com/rosarior/teams/13584/"
+"hu/)\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:36
@@ -38,40 +39,40 @@ msgstr "Keresés"
 msgid "Resultset created"
 msgstr "Eredményhalmaz létrehozva"
 
-#: forms.py:13
+#: forms.py:12
 msgid "Store the search results to speed up paging and for later browsing."
 msgstr ""
 "Tárolja a keresési eredményeket a lapozás felgyorsítása és a későbbi "
 "böngészés érdekében."
 
-#: forms.py:16
+#: forms.py:15
 msgid "Save results"
 msgstr "Eredmények mentése"
 
-#: forms.py:22
+#: forms.py:21
 msgid "Persistency"
 msgstr "Megtartás"
 
-#: forms.py:38
+#: forms.py:37
 msgid "Match all"
 msgstr "Mind összeegyeztetése"
 
-#: forms.py:39
+#: forms.py:38
 msgid "Return only results that match all fields."
 msgstr ""
 "Csak azokat az eredményeket adja vissza, amelyek megfelelnek az összes "
 "mezőnek."
 
-#: forms.py:72
+#: forms.py:71
 msgid "Search logic"
 msgstr "Keresési logika"
 
-#: forms.py:100 templates/dynamic_search/search_box.html:43
+#: forms.py:99 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr "Keresési feltételek"
 
-#: forms.py:111
+#: forms.py:110
 msgid "Criteria"
 msgstr "Kritériumok"
 
@@ -229,11 +230,11 @@ msgstr "A lejárt mentett eredményhalmazok törlése"
 #, python-format
 msgid ""
 "Query results exceed the current limit of %d. Results will not be reliable "
-"if multiple scopes are used. Narrow down the search criteria or increase the"
-" value of the results limit setting `%s`."
+"if multiple scopes are used. Narrow down the search criteria or increase the "
+"value of the results limit setting `%s`."
 msgstr ""
-"A lekérdezések eredményei meghaladják a jelenlegi %d korlátot. Az eredmények"
-" nem lesznek megbízhatóak, ha több hatókört használnak. Szűkítse le a "
+"A lekérdezések eredményei meghaladják a jelenlegi %d korlátot. Az eredmények "
+"nem lesznek megbízhatóak, ha több hatókört használnak. Szűkítse le a "
 "keresési feltételeket, vagy növelje a találati korlát értékét ` %s `."
 
 #: scoped_queries.py:364
@@ -336,8 +337,8 @@ msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
 msgstr ""
-"A keresési háttérrendszernek átadandó argumentumok. Például értékek, amelyek"
-" megváltoztatják a viselkedést, a gazdagépneveket vagy a hitelesítési "
+"A keresési háttérrendszernek átadandó argumentumok. Például értékek, amelyek "
+"megváltoztatják a viselkedést, a gazdagépneveket vagy a hitelesítési "
 "argumentumokat."
 
 #: settings.py:38
@@ -356,8 +357,7 @@ msgstr "A tömeges indexelés végrehajtásakor feldolgozandó objektumok száma
 
 #: settings.py:58
 msgid "Sets the default state of the \"Match all\" checkbox."
-msgstr ""
-"Beállítja az „Összes egyezés” jelölőnégyzet alapértelmezett állapotát."
+msgstr "Beállítja az „Összes egyezés” jelölőnégyzet alapértelmezett állapotát."
 
 #: settings.py:64
 msgid ""
@@ -392,7 +392,7 @@ msgid "Sets the default state of the \"Store results\" checkbox."
 msgstr ""
 "Beállítja az „Eredmények tárolása” jelölőnégyzet alapértelmezett állapotát."
 
-#: templates/dynamic_search/app/list_toolbar.html:18
+#: templates/dynamic_search/app/list_toolbar.html:24
 msgid "Filter terms"
 msgstr "Szűrési kifejezések"
 
@@ -483,8 +483,8 @@ msgstr "A %(count)d mentett eredménykészlet törlése."
 
 #: views/saved_resultset_views.py:68
 msgid ""
-"Saved resultsets are objects that store the results of a previous search for"
-" a determined amount of time."
+"Saved resultsets are objects that store the results of a previous search for "
+"a determined amount of time."
 msgstr ""
 "A mentett eredményhalmazok olyan objektumok, amelyek meghatározott ideig "
 "tárolják egy korábbi keresés eredményeit."

@@ -1,26 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # olenchenko <olenchenko@gmail.com>, 2024
 # Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
 # Leo Lado, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
-"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
+"Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/"
+"uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: apps.py:36
 msgid "Dynamic search"
@@ -37,36 +41,36 @@ msgstr "Пошук"
 msgid "Resultset created"
 msgstr ""
 
-#: forms.py:13
+#: forms.py:12
 msgid "Store the search results to speed up paging and for later browsing."
 msgstr ""
 
-#: forms.py:16
+#: forms.py:15
 msgid "Save results"
 msgstr ""
 
-#: forms.py:22
+#: forms.py:21
 msgid "Persistency"
 msgstr ""
 
-#: forms.py:38
+#: forms.py:37
 msgid "Match all"
 msgstr "Збіг усіх"
 
-#: forms.py:39
+#: forms.py:38
 msgid "Return only results that match all fields."
 msgstr "Повертати лише ті результати, які відповідають усім полям."
 
-#: forms.py:72
+#: forms.py:71
 msgid "Search logic"
 msgstr "Логіка пошуку"
 
-#: forms.py:100 templates/dynamic_search/search_box.html:43
+#: forms.py:99 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr "Пошукові запити"
 
-#: forms.py:111
+#: forms.py:110
 msgid "Criteria"
 msgstr ""
 
@@ -221,8 +225,8 @@ msgstr ""
 #, python-format
 msgid ""
 "Query results exceed the current limit of %d. Results will not be reliable "
-"if multiple scopes are used. Narrow down the search criteria or increase the"
-" value of the results limit setting `%s`."
+"if multiple scopes are used. Narrow down the search criteria or increase the "
+"value of the results limit setting `%s`."
 msgstr ""
 
 #: scoped_queries.py:364
@@ -337,8 +341,8 @@ msgstr "Оператор пошуку для використання, якщо 
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
-"Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного"
-" пошуку."
+"Вимикає пошук на панелі за одним терміном, залишаючи лише кнопку розширеного "
+"пошуку."
 
 #: settings.py:52
 msgid "Amount of objects to process when performing bulk indexing."
@@ -380,7 +384,7 @@ msgstr ""
 msgid "Sets the default state of the \"Store results\" checkbox."
 msgstr ""
 
-#: templates/dynamic_search/app/list_toolbar.html:18
+#: templates/dynamic_search/app/list_toolbar.html:24
 msgid "Filter terms"
 msgstr "Терміни фільтрування"
 
@@ -470,8 +474,8 @@ msgstr ""
 
 #: views/saved_resultset_views.py:68
 msgid ""
-"Saved resultsets are objects that store the results of a previous search for"
-" a determined amount of time."
+"Saved resultsets are objects that store the results of a previous search for "
+"a determined amount of time."
 msgstr ""
 
 #: views/saved_resultset_views.py:71
@@ -481,8 +485,7 @@ msgstr ""
 #: views/search_views.py:62
 msgid "This tool erases and populates the search backend's internal index."
 msgstr ""
-"Цей інструмент стирає та заповнює внутрішній індекс серверної частини "
-"пошуку."
+"Цей інструмент стирає та заповнює внутрішній індекс серверної частини пошуку."
 
 #: views/search_views.py:72
 msgid ""

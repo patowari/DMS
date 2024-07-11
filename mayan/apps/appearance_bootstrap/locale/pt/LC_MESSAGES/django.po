@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
@@ -12,23 +12,25 @@
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
 # Márcia Ferreira, 2024
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
+"pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
-msgid "Appearance"
+#: apps.py:15
+msgid "Appearance (Bootstrap)"
 msgstr "Aparência"
 
 #: dependencies.py:8
@@ -42,152 +44,6 @@ msgstr "Bootstrap"
 #: dependencies.py:16
 msgid "Bootswatch"
 msgstr "Bootswatch"
-
-#: dependencies.py:30
-msgid "Fancybox"
-msgstr "Fancybox"
-
-#: dependencies.py:34
-msgid "FontAwesome"
-msgstr "FontAwesome"
-
-#: dependencies.py:38
-msgid "jQuery"
-msgstr "jQuery"
-
-#: dependencies.py:42
-msgid "JQuery Form"
-msgstr "JQuery Form"
-
-#: dependencies.py:46
-msgid "JQuery Match Height"
-msgstr "JQuery Match Height"
-
-#: dependencies.py:50
-msgid "Select 2"
-msgstr "Select 2"
-
-#: dependencies.py:54
-msgid "Toastr"
-msgstr "Toastr"
-
-#: events.py:10
-msgid "Theme created"
-msgstr "Tema criado"
-
-#: events.py:13
-msgid "Theme edited"
-msgstr "Tema editado"
-
-#: events.py:16
-msgid "User theme edited"
-msgstr "Tema do utilizador editado. "
-
-#: links.py:26
-msgid "Theme settings"
-msgstr "Configurações do tema"
-
-#: links.py:33
-msgid "Edit theme settings"
-msgstr "Editar configurações do tema"
-
-#: links.py:39 views.py:34
-msgid "Create new theme"
-msgstr "Criar novo tema"
-
-#: links.py:44
-msgid "Delete"
-msgstr "Remover"
-
-#: links.py:48
-msgid "Edit"
-msgstr "Editar"
-
-#: links.py:52 links.py:60 models.py:33 views.py:103
-msgid "Themes"
-msgstr "Temas"
-
-#: models.py:20
-msgid "A short text describing the theme."
-msgstr "Breve texto descrevendo o tema."
-
-#: models.py:21
-msgid "Label"
-msgstr "Nome"
-
-#: models.py:25
-msgid ""
-"The CSS stylesheet to change the appearance of the different user interface "
-"elements."
-msgstr ""
-"A folha de estilo CSS para alterar a aparência dos diferentes elementos da "
-"interface do utilizador."
-
-#: models.py:27
-msgid "Stylesheet"
-msgstr "Folha de estilo"
-
-#: models.py:32 models.py:69
-msgid "Theme"
-msgstr "Tema"
-
-#: models.py:65
-msgid "User"
-msgstr "Utilizador"
-
-#: models.py:73
-msgid "User theme setting"
-msgstr "Configuração do tema do utilizador"
-
-#: models.py:74
-msgid "User theme settings"
-msgstr "Configurações do tema do utilizador"
-
-#: permissions.py:10
-msgid "Create new themes"
-msgstr "Criar novos temas"
-
-#: permissions.py:13
-msgid "Delete themes"
-msgstr "Remover temas"
-
-#: permissions.py:16
-msgid "Edit themes"
-msgstr "Editar temas"
-
-#: permissions.py:19
-msgid "View existing themes"
-msgstr "Ver temas existentes"
-
-#: settings.py:18
-msgid "Custom HTTP response code for AJAX redirections."
-msgstr ""
-
-#: settings.py:24
-msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "Número máximo de caracteres que será mostrado como título da vista."
-
-#: settings.py:34
-msgid "Position where the system messages will be displayed."
-msgstr ""
-
-#: settings.py:40
-msgid ""
-"Delay in milliseconds after which the menus will be checked for updates."
-msgstr ""
-"Atraso em milésimas de segundo após qual os menus serão verificados para "
-"atualizações."
-
-#: settings.py:47
-msgid ""
-"Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
-
-#: settings.py:54
-msgid ""
-"Time in milliseconds after which a throttled request will clear allowing an "
-"additional request to be performed."
-msgstr ""
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -225,8 +81,7 @@ msgstr ""
 "A localização está correta, mas a sua conta não tem as permissões "
 "necessárias."
 
-#: templates/500.html:5 templates/500.html:18
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Erro do servidor"
 
@@ -251,7 +106,9 @@ msgid "Contact your system administrator."
 msgstr "Contacte o seu administrador de sistemas."
 
 #: templates/500.html:35
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
 "Verifique os logs por mensagens com as etiquetas \"ERROR\", \"CRITICAL\" ou "
 "\"FATAL\"."
@@ -289,8 +146,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -407,7 +264,7 @@ msgstr ""
 msgid "Total: %(total)s"
 msgstr "Total: %(total)s"
 
-#: templates/appearance/partials/list/no_results.html:18
+#: templates/appearance/partials/list/no_results.html:22
 msgid "No results"
 msgstr "Sem resultados"
 
@@ -429,28 +286,20 @@ msgstr "Identificador"
 msgid "Actions"
 msgstr "Ações"
 
-#: templates/appearance/partials/list/toolbar.html:14
+#: templates/appearance/partials/list/toolbar.html:15
 msgid "Select/Deselect all"
 msgstr "Marcar/Desmarcar todos"
 
-#: templates/appearance/partials/list/toolbar.html:18
-msgid "Toggle list display mode"
-msgstr "Alternar modo de visualização"
-
-#: templates/appearance/partials/list/toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:28
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Marque itens para ativar as ações em massa. Utilize Shift + Click para "
 "selecionar vários."
 
-#: templates/appearance/partials/list/toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:32
 msgid "Bulk actions"
 msgstr "Ações em massa"
-
-#: templates/appearance/partials/list/toolbar.html:38
-msgid "Toggle Dropdown"
-msgstr "Alternar caixa de seleção"
 
 #: templates/appearance/partials/sidebar.html:17
 msgid "Object"
@@ -460,50 +309,35 @@ msgstr "Objeto"
 msgid "Open main menu"
 msgstr "Abrir menu principal"
 
-#: templates/appearance/root.html:51
+#: templates/appearance/root.html:53
 msgid "Close"
 msgstr "Fechar"
 
-#: templates/appearance/root.html:59
+#: templates/appearance/root.html:61
 msgid "Server communication error"
 msgstr "Erro de comunicação do servidor"
 
-#: templates/appearance/root.html:61
+#: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
 msgstr ""
 "Verifique a conexão à rede e tente novamente dentro de alguns momentos."
 
-#: templatetags/appearance_tags.py:77
-msgid "None"
-msgstr "Nenhum"
+#: templates/navigation/app/list_toolbar.html:10
+msgid "Toggle list display mode"
+msgstr "Alternar modo de visualização"
 
-#: views.py:59
-#, python-format
-msgid "Delete theme: %s"
-msgstr "Remover tema: 1%s"
-
-#: views.py:76
-#, python-format
-msgid "Edit theme: %s"
-msgstr "Editar tema: 1%s"
-
-#: views.py:97
-msgid ""
-"Themes allow changing the visual appearance without requiring code changes."
+#: templates/navigation/app/list_toolbar.html:25
+msgid "Sort by column"
 msgstr ""
-"Os temas permitem alterar a aparência visual sem exigir alterações de "
-"código."
 
-#: views.py:101
-msgid "There are no themes"
-msgstr "Não existem temas"
+#: templates/navigation/app/list_toolbar.html:26
+msgid "--- Clear ---"
+msgstr ""
 
-#: views.py:127
-#, python-format
-msgid "Theme settings for user: %s"
-msgstr "Configurações do tema para o utilizador: %s"
+#: templates/navigation/app/list_toolbar.html:29
+msgid "(ascending)"
+msgstr ""
 
-#: views.py:150
-#, python-format
-msgid "Edit theme settings for user: %s"
-msgstr "Editar configurações de tema do utilizador %s"
+#: templates/navigation/app/list_toolbar.html:31
+msgid "(descending)"
+msgstr ""

@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
 # tomkolp, 2024
 # Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Tomasz Szymanowicz <alakdae@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
@@ -54,31 +56,31 @@ msgstr "Dokument nie został wyewidencjonowany."
 msgid "Document already checked out."
 msgstr "Dokument jest już zablokowany."
 
-#: forms.py:26
+#: forms.py:25
 msgid "Document status"
 msgstr "Status dokumentu"
 
-#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
+#: forms.py:36 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Użytkownik"
 
-#: forms.py:41
+#: forms.py:40
 msgid "Check out time"
 msgstr "Czas blokady"
 
-#: forms.py:46
+#: forms.py:45
 msgid "Check out expiration"
 msgstr "Wygaśnięcie blokady"
 
-#: forms.py:51
+#: forms.py:50
 msgid "New files allowed?"
 msgstr "Zezwolenie na nowe pliki?"
 
-#: forms.py:52
+#: forms.py:51
 msgid "Yes"
 msgstr "Tak"
 
-#: forms.py:52
+#: forms.py:51
 msgid "No"
 msgstr "Nie"
 
@@ -277,6 +279,6 @@ msgstr ""
 msgid "No documents have been checked out"
 msgstr "Żadne dokumenty nie zostały zablokowane"
 
-#: widgets.py:20
+#: widgets.py:19
 msgid "Amount"
 msgstr "Ilość"

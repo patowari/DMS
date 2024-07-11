@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
@@ -9,19 +9,20 @@
 # Caner Başaran <basaran.caner@gmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
 # Bedreddin Şahbaz, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Bedreddin Şahbaz, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
+"teams/13584/tr_TR/)\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: apps.py:57 apps.py:99 events.py:6 links.py:154 links.py:161 menus.py:6
@@ -69,32 +70,32 @@ msgstr "Kaynak oluşturuldu"
 msgid "Source edited"
 msgstr "Kaynak düzenlendi"
 
-#: forms.py:25
+#: forms.py:24
 msgid "An optional comment to explain the upload."
 msgstr "Yüklemeyi açıklamak için isteğe bağlı bir yorum."
 
-#: forms.py:26
+#: forms.py:25
 msgid "Comment"
 msgstr "Yorum"
 
-#: forms.py:32
+#: forms.py:31
 msgid "Action"
 msgstr "Eylem"
 
-#: forms.py:33
+#: forms.py:32
 msgid ""
 "The action to take in regards to the pages of the new file being uploaded."
 msgstr "Yüklenen yeni dosyanın sayfalarıyla ilgili olarak yapılacak işlem."
 
-#: forms.py:54
+#: forms.py:53
 msgid "The backend used to create the new source."
 msgstr "Yeni kaynağı oluşturmak için kullanılan backend."
 
-#: forms.py:55
+#: forms.py:54
 msgid "Backend"
 msgstr "Backend"
 
-#: forms.py:71
+#: forms.py:70
 msgid "File"
 msgstr "Dosya"
 
@@ -244,8 +245,7 @@ msgstr ""
 
 #: serializers.py:84
 msgid "Optional arguments for the action. Must be JSON formatted."
-msgstr ""
-"Eylem için isteğe bağlı bağımsız değişkenler. JSON formatlı olmalıdır."
+msgstr "Eylem için isteğe bağlı bağımsız değişkenler. JSON formatlı olmalıdır."
 
 #: serializers.py:89
 msgid "Confirmation"
@@ -281,8 +281,8 @@ msgstr "Kaynak backendleri oluştururken kullanılacak bağımsız değişkenler
 
 #: settings.py:29
 msgid ""
-"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting"
-" the oldest source cache files. Specify the size in bytes."
+"The threshold at which the SOURCES_CACHE_STORAGE_BACKEND will start deleting "
+"the oldest source cache files. Specify the size in bytes."
 msgstr ""
 
 #: settings.py:37
@@ -306,8 +306,8 @@ msgstr ""
 #: source_backend_actions/mixins/argument_help_texts.py:8
 msgid ""
 "When enabled, a document stub is created immediately and returned. The "
-"document file is processed asynchronously. When disabled, the entire process"
-" happens asynchronously with no returned data. Enabling immediate mode, "
+"document file is processed asynchronously. When disabled, the entire process "
+"happens asynchronously with no returned data. Enabling immediate mode, "
 "disables compressed file processing."
 msgstr ""
 
@@ -400,7 +400,8 @@ msgstr ""
 #: views/document_file_views.py:82
 #, python-format
 msgid "Unable to upload new files for document \"%(document)s\". %(exception)s"
-msgstr "\"%(document)s\" belgesi için yeni dosyalar yüklenemiyor. %(exception)s"
+msgstr ""
+"\"%(document)s\" belgesi için yeni dosyalar yüklenemiyor. %(exception)s"
 
 #: views/document_file_views.py:126
 #, python-format
@@ -410,8 +411,8 @@ msgstr "Belge dosyası yükleme görevi yürütülürken hata oluştu; %(excepti
 #: views/document_file_views.py:145
 msgid "New document file queued for upload and will be available shortly."
 msgstr ""
-"Yeni belge dosyası yükleme için kuyruğa alındı ve kısa süre içinde kullanıma"
-" sunulacak."
+"Yeni belge dosyası yükleme için kuyruğa alındı ve kısa süre içinde kullanıma "
+"sunulacak."
 
 #: views/document_file_views.py:169
 #, python-format
@@ -495,8 +496,8 @@ msgstr ""
 
 #: views/source_views.py:323
 msgid ""
-"This will execute the source code even if the source is not enabled. Sources"
-" that delete content after downloading will not do so while being tested. "
+"This will execute the source code even if the source is not enabled. Sources "
+"that delete content after downloading will not do so while being tested. "
 "Check the source's error log for information during testing. A successful "
 "test will clear the error log."
 msgstr ""
@@ -520,31 +521,31 @@ msgstr ""
 msgid "Select document type"
 msgstr "Belge türünü seçin"
 
-#: wizards.py:68
+#: wizards.py:66
 msgid ""
-"No interactive document sources have been defined or none have been enabled,"
-" create one before proceeding."
+"No interactive document sources have been defined or none have been enabled, "
+"create one before proceeding."
 msgstr ""
 "Etkileşimli belge kaynakları tanımlanmamış veya hiçbiri etkinleştirilmemiş, "
 "devam etmeden önce bir tane oluşturun."
 
-#: wizards.py:85
+#: wizards.py:83
 #, python-format
 msgid "Step %(step)d of %(total_steps)d: %(step_label)s"
 msgstr "%(total_steps)d'ın %(step)d adımı: %(step_label)s"
 
-#: wizards.py:91
+#: wizards.py:89
 msgid "Document upload wizard"
 msgstr "Belge yükleme sihirbazı"
 
-#: wizards.py:100
+#: wizards.py:98
 msgid "First"
 msgstr "İlk"
 
-#: wizards.py:106
+#: wizards.py:104
 msgid "Previous"
 msgstr "Geri"
 
-#: wizards.py:113
+#: wizards.py:111
 msgid "Next"
 msgstr "İleri"

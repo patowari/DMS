@@ -2,34 +2,35 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Pavlin Koldamov <pkoldamov@gmail.com>, 2024
 # 295005be79b88987cac803400975dbae_87f6b64 <412e4e8df9c702a35ac89972be5f12ff_27148>, 2024
 # Lyudmil Antonov <lantonov.here@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
-"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
+"Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/"
+"bg/)\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:53 apps.py:173 apps.py:177 apps.py:182 apps.py:187 apps.py:192
-#: events.py:6 forms.py:14 links.py:30 menus.py:14 models.py:54 models.py:160
+#: apps.py:53 apps.py:172 apps.py:176 apps.py:181 apps.py:186 apps.py:191
+#: events.py:6 forms.py:10 links.py:30 menus.py:14 models.py:54 models.py:160
 #: permissions.py:6 search.py:54 views.py:169 workflow_actions.py:39
 #: workflow_actions.py:53
 msgid "Cabinets"
 msgstr "Шкафове"
 
-#: apps.py:164 models.py:43
+#: apps.py:163 models.py:43
 msgid "Documents"
 msgstr "Документи"
 
@@ -199,10 +200,8 @@ msgid "Children"
 msgstr ""
 
 #: serializers.py:23
-msgid ""
-"URL of the API endpoint showing the list documents inside this cabinet."
-msgstr ""
-"URL на крайната точка на API, показваща списъка документи в този шкаф."
+msgid "URL of the API endpoint showing the list documents inside this cabinet."
+msgstr "URL на крайната точка на API, показваща списъка документи в този шкаф."
 
 #: serializers.py:25
 msgid "Documents URL"
@@ -210,8 +209,7 @@ msgstr "URL адрес на документи"
 
 #: serializers.py:30
 msgid "The name of this cabinet level appended to the names of its ancestors."
-msgstr ""
-"Името на това ниво на шкафа се прибавя към имената на неговите предци."
+msgstr "Името на това ниво на шкафа се прибавя към имената на неговите предци."
 
 #: serializers.py:35
 msgid "Parents URL"

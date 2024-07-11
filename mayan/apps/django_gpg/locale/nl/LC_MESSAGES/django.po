@@ -1,39 +1,39 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
 # j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: j jacobs <j.jacobs@rijnlandslyceum-rls.nl>, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/rosarior/teams/13584/nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:33
 msgid "Django GPG"
 msgstr "Django GPG"
 
-#: apps.py:55 apps.py:61 forms.py:16
+#: apps.py:55 apps.py:61 forms.py:15
 msgid "Key ID"
 msgstr "Sleutel-ID"
 
-#: apps.py:65 forms.py:42 models.py:49
+#: apps.py:65 forms.py:41 models.py:49
 msgid "Type"
 msgstr "Type"
 
-#: apps.py:69 forms.py:23 models.py:28
+#: apps.py:69 forms.py:22 models.py:28
 msgid "Creation date"
 msgstr "Aanmaakdatum"
 
@@ -41,15 +41,15 @@ msgstr "Aanmaakdatum"
 msgid "No expiration"
 msgstr "Geen verloop"
 
-#: apps.py:75 forms.py:28 models.py:32
+#: apps.py:75 forms.py:27 models.py:32
 msgid "Expiration date"
 msgstr "Verloopdatu"
 
-#: apps.py:79 forms.py:35 models.py:39
+#: apps.py:79 forms.py:34 models.py:39
 msgid "Length"
 msgstr "Lengte"
 
-#: apps.py:84 forms.py:20 models.py:45
+#: apps.py:84 forms.py:19 models.py:45
 msgid "User ID"
 msgstr "Gebruikers-ID"
 
@@ -69,19 +69,19 @@ msgstr ""
 msgid "Key downloaded"
 msgstr ""
 
-#: forms.py:27
+#: forms.py:26
 msgid "None"
 msgstr "Geen"
 
-#: forms.py:32 models.py:36
+#: forms.py:31 models.py:36
 msgid "Fingerprint"
 msgstr "Vingerafdruk"
 
-#: forms.py:38 models.py:42
+#: forms.py:37 models.py:42
 msgid "Algorithm"
 msgstr "Algoritme"
 
-#: forms.py:56
+#: forms.py:55
 msgid "Term"
 msgstr "Voorwaarde"
 
@@ -267,8 +267,8 @@ msgid ""
 "Use names, last names, key ids or emails to search public keys to import "
 "from the keyserver."
 msgstr ""
-"Gebruik namen, achternamen, sleutel-ids of e-mail om op openbare sleutels te"
-" zoeken om te importeren van de sleutelserver."
+"Gebruik namen, achternamen, sleutel-ids of e-mail om op openbare sleutels te "
+"zoeken om te importeren van de sleutelserver."
 
 #: views.py:139
 msgid "No results returned"
@@ -288,12 +288,12 @@ msgstr "Nieuwe sleutel uploaden"
 
 #: views.py:206
 msgid ""
-"Private keys are used to signed documents. Private keys can only be uploaded"
-" by the user. The view to upload private and public keys is the same."
+"Private keys are used to signed documents. Private keys can only be uploaded "
+"by the user. The view to upload private and public keys is the same."
 msgstr ""
-"Privésleutels worden gebruikt om documenten te tekenen. Privésleutels kunnen"
-" alleen door de gebruiker worden geüpload. Het overzicht om privé en "
-"openbare sleutels te uploaden is hetzelfde."
+"Privésleutels worden gebruikt om documenten te tekenen. Privésleutels kunnen "
+"alleen door de gebruiker worden geüpload. Het overzicht om privé en openbare "
+"sleutels te uploaden is hetzelfde."
 
 #: views.py:211
 msgid "There no private keys"
@@ -301,8 +301,8 @@ msgstr "Er zijn geen privésleutels"
 
 #: views.py:230
 msgid ""
-"Public keys are used to verify signed documents. Public keys can be uploaded"
-" by the user or downloaded from keyservers. The view to upload private and "
+"Public keys are used to verify signed documents. Public keys can be uploaded "
+"by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 "Openbare sleutels worden gebruikt om getekende documenten te verifiëren. "

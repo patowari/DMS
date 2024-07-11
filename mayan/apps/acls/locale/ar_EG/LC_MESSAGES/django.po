@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Ali <alimahwer@yahoo.com>, 2024
@@ -9,20 +9,22 @@
 # Yaman Sanobar <yman.snober@gmail.com>, 2024
 # Ayoub BENSAKHRIA <bensakhria.ayoub@gmail.com>, 2024
 # ali ahmed, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: ali ahmed, 2024\n"
-"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/teams/13584/ar_EG/)\n"
+"Language-Team: Arabic (Egypt) (https://app.transifex.com/rosarior/"
+"teams/13584/ar_EG/)\n"
+"Language: ar_EG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar_EG\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: apps.py:26 classes.py:209 links.py:26
 msgid "ACLs"
@@ -56,7 +58,7 @@ msgstr "تم حذف قائمة التحكم فى الدخول"
 msgid "ACL edited"
 msgstr "تم تحرير قائمة التحكم فى الدخول"
 
-#: forms.py:13 models.py:58 serializers.py:79 views.py:73
+#: forms.py:12 models.py:58 serializers.py:79 views.py:73
 msgid "Role"
 msgstr "دور"
 
@@ -234,8 +236,7 @@ msgid "Type of the object for which the access will be modified."
 msgstr "نوع الكائن الذي سيتم تعديل الوصول إليه."
 
 #: workflow_actions.py:57
-msgid ""
-"Numeric identifier of the object for which the access will be modified."
+msgid "Numeric identifier of the object for which the access will be modified."
 msgstr "المعرف الرقمي للكائن الذي سيتم تعديل الوصول إليه."
 
 #: workflow_actions.py:62 workflow_actions.py:198

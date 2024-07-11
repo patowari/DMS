@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Vítor Figueiró <vfigueiro@gmail.com>, 2024
@@ -12,34 +12,37 @@
 # Aline Freitas <aline@alinefreitas.com.br>, 2024
 # Roberto Rosario, 2024
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
-"Last-Translator: José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
+"Last-Translator: José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, "
+"2024\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
+"pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:33
 msgid "Django GPG"
 msgstr "Django GPG"
 
-#: apps.py:55 apps.py:61 forms.py:16
+#: apps.py:55 apps.py:61 forms.py:15
 msgid "Key ID"
 msgstr "ID da chave"
 
-#: apps.py:65 forms.py:42 models.py:49
+#: apps.py:65 forms.py:41 models.py:49
 msgid "Type"
 msgstr "Tipo"
 
-#: apps.py:69 forms.py:23 models.py:28
+#: apps.py:69 forms.py:22 models.py:28
 msgid "Creation date"
 msgstr "Data de criação"
 
@@ -47,15 +50,15 @@ msgstr "Data de criação"
 msgid "No expiration"
 msgstr "Sem expiração"
 
-#: apps.py:75 forms.py:28 models.py:32
+#: apps.py:75 forms.py:27 models.py:32
 msgid "Expiration date"
 msgstr "Data de validade"
 
-#: apps.py:79 forms.py:35 models.py:39
+#: apps.py:79 forms.py:34 models.py:39
 msgid "Length"
 msgstr "Comprimento"
 
-#: apps.py:84 forms.py:20 models.py:45
+#: apps.py:84 forms.py:19 models.py:45
 msgid "User ID"
 msgstr "ID de utilizador"
 
@@ -75,19 +78,19 @@ msgstr "Chave criada"
 msgid "Key downloaded"
 msgstr "Chave descarregada"
 
-#: forms.py:27
+#: forms.py:26
 msgid "None"
 msgstr "Nenhum"
 
-#: forms.py:32 models.py:36
+#: forms.py:31 models.py:36
 msgid "Fingerprint"
 msgstr "Impressão digital"
 
-#: forms.py:38 models.py:42
+#: forms.py:37 models.py:42
 msgid "Algorithm"
 msgstr "Algoritmo"
 
-#: forms.py:56
+#: forms.py:55
 msgid "Term"
 msgstr "Termo"
 
@@ -294,8 +297,8 @@ msgstr "Carregar nova chave"
 
 #: views.py:206
 msgid ""
-"Private keys are used to signed documents. Private keys can only be uploaded"
-" by the user. The view to upload private and public keys is the same."
+"Private keys are used to signed documents. Private keys can only be uploaded "
+"by the user. The view to upload private and public keys is the same."
 msgstr ""
 "Chaves privadas são usadas para assinaturas de documentos. Chaves privadas "
 "somente podem ser carregadas pelo usuário. A tela para carregar chaves "
@@ -307,8 +310,8 @@ msgstr "Não existem chaves privadas."
 
 #: views.py:230
 msgid ""
-"Public keys are used to verify signed documents. Public keys can be uploaded"
-" by the user or downloaded from keyservers. The view to upload private and "
+"Public keys are used to verify signed documents. Public keys can be uploaded "
+"by the user or downloaded from keyservers. The view to upload private and "
 "public keys is the same."
 msgstr ""
 "Chaves públicas são utilizadas para assinar documentos e podem ser "

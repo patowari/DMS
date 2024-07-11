@@ -1,28 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Haim Shaposhnik <haim.shaposhnik@gmail.com>, 2024
 # Ovadia Ovadia, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ovadia Ovadia, 2024\n"
-"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/teams/13584/he_IL/)\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/rosarior/"
+"teams/13584/he_IL/)\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: he_IL\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: 2;\n"
 
-#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
-msgid "Appearance"
+#: apps.py:15
+msgid "Appearance (Bootstrap)"
 msgstr "ניראות "
 
 #: dependencies.py:8
@@ -36,149 +38,6 @@ msgstr "Bootstrap (סביבת עבודה)"
 #: dependencies.py:16
 msgid "Bootswatch"
 msgstr "Bootswatch (מאגר ערכות נושא)"
-
-#: dependencies.py:30
-msgid "Fancybox"
-msgstr "Fancybox (כלי תצוגת תוכן)"
-
-#: dependencies.py:34
-msgid "FontAwesome"
-msgstr "FontAwesome (ספריית סמלילים)"
-
-#: dependencies.py:38
-msgid "jQuery"
-msgstr "jQuery (ספריית JavaScript)"
-
-#: dependencies.py:42
-msgid "JQuery Form"
-msgstr "טופס JQuery"
-
-#: dependencies.py:46
-msgid "JQuery Match Height"
-msgstr "כלי להתאמת גודל אובייקטים (JQuery Match Height)"
-
-#: dependencies.py:50
-msgid "Select 2"
-msgstr "בחר 2"
-
-#: dependencies.py:54
-msgid "Toastr"
-msgstr "ספריית Javascript (Toastr)"
-
-#: events.py:10
-msgid "Theme created"
-msgstr "ערכת נושא נוצרה"
-
-#: events.py:13
-msgid "Theme edited"
-msgstr "ערכת נושא נערכה"
-
-#: events.py:16
-msgid "User theme edited"
-msgstr "ערכת משתמש נערכה"
-
-#: links.py:26
-msgid "Theme settings"
-msgstr "הגדרות ערכת נושא"
-
-#: links.py:33
-msgid "Edit theme settings"
-msgstr "עריכת הגדרות ערכת נושא"
-
-#: links.py:39 views.py:34
-msgid "Create new theme"
-msgstr "יצירת ערכת נושא חדשה"
-
-#: links.py:44
-msgid "Delete"
-msgstr "מחיקה"
-
-#: links.py:48
-msgid "Edit"
-msgstr "עריכה"
-
-#: links.py:52 links.py:60 models.py:33 views.py:103
-msgid "Themes"
-msgstr "ערכות נושא"
-
-#: models.py:20
-msgid "A short text describing the theme."
-msgstr "מלל קצר לתאור ערכת הנושא."
-
-#: models.py:21
-msgid "Label"
-msgstr "Label"
-
-#: models.py:25
-msgid ""
-"The CSS stylesheet to change the appearance of the different user interface "
-"elements."
-msgstr "ה-CSS לשינוי הניראות של מרכיבי ממשק המשתמש."
-
-#: models.py:27
-msgid "Stylesheet"
-msgstr "Stylesheet"
-
-#: models.py:32 models.py:69
-msgid "Theme"
-msgstr "ערכת נושא"
-
-#: models.py:65
-msgid "User"
-msgstr "משתמש"
-
-#: models.py:73
-msgid "User theme setting"
-msgstr "הגדרת ערכת משתמש"
-
-#: models.py:74
-msgid "User theme settings"
-msgstr "הגדרות ערכת משתמש"
-
-#: permissions.py:10
-msgid "Create new themes"
-msgstr "יצירת ערכות נושא חדשות"
-
-#: permissions.py:13
-msgid "Delete themes"
-msgstr "מחיקת ערכות נושא"
-
-#: permissions.py:16
-msgid "Edit themes"
-msgstr "עריכת ערכות נושא"
-
-#: permissions.py:19
-msgid "View existing themes"
-msgstr "צפייה בערכות נושא קיימות"
-
-#: settings.py:18
-msgid "Custom HTTP response code for AJAX redirections."
-msgstr "Custom HTTP response code for AJAX redirections."
-
-#: settings.py:24
-msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "מספר תווים מירבי לכותרת תצוגה"
-
-#: settings.py:34
-msgid "Position where the system messages will be displayed."
-msgstr "מיקום התצוגה של הודעות מערכת."
-
-#: settings.py:40
-msgid ""
-"Delay in milliseconds after which the menus will be checked for updates."
-msgstr "העיכוב (באלפיות השנייה) שאחריו יבדקו עדכוני תפריטים."
-
-#: settings.py:47
-msgid ""
-"Maximum number of requests that can be made before throttling is enabled."
-msgstr "מספר מירבי של בקשות בטרם אפשר למערכת להאט (throttling)."
-
-#: settings.py:54
-msgid ""
-"Time in milliseconds after which a throttled request will clear allowing an "
-"additional request to be performed."
-msgstr ""
-"זמן (באלפיות השנייה) שאחריו בקשה מעוכבת תשוחרר לטובת ביצוע בקשה נוספת."
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -214,8 +73,7 @@ msgid ""
 "permission to access it."
 msgstr "המיקום נכון, אך לקוד המשתמש אין הרשאות הנדרשות לגישה אליו."
 
-#: templates/500.html:5 templates/500.html:18
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
 msgid "Server error"
 msgstr "שגיאת שרת"
 
@@ -240,8 +98,11 @@ msgid "Contact your system administrator."
 msgstr "התקשר למנהל המערכת."
 
 #: templates/500.html:35
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
-msgstr "לחפש ביומני המערכת (logs) את המילים \"ERROR\" ,\"CRITICAL\" או \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
+msgstr ""
+"לחפש ביומני המערכת (logs) את המילים \"ERROR\" ,\"CRITICAL\" או \"FATAL\"."
 
 #: templates/500.html:36
 #, python-format
@@ -276,8 +137,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -394,7 +255,7 @@ msgstr ""
 msgid "Total: %(total)s"
 msgstr "סך הכל: %(total)s"
 
-#: templates/appearance/partials/list/no_results.html:18
+#: templates/appearance/partials/list/no_results.html:22
 msgid "No results"
 msgstr "אין תוצאות"
 
@@ -416,28 +277,20 @@ msgstr "מזהה"
 msgid "Actions"
 msgstr "פעולות"
 
-#: templates/appearance/partials/list/toolbar.html:14
+#: templates/appearance/partials/list/toolbar.html:15
 msgid "Select/Deselect all"
 msgstr "בחר/בטל בחירת הכל"
 
-#: templates/appearance/partials/list/toolbar.html:18
-msgid "Toggle list display mode"
-msgstr "החלפת מצב תצוגת רשימה"
-
-#: templates/appearance/partials/list/toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:28
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "בחירת פריטים בכדי להפעיל פעולות על קבוצת פריטים. להשתמש ב-Shift ו<קליק> "
 "לבחירה מרובה. "
 
-#: templates/appearance/partials/list/toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:32
 msgid "Bulk actions"
 msgstr "פעולות על מספר פריטים"
-
-#: templates/appearance/partials/list/toolbar.html:38
-msgid "Toggle Dropdown"
-msgstr "החלף רשימת בחירה"
 
 #: templates/appearance/partials/sidebar.html:17
 msgid "Object"
@@ -447,47 +300,34 @@ msgstr "רכיב"
 msgid "Open main menu"
 msgstr "פתיחת תפריט ראשי"
 
-#: templates/appearance/root.html:51
+#: templates/appearance/root.html:53
 msgid "Close"
 msgstr "סגירה"
 
-#: templates/appearance/root.html:59
+#: templates/appearance/root.html:61
 msgid "Server communication error"
 msgstr "תקלה בתקשורת עם השרת"
 
-#: templates/appearance/root.html:61
+#: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
 msgstr "לבדוק את חיבור הרשת ולנסות שוב בעוד כמה דקות."
 
-#: templatetags/appearance_tags.py:77
-msgid "None"
-msgstr "אף אחד/כלום"
+#: templates/navigation/app/list_toolbar.html:10
+msgid "Toggle list display mode"
+msgstr "החלפת מצב תצוגת רשימה"
 
-#: views.py:59
-#, python-format
-msgid "Delete theme: %s"
-msgstr "מחיקת ערכת נושא: %s"
+#: templates/navigation/app/list_toolbar.html:25
+msgid "Sort by column"
+msgstr ""
 
-#: views.py:76
-#, python-format
-msgid "Edit theme: %s"
-msgstr "עריכת ערכת נושא: %s"
+#: templates/navigation/app/list_toolbar.html:26
+msgid "--- Clear ---"
+msgstr ""
 
-#: views.py:97
-msgid ""
-"Themes allow changing the visual appearance without requiring code changes."
-msgstr "ערכות נושא מאפשרות שינוי הניראות ללא צורך בשינויי קוד."
+#: templates/navigation/app/list_toolbar.html:29
+msgid "(ascending)"
+msgstr ""
 
-#: views.py:101
-msgid "There are no themes"
-msgstr "אין ערכות נושא"
-
-#: views.py:127
-#, python-format
-msgid "Theme settings for user: %s"
-msgstr "הגדרות ערכת נושא של משתמש: %s"
-
-#: views.py:150
-#, python-format
-msgid "Edit theme settings for user: %s"
-msgstr "עריכת הגדרות ערכת נושא למשתמש: %s"
+#: templates/navigation/app/list_toolbar.html:31
+msgid "(descending)"
+msgstr ""

@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
 # Felix <felix.com@gmx.com>, 2024
@@ -12,19 +12,20 @@
 # Marvin Haschker <marvin@haschker.me>, 2024
 # Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
 # Mathias Behrle <mathiasb@m9s.biz>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
-"Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
+"Language-Team: German (Austria) (https://app.transifex.com/rosarior/"
+"teams/13584/de_AT/)\n"
+"Language: de_AT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: apps.py:24 links.py:38 permissions.py:6
@@ -132,11 +133,11 @@ msgstr "Binärdatei"
 
 #: classes.py:537
 msgid ""
-"JavaScript libraries downloaded the from NPM registry and used for front-end"
-" functionality."
+"JavaScript libraries downloaded the from NPM registry and used for front-end "
+"functionality."
 msgstr ""
-"JavaScript Bibliotheken, die aus der NPM Registry heruntergeladen werden und"
-" für die Front-End-Funktionalität benötigt werden."
+"JavaScript Bibliotheken, die aus der NPM Registry heruntergeladen werden und "
+"für die Front-End-Funktionalität benötigt werden."
 
 #: classes.py:540
 msgid "JavaScript"
@@ -331,8 +332,8 @@ msgstr "Ermittlung der aktuellsten verfügbaren Version nicht möglich."
 #: literals.py:21
 #, python-format
 msgid ""
-"Unexpected error trying to determine the latest version available. Make sure"
-" your installation has a connection to the internet; %(exception)s"
+"Unexpected error trying to determine the latest version available. Make sure "
+"your installation has a connection to the internet; %(exception)s"
 msgstr ""
 "Unerwarteter Fehler beim Verusch die ltzte verfügbare Version zu ermitteln. "
 "Stellen Sie sicher, dass Ihre Installation Zugang zum Internet hat; "
@@ -375,8 +376,8 @@ msgstr "Dieser Vorgang überprüft nur die Python Komponente von Mayan EDMS."
 
 #: views.py:31
 msgid ""
-"It does not verify versions of other components like packaging or deployment"
-" technologies, such as container or virtual machine images."
+"It does not verify versions of other components like packaging or deployment "
+"technologies, such as container or virtual machine images."
 msgstr ""
 "Versionen anderer Komponenten wie Paketierungs- oder Deploymenttechnologien "
 "wie Container oder Abbilder für Virtuelle Maschinen werden nicht überprüft."

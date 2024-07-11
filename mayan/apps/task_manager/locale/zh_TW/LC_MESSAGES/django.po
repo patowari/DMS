@@ -2,122 +2,123 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # dave cheng, 2024
 # Leon Chu, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 04:57+0000\n"
+"POT-Creation-Date: 2024-07-11 12:51+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/"
+"teams/13584/zh_TW/)\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps.py:32 permissions.py:6
 msgid "Task manager"
 msgstr "任务管理器"
 
-#: apps.py:114 apps.py:139 apps.py:182
+#: apps.py:116 apps.py:141 apps.py:184
 msgid "Label"
 msgstr "標籤"
 
-#: apps.py:118 apps.py:142 apps.py:186
+#: apps.py:120 apps.py:144 apps.py:188
 msgid "Name"
 msgstr "名称"
 
-#: apps.py:123
+#: apps.py:125
 msgid "Default queue?"
 msgstr "默认队列？"
 
-#: apps.py:128
+#: apps.py:130
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
-"the broker is restarted. Transient queues use less resources and managed non"
-" critical tasks."
+"the broker is restarted. Transient queues use less resources and managed non "
+"critical tasks."
 msgstr ""
 
-#: apps.py:131
+#: apps.py:133
 msgid "Is transient?"
 msgstr "是临时的吗？"
 
-#: apps.py:145
+#: apps.py:147
 msgid "Dotted path"
 msgstr ""
 
-#: apps.py:149
+#: apps.py:151
 msgid "Schedule"
 msgstr "安排"
 
-#: apps.py:155
+#: apps.py:157
 msgid "Type"
 msgstr "類型"
 
-#: apps.py:160
+#: apps.py:162
 msgid "Start time"
 msgstr "开始时间"
 
-#: apps.py:164
+#: apps.py:166
 msgid "Host"
 msgstr "主机"
 
-#: apps.py:168
+#: apps.py:170
 msgid "Arguments"
 msgstr "参数"
 
-#: apps.py:172
+#: apps.py:174
 msgid "Keyword arguments"
 msgstr "关键字参数"
 
-#: apps.py:177
+#: apps.py:179
 msgid "Worker process ID"
 msgstr "工作进程ID"
 
-#: apps.py:190
+#: apps.py:192
 msgid ""
 "Maximum amount of resident memory a worker can execute before it's replaced "
 "by a new process."
 msgstr ""
 
-#: apps.py:192
+#: apps.py:194
 msgid "Maximum memory per child"
 msgstr ""
 
-#: apps.py:196
+#: apps.py:198
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
 msgstr ""
 
-#: apps.py:198
+#: apps.py:200
 msgid "Maximum tasks per child"
 msgstr ""
 
-#: apps.py:202
+#: apps.py:204
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
 msgstr ""
 
-#: apps.py:204
+#: apps.py:206
 msgid "Concurrency"
 msgstr ""
 
-#: apps.py:208
+#: apps.py:210
 msgid ""
-"The nice value determines the priority of the process. A higher value lowers"
-" the priority. The default value is 0."
+"The nice value determines the priority of the process. A higher value lowers "
+"the priority. The default value is 0."
 msgstr ""
 
-#: apps.py:211
+#: apps.py:213
 msgid "Nice level"
 msgstr ""
 
@@ -155,13 +156,14 @@ msgstr ""
 
 #: settings.py:23
 msgid ""
-"Default: \"amqp://\". Default broker URL. This must be a URL in the form of:"
-" transport://userid:password@hostname:port/virtual_host Only the scheme part"
-" (transport://) is required, the rest is optional, and defaults to the "
+"Default: \"amqp://\". Default broker URL. This must be a URL in the form of: "
+"transport://userid:password@hostname:port/virtual_host Only the scheme part "
+"(transport://) is required, the rest is optional, and defaults to the "
 "specific transports default values."
 msgstr ""
-"默认值：“amqp：//”。默认代理URL。这必须是以下形式的URL：transport:// userid:password @ "
-"hostname:port / virtual_host只需要方案部分（transport://），其余部分是可选的，默认为特定传输的默认值。"
+"默认值：“amqp：//”。默认代理URL。这必须是以下形式的URL：transport:// userid:"
+"password @ hostname:port / virtual_host只需要方案部分（transport://），其余部"
+"分是可选的，默认为特定传输的默认值。"
 
 #: settings.py:32
 msgid ""
@@ -172,12 +174,11 @@ msgstr ""
 #: settings.py:40
 msgid ""
 "Default: No result backend enabled by default. The backend used to store "
-"task results (tombstones). Refer to "
-"http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
-"backend"
+"task results (tombstones). Refer to http://docs.celeryproject.org/en/v4.1.0/"
+"userguide/configuration.html#result-backend"
 msgstr ""
-"默认值：默认情况下未启用结果后端。后端用于存储任务结果（墓碑）。请参阅http://docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-"
-"backend"
+"默认值：默认情况下未启用结果后端。后端用于存储任务结果（墓碑）。请参阅http://"
+"docs.celeryproject.org/en/v4.1.0/userguide/configuration.html#result-backend"
 
 #: tests/literals.py:11
 msgid "Test queue"

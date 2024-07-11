@@ -1,47 +1,56 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Domagoj Crljenko <domagoj@rii.hr>, 2024
 # Mario Jakovina <mario.jakovina@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 06:21+0000\n"
+"POT-Creation-Date: 2024-07-11 13:45+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Mario Jakovina <mario.jakovina@gmail.com>, 2024\n"
-"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/hr/)\n"
+"Language-Team: Croatian (https://app.transifex.com/rosarior/teams/13584/"
+"hr/)\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: apps.py:71 apps.py:209 apps.py:215 apps.py:219 apps.py:224 apps.py:228
-#: events.py:6 links.py:53 permissions.py:6 queues.py:7
-#: workflow_actions.py:162
+#: apps.py:74 apps.py:215 apps.py:221 apps.py:225 apps.py:230 apps.py:234
+#: events.py:6 links.py:53 permissions.py:6 queues.py:7 workflow_actions.py:162
 msgid "Metadata"
 msgstr "Metapodaci"
 
-#: apps.py:141
+#: apps.py:145
 msgid "Return the value of a specific document metadata."
 msgstr "Vrati vrijednost metapodatka određenog dokumenta."
 
-#: apps.py:142
+#: apps.py:146
 msgid "Metadata value of"
 msgstr ""
 
-#: apps.py:147
+#: apps.py:151
 msgid "Metadata type name"
 msgstr "Naziv vrste metapodatka"
 
-#: apps.py:151 search.py:14
+#: apps.py:155 search.py:15
 msgid "Metadata value"
 msgstr "Vrijednost metapodatka"
+
+#: apps.py:253
+msgid "Document link"
+msgstr "Dokument"
+
+#: apps.py:259
+msgid "Document thumbnail"
+msgstr "Vrsta dokumenta"
 
 #: events.py:10
 msgid "Document metadata added"
@@ -67,37 +76,37 @@ msgstr "Izmijenjena vrsta metapodatka"
 msgid "Metadata type relationship updated"
 msgstr ""
 
-#: forms.py:15
+#: forms.py:13
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:18 models/metadata_type_models.py:35
+#: forms.py:16 models/metadata_type_models.py:35
 msgid "Name"
 msgstr "Ime"
 
-#: forms.py:26 models/metadata_instance_models.py:43 workflow_actions.py:112
+#: forms.py:24 models/metadata_instance_models.py:43 workflow_actions.py:112
 msgid "Value"
 msgstr "Vrijednost"
 
-#: forms.py:31
+#: forms.py:29
 msgid "Update"
 msgstr "Osvježi"
 
-#: forms.py:51 forms.py:232 models/document_type_metadata_type_models.py:31
+#: forms.py:49 forms.py:232 models/document_type_metadata_type_models.py:31
 msgid "Required"
 msgstr "Obavezno"
 
-#: forms.py:83
+#: forms.py:81
 #, python-format
 msgid "Lookup value error: %s"
 msgstr ""
 
-#: forms.py:96
+#: forms.py:94
 #, python-format
 msgid "Default value error: %s"
 msgstr ""
 
-#: forms.py:117 models/metadata_type_models.py:120
+#: forms.py:115 models/metadata_type_models.py:120
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "\"%s\" je obavezan podatak za ovu vrstu dokumenta."
@@ -107,7 +116,7 @@ msgid "Metadata types to be added to the selected documents."
 msgstr "Vrste metapodataka koje će se dodati uz odabrane dokumente."
 
 #: forms.py:137 models/document_type_metadata_type_models.py:28
-#: models/metadata_type_models.py:83 search.py:11 serializers.py:52
+#: models/metadata_type_models.py:83 search.py:12 serializers.py:52
 #: serializers.py:114 workflow_actions.py:148
 msgid "Metadata type"
 msgstr "Vrsta metapodatka"
@@ -243,6 +252,7 @@ msgid "The actual value stored in the metadata type field for the document."
 msgstr ""
 
 #: models/metadata_instance_models.py:49 models/metadata_instance_models.py:50
+#: search.py:21
 msgid "Document metadata"
 msgstr ""
 
@@ -306,8 +316,7 @@ msgstr ""
 
 #: models/metadata_type_models.py:67
 msgid ""
-"The parser will reformat the value entered to conform to the expected "
-"format."
+"The parser will reformat the value entered to conform to the expected format."
 msgstr ""
 
 #: models/metadata_type_models.py:69
@@ -371,16 +380,24 @@ msgstr ""
 msgid "Add required metadata type"
 msgstr ""
 
+#: search.py:33
+msgid "Document type ID"
+msgstr "Vrsta dokumenta"
+
+#: search.py:37
+msgid "Document type label"
+msgstr "Vrsta dokumenta"
+
+#: search.py:40 serializers.py:57 serializers.py:107
+msgid "Metadata type ID"
+msgstr ""
+
 #: serializers.py:32 serializers.py:61 serializers.py:117
 msgid "URL"
 msgstr "URL"
 
 #: serializers.py:56
 msgid "Primary key of the metadata type to be added."
-msgstr ""
-
-#: serializers.py:57 serializers.py:107
-msgid "Metadata type ID"
 msgstr ""
 
 #: serializers.py:105
@@ -419,8 +436,7 @@ msgstr ""
 #: views/document_views.py:166
 #, python-format
 msgid ""
-"Metadata type: %(metadata_type)s successfully added to document "
-"%(document)s."
+"Metadata type: %(metadata_type)s successfully added to document %(document)s."
 msgstr ""
 
 #: views/document_views.py:176
@@ -473,9 +489,8 @@ msgstr ""
 
 #: views/document_views.py:372
 msgid ""
-"Add metadata types this document's type to be able to add them to individual"
-" documents. Once added to individual document, you can then edit their "
-"values."
+"Add metadata types this document's type to be able to add them to individual "
+"documents. Once added to individual document, you can then edit their values."
 msgstr ""
 
 #: views/document_views.py:377
@@ -569,8 +584,8 @@ msgstr ""
 
 #: views/metadata_type_views.py:104
 msgid ""
-"Metadata types are user defined properties that can be assigned values. Once"
-" created they must be associated to document types, either as optional or "
+"Metadata types are user defined properties that can be assigned values. Once "
+"created they must be associated to document types, either as optional or "
 "required, for each. Setting a metadata type as required for a document type "
 "will block the upload of documents of that type until a metadata value is "
 "provided."

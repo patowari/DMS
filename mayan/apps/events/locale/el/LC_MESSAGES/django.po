@@ -1,68 +1,69 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Hmayag Antonian <hmayag@freemail.gr>, 2024
 # pyrotech <anastasios@tutamail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2024-07-11 13:45+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:11 links.py:52 links.py:93 permissions.py:6
+#: apps.py:33 events.py:11 links.py:53 links.py:102 permissions.py:6
 #: settings.py:8 views/event_views.py:29
 msgid "Events"
 msgstr "Συμβάντα"
 
-#: apps.py:86 apps.py:121
+#: apps.py:87 apps.py:122
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: apps.py:90 apps.py:124 serializers.py:72
+#: apps.py:91 apps.py:126 serializers/event_serializers.py:14
 msgid "Actor"
 msgstr "Ενεργών"
 
-#: apps.py:94 apps.py:129
+#: apps.py:95 apps.py:131
 msgid "Event"
 msgstr "Συμβάν"
 
-#: apps.py:98 apps.py:134 serializers.py:78
+#: apps.py:99 apps.py:136 serializers/event_serializers.py:20
 msgid "Target"
 msgstr "Στόχος"
 
-#: apps.py:102 apps.py:138
+#: apps.py:103 apps.py:141
 msgid "Action object"
 msgstr "Αντικείμενο ενέργειας"
 
-#: apps.py:109 forms.py:10 forms.py:71
+#: apps.py:110 forms.py:10 forms.py:71
 msgid "Namespace"
 msgstr "Χώρος ονομάτων"
 
-#: apps.py:114 forms.py:16 forms.py:77 serializers.py:21 serializers.py:46
+#: apps.py:115 forms.py:16 forms.py:77 serializers/event_type_serializers.py:17
+#: serializers/event_type_serializers.py:42
 msgid "Label"
 msgstr "Ετικέτα"
 
-#: apps.py:143
+#: apps.py:146
 msgid "Seen"
 msgstr "Αναγνωσμένο"
 
-#: apps.py:150
+#: apps.py:154
 msgid "Object"
 msgstr "Αντικείμενο"
 
-#: apps.py:155 models.py:48 models.py:109
+#: apps.py:159 models.py:48 models.py:109
 msgid "Event type"
 msgstr "Τύπος συμβάντος"
 
@@ -105,31 +106,39 @@ msgstr "Εγγεγραμμένος"
 msgid "System"
 msgstr "Σύστημα"
 
-#: links.py:55 links.py:100 views/clear_views.py:65
+#: links.py:56 links.py:109 views/clear_views.py:65
 msgid "Clear events"
 msgstr ""
 
-#: links.py:59 links.py:107 views/export_views.py:64
+#: links.py:60 links.py:116 views/export_views.py:64
 msgid "Export events"
 msgstr ""
 
-#: links.py:65 models.py:55 views/subscription_views.py:54
+#: links.py:66 models.py:55 views/subscription_views.py:54
 msgid "Event subscriptions"
 msgstr "Εγγραφές σε συμβάντα"
 
-#: links.py:71 models.py:117 views/subscription_views.py:169
+#: links.py:72 models.py:117 views/subscription_views.py:169
 msgid "Object event subscriptions"
 msgstr "Εγγραφές στα συμβάντα αντικειμένου"
 
-#: links.py:83
+#: links.py:78 links.py:82
+msgid "Delete"
+msgstr ""
+
+#: links.py:87 models.py:87 views/notification_views.py:56
+msgid "Notifications"
+msgstr "Ενημερώσεις"
+
+#: links.py:92
 msgid "Mark as seen"
 msgstr "Σημείωση ως αναγνωσμένο"
 
-#: links.py:87
+#: links.py:96
 msgid "Mark all as seen"
 msgstr "Σημείωση όλων ως αναγνωσμένα"
 
-#: links.py:114
+#: links.py:123
 msgid "Subscriptions"
 msgstr "Εγγραφές"
 
@@ -138,7 +147,8 @@ msgstr "Εγγραφές"
 msgid "Unknown or obsolete event type: %s"
 msgstr "Άγνωστος ή ξεπερασμένος τύπος συμβάντος: %s"
 
-#: models.py:25 serializers.py:24 serializers.py:49
+#: models.py:25 serializers/event_type_serializers.py:20
+#: serializers/event_type_serializers.py:45
 msgid "Name"
 msgstr "Όνομα"
 
@@ -150,7 +160,8 @@ msgstr "Αποθηκευμένος τύπος συμβάντος"
 msgid "Stored event types"
 msgstr "Αποθηκευμένοι τύποι συμβάντων"
 
-#: models.py:44 models.py:72 models.py:105 serializers.py:103
+#: models.py:44 models.py:72 models.py:105
+#: serializers/notification_serializers.py:16
 msgid "User"
 msgstr "Χρήστης"
 
@@ -158,7 +169,7 @@ msgstr "Χρήστης"
 msgid "Event subscription"
 msgstr "Εγγραφή σε συμβάν"
 
-#: models.py:76 serializers.py:100
+#: models.py:76 serializers/notification_serializers.py:13
 msgid "Action"
 msgstr "Ενέργεια"
 
@@ -169,10 +180,6 @@ msgstr "Ανάγνωση"
 #: models.py:86
 msgid "Notification"
 msgstr "Ενημέρωση"
-
-#: models.py:87 views/notification_views.py:33
-msgid "Notifications"
-msgstr "Ενημερώσεις"
 
 #: models.py:116
 msgid "Object event subscription"
@@ -210,29 +217,30 @@ msgstr ""
 msgid "Export event querysets"
 msgstr ""
 
-#: serializers.py:27 serializers.py:109
-msgid "URL"
-msgstr "Διεύθυνση URL"
-
-#: serializers.py:40
-msgid "Event type namespace URL"
-msgstr ""
-
-#: serializers.py:43
-msgid "ID"
-msgstr "Αναγνωριστικό"
-
-#: serializers.py:75
+#: serializers/event_serializers.py:17
 msgid "Actor content type"
 msgstr ""
 
-#: serializers.py:81
+#: serializers/event_serializers.py:23
 msgid "Target content type"
 msgstr ""
 
-#: serializers.py:84
+#: serializers/event_serializers.py:26
 msgid "Verb"
 msgstr "Ρήμα"
+
+#: serializers/event_type_serializers.py:23
+#: serializers/notification_serializers.py:22
+msgid "URL"
+msgstr "Διεύθυνση URL"
+
+#: serializers/event_type_serializers.py:36
+msgid "Event type namespace URL"
+msgstr ""
+
+#: serializers/event_type_serializers.py:39
+msgid "ID"
+msgstr "Αναγνωριστικό"
 
 #: settings.py:15
 msgid ""
@@ -288,8 +296,8 @@ msgstr "Συμβάντα τύπου: %s"
 
 #: views/export_views.py:28
 msgid ""
-"The process will be performed in the background. The exported events will be"
-" available in the downloads area."
+"The process will be performed in the background. The exported events will be "
+"available in the downloads area."
 msgstr ""
 
 #: views/export_views.py:51
@@ -306,29 +314,67 @@ msgstr ""
 msgid "Export events of type: %s"
 msgstr ""
 
-#: views/notification_views.py:29
+#: views/notification_views.py:20
+#, python-format
+msgid "Error deleting notification \"%(instance)s\"; %(exception)s"
+msgstr ""
+
+#: views/notification_views.py:27
+#, fuzzy, python-format
+#| msgid "%(count)d notifications deleted successfully."
+msgid "%(count)d notifications deleted successfully."
+msgstr "Εγγραφές σε συμβάντα ανανεώθηκαν επιτυχώς"
+
+#: views/notification_views.py:30
+#, fuzzy, python-format
+#| msgid "User \"%(object)s\" deleted successfully."
+msgid "User \"%(object)s\" deleted successfully."
+msgstr "Εγγραφές σε συμβάντα ανανεώθηκαν επιτυχώς"
+
+#: views/notification_views.py:33
+#, fuzzy, python-format
+#| msgid "%(count)d notification deleted successfully."
+msgid "%(count)d notification deleted successfully."
+msgstr "Εγγραφές σε συμβάντα ανανεώθηκαν επιτυχώς"
+
+#: views/notification_views.py:35
+#, python-format
+msgid "Delete the %(count)d selected notifications."
+msgstr ""
+
+#: views/notification_views.py:36
+#, python-format
+msgid "Delete notification: %(object)s."
+msgstr ""
+
+#: views/notification_views.py:37
+#, python-format
+msgid "Delete the %(count)d selected notification."
+msgstr ""
+
+#: views/notification_views.py:52
 msgid "Subscribe to global or object events to receive notifications."
 msgstr ""
 "Εγγραφή σε καθολικά συμβάντα ή συμβάντα αντικειμένου για την λήψη "
 "ειδοποιήσεων."
 
-#: views/notification_views.py:32
+#: views/notification_views.py:55
 msgid "There are no notifications"
 msgstr "Δεν υπάρχουν ειδοποιήσεις"
 
-#: views/notification_views.py:45
+#: views/notification_views.py:68
 msgid "Mark the selected notification as read?"
 msgstr ""
 
-#: views/notification_views.py:60
+#: views/notification_views.py:83
 msgid "Notification marked as read."
 msgstr ""
 
-#: views/notification_views.py:72
+#: views/notification_views.py:95
 msgid "Mark all notification as read?"
 msgstr ""
 
-#: views/notification_views.py:79
+#: views/notification_views.py:102
 msgid "All notifications marked as read."
 msgstr ""
 

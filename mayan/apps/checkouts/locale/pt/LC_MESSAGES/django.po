@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
@@ -10,20 +10,22 @@
 # Vítor Figueiró <vfigueiro@gmail.com>, 2024
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
 # Márcia Ferreira, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Márcia Ferreira, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
+"Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/"
+"pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
 
 #: apps.py:41 events.py:6 links.py:32
 msgid "Checkouts"
@@ -57,31 +59,31 @@ msgstr "Documento não requisitado."
 msgid "Document already checked out."
 msgstr "Documento já foi retirado"
 
-#: forms.py:26
+#: forms.py:25
 msgid "Document status"
 msgstr "Status do documento"
 
-#: forms.py:37 model_mixins.py:9 models.py:47 serializers.py:22
+#: forms.py:36 model_mixins.py:9 models.py:47 serializers.py:22
 msgid "User"
 msgstr "Utilizador"
 
-#: forms.py:41
+#: forms.py:40
 msgid "Check out time"
 msgstr "Hora de requisição"
 
-#: forms.py:46
+#: forms.py:45
 msgid "Check out expiration"
 msgstr "Expiração de requisição"
 
-#: forms.py:51
+#: forms.py:50
 msgid "New files allowed?"
 msgstr "Novos ficheiros permitidos?"
 
-#: forms.py:52
+#: forms.py:51
 msgid "Yes"
 msgstr "Sim"
 
-#: forms.py:52
+#: forms.py:51
 msgid "No"
 msgstr "Não"
 
@@ -273,13 +275,13 @@ msgid ""
 "Checking out a document, blocks certain operations for a predetermined "
 "amount of time."
 msgstr ""
-"Requisitar um documento bloqueia certas ações durante um determinado período"
-" de tempo."
+"Requisitar um documento bloqueia certas ações durante um determinado período "
+"de tempo."
 
 #: views.py:184
 msgid "No documents have been checked out"
 msgstr "Nenhum documento foi requisitado"
 
-#: widgets.py:20
+#: widgets.py:19
 msgid "Amount"
 msgstr "Montante"

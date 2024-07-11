@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Panasoft, 2024
@@ -11,23 +11,25 @@
 # Sergey Glita <gsv70@mail.ru>, 2024
 # Андрей Ткачёв, 2024
 # Ilya Pavlov <spirkaa@gmail.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
+"POT-Creation-Date: 2024-07-11 11:15+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:59 events.py:6 permissions.py:6 settings.py:12
-msgid "Appearance"
+#: apps.py:15
+msgid "Appearance (Bootstrap)"
 msgstr "Внешний вид"
 
 #: dependencies.py:8
@@ -41,149 +43,6 @@ msgstr "Bootstrap"
 #: dependencies.py:16
 msgid "Bootswatch"
 msgstr "Bootswatch"
-
-#: dependencies.py:30
-msgid "Fancybox"
-msgstr "Fancybox"
-
-#: dependencies.py:34
-msgid "FontAwesome"
-msgstr "FontAwesome"
-
-#: dependencies.py:38
-msgid "jQuery"
-msgstr "jQuery"
-
-#: dependencies.py:42
-msgid "JQuery Form"
-msgstr "JQuery Form"
-
-#: dependencies.py:46
-msgid "JQuery Match Height"
-msgstr "JQuery Match Height"
-
-#: dependencies.py:50
-msgid "Select 2"
-msgstr "Select 2"
-
-#: dependencies.py:54
-msgid "Toastr"
-msgstr "Toastr"
-
-#: events.py:10
-msgid "Theme created"
-msgstr "Тема создана"
-
-#: events.py:13
-msgid "Theme edited"
-msgstr "Тема изменена"
-
-#: events.py:16
-msgid "User theme edited"
-msgstr "Отредактированная пользовательская тема"
-
-#: links.py:26
-msgid "Theme settings"
-msgstr "Настройки темы"
-
-#: links.py:33
-msgid "Edit theme settings"
-msgstr "Редактировать настройки темы"
-
-#: links.py:39 views.py:34
-msgid "Create new theme"
-msgstr "Создать тему"
-
-#: links.py:44
-msgid "Delete"
-msgstr "Удалить"
-
-#: links.py:48
-msgid "Edit"
-msgstr "Редактировать"
-
-#: links.py:52 links.py:60 models.py:33 views.py:103
-msgid "Themes"
-msgstr "Темы"
-
-#: models.py:20
-msgid "A short text describing the theme."
-msgstr "Краткое описание темы."
-
-#: models.py:21
-msgid "Label"
-msgstr "Заголовок"
-
-#: models.py:25
-msgid ""
-"The CSS stylesheet to change the appearance of the different user interface "
-"elements."
-msgstr "Стили CSS для изменения внешнего вида различных элементов интерфейса."
-
-#: models.py:27
-msgid "Stylesheet"
-msgstr "Таблица стилей"
-
-#: models.py:32 models.py:69
-msgid "Theme"
-msgstr "Тема"
-
-#: models.py:65
-msgid "User"
-msgstr "Пользователь"
-
-#: models.py:73
-msgid "User theme setting"
-msgstr "Настройка темы пользователя"
-
-#: models.py:74
-msgid "User theme settings"
-msgstr "Настройки темы пользователя"
-
-#: permissions.py:10
-msgid "Create new themes"
-msgstr "Создать темы"
-
-#: permissions.py:13
-msgid "Delete themes"
-msgstr "Удалить темы"
-
-#: permissions.py:16
-msgid "Edit themes"
-msgstr "Редактировать темы"
-
-#: permissions.py:19
-msgid "View existing themes"
-msgstr "Просмотр существующих тем"
-
-#: settings.py:18
-msgid "Custom HTTP response code for AJAX redirections."
-msgstr "Кастомный код HTTP-ответа для перехода AJAX"
-
-#: settings.py:24
-msgid "Maximum number of characters that will be displayed as the view title."
-msgstr "Максимальное количество символов, отображаемое в заголовке."
-
-#: settings.py:34
-msgid "Position where the system messages will be displayed."
-msgstr ""
-
-#: settings.py:40
-msgid ""
-"Delay in milliseconds after which the menus will be checked for updates."
-msgstr ""
-"Задержка в миллисекундах после которой меню будут отправлены на обновление."
-
-#: settings.py:47
-msgid ""
-"Maximum number of requests that can be made before throttling is enabled."
-msgstr ""
-
-#: settings.py:54
-msgid ""
-"Time in milliseconds after which a throttled request will clear allowing an "
-"additional request to be performed."
-msgstr ""
 
 #: templates/403.html:5 templates/403.html:18
 msgid "Insufficient permission"
@@ -221,8 +80,7 @@ msgstr ""
 "Расположение указано правильно, но у вашей учетной записи нет необходимых "
 "разрешений для доступа к элементу."
 
-#: templates/500.html:5 templates/500.html:18
-#: templates/appearance/root.html:46
+#: templates/500.html:5 templates/500.html:18 templates/appearance/root.html:48
 msgid "Server error"
 msgstr "Ошибка сервера"
 
@@ -247,10 +105,12 @@ msgid "Contact your system administrator."
 msgstr "Обратитесь к системному администратору."
 
 #: templates/500.html:35
-msgid "Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or \"FATAL\"."
+msgid ""
+"Check the logs for messages with the tags \"ERROR\", \"CRITICAL\" or "
+"\"FATAL\"."
 msgstr ""
-"Проверьте журналы на наличие сообщений с метками \"ERROR\", \"CRITICAL\" или"
-" \"FATAL\"."
+"Проверьте журналы на наличие сообщений с метками \"ERROR\", \"CRITICAL\" или "
+"\"FATAL\"."
 
 #: templates/500.html:36
 #, python-format
@@ -287,8 +147,8 @@ msgstr ""
 #, python-format
 msgid ""
 "For articles, tutorials, troubleshooting, subscribe to the <a "
-"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge "
-"base</a>."
+"class=\"new_window\" href=\"%(link_knowledge_base_url)s\"> Knowledge base</"
+"a>."
 msgstr ""
 
 #: templates/appearance/about.html:75
@@ -407,7 +267,7 @@ msgstr ""
 msgid "Total: %(total)s"
 msgstr "Всего: %(total)s"
 
-#: templates/appearance/partials/list/no_results.html:18
+#: templates/appearance/partials/list/no_results.html:22
 msgid "No results"
 msgstr "Нет результатов"
 
@@ -429,28 +289,20 @@ msgstr "Идентификатор"
 msgid "Actions"
 msgstr "Действия"
 
-#: templates/appearance/partials/list/toolbar.html:14
+#: templates/appearance/partials/list/toolbar.html:15
 msgid "Select/Deselect all"
 msgstr "Выбрать все / отменить выбор"
 
-#: templates/appearance/partials/list/toolbar.html:18
-msgid "Toggle list display mode"
-msgstr "Переключить режим отображения"
-
-#: templates/appearance/partials/list/toolbar.html:31
+#: templates/appearance/partials/list/toolbar.html:28
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
 msgstr ""
 "Выберите элементы для массовых действий. Чтобы отметить сразу несколько, "
 "нажмите Shift + клик."
 
-#: templates/appearance/partials/list/toolbar.html:36
+#: templates/appearance/partials/list/toolbar.html:32
 msgid "Bulk actions"
 msgstr "Массовые действия"
-
-#: templates/appearance/partials/list/toolbar.html:38
-msgid "Toggle Dropdown"
-msgstr "Переключение выпадающего списка"
 
 #: templates/appearance/partials/sidebar.html:17
 msgid "Object"
@@ -460,47 +312,34 @@ msgstr "Объект"
 msgid "Open main menu"
 msgstr "Открыть главное меню"
 
-#: templates/appearance/root.html:51
+#: templates/appearance/root.html:53
 msgid "Close"
 msgstr "Закрыть"
 
-#: templates/appearance/root.html:59
+#: templates/appearance/root.html:61
 msgid "Server communication error"
 msgstr "Ошибка связи с сервером"
 
-#: templates/appearance/root.html:61
+#: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
 msgstr "Проверьте ваше подключение к сети и повторите попытку позже."
 
-#: templatetags/appearance_tags.py:77
-msgid "None"
-msgstr "Нет"
+#: templates/navigation/app/list_toolbar.html:10
+msgid "Toggle list display mode"
+msgstr "Переключить режим отображения"
 
-#: views.py:59
-#, python-format
-msgid "Delete theme: %s"
-msgstr "Удалить тему: %s"
+#: templates/navigation/app/list_toolbar.html:25
+msgid "Sort by column"
+msgstr ""
 
-#: views.py:76
-#, python-format
-msgid "Edit theme: %s"
-msgstr "Редактировать тему: %s"
+#: templates/navigation/app/list_toolbar.html:26
+msgid "--- Clear ---"
+msgstr ""
 
-#: views.py:97
-msgid ""
-"Themes allow changing the visual appearance without requiring code changes."
-msgstr "Темы позволяют изменять внешний вид без изменения исходного кода."
+#: templates/navigation/app/list_toolbar.html:29
+msgid "(ascending)"
+msgstr ""
 
-#: views.py:101
-msgid "There are no themes"
-msgstr "Нет тем"
-
-#: views.py:127
-#, python-format
-msgid "Theme settings for user: %s"
-msgstr "Настройки темы для пользователя: %s"
-
-#: views.py:150
-#, python-format
-msgid "Edit theme settings for user: %s"
-msgstr "Редактировать настройки темы для пользователя: %s"
+#: templates/navigation/app/list_toolbar.html:31
+msgid "(descending)"
+msgstr ""

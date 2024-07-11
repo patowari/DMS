@@ -1,37 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # abc Def <hdogan1974@gmail.com>, 2024
 # Nurgül Özkan <nurgulozkan@hotmail.com>, 2024
 # Emine Öztürk <oemine075@gmail.com>, 2024
 # serhatcan77 <serhat_can@yahoo.com>, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 06:20+0000\n"
+"POT-Creation-Date: 2024-07-11 10:33+0000\n"
 "PO-Revision-Date: 2024-05-07 07:30+0000\n"
 "Last-Translator: serhatcan77 <serhat_can@yahoo.com>, 2024\n"
-"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/teams/13584/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/rosarior/"
+"teams/13584/tr_TR/)\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: apps.py:133 permissions.py:6 settings.py:15
+#: apps.py:26 permissions.py:6 settings.py:15
 msgid "Common"
 msgstr "Ortak"
 
-#: dependencies.py:193
+#: dependencies.py:189
 msgid "Command line environment with autocompletion."
 msgstr "Otomatik tamamlama ile komut satırı ortamı."
 
-#: dependencies.py:198
+#: dependencies.py:194
 msgid "Checks proper formatting of the README file."
 msgstr "README dosyasının doğru biçimlendirmesini denetler."
 
@@ -110,25 +111,25 @@ msgstr "Saatler"
 msgid "Minutes"
 msgstr "Dakikalar"
 
-#: menus.py:8
-msgid "System"
-msgstr "Sistem"
-
-#: menus.py:10 menus.py:11
+#: menus.py:7 menus.py:8
 msgid "Facet"
 msgstr "Yön"
 
-#: menus.py:14
+#: menus.py:11
 msgid "Actions"
 msgstr "Eylemler"
 
-#: menus.py:15
+#: menus.py:12
 msgid "Related"
 msgstr "İlişkili"
 
-#: menus.py:16
+#: menus.py:13
 msgid "Secondary"
 msgstr "İkincil"
+
+#: menus.py:16
+msgid "System"
+msgstr "Sistem"
 
 #: menus.py:18
 msgid "Return"
@@ -156,8 +157,8 @@ msgstr ""
 
 #: settings.py:32
 msgid ""
-"In list mode, show the \"object\" menu options as a dropdown menu instead of"
-" individual buttons."
+"In list mode, show the \"object\" menu options as a dropdown menu instead of "
+"individual buttons."
 msgstr ""
 "Liste modunda, \"nesne\" menü seçeneklerini tek tek düğmeler yerine açılır "
 "menü olarak gösterin."
@@ -176,20 +177,20 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are to be removed from "
 "the list normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. Example: ['app_1', 'app_2']"
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. Example: ['app_1', 'app_2']"
 msgstr ""
 "Maya edm'leri tarafından normal olarak yüklenen listeden kaldırılması "
 "gereken tüm uygulamaları belirten dizelerin listesi. Her dize noktalı bir "
-"Python yolu olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya"
-" bir uygulama içeren bir paket. Örnek: ['uygulama_1', 'uygulama_2']"
+"Python yolu olmalıdır: bir uygulama yapılandırma sınıfı (tercih edilir) veya "
+"bir uygulama içeren bir paket. Örnek: ['uygulama_1', 'uygulama_2']"
 
 #: settings.py:58
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. These apps will be installed after the default "
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. These apps will be installed after the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 
@@ -197,8 +198,8 @@ msgstr ""
 msgid ""
 "A list of strings designating all applications that are installed beyond "
 "those normally installed by Mayan EDMS. Each string should be a dotted "
-"Python path to: an application configuration class (preferred), or a package"
-" containing an application. These apps will be installed before the default "
+"Python path to: an application configuration class (preferred), or a package "
+"containing an application. These apps will be installed before the default "
 "apps. Example: ['app_1', 'app_2']"
 msgstr ""
 "Normalde Itech edms'leri tarafından yüklenenlerin ötesinde yüklenen tüm "
@@ -209,8 +210,8 @@ msgstr ""
 
 #: settings.py:81
 msgid ""
-"Name of the view attached to the brand anchor in the main menu. This is also"
-" the view to which users will be redirected after log in."
+"Name of the view attached to the brand anchor in the main menu. This is also "
+"the view to which users will be redirected after log in."
 msgstr ""
 "Ana menüdeki marka bağlantısına eklenen görünümün adı. Bu aynı zamanda "
 "oturum açtıktan sonra kullanıcıların yönlendirileceği görünümdür."
