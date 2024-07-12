@@ -1,7 +1,7 @@
 Version 4.8
 ===========
 
-Released: July XX, 2024
+Released: July 12, 2024
 
 
 Changes
