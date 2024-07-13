@@ -18,6 +18,9 @@ class StoredDriverSerializer(serializers.HyperlinkedModelSerializer):
     mime_types = serializers.SerializerMethodField(
         label=_(message='MIME types')
     )
+    enabled_default = serializers.SerializerMethodField(
+        label=_(message='Enabled default')
+    )
 
     class Meta:
         extra_kwargs = {
@@ -27,13 +30,13 @@ class StoredDriverSerializer(serializers.HyperlinkedModelSerializer):
             }
         }
         fields = (
-            'arguments', 'description', 'driver_path', 'id', 'internal_name',
-            'label', 'mime_types', 'url'
+            'arguments', 'description', 'driver_path', 'enabled_default',
+            'id', 'internal_name', 'label', 'mime_types', 'url'
         )
         model = StoredDriver
         read_only_fields = (
-            'arguments', 'description', 'driver_path', 'id', 'internal_name',
-            'label', 'mime_types', 'url'
+            'arguments', 'description', 'driver_path', 'enabled_default',
+            'id', 'internal_name', 'label', 'mime_types', 'url'
         )
 
     def get_arguments(self, instance):
@@ -45,6 +48,11 @@ class StoredDriverSerializer(serializers.HyperlinkedModelSerializer):
         driver_class = instance.driver_class
 
         return driver_class.description
+
+    def get_enabled_default(self, instance):
+        driver_class = instance.driver_class
+
+        return driver_class.get_enabled_value()
 
     def get_mime_types(self, instance):
         driver_class = instance.driver_class

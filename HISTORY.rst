@@ -1,3 +1,7 @@
+4.8.1 (XXXX-XX-XX)
+==================
+- Add the `enabled_default` field to the file metadata driver API serializer.
+
 4.8 (2024-07-12)
 ================
 - Update dependency versions:
