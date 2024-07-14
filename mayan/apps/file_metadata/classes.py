@@ -60,6 +60,9 @@ class FileMetadataDriverCollection:
                 '*', ()
             )
         )
+        driver_class_list = [
+            driver_class for driver_class in driver_class_list if driver_class.model_instance
+        ]
 
         return driver_class_list
 
@@ -98,6 +101,7 @@ class FileMetadataDriver(
     internal_name = None
     label = None
     mime_type_list = ()
+    model_instance = None
 
     @classproperty
     def collection(cls):
