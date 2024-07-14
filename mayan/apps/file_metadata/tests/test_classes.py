@@ -18,9 +18,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_true(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': True
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': True}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -35,7 +33,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, True)
 
         events = self._get_test_events()
@@ -48,9 +46,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_false(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': False
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': False}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -65,7 +61,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, False)
 
         events = self._get_test_events()
@@ -78,9 +74,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_true(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -97,7 +91,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, True)
 
         events = self._get_test_events()
@@ -110,9 +104,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_true_auto_false(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -133,7 +125,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, True)
 
         events = self._get_test_events()
@@ -146,9 +138,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_false(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -165,7 +155,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, False)
 
         events = self._get_test_events()
@@ -178,9 +168,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_false_auto_true(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -201,7 +189,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, False)
 
         events = self._get_test_events()
@@ -214,9 +202,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_none_auto_true(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -237,7 +223,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, True)
 
         events = self._get_test_events()
@@ -250,9 +236,7 @@ class DriverEnabledTestCase(
 
     def test_driver_enabled_setting_none_driver_none_auto_false(self):
         test_value_dictionary = {
-            TEST_DRIVER_INTERNAL_NAME: {
-                'enabled': None
-            }
+            TEST_DRIVER_INTERNAL_NAME: {'enabled': None}
         }
 
         test_value = yaml_dump(data=test_value_dictionary)
@@ -273,7 +257,7 @@ class DriverEnabledTestCase(
 
         self._create_test_document_type()
 
-        enabled = self._test_document_type.file_metadata_driver_configurations.first().enabled
+        enabled = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first().enabled
         self.assertEqual(enabled, False)
 
         events = self._get_test_events()

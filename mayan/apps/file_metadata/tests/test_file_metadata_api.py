@@ -3,6 +3,8 @@ from rest_framework import status
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from mayan.apps.smart_settings.permissions import permission_settings_view
 
+from ..models import StoredDriver
+
 from .mixins.file_metadata_mixins import FileMetadataDriverAPIViewTestMixin
 
 
@@ -65,13 +67,13 @@ class FileMetadataAPIViewTestCase(
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         self.assertEqual(
-            response.data['count'], 1
+            response.data['count'], StoredDriver.objects.count()
         )
         self.assertEqual(
-            response.data['results'][0]['arguments'], ''
+            response.data['results'][self._test_document_file_metadata_driver_index]['arguments'], ''
         )
         self.assertEqual(
-            response.data['results'][0]['driver_path'],
+            response.data['results'][self._test_document_file_metadata_driver_index]['driver_path'],
             self._test_document_file_metadata_driver_path
         )
 

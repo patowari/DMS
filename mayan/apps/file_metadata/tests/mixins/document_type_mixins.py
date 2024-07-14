@@ -36,7 +36,10 @@ class DocumentTypeFileMetadataTestMixin(
                         arguments=self._test_document_file_metadata_document_type_driver_arguments
                     )
 
-            self._test_document_type_file_metadata_driver_configuration = self._test_document_type.file_metadata_driver_configurations.first()
+            self._test_document_type_file_metadata_driver_configuration = self._test_document_file_metadata_driver.model_instance.document_type_configurations.first()
+            self._test_document_type_file_metadata_driver_configuration_index = list(
+                self._test_document_type.file_metadata_driver_configurations.values_list('stored_driver_id', flat=True)
+            ).index(self._test_document_file_metadata_driver.model_instance.pk)
 
     def _test_file_metadata_driver_disable(self):
         self._test_document_file_metadata_driver.model_instance.document_type_configurations.filter(

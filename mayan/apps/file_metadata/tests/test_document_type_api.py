@@ -2,6 +2,7 @@ from rest_framework import status
 
 from mayan.apps.rest_api.tests.base import BaseAPITestCase
 
+from ..models import StoredDriver
 from ..permissions import permission_document_type_file_metadata_setup
 
 from .mixins.document_type_mixins import DocumentTypeFileMetadataAPIViewTestMixin
@@ -40,7 +41,8 @@ class DocumentTypeFileMetadataAPIViewTestCase(
             self._test_document_type_file_metadata_driver_configuration.enabled
         )
         self.assertEqual(
-            response.data['stored_driver']['driver_path'], self._test_document_file_metadata_driver_path
+            response.data['stored_driver']['driver_path'],
+            self._test_document_file_metadata_driver_path
         )
 
         events = self._get_test_events()
@@ -173,17 +175,17 @@ class DocumentTypeFileMetadataAPIViewTestCase(
         response = self._request_document_type_file_metadata_driver_configuration_list_api_view()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
-            response.data['count'], 1
+            response.data['count'], StoredDriver.objects.count()
         )
         self.assertEqual(
-            response.data['results'][0]['arguments'], ''
+            response.data['results'][self._test_document_type_file_metadata_driver_configuration_index]['arguments'], ''
         )
         self.assertEqual(
-            response.data['results'][0]['enabled'],
+            response.data['results'][self._test_document_type_file_metadata_driver_configuration_index]['enabled'],
             self._test_document_type_file_metadata_driver_configuration.enabled
         )
         self.assertEqual(
-            response.data['results'][0]['stored_driver']['driver_path'],
+            response.data['results'][self._test_document_type_file_metadata_driver_configuration_index]['stored_driver']['driver_path'],
             self._test_document_file_metadata_driver_path
         )
 

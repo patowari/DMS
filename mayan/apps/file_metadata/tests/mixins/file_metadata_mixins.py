@@ -1,6 +1,7 @@
 from django.utils.module_loading import import_string
 
 from ...classes import FileMetadataDriver
+from ...models import StoredDriver
 
 from ..literals import TEST_DRIVER_CLASS_PATH
 
@@ -15,12 +16,18 @@ class FileMetadataTestMixin:
 
         if self._test_document_file_metadata_driver_create_auto:
             FileMetadataDriver.load_modules()
+            FileMetadataDriver.initialize()
 
             self._test_document_file_metadata_driver = import_string(
                 dotted_path=self._test_document_file_metadata_driver_path
             )
 
             self._test_document_file_metadata_driver.do_model_instance_populate()
+            self._test_document_file_metadata_driver_index = list(
+                StoredDriver.objects.values_list('pk', flat=True)
+            ).index(
+                self._test_document_file_metadata_driver.model_instance.pk
+            )
 
 
 class FileMetadataDriverAPIViewTestMixin(FileMetadataTestMixin):
