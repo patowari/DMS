@@ -2,11 +2,9 @@ import logging
 
 from django.apps import apps
 
-from mayan.apps.acls.models import AccessControlList
 from mayan.apps.common.serialization import yaml_load
 
 from ..classes import BaseDocumentFilenameGenerator
-from ..permissions import permission_document_view
 
 logger = logging.getLogger(name=__name__)
 
