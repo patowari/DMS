@@ -279,12 +279,19 @@ class FileMetadataDriver(
             database. Can be safely ignored under that situation.
             """
         else:
-            # Reset all `StoredDriver` in case a file metadata app was
-            # disabled.
-            StoredDriver.objects.update(exists=False)
-
-            for driver in cls.collection.get_all():
-                driver.do_model_instance_populate()
+            try:
+                # Reset all `StoredDriver` in case a file metadata app was
+                # disabled.
+                StoredDriver.objects.update(exists=False)
+            except OperationalError:
+                """
+                This error is expected when performing an upgrade between
+                series 4.7 and 4.8 as the fields `exists` has not yet been
+                created by the migration.
+                """
+            else:
+                for driver in cls.collection.get_all():
+                    driver.do_model_instance_populate()
 
     def process(self, document_file):
         logger.info('Starting processing document file: %s', document_file)
