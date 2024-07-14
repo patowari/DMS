@@ -1,7 +1,7 @@
 4.8.1 (2024-07-14)
 ==================
 - Add the `enabled_default` field to the file metadata driver API serializer.
-- Fix an issue preventing upgrades from series 4.7 to 4.8.
+- Fix a file metadata issue preventing upgrades from series 4.7 to 4.8.
 
 4.8 (2024-07-12)
 ================
