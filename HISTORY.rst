@@ -1,3 +1,9 @@
+4.8.2 (2024-07-14)
+==================
+- Update translation files.
+- Exclude PostgreSQL exception `ProgrammingError` when initializing
+  file metadata drivers during the database migration.
+
 4.8.1 (2024-07-14)
 ==================
 - Add the `enabled_default` field to the file metadata driver API serializer.

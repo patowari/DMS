@@ -287,7 +287,7 @@ class FileMetadataDriver(
                 # Reset all `StoredDriver` in case a file metadata app was
                 # disabled.
                 StoredDriver.objects.update(exists=False)
-            except OperationalError:
+            except (OperationalError, ProgrammingError):
                 """
                 This error is expected when performing an upgrade between
                 series 4.7 and 4.8 as the fields `exists` has not yet been
