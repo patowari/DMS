@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-07-14 23:59+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
@@ -67,12 +67,14 @@ msgid ""
 "Whether or not this driver will be enabled by default for new document "
 "types."
 msgstr ""
+"Establece si este controlador estará habilitado de forma predeterminada para"
+" nuevos tipos de documentos."
 
 #: apps.py:195
 msgid "Enabled by default?"
-msgstr ""
+msgstr "¿Habilitado por defecto?"
 
-#: classes.py:203 model_mixins.py:36
+#: classes.py:207 model_mixins.py:36
 #, python-format
 msgid "Badly formatted arguments YAML; %s"
 msgstr ""
@@ -253,6 +255,10 @@ msgstr "URL"
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
 msgid "Stored driver"
+msgstr ""
+
+#: serializers/file_metadata_serializers.py:22
+msgid "Enabled default"
 msgstr ""
 
 #: settings.py:19

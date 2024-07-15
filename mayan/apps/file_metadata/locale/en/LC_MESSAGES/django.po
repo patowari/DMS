@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-07-14 23:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Enabled by default?"
 msgstr ""
 
-#: classes.py:203 model_mixins.py:36
+#: classes.py:207 model_mixins.py:36
 #, python-format
 msgid "Badly formatted arguments YAML; %s"
 msgstr ""
@@ -241,6 +241,10 @@ msgstr ""
 #: serializers/document_file_serializers.py:37
 #: serializers/document_type_serializers.py:19
 msgid "Stored driver"
+msgstr ""
+
+#: serializers/file_metadata_serializers.py:22
+msgid "Enabled default"
 msgstr ""
 
 #: settings.py:19
