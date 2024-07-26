@@ -23,7 +23,7 @@ class FormFieldFilteredModelChoice(
 class FormFieldFilteredModelChoiceMultiple(
     FormFieldMixinFilteredQueryset, MultipleChoiceField
 ):
-    """Multiole selection filtered model choice field."""
+    """Multiple selection filtered model choice field."""
 
 
 class ModelFormFieldFilteredModelChoice(

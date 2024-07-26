@@ -40,9 +40,7 @@ def task_deindex_instance(self, app_label, model_name, object_id):
     except ObjectDoesNotExist as exception:
         # Object was deleted before it could be deindexed.
         logger.info(
-            str(
-                exception
-            )
+            str(exception)
         )
 
     logger.info('Finished')

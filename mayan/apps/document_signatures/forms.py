@@ -16,7 +16,6 @@ class DocumentFileSignatureCreateForm(forms.FilteredSelectionForm):
     key = form_fields.ModelChoiceField(
         label=_(message='Key'), queryset=Key.objects.none()
     )
-
     passphrase = form_fields.CharField(
         help_text=_(
             message='The passphrase to unlock the key and allow it to be used to '

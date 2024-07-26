@@ -22,9 +22,7 @@ class DocumentFilePreviewForm(forms.Form):
         super().__init__(*args, **kwargs)
         self.fields['document_file'].initial = document_file
         self.fields['document_file'].widget.attrs.update(
-            {
-                'transformation_instance_list': transformation_instance_list
-            }
+            {'transformation_instance_list': transformation_instance_list}
         )
 
     document_file = DocumentFileField()

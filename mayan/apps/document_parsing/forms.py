@@ -13,6 +13,7 @@ class DocumentFileContentForm(forms.Form):
     Form that concatenates all of a document pages' text content into a
     single textarea widget
     """
+
     def __init__(self, *args, **kwargs):
         self.document = kwargs.pop('instance', None)
         super().__init__(*args, **kwargs)

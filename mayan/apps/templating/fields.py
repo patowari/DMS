@@ -2,13 +2,13 @@ from django.utils.text import format_lazy
 from django.utils.translation import gettext_lazy as _
 
 import mayan
-from mayan.apps.forms import forms
+from mayan.apps.forms import form_fields
 
 from .classes import TemplateContextEntry
 from .widgets import ModelTemplateWidget, TemplateWidget
 
 
-class TemplateField(forms.CharField):
+class TemplateField(form_fields.CharField):
     widget = TemplateWidget
 
     def __init__(

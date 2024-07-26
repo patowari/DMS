@@ -2,7 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.databases.classes import ModelField, ModelFieldRelated
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.forms import forms
+from mayan.apps.forms import form_fields, forms
 from mayan.apps.templating.fields import ModelTemplateField
 
 from .models import SmartLink, SmartLinkCondition
@@ -42,7 +42,7 @@ class SmartLinkConditionForm(forms.ModelForm):
             )
         )
 
-        self.fields['foreign_document_data'] = forms.ChoiceField(
+        self.fields['foreign_document_data'] = form_fields.ChoiceField(
             choices=choices, label=_(message='Foreign document field')
         )
         self.fields['expression'] = ModelTemplateField(

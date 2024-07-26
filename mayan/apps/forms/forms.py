@@ -13,10 +13,16 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import resolve_attribute
 
-from .form_fields import CharField, ChoiceField, ModelChoiceField, ModelMultipleChoiceField, MultipleChoiceField
+from .form_fields import (
+    CharField, ChoiceField, ModelChoiceField, ModelMultipleChoiceField,
+    MultipleChoiceField
+)
 from .form_mixins import FormMixinDynamicFields, FormMixinFieldsets
 from .form_options import DetailFormOption, FilteredSelectionFormOptions
-from .form_widgets import DisableableSelectWidget, PlainWidget, RadioSelect, Select, SelectMultiple, TextAreaDiv, TextInput
+from .form_widgets import (
+    DisableableSelectWidget, PlainWidget, RadioSelect, Select, SelectMultiple,
+    TextAreaDiv, TextInput
+)
 
 
 class Form(FormMixinFieldsets, DjangoForm):
