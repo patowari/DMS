@@ -1,8 +1,8 @@
 import qrcode
 
-from .widgets import Base64ImageWidget, ImageWidget
-
 from mayan.apps.forms import form_fields
+
+from .widgets import Base64ImageWidget, ImageWidget
 
 
 class ImageField(form_fields.Field):
