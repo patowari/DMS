@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: kicior kicior <kiciorek+github@gmail.com>, 2024\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
@@ -53,12 +53,12 @@ msgstr "Plik dokumentu przesłany do analizy"
 msgid "Document file parsing finished"
 msgstr "Zakończono analizowanie pliku dokumentu"
 
-#: forms.py:40
+#: forms.py:41
 #, python-format
 msgid "Page %(page_number)d"
 msgstr "Strona %(page_number)d"
 
-#: forms.py:50 forms.py:62
+#: forms.py:51 forms.py:63
 msgid "Contents"
 msgstr "Zawartość"
 

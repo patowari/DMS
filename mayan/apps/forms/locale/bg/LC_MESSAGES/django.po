@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:31+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Lyudmil Antonov <lantonov.here@gmail.com>, 2024\n"
 "Language-Team: Bulgarian (https://app.transifex.com/rosarior/teams/13584/bg/)\n"
@@ -25,19 +25,19 @@ msgstr ""
 msgid "Forms"
 msgstr ""
 
-#: forms.py:36
+#: forms.py:42
 msgid "Search"
 msgstr "Търсене"
 
-#: forms.py:54
+#: forms.py:60
 msgid "Selection"
 msgstr "Избиране"
 
-#: forms.py:232
+#: forms.py:238
 msgid "Label"
 msgstr "Етикет"
 
-#: forms.py:238
+#: forms.py:244
 msgid "Relationship"
 msgstr "Връзка"
 

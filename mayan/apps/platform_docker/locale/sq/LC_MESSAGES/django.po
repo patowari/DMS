@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 13:49+0000\n"
+"POT-Creation-Date: 2024-10-04 04:34+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Language-Team: Albanian (https://app.transifex.com/rosarior/teams/13584/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +69,7 @@ msgstr ""
 #: settings.py:46
 msgid ""
 "Executed after the container's environment variables are configured, after "
-"the UID/GID setup, extra OS package installation and extra Python library "
+"the UID/GID setup, extra OS package installations and extra Python library "
 "installations but before launching the Mayan EDMS stack. Executes the "
 "content as a script or call a script using the value as the filename."
 msgstr ""
@@ -78,7 +77,7 @@ msgstr ""
 #: settings.py:56
 msgid ""
 "Executed after the container's environment variables are configured but "
-"before the UID/GID setup, extra OS package installation and extra Python "
+"before the UID/GID setup, extra OS package installations and extra Python "
 "library installations. Executes the content as a script or call a script "
 "using the value as the filename."
 msgstr ""
@@ -86,15 +85,15 @@ msgstr ""
 #: settings.py:66
 msgid ""
 "Setting this environment variable to true, will make the entrypoint script "
-"skip the initial chwon command on the media folder at /var/lib/mayan."
+"skip the initial `chown` command on the media folder at `/var/lib/mayan`."
 msgstr ""
 
 #: settings.py:74
-msgid "Changes the GID of the mayan user internal to the Docker container."
+msgid "Changes the GID of the `mayan` user internal to the Docker container."
 msgstr ""
 
 #: settings.py:81
-msgid "Changes the UID of the mayan user internal to the Docker container."
+msgid "Changes the UID of the `mayan` user internal to the Docker container."
 msgstr ""
 
 #: settings.py:89

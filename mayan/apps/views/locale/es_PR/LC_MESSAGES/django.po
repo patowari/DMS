@@ -141,7 +141,7 @@ msgstr "Eliminar %(count)d objeto."
 
 #: links.py:13
 msgid "View modes"
-msgstr ""
+msgstr "Modos de vistas"
 
 #: literals.py:10
 msgid "Items"
@@ -149,11 +149,11 @@ msgstr "Elementos"
 
 #: literals.py:11
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #: model_mixins.py:14 model_mixins.py:22
 msgid "The app to which the view belongs."
-msgstr ""
+msgstr "La aplicación a la que pertenece la vista."
 
 #: model_mixins.py:15 model_mixins.py:23
 msgid "App"
@@ -162,11 +162,11 @@ msgstr "Aplicación"
 #: model_mixins.py:31
 #, python-format
 msgid "Unknown mode: %s"
-msgstr ""
+msgstr "Modo desconocido: %s"
 
 #: model_mixins.py:33
 msgid "The current mode of the view."
-msgstr ""
+msgstr "El modo actual de la vista."
 
 #: model_mixins.py:34 models.py:24
 msgid "Value"
@@ -178,7 +178,7 @@ msgstr "Categoría"
 
 #: models.py:14
 msgid "Full name of the view including the namespace."
-msgstr ""
+msgstr "Nombre completo de la vista, incluido el espacio de nombres."
 
 #: models.py:15
 msgid "Name"
@@ -191,14 +191,16 @@ msgstr "Usuario"
 #: models.py:23
 msgid "Stored value used to identify the display mode of the view."
 msgstr ""
+"Valor almacenado utilizado para identificar el modo de visualización de la "
+"vista."
 
 #: models.py:30
 msgid "User view mode"
-msgstr ""
+msgstr "Modo de vista del usuario"
 
 #: models.py:31
 msgid "User view modes"
-msgstr ""
+msgstr "Modos de vistas de usuarios"
 
 #: settings.py:16
 msgid "The number objects that will be displayed per page."
@@ -285,12 +287,14 @@ msgstr "Objeto"
 #: views.py:31
 msgid "View modes control the format used to display a collection of objects."
 msgstr ""
+"Los modos de visualización controlan el formato utilizado para mostrar una "
+"colección de objetos."
 
 #: views.py:34
 msgid "No view modes available"
-msgstr ""
+msgstr "No hay modos de vistas disponibles"
 
 #: views.py:37
 #, python-format
 msgid "Persistent view modes for user: %s"
-msgstr ""
+msgstr "Modos de vistas persistentes para el usuario: 1%s"

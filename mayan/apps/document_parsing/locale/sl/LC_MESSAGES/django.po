@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2024\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
@@ -51,12 +51,12 @@ msgstr ""
 msgid "Document file parsing finished"
 msgstr ""
 
-#: forms.py:40
+#: forms.py:41
 #, python-format
 msgid "Page %(page_number)d"
 msgstr ""
 
-#: forms.py:50 forms.py:62
+#: forms.py:51 forms.py:63
 msgid "Contents"
 msgstr "Vsebina"
 

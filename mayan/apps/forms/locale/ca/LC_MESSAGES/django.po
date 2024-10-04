@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:31+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Language-Team: Catalan (https://app.transifex.com/rosarior/teams/13584/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,19 @@ msgstr ""
 msgid "Forms"
 msgstr ""
 
-#: forms.py:36
+#: forms.py:42
 msgid "Search"
 msgstr ""
 
-#: forms.py:54
+#: forms.py:60
 msgid "Selection"
 msgstr ""
 
-#: forms.py:232
+#: forms.py:238
 msgid "Label"
 msgstr ""
 
-#: forms.py:238
+#: forms.py:244
 msgid "Relationship"
 msgstr ""
 

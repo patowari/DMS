@@ -17,14 +17,15 @@
 # Márcia Ferreira, 2024
 # Rogerio Falcone <rogerio@falconeit.com.br>, 2024
 # Emerson Soares <on.emersonsoares@gmail.com>, 2024
+# Daniel Flores <dfloresbr@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Emerson Soares <on.emersonsoares@gmail.com>, 2024\n"
+"Last-Translator: Daniel Flores <dfloresbr@gmail.com>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +73,7 @@ msgstr "Documento"
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:88
+#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:86
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
@@ -130,7 +131,7 @@ msgstr ""
 msgid "Type"
 msgstr "Tipo"
 
-#: classes.py:65 forms/document_file_forms.py:39
+#: classes.py:65 forms/document_file_forms.py:37
 msgid "Original"
 msgstr "Original"
 
@@ -212,7 +213,7 @@ msgstr ""
 
 #: document_version_modifications.py:29
 msgid "Reset pages to latest file"
-msgstr ""
+msgstr "Limpar páginas para o último arquivo"
 
 #: document_version_modifications.py:30
 msgid "Match all pages to that of the latest document file."
@@ -318,44 +319,44 @@ msgstr "Versão do documento revertida (histórico)"
 msgid "Document version uploaded (historic)"
 msgstr "Versão do documento carregada (histórico)"
 
-#: forms/document_file_forms.py:43
+#: forms/document_file_forms.py:41
 msgid "Detected"
-msgstr ""
+msgstr "Detectado"
 
-#: forms/document_file_forms.py:47
+#: forms/document_file_forms.py:45
 msgid "Storage"
 msgstr "Armazenamento"
 
-#: forms/document_file_forms.py:51
+#: forms/document_file_forms.py:49
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
-#: forms/document_file_forms.py:60
+#: forms/document_file_forms.py:58
 msgid "Date added"
 msgstr "Data de adição"
 
-#: forms/document_file_forms.py:65 models/document_file_models.py:84
+#: forms/document_file_forms.py:63 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "Tipo MIME"
 
-#: forms/document_file_forms.py:69 models/document_file_models.py:90
+#: forms/document_file_forms.py:67 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "Codificação"
 
-#: forms/document_file_forms.py:73 models/document_file_model_mixins.py:371
+#: forms/document_file_forms.py:71 models/document_file_model_mixins.py:371
 #: models/document_file_models.py:102
 msgid "Size"
 msgstr "Tamanho"
 
-#: forms/document_file_forms.py:79
+#: forms/document_file_forms.py:77
 msgid "Exists in storage"
 msgstr "Existe no armazenamento"
 
-#: forms/document_file_forms.py:82
+#: forms/document_file_forms.py:80
 msgid "Path in storage"
 msgstr "Caminho em armazenamento "
 
-#: forms/document_file_forms.py:85 models/document_file_models.py:97
+#: forms/document_file_forms.py:83 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "Soma de verificação"
 
@@ -423,7 +424,7 @@ msgstr "Número de página alvo não pode ser repetido"
 
 #: forms/misc_forms.py:11
 msgid "Page group"
-msgstr ""
+msgstr "Grupo de páginas"
 
 #: forms/misc_forms.py:14 literals.py:99
 msgid "Page range"
@@ -589,7 +590,7 @@ msgstr "Versões"
 
 #: links/document_version_links.py:57
 msgid "Modify"
-msgstr ""
+msgstr "Modificar"
 
 #: links/document_version_page_links.py:55
 msgid "Remap pages"
@@ -774,7 +775,7 @@ msgstr "Rascunho de documento, id: %d"
 
 #: models/document_models.py:43
 msgid "Latest document file"
-msgstr ""
+msgstr "Último arquivo de documento"
 
 #: models/document_models.py:48
 msgid ""
@@ -1014,7 +1015,7 @@ msgstr "Documentos acedidos recentemente."
 
 #: permissions.py:12
 msgid "Change type of documents"
-msgstr ""
+msgstr "Mudar tipo de documentos"
 
 #: permissions.py:15
 msgid "Create documents"
@@ -1110,7 +1111,7 @@ msgstr "Mover documentos para a lixo"
 
 #: queues.py:14
 msgid "Documents fast"
-msgstr ""
+msgstr "Documentos rápidos"
 
 #: queues.py:17
 msgid "Documents slow"
@@ -1118,11 +1119,11 @@ msgstr ""
 
 #: queues.py:20
 msgid "Documents file"
-msgstr ""
+msgstr "Arquivo de documentos"
 
 #: queues.py:23
 msgid "Documents file slow"
-msgstr ""
+msgstr "Arquivo de documentos lento"
 
 #: queues.py:27
 msgid "Documents periodic"
@@ -1130,15 +1131,15 @@ msgstr "Documentos periódicos"
 
 #: queues.py:31
 msgid "Documents trash"
-msgstr ""
+msgstr "Lixeira de documentos"
 
 #: queues.py:35
 msgid "Documents version"
-msgstr ""
+msgstr "Versão dos documentos"
 
 #: queues.py:41
 msgid "Create new document file"
-msgstr ""
+msgstr "Criar novo arquivo de documentos"
 
 #: queues.py:45
 msgid "Upload new document file"
@@ -1154,7 +1155,7 @@ msgstr "Carregar novo documento"
 
 #: queues.py:58
 msgid "Calculate and update document file checksum"
-msgstr ""
+msgstr "Calcular e atualizar o checksum do arquivo de documentos"
 
 #: queues.py:62
 msgid "Calculate and update document file MIME type"
@@ -1166,7 +1167,7 @@ msgstr ""
 
 #: queues.py:70
 msgid "Update document file size"
-msgstr ""
+msgstr "Atualizar o tamanho do arquivo de documento"
 
 #: queues.py:74
 msgid "Create a new version after the file is processed"
@@ -1174,7 +1175,7 @@ msgstr ""
 
 #: queues.py:79
 msgid "Delete a document file"
-msgstr ""
+msgstr "Excluir o arquivo de documento"
 
 #: queues.py:84
 msgid "Check document type trash periods"
@@ -1219,7 +1220,7 @@ msgstr ""
 #: search.py:32 serializers/document_serializers.py:32
 #: serializers/document_serializers.py:78
 msgid "Document type ID"
-msgstr ""
+msgstr "ID do tipo do documento"
 
 #: search.py:35 search.py:66 search.py:103 search.py:141 search.py:173
 msgid "Document type label"
@@ -1235,7 +1236,7 @@ msgstr ""
 
 #: search.py:74 search.py:146 serializers/favorite_document_serializers.py:17
 msgid "Document ID"
-msgstr ""
+msgstr "ID do Documento"
 
 #: search.py:77 search.py:106 search.py:149 search.py:177
 msgid "Document label"
@@ -1251,13 +1252,13 @@ msgstr "Soma de controlo do ficheiro do documento"
 
 #: serializers/document_file_serializers.py:12
 msgid "Document file URL"
-msgstr ""
+msgstr "URL do arquivo de documento"
 
 #: serializers/document_file_serializers.py:24
 #: serializers/document_version_serializers.py:57
 #: serializers/trashed_document_serializers.py:12
 msgid "Image URL"
-msgstr ""
+msgstr "URL da imagem"
 
 #: serializers/document_file_serializers.py:40
 #: serializers/document_file_serializers.py:95
@@ -1273,12 +1274,12 @@ msgstr "URL"
 
 #: serializers/document_file_serializers.py:69
 msgid "Action name"
-msgstr ""
+msgstr "Nome da ação"
 
 #: serializers/document_file_serializers.py:72
 #: serializers/document_version_serializers.py:104
 msgid "Document URL"
-msgstr ""
+msgstr "URL do documento"
 
 #: serializers/document_file_serializers.py:76
 msgid "Binary content for the new file."
@@ -1286,7 +1287,7 @@ msgstr "Conteúdo binário para o novo ficheiro."
 
 #: serializers/document_file_serializers.py:77
 msgid "File new"
-msgstr ""
+msgstr "Novo arquivo"
 
 #: serializers/document_file_serializers.py:80
 #: serializers/document_version_serializers.py:120
@@ -1321,7 +1322,7 @@ msgstr ""
 
 #: serializers/document_serializers.py:46
 msgid "Version active"
-msgstr ""
+msgstr "Versão ativa"
 
 #: serializers/document_serializers.py:49
 msgid "Version list URL"
@@ -1334,12 +1335,12 @@ msgstr ""
 
 #: serializers/document_type_serializers.py:11
 msgid "Document type URL"
-msgstr ""
+msgstr "URL do tipo de documento"
 
 #: serializers/document_type_serializers.py:35
 #: serializers/document_type_serializers.py:47
 msgid "Documents URL"
-msgstr ""
+msgstr "URL dos Documentos"
 
 #: serializers/document_type_serializers.py:39
 msgid "Quick label list URL"
@@ -1347,7 +1348,7 @@ msgstr ""
 
 #: serializers/document_version_serializers.py:26
 msgid "Backend ID"
-msgstr ""
+msgstr "ID do backend"
 
 #: serializers/document_version_serializers.py:27
 msgid "Primary key of the modification backend to execute."

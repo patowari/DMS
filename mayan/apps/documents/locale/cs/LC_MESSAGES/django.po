@@ -5,14 +5,14 @@
 # Translators:
 # Translators:
 # Jiri Fait <fait@orkasolutions.cz>, 2024
-# Jiří Podhorecký, 2024
+# Jiří Podhorecký <jirka.p@volny.cz>, 2024
 # Michal Švábík <snadno@lehce.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
@@ -62,7 +62,7 @@ msgstr "Dokument"
 msgid "Thumbnail"
 msgstr "Náhled"
 
-#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:88
+#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:86
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Type"
 msgstr "Typ"
 
-#: classes.py:65 forms/document_file_forms.py:39
+#: classes.py:65 forms/document_file_forms.py:37
 msgid "Original"
 msgstr "Originál"
 
@@ -304,44 +304,44 @@ msgstr "Vrácených verzí dokumentu (historicky)"
 msgid "Document version uploaded (historic)"
 msgstr "Nahraných verzí dokumentu (historicky)"
 
-#: forms/document_file_forms.py:43
+#: forms/document_file_forms.py:41
 msgid "Detected"
 msgstr "Zjištěno"
 
-#: forms/document_file_forms.py:47
+#: forms/document_file_forms.py:45
 msgid "Storage"
 msgstr "Úložiště"
 
-#: forms/document_file_forms.py:51
+#: forms/document_file_forms.py:49
 msgid "Other"
 msgstr "jiný"
 
-#: forms/document_file_forms.py:60
+#: forms/document_file_forms.py:58
 msgid "Date added"
 msgstr "Datum přidání"
 
-#: forms/document_file_forms.py:65 models/document_file_models.py:84
+#: forms/document_file_forms.py:63 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "Typ MIME"
 
-#: forms/document_file_forms.py:69 models/document_file_models.py:90
+#: forms/document_file_forms.py:67 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "Kódování"
 
-#: forms/document_file_forms.py:73 models/document_file_model_mixins.py:371
+#: forms/document_file_forms.py:71 models/document_file_model_mixins.py:371
 #: models/document_file_models.py:102
 msgid "Size"
 msgstr "Velikost"
 
-#: forms/document_file_forms.py:79
+#: forms/document_file_forms.py:77
 msgid "Exists in storage"
 msgstr "Existuje v úložišti"
 
-#: forms/document_file_forms.py:82
+#: forms/document_file_forms.py:80
 msgid "Path in storage"
 msgstr "Cesta v úložišti"
 
-#: forms/document_file_forms.py:85 models/document_file_models.py:97
+#: forms/document_file_forms.py:83 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "Kontrolní součet"
 

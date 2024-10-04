@@ -10,6 +10,7 @@
 # Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
 # Márcia Ferreira, 2024
 # Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
+# Daniel Flores <dfloresbr@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-14 23:59+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024\n"
+"Last-Translator: Daniel Flores <dfloresbr@gmail.com>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +37,7 @@ msgstr "Metadados do arquivo"
 
 #: apps.py:108
 msgid "File metadata internal name"
-msgstr ""
+msgstr "Nome interno do arquivo de metadados"
 
 #: apps.py:112 search.py:15 search.py:26
 msgid "File metadata value"
@@ -113,7 +114,7 @@ msgstr "Processamento de metadados de arquivo por tipo"
 
 #: links.py:75 views/tool_views.py:28
 msgid "File metadata drivers"
-msgstr ""
+msgstr "Drivers de arquivo de metadados"
 
 #: methods.py:56
 msgid "Return the specified document file file metadata entry."
@@ -320,6 +321,8 @@ msgstr ""
 #, python-format
 msgid "%(count)d documents files submitted to the file metadata queue."
 msgstr ""
+"%(count)darquivo de documentos submetidos para o processamento do arquivo de"
+" metadados."
 
 #: views/document_file_views.py:114
 #, python-format

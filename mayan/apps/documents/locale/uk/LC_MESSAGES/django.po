@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-10-04 04:33+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Leo Lado, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
@@ -63,7 +63,7 @@ msgstr "Документ"
 msgid "Thumbnail"
 msgstr "Мініатюра"
 
-#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:88
+#: apps.py:348 apps.py:767 apps.py:1004 forms/document_file_forms.py:86
 #: links/document_file_page_links.py:122
 #: links/document_version_page_links.py:50
 msgid "Pages"
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Type"
 msgstr "Тип"
 
-#: classes.py:65 forms/document_file_forms.py:39
+#: classes.py:65 forms/document_file_forms.py:37
 msgid "Original"
 msgstr "Оригінал"
 
@@ -308,44 +308,44 @@ msgstr "Версію документу повернуто (історичний
 msgid "Document version uploaded (historic)"
 msgstr "Версія документа завантажена (історична)"
 
-#: forms/document_file_forms.py:43
+#: forms/document_file_forms.py:41
 msgid "Detected"
 msgstr "Виявлено"
 
-#: forms/document_file_forms.py:47
+#: forms/document_file_forms.py:45
 msgid "Storage"
 msgstr "Сховище"
 
-#: forms/document_file_forms.py:51
+#: forms/document_file_forms.py:49
 msgid "Other"
 msgstr "Інші"
 
-#: forms/document_file_forms.py:60
+#: forms/document_file_forms.py:58
 msgid "Date added"
 msgstr "Дату додано"
 
-#: forms/document_file_forms.py:65 models/document_file_models.py:84
+#: forms/document_file_forms.py:63 models/document_file_models.py:84
 msgid "MIME type"
 msgstr "Тип MIME"
 
-#: forms/document_file_forms.py:69 models/document_file_models.py:90
+#: forms/document_file_forms.py:67 models/document_file_models.py:90
 msgid "Encoding"
 msgstr "Кодування"
 
-#: forms/document_file_forms.py:73 models/document_file_model_mixins.py:371
+#: forms/document_file_forms.py:71 models/document_file_model_mixins.py:371
 #: models/document_file_models.py:102
 msgid "Size"
 msgstr "Розмір"
 
-#: forms/document_file_forms.py:79
+#: forms/document_file_forms.py:77
 msgid "Exists in storage"
 msgstr "Існує в сховищі"
 
-#: forms/document_file_forms.py:82
+#: forms/document_file_forms.py:80
 msgid "Path in storage"
 msgstr "Шлях у сховищі"
 
-#: forms/document_file_forms.py:85 models/document_file_models.py:97
+#: forms/document_file_forms.py:83 models/document_file_models.py:97
 msgid "Checksum"
 msgstr "Контрольна сума"
 
