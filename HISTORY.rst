@@ -1,3 +1,8 @@
+4.8.3 (2024-XX-XX)
+==================
+- Fix multi part email source metadata inheritance. Ensure all parts of a
+  multipart email ihnerit the source metadata of the previous levels.
+
 4.8.2 (2024-07-14)
 ==================
 - Update translation files.
