@@ -8,6 +8,7 @@
   - elasticsearch from 7.17.22 to 7.17.24
   - PostgreSQL from 14.12-alpine3.20 to 14.13-alpine3.20
   - KeyCloak PostgreSQL from 13.14-alpine to 13.15-alpine
+  - RabbitMQ from 3.13.4-management-alpine to 3.13.7-management-alpine
 
 4.8.2 (2024-07-14)
 ==================
