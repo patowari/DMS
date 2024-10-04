@@ -1,7 +1,7 @@
-4.8.3 (2024-XX-XX)
+4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a
-  multipart email ihnerit the source metadata of the previous levels.
+  multipart email inherit the source metadata of the previous levels.
 - Update Docker images tags:
 
   - Debian from debian:12.6-slim to debian:12.7-slim

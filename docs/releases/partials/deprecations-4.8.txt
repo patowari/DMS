@@ -1,1 +1,2 @@
-None
+The MIME type detection backend based on Python Magic will be removed in
+the next minor version.
