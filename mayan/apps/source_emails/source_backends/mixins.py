@@ -93,23 +93,29 @@ class SourceBackendMixinEmail(
 
         return self._process_message_content(message=message)
 
-    def _process_message_content(self, message):
+    def _process_message_content(self, message, source_metadata=None):
         counter = 1
+        if source_metadata is None:
+            _source_metadata = {}
+        else:
+            _source_metadata = source_metadata.copy()
+
+        for key, value in message.items():
+            internal_name = convert_to_internal_name(value=key)
+            _source_metadata[
+                'email_{}'.format(internal_name)
+            ] = value
+
         # Messages are tree based, do nested processing of message parts until
         # a message with no children is found, then work our way up.
         if message.is_multipart():
             for part in message.iter_parts():
-                yield from self._process_message_content(message=part)
+                yield from self._process_message_content(
+                    message=part, source_metadata=_source_metadata
+                )
         else:
             # Treat inlines as attachments, both are extracted and saved as
             # documents.
-            source_metadata = {}
-            for key, value in message.items():
-                internal_name = convert_to_internal_name(value=key)
-                source_metadata[
-                    'email_{}'.format(internal_name)
-                ] = value
-
             if message.is_attachment() or message.get_content_disposition() == 'inline':
                 content = message.get_content()
                 if len(content) != 0:
@@ -123,7 +129,7 @@ class SourceBackendMixinEmail(
                     yield {
                         'file': ContentFile(
                             content=content, name=label,
-                        ), 'source_metadata': source_metadata
+                        ), 'source_metadata': _source_metadata
                     }
             else:
                 # If it is not an attachment then it should be a body message
@@ -139,7 +145,7 @@ class SourceBackendMixinEmail(
                     yield {
                         'file': ContentFile(
                             content=bytes_content, name=label
-                        ), 'source_metadata': source_metadata
+                        ), 'source_metadata': _source_metadata
                     }
 
     def get_file_identifier(self):
