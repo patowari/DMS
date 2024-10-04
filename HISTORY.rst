@@ -10,6 +10,24 @@
   - KeyCloak PostgreSQL from 13.14-alpine to 13.15-alpine
   - RabbitMQ from 3.13.4-management-alpine to 3.13.7-management-alpine
 
+- Update Python dependencies:
+
+  - django from 4.2.13 to 4.2.16 due to CVE-2024-41991, CVE-2024-41990,
+    CVE-2024-42005, CVE-2024-39330, CVE-2024-39329, CVE-2024-39614,
+    CVE-2024-38875
+  - django-silk from 5.1.0 to 5.2.0
+  - gunicorn from 22.0.0 to 23.0.0 due to PVE-2024-72809.
+  - elasticsearch from 7.17.9 to 7.17.12
+  - jsonschema from 4.22.0 to 4.23.0
+  - sentry-sdk from 2.8.0 to 2.15.0
+  - PyYAML from 6.0.1 to 6.0.2
+  - pip from 24.1.2 to 24.2
+  - python_gnupg from 0.5.2 to 0.5.3
+  - pytz from 2024.1 to 2024.2
+  - psycopg from 3.2.1 to 3.2.3
+  - swagger-spec-validator from 3.0.3 to 3.0.4
+  - wheel from 0.43.0 to 0.44.0
+
 4.8.2 (2024-07-14)
 ==================
 - Update translation files.

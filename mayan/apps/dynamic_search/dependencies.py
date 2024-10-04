@@ -7,7 +7,7 @@ PythonDependency(
     module=__name__, name='dateparser', version_string='==1.2.0'
 )
 PythonDependency(
-    module=__name__, name='elasticsearch', version_string='==7.17.9'
+    module=__name__, name='elasticsearch', version_string='==7.17.12'
 )
 PythonDependency(
     module=__name__, name='elasticsearch-dsl', version_string='==7.4.1'
