@@ -8,6 +8,8 @@
   - django-auth-ldap from 4.8.0 to 5.1.0
   - django-model-utils from 4.5.1 to 5.0.0
   - django-solo from 2.3.0 to 2.4.0
+  - gevent 24.2.1 to 24.11.1
+  - greenlet from 3.0.3 to 3.1.1
   - importlib-metadata from 8.0.0 to 8.5.0
   - ipython from 8.26.0 to 8.29.0
   - ollama from 0.2.1 to 0.4.1

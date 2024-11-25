@@ -1,10 +1,10 @@
 from mayan.apps.dependencies.classes import PythonDependency
 
 PythonDependency(
-    module=__name__, name='gevent', version_string='==24.2.1'
+    module=__name__, name='gevent', version_string='==24.11.1'
 )
 PythonDependency(
-    module=__name__, name='greenlet', version_string='==3.0.3'
+    module=__name__, name='greenlet', version_string='==3.1.1'
 )
 PythonDependency(
     module=__name__, name='gunicorn', version_string='==23.0.0'

@@ -96,10 +96,10 @@ extract-msg==0.48.7
 flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
-gevent==24.2.1
+gevent==24.11.1
 google-cloud-storage==2.17.0
 graphviz==0.20.3
-greenlet==3.0.3
+greenlet==3.1.1
 gunicorn==23.0.0
 importlib-metadata==8.5.0
 jsonschema==4.23.0
@@ -111,7 +111,6 @@ pycryptodome==3.20.0
 pyotp==2.9.0
 pypdf==5.1.0
 python-dateutil==2.9.0.post0
-python-magic==0.4.27
 python_gnupg==0.5.3
 pytz==2024.2
 qrcode==8.0
