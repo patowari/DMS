@@ -22,6 +22,7 @@
     docker:27.3.1-dind-alpine3.20
   - PostgreSQL from 14.13-alpine3.20 to 14.15-alpine3.20
   - RabbitMQ from 3.13.7-management-alpine to 4.0.4-management-alpine
+  - Traefik from v2.5.7 to v2.11.14
 
 4.8.3 (2024-10-04)
 ==================
