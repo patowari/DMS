@@ -101,7 +101,7 @@ google-cloud-storage==2.17.0
 graphviz==0.20.3
 greenlet==3.0.3
 gunicorn==23.0.0
-importlib-metadata==8.0.0
+importlib-metadata==8.5.0
 jsonschema==4.23.0
 mozilla-django-oidc==4.0.1
 node-semver==0.9.0
