@@ -67,7 +67,7 @@ def find_packages(directory):
 install_requires = """
 django==4.2.16
 CairoSVG==2.7.1
-Pillow==10.4.0
+Pillow==11.0.0
 PyYAML==6.0.2
 Whoosh==2.7.4
 bleach==6.2.0
