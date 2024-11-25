@@ -23,6 +23,7 @@
     docker:27.3.1-dind-alpine3.20
   - PostgreSQL from 14.13-alpine3.20 to 14.15-alpine3.20
   - RabbitMQ from 3.13.7-management-alpine to 4.0.4-management-alpine
+  - Redis from 7.2.5-alpine3.20 to 7.4.1-alpine3.20
   - Traefik from v2.5.7 to v2.11.14
 
 - Decrease the Celery workers maximum tasks per child from 500 to 250.
