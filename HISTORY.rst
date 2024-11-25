@@ -10,6 +10,7 @@
   - django-solo from 2.3.0 to 2.4.0
   - importlib-metadata from 8.0.0 to 8.5.0
   - ipython from 8.26.0 to 8.29.0
+  - packaging from 24.1 to 24.2
   - Pillow from 10.4.0 to 11.0.0
   - PIP from 24.2 to 24.3.1
   - pypdf from 4.2.0 to 5.1.0
