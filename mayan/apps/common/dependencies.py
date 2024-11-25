@@ -187,7 +187,7 @@ PythonDependency(
 PythonDependency(
     environment=environment_development, help_text=_(
         'Command line environment with autocompletion.'
-    ), module=__name__, name='ipython', version_string='==8.26.0'
+    ), module=__name__, name='ipython', version_string='==8.29.0'
 )
 PythonDependency(
     environment=environment_development, help_text=_(
