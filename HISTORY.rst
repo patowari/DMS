@@ -18,6 +18,8 @@
 - Update Docker image tags:
 
   - Debian from 12.7-slim to 12.8-slim
+  - Docker in Docker from docker:27.0.3-dind-alpine3.20 to
+    docker:27.3.1-dind-alpine3.20
 
 4.8.3 (2024-10-04)
 ==================
