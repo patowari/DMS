@@ -10,6 +10,7 @@
   - django-cors-headers from 4.4.0 to 4.6.0
   - django-model-utils from 4.5.1 to 5.0.0
   - django-solo from 2.3.0 to 2.4.0
+  - extract-msg from 0.48.7 to 0.52.0
   - gevent 24.2.1 to 24.11.1
   - greenlet from 3.0.3 to 3.1.1
   - importlib-metadata from 8.0.0 to 8.5.0

@@ -92,7 +92,7 @@ djangorestframework-recursive==0.1.2
 drf-yasg==1.21.7
 elasticsearch==7.17.12
 elasticsearch-dsl==7.4.1
-extract-msg==0.48.7
+extract-msg==0.52.0
 flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
