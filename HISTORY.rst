@@ -1,3 +1,7 @@
+4.9 (XXXX-XX-XX)
+================
+- Fix management command `settings_show` internal interface usage.
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a
