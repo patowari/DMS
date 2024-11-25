@@ -19,6 +19,7 @@
   - packaging from 24.1 to 24.2
   - Pillow from 10.4.0 to 11.0.0
   - PIP from 24.2 to 24.3.1
+  - pycryptodome from 3.20.0 to 3.21.0
   - pypdf from 4.2.0 to 5.1.0
   - qrcode from 7.4.2 to 8.0
   - redis from 5.0.7 to 5.2.0

@@ -107,7 +107,7 @@ mozilla-django-oidc==4.0.1
 node-semver==0.9.0
 ollama==0.4.1
 pycountry==24.6.1
-pycryptodome==3.20.0
+pycryptodome==3.21.0
 pyotp==2.9.0
 pypdf==5.1.0
 python-dateutil==2.9.0.post0
