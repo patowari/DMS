@@ -114,7 +114,7 @@ python-dateutil==2.9.0.post0
 python-magic==0.4.27
 python_gnupg==0.5.3
 pytz==2024.2
-qrcode==7.4.2
+qrcode==8.0
 requests==2.32.3
 sentry-sdk==2.15.0
 setuptools==75.6.0
