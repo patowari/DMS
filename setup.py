@@ -105,7 +105,7 @@ importlib-metadata==8.5.0
 jsonschema==4.23.0
 mozilla-django-oidc==4.0.1
 node-semver==0.9.0
-ollama==0.2.1
+ollama==0.4.1
 pycountry==24.6.1
 pycryptodome==3.20.0
 pyotp==2.9.0
