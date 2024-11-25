@@ -15,6 +15,10 @@
   - sh from 2.0.7 to 2.1.0
   - wheel from 0.44.0 to 0.45.1
 
+- Update Docker image tags:
+
+  - Debian from 12.7-slim to 12.8-slim
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a
