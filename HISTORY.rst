@@ -10,6 +10,7 @@
   - importlib-metadata from 8.0.0 to 8.5.0
   - ipython from 8.26.0 to 8.29.0
   - PIP from 24.2 to 24.3.1
+  - redis from 5.0.7 to 5.2.0
   - safety from 3.2.4 to 3.2.11
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
