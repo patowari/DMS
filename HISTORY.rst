@@ -44,6 +44,13 @@
 
 - Decrease the Celery workers maximum tasks per child from 500 to 250.
 - Remove the MIME type detection backend based on Python Magic.
+- Support passing a custom consumer timeout value to RabbitMQ via
+  the new environment variable `MAYAN_RABBITMQ_CONSUMER_TIMEOUT`, which
+  defaults to 1800000 milliseconds or 30 minutes.
+- Support passing custom server Erlang arguments to RabbitMQ via the new
+  environment variable `MAYAN_RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS`. which
+  defaults to settings the consumer timeout via
+  `MAYAN_RABBITMQ_CONSUMER_TIMEOUT`.
 
 4.8.3 (2024-10-04)
 ==================
