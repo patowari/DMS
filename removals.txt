@@ -25,6 +25,7 @@ pdfminer
 PyPDF2
 pyocr
 pytesseract
+python-magic
 ruff
 sphinx-autobuild
 sphinxcontrib-blockdiag

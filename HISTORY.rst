@@ -33,6 +33,7 @@
   - Traefik from v2.5.7 to v2.11.14
 
 - Decrease the Celery workers maximum tasks per child from 500 to 250.
+- Remove the MIME type detection backend based on Python Magic.
 
 4.8.3 (2024-10-04)
 ==================
