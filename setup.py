@@ -118,7 +118,7 @@ qrcode==7.4.2
 requests==2.32.3
 sentry-sdk==2.15.0
 setuptools==75.6.0
-sh==2.0.7
+sh==2.1.0
 swagger-spec-validator==3.0.4
 whitenoise==6.7.0
 """.split()
