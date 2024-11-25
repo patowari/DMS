@@ -76,7 +76,7 @@ celery==5.4.0
 dateparser==1.2.0
 django-activity-stream==2.0.0
 django-auth-ldap==5.1.0
-django-celery-beat==2.6.0
+django-celery-beat==2.7.0
 django-cors-headers==4.6.0
 django-formtools==2.3
 django-mathfilters==1.0.0

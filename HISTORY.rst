@@ -7,6 +7,7 @@
   - bleach from 6.1.0 to 6.2.0
   - boto3 from 1.34.122 to 1.35.68
   - django-auth-ldap from 4.8.0 to 5.1.0
+  - django-celery-beat from 2.6.0 to 2.7.0
   - django-cors-headers from 4.4.0 to 4.6.0
   - django-model-utils from 4.5.1 to 5.0.0
   - django-solo from 2.3.0 to 2.4.0
