@@ -10,7 +10,7 @@ PythonDependency(
     module=__name__, name='extract-msg', version_string='==0.52.0'
 )
 PythonDependency(
-    module=__name__, name='google-cloud-storage', version_string='==2.17.0'
+    module=__name__, name='google-cloud-storage', version_string='==2.18.2'
 )
 PythonDependency(
     module=__name__, name='pycryptodome', version_string='==3.21.0'

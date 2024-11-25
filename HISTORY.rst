@@ -12,6 +12,7 @@
   - django-solo from 2.3.0 to 2.4.0
   - extract-msg from 0.48.7 to 0.52.0
   - gevent 24.2.1 to 24.11.1
+  - google-cloud-storage from 2.17.0 to 2.18.2
   - greenlet from 3.0.3 to 3.1.1
   - importlib-metadata from 8.0.0 to 8.5.0
   - ipython from 8.26.0 to 8.29.0

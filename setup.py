@@ -97,7 +97,7 @@ flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
 gevent==24.11.1
-google-cloud-storage==2.17.0
+google-cloud-storage==2.18.2
 graphviz==0.20.3
 greenlet==3.1.1
 gunicorn==23.0.0
