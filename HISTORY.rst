@@ -20,6 +20,7 @@
   - qrcode from 7.4.2 to 8.0
   - redis from 5.0.7 to 5.2.0
   - safety from 3.2.4 to 3.2.11
+  - sentry-sdk from 2.15.0 to 2.19.0
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
   - wheel from 0.44.0 to 0.45.1
