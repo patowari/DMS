@@ -24,6 +24,8 @@
   - RabbitMQ from 3.13.7-management-alpine to 4.0.4-management-alpine
   - Traefik from v2.5.7 to v2.11.14
 
+- Decrease the Celery workers maximum tasks per child from 500 to 250.
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a
