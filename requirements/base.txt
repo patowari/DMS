@@ -41,7 +41,7 @@ ollama==0.2.1
 pycountry==24.6.1
 pycryptodome==3.20.0
 pyotp==2.9.0
-pypdf==4.2.0
+pypdf==5.1.0
 python-dateutil==2.9.0.post0
 python-magic==0.4.27
 python_gnupg==0.5.3
