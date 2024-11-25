@@ -55,6 +55,7 @@
 
   - `generate-setup` to `python-setup-generate`
   - `increase-version` to `version-increase`
+  - `generate-requirements` to `requirements-generate`
 
 4.8.3 (2024-10-04)
 ==================
