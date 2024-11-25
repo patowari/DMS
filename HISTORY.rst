@@ -3,6 +3,7 @@
 - Fix management command `settings_show` internal interface usage.
 - Update Python dependency versions:
 
+  - amqp from 5.2.0 to 5.3.1
   - bleach from 6.1.0 to 6.2.0
   - django-auth-ldap from 4.8.0 to 5.1.0
   - django-model-utils from 4.5.1 to 5.0.0
