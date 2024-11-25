@@ -131,7 +131,7 @@ PythonDependency(
     module=__name__, name='requests', version_string='==2.32.3'
 )
 PythonDependency(
-    module=__name__, name='setuptools', version_string='==70.3.0'
+    module=__name__, name='setuptools', version_string='==75.6.0'
 )
 PythonDependency(
     legal_text='''

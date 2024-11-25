@@ -9,6 +9,7 @@
   - django-solo from 2.3.0 to 2.4.0
   - importlib-metadata from 8.0.0 to 8.5.0
   - PIP from 24.2 to 24.3.1
+  - setuptools from 70.3.0 to 75.6.0
 
 4.8.3 (2024-10-04)
 ==================
