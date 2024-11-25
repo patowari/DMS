@@ -11,6 +11,7 @@
   - PIP from 24.2 to 24.3.1
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
+  - wheel from 0.44.0 to 0.45.1
 
 4.8.3 (2024-10-04)
 ==================
