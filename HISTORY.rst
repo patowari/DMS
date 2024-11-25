@@ -1,9 +1,10 @@
 4.9 (XXXX-XX-XX)
 ================
 - Fix management command `settings_show` internal interface usage.
-- Update Python dependencies:
+- Update Python dependency versions:
 
-  - PIP from version 24.2 to 24.3.1
+  - bleach from 6.1.0 to 6.2.0
+  - PIP from 24.2 to 24.3.1
 
 4.8.3 (2024-10-04)
 ==================

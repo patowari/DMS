@@ -70,7 +70,7 @@ CairoSVG==2.7.1
 Pillow==10.4.0
 PyYAML==6.0.2
 Whoosh==2.7.4
-bleach==6.1.0
+bleach==6.2.0
 boto3==1.34.122
 celery==5.4.0
 dateparser==1.2.0
