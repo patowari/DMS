@@ -71,7 +71,7 @@ Pillow==11.0.0
 PyYAML==6.0.2
 Whoosh==2.7.4
 bleach==6.2.0
-boto3==1.34.122
+boto3==1.35.68
 celery==5.4.0
 dateparser==1.2.0
 django-activity-stream==2.0.0
