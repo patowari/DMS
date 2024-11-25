@@ -1,11 +1,6 @@
 Welcome to Mayan EDMS!
 ======================
 
-.. image:: /_static/mayan_logo.png
-  :alt: Logo is a trademark of Roberto Rosario
-  :align: center
-
-
 Mayan EDMS is the most advanced `Free Open Source`_
 `Electronic Document Management System`_
 available. It is coded in the Python language using the Django_ web
