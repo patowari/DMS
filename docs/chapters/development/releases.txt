@@ -108,7 +108,7 @@ Release checklist
 
 #. Bump version in ``mayan/__init__.py`` and ``docker/rootfs/version``::
 
-    make increase-version PART=<major, minor or micro>
+    make version-increase PART=<major, minor or micro>
 
 #. Commit as version bump.
    ::

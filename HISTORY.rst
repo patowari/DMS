@@ -54,6 +54,7 @@
 - Rename the makefile targets:
 
   - `generate-setup` to `python-setup-generate`
+  - `increase-version` to `version-increase`
 
 4.8.3 (2024-10-04)
 ==================
