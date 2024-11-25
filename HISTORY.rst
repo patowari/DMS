@@ -51,6 +51,9 @@
   environment variable `MAYAN_RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS`. which
   defaults to settings the consumer timeout via
   `MAYAN_RABBITMQ_CONSUMER_TIMEOUT`.
+- Rename the makefile targets:
+
+  - `generate-setup` to `python-setup-generate`
 
 4.8.3 (2024-10-04)
 ==================

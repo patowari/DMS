@@ -122,7 +122,7 @@ Release checklist
 
 #. Generate set ``setup.py`` again to update the build number::
 
-    make generate-setup
+    make python-setup-generate
 
 #. Commit the new ``setup.py`` file as "Update build number".
 

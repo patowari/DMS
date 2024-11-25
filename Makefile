@@ -219,7 +219,7 @@ increase-version: ## Increase the version number of the entire project's files.
 	VERSION_PYTHON=`if [ -z "${LOCAL_VERSION}" ]; then echo "$${VERSION}"; else echo "$${VERSION}+${LOCAL_VERSION}"; fi`; \
 	sed -i -e "s/__version__ = '[0-9\.a-zA-Z\+]*'/__version__ = '$$VERSION_PYTHON'/g" mayan/__init__.py; \
 	make versions-update; \
-	make generate-setup
+	make python-setup-generate
 
 generate-requirements: ## Generate all requirements files from the project dependency declarations.
 	@./manage.py dependencies_generate_requirements build --settings=mayan.settings.development > requirements/build.txt
