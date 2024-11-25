@@ -24,6 +24,7 @@
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
   - wheel from 0.44.0 to 0.45.1
+  - whitenoise from 6.7.0 to 6.8.2
 
 - Update Docker image tags:
 

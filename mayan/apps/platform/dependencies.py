@@ -13,5 +13,5 @@ PythonDependency(
     module=__name__, name='sentry-sdk', version_string='==2.19.0'
 )
 PythonDependency(
-    module=__name__, name='whitenoise', version_string='==6.7.0'
+    module=__name__, name='whitenoise', version_string='==6.8.2'
 )
