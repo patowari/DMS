@@ -5,6 +5,7 @@
 
   - bleach from 6.1.0 to 6.2.0
   - django-auth-ldap from 4.8.0 to 5.1.0
+  - django-model-utils from 4.5.1 to 5.0.0
   - django-solo from 2.3.0 to 2.4.0
   - PIP from 24.2 to 24.3.1
 
