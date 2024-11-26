@@ -58,6 +58,7 @@
   - `generate-requirements` to `requirements-generate`
 
 - Split templating app template tag into separate modules.
+- Add the `json_load` templating filter.
 
 4.8.3 (2024-10-04)
 ==================
