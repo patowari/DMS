@@ -2,7 +2,6 @@ Apps
 ====
 
 - :doc:`acls/index`
-- :doc:`authentication/index`
 - :doc:`cabinets/index`
 - :doc:`checkouts/index`
 - :doc:`document_signatures/index`
@@ -19,7 +18,6 @@ Apps
     :hidden:
 
     acls/index
-    authentication/index
     cabinets/index
     checkouts/index
     document_signatures/index
