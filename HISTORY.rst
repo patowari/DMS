@@ -60,6 +60,7 @@
 - Split templating app template tag into separate modules.
 - Add the `json_load` templating filter.
 - Add a Docker Compose service to mount a cabinet.
+- Support disabling the search app.
 
 4.8.3 (2024-10-04)
 ==================

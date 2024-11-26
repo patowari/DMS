@@ -1,5 +1,6 @@
 {% load i18n %}
 
+{% load appearance_tags %}
 {% load common_tags %}
 {% load navigation_tags %}
 
@@ -39,7 +40,7 @@
                     {% endfor %}
                 </ul>
 
-                {% include 'dynamic_search/search_box_toolbar.html' %}
+                {% appearance_app_templates template_name='topbar' %}
 
             </div>
         </div>
