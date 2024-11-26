@@ -57,6 +57,8 @@
   - `increase-version` to `version-increase`
   - `generate-requirements` to `requirements-generate`
 
+- Split templating app template tag into separate modules.
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a
