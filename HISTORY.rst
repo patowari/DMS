@@ -62,6 +62,8 @@
 - Add a Docker Compose service to mount a cabinet.
 - Support disabling the search app.
 - Split the cabinet app views module.
+- Adjust document version list permission requirement. The permission grant
+  can now be more granular.
 
 4.8.3 (2024-10-04)
 ==================

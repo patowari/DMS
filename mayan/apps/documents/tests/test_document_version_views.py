@@ -13,6 +13,7 @@ from ..events import (
     event_document_version_page_created, event_document_version_page_deleted,
     event_document_viewed
 )
+from ..models.document_version_models import DocumentVersion
 from ..permissions import (
     permission_document_version_delete, permission_document_version_edit,
     permission_document_version_print, permission_document_version_view
@@ -24,6 +25,113 @@ from .mixins.document_version_mixins import (
     DocumentVersionModificationViewTestMixin, DocumentVersionTestMixin,
     DocumentVersionViewTestMixin
 )
+
+
+class DocumentVersionListViewTestCase(
+    DocumentVersionTestMixin, DocumentVersionViewTestMixin,
+    GenericDocumentViewTestCase
+):
+    def setUp(self):
+        super().setUp()
+
+        def get_label(self):
+            return 'dv-{}'.format(self.pk)
+
+        self._document_version_get_label = DocumentVersion.get_label
+
+        DocumentVersion.get_label = get_label
+
+    def tearDown(self):
+        DocumentVersion.get_label = self._document_version_get_label
+
+        super().tearDown()
+
+    def test_document_version_list_view_no_permission(self):
+        self._create_test_document_version()
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_view()
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[0]
+            )
+        )
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_version_list_view_with_document_access(self):
+        self._create_test_document_version()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_version_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_view()
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[0]
+            )
+        )
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_version_list_view_with_document_access(self):
+        self._create_test_document_version()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_version_view
+        )
+
+        self._test_document.delete()
+        self._clear_events()
+
+        response = self._request_test_document_version_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_version_list_view_with_document_version_access(self):
+        self._create_test_document_version()
+
+        self.grant_access(
+            obj=self._test_document_version_list[0],
+            permission=permission_document_version_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_view()
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[0]
+            )
+        )
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_version_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
 
 
 class DocumentVersionViewTestCase(
@@ -244,47 +352,6 @@ class DocumentVersionViewTestCase(
             self._test_document_version.comment,
             document_version_comment
         )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_version_list_view_no_permission(self):
-        self._clear_events()
-
-        response = self._request_test_document_version_list_view()
-        self.assertEqual(response.status_code, 404)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_version_list_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_version_view
-        )
-
-        self._clear_events()
-
-        response = self._request_test_document_version_list_view()
-        self.assertContains(
-            response=response, status_code=200,
-            text=str(self._test_document_version)
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_document_version_list_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_version_view
-        )
-
-        self._test_document.delete()
-        self._clear_events()
-
-        response = self._request_test_document_version_list_view()
-        self.assertEqual(response.status_code, 404)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)

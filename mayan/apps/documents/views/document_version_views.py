@@ -178,9 +178,9 @@ class DocumentVersionEditView(SingleObjectEditView):
 class DocumentVersionListView(
     ExternalObjectViewMixin, RecentDocumentViewMixin, SingleObjectListView
 ):
-    external_object_permission = permission_document_version_view
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
+    object_permission = permission_document_version_view
     recent_document_view_document_property_name = 'external_object'
     view_icon = icon_document_version_list
 
