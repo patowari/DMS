@@ -5,9 +5,11 @@ from .api_views import (
     APICabinetDocumentRemoveView, APICabinetListView, APICabinetView,
     APIDocumentCabinetListView
 )
-from .views import (
+from .views.cabinet_views import (
     CabinetChildAddView, CabinetCreateView, CabinetDeleteView,
-    CabinetDetailView, CabinetEditView, CabinetListView,
+    CabinetDetailView, CabinetEditView, CabinetListView
+)
+from .views.document_views import (
     DocumentCabinetAddView, DocumentCabinetListView,
     DocumentCabinetRemoveView
 )
