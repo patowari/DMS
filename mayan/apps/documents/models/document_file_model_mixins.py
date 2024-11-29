@@ -8,6 +8,7 @@ from django.template.defaultfilters import filesizeformat
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.acls.models import AccessControlList
 from mayan.apps.common.signals import signal_mayan_pre_save
 from mayan.apps.converter.classes import ConverterBase
 from mayan.apps.converter.exceptions import (
@@ -27,6 +28,7 @@ from ..literals import (
     IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
     STORAGE_NAME_DOCUMENT_FILE_PAGE_IMAGE_CACHE
 )
+from ..permissions import permission_document_file_view
 from ..settings import setting_hash_block_size
 from ..signals import signal_post_document_file_upload
 
@@ -364,6 +366,16 @@ class DocumentFileBusinessLogicMixin(ModelMixinFileFieldOpen):
     def get_label(self):
         return self.filename
     get_label.short_description = _(message='Label')
+
+    def get_page_count(self, user):
+        queryset_pages = self.pages.all()
+        queryset_pages = AccessControlList.objects.restrict_queryset(
+            permission=permission_document_file_view,
+            queryset=queryset_pages, user=user
+        )
+
+        return queryset_pages.count()
+    get_page_count.short_description = _(message='Pages')
 
     def get_size_display(self):
         return filesizeformat(bytes_=self.size)

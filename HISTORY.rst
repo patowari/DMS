@@ -61,6 +61,8 @@
 - Add the `json_load` templating filter.
 - Add a Docker Compose service to mount a cabinet.
 - Support disabling the search app.
+- Filter the document, document file, and document version pages by the
+  user's corresponding view permissions.
 - Split the cabinet app views module.
 - Adjust document version list permission requirement. The permission grant
   can now be more granular.

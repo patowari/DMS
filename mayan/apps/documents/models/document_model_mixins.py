@@ -178,6 +178,15 @@ class DocumentBusinessLogicMixin:
 
     get_label.short_description = _(message='Label')
 
+    def get_page_count(self, user):
+        version_active = self.version_active
+        if version_active:
+            page_count = version_active.get_page_count(user=user)
+            return page_count
+        else:
+            return 0
+    get_page_count.short_description = _(message='Pages')
+
     @property
     def is_in_trash(self):
         return self.in_trash

@@ -344,9 +344,8 @@ class DocumentsApp(MayanAppConfig):
             widget=ThumbnailWidget
         )
         SourceColumn(
-            func=lambda context: context['object'].pages.count(),
-            include_label=True, label=_(message='Pages'), order=-6,
-            source=DocumentFile
+            attribute='get_page_count', include_label=True,
+            kwargs={'user': 'request.user'}, order=-8, source=DocumentFile
         )
         SourceColumn(
             attribute='comment', is_sortable=True, order=-7,
@@ -763,13 +762,13 @@ class DocumentsApp(MayanAppConfig):
             widget=ThumbnailWidget
         )
         SourceColumn(
-            func=lambda context: context['object'].pages.count(),
-            include_label=True, label=_(message='Pages'), order=-8,
-            source=DocumentVersion
+            attribute='get_page_count', include_label=True,
+            kwargs={'user': 'request.user'}, order=-8, source=DocumentVersion
         )
         SourceColumn(
             attribute='active', include_label=True, is_sortable=True,
-            order=-9, source=DocumentVersion, widget=column_widgets.TwoStateWidget
+            order=-9, source=DocumentVersion,
+            widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
             attribute='comment', include_label=True, is_sortable=True,
@@ -1000,9 +999,8 @@ class DocumentsApp(MayanAppConfig):
             source=Document
         )
         SourceColumn(
-            func=lambda context: context['object'].pages.count(),
-            label=_(message='Pages'), include_label=True, order=-8,
-            source=Document
+            attribute='get_page_count', include_label=True,
+            kwargs={'user': 'request.user'}, order=-8, source=Document
         )
 
         menu_list_facet.bind_links(

@@ -9,6 +9,7 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.acls.models import AccessControlList
 from mayan.apps.converter.exceptions import AppImageError
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.events.decorators import method_event
@@ -23,6 +24,7 @@ from ..literals import (
     IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES,
     STORAGE_NAME_DOCUMENT_VERSION_PAGE_IMAGE_CACHE
 )
+from ..permissions import permission_document_version_view
 from ..signals import signal_post_document_version_remap
 
 logger = logging.getLogger(name=__name__)
@@ -151,6 +153,16 @@ class DocumentVersionBusinessLogicMixin:
                 )
 
         return content_object_dictionary_list
+
+    def get_page_count(self, user):
+        queryset_pages = self.pages.all()
+        queryset_pages = AccessControlList.objects.restrict_queryset(
+            permission=permission_document_version_view,
+            queryset=queryset_pages, user=user
+        )
+
+        return queryset_pages.count()
+    get_page_count.short_description = _(message='Pages')
 
     @property
     def is_in_trash(self):
