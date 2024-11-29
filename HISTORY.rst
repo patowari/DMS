@@ -64,6 +64,7 @@
 - Split the cabinet app views module.
 - Adjust document version list permission requirement. The permission grant
   can now be more granular.
+- Remove the example insecure Traefik dashboard password.
 
 4.8.3 (2024-10-04)
 ==================
