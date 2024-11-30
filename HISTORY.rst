@@ -71,6 +71,7 @@
   can now be more granular.
 - Move the `is_url_query_positive` utility from the search to the views app.
 - Update FAQ document.
+- Formalize the pattern used to get all the request `GET` and `POST` data.
 
 4.8.3 (2024-10-04)
 ==================
