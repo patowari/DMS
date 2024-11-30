@@ -1,3 +1,5 @@
+from mayan.apps.views.utils import is_url_query_positive
+
 from .exceptions import (
     DynamicSearchInterpreterError, DynamicSearchInterpreterUnknownSearchType,
     DynamicSearchScopedQueryError
@@ -9,7 +11,6 @@ from .scoped_queries import (
 )
 from .search_query_terms import QueryTerm
 from .settings import setting_default_operator
-from .utils import is_url_query_positive
 
 
 class SearchInterpreter:

@@ -69,6 +69,7 @@
 - Remove the example insecure Traefik dashboard password.
 - Adjust document file list permission requirement. The permission grant
   can now be more granular.
+- Move the `is_url_query_positive` utility from the search to the views app.
 
 4.8.3 (2024-10-04)
 ==================

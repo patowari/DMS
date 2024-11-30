@@ -1,15 +1,18 @@
-import logging
-
 from django.urls import resolve as django_resolve
 from django.urls.base import get_script_prefix
 
-logger = logging.getLogger(name=__name__)
+from .literals import URL_QUERY_POSITIVE_VALUES
 
 
 def convert_to_id_list(items):
     return ','.join(
         map(str, items)
     )
+
+
+def is_url_query_positive(value):
+    if value is not None:
+        return value.lower() in URL_QUERY_POSITIVE_VALUES
 
 
 def request_is_ajax(request):

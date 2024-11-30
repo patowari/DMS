@@ -18,3 +18,5 @@ TEXT_LIST_AS_ITEMS_VARIABLE_NAME = 'list_as_items'
 
 TEXT_SORT_FIELD_PARAMETER = '_ordering'
 TEXT_SORT_FIELD_VARIABLE_NAME = 'ordering'
+
+URL_QUERY_POSITIVE_VALUES = ('on', 'true', 'yes')
