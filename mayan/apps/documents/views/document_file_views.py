@@ -178,9 +178,9 @@ class DocumentFileIntrospectView(MultipleObjectConfirmActionView):
 
 
 class DocumentFileListView(ExternalObjectViewMixin, SingleObjectListView):
-    external_object_permission = permission_document_file_view
     external_object_pk_url_kwarg = 'document_id'
     external_object_queryset = Document.valid.all()
+    object_permission = permission_document_file_view
     view_icon = icon_document_file_list
 
     @staticmethod

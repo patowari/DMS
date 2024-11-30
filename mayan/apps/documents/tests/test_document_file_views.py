@@ -24,6 +24,7 @@ from ..events import (
     event_document_version_created, event_document_version_edited,
     event_document_version_page_created, event_document_version_page_deleted
 )
+from ..models.document_file_models import DocumentFile
 from ..permissions import (
     permission_document_file_delete, permission_document_file_edit,
     permission_document_file_print, permission_document_file_tools,
@@ -309,6 +310,114 @@ class DocumentFileIntrospectViewTestCase(
         self.assertEqual(events.count(), 0)
 
 
+class DocumentFileListViewTestCase(
+    DocumentFileTestMixin, DocumentFileViewTestMixin,
+    GenericDocumentViewTestCase
+):
+    def setUp(self):
+        super().setUp()
+
+        def get_label(self):
+            return 'df-{}'.format(self.pk)
+
+        self._document_file_get_label = DocumentFile.get_label
+
+        DocumentFile.get_label = get_label
+
+    def tearDown(self):
+        DocumentFile.get_label = self._document_file_get_label
+
+        super().tearDown()
+
+    def test_document_file_list_no_permission(self):
+        self._upload_test_document_file()
+
+        self._clear_events()
+
+        response = self._request_test_document_file_list_view()
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[0]
+            )
+        )
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_list_with_document_access(self):
+        self._upload_test_document_file()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_file_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_list_view()
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[0]
+            )
+        )
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_file_list_with_access(self):
+        self._upload_test_document_file()
+
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_file_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_test_document_file_list_view()
+        self.assertEqual(response.status_code, 404)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_file_list_view_with_document_file_access(self):
+        self._upload_test_document_file()
+
+        self.grant_access(
+            obj=self._test_document_file_list[0],
+            permission=permission_document_file_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_file_list_view()
+        self.assertContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[0]
+            )
+        )
+        self.assertNotContains(
+            response=response, status_code=200, text=str(
+                self._test_document_file_list[1]
+            )
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+
 class DocumentFileViewTestCase(
     DocumentFileTestMixin, DocumentFileViewTestMixin,
     GenericDocumentViewTestCase
@@ -526,48 +635,6 @@ class DocumentFileViewTestCase(
             self._test_document_file.filename,
             document_file_filename
         )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_list_no_permission(self):
-        self._clear_events()
-
-        response = self._request_test_document_file_list_view()
-        self.assertEqual(response.status_code, 404)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_file_list_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_file_view
-        )
-
-        self._clear_events()
-
-        response = self._request_test_document_file_list_view()
-        self.assertContains(
-            response=response, status_code=200,
-            text=str(self._test_document_file)
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_document_file_list_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_file_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_test_document_file_list_view()
-        self.assertEqual(response.status_code, 404)
 
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
