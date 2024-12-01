@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.dependencies.classes import BinaryDependency, PythonDependency
+from mayan.apps.dependencies.classes import BinaryDependency
 
 from .backends.literals import DEFAULT_FILE_PATH, DEFAULT_MIMETYPE_PATH
 
