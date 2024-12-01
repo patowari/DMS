@@ -5,7 +5,8 @@ from ..permissions import (
     permission_user_view
 )
 
-from .mixins import GroupLinkTestMixin, GroupTestMixin, UserLinkTestMixin
+from .mixins.group_mixins import GroupLinkTestMixin, GroupTestMixin
+from .mixins.user_mixins import UserLinkTestMixin
 
 
 class GroupLinkTestCase(

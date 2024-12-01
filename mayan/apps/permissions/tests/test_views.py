@@ -1,6 +1,8 @@
 from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.permissions import permission_group_edit
-from mayan.apps.user_management.tests.mixins import GroupTestMixin
+from mayan.apps.user_management.tests.mixins.group_mixins import (
+    GroupTestMixin
+)
 
 from ..events import event_role_created, event_role_edited
 from ..models import Role

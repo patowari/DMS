@@ -75,6 +75,7 @@
 - Add support for remembering the use choice to ignore confirmation dialogs.
   Applies to action confirmations, single object deletion, multi object
   deletion.
+- Split the user management app test and test mixin modules.
 
 4.8.3 (2024-10-04)
 ==================

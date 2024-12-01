@@ -10,7 +10,7 @@ from mayan.apps.converter.tests.mixins import LayerTestCaseMixin
 from mayan.apps.events.tests.mixins.event_mixins import EventTestCaseMixin
 from mayan.apps.permissions.tests.mixins import PermissionTestCaseMixin
 from mayan.apps.smart_settings.tests.mixins import SettingTestMixin
-from mayan.apps.user_management.tests.mixins import UserTestMixin
+from mayan.apps.user_management.tests.mixins.user_mixins import UserTestMixin
 
 from ..literals import EXCLUDE_TEST_TAG
 

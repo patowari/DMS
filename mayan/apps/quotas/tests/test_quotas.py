@@ -15,7 +15,9 @@ from mayan.apps.file_metadata.events import (
 from mayan.apps.user_management.events import (
     event_group_created, event_user_created
 )
-from mayan.apps.user_management.tests.mixins import GroupTestMixin
+from mayan.apps.user_management.tests.mixins.group_mixins import (
+    GroupTestMixin
+)
 
 from ..events import event_quota_created
 from ..exceptions import QuotaExceeded

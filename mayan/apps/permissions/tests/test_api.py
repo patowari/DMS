@@ -4,7 +4,9 @@ from mayan.apps.rest_api.tests.base import BaseAPITestCase
 from mayan.apps.user_management.permissions import (
     permission_group_edit, permission_group_view
 )
-from mayan.apps.user_management.tests.mixins import GroupTestMixin
+from mayan.apps.user_management.tests.mixins.group_mixins import (
+    GroupTestMixin
+)
 
 from ..classes import Permission
 from ..events import event_role_created, event_role_edited

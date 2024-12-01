@@ -1,6 +1,8 @@
 from mayan.apps.common.tests.mixins import ObjectCopyTestMixin
 from mayan.apps.testing.tests.base import BaseTestCase
-from mayan.apps.user_management.tests.mixins import GroupTestMixin
+from mayan.apps.user_management.tests.mixins.group_mixins import (
+    GroupTestMixin
+)
 
 from .mixins import RoleTestMixin
 

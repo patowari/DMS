@@ -4,7 +4,9 @@ from mayan.apps.testing.tests.base import GenericViewTestCase
 from mayan.apps.user_management.permissions import (
     permission_user_delete, permission_user_view
 )
-from mayan.apps.user_management.tests.mixins import UserViewTestMixin
+from mayan.apps.user_management.tests.mixins.user_mixins import (
+    UserViewTestMixin
+)
 
 from ..models import UserConfirmView
 

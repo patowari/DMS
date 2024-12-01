@@ -4,7 +4,9 @@ from django.db.models import Q
 from mayan.apps.permissions.tests.mixins import (
     RoleTestCaseMixin, RoleTestMixin
 )
-from mayan.apps.user_management.tests.mixins import UserTestCaseMixin
+from mayan.apps.user_management.tests.mixins.user_mixins import (
+    UserTestCaseMixin
+)
 
 from ..classes import ModelPermission
 from ..models import AccessControlList
