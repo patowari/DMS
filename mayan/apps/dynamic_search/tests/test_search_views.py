@@ -8,10 +8,11 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
     DocumentTestMixin, DocumentViewTestMixin
 )
 from mayan.apps.testing.tests.base import GenericViewTestCase
+from mayan.apps.views.literals import URL_QUERY_POSITIVE_VALUES
 
 from ..literals import (
-    MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME, URL_QUERY_POSITIVE_VALUES,
-    QUERY_PARAMETER_ANY_FIELD, SEARCH_MODEL_NAME_KWARG
+    MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME, QUERY_PARAMETER_ANY_FIELD,
+    SEARCH_MODEL_NAME_KWARG
 )
 from ..permissions import permission_search_tools
 
