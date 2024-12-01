@@ -435,9 +435,16 @@ class UserViewTestMixin:
             kwargs={'user_id': self._test_user.pk}
         )
 
-    def _request_test_user_single_delete_post_view(self):
+    def _request_test_user_single_delete_post_view(self, remember=None):
+        data = {}
+
+        if remember is not None:
+            data.update(
+                {'remember': remember}
+            )
+
         return self.post(
-            viewname='user_management:user_single_delete',
+            data=data, viewname='user_management:user_single_delete',
             kwargs={'user_id': self._test_user.pk}
         )
 

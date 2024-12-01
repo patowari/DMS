@@ -2,12 +2,12 @@ from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ImproperlyConfigured
 from django.db.models.query import QuerySet
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, ngettext
 from django.views.generic.detail import SingleObjectMixin
-from django.views.generic.edit import ModelFormMixin
+from django.views.generic.edit import DeleteView, ModelFormMixin
 
 from mayan.apps.acls.classes import ModelPermission
 from mayan.apps.acls.models import AccessControlList
@@ -22,7 +22,8 @@ from .literals import (
     TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
     TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
 )
-from .models import UserViewMode
+from .models import UserConfirmView, UserViewMode
+from .utils import is_url_query_positive
 
 
 class ContentTypeViewMixin:
@@ -229,8 +230,7 @@ class ListModeViewMixin:
                 defaults={
                     'namespace': resolver_match.namespace,
                     'value': user_list_mode
-                }, name=view_name,
-                user=self.request.user
+                }, name=view_name, user=self.request.user
             )
             final_list_mode = user_list_mode
         else:
@@ -652,6 +652,103 @@ class ViewIconMixin:
         return self.view_icon
 
 
+class ViewMixinConfirmRemember:
+    def get(self, request, *args, **kwargs):
+        resolver_match = request.resolver_match
+
+        view_name = '{}:{}'.format(
+            resolver_match.namespace, resolver_match.url_name
+        )
+
+        ask_again_raw = request.GET.get('ask_again')
+
+        ask_again = is_url_query_positive(value=ask_again_raw)
+
+        if ask_again:
+            remember = False
+        else:
+            try:
+                confirm_view = UserConfirmView.objects.get(
+                    namespace=resolver_match.namespace, name=view_name,
+                    user=self.request.user
+                )
+            except UserConfirmView.DoesNotExist:
+                remember = False
+            else:
+                remember = confirm_view.remember
+
+        if isinstance(self, DeleteView):
+            # It is a single object delete view.
+            if remember:
+                self.object = self.get_object()
+
+                form = self.get_form()
+                return super().form_valid(form=form)
+            else:
+                return super().get(request=request, *args, **kwargs)
+        else:
+            # It is a multiple object delete view or a confirmation view.
+            if remember:
+                redirect_to = self.get_success_url()
+
+                self.view_action()
+                return HttpResponseRedirect(redirect_to=redirect_to)
+            else:
+                return super().get(request=request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        resolver_match = request.resolver_match
+
+        view_name = '{}:{}'.format(
+            resolver_match.namespace, resolver_match.url_name
+        )
+
+        remember_raw = request.POST.get('remember')
+
+        remember = is_url_query_positive(value=remember_raw)
+
+        if remember is None:
+            remember = False
+
+        confirm_view, created = UserConfirmView.objects.update_or_create(
+            defaults={
+                'namespace': resolver_match.namespace,
+                'remember': remember
+            }, name=view_name, user=self.request.user
+        )
+
+        return super().post(request=request, *args, **kwargs)
+
+
+class ViewMixinDeleteObject:
+    def form_valid(self, form):
+        context = self.get_context_data()
+        object_name = self.get_object_name(context=context)
+
+        try:
+            result = super().form_valid(form=form)
+        except Exception as exception:
+            messages.error(
+                message=_(
+                    message='%(object)s not deleted, error: %(error)s.'
+                ) % {
+                    'error': exception,
+                    'object': object_name
+                }, request=self.request
+            )
+            raise
+        else:
+            messages.success(
+                message=_(
+                    message='%(object)s deleted successfully.'
+                ) % {
+                    'object': object_name
+                }, request=self.request
+            )
+
+            return result
+
+
 class ViewMixinExternalObjectOwnerPlusFilteredQueryset:
     def get_external_object_queryset(self):
         queryset = super().get_external_object_queryset()
@@ -682,6 +779,15 @@ class ViewMixinOwnerPlusFilteredQueryset:
             queryset = queryset_user
 
         return queryset.distinct()
+
+
+class ViewMixinPostAction:
+    def post(self, request, *args, **kwargs):
+        self.view_action()
+
+        redirect_to = self.get_success_url()
+
+        return HttpResponseRedirect(redirect_to=redirect_to)
 
 
 class ViewPermissionCheckViewMixin:

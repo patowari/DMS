@@ -25,7 +25,12 @@ icon_remove_all = Icon(
 icon_sort_down = Icon(driver_name='fontawesome', symbol='sort-down')
 icon_sort_up = Icon(driver_name='fontawesome', symbol='sort-up')
 
-
+icon_user_confirm_property_view = Icon(
+    driver_name='fontawesome', symbol='square-check'
+)
+icon_user_confirm_property_view_delete = Icon(
+    driver_name='fontawesome', symbol='times'
+)
 icon_user_view_modes = Icon(
     driver_name='fontawesome', symbol='th-large'
 )

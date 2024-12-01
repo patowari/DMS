@@ -32,7 +32,8 @@ from .view_mixins import (
     ListModeViewMixin, ModelFormFieldsetsViewMixin, MultipleObjectViewMixin,
     ObjectActionViewMixin, ObjectNameViewMixin, RedirectionViewMixin,
     RestrictedQuerysetViewMixin, SortingViewMixin, ViewIconMixin,
-    ViewPermissionCheckViewMixin
+    ViewMixinConfirmRemember, ViewMixinDeleteObject,
+    ViewPermissionCheckViewMixin, ViewMixinPostAction
 )
 
 logger = logging.getLogger(name=__name__)
@@ -432,7 +433,8 @@ class AddRemoveView(
 
 class ConfirmView(
     RestrictedQuerysetViewMixin, ViewPermissionCheckViewMixin,
-    ExtraContextViewMixin, RedirectionViewMixin, ViewIconMixin, TemplateView
+    ExtraContextViewMixin, RedirectionViewMixin, ViewIconMixin,
+    ViewMixinConfirmRemember, ViewMixinPostAction, TemplateView
 ):
     """
     View that will execute an view action upon user Yes/No confirmation.
@@ -448,12 +450,6 @@ class ConfirmView(
             super().get_context_data(**kwargs)
         )
         return context
-
-    def post(self, request, *args, **kwargs):
-        self.view_action()
-        return HttpResponseRedirect(
-            redirect_to=self.get_success_url()
-        )
 
 
 class FormView(
@@ -521,7 +517,7 @@ class MultipleObjectConfirmActionView(
     ExtraContextViewMixin, ObjectActionViewMixin,
     ViewPermissionCheckViewMixin, RestrictedQuerysetViewMixin,
     MultipleObjectViewMixin, RedirectionViewMixin, ViewIconMixin,
-    TemplateView
+    ViewMixinConfirmRemember, ViewMixinPostAction, TemplateView
 ):
     """
     Form that will execute an action to a queryset upon user Yes/No
@@ -550,12 +546,6 @@ class MultipleObjectConfirmActionView(
         except ImproperlyConfigured:
             self.queryset = self.get_source_queryset()
             return super().get_queryset()
-
-    def post(self, request, *args, **kwargs):
-        self.view_action()
-        return HttpResponseRedirect(
-            redirect_to=self.get_success_url()
-        )
 
 
 class RelationshipView(FormView):
@@ -694,7 +684,8 @@ class SingleObjectCreateView(
 class SingleObjectDeleteView(
     ObjectNameViewMixin, ExtraDataDeleteViewMixin,
     ViewPermissionCheckViewMixin, RestrictedQuerysetViewMixin,
-    ExtraContextViewMixin, RedirectionViewMixin, ViewIconMixin, DeleteView
+    ExtraContextViewMixin, RedirectionViewMixin, ViewIconMixin,
+    ViewMixinConfirmRemember, ViewMixinDeleteObject, DeleteView
 ):
     template_name = 'appearance/confirm.html'
 
@@ -711,33 +702,6 @@ class SingleObjectDeleteView(
             )
 
         return result
-
-    def form_valid(self, form):
-        context = self.get_context_data()
-        object_name = self.get_object_name(context=context)
-
-        try:
-            result = super().form_valid(form=form)
-        except Exception as exception:
-            messages.error(
-                message=_(
-                    message='%(object)s not deleted, error: %(error)s.'
-                ) % {
-                    'error': exception,
-                    'object': object_name
-                }, request=self.request
-            )
-            raise
-        else:
-            messages.success(
-                message=_(
-                    message='%(object)s deleted successfully.'
-                ) % {
-                    'object': object_name
-                }, request=self.request
-            )
-
-            return result
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -5,7 +5,7 @@ from mayan.apps.app_manager.apps import MayanAppConfig
 from .literals import LIST_MODE_CHOICES
 
 
-class ModelMixinUserViewModeBusinessLogic:
+class ModelMixinAppConfig:
     def get_app_config(self):
         app_config = MayanAppConfig.get_by_namespace(namespace=self.namespace)
 
@@ -22,6 +22,14 @@ class ModelMixinUserViewModeBusinessLogic:
     get_app_config.help_text = _(message='The app to which the view belongs.')
     get_app_config.short_description = _(message='App')
 
+
+class ModelMixinUserConfirmViewBusinessLogic(ModelMixinAppConfig):
+    """
+    No other code besides the `ModelMixinAppConfig` inheritance.
+    """
+
+
+class ModelMixinUserViewModeBusinessLogic(ModelMixinAppConfig):
     def get_value_display(self):
         map_list_mode_choices = dict(LIST_MODE_CHOICES)
 

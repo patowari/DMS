@@ -72,6 +72,9 @@
 - Move the `is_url_query_positive` utility from the search to the views app.
 - Update FAQ document.
 - Formalize the pattern used to get all the request `GET` and `POST` data.
+- Add support for remembering the use choice to ignore confirmation dialogs.
+  Applies to action confirmations, single object deletion, multi object
+  deletion.
 
 4.8.3 (2024-10-04)
 ==================
