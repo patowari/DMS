@@ -31,7 +31,7 @@ class ExternalObjectAPIViewMixinTestCase(
             """Empty serializer."""
 
         class TestView(ExternalObjectAPIViewMixin, generics.RetrieveAPIView):
-            external_object_queryset = self.TestModel.objects.all()
+            external_object_queryset = self._TestModel.objects.all()
             external_object_pk_url_kwarg = 'test_object_id'
             mayan_external_object_permission_map = {
                 'GET': self._test_permission
@@ -72,7 +72,7 @@ class ChildExternalObjectAPIViewMixinTestCase(
         )
 
     def _test_view_factory(self, test_object=None):
-        TestModel = self.TestModel
+        TestModel = self._TestModel
 
         class TestModelSerializer(serializers.Serializer):
             """Empty serializer."""

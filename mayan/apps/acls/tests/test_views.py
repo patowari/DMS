@@ -303,7 +303,7 @@ class OrphanAccessControlListViewTestCase(
         Result: Should display a blank permissions list (no optgroup).
         """
         self._create_acl_test_object()
-        EventModelRegistry.register(model=self.TestModel)
+        EventModelRegistry.register(model=self._TestModel)
 
         self.grant_permission(permission=permission_acl_edit)
 

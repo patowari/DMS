@@ -205,7 +205,7 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_source_link_unbinding(self):
         self.menu.bind_links(
-            links=(self.link,), sources=(self.TestModel,)
+            links=(self.link,), sources=(self._TestModel,)
         )
 
         response = self.get(viewname=self._test_view_name)
@@ -220,7 +220,7 @@ class MenuClassTestCase(GenericViewTestCase):
         )
 
         self.menu.unbind_links(
-            sources=(self.TestModel,),
+            sources=(self._TestModel,),
             links=(self.link,)
         )
 
@@ -273,13 +273,13 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_proxy_model_menu_proxy_exclusion(self):
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy_object = TestModelProxy.objects.create()
 
         self.menu.bind_links(
-            links=(self.link,), sources=(self.TestModel,)
+            links=(self.link,), sources=(self._TestModel,)
         )
         self.menu.add_proxy_exclusion(source=TestModelProxy)
 
@@ -299,14 +299,14 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_proxy_model_bind_link_exclude(self):
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy_object = TestModelProxy.objects.create()
 
         self.menu.bind_links(
             exclude=(TestModelProxy,), links=(self.link,),
-            sources=(self.TestModel,)
+            sources=(self._TestModel,)
         )
 
         response = self.get(viewname=self._test_view_name)
@@ -325,7 +325,7 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_proxy_model_bind_link_exclude_with_proxy_links(self):
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy_object = TestModelProxy.objects.create()
@@ -334,7 +334,7 @@ class MenuClassTestCase(GenericViewTestCase):
 
         self.menu.bind_links(
             exclude=(TestModelProxy,), links=(self.link,),
-            sources=(self.TestModel,)
+            sources=(self._TestModel,)
         )
         self.menu.bind_links(
             links=(self.link_proxy,), sources=(TestModelProxy,)
@@ -364,13 +364,13 @@ class MenuClassTestCase(GenericViewTestCase):
 
     def test_proxy_model_inheritance(self):
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy_object = TestModelProxy.objects.create()
 
         self.menu.bind_links(
-            links=(self.link,), sources=(self.TestModel,)
+            links=(self.link,), sources=(self._TestModel,)
         )
 
         response = self.get(viewname=self._test_view_name)
@@ -404,7 +404,7 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_model_proxies_no_columns(self):
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy = TestModelProxy.objects.create()
@@ -415,11 +415,11 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_model_proxies_with_columns(self):
         SourceColumn(
-            attribute='__str__', source=self.TestModel
+            attribute='__str__', source=self._TestModel
         )
 
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         test_model_proxy = TestModelProxy.objects.create()
@@ -432,11 +432,11 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_model_proxies_and_exclude_with_columns(self):
         column = SourceColumn(
-            attribute='__str__', source=self.TestModel
+            attribute='__str__', source=self._TestModel
         )
 
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         column.add_exclude(source=TestModelProxy)
@@ -449,18 +449,18 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_querysets_no_columns(self):
         columns = SourceColumn.get_for_source(
-            source=self.TestModel.objects.all()
+            source=self._TestModel.objects.all()
         )
 
         self.assertEqual(len(columns), 0)
 
     def test_get_for_source_for_querysets_with_columns(self):
         SourceColumn(
-            attribute='__str__', source=self.TestModel
+            attribute='__str__', source=self._TestModel
         )
 
         columns = SourceColumn.get_for_source(
-            source=self.TestModel.objects.all()
+            source=self._TestModel.objects.all()
         )
 
         self.assertEqual(
@@ -469,11 +469,11 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_empty_querysets_with_columns(self):
         SourceColumn(
-            attribute='__str__', source=self.TestModel
+            attribute='__str__', source=self._TestModel
         )
 
         columns = SourceColumn.get_for_source(
-            source=self.TestModel.objects.none()
+            source=self._TestModel.objects.none()
         )
 
         self.assertEqual(
@@ -482,11 +482,11 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_for_proxy_model_queryset_with_parent_columns(self):
         SourceColumn(
-            attribute='test_attribute', source=self.TestModel
+            attribute='test_attribute', source=self._TestModel
         )
 
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         SourceColumn(
@@ -503,11 +503,11 @@ class SourceColumnClassTestCase(GenericViewTestCase):
 
     def test_get_for_source_proxy_model_queryset_identifier_column_override(self):
         root_source_column = SourceColumn(
-            attribute='__str__', source=self.TestModel, is_identifier=True
+            attribute='__str__', source=self._TestModel, is_identifier=True
         )
 
         TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, options={'proxy': True}
+            base_class=self._TestModel, options={'proxy': True}
         )
 
         proxy_source_column = SourceColumn(

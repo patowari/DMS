@@ -151,17 +151,17 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
 
-        self.TestModelAttribute = self._create_test_model(
+        self._TestModelAttribute = self._create_test_model(
             fields={
                 'label': models.CharField(
                     max_length=64
                 )
             }, model_name='TestModelAttribute'
         )
-        self.TestModelGrandParent = self._create_test_model(
+        self._TestModelGrandParent = self._create_test_model(
             model_name='TestModelGrandParent'
         )
-        self.TestModelParent = self._create_test_model(
+        self._TestModelParent = self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -169,7 +169,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 )
             }, model_name='TestModelParent'
         )
-        self.TestModelGrandChild = self._create_test_model(
+        self._TestModelGrandChild = self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -181,14 +181,14 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
             }, model_name='TestModelGrandChild'
         )
 
-        self._test_object_grandparent = self.TestModelGrandParent.objects.create()
-        self._test_object_parent = self.TestModelParent.objects.create(
+        self._test_object_grandparent = self._TestModelGrandParent.objects.create()
+        self._test_object_parent = self._TestModelParent.objects.create(
             parent=self._test_object_grandparent
         )
-        self._test_object_grandchild = self.TestModelGrandChild.objects.create(
+        self._test_object_grandchild = self._TestModelGrandChild.objects.create(
             parent=self._test_object_parent
         )
-        self._test_object_attribute = self.TestModelAttribute.objects.create(
+        self._test_object_attribute = self._TestModelAttribute.objects.create(
             label='test attribute object'
         )
         self._test_object_grandchild.attributes.add(self._test_object_attribute)
@@ -223,7 +223,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 'exclude': {
                     'id': '{}'.format(self._test_object_attribute.pk)
                 },
-                'model': self.TestModelAttribute
+                'model': self._TestModelAttribute
             }
         )
 
@@ -304,7 +304,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 'exclude': {
                     'id': '{}'.format(self._test_object_attribute.pk)
                 },
-                'model': self.TestModelAttribute
+                'model': self._TestModelAttribute
             }
         )
 

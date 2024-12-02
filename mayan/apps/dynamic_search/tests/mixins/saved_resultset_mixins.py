@@ -29,14 +29,14 @@ class SavedResultsetTestMixin(SearchTestMixin, TestMixinObjectCreationTrack):
             self._create_test_saved_resultset()
 
         self._test_search_model = SearchModel(
-            app_label=self.TestModel._meta.app_label,
-            model_name=self.TestModel._meta.model_name
+            app_label=self._TestModel._meta.app_label,
+            model_name=self._TestModel._meta.model_name
         )
 
         self._test_search_model.add_model_field(field='test_field')
 
     def _create_test_saved_resultset(self, user=None):
-        _test_queryset = self.TestModel.objects.all()
+        _test_queryset = self._TestModel.objects.all()
         _test_search_explainer_text = 'q PARTIAL'
         _test_search_query = {'q': '*'}
 

@@ -167,7 +167,7 @@ class SavedResultsetViewTestCase(
         response = self._request_test_saved_resultset_result_list_view()
         self.assertNotContains(
             response=response, status_code=404,
-            text=str(self.TestModel._meta.verbose_name)
+            text=str(self._TestModel._meta.verbose_name)
         )
 
         events = self._get_test_events()
@@ -185,7 +185,7 @@ class SavedResultsetViewTestCase(
         response = self._request_test_saved_resultset_result_list_view()
         self.assertContains(
             response=response, status_code=200,
-            text=str(self.TestModel._meta.verbose_name)
+            text=str(self._TestModel._meta.verbose_name)
         )
 
         events = self._get_test_events()
@@ -198,7 +198,7 @@ class SavedResultsetViewTestCase(
         response = self._request_test_saved_resultset_result_list_view()
         self.assertContains(
             response=response, status_code=200,
-            text=str(self.TestModel._meta.verbose_name)
+            text=str(self._TestModel._meta.verbose_name)
         )
 
         events = self._get_test_events()
@@ -216,7 +216,7 @@ class SavedResultsetViewTestCase(
         response = self._request_test_saved_resultset_result_list_view()
         self.assertContains(
             response=response, status_code=200,
-            text=str(self.TestModel._meta.verbose_name)
+            text=str(self._TestModel._meta.verbose_name)
         )
 
         events = self._get_test_events()

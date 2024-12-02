@@ -147,21 +147,21 @@ class ACLTestMixin(RoleTestMixin):
         self, model_name=None, create_test_permission=True,
         register_acl_permissions=True, register_test_permission=True
     ):
-        self.TestModel = self._create_test_model()
+        self._TestModel = self._create_test_model()
 
         if create_test_permission:
             self._create_test_permission()
 
         if register_acl_permissions or 1:
             ModelPermission.register(
-                model=self.TestModel, permissions=(
+                model=self._TestModel, permissions=(
                     permission_acl_edit, permission_acl_view
                 )
             )
 
         if register_test_permission or 1:
             ModelPermission.register(
-                model=self.TestModel, permissions=(
+                model=self._TestModel, permissions=(
                     self._test_permission,
                 )
             )
@@ -174,13 +174,13 @@ class ACLTestMixin(RoleTestMixin):
         )
 
     def _create_acl_test_object_proxy(self):
-        self.TestModelProxy = self._create_test_model(
-            base_class=self.TestModel, model_name='TestModelProxy',
+        self._TestModelProxy = self._create_test_model(
+            base_class=self._TestModel, model_name='TestModelProxy',
             options={
                 'proxy': True
             }
         )
-        self._test_object_proxy = self.TestModelProxy.objects.create()
+        self._test_object_proxy = self._TestModelProxy.objects.create()
 
 
 class AccessControlListViewTestMixin:

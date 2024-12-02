@@ -8,10 +8,10 @@ from ..classes import QuerysetParametersSerializer
 class QuerysetParametersSerializerTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
-        self.TestModelParent = self._create_test_model(
+        self._TestModelParent = self._create_test_model(
             model_name='TestModelParent'
         )
-        self.TestModelChild = self._create_test_model(
+        self._TestModelChild = self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -20,8 +20,8 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
             }, model_name='TestModelChild'
         )
 
-        self._test_object_parent = self.TestModelParent.objects.create()
-        self.TestModelChild.objects.create(
+        self._test_object_parent = self._TestModelParent.objects.create()
+        self._TestModelChild.objects.create(
             parent_id=self._test_object_parent.pk
         )
 
@@ -31,10 +31,10 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
         )
 
     def test_without_kwargs(self):
-        self.queryset_original = self.TestModelParent.objects.all()
+        self.queryset_original = self._TestModelParent.objects.all()
 
         decomposed_queryset = QuerysetParametersSerializer.decompose(
-            _model=self.TestModelParent, _method_name='all'
+            _model=self._TestModelParent, _method_name='all'
         )
 
         self.queryset_rebuilt = QuerysetParametersSerializer.rebuild(
@@ -44,10 +44,10 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
         self._assertQuerySetEqual()
 
     def test_foreign_key_model(self):
-        self.queryset_original = self.TestModelChild.objects.all()
+        self.queryset_original = self._TestModelChild.objects.all()
 
         decomposed_queryset = QuerysetParametersSerializer.decompose(
-            _model=self.TestModelChild, _method_name='filter',
+            _model=self._TestModelChild, _method_name='filter',
             parent=self._test_object_parent
         )
 
@@ -58,10 +58,10 @@ class QuerysetParametersSerializerTestCase(BaseTestCase):
         self._assertQuerySetEqual()
 
     def test_foreign_key_model_id_query(self):
-        self.queryset_original = self.TestModelChild.objects.all()
+        self.queryset_original = self._TestModelChild.objects.all()
 
         decomposed_queryset = QuerysetParametersSerializer.decompose(
-            _model=self.TestModelChild, _method_name='filter',
+            _model=self._TestModelChild, _method_name='filter',
             parent_id=self._test_object_parent.pk
         )
 

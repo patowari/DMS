@@ -26,16 +26,16 @@ class ObjectCopyViewTestCase(ObjectCopyViewTestMixin, GenericViewTestCase):
 
     def setUp(self):
         super().setUp()
-        ModelCopy(model=self.TestModel, register_permission=True).add_fields(
+        ModelCopy(model=self._TestModel, register_permission=True).add_fields(
             field_names=('label',)
         )
 
     def test_object_copy_view_no_permission(self):
-        test_object_count = self.TestModel.objects.count()
+        test_object_count = self._TestModel.objects.count()
         response = self._request_object_copy_view()
         self.assertEqual(response.status_code, 404)
 
-        queryset = self.TestModel.objects.all()
+        queryset = self._TestModel.objects.all()
         self.assertEqual(queryset.count(), test_object_count)
         test_object_label_list = queryset.values_list('label', flat=True)
 
@@ -51,11 +51,11 @@ class ObjectCopyViewTestCase(ObjectCopyViewTestMixin, GenericViewTestCase):
             obj=self._test_object, permission=permission_object_copy
         )
 
-        test_object_count = self.TestModel.objects.count()
+        test_object_count = self._TestModel.objects.count()
         response = self._request_object_copy_view()
         self.assertEqual(response.status_code, 302)
 
-        queryset = self.TestModel.objects.all()
+        queryset = self._TestModel.objects.all()
         self.assertEqual(queryset.count(), test_object_count + 1)
         test_object_label_list = queryset.values_list('label', flat=True)
 

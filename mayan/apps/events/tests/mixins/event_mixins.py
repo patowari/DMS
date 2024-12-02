@@ -54,16 +54,16 @@ class EventObjectTestMixin:
     def _create_test_object_with_event_type_and_permission(self):
         self._create_test_object()
 
-        EventModelRegistry.register(model=self.TestModel)
+        EventModelRegistry.register(model=self._TestModel)
 
         ModelEventType.register(
-            event_types=(self._test_event_type,), model=self.TestModel
+            event_types=(self._test_event_type,), model=self._TestModel
         )
 
         EventType.refresh()
 
         ModelPermission.register(
-            model=self.TestModel, permissions=(
+            model=self._TestModel, permissions=(
                 permission_events_view,
             )
         )

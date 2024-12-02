@@ -555,7 +555,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         super().setUp()
 
         if self.auto_create_test_object or self.auto_create_test_object_model:
-            self.TestModel = self._create_test_model(
+            self._TestModel = self._create_test_model(
                 fields=self.auto_create_test_object_fields
             )
 
@@ -563,7 +563,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
                 self._create_test_permission()
 
                 ModelPermission.register(
-                    model=self.TestModel, permissions=(
+                    model=self._TestModel, permissions=(
                         self._test_permission,
                     )
                 )
@@ -644,9 +644,9 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         instance_kwargs = instance_kwargs or {}
 
         if not getattr(self, 'TestModel', None):
-            self.TestModel = self._create_test_model()
+            self._TestModel = self._create_test_model()
 
-        self._test_object = self.TestModel.objects.create(**instance_kwargs)
+        self._test_object = self._TestModel.objects.create(**instance_kwargs)
         self._inject_test_object_content_type()
 
         self._test_object_list.append(self._test_object)

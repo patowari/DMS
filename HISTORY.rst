@@ -76,6 +76,9 @@
   Applies to action confirmations, single object deletion, multi object
   deletion.
 - Split the user management app test and test mixin modules.
+- Rename all instances of the prefix `self.TestModel` to `self._TestModel` to
+  prevent possible collisions with other test scaffolding objects and for
+  uniformity with other test objects being made semi private a similar way.
 
 4.8.3 (2024-10-04)
 ==================
