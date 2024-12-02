@@ -22,10 +22,10 @@ class DocumentFilePageContentManager(models.Manager):
             for document_file_page in document_file.pages.all():
                 self.filter(document_file_page=document_file_page).delete()
 
-            event_parsing_document_file_content_deleted.commit(
-                actor=user, action_object=document_file.document,
-                target=document_file
-            )
+        event_parsing_document_file_content_deleted.commit(
+            actor=user, action_object=document_file.document,
+            target=document_file
+        )
 
     def process_document_file(self, document_file, user=None):
         logger.info(
