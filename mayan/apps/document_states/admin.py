@@ -37,7 +37,7 @@ class WorkflowAdmin(admin.ModelAdmin):
 class WorkflowInstanceAdmin(admin.ModelAdmin):
     inlines = (WorkflowInstanceLogEntryInline,)
     list_display = (
-        'workflow', 'document', 'get_current_state', 'get_last_transition'
+        'workflow', 'document', 'state_active', 'get_last_transition'
     )
 
 

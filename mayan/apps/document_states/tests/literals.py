@@ -42,7 +42,7 @@ TEST_WORKFLOW_TEMPLATE_LABEL_EDITED = 'test workflow template label edited'
 TEST_WORKFLOW_TEMPLATE_INITIAL_STATE_LABEL = 'test initial state'
 TEST_WORKFLOW_TEMPLATE_INITIAL_STATE_COMPLETION = 33
 
-TEST_WORKFLOW_INDEX_TEMPLATE_EXPRESSION = '{% if  document.workflows.first %}{{ document.workflows.first.workflow.label }}-{{ document.workflows.first.get_current_state }}{% endif %}'
+TEST_WORKFLOW_INDEX_TEMPLATE_EXPRESSION = '{% if document.workflows.first %}{{ document.workflows.first.workflow.label }}-{{ document.workflows.first.get_current_state }}{% endif %}'
 TEST_WORKFLOW_TEMPLATE_TRANSITION_INDEX_TEMPLATE_EXPRESSION = '{% if  document.workflows.first %}{{ document.workflows.first.workflow.label }}-{{ document.workflows.first.get_current_state }}-{{ document.workflows.first.workflow.transitions.first }}{% endif %}'
 
 TEST_WORKFLOW_TEMPLATE_STATE_ACTION_LABEL = 'test template state action label'

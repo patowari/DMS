@@ -82,17 +82,12 @@ class WorkflowInstanceBusinessLogicMixin:
 
     def get_current_state(self):
         """
-        Actual State - The current state of the workflow. If there are
-        multiple states available, for example: registered, approved,
-        archived; this field will tell at the current state where the
-        document is right now.
+        Wrapper for compatibility < 4.9.
+        To be removed in a future minor version.
         """
-        last_transition = self.get_last_transition()
+        self.refresh_from_db()
 
-        if last_transition:
-            return last_transition.destination_state
-        else:
-            return self.workflow.get_state_initial()
+        return self.state_active
 
     def get_last_log_entry(self):
         return self.log_entries.order_by('datetime').last()

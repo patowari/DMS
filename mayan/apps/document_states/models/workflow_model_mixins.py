@@ -15,8 +15,8 @@ from mayan.apps.file_caching.models import CachePartitionFile
 
 from ..events import event_workflow_template_edited
 from ..literals import (
-    GRAPHVIZ_RANKDIR, GRAPHVIZ_RANKSEP, GRAPHVIZ_SPLINES,
-    STORAGE_NAME_WORKFLOW_CACHE
+    ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_RANKDIR, GRAPHVIZ_RANKSEP,
+    GRAPHVIZ_SPLINES, STORAGE_NAME_WORKFLOW_CACHE
 )
 
 logger = logging.getLogger(name=__name__)
@@ -150,42 +150,53 @@ class WorkflowBusinessLogicMixin:
     get_state_initial.short_description = _(message='Initial state')
 
     def launch_for(self, document, user=None):
-        queryset = self.document_types.all()
-        if queryset.filter(pk=document.document_type.pk).exists():
-            try:
-                logger.info(
-                    'Launching workflow %s for document %s', self, document
-                )
-                WorkflowInstance = apps.get_model(
-                    app_label='document_states',
-                    model_name='WorkflowInstance'
-                )
-                workflow_instance = WorkflowInstance(
-                    document=document, workflow=self
-                )
-                workflow_instance._event_actor = user
-                workflow_instance.save()
+        WorkflowInstance = apps.get_model(
+            app_label='document_states',
+            model_name='WorkflowInstance'
+        )
 
-                initial_state = self.get_state_initial()
-                if initial_state:
+        initial_state = self.get_state_initial()
+
+        if initial_state:
+            queryset = self.document_types.all()
+            if queryset.filter(pk=document.document_type.pk).exists():
+                try:
+                    logger.info(
+                        'Launching workflow %s for document %s', self, document
+                    )
+                    workflow_instance = WorkflowInstance(
+                        document=document, workflow=self
+                    )
+                    workflow_instance._event_actor = user
+                    workflow_instance.save()
+
                     initial_state.do_active_set(
                         workflow_instance=workflow_instance
                     )
                     # TODO: Update once initial entry log patch is merged.
                     # Break pattern by passing `workflow_instance`
                     # until initial entry logs patch is merged.
-            except IntegrityError:
-                logger.info(
-                    'Workflow %s already launched for document %s',
-                    self, document
-                )
+                except IntegrityError:
+                    logger.info(
+                        'Workflow %s already launched for document %s',
+                        self, document
+                    )
+                else:
+                    logger.info(
+                        'Workflow %s launched for document %s', self, document
+                    )
+                    return workflow_instance
             else:
-                logger.info(
-                    'Workflow %s launched for document %s', self, document
+                logger.error(
+                    'This workflow is not valid for the document type of the '
+                    'document.'
                 )
-                return workflow_instance
         else:
-            logger.error(
-                'This workflow is not valid for the document type of the '
-                'document.'
+            text_error = '''
+            Cannot create a workflow instance. The workflow template `{}`
+            does not have an initial state.
+            '''.format(self)
+
+            document.error_log.create(
+                domain_name=ERROR_LOG_DOMAIN_NAME, text=text_error
             )

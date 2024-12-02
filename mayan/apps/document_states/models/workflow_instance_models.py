@@ -19,6 +19,7 @@ from .workflow_instance_model_mixins import (
     WorkflowInstanceLogEntryBusinessLogicMixin
 )
 from .workflow_models import Workflow
+from .workflow_state_models import WorkflowState
 from .workflow_transition_field_models import WorkflowTransitionField
 
 __all__ = ('WorkflowInstance', 'WorkflowInstanceLogEntry')
@@ -44,6 +45,10 @@ class WorkflowInstance(
     )
     context = models.TextField(
         blank=True, verbose_name=_(message='Context')
+    )
+    state_active = models.ForeignKey(
+        on_delete=models.CASCADE, related_name='workflow_instances',
+        to=WorkflowState, verbose_name=_(message='Active state')
     )
 
     objects = models.Manager()
@@ -74,6 +79,11 @@ class WorkflowInstance(
         }
     )
     def save(self, *args, **kwargs):
+        created = not self.pk
+
+        if created:
+            self.state_active = self.workflow.get_state_initial()
+
         super().save(*args, **kwargs)
 
 

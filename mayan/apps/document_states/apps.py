@@ -233,12 +233,29 @@ class DocumentStatesApp(MayanAppConfig):
             model=Document,
             name='workflow.< workflow internal name >.get_current_state',
             label=_(message='Current state of a workflow'), description=_(
-                message='Return the current state of the selected workflow.'
+                message='Deprecated: Use `state_active` instead. Return '
+                'the current state of the selected workflow.'
             )
         )
         ModelProperty(
             model=Document,
             name='workflow.< workflow internal name >.get_current_state.completion',
+            label=_(message='Current state of a workflow'), description=_(
+                message='Deprecated: Use `state_active.completion` instead. '
+                'Return the completion value of the current state of the '
+                'selected workflow.'
+            )
+        )
+        ModelProperty(
+            model=Document,
+            name='workflow.< workflow internal name >.state_active',
+            label=_(message='Current state of a workflow'), description=_(
+                message='Return the current state of the selected workflow.'
+            )
+        )
+        ModelProperty(
+            model=Document,
+            name='workflow.< workflow internal name >.state_active.completion',
             label=_(message='Current state of a workflow'), description=_(
                 message='Return the completion value of the current state of '
                 'the selected workflow.'
@@ -294,6 +311,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
 
         ModelField(model=WorkflowInstance, name='document')
+        ModelField(model=WorkflowInstance, name='state_active')
         ModelField(model=WorkflowInstance, name='workflow')
         ModelReverseField(model=WorkflowInstance, name='log_entries')
 
@@ -358,8 +376,8 @@ class DocumentStatesApp(MayanAppConfig):
         # Workflow instance
 
         SourceColumn(
-            attribute='get_current_state', include_label=True,
-            label=_(message='Current state'), source=WorkflowInstance,
+            attribute='state_active', include_label=True,
+            is_sortable=True, source=WorkflowInstance
         )
         SourceColumn(
             func=lambda context: getattr(
@@ -380,10 +398,8 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowInstance
         )
         SourceColumn(
-            func=lambda context: getattr(
-                context['object'].get_current_state(),
-                'completion', _(message='None')
-            ), include_label=True, label=_(message='Completion'),
+            attribute='state_active__completion', include_label=True,
+            is_sortable=True, label=_(message='Completion'),
             source=WorkflowInstance
         )
 

@@ -671,10 +671,18 @@ class DocumentWorkflowLaunchActionViewTestCase(
             add_test_document_type=True, auto_launch=False
         )
 
+        self._test_workflow_template_state_initial = True
+
+        self._create_test_workflow_template_state()
+
         self._create_test_workflow_template(
             add_test_document_type=True, auto_launch=True
         )
+
+        self._test_workflow_template_state_initial = True
+
         self._create_test_workflow_template_state()
+
         self.grant_access(
             obj=self._test_workflow_template,
             permission=permission_workflow_template_edit

@@ -15,6 +15,7 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
     _test_object_model = WorkflowState
     _test_object_name = '_test_workflow_template_state'
     _test_workflow_template_state_final = False
+    _test_workflow_template_state_initial = None
     auto_create_test_workflow_template_state = False
 
     def setUp(self):
@@ -36,7 +37,11 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
             TEST_WORKFLOW_TEMPLATE_STATE_LABEL,
             total_test_workflow_template_state_count
         )
-        initial = not self._test_workflow_template.states.exists()
+
+        if self._test_workflow_template_state_initial is None:
+            initial = not self._test_workflow_template.states.exists()
+        else:
+            initial = self._test_workflow_template_state_initial
 
         final = self._test_workflow_template_state_final
 

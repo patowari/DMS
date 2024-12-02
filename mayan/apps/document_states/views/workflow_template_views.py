@@ -77,31 +77,45 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
     pk_url_kwarg = 'document_id'
     source_queryset = Document.valid.all()
     success_message_plural = _(
-        message='Workflows launched successfully for %(count)d documents.'
+        message='Workflows queued for launch successfully for %(count)d '
+        'documents.'
     )
     success_message_single = _(
-        message='Workflows launched successfully for document "%(object)s".'
+        message='Workflows queued for launch successfully for document '
+        '"%(object)s".'
     )
     success_message_singular = _(
-        message='Workflows launched successfully for %(count)d document.'
+        message='Workflows queued for launch successfully for %(count)d '
+        'document.'
     )
     title_plural = _(
-        message='Launch workflows for the selected %(count)d documents.'
+        message='Queue launching workflows for the selected %(count)d '
+        'documents.'
     )
     title_single = _(message='Launch workflow: %(object)s.')
     title_singular = _(
-        message='Launch workflows for the selected %(count)d document.'
+        message='Queue launching workflows for the selected %(count)d '
+        'document.'
     )
     view_icon = icon_document_workflow_templates_launch
 
     def get_extra_context(self):
-        return {
+        context = {
             'subtitle': _(
                 message='Workflows already launched or workflows not '
                 'applicable to some documents when multiple documents are '
                 'selected, will be silently ignored.'
             )
         }
+
+        if self.object_list.count() == 1:
+            context.update(
+                {
+                    'object': self.object_list.first()
+                }
+            )
+
+        return context
 
     def get_form_extra_kwargs(self):
         workflows_union = Workflow.objects.filter(

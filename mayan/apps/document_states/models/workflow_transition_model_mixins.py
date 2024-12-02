@@ -2,6 +2,7 @@ import hashlib
 
 from django.apps import apps
 from django.core import serializers
+from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 
 from ..literals import GRAPHVIZ_SYMBOL_CONDITIONAL, GRAPHVIZ_SYMBOL_TRIGGER
@@ -41,12 +42,16 @@ class WorkflowTransitionBusinessLogicMixin:
             app_label='document_states', model_name='WorkflowInstanceLogEntry'
         )
 
-        workflow_instance_log_entry = WorkflowInstanceLogEntry(
-            comment=comment, extra_data=extra_data, transition=self,
-            user=user, workflow_instance=workflow_instance
-        )
-        workflow_instance_log_entry._event_actor = user
-        workflow_instance_log_entry.save()
+        with transaction.atomic():
+            workflow_instance.state_active = self.destination_state
+            workflow_instance.save()
+
+            workflow_instance_log_entry = WorkflowInstanceLogEntry(
+                comment=comment, extra_data=extra_data, transition=self,
+                user=user, workflow_instance=workflow_instance
+            )
+            workflow_instance_log_entry._event_actor = user
+            workflow_instance_log_entry.save()
 
         return workflow_instance_log_entry
 

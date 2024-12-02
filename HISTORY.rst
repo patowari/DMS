@@ -85,6 +85,16 @@
   of the workflow. The final state identified in the state list of the
   workflow template as well as marked with a darker color in the preview.
 - Split the workflow template state action test module.
+- Change the behavior of the workflow instance creation. It is no longer
+  possible to launch workflows that do not have one state set as initial.
+- Log an error when attempting to launch a workflow without an initial state.
+- Fix context of the workflow launch view when only one document is selected.
+- Remove the logic to calculate the current state of a workflow instance.
+  Instead store the state as part of the workflow instance.
+- Add model property `workflow.< workflow internal name >.state_active`. This
+  deprecated `workflow.< workflow internal name >.get_current_state`.
+- Make the document workflow instance active state column sortable.
+- Make the document workflow instance completion column sortable.
 
 4.8.3 (2024-10-04)
 ==================
