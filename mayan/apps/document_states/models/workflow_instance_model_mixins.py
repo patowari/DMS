@@ -92,7 +92,7 @@ class WorkflowInstanceBusinessLogicMixin:
         if last_transition:
             return last_transition.destination_state
         else:
-            return self.workflow.get_initial_state()
+            return self.workflow.get_state_initial()
 
     def get_last_log_entry(self):
         return self.log_entries.order_by('datetime').last()

@@ -1,25 +1,64 @@
-import json
-
-from mayan.apps.documents.events import event_document_edited
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.events.classes import EventType
 
-from .literals import (
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION,
-    TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL
-)
-from .mixins.workflow_template_state_action_mixins import (
-    WorkflowTemplateStateActionTestMixin
+from ..events import event_workflow_template_edited
+from ..models.workflow_state_models import WorkflowStateRuntimeProxy
+
+from .mixins.workflow_instance_mixins import WorkflowInstanceTestMixin
+from .mixins.workflow_template_state_mixins import (
+    WorkflowTemplateStateTestMixin
 )
 from .mixins.workflow_template_transition_mixins import (
     WorkflowTemplateTransitionTestMixin
 )
 
 
-class WorkflowTemplateStateActionModelTestCase(
-    WorkflowTemplateStateActionTestMixin,
-    WorkflowTemplateTransitionTestMixin, GenericDocumentTestCase
+class WorkflowTemplateStateModelTestCase(
+    WorkflowTemplateStateTestMixin, GenericDocumentTestCase
+):
+    auto_upload_test_document = False
+    auto_create_test_workflow_template = False
+    auto_create_test_workflow_template_state = False
+    auto_create_test_workflow_template_state_action = False
+
+    def test_workflow_state_create_initial_and_final(self):
+        self._test_workflow_template_state_final = True
+
+        self._create_test_workflow_template(add_test_document_type=True)
+
+        test_workflow_template_state_count = len(
+            self._test_workflow_template_state_list
+        )
+
+        self._clear_events()
+
+        self._create_test_workflow_template_state()
+
+        self.assertEqual(
+            self._test_workflow_template_state.final, True
+        )
+        self.assertEqual(
+            self._test_workflow_template_state.initial, True
+        )
+
+        self.assertEqual(
+            len(self._test_workflow_template_state_list),
+            test_workflow_template_state_count + 1
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 1)
+
+        self.assertEqual(events[0].actor, self._test_workflow_template)
+        self.assertEqual(
+            events[0].action_object, self._test_workflow_template_state
+        )
+        self.assertEqual(events[0].target, self._test_workflow_template)
+        self.assertEqual(events[0].verb, event_workflow_template_edited.id)
+
+
+class WorkflowTemplateStateProxyModelTestCase(
+    WorkflowInstanceTestMixin, WorkflowTemplateTransitionTestMixin,
+    GenericDocumentTestCase
 ):
     auto_upload_test_document = False
     auto_create_test_workflow_template = False
@@ -31,127 +70,28 @@ class WorkflowTemplateStateActionModelTestCase(
         self._create_test_document_stub()
         self._create_test_workflow_template(add_test_document_type=True)
         self._create_test_workflow_template_state()
+        self._test_workflow_template_state_final = True
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
 
-    def _get_test_workflow_state_action_execute_flag(self):
-        return getattr(
-            self._test_workflow_instance,
-            '_workflow_state_action_executed', False
-        )
-
-    def test_workflow_initial_state_action_no_condition(self):
-        self._create_test_workflow_template_state_action()
+    def test_workflow_state_proxy_final_queryset_document_include(self):
         self._create_test_workflow_instance()
-        self.assertTrue(
-            self._get_test_workflow_state_action_execute_flag()
-        )
 
-    def test_workflow_initial_state_action_false_condition(self):
-        self._create_test_workflow_template_state_action()
-        self._test_workflow_template_state_action.condition = '{{ invalid_variable }}'
-        self._test_workflow_template_state_action.save()
-        self._create_test_workflow_instance()
-        self.assertFalse(
-            self._get_test_workflow_state_action_execute_flag()
-        )
-
-    def test_workflow_initial_state_action_true_condition(self):
-        self._create_test_workflow_template_state_action()
-        self._test_workflow_template_state_action.condition = '{{ workflow_instance }}'
-        self._test_workflow_template_state_action.save()
-        self._create_test_workflow_instance()
-        self.assertTrue(
-            self._get_test_workflow_state_action_execute_flag()
-        )
-
-    def test_workflow_state_action_no_condition(self):
-        self._create_test_workflow_template_state_action(
-            workflow_state_index=1
-        )
-        self._create_test_workflow_instance()
         self._test_workflow_instance.do_transition(
             transition=self._test_workflow_template_transition
         )
+
+        self._clear_events()
+
+        test_workflow_template_state_proxy = WorkflowStateRuntimeProxy.objects.get(
+            pk=self._test_workflow_template_state.pk
+        )
+
+        queryset = test_workflow_template_state_proxy.get_documents()
+
         self.assertTrue(
-            self._get_test_workflow_state_action_execute_flag()
+            queryset.filter(pk=self._test_document_stub.pk).exists()
         )
 
-    def test_workflow_state_action_false_condition(self):
-        self._create_test_workflow_template_state_action(
-            workflow_state_index=1
-        )
-        self._test_workflow_template_state_action.condition = '{{ invalid_variable }}'
-        self._test_workflow_template_state_action.save()
-        self._create_test_workflow_instance()
-        self._test_workflow_instance.do_transition(
-            transition=self._test_workflow_template_transition
-        )
-        self.assertFalse(
-            self._get_test_workflow_state_action_execute_flag()
-        )
-
-    def test_workflow_state_action_true_condition(self):
-        self._create_test_workflow_template_state_action(
-            workflow_state_index=1
-        )
-        self._test_workflow_template_state_action.condition = '{{ workflow_instance }}'
-        self._test_workflow_template_state_action.save()
-        self._create_test_workflow_instance()
-        self._test_workflow_instance.do_transition(
-            transition=self._test_workflow_template_transition
-        )
-        self.assertTrue(
-            self._get_test_workflow_state_action_execute_flag()
-        )
-
-    def test_workflow_state_action_event_trigger(self):
-        # Actions 1 and 2 both trigger the transition event, to make this
-        # test case independent of the order of execution of actions 1 and 2.
-        state_1_backend_data = json.dumps(
-            obj={
-                'document_label': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL
-            }
-        )
-
-        self._create_test_workflow_template_state_action(
-            extra_data={
-                'backend_data': state_1_backend_data,
-                'backend_path': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
-            }
-        )
-        self._create_test_workflow_template_state_action(
-            extra_data={
-                'backend_data': state_1_backend_data,
-                'backend_path': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
-            }
-        )
-
-        state_2_backend_data = json.dumps(
-            obj={
-                'document_description': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION
-            }
-        )
-
-        self._create_test_workflow_template_state_action(
-            extra_data={
-                'backend_data': state_2_backend_data,
-                'backend_path': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
-            }, workflow_state_index=1
-        )
-
-        EventType.refresh()
-
-        self._test_workflow_template_transition.trigger_events.create(
-            event_type=event_document_edited.get_stored_event_type()
-        )
-        self._create_test_workflow_instance()
-
-        self.assertEqual(
-            self._test_document.label,
-            TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_LABEL
-        )
-        self.assertEqual(
-            self._test_document.description,
-            TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_TEXT_DESCRIPTION
-        )
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)

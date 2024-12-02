@@ -135,12 +135,19 @@ class WorkflowBusinessLogicMixin:
 
         return result.hexdigest()
 
-    def get_initial_state(self):
+    def get_state_final(self):
+        try:
+            return self.states.get(final=True)
+        except self.states.model.DoesNotExist:
+            return None
+    get_state_final.short_description = _(message='Final state')
+
+    def get_state_initial(self):
         try:
             return self.states.get(initial=True)
         except self.states.model.DoesNotExist:
             return None
-    get_initial_state.short_description = _(message='Initial state')
+    get_state_initial.short_description = _(message='Initial state')
 
     def launch_for(self, document, user=None):
         queryset = self.document_types.all()
@@ -159,7 +166,7 @@ class WorkflowBusinessLogicMixin:
                 workflow_instance._event_actor = user
                 workflow_instance.save()
 
-                initial_state = self.get_initial_state()
+                initial_state = self.get_state_initial()
                 if initial_state:
                     initial_state.do_active_set(
                         workflow_instance=workflow_instance

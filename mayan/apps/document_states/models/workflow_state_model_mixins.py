@@ -9,9 +9,10 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.documents.models.document_models import Document
 
 from ..literals import (
-    ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_COLOR_STATE_FILL, GRAPHVIZ_ID_STATE,
-    GRAPHVIZ_SHAPE_CIRCLE, GRAPHVIZ_SHAPE_DOUBLECIRCLE, GRAPHVIZ_STYLE_FILLED,
-    WORKFLOW_ACTION_ON_ENTRY, WORKFLOW_ACTION_ON_EXIT
+    ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_COLOR_STATE_FILL_FINAL,
+    GRAPHVIZ_COLOR_STATE_FILL_INITIAL, GRAPHVIZ_COLOR_STATE_FONT_COLOR_FINAL,
+    GRAPHVIZ_ID_STATE, GRAPHVIZ_SHAPE_CIRCLE, GRAPHVIZ_SHAPE_DOUBLECIRCLE,
+    GRAPHVIZ_STYLE_FILLED, WORKFLOW_ACTION_ON_ENTRY, WORKFLOW_ACTION_ON_EXIT
 )
 
 
@@ -71,6 +72,10 @@ class WorkflowStateBusinessLogicMixin:
                 queryset_error_logs.delete()
 
     def do_diagram_generate(self, diagram):
+        fill_color = ''
+        font_color = ''
+        style = ''
+
         is_edge_state = self.initial or not self.destination_transitions.exists() or not self.origin_transitions.exists()
 
         if is_edge_state:
@@ -78,13 +83,17 @@ class WorkflowStateBusinessLogicMixin:
         else:
             shape = GRAPHVIZ_SHAPE_CIRCLE
 
-        if self.initial:
+        if self.final:
+            fill_color = GRAPHVIZ_COLOR_STATE_FILL_FINAL
+            font_color = GRAPHVIZ_COLOR_STATE_FONT_COLOR_FINAL
             style = GRAPHVIZ_STYLE_FILLED
-        else:
-            style = ''
+        elif self.initial:
+            fill_color = GRAPHVIZ_COLOR_STATE_FILL_INITIAL
+            style = GRAPHVIZ_STYLE_FILLED
 
         node_kwargs = {
-            'fillcolor': GRAPHVIZ_COLOR_STATE_FILL,
+            'fillcolor': fill_color,
+            'fontcolor': font_color,
             'label': self.label,
             'name': self.get_graph_id(),
             'shape': shape,
@@ -134,17 +143,23 @@ class WorkflowStateBusinessLogicMixin:
             transition__destination_state=self
         )
 
-        return Document.valid.filter(
-            Q(
-                workflows__pk__in=state_latest_entries.values_list(
-                    'workflow_instance', flat=True
-                )
-            ) | Q(
-                workflows__log_entries__isnull=True,
-                workflows__workflow__states=self,
-                workflows__workflow__states__initial=True
+        q_documents = Q(
+            workflows__pk__in=state_latest_entries.values_list(
+                'workflow_instance', flat=True
             )
-        ).distinct()
+        )
+
+        q_state_valid = Q(
+            workflows__log_entries__isnull=True,
+            workflows__workflow__states=self,
+            workflows__workflow__states__initial=True
+        )
+
+        queryset_documents = Document.valid.filter(
+            q_documents | q_state_valid
+        )
+
+        return queryset_documents.distinct()
 
     def get_escalations_display(self):
         field_list = [

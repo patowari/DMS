@@ -73,5 +73,5 @@ class WorkflowTemplateStateEscalationForm(forms.ModelForm):
 
 class WorkflowTemplateStateForm(forms.ModelForm):
     class Meta:
-        fields = ('initial', 'label', 'completion')
+        fields = ('initial', 'final', 'label', 'completion')
         model = WorkflowState

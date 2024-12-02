@@ -14,6 +14,7 @@ from .workflow_template_mixins import WorkflowTemplateTestMixin
 class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
     _test_object_model = WorkflowState
     _test_object_name = '_test_workflow_template_state'
+    _test_workflow_template_state_final = False
     auto_create_test_workflow_template_state = False
 
     def setUp(self):
@@ -37,8 +38,10 @@ class WorkflowTemplateStateTestMixin(WorkflowTemplateTestMixin):
         )
         initial = not self._test_workflow_template.states.exists()
 
+        final = self._test_workflow_template_state_final
+
         self._test_workflow_template_state = self._test_workflow_template.states.create(
-            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION,
+            completion=TEST_WORKFLOW_TEMPLATE_STATE_COMPLETION, final=final,
             initial=initial, label=label
         )
         self._test_workflow_template_state_list.append(

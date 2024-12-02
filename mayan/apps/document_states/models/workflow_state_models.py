@@ -30,7 +30,7 @@ class WorkflowState(
     states: 33%, 66%, 100%. If the Actual State of the document if approved,
     the Completion Amount will show 66%.
     """
-    _ordering_fields = ('completion', 'initial', 'label')
+    _ordering_fields = ('completion', 'final', 'initial', 'label')
 
     workflow = models.ForeignKey(
         on_delete=models.CASCADE, related_name='states', to=Workflow,
@@ -46,6 +46,13 @@ class WorkflowState(
             message='The state at which the workflow will start in. Only one '
             'state can be the initial state.'
         ), verbose_name=_(message='Initial')
+    )
+    final = models.BooleanField(
+        default=False,
+        help_text=_(
+            message='The state at which the workflow will stop. Only one '
+            'state can be the final state.'
+        ), verbose_name=_(message='Final')
     )
     completion = models.IntegerField(
         blank=True, default=0, help_text=_(
@@ -98,6 +105,10 @@ class WorkflowState(
 
         if self.initial:
             self.workflow.states.all().update(initial=False)
+
+        if self.final:
+            self.workflow.states.all().update(final=False)
+
         return super().save(*args, **kwargs)
 
 

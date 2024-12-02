@@ -165,7 +165,8 @@ class DocumentStatesApp(MayanAppConfig):
 
         ModelCopy(model=WorkflowState).add_fields(
             field_names=(
-                'actions', 'workflow', 'label', 'initial', 'completion'
+                'actions', 'workflow', 'label', 'final', 'initial',
+                'completion'
             )
         )
         ModelCopy(model=WorkflowStateAction).add_fields(
@@ -331,14 +332,21 @@ class DocumentStatesApp(MayanAppConfig):
         column_workflow_internal_name.add_exclude(
             source=WorkflowRuntimeProxy
         )
-        column_workflow_get_initial_state = SourceColumn(
-            attribute='get_initial_state', empty_value=_(message='None'),
+        column_workflow_get_state_initial = SourceColumn(
+            attribute='get_state_initial', empty_value=_(message='None'),
+            include_label=True, source=Workflow
+        )
+        column_workflow_get_state_final = SourceColumn(
+            attribute='get_state_final', empty_value=_(message='None'),
             include_label=True, source=Workflow
         )
 
         # Workflow runtime template
 
-        column_workflow_get_initial_state.add_exclude(
+        column_workflow_get_state_final.add_exclude(
+            source=WorkflowRuntimeProxy
+        )
+        column_workflow_get_state_initial.add_exclude(
             source=WorkflowRuntimeProxy
         )
         SourceColumn(
@@ -420,6 +428,10 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='initial', include_label=True, is_sortable=True,
+            source=WorkflowState, widget=column_widgets.TwoStateWidget
+        )
+        SourceColumn(
+            attribute='final', include_label=True, is_sortable=True,
             source=WorkflowState, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(

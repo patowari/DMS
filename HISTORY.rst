@@ -81,6 +81,10 @@
   uniformity with other test objects being made semi private a similar way.
 - Move the document file parsing event commit outside of the document file
   parsing cleanup transaction loop.
+- Add a flag to workflow template states to identify them as the final state
+  of the workflow. The final state identified in the state list of the
+  workflow template as well as marked with a darker color in the preview.
+- Split the workflow template state action test module.
 
 4.8.3 (2024-10-04)
 ==================
