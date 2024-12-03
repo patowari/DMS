@@ -592,7 +592,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         base_class = base_class or models.Model
         test_model_count = len(self._test_model_list)
         self._test_model_name = model_name or '{}_{}'.format(
-            'TestModel', test_model_count
+            '_TestModel', test_model_count
         )
 
         self.options = options
@@ -643,7 +643,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
     def _create_test_object(self, instance_kwargs=None):
         instance_kwargs = instance_kwargs or {}
 
-        if not getattr(self, 'TestModel', None):
+        if not getattr(self, '_TestModel', None):
             self._TestModel = self._create_test_model()
 
         self._test_object = self._TestModel.objects.create(**instance_kwargs)
