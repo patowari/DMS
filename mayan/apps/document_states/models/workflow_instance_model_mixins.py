@@ -14,28 +14,29 @@ logger = logging.getLogger(name=__name__)
 
 
 class WorkflowInstanceBusinessLogicMixin:
-    def check_escalation(self):
+    def do_check_escalation(self):
         current_state = self.get_current_state()
 
-        for escalation in current_state.escalations.filter(enabled=True):
-            kwargs = {escalation.unit: escalation.amount}
-            timedelta = datetime.timedelta(**kwargs)
+        if not current_state.final and not self.workflow.ignore_completed:
+            for escalation in current_state.escalations.filter(enabled=True):
+                kwargs = {escalation.unit: escalation.amount}
+                timedelta = datetime.timedelta(**kwargs)
 
-            expiration_datetime = self.get_last_log_entry_datetime() + timedelta
+                expiration_datetime = self.get_last_log_entry_datetime() + timedelta
 
-            if now() > expiration_datetime:
-                condition_context = {'workflow_instance': self}
+                if now() > expiration_datetime:
+                    condition_context = {'workflow_instance': self}
 
-                condition_result = escalation.evaluate_condition(
-                    context=condition_context
-                )
-                if condition_result:
-                    escalation_comment = escalation.get_comment()
-
-                    self.do_transition(
-                        comment=escalation_comment,
-                        transition=escalation.transition
+                    condition_result = escalation.evaluate_condition(
+                        context=condition_context
                     )
+                    if condition_result:
+                        escalation_comment = escalation.get_comment()
+
+                        self.do_transition(
+                            comment=escalation_comment,
+                            transition=escalation.transition
+                        )
 
     def do_context_update(self, context):
         workflow_instance_context = self.loads()
@@ -49,7 +50,7 @@ class WorkflowInstanceBusinessLogicMixin:
         extra_data = extra_data or {}
 
         try:
-            queryset_transitions = self.get_transition_choices(user=user).all()
+            queryset_transitions = self.get_queryset_valid_transitions(user=user).all()
 
             if queryset_transitions.filter(pk=transition.pk).exists():
                 if extra_data:
@@ -109,46 +110,34 @@ class WorkflowInstanceBusinessLogicMixin:
         if last_log_entry:
             return last_log_entry.transition
 
+    def get_queryset_valid_transitions(self, user=None):
+        current_state = self.get_current_state()
+
+        queryset = current_state.origin_transitions.all()
+
+        if user:
+            queryset = AccessControlList.objects.restrict_queryset(
+                permission=permission_workflow_instance_transition,
+                queryset=queryset, user=user
+            )
+
+        # Remove the transitions with a false return value.
+        condition_context = {'workflow_instance': self}
+        for entry in queryset:
+            condition_result = entry.evaluate_condition(
+                context=condition_context
+            )
+            if not condition_result:
+                queryset = queryset.exclude(id=entry.pk)
+
+        return queryset
+
     def get_runtime_context(self):
         """
         Alias of self.load() to get just the runtime context of the instance
         for ease of use in the condition template.
         """
         return self.loads()
-
-    def get_transition_choices(self, user=None):
-        WorkflowTransition = apps.get_model(
-            app_label='document_states', model_name='WorkflowTransition'
-        )
-
-        current_state = self.get_current_state()
-
-        if current_state:
-            queryset = current_state.origin_transitions.all()
-
-            if user:
-                queryset = AccessControlList.objects.restrict_queryset(
-                    permission=permission_workflow_instance_transition,
-                    queryset=queryset, user=user
-                )
-
-            # Remove the transitions with a false return value.
-            condition_context = {'workflow_instance': self}
-            for entry in queryset:
-                condition_result = entry.evaluate_condition(
-                    context=condition_context
-                )
-                if not condition_result:
-                    queryset = queryset.exclude(id=entry.pk)
-
-            return queryset
-        else:
-            """
-            This happens when a workflow has no initial state and a document
-            whose document type has this workflow is created. We return an
-            empty transition queryset.
-            """
-            return WorkflowTransition.objects.none()
 
     def loads(self):
         """

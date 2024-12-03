@@ -1,9 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
-from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import (
     EventManagerMethodAfter, EventManagerSave
@@ -12,7 +10,10 @@ from mayan.apps.events.event_managers import (
 from ..events import event_workflow_template_edited
 
 from .workflow_models import Workflow
-from .workflow_state_model_mixins import WorkflowStateBusinessLogicMixin
+from .workflow_state_model_mixins import (
+    WorkflowStateBusinessLogicMixin,
+    WorkflowStateRuntimeProxyBusinessLogicMixin
+)
 
 __all__ = ('WorkflowState', 'WorkflowStateRuntimeProxy')
 
@@ -112,32 +113,10 @@ class WorkflowState(
         return super().save(*args, **kwargs)
 
 
-class WorkflowStateRuntimeProxy(WorkflowState):
+class WorkflowStateRuntimeProxy(
+    WorkflowStateRuntimeProxyBusinessLogicMixin, WorkflowState
+):
     class Meta:
         proxy = True
         verbose_name = _(message='Workflow state runtime proxy')
         verbose_name_plural = _(message='Workflow state runtime proxies')
-
-    def get_documents(self, permission=None, user=None):
-        """
-        Provide a queryset of the documents. The queryset is optionally
-        filtered by access.
-        """
-        queryset = super().get_documents()
-
-        if permission and user:
-            queryset = AccessControlList.objects.restrict_queryset(
-                permission=permission, queryset=queryset,
-                user=user
-            )
-
-        return queryset
-
-    def get_document_count(self, user):
-        """
-        Return the numeric count of documents at this workflow state.
-        The count is filtered by access.
-        """
-        return self.get_documents(
-            permission=permission_document_view, user=user
-        ).count()

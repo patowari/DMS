@@ -1,12 +1,12 @@
 import hashlib
 
-from django.apps import apps
 from django.conf import settings
 from django.core import serializers
-from django.db.models import F, Max, Q
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
+from mayan.apps.documents.permissions import permission_document_view
 
 from ..literals import (
     ERROR_LOG_DOMAIN_NAME, GRAPHVIZ_COLOR_STATE_FILL_FINAL,
@@ -125,42 +125,6 @@ class WorkflowStateBusinessLogicMixin:
 
     get_actions_display.short_description = _(message='Actions')
 
-    def get_documents(self):
-        WorkflowInstanceLogEntry = apps.get_model(
-            app_label='document_states',
-            model_name='WorkflowInstanceLogEntry'
-        )
-
-        latest_entries = WorkflowInstanceLogEntry.objects.annotate(
-            max_datetime=Max(
-                'workflow_instance__log_entries__datetime'
-            )
-        ).filter(
-            datetime=F('max_datetime')
-        )
-
-        state_latest_entries = latest_entries.filter(
-            transition__destination_state=self
-        )
-
-        q_documents = Q(
-            workflows__pk__in=state_latest_entries.values_list(
-                'workflow_instance', flat=True
-            )
-        )
-
-        q_state_valid = Q(
-            workflows__log_entries__isnull=True,
-            workflows__workflow__states=self,
-            workflows__workflow__states__initial=True
-        )
-
-        queryset_documents = Document.valid.filter(
-            q_documents | q_state_valid
-        )
-
-        return queryset_documents.distinct()
-
     def get_escalations_display(self):
         field_list = [
             str(field) for field in self.escalations.all()
@@ -192,3 +156,32 @@ class WorkflowStateBusinessLogicMixin:
             )
 
         return result.hexdigest()
+
+
+class WorkflowStateRuntimeProxyBusinessLogicMixin:
+    def get_documents(self, permission=None, user=None):
+        """
+        Provide a queryset of the documents. The queryset is optionally
+        filtered by access.
+        """
+        if self.workflow.ignore_completed:
+            queryset = Document.valid.none()
+        else:
+            queryset = Document.valid.filter(workflows__state_active=self)
+
+        if permission and user:
+            queryset = AccessControlList.objects.restrict_queryset(
+                permission=permission, queryset=queryset,
+                user=user
+            )
+
+        return queryset
+
+    def get_document_count(self, user):
+        """
+        Return the numeric count of documents at this workflow state.
+        The count is filtered by access.
+        """
+        return self.get_documents(
+            permission=permission_document_view, user=user
+        ).count()

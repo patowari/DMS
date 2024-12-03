@@ -23,13 +23,13 @@ class WorkflowTemplateStateEscalationTaskTestCase(
         )
         self._create_test_document_stub()
 
-    def test_task_workflow_instance_check_escalation(self):
+    def test_task_workflow_instance_do_check_escalation(self):
         test_workflow_instance = self._test_document.workflows.first()
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
         self._clear_events()
 
-        self._execute_task_workflow_instance_check_escalation(
+        self._execute_task_workflow_instance_do_check_escalation(
             test_workflow_instance_id=test_workflow_instance.pk
         )
 
@@ -56,13 +56,13 @@ class WorkflowTemplateStateEscalationTaskTestCase(
             events[0].verb, event_workflow_instance_transitioned.id
         )
 
-    def test_task_workflow_instance_check_escalation_all(self):
+    def test_task_workflow_instance_do_check_escalation_all(self):
         test_workflow_instance = self._test_document.workflows.first()
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
         self._clear_events()
 
-        self._execute_task_workflow_instance_check_escalation_all()
+        self._execute_task_workflow_instance_do_check_escalation_all()
 
         self.assertNotEqual(
             test_workflow_instance.get_current_state(),

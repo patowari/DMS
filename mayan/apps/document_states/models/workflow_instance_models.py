@@ -130,7 +130,7 @@ class WorkflowInstanceLogEntry(
         return str(self.transition)
 
     def clean(self):
-        queryset = self.workflow_instance.get_transition_choices(
+        queryset = self.workflow_instance.get_queryset_valid_transitions(
             user=self.user
         )
         if not queryset.filter(pk=self.transition.pk).exists():

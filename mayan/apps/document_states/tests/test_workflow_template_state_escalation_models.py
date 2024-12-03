@@ -21,19 +21,42 @@ class WorkflowTemplateStateEscalationModelTestCase(
 
         self._create_test_document_stub()
 
+    def test_workflow_template_state_escalation_exclude(self):
+        self._test_workflow_template.ignore_completed = True
+        self._test_workflow_template.save()
+
+        self._test_workflow_template_state_list[0].final = True
+        self._test_workflow_template_state_list[0].save()
+
+        test_workflow_instance = self._test_document.workflows.first()
+        test_workflow_instance_state = test_workflow_instance.get_current_state()
+
+        self._create_test_workflow_template_state_escalation(
+            extra_kwargs={'unit': 'microseconds'}
+        )
+
+        self._clear_events()
+
+        test_workflow_instance.do_check_escalation()
+        self.assertEqual(
+            test_workflow_instance.get_current_state(),
+            test_workflow_instance_state
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_workflow_template_state_escalation(self):
         test_workflow_instance = self._test_document.workflows.first()
         test_workflow_instance_state = test_workflow_instance.get_current_state()
 
         self._create_test_workflow_template_state_escalation(
-            extra_kwargs={
-                'unit': 'microseconds'
-            }
+            extra_kwargs={'unit': 'microseconds'}
         )
 
         self._clear_events()
 
-        test_workflow_instance.check_escalation()
+        test_workflow_instance.do_check_escalation()
         self.assertNotEqual(
             test_workflow_instance.get_current_state(),
             test_workflow_instance_state
@@ -66,7 +89,7 @@ class WorkflowTemplateStateEscalationModelTestCase(
 
         self._clear_events()
 
-        test_workflow_instance.check_escalation()
+        test_workflow_instance.do_check_escalation()
         self.assertNotEqual(
             test_workflow_instance.get_current_state(),
             test_workflow_instance_state
@@ -99,7 +122,7 @@ class WorkflowTemplateStateEscalationModelTestCase(
 
         self._clear_events()
 
-        test_workflow_instance.check_escalation()
+        test_workflow_instance.do_check_escalation()
         self.assertEqual(
             test_workflow_instance.get_current_state(),
             test_workflow_instance_state
@@ -114,7 +137,7 @@ class WorkflowTemplateStateEscalationModelTestCase(
 
         self._clear_events()
 
-        test_workflow_instance.check_escalation()
+        test_workflow_instance.do_check_escalation()
         self.assertEqual(
             test_workflow_instance.get_current_state(),
             test_workflow_instance_state

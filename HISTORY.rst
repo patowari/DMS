@@ -95,6 +95,15 @@
   deprecated `workflow.< workflow internal name >.get_current_state`.
 - Make the document workflow instance active state column sortable.
 - Make the document workflow instance completion column sortable.
+- Add support to ignore completed workflows. Documents in these workflows
+  will not show up in the workflow main menu. They are also excluded from
+  escalation checking and transition trigger processing.
+- Add the `ignore_completed` column to workflow templates.
+- Add the `auto_launch` column to workflow templates.
+- Move workflow model business logic code to the models mixins module.
+- Move transition trigger code from the handler to the manager module.
+- Optimize the valid transition calculation by converting it into a Django
+  query filter and using the `exists()` method.
 
 4.8.3 (2024-10-04)
 ==================

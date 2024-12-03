@@ -31,7 +31,7 @@ from .events import (
 )
 from .handlers import (
     handler_create_workflow_image_cache, handler_launch_workflow_on_create,
-    handler_launch_workflow_on_type_change, handler_trigger_transition,
+    handler_launch_workflow_on_type_change, handler_transition_trigger,
     handler_workflow_template_post_edit,
     handler_workflow_template_state_post_edit,
     handler_workflow_template_state_pre_delete,
@@ -347,6 +347,15 @@ class DocumentStatesApp(MayanAppConfig):
             attribute='internal_name', include_label=True, is_sortable=True,
             source=Workflow
         )
+        column_workflow_auto_launch = SourceColumn(
+            attribute='auto_launch', include_label=True, is_sortable=True,
+            source=Workflow, widget=column_widgets.TwoStateWidget
+        )
+        column_workflow_ignore_completed = SourceColumn(
+            attribute='ignore_completed', include_label=True,
+            is_sortable=True, source=Workflow,
+            widget=column_widgets.TwoStateWidget
+        )
         column_workflow_internal_name.add_exclude(
             source=WorkflowRuntimeProxy
         )
@@ -365,6 +374,12 @@ class DocumentStatesApp(MayanAppConfig):
             source=WorkflowRuntimeProxy
         )
         column_workflow_get_state_initial.add_exclude(
+            source=WorkflowRuntimeProxy
+        )
+        column_workflow_auto_launch.add_exclude(
+            source=WorkflowRuntimeProxy
+        )
+        column_workflow_ignore_completed.add_exclude(
             source=WorkflowRuntimeProxy
         )
         SourceColumn(
@@ -805,8 +820,8 @@ class DocumentStatesApp(MayanAppConfig):
         # Indexing, general
 
         post_save.connect(
-            dispatch_uid='workflows_handler_trigger_transition',
-            receiver=handler_trigger_transition,
+            dispatch_uid='workflows_handler_transition_trigger',
+            receiver=handler_transition_trigger,
             sender=Action
         )
 

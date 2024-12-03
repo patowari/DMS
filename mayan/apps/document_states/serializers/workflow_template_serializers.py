@@ -53,8 +53,8 @@ class WorkflowTemplateSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
             'auto_launch', 'document_types_add_url',
             'document_types_remove_url', 'document_types_url',
-            'documents_url', 'id', 'image_url', 'internal_name', 'label',
-            'states_url', 'transitions_url', 'url'
+            'documents_url', 'id', 'ignore_completed', 'image_url',
+            'internal_name', 'label', 'states_url', 'transitions_url', 'url'
         )
         model = Workflow
         read_only_fields = (

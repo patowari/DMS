@@ -2,12 +2,9 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.acls.models import AccessControlList
 from mayan.apps.common.validators import validate_internal_name
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
-from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
-from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
 
@@ -16,7 +13,9 @@ from ..events import (
 )
 from ..managers import WorkflowManager
 
-from .workflow_model_mixins import WorkflowBusinessLogicMixin
+from .workflow_model_mixins import (
+    WorkflowBusinessLogicMixin, WorkflowRuntimeProxyBusinessLogicMixin
+)
 
 __all__ = ('Workflow', 'WorkflowRuntimeProxy')
 
@@ -28,7 +27,9 @@ class Workflow(
     Fields:
     * label - Identifier. A name/label to call the workflow
     """
-    _ordering_fields = ('internal_name', 'label')
+    _ordering_fields = (
+        'internal_name', 'label', 'auto_launch', 'ignore_completed'
+    )
 
     auto_launch = models.BooleanField(
         default=True, help_text=_(
@@ -50,6 +51,12 @@ class Workflow(
         related_name='workflows', to=DocumentType, verbose_name=_(
             message='Document types'
         )
+    )
+    ignore_completed = models.BooleanField(
+        default=False, help_text=_(
+            message='Ignore workflow instances if they are in their final '
+            'state.'
+        ), verbose_name=_(message='Ignore completed')
     )
 
     objects = WorkflowManager()
@@ -84,32 +91,8 @@ class Workflow(
         return super().save(*args, **kwargs)
 
 
-class WorkflowRuntimeProxy(Workflow):
+class WorkflowRuntimeProxy(WorkflowRuntimeProxyBusinessLogicMixin, Workflow):
     class Meta:
         proxy = True
         verbose_name = _(message='Workflow runtime proxy')
         verbose_name_plural = _(message='Workflow runtime proxies')
-
-    def get_documents(self, permission=None, user=None):
-        """
-        Provide a queryset of the documents. The queryset is optionally
-        filtered by access.
-        """
-        queryset = Document.valid.filter(workflows__workflow=self)
-
-        if permission and user:
-            queryset = AccessControlList.objects.restrict_queryset(
-                permission=permission, queryset=queryset,
-                user=user
-            )
-
-        return queryset
-
-    def get_document_count(self, user):
-        """
-        Return the numeric count of documents executing this workflow.
-        The count is filtered by access.
-        """
-        return self.get_documents(
-            permission=permission_document_view, user=user
-        ).count()

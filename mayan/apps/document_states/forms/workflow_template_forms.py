@@ -8,7 +8,7 @@ from ..models import Workflow
 
 class WorkflowTemplateForm(forms.ModelForm):
     class Meta:
-        fields = ('label', 'internal_name', 'auto_launch')
+        fields = ('label', 'internal_name', 'auto_launch', 'ignore_completed')
         model = Workflow
 
 

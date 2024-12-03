@@ -119,7 +119,7 @@ class WorkflowInstanceLogEntrySerializer(serializers.ModelSerializer):
         )
 
     def get_workflow_instance_transition_queryset(self):
-        return self.context['workflow_instance'].get_transition_choices(
+        return self.context['workflow_instance'].get_queryset_valid_transitions(
             user=self.context['request'].user
         )
 

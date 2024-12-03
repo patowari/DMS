@@ -9,6 +9,7 @@ from mayan.apps.events.event_managers import (
 from mayan.apps.events.models import StoredEventType
 
 from ..events import event_workflow_template_edited
+from ..managers import WorkflowTransitionTriggerEventManager
 
 from .workflow_transition_models import WorkflowTransition
 from .workflow_transition_trigger_model_mixins import (
@@ -30,6 +31,8 @@ class WorkflowTransitionTriggerEvent(
         on_delete=models.CASCADE, to=StoredEventType,
         verbose_name=_(message='Event type')
     )
+
+    objects = WorkflowTransitionTriggerEventManager()
 
     class Meta:
         ordering = ('event_type__name',)

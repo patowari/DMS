@@ -104,17 +104,17 @@ def task_launch_all_workflow_for(document_id):
 
 
 @app.task(ignore_result=True)
-def task_workflow_instance_check_escalation(workflow_instance_id):
+def task_workflow_instance_do_check_escalation(workflow_instance_id):
     WorkflowInstance = apps.get_model(
         app_label='document_states', model_name='WorkflowInstance'
     )
 
     workflow_instance = WorkflowInstance.objects.get(pk=workflow_instance_id)
-    workflow_instance.check_escalation()
+    workflow_instance.do_check_escalation()
 
 
 @app.task(ignore_result=True)
-def task_workflow_instance_check_escalation_all():
+def task_workflow_instance_do_check_escalation_all():
     WorkflowInstance = apps.get_model(
         app_label='document_states', model_name='WorkflowInstance'
     )
@@ -133,6 +133,6 @@ def task_workflow_instance_check_escalation_all():
     )
 
     for workflow_instance in queryset_workflow_instance:
-        task_workflow_instance_check_escalation.apply_async(
+        task_workflow_instance_do_check_escalation.apply_async(
             kwargs={'workflow_instance_id': workflow_instance.pk}
         )

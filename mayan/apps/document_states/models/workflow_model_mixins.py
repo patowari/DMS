@@ -11,6 +11,9 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
+from mayan.apps.acls.models import AccessControlList
+from mayan.apps.documents.models.document_models import Document
+from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.file_caching.models import CachePartitionFile
 
 from ..events import event_workflow_template_edited
@@ -200,3 +203,45 @@ class WorkflowBusinessLogicMixin:
             document.error_log.create(
                 domain_name=ERROR_LOG_DOMAIN_NAME, text=text_error
             )
+
+
+class WorkflowRuntimeProxyBusinessLogicMixin:
+    def get_documents(self, permission=None, user=None):
+        """
+        Provide a queryset of the documents. The queryset is optionally
+        filtered by access.
+        """
+        queryset = Document.valid.filter(workflows__workflow=self)
+
+        if self.ignore_completed:
+            queryset = queryset.exclude(workflows__state_active__final=True)
+
+        if permission and user:
+            queryset = AccessControlList.objects.restrict_queryset(
+                permission=permission, queryset=queryset,
+                user=user
+            )
+
+        return queryset
+
+    def get_document_count(self, user):
+        """
+        Return the numeric count of documents executing this workflow.
+        The count is filtered by access.
+        """
+        return self.get_documents(
+            permission=permission_document_view, user=user
+        ).count()
+
+    def get_states(self):
+        WorkflowStateRuntimeProxy = apps.get_model(
+            app_label='document_states',
+            model_name='WorkflowStateRuntimeProxy'
+        )
+
+        queryset = WorkflowStateRuntimeProxy.objects.filter(workflow=self)
+
+        if self.ignore_completed:
+            queryset = queryset.exclude(final=True)
+
+        return queryset

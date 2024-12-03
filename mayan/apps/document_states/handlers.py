@@ -1,11 +1,8 @@
 from django.apps import apps
-from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.document_indexing.tasks import (
     task_index_instance_document_add
 )
-from mayan.apps.events.classes import EventType
-from mayan.apps.events.literals import TEXT_UNKNOWN_EVENT_ID
 
 from .literals import STORAGE_NAME_WORKFLOW_CACHE
 from .settings import setting_workflow_image_cache_maximum_size
@@ -34,55 +31,16 @@ def handler_launch_workflow_on_type_change(sender, instance, **kwargs):
     )
 
 
-def handler_trigger_transition(sender, **kwargs):
+def handler_transition_trigger(sender, **kwargs):
+
+    WorkflowTransitionTriggerEvent = apps.get_model(
+        app_label='document_states',
+        model_name='WorkflowTransitionTriggerEvent'
+    )
+
     action = kwargs['instance']
 
-    Document = apps.get_model(
-        app_label='documents', model_name='Document'
-    )
-    WorkflowInstance = apps.get_model(
-        app_label='document_states', model_name='WorkflowInstance'
-    )
-    WorkflowTransition = apps.get_model(
-        app_label='document_states', model_name='WorkflowTransition'
-    )
-
-    trigger_transitions = WorkflowTransition.objects.filter(
-        trigger_events__event_type__name=kwargs['instance'].verb
-    )
-
-    if isinstance(action.target, Document):
-        workflow_instances = WorkflowInstance.objects.filter(
-            workflow__transitions__in=trigger_transitions,
-            document=action.target
-        ).distinct()
-    elif isinstance(action.action_object, Document):
-        workflow_instances = WorkflowInstance.objects.filter(
-            workflow__transitions__in=trigger_transitions,
-            document=action.action_object
-        ).distinct()
-    else:
-        workflow_instances = WorkflowInstance.objects.none()
-
-    for workflow_instance in workflow_instances:
-        # Select the first transition that is valid for this workflow state.
-        valid_transitions = list(
-            set(
-                trigger_transitions
-            ) & set(
-                workflow_instance.get_transition_choices()
-            )
-        )
-        if valid_transitions:
-            try:
-                event_type_label = EventType.get(id=action.verb).label
-            except KeyError:
-                event_type_label = TEXT_UNKNOWN_EVENT_ID % action.verb
-
-            workflow_instance.do_transition(
-                comment=_(message='Event trigger: %s') % event_type_label,
-                transition=valid_transitions[0]
-            )
+    WorkflowTransitionTriggerEvent.objects.check_triggers(action=action)
 
 
 # Indexing, workflow template

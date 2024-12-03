@@ -24,12 +24,12 @@ queue_workflows.add_task_type(
 )
 queue_workflows.add_task_type(
     label=_(message='Check a workflow instance for state escalation.'),
-    dotted_path='mayan.apps.document_states.tasks.task_workflow_instance_check_escalation'
+    dotted_path='mayan.apps.document_states.tasks.task_workflow_instance_do_check_escalation'
 )
 
 queue_workflows_slow.add_task_type(
     label=_(message='Check all workflow instances for state escalation.'),
-    dotted_path='mayan.apps.document_states.tasks.task_workflow_instance_check_escalation_all',
+    dotted_path='mayan.apps.document_states.tasks.task_workflow_instance_do_check_escalation_all',
     schedule=datetime.timedelta(
         seconds=setting_workflow_state_escalation_check_interval.value
     )

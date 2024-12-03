@@ -191,7 +191,7 @@ class WorkflowInstanceTransitionExecuteView(
 
     def get_workflow_template_transition(self):
         return get_object_or_404(
-            klass=self.external_object.get_transition_choices(
+            klass=self.external_object.get_queryset_valid_transitions(
                 user=self.request.user
             ), pk=self.kwargs['workflow_template_transition_id']
         )

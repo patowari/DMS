@@ -160,7 +160,7 @@ class APIWorkflowInstanceLogEntryTransitionListView(
         return context
 
     def get_source_queryset(self):
-        return self.get_workflow_instance().get_transition_choices(
+        return self.get_workflow_instance().get_queryset_valid_transitions(
             user=self.request.user
         )
 

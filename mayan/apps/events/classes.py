@@ -19,7 +19,8 @@ from .links import (
 )
 from .literals import (
     DEFAULT_EVENT_LIST_EXPORT_FILENAME, EVENT_EVENTS_CLEARED_NAME,
-    EVENT_EVENTS_EXPORTED_NAME, EVENT_TYPE_NAMESPACE_NAME
+    EVENT_EVENTS_EXPORTED_NAME, EVENT_TYPE_NAMESPACE_NAME,
+    TEXT_UNKNOWN_EVENT_ID
 )
 from .permissions import (
     permission_events_clear, permission_events_export, permission_events_view
@@ -259,6 +260,17 @@ class EventType:
     @classmethod
     def get(cls, id):
         return cls._registry[id]
+
+    @classmethod
+    def get_label(cls, id):
+        try:
+            event_type = cls.get(id=id)
+        except KeyError:
+            event_type_label = TEXT_UNKNOWN_EVENT_ID % id
+        else:
+            event_type_label = event_type.label
+
+        return event_type_label
 
     @classmethod
     def refresh(cls):

@@ -123,6 +123,4 @@ class WorkflowRuntimeProxyStateListView(WorkflowTemplateStateListView):
         return extra_context
 
     def get_source_queryset(self):
-        return WorkflowStateRuntimeProxy.objects.filter(
-            workflow=self.external_object
-        )
+        return self.external_object.get_states()
