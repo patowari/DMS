@@ -49,9 +49,7 @@ link_document_file_introspect_single = Link(
     view='documents:document_file_introspect_single'
 )
 link_document_file_list = Link(
-    args='resolved_object.pk',
-    icon=icon_document_file_list,
-    permission=permission_document_file_view,
+    args='resolved_object.pk', icon=icon_document_file_list,
     text=_(message='Files'), view='documents:document_file_list',
 )
 link_document_file_print_form = Link(

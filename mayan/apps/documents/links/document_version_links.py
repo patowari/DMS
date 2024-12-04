@@ -49,8 +49,7 @@ link_document_version_edit = Link(
 )
 link_document_version_list = Link(
     args='resolved_object.pk', icon=icon_document_version_list,
-    permission=permission_document_version_view, text=_(message='Versions'),
-    view='documents:document_version_list'
+    text=_(message='Versions'), view='documents:document_version_list'
 )
 link_document_version_modification = Link(
     args='resolved_object.pk', icon=icon_document_version_modification,
