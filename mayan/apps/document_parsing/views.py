@@ -20,10 +20,10 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from .forms import DocumentFileContentForm, DocumentFilePageContentForm
 from .icons import (
-    icon_document_file_content_single_delete,
+    icon_document_file_content_delete_single,
     icon_document_file_content_detail, icon_document_file_content_download,
-    icon_document_file_parsing_single_submit,
     icon_document_file_page_content_detail,
+    icon_document_file_parsing_submit_single,
     icon_document_type_parsing_settings, icon_document_type_parsing_submit
 )
 from .models import DocumentFilePageContent
@@ -57,7 +57,7 @@ class DocumentFileContentDeleteView(MultipleObjectDeleteView):
     title_plural = _(
         message='Delete the content of the %(count)d selected document versions.'
     )
-    view_icon = icon_document_file_content_single_delete
+    view_icon = icon_document_file_content_delete_single
 
     def object_action(self, form, instance):
         DocumentFilePageContent.objects.delete_content_for(
@@ -138,7 +138,7 @@ class DocumentFileSubmitView(MultipleObjectConfirmActionView):
     success_message_plural = _(
         message='%(count)d documents files added to the parsing queue'
     )
-    view_icon = icon_document_file_parsing_single_submit
+    view_icon = icon_document_file_parsing_submit_single
 
     def get_extra_context(self):
         queryset = self.object_list

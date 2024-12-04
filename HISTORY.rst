@@ -127,6 +127,7 @@
   followed by the event test mixin.
 - Tag workflow tests at the mixin level.
 - Tag metadata tests at the mixin level.
+- Rename links and icons to follow the great to lesser nomenclature.
 
 4.8.3 (2024-10-04)
 ==================

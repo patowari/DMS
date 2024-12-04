@@ -16,10 +16,10 @@ from mayan.apps.navigation.source_columns import SourceColumn
 
 from .events import event_message_edited
 from .links import (
-    link_message_all_mark_read, link_message_create, link_message_list,
-    link_message_multiple_delete, link_message_multiple_mark_read,
-    link_message_multiple_mark_unread, link_message_single_delete,
-    link_message_single_mark_read, link_message_single_mark_unread
+    link_message_create, link_message_delete_multiple,
+    link_message_delete_single, link_message_list,link_message_mark_read_all,
+    link_message_mark_read_multiple, link_message_mark_read_single,
+    link_message_mark_unread_multiple, link_message_mark_unread_single
 )
 from .permissions import (
     permission_message_delete, permission_message_edit,
@@ -76,20 +76,20 @@ class MessagingApp(MayanAppConfig):
 
         menu_multi_item.bind_links(
             links=(
-                link_message_multiple_delete,
-                link_message_multiple_mark_read,
-                link_message_multiple_mark_unread
+                link_message_delete_multiple,
+                link_message_mark_read_multiple,
+                link_message_mark_unread_multiple
             ), sources=(Message,)
         )
         menu_object.bind_links(
             links=(
-                link_message_single_delete, link_message_single_mark_read,
-                link_message_single_mark_unread
+                link_message_delete_single, link_message_mark_read_single,
+                link_message_mark_unread_single
             ), sources=(Message,)
         )
 
         menu_secondary.bind_links(
-            links=(link_message_create, link_message_all_mark_read),
+            links=(link_message_create, link_message_mark_read_all),
             sources=(
                 Message, 'messaging:message_list', 'messaging:message_create'
             )

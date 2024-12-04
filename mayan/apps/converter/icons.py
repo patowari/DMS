@@ -1,7 +1,8 @@
 from mayan.apps.appearance.classes import Icon
 
 icon_asset_create = Icon(driver_name='fontawesome', symbol='save')
-icon_asset_delete = Icon(driver_name='fontawesome', symbol='times')
+icon_asset_delete_multiple = Icon(driver_name='fontawesome', symbol='times')
+icon_asset_delete_single = icon_asset_delete_multiple
 icon_asset_detail = Icon(driver_name='fontawesome', symbol='save')
 icon_asset_edit = Icon(driver_name='fontawesome', symbol='pencil-alt')
 icon_asset_list = Icon(driver_name='fontawesome', symbol='save')

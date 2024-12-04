@@ -40,8 +40,8 @@ from .handlers import (
 )
 from .html_widgets import widget_transition_events
 from .links import (
-    link_document_multiple_workflow_templates_launch,
-    link_document_single_workflow_templates_launch,
+    link_document_workflow_templates_launch_multiple,
+    link_document_workflow_templates_launch_single,
     link_document_type_workflow_template_list, link_tool_launch_workflows,
     link_workflow_instance_detail, link_workflow_instance_list,
     link_workflow_instance_transition,
@@ -625,7 +625,7 @@ class DocumentStatesApp(MayanAppConfig):
             sources=(WorkflowInstance,)
         )
         menu_secondary.bind_links(
-            links=(link_document_single_workflow_templates_launch,),
+            links=(link_document_workflow_templates_launch_single,),
             sources=(
                 WorkflowInstance,
                 'document_states:document_multiple_workflow_templates_launch',
@@ -674,7 +674,7 @@ class DocumentStatesApp(MayanAppConfig):
             ), sources=(Workflow,)
         )
         menu_multi_item.bind_links(
-            links=(link_document_multiple_workflow_templates_launch,),
+            links=(link_document_workflow_templates_launch_multiple,),
             sources=(Document,)
         )
         menu_multi_item.bind_links(

@@ -14,8 +14,8 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..forms import TagForm
 from ..icons import (
-    icon_menu_tags, icon_tag_create, icon_tag_document_list, icon_tag_edit,
-    icon_tag_list, icon_tag_single_delete
+    icon_menu_tags, icon_tag_create, icon_tag_delete_single,
+    icon_tag_document_list, icon_tag_edit, icon_tag_list
 )
 from ..links import link_tag_create
 from ..models import Tag
@@ -56,7 +56,7 @@ class TagDeleteView(MultipleObjectDeleteView):
     title_plural = _(message='Delete the %(count)d selected tags')
     title_single = _(message='Delete tag: %(object)s')
     title_singular = _(message='Delete the %(count)d selected tag')
-    view_icon = icon_tag_single_delete
+    view_icon = icon_tag_delete_single
 
     def get_extra_context(self):
         context = super().get_extra_context()

@@ -12,9 +12,9 @@ from mayan.apps.views.generics import (
 from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..icons import (
-    icon_current_user_detail, icon_user_create, icon_user_edit,
-    icon_user_group_list, icon_user_list, icon_user_set_options,
-    icon_user_setup, icon_user_single_delete
+    icon_current_user_detail, icon_user_create, icon_user_delete_single,
+    icon_user_edit, icon_user_group_list, icon_user_set_options,
+    icon_user_setup, icon_user_list
 )
 from ..links import link_user_create
 from ..literals import FIELDS_ALL, FIELDSETS_ALL, FIELDSETS_USER
@@ -72,7 +72,7 @@ class UserDeleteView(MultipleObjectDeleteView):
     title_plural = _(message='Delete the %(count)d selected users.')
     title_single = _(message='Delete user: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected user.')
-    view_icon = icon_user_single_delete
+    view_icon = icon_user_delete_single
 
     def get_extra_context(self, **kwargs):
         if self.request.user in self.object_list:

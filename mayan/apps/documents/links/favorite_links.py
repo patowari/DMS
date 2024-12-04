@@ -7,8 +7,9 @@ from mayan.apps.authentication.utils import get_context_user
 from mayan.apps.navigation.links import Link
 
 from ..icons import (
-    icon_favorite_document_add, icon_favorite_document_list,
-    icon_favorite_document_remove
+    icon_document_favorite_add_multiple, icon_document_favorite_add_single,
+    icon_document_favorite_list, icon_document_favorite_remove_multiple,
+    icon_document_favorite_remove_single
 )
 from ..permissions import permission_document_view
 
@@ -29,30 +30,31 @@ def condition_not_is_in_favorites(context, resolved_object):
         return not resolved_object.favorites.filter(user=user).exists()
 
 
-link_document_favorites_list = Link(
-    condition=condition_user_is_authenticated,
-    icon=icon_favorite_document_list, text=_(message='Favorites'),
-    view='documents:document_favorite_list'
+link_document_favorites_add_multiple = Link(
+    text=_(message='Add to favorites'),
+    icon=icon_document_favorite_add_multiple,
+    view='documents:document_favorite_add_multiple'
 )
-link_document_favorites_add = Link(
+link_document_favorites_add_single = Link(
     condition=condition_not_is_in_favorites,
-    args='resolved_object.id', icon=icon_favorite_document_add,
+    args='resolved_object.id', icon=icon_document_favorite_add_single,
     permission=permission_document_view, text=_(message='Add to favorites'),
     view='documents:document_favorite_add'
 )
-link_document_favorites_remove = Link(
-    condition=condition_is_in_favorites,
-    args='resolved_object.id', icon=icon_favorite_document_remove,
-    permission=permission_document_view, text=_(
-        message='Remove from favorites'
-    ), view='documents:document_favorite_remove'
-)
-link_document_favorites_add_multiple = Link(
-    text=_(message='Add to favorites'), icon=icon_favorite_document_add,
-    view='documents:document_favorite_add_multiple'
+link_document_favorites_list = Link(
+    condition=condition_user_is_authenticated,
+    icon=icon_document_favorite_list, text=_(message='Favorites'),
+    view='documents:document_favorite_list'
 )
 link_document_favorites_remove_multiple = Link(
     text=_(message='Remove from favorites'),
-    icon=icon_favorite_document_remove,
+    icon=icon_document_favorite_remove_multiple,
     view='documents:document_favorite_remove_multiple'
+)
+link_document_favorites_remove_single = Link(
+    condition=condition_is_in_favorites,
+    args='resolved_object.id', icon=icon_document_favorite_remove_single,
+    permission=permission_document_view, text=_(
+        message='Remove from favorites'
+    ), view='documents:document_favorite_remove'
 )

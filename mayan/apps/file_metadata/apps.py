@@ -25,8 +25,8 @@ from .handlers import (
 from .links import (
     link_document_file_metadata_driver_attribute_list,
     link_document_file_metadata_driver_list,
-    link_document_file_metadata_single_submit,
     link_document_file_metadata_submit_multiple,
+    link_document_file_metadata_submit_single,
     link_document_type_file_metadata_driver_configuration_edit,
     link_document_type_file_metadata_driver_configuration_list,
     link_document_type_file_metadata_submit, link_file_metadata_driver_list
@@ -247,7 +247,7 @@ class FileMetadataApp(MayanAppConfig):
         )
 
         menu_secondary.bind_links(
-            links=(link_document_file_metadata_single_submit,), sources=(
+            links=(link_document_file_metadata_submit_single,), sources=(
                 'file_metadata:document_file_metadata_driver_list',
                 'file_metadata:document_file_metadata_driver_attribute_list'
             )

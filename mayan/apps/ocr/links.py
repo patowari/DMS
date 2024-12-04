@@ -4,12 +4,12 @@ from mayan.apps.navigation.links import Link
 
 from .icons import (
     icon_document_type_ocr_settings, icon_document_type_ocr_submit,
-    icon_document_version_ocr_content_multiple_delete,
-    icon_document_version_ocr_content_single_delete,
+    icon_document_version_ocr_content_delete_multiple,
+    icon_document_version_ocr_content_delete_single,
     icon_document_version_ocr_content_detail,
     icon_document_version_ocr_content_download,
-    icon_document_version_ocr_multiple_submit,
-    icon_document_version_ocr_single_submit,
+    icon_document_version_ocr_submit_multiple,
+    icon_document_version_ocr_submit_single,
     icon_document_version_page_ocr_content_detail,
     icon_document_version_page_ocr_content_edit
 )
@@ -34,14 +34,14 @@ link_document_type_submit = Link(
 
 # Document version
 
-link_document_version_ocr_content_multiple_delete = Link(
-    icon=icon_document_version_ocr_content_multiple_delete,
+link_document_version_ocr_content_delete_multiple = Link(
+    icon=icon_document_version_ocr_content_delete_multiple,
     text=_(message='Delete OCR content'),
     view='ocr:document_version_ocr_content_multiple_delete'
 )
-link_document_version_ocr_content_single_delete = Link(
+link_document_version_ocr_content_delete_single = Link(
     args='resolved_object.id',
-    icon=icon_document_version_ocr_content_single_delete,
+    icon=icon_document_version_ocr_content_delete_single,
     permission=permission_document_version_ocr,
     text=_(message='Delete OCR content'),
     view='ocr:document_version_ocr_content_single_delete'
@@ -59,13 +59,13 @@ link_document_version_ocr_content_download = Link(
     text=_(message='Download OCR text'),
     view='ocr:document_version_ocr_content_download'
 )
-link_document_version_ocr_multiple_submit = Link(
-    icon=icon_document_version_ocr_multiple_submit,
+link_document_version_ocr_submit_multiple = Link(
+    icon=icon_document_version_ocr_submit_multiple,
     text=_(message='Submit for OCR'), view='ocr:document_version_ocr_multiple_submit'
 )
-link_document_version_ocr_single_submit = Link(
+link_document_version_ocr_submit_single = Link(
     args='resolved_object.id',
-    icon=icon_document_version_ocr_single_submit,
+    icon=icon_document_version_ocr_submit_single,
     permission=permission_document_version_ocr, text=_(message='Submit for OCR'),
     view='ocr:document_version_ocr_single_submit'
 )

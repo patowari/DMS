@@ -4,8 +4,9 @@ from mayan.apps.navigation.links import Link
 from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .icons import (
-    icon_announcement_create, icon_announcement_delete,
-    icon_announcement_edit, icon_announcement_list
+    icon_announcement_create, icon_announcement_delete_multiple,
+    icon_announcement_delete_single, icon_announcement_edit,
+    icon_announcement_list
 )
 from .permissions import (
     permission_announcement_create, permission_announcement_delete,
@@ -17,13 +18,13 @@ link_announcement_create = Link(
     text=_(message='Create announcement'),
     view='announcements:announcement_create'
 )
-link_announcement_multiple_delete = Link(
-    icon=icon_announcement_delete, tags='dangerous',
+link_announcement_delete_multiple = Link(
+    icon=icon_announcement_delete_multiple, tags='dangerous',
     text=_(message='Delete'),
     view='announcements:announcement_multiple_delete'
 )
-link_announcement_single_delete = Link(
-    args='object.pk', icon=icon_announcement_delete,
+link_announcement_delete_single = Link(
+    args='object.pk', icon=icon_announcement_delete_single,
     permission=permission_announcement_delete,
     tags='dangerous', text=_(message='Delete'),
     view='announcements:announcement_single_delete'

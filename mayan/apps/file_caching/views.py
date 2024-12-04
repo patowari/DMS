@@ -12,7 +12,7 @@ from mayan.apps.views.view_mixins import (
 from .forms import CacheDetailForm, CachePartitionDetailForm
 from .icons import (
     icon_cache_detail, icon_cache_list, icon_cache_partition_detail,
-    icon_cache_partition_purge, icon_cache_purge
+    icon_cache_partition_purge, icon_cache_purge_multiple
 )
 from .models import Cache, CachePartition
 from .permissions import (
@@ -116,7 +116,7 @@ class CachePurgeView(MultipleObjectConfirmActionView):
     success_message_singular = _(
         message='%(count)d cache submitted for purging.'
     )
-    view_icon = icon_cache_purge
+    view_icon = icon_cache_purge_multiple
 
     def get_extra_context(self):
         queryset = self.object_list

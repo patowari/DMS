@@ -18,8 +18,8 @@ from mayan.apps.rest_api.fields import DynamicSerializerField
 
 from .events import event_announcement_edited
 from .links import (
-    link_announcement_create, link_announcement_multiple_delete,
-    link_announcement_single_delete, link_announcement_edit,
+    link_announcement_create, link_announcement_delete_multiple,
+    link_announcement_delete_single, link_announcement_edit,
     link_announcement_list, link_announcement_setup
 )
 from .permissions import (
@@ -87,12 +87,12 @@ class AnnouncementsApp(MayanAppConfig):
         )
 
         menu_multi_item.bind_links(
-            links=(link_announcement_multiple_delete,),
+            links=(link_announcement_delete_multiple,),
             sources=(Announcement,)
         )
         menu_object.bind_links(
             links=(
-                link_announcement_single_delete, link_announcement_edit
+                link_announcement_delete_single, link_announcement_edit
             ), sources=(Announcement,)
         )
         menu_return.bind_links(

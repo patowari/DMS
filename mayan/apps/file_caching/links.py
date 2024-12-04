@@ -7,7 +7,8 @@ from mayan.apps.navigation.utils import (
 from mayan.apps.storage.classes import DefinedStorage
 
 from .icons import (
-    icon_cache_partition_purge, icon_cache_purge, icon_file_caching
+    icon_cache_partition_purge, icon_cache_purge_multiple,
+    icon_cache_purge_single, icon_file_caching
 )
 from .permissions import permission_cache_purge, permission_cache_view
 
@@ -33,15 +34,15 @@ link_cache_partition_purge = Link(
     ), permission=permission_cache_purge, text=_(message='Purge cache'),
     view='file_caching:cache_partitions_purge'
 )
+link_cache_purge_multiple = Link(
+    icon=icon_cache_purge_multiple, text=_(message='Purge cache'),
+    view='file_caching:cache_multiple_purge'
+)
 link_cache_purge_single = Link(
-    condition=condition_valid_storage, icon=icon_cache_purge,
+    condition=condition_valid_storage, icon=icon_cache_purge_single,
     kwargs={'cache_id': 'resolved_object.id'},
     permission=permission_cache_purge, text=_(message='Purge cache'),
     view='file_caching:cache_purge'
-)
-link_cache_purge_single_multiple = Link(
-    icon=icon_cache_purge, text=_(message='Purge cache'),
-    view='file_caching:cache_multiple_purge'
 )
 link_cache_tool = Link(
     condition=factory_condition_queryset_access(

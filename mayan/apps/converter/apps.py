@@ -16,7 +16,7 @@ from .classes import AppImageErrorImage
 from .events import event_asset_edited
 from .handlers import handler_create_asset_cache
 from .links import (
-    link_asset_create, link_asset_multiple_delete, link_asset_single_delete,
+    link_asset_create, link_asset_delete_multiple, link_asset_delete_single,
     link_asset_edit, link_asset_list, link_asset_setup,
     link_transformation_delete, link_transformation_edit,
     link_transformation_select
@@ -94,11 +94,11 @@ class ConverterApp(MayanAppConfig):
         )
 
         menu_multi_item.bind_links(
-            links=(link_asset_multiple_delete,), sources=(Asset,)
+            links=(link_asset_delete_multiple,), sources=(Asset,)
         )
         menu_object.bind_links(
             links=(
-                link_asset_single_delete, link_asset_edit
+                link_asset_delete_single, link_asset_edit
             ), sources=(Asset,)
         )
         menu_return.bind_links(

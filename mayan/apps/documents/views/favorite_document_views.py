@@ -6,8 +6,8 @@ from mayan.apps.views.exceptions import ActionError
 from mayan.apps.views.generics import MultipleObjectConfirmActionView
 
 from ..icons import (
-    icon_favorite_document_add, icon_favorite_document_list,
-    icon_favorite_document_remove
+    icon_document_favorite_add_multiple, icon_document_favorite_list,
+    icon_document_favorite_remove_multiple
 )
 from ..models.document_models import Document
 from ..models.favorite_document_models import FavoriteDocument
@@ -20,7 +20,7 @@ logger = logging.getLogger(name=__name__)
 
 
 class FavoriteDocumentListView(DocumentListView):
-    view_icon = icon_favorite_document_list
+    view_icon = icon_document_favorite_list
 
     def get_document_queryset(self):
         return FavoriteDocument.valid.get_for_user(user=self.request.user)
@@ -29,7 +29,7 @@ class FavoriteDocumentListView(DocumentListView):
         context = super().get_extra_context()
         context.update(
             {
-                'no_results_icon': icon_favorite_document_list,
+                'no_results_icon': icon_document_favorite_list,
                 'no_results_text': _(
                     message='Favorited documents will be listed in this view. '
                     'Up to %(count)d documents can be favorited per user. '
@@ -51,7 +51,7 @@ class FavoriteAddView(MultipleObjectConfirmActionView):
     success_message_plural = _(
         message='%(count)d documents added to favorites.'
     )
-    view_icon = icon_favorite_document_add
+    view_icon = icon_document_favorite_add_multiple
 
     def get_extra_context(self):
         context = {
@@ -84,7 +84,7 @@ class FavoriteRemoveView(MultipleObjectConfirmActionView):
     success_message_plural = _(
         message='%(count)d documents removed from favorites.'
     )
-    view_icon = icon_favorite_document_remove
+    view_icon = icon_document_favorite_remove_multiple
 
     def get_extra_context(self):
         context = {

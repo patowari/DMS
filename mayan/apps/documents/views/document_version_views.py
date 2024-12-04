@@ -27,11 +27,11 @@ from ..forms.document_version_forms import (
 from ..forms.misc_forms import PageNumberForm
 from ..icons import (
     icon_document_version_active, icon_document_version_create,
-    icon_document_version_delete, icon_document_version_edit,
+    icon_document_version_delete_multiple, icon_document_version_edit,
     icon_document_version_list, icon_document_version_modification,
     icon_document_version_preview, icon_document_version_print,
-    icon_document_version_transformation_list_clear,
-    icon_document_version_transformation_list_clone
+    icon_document_version_transformation_clear_multiple,
+    icon_document_version_transformations_clone
 )
 from ..links.document_version_links import link_document_version_create
 from ..models.document_models import Document
@@ -117,7 +117,7 @@ class DocumentVersionDeleteView(MultipleObjectDeleteView):
     title_single = _(message='Delete document version "%(object)s".')
     title_singular = _(message='Delete %(count)d document version.')
     title_plural = _(message='Delete %(count)d document versions.')
-    view_icon = icon_document_version_delete
+    view_icon = icon_document_version_delete_multiple
 
     def get_extra_context(self, **kwargs):
         context = {
@@ -335,7 +335,7 @@ class DocumentVersionTransformationsClearView(
         message='Transformation clear request processed for %(count)d '
         'document versions.'
     )
-    view_icon = icon_document_version_transformation_list_clear
+    view_icon = icon_document_version_transformation_clear_multiple
 
     def get_extra_context(self):
         result = {
@@ -383,7 +383,7 @@ class DocumentVersionTransformationsCloneView(
     external_object_pk_url_kwarg = 'document_version_id'
     external_object_queryset = DocumentVersion.valid.all()
     form_class = PageNumberForm
-    view_icon = icon_document_version_transformation_list_clone
+    view_icon = icon_document_version_transformations_clone
 
     def dispatch(self, request, *args, **kwargs):
         results = super().dispatch(request=request, *args, **kwargs)

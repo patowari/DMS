@@ -50,11 +50,11 @@ link_message_create = Link(
     icon=icon_message_create, permission=permission_message_create,
     text=_(message='Create message'), view='messaging:message_create'
 )
-link_message_multiple_delete = Link(
+link_message_delete_multiple = Link(
     icon=icon_message_delete, tags='dangerous', text=_(message='Delete'),
     view='messaging:message_multiple_delete'
 )
-link_message_single_delete = Link(
+link_message_delete_single = Link(
     args='object.pk', icon=icon_message_delete,
     permission=permission_message_delete,
     tags='dangerous', text=_(message='Delete'),
@@ -65,27 +65,27 @@ link_message_list = Link(
     badge_text=get_unread_message_count, icon=icon_message_list,
     title=_(message='Messages'), view='messaging:message_list'
 )
-link_message_single_mark_read = Link(
+link_message_mark_read_all = Link(
+    icon=icon_message_mark_read_all, text=_(message='Mark all as read'),
+    view='messaging:message_all_mark_read'
+)
+link_message_mark_read_multiple = Link(
+    icon=icon_message_mark_read, text=_(message='Mark as read'),
+    view='messaging:message_multiple_mark_read'
+)
+link_message_mark_read_single = Link(
     args='object.pk', conditional_disable=condition_is_read,
     icon=icon_message_mark_read, text=_(message='Mark as read'),
     permission=permission_message_view,
     view='messaging:message_single_mark_read'
 )
-link_message_single_mark_unread = Link(
+link_message_mark_unread_multiple = Link(
+    icon=icon_message_mark_unread, text=_(message='Mark as unread'),
+    view='messaging:message_multiple_mark_unread'
+)
+link_message_mark_unread_single = Link(
     args='object.pk', conditional_disable=condition_is_unread,
     icon=icon_message_mark_unread, text=_(message='Mark as unread'),
     permission=permission_message_view,
     view='messaging:message_single_mark_unread'
-)
-link_message_multiple_mark_read = Link(
-    icon=icon_message_mark_read, text=_(message='Mark as read'),
-    view='messaging:message_multiple_mark_read'
-)
-link_message_multiple_mark_unread = Link(
-    icon=icon_message_mark_unread, text=_(message='Mark as unread'),
-    view='messaging:message_multiple_mark_unread'
-)
-link_message_all_mark_read = Link(
-    icon=icon_message_mark_read_all, text=_(message='Mark all as read'),
-    view='messaging:message_all_mark_read'
 )

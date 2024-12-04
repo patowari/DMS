@@ -3,7 +3,7 @@ from mayan.apps.documents.tests.mixins.document_version_mixins import (
     DocumentVersionLinkTestMixin
 )
 
-from ..links import link_document_version_ocr_content_single_delete
+from ..links import link_document_version_ocr_content_delete_single
 from ..permissions import permission_document_version_ocr
 
 
@@ -12,7 +12,7 @@ class DocumentOCRLinkTestCase(
 ):
     def test_document_version_ocr_content_single_delete_link_no_permission(self):
         resolved_link = self._resolve_test_document_version_link(
-            test_link=link_document_version_ocr_content_single_delete
+            test_link=link_document_version_ocr_content_delete_single
         )
         self.assertEqual(resolved_link, None)
 
@@ -22,6 +22,6 @@ class DocumentOCRLinkTestCase(
             permission=permission_document_version_ocr
         )
         resolved_link = self._resolve_test_document_version_link(
-            test_link=link_document_version_ocr_content_single_delete
+            test_link=link_document_version_ocr_content_delete_single
         )
         self.assertNotEqual(resolved_link, None)

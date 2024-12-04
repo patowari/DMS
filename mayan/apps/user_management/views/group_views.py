@@ -9,8 +9,8 @@ from mayan.apps.views.generics import (
 )
 
 from ..icons import (
-    icon_group_create, icon_group_detail, icon_group_edit, icon_group_list,
-    icon_group_setup, icon_group_single_delete, icon_group_user_list
+    icon_group_create, icon_group_delete_single, icon_group_detail,
+    icon_group_edit, icon_group_list, icon_group_setup, icon_group_user_list
 )
 from ..links import link_group_create
 from ..permissions import (
@@ -50,7 +50,7 @@ class GroupDeleteView(MultipleObjectDeleteView):
     title_plural = _(message='Delete the %(count)d selected groups.')
     title_single = _(message='Delete group: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected group.')
-    view_icon = icon_group_single_delete
+    view_icon = icon_group_delete_single
 
 
 class GroupDetailView(SingleObjectDetailView):

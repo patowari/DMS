@@ -23,8 +23,8 @@ from .links import (
     link_document_multiple_tag_multiple_attach,
     link_document_multiple_tag_multiple_remove, link_document_tag_list,
     link_document_tag_multiple_attach, link_document_tag_multiple_remove,
-    link_tag_create, link_tag_document_list, link_tag_edit, link_tag_list,
-    link_tag_multiple_delete, link_tag_single_delete
+    link_tag_create, link_tag_delete_multiple, link_tag_delete_single,
+    link_tag_document_list, link_tag_edit, link_tag_list
 )
 from .menus import menu_tags
 from .methods import method_document_get_tags
@@ -201,13 +201,13 @@ class TagsApp(MayanAppConfig):
 
         menu_multi_item.bind_links(
             exclude=(DocumentTag,),
-            links=(link_tag_multiple_delete,), sources=(Tag,)
+            links=(link_tag_delete_multiple,), sources=(Tag,)
         )
 
         menu_object.bind_links(
             exclude=(DocumentTag,),
             links=(
-                link_tag_edit, link_tag_single_delete
+                link_tag_edit, link_tag_delete_single
             ),
             sources=(Tag,)
         )

@@ -9,10 +9,10 @@ from mayan.apps.views.view_mixins import ExternalObjectViewMixin
 
 from ..icons import (
     icon_document_file_metadata_driver_list,
-    icon_document_file_metadata_single_submit, icon_file_metadata,
+    icon_document_file_metadata_submit_multiple, icon_file_metadata,
     icon_file_metadata_driver_attribute_list
 )
-from ..links import link_document_file_metadata_single_submit
+from ..links import link_document_file_metadata_submit_single
 from ..models import DocumentFileDriverEntry
 from ..permissions import (
     permission_file_metadata_submit, permission_file_metadata_view
@@ -31,7 +31,7 @@ class DocumentFileMetadataDriverListView(
         return {
             'hide_object': True,
             'no_results_icon': icon_file_metadata,
-            'no_results_main_link': link_document_file_metadata_single_submit.resolve(
+            'no_results_main_link': link_document_file_metadata_submit_single.resolve(
                 context=RequestContext(
                     dict_={
                         'resolved_object': self.external_object
@@ -69,7 +69,7 @@ class DocumentFileMetadataDriverAttributeListView(
         return {
             'hide_object': True,
             'no_results_icon': icon_file_metadata,
-            'no_results_main_link': link_document_file_metadata_single_submit.resolve(
+            'no_results_main_link': link_document_file_metadata_submit_single.resolve(
                 context=RequestContext(
                     dict_={
                         'resolved_object': self.external_object.document_file
@@ -113,7 +113,7 @@ class DocumentFileMetadataSubmitView(MultipleObjectConfirmActionView):
     success_message_singular = _(
         message='%(count)d document file submitted to the file metadata queue.'
     )
-    view_icon = icon_document_file_metadata_single_submit
+    view_icon = icon_document_file_metadata_submit_multiple
 
     def get_extra_context(self):
         queryset = self.object_list

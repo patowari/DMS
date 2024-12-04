@@ -18,18 +18,18 @@ from mayan.apps.navigation.source_columns import SourceColumn
 from .classes import MailerBackend
 from .events import event_email_sent, event_mailing_profile_edited
 from .links import (
+    link_document_file_attachment_send_multiple,
+    link_document_file_attachment_send_single,
+    link_document_file_link_send_multiple,
+    link_document_file_link_send_single, link_document_link_send_multiple,
+    link_document_link_send_single,
+    link_document_version_attachment_send_multiple,
+    link_document_version_attachment_send_single,
+    link_document_version_link_send_multiple,
+    link_document_version_link_send_single,
     link_mailing_profile_create, link_mailing_profile_delete,
     link_mailing_profile_edit, link_mailing_profile_list,
-    link_mailing_profile_setup, link_mailing_profile_test,
-    link_send_document_file_attachment_multiple,
-    link_send_document_file_attachment_single,
-    link_send_document_file_link_multiple,
-    link_send_document_file_link_single, link_send_document_link_multiple,
-    link_send_document_link_single,
-    link_send_document_version_attachment_multiple,
-    link_send_document_version_attachment_single,
-    link_send_document_version_link_multiple,
-    link_send_document_version_link_single
+    link_mailing_profile_setup, link_mailing_profile_test
 )
 from .literals import (
     DOCUMENT_FILE_CONTENT_FUNCTION_DOTTED_PATH,
@@ -162,13 +162,13 @@ class MailerApp(MayanAppConfig):
 
         menu_multi_item.bind_links(
             links=(
-                link_send_document_link_multiple,
+                link_document_link_send_multiple,
             ), sources=(Document,)
         )
 
         menu_object.bind_links(
             links=(
-                link_send_document_link_single,
+                link_document_link_send_single,
             ), sources=(Document,)
         )
 
@@ -176,15 +176,15 @@ class MailerApp(MayanAppConfig):
 
         menu_multi_item.bind_links(
             links=(
-                link_send_document_file_attachment_multiple,
-                link_send_document_file_link_multiple
+                link_document_file_attachment_send_multiple,
+                link_document_file_link_send_multiple
             ), sources=(DocumentFile,)
         )
 
         menu_object.bind_links(
             links=(
-                link_send_document_file_link_single,
-                link_send_document_file_attachment_single
+                link_document_file_link_send_single,
+                link_document_file_attachment_send_single
             ), sources=(DocumentFile,)
         )
 
@@ -192,15 +192,15 @@ class MailerApp(MayanAppConfig):
 
         menu_multi_item.bind_links(
             links=(
-                link_send_document_version_attachment_multiple,
-                link_send_document_version_link_multiple
+                link_document_version_attachment_send_multiple,
+                link_document_version_link_send_multiple
             ), sources=(DocumentVersion,)
         )
 
         menu_object.bind_links(
             links=(
-                link_send_document_version_link_single,
-                link_send_document_version_attachment_single
+                link_document_version_link_send_single,
+                link_document_version_attachment_send_single
             ), sources=(DocumentVersion,)
         )
 

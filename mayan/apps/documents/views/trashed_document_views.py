@@ -11,9 +11,9 @@ from mayan.apps.views.generics import (
 )
 
 from ..icons import (
-    icon_document_trash_send, icon_trash_can_empty,
-    icon_trashed_document_delete, icon_trashed_document_list,
-    icon_trashed_document_restore
+    icon_document_trash_multiple, icon_trash_can_empty,
+    icon_trashed_document_delete_multiple, icon_trashed_document_list,
+    icon_trashed_document_restore_multiple
 )
 from ..models.document_models import Document
 from ..models.trashed_document_models import TrashedDocument
@@ -50,7 +50,7 @@ class DocumentTrashView(MultipleObjectConfirmActionView):
     title_plural = _(
         message='Move the %(count)d selected documents to trash?'
     )
-    view_icon = icon_document_trash_send
+    view_icon = icon_document_trash_multiple
 
     def get_extra_context(self):
         context = {}
@@ -117,7 +117,7 @@ class TrashedDocumentDeleteView(MultipleObjectConfirmActionView):
     title_plural = _(message='Delete the %(count)d selected trashed documents?')
     title_single = _(message='Delete the trashed document "%(object)s"?')
     title_singular = _(message='Delete the selected trashed document?')
-    view_icon = icon_trashed_document_delete
+    view_icon = icon_trashed_document_delete_multiple
 
     def get_extra_context(self):
         context = {}
@@ -183,7 +183,7 @@ class TrashedDocumentRestoreView(MultipleObjectConfirmActionView):
     title_plural = _(message='Restore the %(count)d selected trashed documents?')
     title_single = _(message='Restore the trashed document: %(object)s')
     title_singular = _(message='Restore the selected trashed document?')
-    view_icon = icon_trashed_document_restore
+    view_icon = icon_trashed_document_restore_multiple
 
     def get_extra_context(self):
         context = {}

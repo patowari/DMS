@@ -86,15 +86,14 @@ from .handlers import (
     handler_document_event_on_save
 )
 from .links.document_file_links import (
-    link_document_file_delete, link_document_file_edit,
-    link_document_file_introspect_multiple,
+    link_document_file_delete_multiple, link_document_file_delete_single,
+    link_document_file_edit, link_document_file_introspect_multiple,
     link_document_file_introspect_single, link_document_file_list,
-    link_document_file_multiple_delete,
-    link_document_file_multiple_transformations_clear,
     link_document_file_preview, link_document_file_print_form,
     link_document_file_properties, link_document_file_return_list,
     link_document_file_return_to_document,
-    link_document_file_transformations_clear,
+    link_document_file_transformations_clear_multiple,
+    link_document_file_transformations_clear_single,
     link_document_file_transformations_clone
 )
 from .links.document_file_page_links import (
@@ -110,10 +109,10 @@ from .links.document_file_page_links import (
     link_document_file_page_zoom_in, link_document_file_page_zoom_out
 )
 from .links.document_links import (
-    link_document_list, link_document_multiple_type_change,
-    link_document_preview, link_document_properties,
+    link_document_list, link_document_preview, link_document_properties_detail,
     link_document_properties_edit, link_document_recently_accessed_list,
-    link_document_recently_created_list, link_document_type_change
+    link_document_recently_created_list, link_document_type_change_multiple,
+    link_document_type_change_single
 )
 from .links.document_type_links import (
     link_document_type_create, link_document_type_delete,
@@ -125,14 +124,14 @@ from .links.document_type_links import (
 )
 from .links.document_version_links import (
     link_document_version_active, link_document_version_create,
-    link_document_version_edit, link_document_version_list,
-    link_document_version_modification, link_document_version_multiple_delete,
-    link_document_version_multiple_transformations_clear,
+    link_document_version_delete_multiple,
+    link_document_version_delete_single, link_document_version_edit,
+    link_document_version_list, link_document_version_modification,
     link_document_version_preview, link_document_version_print_form,
     link_document_version_return_list,
     link_document_version_return_to_document,
-    link_document_version_single_delete,
-    link_document_version_transformations_clear,
+    link_document_version_transformations_clear_multiple,
+    link_document_version_transformations_clear_single,
     link_document_version_transformations_clone
 )
 from .links.document_version_page_links import (
@@ -151,16 +150,17 @@ from .links.document_version_page_links import (
     link_document_version_page_zoom_out
 )
 from .links.favorite_links import (
-    link_document_favorites_add, link_document_favorites_add_multiple,
-    link_document_favorites_list, link_document_favorites_remove,
-    link_document_favorites_remove_multiple
+    link_document_favorites_add_multiple, link_document_favorites_add_single,
+    link_document_favorites_list, link_document_favorites_remove_multiple,
+    link_document_favorites_remove_single
 )
 from .links.miscellaneous_links import link_decorations_list
 from .links.trashed_document_links import (
-    link_document_delete, link_document_list_deleted,
-    link_document_multiple_delete, link_document_multiple_restore,
-    link_document_multiple_trash, link_document_restore, link_document_trash,
-    link_trash_can_empty
+    link_document_trash_multiple, link_document_trash_single,
+    link_trash_can_empty, link_trashed_document_delete_multiple,
+    link_trashed_document_delete_single, link_trashed_document_list,
+    link_trashed_document_restore_multiple,
+    link_trashed_document_restore_single
 )
 from .literals import (
     ERROR_LOG_DOMAIN_NAME, IMAGE_ERROR_DOCUMENT_FILE_HAS_NO_PAGES,
@@ -386,19 +386,19 @@ class DocumentsApp(MayanAppConfig):
         )
         menu_multi_item.bind_links(
             links=(
-                link_document_file_multiple_delete,
+                link_document_file_delete_multiple,
                 link_document_file_introspect_multiple,
-                link_document_file_multiple_transformations_clear,
+                link_document_file_transformations_clear_multiple,
             ), sources=(DocumentFile,)
         )
         menu_object.bind_links(
             links=(
                 link_cache_partition_purge,
-                link_document_file_delete,
+                link_document_file_delete_single,
                 link_document_file_edit,
                 link_document_file_introspect_single,
                 link_document_file_print_form,
-                link_document_file_transformations_clear,
+                link_document_file_transformations_clear_single,
                 link_document_file_transformations_clone
             ),
             sources=(DocumentFile,)
@@ -499,12 +499,16 @@ class DocumentsApp(MayanAppConfig):
         )
 
         menu_object.bind_links(
-            links=(link_document_restore, link_document_delete),
+            links=(
+                link_trashed_document_restore_single,
+                link_trashed_document_delete_single
+            ),
             sources=(TrashedDocument,)
         )
         menu_multi_item.bind_links(
             links=(
-                link_document_multiple_restore, link_document_multiple_delete
+                link_trashed_document_restore_multiple,
+                link_trashed_document_delete_multiple
             ), sources=(TrashedDocument,)
         )
         menu_multi_item.add_proxy_exclusion(source=TrashedDocument)
@@ -798,19 +802,19 @@ class DocumentsApp(MayanAppConfig):
         )
         menu_multi_item.bind_links(
             links=(
-                link_document_version_multiple_delete,
-                link_document_version_multiple_transformations_clear,
+                link_document_version_delete_multiple,
+                link_document_version_transformations_clear_multiple,
             ), sources=(DocumentVersion,)
         )
         menu_object.bind_links(
             links=(
                 link_document_version_active, link_cache_partition_purge,
-                link_document_version_single_delete,
+                link_document_version_delete_single,
                 link_document_version_edit,
                 link_document_version_modification,
                 link_document_version_page_list_remap,
                 link_document_version_print_form,
-                link_document_version_transformations_clear,
+                link_document_version_transformations_clear_single,
                 link_document_version_transformations_clone
             ),
             sources=(DocumentVersion,)
@@ -1007,7 +1011,7 @@ class DocumentsApp(MayanAppConfig):
             links=(link_document_preview,), sources=(Document,), position=0
         )
         menu_list_facet.bind_links(
-            links=(link_document_properties,), sources=(Document,),
+            links=(link_document_properties_detail,), sources=(Document,),
             position=2
         )
         menu_list_facet.bind_links(
@@ -1019,15 +1023,17 @@ class DocumentsApp(MayanAppConfig):
             links=(
                 link_document_favorites_add_multiple,
                 link_document_favorites_remove_multiple,
-                link_document_multiple_trash,
-                link_document_multiple_type_change
+                link_document_trash_multiple,
+                link_document_type_change_multiple
             ), sources=(Document,)
         )
         menu_object.bind_links(
             links=(
-                link_document_favorites_add, link_document_favorites_remove,
-                link_document_properties_edit, link_document_type_change,
-                link_document_trash
+                link_document_favorites_add_single,
+                link_document_favorites_remove_single,
+                link_document_properties_edit,
+                link_document_type_change_single,
+                link_document_trash_single
             ), sources=(Document,)
         )
         menu_secondary.bind_links(
@@ -1064,7 +1070,7 @@ class DocumentsApp(MayanAppConfig):
                 link_document_recently_accessed_list,
                 link_document_recently_created_list,
                 link_document_favorites_list, link_document_list,
-                link_document_list_deleted
+                link_trashed_document_list
             )
         )
 

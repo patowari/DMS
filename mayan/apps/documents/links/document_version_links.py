@@ -7,12 +7,14 @@ from mayan.apps.navigation.links import Link
 
 from ..icons import (
     icon_document_version_active, icon_document_version_create,
-    icon_document_version_delete, icon_document_version_edit,
+    icon_document_version_delete_multiple,
+    icon_document_version_delete_single, icon_document_version_edit,
     icon_document_version_list, icon_document_version_modification,
     icon_document_version_preview, icon_document_version_print,
     icon_document_version_return_document, icon_document_version_return_list,
-    icon_document_version_transformation_list_clear,
-    icon_document_version_transformation_list_clone
+    icon_document_version_transformation_clear_multiple,
+    icon_document_version_transformation_clear_single,
+    icon_document_version_transformations_clone
 )
 from ..permissions import (
     permission_document_version_create, permission_document_version_delete,
@@ -32,15 +34,15 @@ link_document_version_create = Link(
     text=_(message='Create document version'),
     view='documents:document_version_create'
 )
-link_document_version_single_delete = Link(
+link_document_version_delete_multiple = Link(
+    icon=icon_document_version_delete_multiple, tags='dangerous',
+    text=_(message='Delete'), view='documents:document_version_multiple_delete'
+)
+link_document_version_delete_single = Link(
     args='resolved_object.pk',
-    icon=icon_document_version_delete,
+    icon=icon_document_version_delete_single,
     permission=permission_document_version_delete, tags='dangerous',
     text=_(message='Delete'), view='documents:document_version_single_delete'
-)
-link_document_version_multiple_delete = Link(
-    icon=icon_document_version_delete, tags='dangerous',
-    text=_(message='Delete'), view='documents:document_version_multiple_delete'
 )
 link_document_version_edit = Link(
     args='resolved_object.pk', icon=icon_document_version_edit,
@@ -78,22 +80,22 @@ link_document_version_return_list = Link(
     permission=permission_document_version_view, text=_(message='Versions'),
     view='documents:document_version_list'
 )
-link_document_version_transformations_clear = Link(
-    args='resolved_object.id',
-    icon=icon_document_version_transformation_list_clear,
-    permission=permission_transformation_delete,
-    text=_(message='Clear transformations'),
-    view='documents:document_version_transformations_clear'
-)
-link_document_version_multiple_transformations_clear = Link(
-    icon=icon_document_version_transformation_list_clear,
+link_document_version_transformations_clear_multiple = Link(
+    icon=icon_document_version_transformation_clear_multiple,
     permission=permission_transformation_delete,
     text=_(message='Clear transformations'),
     view='documents:document_version_multiple_transformations_clear'
 )
+link_document_version_transformations_clear_single = Link(
+    args='resolved_object.id',
+    icon=icon_document_version_transformation_clear_single,
+    permission=permission_transformation_delete,
+    text=_(message='Clear transformations'),
+    view='documents:document_version_transformations_clear'
+)
 link_document_version_transformations_clone = Link(
     args='resolved_object.id',
-    icon=icon_document_version_transformation_list_clone,
+    icon=icon_document_version_transformations_clone,
     permission=permission_transformation_edit,
     text=_(message='Clone transformations'),
     view='documents:document_version_transformations_clone'

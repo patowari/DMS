@@ -17,7 +17,7 @@ from ..forms.document_type_forms import DocumentTypeFilteredSelectForm
 from ..icons import (
     icon_document_list, icon_document_preview,
     icon_document_properties_detail, icon_document_properties_edit,
-    icon_document_type_change
+    icon_document_type_change_multiple
 )
 from ..models.document_models import Document
 from ..models.document_type_models import DocumentType
@@ -89,7 +89,7 @@ class DocumentTypeChangeView(MultipleObjectFormActionView):
         message='Document type change request performed on %(count)d '
         'documents.'
     )
-    view_icon = icon_document_type_change
+    view_icon = icon_document_type_change_multiple
 
     def get_extra_context(self):
         result = {

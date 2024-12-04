@@ -11,11 +11,11 @@ icon_file_metadata_driver = Icon(
 
 # Document file
 
-icon_document_file_metadata_single_submit = Icon(
+icon_document_file_metadata_submit_multiple = Icon(
     driver_name='fontawesome-dual', primary_symbol='chess-board',
     secondary_symbol='arrow-right'
 )
-icon_document_file_metadata_multiple_submit = icon_document_file_metadata_single_submit
+icon_document_file_metadata_submit_single = icon_document_file_metadata_submit_multiple
 icon_file_metadata_driver_attribute_list = Icon(
     driver_name='fontawesome', symbol='chess-board'
 )

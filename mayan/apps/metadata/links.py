@@ -8,9 +8,9 @@ from .icons import (
     icon_document_metadata_add, icon_document_metadata_edit,
     icon_document_metadata_list, icon_document_metadata_remove,
     icon_document_type_metadata_type_list, icon_metadata_type_create,
+    icon_metadata_type_delete_multiple, icon_metadata_type_delete_single,
     icon_metadata_type_document_type_list, icon_metadata_type_edit,
-    icon_metadata_type_list, icon_metadata_type_multiple_delete,
-    icon_metadata_type_single_delete
+    icon_metadata_type_list
 )
 from .permissions import (
     permission_document_metadata_add, permission_document_metadata_edit,
@@ -76,15 +76,15 @@ link_metadata_type_create = Link(
     permission=permission_metadata_type_create, text=_(message='Create new'),
     view='metadata:metadata_type_create'
 )
-link_metadata_type_single_delete = Link(
-    args='object.pk', icon=icon_metadata_type_single_delete,
+link_metadata_type_delete_multiple = Link(
+    icon=icon_metadata_type_delete_multiple,
+    text=_(message='Delete'), view='metadata:metadata_type_multiple_delete'
+)
+link_metadata_type_delete_single = Link(
+    args='object.pk', icon=icon_metadata_type_delete_single,
     permission=permission_metadata_type_delete,
     tags='dangerous', text=_(message='Delete'),
     view='metadata:metadata_type_single_delete',
-)
-link_metadata_type_multiple_delete = Link(
-    icon=icon_metadata_type_multiple_delete,
-    text=_(message='Delete'), view='metadata:metadata_type_multiple_delete'
 )
 link_metadata_type_edit = Link(
     args='object.pk', icon=icon_metadata_type_edit,

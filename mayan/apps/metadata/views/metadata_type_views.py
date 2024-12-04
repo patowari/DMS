@@ -14,9 +14,9 @@ from ..forms import (
 )
 from ..icons import (
     icon_document_type_metadata_type_list, icon_metadata,
-    icon_metadata_type_create, icon_metadata_type_document_type_list,
-    icon_metadata_type_edit, icon_metadata_type_list,
-    icon_metadata_type_single_delete
+    icon_metadata_type_create, icon_metadata_type_delete_single,
+    icon_metadata_type_document_type_list, icon_metadata_type_edit,
+    icon_metadata_type_list
 )
 from ..links import link_metadata_type_create
 from ..models.metadata_type_models import MetadataType
@@ -64,7 +64,7 @@ class MetadataTypeDeleteView(MultipleObjectDeleteView):
     title_plural = _(message='Delete the %(count)d selected metadata types.')
     title_single = _(message='Delete metadata type: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected metadata type.')
-    view_icon = icon_metadata_type_single_delete
+    view_icon = icon_metadata_type_delete_single
 
 
 class MetadataTypeEditView(SingleObjectEditView):

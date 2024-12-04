@@ -12,8 +12,8 @@ from mayan.apps.views.generics import (
 
 from ..forms import AssetDetailForm
 from ..icons import (
-    icon_asset_create, icon_asset_delete, icon_asset_detail, icon_asset_edit,
-    icon_asset_list
+    icon_asset_create, icon_asset_delete_multiple, icon_asset_detail,
+    icon_asset_edit, icon_asset_list
 )
 from ..links import link_asset_create
 from ..models import Asset
@@ -49,7 +49,7 @@ class AssetDeleteView(MultipleObjectConfirmActionView):
     success_asset_plural = _(
         message='Delete request performed on %(count)d assets'
     )
-    view_icon = icon_asset_delete
+    view_icon = icon_asset_delete_multiple
 
     def get_extra_context(self):
         result = {

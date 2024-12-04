@@ -20,7 +20,7 @@ from ..forms.workflow_template_forms import (
 )
 from ..icons import (
     icon_document_type_workflow_template_list,
-    icon_document_workflow_templates_launch, icon_tool_launch_workflows,
+    icon_document_workflow_templates_launch_multiple, icon_tool_launch_workflows,
     icon_workflow_template_create, icon_workflow_template_delete,
     icon_workflow_template_document_type_list, icon_workflow_template_edit,
     icon_workflow_template_launch, icon_workflow_template_list,
@@ -97,7 +97,7 @@ class DocumentWorkflowTemplatesLaunchView(MultipleObjectFormActionView):
         message='Queue launching workflows for the selected %(count)d '
         'document.'
     )
-    view_icon = icon_document_workflow_templates_launch
+    view_icon = icon_document_workflow_templates_launch_multiple
 
     def get_extra_context(self):
         context = {

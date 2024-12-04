@@ -3,8 +3,8 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.navigation.links import Link
 
 from .icons import (
-    icon_document_file_metadata_multiple_submit,
-    icon_document_file_metadata_single_submit,
+    icon_document_file_metadata_submit_multiple,
+    icon_document_file_metadata_submit_single,
     icon_document_type_file_metadata_driver_configuration_edit,
     icon_document_type_file_metadata_driver_configuration_list,
     icon_document_type_file_metadata_submit, icon_file_metadata,
@@ -29,17 +29,17 @@ link_document_file_metadata_driver_attribute_list = Link(
     permission=permission_file_metadata_view, text=_(message='Attributes'),
     view='file_metadata:document_file_metadata_driver_attribute_list'
 )
-link_document_file_metadata_single_submit = Link(
-    icon=icon_document_file_metadata_single_submit,
+link_document_file_metadata_submit_multiple = Link(
+    icon=icon_document_file_metadata_submit_multiple,
+    text=_(message='Submit for file metadata'),
+    view='file_metadata:document_file_metadata_multiple_submit'
+)
+link_document_file_metadata_submit_single = Link(
+    icon=icon_document_file_metadata_submit_single,
     kwargs={'document_file_id': 'resolved_object.id'},
     permission=permission_file_metadata_submit,
     text=_(message='Submit for file metadata'),
     view='file_metadata:document_file_metadata_single_submit'
-)
-link_document_file_metadata_submit_multiple = Link(
-    icon=icon_document_file_metadata_multiple_submit,
-    text=_(message='Submit for file metadata'),
-    view='file_metadata:document_file_metadata_multiple_submit'
 )
 
 # Document type

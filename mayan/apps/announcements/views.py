@@ -10,7 +10,7 @@ from mayan.apps.views.generics import (
 )
 
 from .icons import (
-    icon_announcement_create, icon_announcement_delete,
+    icon_announcement_create, icon_announcement_delete_multiple,
     icon_announcement_edit, icon_announcement_list
 )
 from .links import link_announcement_create
@@ -60,7 +60,7 @@ class AnnouncementDeleteView(MultipleObjectConfirmActionView):
     title_plural = _(message='Delete the %(count)d selected announcements.')
     title_single = _(message='Delete announcement: %(object)s.')
     title_singular = _(message='Delete the %(count)d selected announcement.')
-    view_icon = icon_announcement_delete
+    view_icon = icon_announcement_delete_multiple
 
     def get_extra_context(self):
         context = {'delete_view': True}

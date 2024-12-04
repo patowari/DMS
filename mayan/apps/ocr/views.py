@@ -27,10 +27,10 @@ from .forms import (
 )
 from .icons import (
     icon_document_type_ocr_settings, icon_document_type_ocr_submit,
-    icon_document_version_ocr_content_single_delete,
+    icon_document_version_ocr_content_delete_single,
     icon_document_version_ocr_content_detail,
     icon_document_version_ocr_content_download,
-    icon_document_version_ocr_single_submit,
+    icon_document_version_ocr_submit_single,
     icon_document_version_page_ocr_content_detail,
     icon_document_version_page_ocr_content_edit
 )
@@ -136,7 +136,7 @@ class DocumentVersionOCRContentDeleteView(MultipleObjectDeleteView):
     title_singular = _(
         message='Delete the OCR content of the %(count)d selected document version.'
     )
-    view_icon = icon_document_version_ocr_content_single_delete
+    view_icon = icon_document_version_ocr_content_delete_single
 
     def object_action(self, form, instance):
         DocumentVersionPageOCRContent.objects.delete_content_for(
@@ -192,7 +192,7 @@ class DocumentVersionOCRSubmitView(MultipleObjectConfirmActionView):
     success_message_plural = _(
         message='%(count)d document versions submitted to the OCR queue.'
     )
-    view_icon = icon_document_version_ocr_single_submit
+    view_icon = icon_document_version_ocr_submit_single
 
     def get_extra_context(self):
         queryset = self.object_list

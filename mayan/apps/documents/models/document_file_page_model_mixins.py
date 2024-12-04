@@ -65,7 +65,8 @@ class DocumentFilePageBusinessLogicMixin:
                     )
                 except CachePartitionFile.DoesNotExist:
                     logger.debug(
-                        'transformations cache file "%s" not found', combined_cache_filename
+                        'transformations cache file "%s" not found',
+                        combined_cache_filename
                     )
                     image = self.get_image(
                         transformation_instance_list=combined_transformation_list
@@ -210,6 +211,12 @@ class DocumentFilePageBusinessLogicMixin:
                     'document file intermediate file. Expected file named '
                     '"%s" failed to be created; %s', cache_filename,
                     exception, exc_info=True
+                )
+                error_log_text = '''
+                Cannot generate document file page; {exception}
+                '''.format(exception=exception)
+                self.error_log.create(
+                    domain_name=ERROR_LOG_DOMAIN_NAME, text=error_log_text
                 )
                 raise
         else:

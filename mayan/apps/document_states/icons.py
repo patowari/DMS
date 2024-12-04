@@ -9,7 +9,8 @@ icon_tool_launch_workflows = Icon(
     driver_name='fontawesome-dual', primary_symbol='sitemap',
     secondary_symbol='play'
 )
-icon_document_workflow_templates_launch = icon_tool_launch_workflows
+icon_document_workflow_templates_launch_multiple = icon_tool_launch_workflows
+icon_document_workflow_templates_launch_single = icon_document_workflow_templates_launch_multiple
 
 # Workflow template
 

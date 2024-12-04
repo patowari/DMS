@@ -33,15 +33,17 @@ icon_document_return = Icon(
 
 # Favorite
 
-icon_favorite_document_add = Icon(
+icon_document_favorite_add_multiple = Icon(
     driver_name='fontawesome-dual', primary_symbol='star',
     secondary_symbol='plus'
 )
-icon_favorite_document_list = Icon(driver_name='fontawesome', symbol='star')
-icon_favorite_document_remove = Icon(
+icon_document_favorite_add_single = icon_document_favorite_add_multiple
+icon_document_favorite_list = Icon(driver_name='fontawesome', symbol='star')
+icon_document_favorite_remove_multiple = Icon(
     driver_name='fontawesome-dual', primary_symbol='star',
     secondary_symbol='minus'
 )
+icon_document_favorite_remove_single = icon_document_favorite_remove_multiple
 
 # Document type
 
@@ -108,10 +110,12 @@ icon_document_properties_detail = Icon(
 icon_document_properties_edit = Icon(
     driver_name='fontawesome', symbol='pencil-alt'
 )
-icon_document_trash_send = Icon(
+icon_document_trash_multiple = Icon(
     driver_name='fontawesome', symbol='trash-alt'
 )
-icon_document_type_change = icon_document_type
+icon_document_trash_single = icon_document_trash_multiple
+icon_document_type_change_multiple = icon_document_type
+icon_document_type_change_single = icon_document_type_change_multiple
 
 # Document file
 
@@ -204,9 +208,10 @@ icon_document_version_create = Icon(
     driver_name='fontawesome-dual', primary_symbol='code-branch',
     secondary_symbol='plus'
 )
-icon_document_version_delete = Icon(
+icon_document_version_delete_multiple = Icon(
     driver_name='fontawesome', symbol='times'
 )
+icon_document_version_delete_single = icon_document_version_delete_multiple
 icon_document_version_edit = Icon(
     driver_name='fontawesome', symbol='pencil-alt'
 )
@@ -227,12 +232,13 @@ icon_document_version_preview = Icon(
 icon_document_version_print = Icon(
     driver_name='fontawesome', symbol='print'
 )
-icon_document_version_transformation_list_clear = Icon(
+icon_document_version_transformation_clear_multiple = Icon(
     driver_name='fontawesome-dual',
     primary_symbol=icon_transformations.kwargs['symbol'],
     secondary_symbol='times'
 )
-icon_document_version_transformation_list_clone = Icon(
+icon_document_version_transformation_clear_single = icon_document_version_transformation_clear_multiple
+icon_document_version_transformations_clone = Icon(
     driver_name='fontawesome-dual',
     primary_symbol=icon_transformations.kwargs['symbol'],
     secondary_symbol='arrow-right'
@@ -307,18 +313,14 @@ icon_trash_can_empty = Icon(
     driver_name='fontawesome-dual', primary_symbol='trash-alt',
     secondary_symbol='minus'
 )
-icon_trashed_document_delete = Icon(
+icon_trashed_document_delete_multiple = Icon(
     driver_name='fontawesome', symbol='times'
 )
+icon_trashed_document_delete_single = icon_trashed_document_delete_multiple
 icon_trashed_document_list = Icon(
     driver_name='fontawesome', symbol='trash-alt'
 )
-icon_trashed_document_multiple_delete = Icon(
-    driver_name='fontawesome', symbol='trash-alt'
-)
-icon_trashed_document_multiple_restore = Icon(
+icon_trashed_document_restore_multiple = Icon(
     driver_name='fontawesome', symbol='recycle'
 )
-icon_trashed_document_restore = Icon(
-    driver_name='fontawesome', symbol='recycle'
-)
+icon_trashed_document_restore_single = icon_trashed_document_restore_multiple

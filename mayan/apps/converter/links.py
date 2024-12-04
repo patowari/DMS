@@ -5,9 +5,9 @@ from mayan.apps.navigation.utils import factory_condition_queryset_access
 
 from .classes import LayerLink
 from .icons import (
-    icon_asset_create, icon_asset_delete, icon_asset_edit, icon_asset_list,
-    icon_transformation_delete, icon_transformation_edit,
-    icon_transformation_select
+    icon_asset_create, icon_asset_delete_multiple, icon_asset_delete_single,
+    icon_asset_edit, icon_asset_list, icon_transformation_delete,
+    icon_transformation_edit, icon_transformation_select
 )
 from .layers import layer_saved_transformations
 from .permissions import (
@@ -34,12 +34,12 @@ link_asset_create = Link(
     icon=icon_asset_create, permission=permission_asset_create,
     text=_(message='Create asset'), view='converter:asset_create'
 )
-link_asset_multiple_delete = Link(
-    icon=icon_asset_delete, tags='dangerous', text=_(message='Delete'),
+link_asset_delete_multiple = Link(
+    icon=icon_asset_delete_multiple, tags='dangerous', text=_(message='Delete'),
     view='converter:asset_multiple_delete'
 )
-link_asset_single_delete = Link(
-    args='object.pk', icon=icon_asset_delete,
+link_asset_delete_single = Link(
+    args='object.pk', icon=icon_asset_delete_single,
     permission=permission_asset_delete, tags='dangerous',
     text=_(message='Delete'), view='converter:asset_single_delete'
 )

@@ -20,16 +20,16 @@ from ..permissions import (
     permission_document_file_view, permission_document_view
 )
 
-link_document_file_delete = Link(
+link_document_file_delete_multiple = Link(
+    icon=icon_document_file_delete,
+    permission=permission_document_file_delete, tags='dangerous',
+    text=_(message='Delete'), view='documents:document_file_multiple_delete',
+)
+link_document_file_delete_single = Link(
     args='object.pk',
     icon=icon_document_file_delete,
     permission=permission_document_file_delete, tags='dangerous',
     text=_(message='Delete'), view='documents:document_file_delete',
-)
-link_document_file_multiple_delete = Link(
-    icon=icon_document_file_delete,
-    permission=permission_document_file_delete, tags='dangerous',
-    text=_(message='Delete'), view='documents:document_file_multiple_delete',
 )
 link_document_file_edit = Link(
     args='object.pk', icon=icon_document_file_edit,
@@ -81,18 +81,18 @@ link_document_file_preview = Link(
     permission=permission_document_file_view,
     text=_(message='Preview'), view='documents:document_file_preview'
 )
-link_document_file_transformations_clear = Link(
+link_document_file_transformations_clear_multiple = Link(
+    icon=icon_document_file_transformation_list_clear,
+    permission=permission_transformation_delete,
+    text=_(message='Clear transformations'),
+    view='documents:document_file_multiple_transformations_clear'
+)
+link_document_file_transformations_clear_single = Link(
     args='resolved_object.id',
     icon=icon_document_file_transformation_list_clear,
     permission=permission_transformation_delete,
     text=_(message='Clear transformations'),
     view='documents:document_file_transformations_clear'
-)
-link_document_file_multiple_transformations_clear = Link(
-    icon=icon_document_file_transformation_list_clear,
-    permission=permission_transformation_delete,
-    text=_(message='Clear transformations'),
-    view='documents:document_file_multiple_transformations_clear'
 )
 link_document_file_transformations_clone = Link(
     args='resolved_object.id',

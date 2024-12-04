@@ -27,65 +27,65 @@ from .permissions import (
 
 # Document
 
-link_send_document_link_single = Link(
+link_document_link_send_multiple = Link(
+    icon=icon_document_link_send_multiple,
+    text=_(message='Email document link'),
+    view='mailer:send_document_link_multiple'
+)
+link_document_link_send_single = Link(
     args='resolved_object.pk', icon=icon_document_link_send_single,
     permission=permission_send_document_link,
     text=_(message='Email document link'),
     view='mailer:send_document_link_single'
 )
-link_send_document_link_multiple = Link(
-    icon=icon_document_link_send_multiple,
-    text=_(message='Email document link'),
-    view='mailer:send_document_link_multiple'
-)
 
 # Document file
 
-link_send_document_file_attachment_single = Link(
+link_document_file_attachment_send_multiple = Link(
+    icon=icon_document_file_attachment_send_multiple,
+    text=_(message='Email document file'),
+    view='mailer:send_document_file_attachment_multiple'
+)
+link_document_file_attachment_send_single = Link(
     args='resolved_object.pk',
     icon=icon_document_file_attachment_send_single,
     permission=permission_send_document_file_attachment,
     text=_(message='Email document file'),
     view='mailer:send_document_file_attachment_single'
 )
-link_send_document_file_attachment_multiple = Link(
-    icon=icon_document_file_attachment_send_multiple,
-    text=_(message='Email document file'),
-    view='mailer:send_document_file_attachment_multiple'
+link_document_file_link_send_multiple = Link(
+    icon=icon_document_file_link_send_multiple,
+    text=_(message='Email document file link'),
+    view='mailer:send_document_file_link_multiple'
 )
-link_send_document_file_link_single = Link(
+link_document_file_link_send_single = Link(
     args='resolved_object.pk', icon=icon_document_file_link_send_single,
     permission=permission_send_document_file_link,
     text=_(message='Email document file link'),
     view='mailer:send_document_file_link_single'
 )
-link_send_document_file_link_multiple = Link(
-    icon=icon_document_file_link_send_multiple,
-    text=_(message='Email document file link'),
-    view='mailer:send_document_file_link_multiple'
-)
 
 # Document version
 
-link_send_document_version_attachment_single = Link(
+link_document_version_attachment_send_single = Link(
     args='resolved_object.pk',
     icon=icon_document_version_attachment_send_single,
     permission=permission_send_document_version_attachment,
     text=_(message='Email document version'),
     view='mailer:send_document_version_attachment_single'
 )
-link_send_document_version_attachment_multiple = Link(
+link_document_version_attachment_send_multiple = Link(
     icon=icon_document_version_attachment_send_multiple,
     text=_(message='Email document version'),
     view='mailer:send_document_version_attachment_multiple'
 )
-link_send_document_version_link_single = Link(
+link_document_version_link_send_single = Link(
     args='resolved_object.pk', icon=icon_document_version_link_send_single,
     permission=permission_send_document_version_link,
     text=_(message='Email document version link'),
     view='mailer:send_document_version_link_single'
 )
-link_send_document_version_link_multiple = Link(
+link_document_version_link_send_multiple = Link(
     icon=icon_document_version_link_send_multiple,
     text=_(message='Email link version'),
     view='mailer:send_document_version_link_multiple'
@@ -120,11 +120,6 @@ link_mailing_profile_setup = Link(
         view_permission=permission_mailing_profile_create,
     ), icon=icon_mailing_profile_list, text=_(message='Mailing profiles'),
     view='mailer:mailing_profile_list'
-)
-link_mailing_profile_list = Link(
-    icon=icon_mailing_profile_list,
-    permission=permission_mailing_profile_view,
-    text=_(message='Mailing profiles'), view='mailer:mailing_profile_list'
 )
 link_mailing_profile_test = Link(
     args='object.pk', icon=icon_mailing_profile_test,
