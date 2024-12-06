@@ -22,9 +22,7 @@ class WorkflowTemplateTransitionTriggersModelTestCase(
         self._create_test_workflow_template_state()
         self._create_test_workflow_template_transition()
         self._create_test_event_type()
-        self._test_workflow_template_transition.trigger_events.create(
-            event_type=self._test_event_type.get_stored_event_type()
-        )
+        self._create_test_workflow_template_transition_trigger()
         self._create_test_document_stub()
 
         ModelEventType.register(
