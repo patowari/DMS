@@ -1,3 +1,5 @@
+from django.test import tag
+
 from mayan.apps.documents.tests.mixins.document_mixins import (
     DocumentTestMixin
 )
@@ -14,6 +16,7 @@ from ..literals import (
 )
 
 
+@tag('workflows')
 class WorkflowTemplateTestMixin(DocumentTestMixin):
     _test_object_model = Workflow
     _test_object_name = '_test_workflow_template'
