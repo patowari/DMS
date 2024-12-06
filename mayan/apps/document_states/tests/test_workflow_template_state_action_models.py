@@ -2,7 +2,6 @@ import json
 
 from mayan.apps.documents.events import event_document_edited
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
-from mayan.apps.events.classes import EventType
 
 from .literals import (
     TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH,
@@ -139,8 +138,6 @@ class WorkflowTemplateStateActionModelTestCase(
                 'backend_path': TEST_DOCUMENT_EDIT_WORKFLOW_TEMPLATE_STATE_ACTION_DOTTED_PATH
             }, workflow_state_index=1
         )
-
-        EventType.refresh()
 
         self._test_workflow_template_transition.trigger_events.create(
             event_type=event_document_edited.get_stored_event_type()
