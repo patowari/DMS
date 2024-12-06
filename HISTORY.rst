@@ -104,6 +104,19 @@
 - Move transition trigger code from the handler to the manager module.
 - Optimize the valid transition calculation by converting it into a Django
   query filter and using the `exists()` method.
+- Events app updates:
+
+  - Ensure event namespaces are unique.
+  - Reuse event namespaces instances.
+  - Preload the stored event type cache.
+  - Explicitly cleanup test only event types.
+  - Support deleting event types and event type namespaces.
+  - Ensure even types are unique per event type namespace.
+  - Support deregistering model event types.
+  - Improve test mixin class inheritance. Reduces imports and test
+    scaffolding.
+  - Tag event tests at the mixin level.
+  - Remove event type refreshes in views.
 
 4.8.3 (2024-10-04)
 ==================

@@ -24,10 +24,6 @@ class EventTypeSubscriptionListView(FormView):
     submodel = StoredEventType
     view_icon = icon_event_types_subscriptions_list
 
-    def dispatch(self, *args, **kwargs):
-        EventType.refresh()
-        return super().dispatch(*args, **kwargs)
-
     def form_valid(self, form):
         try:
             for instance in form:
@@ -102,10 +98,6 @@ class ObjectEventTypeSubscriptionListView(
     external_object_permission = permission_events_view
     form_class = ObjectEventTypeUserRelationshipFormSet
     view_icon = icon_object_event_type_user_subscription_list
-
-    def dispatch(self, *args, **kwargs):
-        EventType.refresh()
-        return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
         try:

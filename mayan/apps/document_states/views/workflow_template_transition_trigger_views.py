@@ -24,10 +24,6 @@ class WorkflowTemplateTransitionTriggerEventListView(
     form_class = WorkflowTransitionTriggerEventRelationshipFormSet
     view_icon = icon_workflow_template_transition_triggers
 
-    def dispatch(self, *args, **kwargs):
-        EventType.refresh()
-        return super().dispatch(*args, **kwargs)
-
     def form_valid(self, form):
         try:
             for instance in form:

@@ -1,4 +1,4 @@
-from ...classes import EventTypeNamespace
+from ...classes import EventTypeNamespace, ModelEventType
 
 from ..literals import (
     TEST_EVENT_TYPE_LABEL, TEST_EVENT_TYPE_NAME,
@@ -11,13 +11,27 @@ class EventTypeTestMixin:
         super().setUp()
         self._test_event_type_list = []
 
-    def _create_test_event_type(self):
-        total_test_event_type_count = len(self._test_event_type_list)
-        test_namespace_label = '{}_{}'.format(
-            TEST_EVENT_TYPE_NAMESPACE_LABEL, total_test_event_type_count
+        self._test_event_type_namespace = EventTypeNamespace(
+            label=TEST_EVENT_TYPE_NAMESPACE_LABEL,
+            name=TEST_EVENT_TYPE_NAMESPACE_NAME
         )
-        test_namespace_name = '{}_{}'.format(
-            TEST_EVENT_TYPE_NAMESPACE_NAME, total_test_event_type_count
+
+    def tearDown(self):
+        for event_type in self._test_event_type_list.copy():
+            ModelEventType.deregister_event_type(event_type=event_type)
+
+            self._test_event_type_namespace.event_type_remove(
+                event_type=event_type
+            )
+            self._test_event_type_list.remove(event_type)
+
+        self._test_event_type_namespace.do_delete()
+
+        super().tearDown()
+
+    def _create_test_event_type(self):
+        total_test_event_type_count = len(
+            self._test_event_type_namespace.event_type_list
         )
         test_event_label = '{}_{}'.format(
             TEST_EVENT_TYPE_LABEL, total_test_event_type_count
@@ -26,12 +40,13 @@ class EventTypeTestMixin:
             TEST_EVENT_TYPE_NAME, total_test_event_type_count
         )
 
-        self._test_event_type_namespace = EventTypeNamespace(
-            label=test_namespace_label, name=test_namespace_name
-        )
         self._test_event_type = self._test_event_type_namespace.add_event_type(
             label=test_event_label, name=test_event_name
         )
+
+        # Initialize cache of the new event type.
+        self._test_event_type.get_stored_event_type()
+
         self._test_event_type_list.append(self._test_event_type)
 
 

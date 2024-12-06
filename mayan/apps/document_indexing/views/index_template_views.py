@@ -9,7 +9,7 @@ from mayan.apps.acls.models import AccessControlList
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.models.document_type_models import DocumentType
 from mayan.apps.documents.permissions import permission_document_type_edit
-from mayan.apps.events.classes import EventType, ModelEventType
+from mayan.apps.events.classes import ModelEventType
 from mayan.apps.views.generics import (
     AddRemoveView, ConfirmView, FormView, SingleObjectCreateView,
     SingleObjectDeleteView, SingleObjectEditView, SingleObjectListView
@@ -185,10 +185,6 @@ class IndexTemplateEventTriggerListView(ExternalObjectViewMixin, FormView):
     external_object_pk_url_kwarg = 'index_template_id'
     form_class = IndexTemplateEventTriggerRelationshipFormSet
     view_icon = icon_index_template_event_triggers
-
-    def dispatch(self, *args, **kwargs):
-        EventType.refresh()
-        return super().dispatch(*args, **kwargs)
 
     def form_valid(self, form):
         try:

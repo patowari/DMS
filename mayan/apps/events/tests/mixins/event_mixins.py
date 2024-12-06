@@ -1,3 +1,5 @@
+from django.test import tag
+
 from actstream.models import Action
 
 from mayan.apps.acls.classes import ModelPermission
@@ -50,28 +52,14 @@ class EventListAPIViewTestMixin:
         return self.get(viewname='rest_api:event-list')
 
 
-class EventObjectTestMixin:
-    def _create_test_object_with_event_type_and_permission(self):
-        self._create_test_object()
-
-        EventModelRegistry.register(model=self._TestModel)
-
-        ModelEventType.register(
-            event_types=(self._test_event_type,), model=self._TestModel
-        )
+class EventTestCaseMixin:
+    def setUp(self):
+        # Simulate `EventTypeNamespace.post_load_modules` to ensure all
+        # stored event types are properly initialized for each test.
+        super().setUp()
 
         EventType.refresh()
 
-        ModelPermission.register(
-            model=self._TestModel, permissions=(
-                permission_events_view,
-            )
-        )
-
-
-class EventTestCaseMixin:
-    def setUp(self):
-        super().setUp()
         Action.objects.all().delete()
 
     def _clear_events(self):
@@ -81,6 +69,7 @@ class EventTestCaseMixin:
         return Action.objects.all().order_by('timestamp')
 
 
+@tag('events')
 class EventTestMixin(EventTypeTestMixin, TestMixinObjectCreationTrack):
     _test_object_model = Action
     _test_object_name = '_test_event'
@@ -100,6 +89,23 @@ class EventTestMixin(EventTypeTestMixin, TestMixinObjectCreationTrack):
         self._test_object_set()
 
         self._test_event_list.append(self._test_event)
+
+
+class EventObjectTestMixin(EventTestMixin):
+    def _create_test_object_with_event_type_and_permission(self):
+        self._create_test_object()
+
+        EventModelRegistry.register(model=self._TestModel)
+
+        ModelEventType.register(
+            event_types=(self._test_event_type,), model=self._TestModel
+        )
+
+        ModelPermission.register(
+            model=self.TestModel, permissions=(
+                permission_events_view,
+            )
+        )
 
 
 class EventViewTestMixin(EventTestMixin):
