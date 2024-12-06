@@ -25,13 +25,13 @@ from .mixins import (
 
 
 class BaseTestCaseMixin(
-    DelayTestCaseMixin, LayerTestCaseMixin, SilenceLoggerTestCaseMixin,
-    ConnectionsCheckTestCaseMixin, DownloadTestCaseMixin, EventTestCaseMixin,
-    RandomPrimaryKeyModelMonkeyPatchMixin, ACLTestCaseMixin,
-    ModelTestCaseMixin, OpenFileCheckTestCaseMixin,
-    DescriptorLeakCheckTestCaseMixin, PermissionTestCaseMixin,
-    SettingTestMixin, TempfileCheckTestCasekMixin, UserTestMixin,
-    TestModelTestCaseMixin
+    DelayTestCaseMixin, SilenceLoggerTestCaseMixin,
+    ConnectionsCheckTestCaseMixin, DownloadTestCaseMixin,
+    RandomPrimaryKeyModelMonkeyPatchMixin, EventTestCaseMixin,
+    LayerTestCaseMixin, ACLTestCaseMixin, ModelTestCaseMixin,
+    OpenFileCheckTestCaseMixin, DescriptorLeakCheckTestCaseMixin,
+    PermissionTestCaseMixin, SettingTestMixin, TempfileCheckTestCasekMixin,
+    UserTestMixin, TestModelTestCaseMixin
 ):
     """
     This is the most basic test case mixin class any test in the project

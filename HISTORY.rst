@@ -117,6 +117,14 @@
     scaffolding.
   - Tag event tests at the mixin level.
   - Remove event type refreshes in views.
+- Document indexing app updates:
+
+  - Split test mixins.
+  - Improve test mixin class inheritance. Reduces imports and test
+    scaffolding.
+  - Tag event tests at the mixin level.
+- Reorganize base test case mixins. Ensure ID randomizer has higher priority
+  followed by the event test mixin.
 
 4.8.3 (2024-10-04)
 ==================
