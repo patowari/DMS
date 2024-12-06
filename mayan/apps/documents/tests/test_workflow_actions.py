@@ -64,14 +64,16 @@ class WorkflowTemplateStateActionTransitionTestCase(
             self._test_document_type_list[0]
         )
 
-        document_type = self._test_document.document_type
+        test_document_type = self._test_document.document_type
 
         self._test_document.workflows.first().do_transition(
             transition=self._test_workflow_template_transition
         )
 
+        self._test_document.refresh_from_db()
+
         self.assertNotEqual(
-            self._test_document.document_type, document_type
+            self._test_document.document_type, test_document_type
         )
 
     def test_trash_document_action_workflow_execution(self):
