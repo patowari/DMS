@@ -126,6 +126,7 @@
 - Reorganize base test case mixins. Ensure ID randomizer has higher priority
   followed by the event test mixin.
 - Tag workflow tests at the mixin level.
+- Tag metadata tests at the mixin level.
 
 4.8.3 (2024-10-04)
 ==================

@@ -1,3 +1,5 @@
+from django.test import tag
+
 from mayan.apps.documents.tests.mixins.document_mixins import (
     DocumentTypeTestMixin
 )
@@ -11,6 +13,7 @@ from ..literals import (
 )
 
 
+@tag('metadata')
 class MetadataTypeTestMixin(
     DocumentTypeTestMixin, TestMixinObjectCreationTrack
 ):
