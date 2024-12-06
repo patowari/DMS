@@ -2,7 +2,9 @@ from unittest import mock
 
 from mayan.apps.cabinets.tests.mixins import CabinetTestMixin
 from mayan.apps.common.tests.mixins import ManagementCommandTestMixin
-from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
+from mayan.apps.document_indexing.tests.mixins.index_template_mixins import (
+    IndexTemplateTestMixin
+)
 from mayan.apps.storage.utils import NamedTemporaryFile
 from mayan.apps.testing.tests.base import BaseTestCase
 

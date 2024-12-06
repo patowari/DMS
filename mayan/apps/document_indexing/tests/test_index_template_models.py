@@ -1,6 +1,6 @@
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
-from .mixins import IndexTemplateTestMixin
+from .mixins.index_template_mixins import IndexTemplateTestMixin
 
 
 class IndexTemplateTestCase(IndexTemplateTestMixin, GenericDocumentTestCase):

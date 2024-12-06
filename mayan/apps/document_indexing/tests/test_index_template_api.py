@@ -16,11 +16,12 @@ from ..permissions import (
 )
 
 from .literals import TEST_INDEX_TEMPLATE_LABEL
-from .mixins import (
-    IndexInstanceTestMixin, IndexTemplateActionAPIViewTestMixin,
-    IndexTemplateAPIViewTestMixin, IndexTemplateDocumentTypeAPIViewTestMixin,
-    IndexTemplateNodeAPITestMixin, IndexTemplateTestMixin
+from .mixins.index_instance_mixins import IndexInstanceTestMixin
+from .mixins.index_template_mixins import (
+    IndexTemplateActionAPIViewTestMixin, IndexTemplateAPIViewTestMixin,
+    IndexTemplateDocumentTypeAPIViewTestMixin
 )
+from .mixins.index_template_node_mixins import IndexTemplateNodeAPITestMixin
 
 
 class IndexTemplateAPIViewTestCase(
@@ -210,8 +211,7 @@ class IndexTemplateAPIViewTestCase(
 
 
 class IndexTemplateDocumentTypeAPIViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateDocumentTypeAPIViewTestMixin,
-    GenericDocumentAPIViewTestCase
+    IndexTemplateDocumentTypeAPIViewTestMixin, GenericDocumentAPIViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -449,8 +449,8 @@ class IndexTemplateDocumentTypeAPIViewTestCase(
 
 
 class IndexTemplateRebuildAPIViewTestCase(
-    IndexInstanceTestMixin, IndexTemplateTestMixin,
-    IndexTemplateActionAPIViewTestMixin, GenericDocumentAPIViewTestCase
+    IndexInstanceTestMixin, IndexTemplateActionAPIViewTestMixin,
+    GenericDocumentAPIViewTestCase
 ):
     auto_create_test_document_stub = True
     auto_upload_test_document = False
@@ -499,8 +499,8 @@ class IndexTemplateRebuildAPIViewTestCase(
 
 
 class IndexTemplateResetAPIViewTestCase(
-    IndexInstanceTestMixin, IndexTemplateTestMixin,
-    IndexTemplateActionAPIViewTestMixin, GenericDocumentAPIViewTestCase
+    IndexInstanceTestMixin, IndexTemplateActionAPIViewTestMixin,
+    GenericDocumentAPIViewTestCase
 ):
     auto_create_test_document_stub = True
     auto_upload_test_document = False
@@ -549,8 +549,7 @@ class IndexTemplateResetAPIViewTestCase(
 
 
 class IndexTemplateNodeAPIViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateNodeAPITestMixin,
-    GenericDocumentAPIViewTestCase
+    IndexTemplateNodeAPITestMixin, GenericDocumentAPIViewTestCase
 ):
     auto_upload_test_document = False
 

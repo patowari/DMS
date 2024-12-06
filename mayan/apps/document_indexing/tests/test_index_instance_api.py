@@ -5,16 +5,14 @@ from mayan.apps.documents.tests.base import GenericDocumentAPIViewTestCase
 
 from ..permissions import permission_index_instance_view
 
-from .mixins import (
-    DocumentIndexAPIViewTestMixin, IndexInstanceAPIViewTestMixin,
-    IndexInstanceNodeAPIViewTestMixin, IndexInstanceTestMixin,
-    IndexTemplateTestMixin
+from .mixins.index_instance_mixins import (
+    DocumentIndexInstanceAPIViewTestMixin, IndexInstanceAPIViewTestMixin,
+    IndexInstanceNodeAPIViewTestMixin
 )
 
 
 class DocumentIndexAPIViewTestCase(
-    DocumentIndexAPIViewTestMixin, IndexInstanceTestMixin,
-    IndexTemplateTestMixin, GenericDocumentAPIViewTestCase
+    DocumentIndexInstanceAPIViewTestMixin, GenericDocumentAPIViewTestCase
 ):
     def setUp(self):
         super().setUp()
@@ -109,8 +107,7 @@ class DocumentIndexAPIViewTestCase(
 
 
 class IndexInstanceAPIViewTestCase(
-    IndexInstanceTestMixin, IndexInstanceAPIViewTestMixin,
-    IndexTemplateTestMixin, GenericDocumentAPIViewTestCase
+    IndexInstanceAPIViewTestMixin, GenericDocumentAPIViewTestCase
 ):
     def test_index_instance_detail_api_view_no_permission(self):
         self._clear_events()
@@ -173,8 +170,7 @@ class IndexInstanceAPIViewTestCase(
 
 
 class IndexInstanceNodeAPIViewTestCase(
-    IndexInstanceTestMixin, IndexInstanceNodeAPIViewTestMixin,
-    IndexTemplateTestMixin, GenericDocumentAPIViewTestCase
+    IndexInstanceNodeAPIViewTestMixin, GenericDocumentAPIViewTestCase
 ):
     def setUp(self):
         super().setUp()

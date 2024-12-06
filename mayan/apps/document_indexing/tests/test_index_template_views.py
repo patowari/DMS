@@ -11,15 +11,15 @@ from ..permissions import (
 from .literals import (
     TEST_INDEX_TEMPLATE_LABEL, TEST_INDEX_TEMPLATE_LABEL_EDITED
 )
-from .mixins import (
+from .mixins.index_template_mixins import (
     DocumentTypeAddRemoveIndexTemplateViewTestMixin,
-    IndexTemplateNodeViewTestMixin, IndexTemplateTestMixin,
     IndexTemplateViewTestMixin
 )
+from .mixins.index_template_node_mixins import IndexTemplateNodeViewTestMixin
 
 
 class DocumentTypeAddRemoveIndexTemplateViewTestCase(
-    DocumentTypeAddRemoveIndexTemplateViewTestMixin, IndexTemplateTestMixin,
+    DocumentTypeAddRemoveIndexTemplateViewTestMixin,
     GenericDocumentViewTestCase
 ):
     auto_add_test_index_template_to_test_document_type = False
@@ -278,8 +278,7 @@ class DocumentTypeAddRemoveIndexTemplateViewTestCase(
 
 
 class IndexTemplateViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateViewTestMixin,
-    GenericDocumentViewTestCase
+    IndexTemplateViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
     auto_create_test_index_template = False
@@ -426,8 +425,7 @@ class IndexTemplateViewTestCase(
 
 
 class IndexTemplateAddRemoveDocumentTypeViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateViewTestMixin,
-    GenericDocumentViewTestCase
+    IndexTemplateViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -684,8 +682,7 @@ class IndexTemplateAddRemoveDocumentTypeViewTestCase(
 
 
 class IndexTemplateNodeViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateNodeViewTestMixin,
-    GenericDocumentViewTestCase
+    IndexTemplateNodeViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

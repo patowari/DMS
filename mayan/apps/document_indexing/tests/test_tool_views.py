@@ -3,15 +3,12 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from ..models.index_instance_models import IndexInstanceNode
 from ..permissions import permission_index_template_rebuild
 
-from .mixins import (
-    IndexInstanceTestMixin, IndexTemplateTestMixin,
-    IndexTemplateViewTestMixin, IndexToolsViewTestMixin
-)
+from .mixins.index_instance_mixins import IndexInstanceTestMixin
+from .mixins.index_template_mixins import IndexToolsViewTestMixin
 
 
 class IndexToolsViewTestCase(
-    IndexInstanceTestMixin, IndexTemplateTestMixin,
-    IndexTemplateViewTestMixin, IndexToolsViewTestMixin,
+    IndexInstanceTestMixin, IndexToolsViewTestMixin,
     GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False

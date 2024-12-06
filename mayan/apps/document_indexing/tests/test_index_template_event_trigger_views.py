@@ -5,14 +5,13 @@ from mayan.apps.events.classes import ModelEventType
 from ..events import event_index_template_edited
 from ..permissions import permission_index_template_edit
 
-from .mixins import (
-    IndexTemplateEventTriggerViewTestMixin, IndexTemplateTestMixin
+from .mixins.index_template_mixins import (
+    IndexTemplateEventTriggerViewTestMixin
 )
 
 
 class IndexTemplateEventTriggerViewTestCase(
-    IndexTemplateTestMixin, IndexTemplateEventTriggerViewTestMixin,
-    GenericDocumentViewTestCase
+    IndexTemplateEventTriggerViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

@@ -1,5 +1,7 @@
 from mayan.apps.document_indexing.models import IndexInstanceNode
-from mayan.apps.document_indexing.tests.mixins import IndexTemplateTestMixin
+from mayan.apps.document_indexing.tests.mixins.index_template_mixins import (
+    IndexTemplateTestMixin
+)
 from mayan.apps.documents.tests.base import GenericDocumentTestCase
 
 from .literals import (

@@ -24,7 +24,7 @@ from .literals import (
     TEST_INDEX_TEMPLATE_DOCUMENT_LABEL_EXPRESSION,
     TEST_INDEX_TEMPLATE_DOCUMENT_TYPE_EXPRESSION
 )
-from .mixins import IndexTemplateTestMixin
+from .mixins.index_template_mixins import IndexTemplateTestMixin
 
 
 class IndexInstanceBasicTestCase(

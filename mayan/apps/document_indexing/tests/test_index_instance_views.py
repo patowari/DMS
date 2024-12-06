@@ -4,15 +4,13 @@ from mayan.apps.documents.tests.base import GenericDocumentViewTestCase
 from ..permissions import permission_index_instance_view
 
 from .literals import TEST_INDEX_TEMPLATE_LABEL
-from .mixins import (
-    DocumentIndexInstanceViewTestMixin, IndexInstanceTestMixin,
-    IndexInstanceViewTestMixin, IndexTemplateTestMixin
+from .mixins.index_instance_mixins import (
+    DocumentIndexInstanceViewTestMixin, IndexInstanceViewTestMixin
 )
 
 
 class DocumentIndexInstanceViewTestCase(
-    IndexInstanceTestMixin, DocumentIndexInstanceViewTestMixin,
-    IndexTemplateTestMixin, GenericDocumentViewTestCase
+    DocumentIndexInstanceViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 
@@ -113,8 +111,7 @@ class DocumentIndexInstanceViewTestCase(
 
 
 class IndexInstanceViewTestCase(
-    IndexInstanceTestMixin, IndexInstanceViewTestMixin,
-    IndexTemplateTestMixin, GenericDocumentViewTestCase
+    IndexInstanceViewTestMixin, GenericDocumentViewTestCase
 ):
     auto_upload_test_document = False
 

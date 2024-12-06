@@ -4,7 +4,7 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 
-from .mixins import IndexTemplateTestMixin
+from .mixins.index_template_mixins import IndexTemplateTestMixin
 
 
 class IndexTemplateCopyTestCase(
