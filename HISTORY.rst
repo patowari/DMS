@@ -138,6 +138,7 @@
   `SETTINGS_IGNORE_ERRORS` which defaults to `True`.
 - Add column to show if a setting had errors during loading and reverted to
   the default.
+- Update FontAwesome from version 6.5.2 to 6.7.1.
 
 4.8.3 (2024-10-04)
 ==================
