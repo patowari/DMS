@@ -33,6 +33,8 @@ from ..literals import (
     TEST_SERVER_HOST, TEST_SERVER_SCHEME, TEST_VIEW_NAME, TEST_VIEW_URL
 )
 
+from .utils import RandomSeedIdempotent
+
 
 class ClientMethodsTestCaseMixin:
     def _build_verb_kwargs(self, viewname=None, path=None, *args, **kwargs):
@@ -310,8 +312,8 @@ class RandomPrimaryKeyModelMonkeyPatchMixin:
 
     @classmethod
     def setUpClass(cls):
+        RandomSeedIdempotent.seed()
         super().setUpClass()
-        random.seed()
 
     def setUp(self):
         if self.random_primary_key_enable:

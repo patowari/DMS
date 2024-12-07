@@ -128,6 +128,7 @@
 - Tag workflow tests at the mixin level.
 - Tag metadata tests at the mixin level.
 - Rename links and icons to follow the great to lesser nomenclature.
+- Ensure `random.seed` is called only once per test suit execution.
 
 4.8.3 (2024-10-04)
 ==================
