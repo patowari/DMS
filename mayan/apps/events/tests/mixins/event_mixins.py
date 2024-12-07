@@ -102,7 +102,7 @@ class EventObjectTestMixin(EventTestMixin):
         )
 
         ModelPermission.register(
-            model=self.TestModel, permissions=(
+            model=self._TestModel, permissions=(
                 permission_events_view,
             )
         )
