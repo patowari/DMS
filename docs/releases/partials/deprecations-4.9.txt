@@ -1,0 +1,4 @@
+- Setting `COMMON_COLLAPSE_LIST_MENU_OBJECT` will be removed in the next
+  minor version.
+- Setting `COMMON_COLLAPSE_LIST_MENU_LIST_FACET` will be removed in the
+  next minor version.
