@@ -48,6 +48,8 @@ class SearchModelTestCase(SearchTestMixin, BaseTestCase):
     def test_search_field_removal_via_setting(self):
         test_search_fields = self._test_search_model.search_fields
 
+        test_search_fields_count = len(self._test_search_model.search_fields)
+
         test_search_field = self._test_search_model.get_search_field(
             field_name=TEST_SEARCH_MODEL_FIELD_NAME
         )
@@ -65,4 +67,11 @@ class SearchModelTestCase(SearchTestMixin, BaseTestCase):
 
         self.assertNotEqual(
             self._test_search_model.search_fields, test_search_fields
+        )
+        self.assertEqual(
+            len(self._test_search_model.search_fields),
+            test_search_fields_count - 1
+        )
+        self.assertTrue(
+            test_search_field not in self._test_search_model.search_fields
         )
