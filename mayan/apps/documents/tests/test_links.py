@@ -1,10 +1,12 @@
 from django.urls import reverse
 
-from ..links.document_file_links import link_document_file_delete
+from ..links.document_file_links import link_document_file_delete_single
 from ..links.favorite_links import (
-    link_document_favorites_add, link_document_favorites_remove
+    link_document_favorites_add_single, link_document_favorites_remove_single
 )
-from ..links.trashed_document_links import link_document_restore
+from ..links.trashed_document_links import (
+    link_trashed_document_restore_single
+)
 from ..models import TrashedDocument
 from ..permissions import (
     permission_document_file_delete, permission_document_view,
@@ -25,7 +27,9 @@ class FavoriteDocumentLinkTestCase(
     def test_favorite_document_add_link_no_permission(self):
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_add.resolve(context=context)
+        resolved_link = link_document_favorites_add_single.resolve(
+            context=context
+        )
 
         self.assertEqual(resolved_link, None)
 
@@ -36,7 +40,9 @@ class FavoriteDocumentLinkTestCase(
 
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_add.resolve(context=context)
+        resolved_link = link_document_favorites_add_single.resolve(
+            context=context
+        )
 
         self.assertNotEqual(resolved_link, None)
 
@@ -50,7 +56,9 @@ class FavoriteDocumentLinkTestCase(
 
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_add.resolve(context=context)
+        resolved_link = link_document_favorites_add_single.resolve(
+            context=context
+        )
 
         self.assertNotEqual(resolved_link, None)
 
@@ -59,7 +67,7 @@ class FavoriteDocumentLinkTestCase(
 
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_remove.resolve(
+        resolved_link = link_document_favorites_remove_single.resolve(
             context=context
         )
 
@@ -74,7 +82,7 @@ class FavoriteDocumentLinkTestCase(
 
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_remove.resolve(
+        resolved_link = link_document_favorites_remove_single.resolve(
             context=context
         )
 
@@ -90,7 +98,7 @@ class FavoriteDocumentLinkTestCase(
 
         self.add_test_view(test_object=self._test_document)
         context = self.get_test_view()
-        resolved_link = link_document_favorites_remove.resolve(
+        resolved_link = link_document_favorites_remove_single.resolve(
             context=context
         )
 
@@ -111,7 +119,9 @@ class DocumentsLinksTestCase(
             test_object=self._test_document.files.first()
         )
         context = self.get_test_view()
-        resolved_link = link_document_file_delete.resolve(context=context)
+        resolved_link = link_document_file_delete_single.resolve(
+            context=context
+        )
 
         self.assertEqual(resolved_link, None)
 
@@ -131,13 +141,15 @@ class DocumentsLinksTestCase(
             test_object=self._test_document.files.first()
         )
         context = self.get_test_view()
-        resolved_link = link_document_file_delete.resolve(context=context)
+        resolved_link = link_document_file_delete_single.resolve(
+            context=context
+        )
 
         self.assertNotEqual(resolved_link, None)
         self.assertEqual(
             resolved_link.url,
             reverse(
-                viewname=link_document_file_delete.view,
+                viewname=link_document_file_delete_single.view,
                 args=(
                     self._test_document.files.first().pk,
                 )
@@ -156,7 +168,9 @@ class TrashedDocumentsLinksTestCase(GenericDocumentViewTestCase):
         self.context = self.get_test_view()
 
     def test_trashed_document_restore_link_no_permission(self):
-        resolved_link = link_document_restore.resolve(context=self.context)
+        resolved_link = link_trashed_document_restore_single.resolve(
+            context=self.context
+        )
         self.assertEqual(resolved_link, None)
 
     def test_trashed_document_restore_link_with_permission(self):
@@ -164,12 +178,14 @@ class TrashedDocumentsLinksTestCase(GenericDocumentViewTestCase):
             obj=self._test_document,
             permission=permission_trashed_document_restore
         )
-        resolved_link = link_document_restore.resolve(context=self.context)
+        resolved_link = link_trashed_document_restore_single.resolve(
+            context=self.context
+        )
         self.assertNotEqual(resolved_link, None)
         self.assertEqual(
             resolved_link.url,
             reverse(
-                viewname=link_document_restore.view,
+                viewname=link_trashed_document_restore_single.view,
                 args=(self.test_trashed_document.pk,)
             )
         )
