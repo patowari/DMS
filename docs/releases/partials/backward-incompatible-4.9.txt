@@ -1,0 +1,4 @@
+- The system will start even where the are settings with badly formatted
+  values. This is the opposite of the previous behavior in which a badly
+  setting would stop the start up process. Controlled with the new setting
+  `SETTINGS_IGNORE_ERRORS` which defaults to `True`.

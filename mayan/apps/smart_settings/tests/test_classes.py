@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from yaml.scanner import ScannerError
+
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils import translation
@@ -114,33 +116,6 @@ class SettingNamespaceMigrationTestCase(BaseTestCase):
 
 
 class SettingTestCase(BaseTestCase):
-    def test_environment_override(self):
-        test_environment_value = 'test environment value'
-        test_file_value = 'test file value'
-
-        self._test_setting_namespace_create()
-        self._create_test_setting()
-
-        self._set_environment_variable(
-            name='MAYAN_{}'.format(self._test_setting.global_name),
-            value=test_environment_value
-        )
-
-        self._test_configuration_value = test_file_value
-        self._create_test_configuration_file()
-
-        self.assertEqual(self._test_setting.value, test_environment_value)
-
-    def test_environment_variable(self):
-        self._set_environment_variable(
-            name='MAYAN_{}'.format(ENVIRONMENT_TEST_NAME),
-            value=ENVIRONMENT_TEST_VALUE
-        )
-
-        self.assertEqual(
-            setting_paginate_by.value, int(ENVIRONMENT_TEST_VALUE)
-        )
-
     def test_config_backup_creation(self):
         path_config_backup = Path(settings.CONFIGURATION_LAST_GOOD_FILEPATH)
         fs_cleanup(
@@ -167,6 +142,33 @@ class SettingTestCase(BaseTestCase):
             self.assertFalse(
                 '!!python/' in file_object.read()
             )
+
+    def test_environment_override(self):
+        test_environment_value = 'test environment value'
+        test_file_value = 'test file value'
+
+        self._test_setting_namespace_create()
+        self._create_test_setting()
+
+        self._set_environment_variable(
+            name='MAYAN_{}'.format(self._test_setting.global_name),
+            value=test_environment_value
+        )
+
+        self._test_configuration_value = test_file_value
+        self._create_test_configuration_file()
+
+        self.assertEqual(self._test_setting.value, test_environment_value)
+
+    def test_environment_variable(self):
+        self._set_environment_variable(
+            name='MAYAN_{}'.format(ENVIRONMENT_TEST_NAME),
+            value=ENVIRONMENT_TEST_VALUE
+        )
+
+        self.assertEqual(
+            setting_paginate_by.value, int(ENVIRONMENT_TEST_VALUE)
+        )
 
     def test_setting_check_changed(self):
         self._test_setting_namespace_create()
@@ -228,3 +230,39 @@ class SettingTestCase(BaseTestCase):
 
         with self.assertRaises(expected_exception=ValidationError):
             self._test_setting.value
+
+    def test_ignore_errors_false(self):
+        settings.SETTINGS_IGNORE_ERRORS = False
+
+        self._test_setting_namespace_create()
+
+        self._create_test_setting()
+
+        self._set_environment_variable(
+            name='MAYAN_{}'.format(self._test_setting.global_name),
+            value='{"'  # Invalid YAML
+        )
+
+        setting_cluster.do_cache_invalidate()
+
+        with self.assertRaises(expected_exception=ScannerError):
+            self._test_setting.value
+
+    def test_ignore_errors_true(self):
+        self._silence_logger(name='mayan.apps.smart_settings.classes')
+
+        settings.SETTINGS_IGNORE_ERRORS = True
+
+        self._test_setting_namespace_create()
+
+        self._create_test_setting()
+
+        self._set_environment_variable(
+            name='MAYAN_{}'.format(self._test_setting.global_name),
+            value='{"'  # Invalid YAML
+        )
+
+        setting_cluster.do_cache_invalidate()
+
+        # No error.
+        self._test_setting.value

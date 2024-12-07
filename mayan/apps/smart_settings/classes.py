@@ -455,12 +455,20 @@ class Setting:
             try:
                 self.value_raw = yaml_load(stream=environment_value)
             except yaml.YAMLError as exception:
-                raise type(exception)(
-                    'Error interpreting environment variable: {} with '
-                    'value: {}; {}'.format(
-                        global_name, environment_value, exception
+                if settings.SETTINGS_IGNORE_ERRORS:
+                    logger.error(
+                        'Error interpreting environment variable: %s with '
+                        'value: %s; %s', global_name, environment_value,
+                        exception
                     )
-                )
+                    self.value_raw = self.default
+                else:
+                    raise type(exception)(
+                        'Error interpreting environment variable: {} with '
+                        'value: {}; {}'.format(
+                            global_name, environment_value, exception
+                        )
+                    )
         else:
             try:
                 # Try the config file.

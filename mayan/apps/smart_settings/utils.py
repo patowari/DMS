@@ -62,9 +62,7 @@ class SettingNamespaceSingleton:
 
     @functools.cache
     def get_config_file_content(self):
-        filepath = self.get_setting_value(
-            name='CONFIGURATION_FILEPATH'
-        )
+        filepath = self.get_setting_value(name='CONFIGURATION_FILEPATH')
 
         return self.load_config_file(filepath=filepath) or {}
 
@@ -556,4 +554,12 @@ SettingNamespaceSingleton.register_setting(
     klass=BaseSetting, kwargs={
         'has_default': True, 'default_value': False
     }, name='TESTING'
+)
+
+# Settings
+
+SettingNamespaceSingleton.register_setting(
+    klass=BaseSetting, kwargs={
+        'has_default': True, 'default_value': True
+    }, name='SETTINGS_IGNORE_ERRORS'
 )

@@ -131,6 +131,11 @@
 - Ensure `random.seed` is called only once per test suit execution.
 - Add support to disable search model fields. This is controlled via the new
   setting named `SEARCH_MODEL_FIELD_DISABLE`.
+- Add support for ignoring setting formatting errors. This will allow the
+  system to start even when there are settings with badly formatted values.
+  This does no apply to bootstrap settings which are low level do need to be
+  correct in order for the system to start. Add the setting
+  `SETTINGS_IGNORE_ERRORS` which defaults to `True`.
 
 4.8.3 (2024-10-04)
 ==================
