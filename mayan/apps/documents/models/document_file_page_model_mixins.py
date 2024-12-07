@@ -14,7 +14,9 @@ from mayan.apps.converter.transformations import BaseTransformation
 from mayan.apps.file_caching.models import CachePartitionFile
 from mayan.apps.lock_manager.backends.base import LockingBackend
 
-from ..literals import IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR
+from ..literals import (
+    ERROR_LOG_DOMAIN_NAME, IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR
+)
 
 logger = logging.getLogger(name=__name__)
 
@@ -213,9 +215,9 @@ class DocumentFilePageBusinessLogicMixin:
                     exception, exc_info=True
                 )
                 error_log_text = '''
-                Cannot generate document file page; {exception}
-                '''.format(exception=exception)
-                self.error_log.create(
+                Cannot generate document file page {page_number}; {exception}
+                '''.format(exception=exception, page_number=self.page_number)
+                self.document_file.error_log.create(
                     domain_name=ERROR_LOG_DOMAIN_NAME, text=error_log_text
                 )
                 raise
