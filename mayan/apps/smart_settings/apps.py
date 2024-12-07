@@ -55,6 +55,10 @@ class SmartSettingsApp(MayanAppConfig):
             attribute='get_has_value_new', include_label=True,
             source=Setting, widget=column_widgets.TwoStateWidget
         )
+        SourceColumn(
+            attribute='get_has_load_error', include_label=True,
+            source=Setting, widget=column_widgets.TwoStateWidget
+        )
 
         menu_list_facet.bind_links(
             links=(link_setting_namespace_detail,),

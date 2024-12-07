@@ -136,6 +136,8 @@
   This does no apply to bootstrap settings which are low level do need to be
   correct in order for the system to start. Add the setting
   `SETTINGS_IGNORE_ERRORS` which defaults to `True`.
+- Add column to show if a setting had errors during loading and reverted to
+  the default.
 
 4.8.3 (2024-10-04)
 ==================

@@ -414,9 +414,10 @@ class Setting:
     ):
         self.choices = choices
         self.default = default
-        self.help_text = help_text
         self.environment_variable = False
         self.global_name = global_name
+        self.has_load_error = False
+        self.help_text = help_text
         self.loaded = False
         self.namespace = namespace
         self.post_edit_function = post_edit_function
@@ -455,6 +456,8 @@ class Setting:
             try:
                 self.value_raw = yaml_load(stream=environment_value)
             except yaml.YAMLError as exception:
+                self.has_load_error = True
+
                 if settings.SETTINGS_IGNORE_ERRORS:
                     logger.error(
                         'Error interpreting environment variable: %s with '
@@ -497,6 +500,15 @@ class Setting:
 
         self.value_yaml = Setting.serialize_value(value=self.value_raw)
         self.loaded = True
+
+    def get_has_load_error(self):
+        return self.has_load_error
+
+    get_has_load_error.short_description = _(message='Has errors')
+    get_has_load_error.help_text = _(
+        message='Indicates that this setting was not loaded correctly. '
+        'Settings with errors revert to their default value.'
+    )
 
     def get_value_choices(self):
         return self.choices
