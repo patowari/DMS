@@ -5,6 +5,7 @@ from furl import furl
 
 from django.apps import apps
 from django.contrib.auth import get_user_model
+from django.db.utils import OperationalError, ProgrammingError
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
@@ -229,8 +230,13 @@ class EventTypeNamespace(
 
     @classmethod
     def post_load_modules(cls):
-        # Pre cache all stored event types.
-        EventType.refresh()
+        try:
+            # Pre cache all stored event types.
+            EventType.refresh()
+        except (OperationalError, ProgrammingError):
+            """
+            Non fatal. Non initialized installation. Ignore exception.
+            """
 
     def __init__(self, name, label):
         self.name = name
