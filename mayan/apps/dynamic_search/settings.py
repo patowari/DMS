@@ -7,6 +7,7 @@ from .literals import (
     DEFAULT_SEARCH_DEFAULT_OPERATOR, DEFAULT_SEARCH_DISABLE_SIMPLE_SEARCH,
     DEFAULT_SEARCH_INDEXING_CHUNK_SIZE,
     DEFAULT_SEARCH_MATCH_ALL_DEFAULT_VALUE,
+    DEFAULT_SEARCH_MODEL_FIELD_DISABLE,
     DEFAULT_SEARCH_QUERY_RESULTS_LIMIT, DEFAULT_SEARCH_RESULTS_LIMIT,
     DEFAULT_SEARCH_SAVED_RESULTSET_RESULTS_LIMIT,
     DEFAULT_SEARCH_SAVED_RESULTSETS_PER_USER_LIMIT,
@@ -94,6 +95,16 @@ setting_saved_resultset_time_to_live_increment = setting_namespace.do_setting_ad
     global_name='SEARCH_SAVED_RESULTSET_TIME_TO_LIVE_INCREMENT', help_text=_(
         message='Amount to increase the time to live on each access of the '
         'resultset.'
+    )
+)
+setting_search_model_field_disable = setting_namespace.do_setting_add(
+    global_name='SEARCH_MODEL_FIELD_DISABLE',
+    default=DEFAULT_SEARCH_MODEL_FIELD_DISABLE, help_text=_(
+        message='Specifies the fields from which search model are to be '
+        'disabled. The format is a dictionary of lists. The search model '
+        'name is the dictionary key and the value is a list of the full '
+        'search field name. Disabled fields will neither be available for '
+        'search nor be indexed by the search backend.'
     )
 )
 setting_store_results_default_value = setting_namespace.do_setting_add(

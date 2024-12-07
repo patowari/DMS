@@ -129,6 +129,8 @@
 - Tag metadata tests at the mixin level.
 - Rename links and icons to follow the great to lesser nomenclature.
 - Ensure `random.seed` is called only once per test suit execution.
+- Add support to disable search model fields. This is controlled via the new
+  setting named `SEARCH_MODEL_FIELD_DISABLE`.
 
 4.8.3 (2024-10-04)
 ==================

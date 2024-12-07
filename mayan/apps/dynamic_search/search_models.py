@@ -1,4 +1,5 @@
 import itertools
+import logging
 
 from django.apps import apps
 from django.contrib.admin.utils import reverse_field_path
@@ -15,7 +16,11 @@ from mayan.apps.views.literals import LIST_MODE_CHOICE_LIST
 from .exceptions import DynamicSearchException
 from .literals import QUERY_PARAMETER_ANY_FIELD
 from .search_fields import SearchField
-from .settings import setting_indexing_chunk_size
+from .settings import (
+    setting_indexing_chunk_size, setting_search_model_field_disable
+)
+
+logger = logging.getLogger(name=__name__)
 
 
 class SearchModel(AppsModuleLoaderMixin):
@@ -89,6 +94,32 @@ class SearchModel(AppsModuleLoaderMixin):
                         )
 
         return through_models
+
+    @classmethod
+    def post_load_modules(cls):
+        search_model_fields_disabled_dict_list = setting_search_model_field_disable.value
+
+        for model_name, field_name_list in search_model_fields_disabled_dict_list.items():
+            try:
+                model = cls.get(name=model_name)
+            except KeyError as exception:
+                logger.error(
+                    'Unable to load search model `%s` for field removal; %s',
+                    model_name, exception
+                )
+            else:
+                for field_name in field_name_list:
+                    try:
+                        search_field = model.get_search_field(
+                            field_name=field_name
+                        )
+                    except DynamicSearchException as exception:
+                        logger.error(
+                            'Unable to remove field `%s` from search model '
+                            '`%s`; %s', field_name, model_name, exception
+                        )
+                    else:
+                        model.remove_search_field(search_field=search_field)
 
     def __init__(
         self, app_label, model_name, default=False, label=None,
