@@ -1,5 +1,3 @@
-import logging
-
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -30,8 +28,6 @@ from ..tasks import task_reindex_backend
 from .view_mixins import (
     SearchModelViewMixin, SearchQueryViewMixin, SearchResultViewMixin
 )
-
-logger = logging.getLogger(name=__name__)
 
 
 class SearchAgainView(SearchQueryViewMixin, RedirectView):

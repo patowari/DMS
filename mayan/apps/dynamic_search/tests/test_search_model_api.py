@@ -23,7 +23,8 @@ class SearchModelAPIViewTestCase(
             response.data['app_label'], self._test_search_model.app_label
         )
         self.assertEqual(
-            response.data['model_name'], self._test_search_model.model_name
+            response.data['model_name'],
+            self._test_search_model.model_name
         )
         self.assertEqual(
             response.data['pk'], self._test_search_model.pk

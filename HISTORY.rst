@@ -142,6 +142,7 @@
 - Log errors during document page preview generation.
 - Change how the navigation classes detected querysets. This allows
   the navigation code to work with objects that have a `.model` attribute.
+- Add search model and search field information view to the tools menu.
 
 4.8.3 (2024-10-04)
 ==================

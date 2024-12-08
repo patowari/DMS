@@ -6,7 +6,7 @@ from django.contrib.admin.utils import reverse_field_path
 from django.db.models.aggregates import Max, Min
 from django.utils.functional import cached_property
 from django.utils.module_loading import import_string
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.class_mixins import AppsModuleLoaderMixin
 from mayan.apps.common.utils import group_iterator, parse_range
@@ -195,6 +195,8 @@ class SearchModel(AppsModuleLoaderMixin):
     @cached_property
     def full_name(self):
         return '{}.{}'.format(self.app_label, self.model_name)
+
+    full_name.short_description = _(message='Full name')
 
     def get_id_groups(self, range_string=None):
         """

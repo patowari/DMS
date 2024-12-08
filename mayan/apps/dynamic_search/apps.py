@@ -17,12 +17,14 @@ from .handlers import (
 from .links import (
     link_saved_resultset_delete_single, link_saved_resultset_list,
     link_search, link_saved_resultset_result_list, link_search_advanced,
-    link_search_again, link_search_backend_reindex
+    link_search_again, link_search_backend_reindex,
+    link_search_model_detail, link_search_model_list
 )
 from .permissions import (
     permission_saved_resultset_delete, permission_saved_resultset_view
 )
 from .search_backends import SearchBackend
+from .search_fields import SearchField
 from .search_models import SearchModel
 
 
@@ -73,9 +75,53 @@ class DynamicSearchApp(MayanAppConfig):
             attribute='search_explainer_text', include_label=True,
             source=SavedResultset
         )
+        SourceColumn(
+            attribute='time_to_live', include_label=True,
+            source=SavedResultset
+        )
+
+        # Search model
 
         SourceColumn(
-            attribute='time_to_live', include_label=True, source=SavedResultset
+            attribute='label', help_text=_(
+                message='The underlying database model whose content is '
+                'indexed for search.'
+            ), label=_(message='Model'), include_label=True,
+            is_identifier=True, source=SearchModel
+        )
+        SourceColumn(
+            attribute='full_name', help_text=_(
+                message='The unique name used to reference the search model.'
+            ), include_label=True, source=SearchModel
+        )
+
+        # Search field
+
+        SourceColumn(
+            attribute='label', help_text=_(
+                message='The underlying database field whose content is '
+                'indexed for search.'
+            ), include_label=True, is_identifier=True,
+            label=_(message='Field'), source=SearchField
+        )
+        SourceColumn(
+            attribute='field_name', include_label=True, source=SearchField
+        )
+        SourceColumn(
+            attribute='get_search_field_class_label', include_label=True,
+            source=SearchField
+        )
+        SourceColumn(
+            attribute='field_class_label', help_text=_(
+                message='The underlying database field type. This '
+                'determines the kind of data that is stored in the '
+                'database.'
+            ), label=_(message='Field class'), include_label=True,
+            source=SearchField
+        )
+        SourceColumn(
+            attribute='get_help_text', label=_(message='Description'),
+            include_label=True, source=SearchField
         )
 
         menu_facet.bind_links(
@@ -90,6 +136,10 @@ class DynamicSearchApp(MayanAppConfig):
             sources=(SavedResultset,)
         )
         menu_list_facet.bind_links(
+            links=(link_search_model_detail,),
+            sources=(SearchModel,)
+        )
+        menu_list_facet.bind_links(
             links=(link_saved_resultset_result_list,),
             sources=(SavedResultset,)
         )
@@ -99,8 +149,16 @@ class DynamicSearchApp(MayanAppConfig):
         menu_return.bind_links(
             links=(link_saved_resultset_list,), sources=(SavedResultset,)
         )
+        menu_return.bind_links(
+            links=(link_search_model_list,), sources=(
+                SearchField, SearchModel
+            )
+        )
         menu_tools.bind_links(
-            links=(link_saved_resultset_list, link_search_backend_reindex,),
+            links=(
+                link_saved_resultset_list, link_search_backend_reindex,
+                link_search_model_list,
+            ),
         )
 
         signal_post_initial_setup.connect(

@@ -18,6 +18,7 @@ class SearchField:
     _registry = []
     _registry_by_class = {}
 
+    class_label = None
     # Collection is a field that return multiple related fields as a
     # queryset.
     collection = None
@@ -89,8 +90,15 @@ class SearchField:
         return self.model_field.__class__
 
     @cached_property
+    def field_class_label(self):
+        return self.field_class.__name__
+
+    @cached_property
     def field_name(self):
         return self._field_name
+
+    field_name.help_text = _(message='Uniquely identifies the search field.')
+    field_name.short_description = _(message='Field name')
 
     @cached_property
     def field_name_model_list(self):
@@ -104,11 +112,11 @@ class SearchField:
             remote_field = model.remote_field
 
             if remote_field:
-                base_model = remote_field.model
+                model = remote_field.model
             else:
-                base_model = self.search_model.base_model
+                model = self.search_model.model
 
-            result.append(base_model)
+            result.append(model)
 
         return result
 
@@ -163,6 +171,18 @@ class SearchField:
             model=self.model, path=self.field_name
         )[-1]
 
+    def get_search_field_class_label(self):
+        cls = self.__class__
+        return cls.class_label or cls.__name__
+
+    get_search_field_class_label.help_text = _(
+        message='The type of search field. This determines how the '
+        'information will be handled for search indexing.'
+    )
+    get_search_field_class_label.short_description = _(
+        message='Search field class'
+    )
+
     @functools.cache
     def get_search_field_type_backend_dictionary(self, search_backend):
         try:
@@ -192,10 +212,15 @@ class SearchField:
 
     @cached_property
     def reverse_path(self):
-        return reverse_field_path(model=self.model, path=self.field_name)[1]
+        parent, path = reverse_field_path(
+            model=self.model, path=self.field_name
+        )
+
+        return path
 
 
 class SearchFieldConcrete(SearchField):
+    class_label = _('Concrete')
     concrete = True
 
     def _do_field_name_verify(self):
@@ -217,6 +242,7 @@ class SearchFieldDirect(SearchFieldConcrete):
     SearchModel.
     """
 
+    class_label = _('Direct')
     collection = False
     priority = 0
 
@@ -238,6 +264,7 @@ class SearchFieldDirect(SearchFieldConcrete):
 
 
 class SearchFieldRelated(SearchFieldConcrete):
+    class_label = _('Related')
     collection = True
     priority = 1
 
@@ -295,6 +322,7 @@ class SearchFieldVirtual(SearchField):
     model instance indexing.
     """
 
+    class_label = _('Virtual')
     collection = False
     concrete = False
     priority = 2

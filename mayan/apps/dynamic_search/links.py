@@ -5,7 +5,8 @@ from mayan.apps.navigation.links import Link
 from .icons import (
     icon_saved_resultset_delete_single, icon_saved_resultset_list,
     icon_saved_resultset_result_list, icon_search, icon_search_advanced,
-    icon_search_again, icon_search_backend_reindex
+    icon_search_again, icon_search_backend_reindex, icon_search_model_detail,
+    icon_search_model_list
 )
 from .permissions import permission_search_tools
 from .search_backends import SearchBackend
@@ -46,4 +47,16 @@ link_search_backend_reindex = Link(
     condition=condition_search_backend_supports_reindexing,
     icon=icon_search_backend_reindex, permission=permission_search_tools,
     text=_(message='Reindex search backend'), view='search:search_backend_reindex'
+)
+
+# Search model
+
+link_search_model_detail = Link(
+    icon=icon_search_model_detail,
+    kwargs={'search_model_name': 'resolved_object.full_name'},
+    text=_(message='Fields'), view='search:search_model_detail'
+)
+link_search_model_list = Link(
+    icon=icon_search_model_list, text=_(message='Search models'),
+    view='search:search_model_list'
 )

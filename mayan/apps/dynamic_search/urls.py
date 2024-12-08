@@ -15,6 +15,9 @@ from .views.search_views import (
     SearchAdvancedView, SearchAgainView, SearchBackendReindexView,
     SearchResultView, SearchSimpleView
 )
+from .views.tool_views import (
+    SearchModelListView, SearchModelSearchFieldListView
+)
 
 urlpatterns_search = [
     re_path(
@@ -64,6 +67,15 @@ urlpatterns_tools = [
     re_path(
         route=r'^backend/reindex/$', name='search_backend_reindex',
         view=SearchBackendReindexView.as_view()
+    ),
+    re_path(
+        route=r'^search_models/$', name='search_model_list',
+        view=SearchModelListView.as_view()
+    ),
+    re_path(
+        route=r'^search_models/(?P<search_model_name>[\w.]+)/search_fields/$',
+        name='search_model_detail',
+        view=SearchModelSearchFieldListView.as_view()
     )
 ]
 
