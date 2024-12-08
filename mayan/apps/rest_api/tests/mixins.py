@@ -2,7 +2,7 @@ from django.db import models
 
 from rest_framework.authtoken.models import Token
 
-from mayan.apps.testing.tests.mixins import TestViewTestCaseMixin
+from mayan.apps.views.tests.mixins import TestViewTestCaseMixin
 
 from .. import serializers
 

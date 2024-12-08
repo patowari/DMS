@@ -11,17 +11,18 @@ from mayan.apps.events.tests.mixins.event_mixins import EventTestCaseMixin
 from mayan.apps.logging.tests.mixins import TestCaseMixinSilenceLogger
 from mayan.apps.permissions.tests.mixins import PermissionTestCaseMixin
 from mayan.apps.smart_settings.tests.mixins import SettingTestMixin
+from mayan.apps.views.tests.mixins import (
+    ClientMethodsTestCaseMixin, DownloadTestCaseMixin, TestViewTestCaseMixin
+)
 from mayan.apps.user_management.tests.mixins.user_mixins import UserTestMixin
 
 from ..literals import EXCLUDE_TEST_TAG
 
 from .mixins import (
-    ClientMethodsTestCaseMixin, ConnectionsCheckTestCaseMixin,
-    ContentTypeCheckTestCaseMixin, DelayTestCaseMixin,
-    DescriptorLeakCheckTestCaseMixin, DownloadTestCaseMixin,
-    ModelTestCaseMixin, OpenFileCheckTestCaseMixin,
-    RandomPrimaryKeyModelMonkeyPatchMixin, TempfileCheckTestCasekMixin,
-    TestModelTestCaseMixin, TestViewTestCaseMixin
+    ConnectionsCheckTestCaseMixin, ContentTypeCheckTestCaseMixin,
+    DelayTestCaseMixin, DescriptorLeakCheckTestCaseMixin, ModelTestCaseMixin,
+    OpenFileCheckTestCaseMixin, RandomPrimaryKeyModelMonkeyPatchMixin,
+    TempfileCheckTestCasekMixin, TestModelTestCaseMixin
 )
 
 

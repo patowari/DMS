@@ -13,6 +13,11 @@ LIST_MODE_CHOICES = (
 
 PK_LIST_SEPARATOR = ','
 
+TEST_SERVER_HOST = 'testserver'
+TEST_SERVER_SCHEME = 'http'
+TEST_VIEW_NAME = 'test_view_name'
+TEST_VIEW_URL = 'test-view-url'
+
 TEXT_LIST_AS_ITEMS_PARAMETER = '_list_mode'
 TEXT_LIST_AS_ITEMS_VARIABLE_NAME = 'list_as_items'
 

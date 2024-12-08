@@ -147,6 +147,8 @@
   to the search field API serializer.
 - Move the `SilenceLoggerTestCaseMixin` mixin to the logging app.
 - Rename mixin `SilenceLoggerTestCaseMixin` to `TestCaseMixinSilenceLogger`.
+- Move the `ClientMethodsTestCaseMixin`, `DownloadTestCaseMixin`,
+  `TestServerTestCaseMixin`, `TestViewTestCaseMixin` mixins to the views app.
 
 4.8.3 (2024-10-04)
 ==================

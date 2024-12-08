@@ -9,8 +9,8 @@ from mayan.apps.documents.events import (
     event_document_created, event_document_edited
 )
 from mayan.apps.testing.tests.base import BaseTestCase, GenericViewTestCase
-from mayan.apps.testing.tests.mixins import TestServerTestCaseMixin
 from mayan.apps.testing.tests.mocks import request_method_factory
+from mayan.apps.views.tests.mixins import TestServerTestCaseMixin
 
 from ..events import (
     event_workflow_instance_created, event_workflow_instance_transitioned,
