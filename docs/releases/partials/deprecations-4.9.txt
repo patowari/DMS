@@ -2,3 +2,4 @@
   minor version.
 - Setting `COMMON_COLLAPSE_LIST_MENU_LIST_FACET` will be removed in the
   next minor version.
+- The user theme feature will be removed in the next minor version.
