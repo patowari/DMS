@@ -143,6 +143,8 @@
 - Change how the navigation classes detected querysets. This allows
   the navigation code to work with objects that have a `.model` attribute.
 - Add search model and search field information view to the tools menu.
+- Add the description, search field class label, model field class label
+  to the search field API serializer.
 
 4.8.3 (2024-10-04)
 ==================

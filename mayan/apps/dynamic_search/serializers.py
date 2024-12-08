@@ -57,8 +57,17 @@ class SavedResultsetSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class SearchFieldSerializer(serializers.Serializer):
+    field_class_label = serializers.CharField(
+        label=_(message='Field class'), read_only=True
+    )
     field_name = serializers.CharField(
         label=_(message='Field name'), read_only=True
+    )
+    get_help_text = serializers.CharField(
+        label=_(message='Description'), read_only=True
+    )
+    get_search_field_class_label = serializers.CharField(
+        label=_(message='Search field class'), read_only=True
     )
     label = serializers.CharField(
         label=_(message='Label'), read_only=True
