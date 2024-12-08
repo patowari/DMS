@@ -30,10 +30,13 @@ class Comment(CommentBusinessLogicMixin, ExtraDataModelMixin, models.Model):
         to=Document, verbose_name=_(message='Document')
     )
     user = models.ForeignKey(
-        editable=False, on_delete=models.CASCADE, related_name='comments',
+        editable=False,
+        help_text=_('The user account that made the comment.'),
+        on_delete=models.CASCADE, related_name='comments',
         to=settings.AUTH_USER_MODEL, verbose_name=_(message='User')
     )
     text = models.TextField(
+        help_text=_('Actual text content of the comment.'),
         verbose_name=_(message='Text')
     )
     submit_date = models.DateTimeField(
@@ -68,14 +71,14 @@ class Comment(CommentBusinessLogicMixin, ExtraDataModelMixin, models.Model):
     @method_event(
         event_manager_class=EventManagerSave,
         created={
-            'event': event_document_comment_created,
             'actor': 'user',
             'action_object': 'document',
+            'event': event_document_comment_created,
             'target': 'self'
         },
         edited={
-            'event': event_document_comment_edited,
             'action_object': 'document',
+            'event': event_document_comment_edited,
             'target': 'self'
         }
     )

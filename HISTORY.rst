@@ -155,6 +155,7 @@
 - Move the `DescriptorLeakCheckTestCaseMixin`, `OpenFileCheckTestCaseMixin`,
   `TempfileCheckTestCasekMixin` to the storage app.
 - Move the `psutil` dependency to the storage app.
+- Add help texts to the document comment model.
 
 4.8.3 (2024-10-04)
 ==================
