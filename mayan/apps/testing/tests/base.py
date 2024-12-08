@@ -8,6 +8,7 @@ from django_test_migrations.contrib.unittest_case import MigratorTestCase
 from mayan.apps.acls.tests.mixins import ACLTestCaseMixin
 from mayan.apps.converter.tests.mixins import LayerTestCaseMixin
 from mayan.apps.events.tests.mixins.event_mixins import EventTestCaseMixin
+from mayan.apps.logging.tests.mixins import TestCaseMixinSilenceLogger
 from mayan.apps.permissions.tests.mixins import PermissionTestCaseMixin
 from mayan.apps.smart_settings.tests.mixins import SettingTestMixin
 from mayan.apps.user_management.tests.mixins.user_mixins import UserTestMixin
@@ -19,13 +20,13 @@ from .mixins import (
     ContentTypeCheckTestCaseMixin, DelayTestCaseMixin,
     DescriptorLeakCheckTestCaseMixin, DownloadTestCaseMixin,
     ModelTestCaseMixin, OpenFileCheckTestCaseMixin,
-    RandomPrimaryKeyModelMonkeyPatchMixin, SilenceLoggerTestCaseMixin,
-    TempfileCheckTestCasekMixin, TestModelTestCaseMixin, TestViewTestCaseMixin
+    RandomPrimaryKeyModelMonkeyPatchMixin, TempfileCheckTestCasekMixin,
+    TestModelTestCaseMixin, TestViewTestCaseMixin
 )
 
 
 class BaseTestCaseMixin(
-    DelayTestCaseMixin, SilenceLoggerTestCaseMixin,
+    DelayTestCaseMixin, TestCaseMixinSilenceLogger,
     ConnectionsCheckTestCaseMixin, DownloadTestCaseMixin,
     RandomPrimaryKeyModelMonkeyPatchMixin, EventTestCaseMixin,
     LayerTestCaseMixin, ACLTestCaseMixin, ModelTestCaseMixin,

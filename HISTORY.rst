@@ -145,6 +145,8 @@
 - Add search model and search field information view to the tools menu.
 - Add the description, search field class label, model field class label
   to the search field API serializer.
+- Move the `SilenceLoggerTestCaseMixin` mixin to the logging app.
+- Rename mixin `SilenceLoggerTestCaseMixin` to `TestCaseMixinSilenceLogger`.
 
 4.8.3 (2024-10-04)
 ==================

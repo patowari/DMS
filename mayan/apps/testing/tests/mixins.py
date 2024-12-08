@@ -1,6 +1,5 @@
 import glob
 import importlib
-import logging
 import os
 import random
 import time
@@ -410,31 +409,6 @@ class SeleniumTestMixin:
         )
 
         self.webdriver.get(url=url)
-
-
-class SilenceLoggerTestCaseMixin:
-    """
-    Changes the log level of a specific logger for the duration of a test.
-    The default level for silenced loggers is CRITICAL.
-    Example: self._silence_logger(name='mayan.apps.converter.managers')
-    """
-    test_case_silenced_logger = None
-    test_case_silenced_logger_new_level = logging.CRITICAL
-
-    def tearDown(self):
-        if self.test_case_silenced_logger:
-            self.test_case_silenced_logger.setLevel(
-                level=self.test_case_silenced_logger_level
-            )
-
-        super().tearDown()
-
-    def _silence_logger(self, name):
-        self.test_case_silenced_logger = logging.getLogger(name=name)
-        self.test_case_silenced_logger_level = self.test_case_silenced_logger.level
-        self.test_case_silenced_logger.setLevel(
-            level=self.test_case_silenced_logger_new_level
-        )
 
 
 class TempfileCheckTestCasekMixin:

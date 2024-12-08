@@ -1,3 +1,5 @@
+import logging
+
 from django.apps import apps
 from django.contrib.contenttypes.models import ContentType
 
@@ -109,4 +111,29 @@ class GlobalErrorLogViewTestMixin:
     def _request_global_error_log_partition_entry_list_view(self):
         return self.get(
             viewname='logging:global_error_log_partition_entry_list'
+        )
+
+
+class TestCaseMixinSilenceLogger:
+    """
+    Changes the log level of a specific logger for the duration of a test.
+    The default level for silenced loggers is CRITICAL.
+    Example: self._silence_logger(name='mayan.apps.converter.managers')
+    """
+    test_case_silenced_logger = None
+    test_case_silenced_logger_new_level = logging.CRITICAL
+
+    def tearDown(self):
+        if self.test_case_silenced_logger:
+            self.test_case_silenced_logger.setLevel(
+                level=self.test_case_silenced_logger_level
+            )
+
+        super().tearDown()
+
+    def _silence_logger(self, name):
+        self.test_case_silenced_logger = logging.getLogger(name=name)
+        self.test_case_silenced_logger_level = self.test_case_silenced_logger.level
+        self.test_case_silenced_logger.setLevel(
+            level=self.test_case_silenced_logger_new_level
         )
