@@ -152,6 +152,9 @@
 - Move the `ConnectionsCheckTestCaseMixin`, `ModelTestCaseMixin`,
   `TestModelTestCaseMixin`, `RandomPrimaryKeyModelMonkeyPatchMixin` to the
   databases app.
+- Move the `DescriptorLeakCheckTestCaseMixin`, `OpenFileCheckTestCaseMixin`,
+  `TempfileCheckTestCasekMixin` to the storage app.
+- Move the `psutil` dependency to the storage app.
 
 4.8.3 (2024-10-04)
 ==================

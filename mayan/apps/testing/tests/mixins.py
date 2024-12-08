@@ -1,16 +1,12 @@
-import glob
 import os
 import time
 
-import psutil
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver
 
 from django.conf import settings
 from django.db.models import Q
 from django.urls import reverse
-
-from mayan.apps.storage.settings import setting_temporary_directory
 
 
 class ContentTypeCheckTestCaseMixin:
@@ -45,43 +41,6 @@ class DelayTestCaseMixin:
         time.sleep(seconds)
 
 
-class DescriptorLeakCheckTestCaseMixin:
-    _skip_file_descriptor_test = False
-
-    def _get_process_descriptor_count(self):
-        process = psutil.Process()
-        return process.num_fds()
-
-    def _get_process_descriptors(self):
-        process = psutil.Process()._proc
-        return os.listdir(
-            path='{}/{}/fd'.format(process._procfs_path, process.pid)
-        )
-
-    def setUp(self):
-        super().setUp()
-        self._process_descriptor_count = self._get_process_descriptor_count()
-        self._process_descriptors = self._get_process_descriptors()
-
-    def tearDown(self):
-        if not self._skip_file_descriptor_test:
-            if self._get_process_descriptor_count() > self._process_descriptor_count:
-                raise ValueError(
-                    'File descriptor leak. The number of file descriptors '
-                    'at the end are higher than at the start of the test.'
-                )
-
-            for descriptor in self._get_process_descriptors():
-                if descriptor not in self._process_descriptors:
-                    raise ValueError(
-                        'File descriptor leak. A descriptor was found at '
-                        'the end of the test that was not present at the '
-                        'start of the test.'
-                    )
-
-        super().tearDown()
-
-
 class EnvironmentTestCaseMixin:
     def setUp(self):
         super().setUp()
@@ -96,29 +55,6 @@ class EnvironmentTestCaseMixin:
     def _set_environment_variable(self, name, value):
         self._test_environment_variable_list.append(name)
         os.environ[name] = value
-
-
-class OpenFileCheckTestCaseMixin:
-    _skip_open_file_leak_test = False
-
-    def _get_open_files(self):
-        process = psutil.Process()
-        return process.open_files()
-
-    def setUp(self):
-        super().setUp()
-
-        self._open_files = self._get_open_files()
-
-    def tearDown(self):
-        if not self._skip_open_file_leak_test:
-            for new_open_file in self._get_open_files():
-                if new_open_file not in self._open_files:
-                    raise ValueError(
-                        'File left open: {}'.format(new_open_file)
-                    )
-
-        super().tearDown()
 
 
 class SeleniumTestMixin:
@@ -164,49 +100,6 @@ class SeleniumTestMixin:
         )
 
         self.webdriver.get(url=url)
-
-
-class TempfileCheckTestCasekMixin:
-    # Ignore the jvmstat instrumentation and GitLab's CI .config files.
-    # Ignore LibreOffice fontconfig cache dir.
-    ignore_globs = ('hsperfdata_*', '.config', '.cache')
-
-    def _get_temporary_entries(self):
-        ignored_result = []
-
-        # Expand globs by joining the temporary directory and then flattening
-        # the list of lists into a single list.
-        for item in self.ignore_globs:
-            ignored_result.extend(
-                glob.glob(
-                    os.path.join(setting_temporary_directory.value, item)
-                )
-            )
-
-        # Remove the path and leave only the expanded filename.
-        ignored_result = map(lambda x: os.path.split(x)[-1], ignored_result)
-
-        return set(
-            os.listdir(setting_temporary_directory.value)
-        ) - set(ignored_result)
-
-    def setUp(self):
-        super().setUp()
-        if getattr(settings, 'COMMON_TEST_TEMP_FILES', False):
-            self._temporary_items = self._get_temporary_entries()
-
-    def tearDown(self):
-        if getattr(settings, 'COMMON_TEST_TEMP_FILES', False):
-            final_temporary_items = self._get_temporary_entries()
-            self.assertEqual(
-                self._temporary_items, final_temporary_items,
-                msg='Orphan temporary file. The number of temporary '
-                'files and/or directories at the start and at the end of '
-                'the test are not the same. Orphan entries: {}'.format(
-                    ','.join(final_temporary_items - self._temporary_items)
-                )
-            )
-        super().tearDown()
 
 
 class TestMixinObjectCreationTrack:

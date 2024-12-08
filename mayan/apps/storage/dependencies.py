@@ -1,4 +1,5 @@
 from mayan.apps.dependencies.classes import PythonDependency
+from mayan.apps.dependencies.environments import environment_testing
 
 PythonDependency(
     module=__name__, name='boto3', version_string='==1.35.68'
@@ -11,6 +12,10 @@ PythonDependency(
 )
 PythonDependency(
     module=__name__, name='google-cloud-storage', version_string='==2.18.2'
+)
+PythonDependency(
+    environment=environment_testing, module=__name__, name='psutil',
+    version_string='==6.0.0'
 )
 PythonDependency(
     module=__name__, name='pycryptodome', version_string='==3.21.0'
