@@ -1,5 +1,4 @@
 from contextlib import contextmanager
-import random
 import sys
 
 
@@ -9,16 +8,6 @@ class NullFile:
 
     def write(self, string):
         """Writes here go nowhere."""
-
-
-class RandomSeedIdempotent:
-    _random_seed_called = False
-
-    @classmethod
-    def seed(cls):
-        if not cls._random_seed_called:
-            random.seed()
-            cls._random_seed_called = True
 
 
 def as_id_list(items):

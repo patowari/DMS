@@ -149,6 +149,9 @@
 - Rename mixin `SilenceLoggerTestCaseMixin` to `TestCaseMixinSilenceLogger`.
 - Move the `ClientMethodsTestCaseMixin`, `DownloadTestCaseMixin`,
   `TestServerTestCaseMixin`, `TestViewTestCaseMixin` mixins to the views app.
+- Move the `ConnectionsCheckTestCaseMixin`, `ModelTestCaseMixin`,
+  `TestModelTestCaseMixin`, `RandomPrimaryKeyModelMonkeyPatchMixin` to the
+  databases app.
 
 4.8.3 (2024-10-04)
 ==================
