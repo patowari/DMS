@@ -17,9 +17,10 @@ from mayan.apps.navigation.source_columns import SourceColumn
 from .events import event_message_edited
 from .links import (
     link_message_create, link_message_delete_multiple,
-    link_message_delete_single, link_message_list,link_message_mark_read_all,
-    link_message_mark_read_multiple, link_message_mark_read_single,
-    link_message_mark_unread_multiple, link_message_mark_unread_single
+    link_message_delete_single, link_message_list,
+    link_message_mark_read_all, link_message_mark_read_multiple,
+    link_message_mark_read_single, link_message_mark_unread_multiple,
+    link_message_mark_unread_single
 )
 from .permissions import (
     permission_message_delete, permission_message_edit,

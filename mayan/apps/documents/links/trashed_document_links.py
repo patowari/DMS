@@ -33,7 +33,7 @@ link_trash_can_empty = Link(
     text=_(message='Empty trash'), view='documents:trash_can_empty'
 )
 link_trashed_document_delete_multiple = Link(
-    icon=icon_trashed_document_delete_single, tags='dangerous',
+    icon=icon_trashed_document_delete_multiple, tags='dangerous',
     text=_(message='Delete'), view='documents:document_multiple_delete'
 )
 link_trashed_document_delete_single = Link(
