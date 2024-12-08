@@ -207,7 +207,7 @@ class Menu(TemplateObjectMixin):
         else:
             try:
                 # Try it as a queryset.
-                model = resolved_navigation_object.model
+                resolved_navigation_object.query
             except AttributeError:
                 try:
                     # Try it as a list.
@@ -228,6 +228,8 @@ class Menu(TemplateObjectMixin):
                     )
             else:
                 # It is a queryset, return the model.
+                model = resolved_navigation_object.model
+
                 return self.get_navigation_object_class(
                     resolved_navigation_object=model
                 )

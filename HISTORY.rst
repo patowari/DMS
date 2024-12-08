@@ -140,6 +140,8 @@
   the default.
 - Update FontAwesome from version 6.5.2 to 6.7.1.
 - Log errors during document page preview generation.
+- Change how the navigation classes detected querysets. This allows
+  the navigation code to work with objects that have a `.model` attribute.
 
 4.8.3 (2024-10-04)
 ==================

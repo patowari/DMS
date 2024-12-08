@@ -58,7 +58,7 @@ class SourceColumn(TemplateObjectMixin):
 
         try:
             # Try it as a queryset.
-            model = source.model
+            source.query
         except AttributeError:
             try:
                 # Try it as a list.
@@ -118,6 +118,8 @@ class SourceColumn(TemplateObjectMixin):
                 return cls.get_column_matches(source=item)
         else:
             # It is a queryset.
+            model = source.model
+
             return cls.get_column_matches(source=model)
 
     @classmethod
