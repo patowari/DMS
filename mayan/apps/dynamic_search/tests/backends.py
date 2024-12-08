@@ -1,6 +1,8 @@
 from django.utils.module_loading import import_string
 
-from ..literals import DEFAULT_TEST_SEARCH_BACKEND
+from ..literals import (
+    DEFAULT_TEST_SEARCH_BACKEND, DEFAULT_TEST_SEARCH_BACKEND_ARGUMENTS
+)
 from ..search_backends import SearchBackend
 from ..settings import setting_backend_arguments
 
@@ -22,14 +24,19 @@ class TestSearchBackendProxy:
                 self._test_class, '_test_search_backend_path',
                 DEFAULT_TEST_SEARCH_BACKEND
             )
+            backend_arguments = getattr(
+                self._test_class, '_test_search_backend_arguments',
+                setting_backend_arguments.value
+            )
         else:
+            backend_arguments = DEFAULT_TEST_SEARCH_BACKEND_ARGUMENTS
             backend_path = DEFAULT_TEST_SEARCH_BACKEND
             SearchBackend._disable()
 
         if self.__class__._test_backend_path != backend_path:
             self.__class__._test_backend_path = backend_path
 
-            self.__class__._backend_kwargs = setting_backend_arguments.value.copy()
+            self.__class__._backend_kwargs = backend_arguments
             self.__class__._backend_class = import_string(
                 dotted_path=backend_path
             )

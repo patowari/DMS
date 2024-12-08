@@ -1,5 +1,7 @@
 from unittest import mock, skip
 
+from django.test import tag
+
 from mayan.apps.documents.tests.mixins.document_mixins import (
     DocumentTestMixin
 )
@@ -19,17 +21,35 @@ from .mixins.backend_search_field_mixins import (
 from .mixins.base import SearchTestMixin, TestSearchObjectSimpleTestMixin
 
 
-class DjangoSearchBackendSearchFieldTestCase(
-    BackendSearchFieldTestCaseMixin, BaseTestCase
-):
+@tag('search-django')
+class DjangoSearchBackendTestMixin:
     _test_search_backend_path = 'mayan.apps.dynamic_search.backends.django.DjangoSearchBackend'
+
+
+@skip(reason='Skip until a Mock ElasticSearch server class is added.')
+@tag('search-elasticsearch')
+class ElasticSearchBackendTestMixin:
+    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
+
+
+@tag('search-whoosh')
+class WhooshSearchBackendTestMixin:
+    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
+
+
+class DjangoSearchBackendSearchFieldTestCase(
+    BackendSearchFieldTestCaseMixin, DjangoSearchBackendTestMixin,
+    BaseTestCase
+):
+    """
+    Field test case for the Django backend.
+    """
 
 
 class DjangoSearchBackendFieldTypeQueryTypeTestCase(
-    BackendFieldTypeQueryTypeTestCaseMixin, BaseTestCase
+    BackendFieldTypeQueryTypeTestCaseMixin, DjangoSearchBackendTestMixin,
+    BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.django.DjangoSearchBackend'
-
     @skip(reason='Backend does not support the feature.')
     def test_search_field_type_char_search_exact_accent(self):
         """
@@ -52,12 +72,10 @@ class DjangoSearchBackendFieldTypeQueryTypeTestCase(
         """
 
 
-@skip(reason='Skip until a Mock ElasticSearch server class is added.')
 class ElasticSearchBackendIndexingTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
+    BackendSearchTestMixin, ElasticSearchBackendTestMixin,
+    TestSearchObjectSimpleTestMixin, BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
-
     def test_search_without_indexes(self):
         self._test_search_backend.tear_down()
 
@@ -70,37 +88,46 @@ class ElasticSearchBackendIndexingTestCase(
             )
 
 
-@skip(reason='Skip until a Mock ElasticSearch server class is added.')
 class ElasticSearchBackendSearchFieldTestCase(
-    BackendSearchFieldTestCaseMixin, BaseTestCase
+    BackendSearchFieldTestCaseMixin, ElasticSearchBackendTestMixin,
+    BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
+    """
+    Field test case for the ElasticSearch backend.
+    """
 
 
-@skip(reason='Skip until a Mock ElasticSearch server class is added.')
 class ElasticSearchBackendFieldTypeQueryTypeTestCase(
-    BackendFieldTypeQueryTypeTestCaseMixin, BaseTestCase
+    BackendFieldTypeQueryTypeTestCaseMixin, ElasticSearchBackendTestMixin,
+    BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.elasticsearch.ElasticSearchBackend'
+    """
+    Field query type test case for the ElasticSearch backend.
+    """
 
 
 class WhooshSearchBackendSearchFieldTestCase(
-    BackendSearchFieldTestCaseMixin, BaseTestCase
+    BackendSearchFieldTestCaseMixin, WhooshSearchBackendTestMixin,
+    BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
+    """
+    Field test case for the Whoosh backend.
+    """
 
 
 class WhooshSearchBackendFieldTypeQueryTypeTestCase(
-    BackendFieldTypeQueryTypeTestCaseMixin, BaseTestCase
+    BackendFieldTypeQueryTypeTestCaseMixin, WhooshSearchBackendTestMixin,
+    BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
+    """
+    Field query type test case for the Whoosh backend.
+    """
 
 
 class WhooshSearchBackendSpecificTestCase(
-    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin, BaseTestCase
+    BackendSearchTestMixin, TestSearchObjectSimpleTestMixin,
+    WhooshSearchBackendTestMixin, BaseTestCase
 ):
-    _test_search_backend_path = 'mayan.apps.dynamic_search.backends.whoosh.WhooshSearchBackend'
-
     def test_whoosh_datetime_search_raw_parsed_date_human_today(self):
         generator = self._do_backend_search(
             field_name='datetime',
