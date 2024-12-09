@@ -181,6 +181,7 @@
   state active.
 - Move the GitLab CI platform template into its own app named
   `platform_gitlab`.
+- Reduce the SSH connections used by the GitLab CI deploy stage.
 
 4.8.3 (2024-10-04)
 ==================
