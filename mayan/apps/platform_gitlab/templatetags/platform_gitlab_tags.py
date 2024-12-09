@@ -1,39 +1,10 @@
-import yaml
-
 from django.template import Library
-from django.utils.html import mark_safe
 
 import mayan
 from mayan.apps.dependencies.versions import Version
+from mayan.apps.platform.utils import yaml_dump
 
 register = Library()
-
-
-class Dumper(yaml.Dumper):
-    def increase_indent(self, flow=False, *args, **kwargs):
-        return super().increase_indent(flow=flow, indentless=False)
-
-
-def yaml_dump(data, indent):
-    result = yaml.dump(
-        Dumper=Dumper, data=data, width=1000
-    )
-
-    result = result.replace('\'\'\'', '\'')
-
-    output = []
-
-    for line in result.split('\n'):
-        if line:
-            output.append(
-                '{}{}'.format(
-                    ' ' * indent, line
-                )
-            )
-
-    return mark_safe(
-        '\n'.join(output)
-    )
 
 
 @register.simple_tag

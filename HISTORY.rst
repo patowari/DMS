@@ -179,6 +179,8 @@
 - Make source metadata available for linking.
 - Add help texts to the workflow instance fields: workflow, document,
   state active.
+- Move the GitLab CI platform template into its own app named
+  `platform_gitlab`.
 
 4.8.3 (2024-10-04)
 ==================

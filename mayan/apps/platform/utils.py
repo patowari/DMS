@@ -1,3 +1,35 @@
+import yaml
+
+from django.utils.html import mark_safe
+
+
+class Dumper(yaml.Dumper):
+    def increase_indent(self, flow=False, *args, **kwargs):
+        return super().increase_indent(flow=flow, indentless=False)
+
+
+def yaml_dump(data, indent):
+    result = yaml.dump(
+        Dumper=Dumper, data=data, width=1000
+    )
+
+    result = result.replace('\'\'\'', '\'')
+
+    output = []
+
+    for line in result.split('\n'):
+        if line:
+            output.append(
+                '{}{}'.format(
+                    ' ' * indent, line
+                )
+            )
+
+    return mark_safe(
+        '\n'.join(output)
+    )
+
+
 def load_env_file(filename='config.env', skip_local_config=False):
     result = {}
     with open(file=filename) as file_object:
