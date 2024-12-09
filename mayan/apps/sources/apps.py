@@ -13,7 +13,7 @@ from mayan.apps.common.menus import (
 )
 from mayan.apps.common.signals import signal_post_upgrade
 from mayan.apps.converter.links import link_transformation_list
-from mayan.apps.databases.classes import ModelProperty
+from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.menus import menu_documents
 from mayan.apps.documents.permissions import (
     permission_document_create, permission_document_file_new
@@ -114,6 +114,11 @@ class SourcesApp(MayanAppConfig):
             ),
             condition=lambda: not Source.objects.exists(),
             view='sources:source_list'
+        )
+
+        ModelFieldRelated(model=Document, name='files__source_metadata__key')
+        ModelFieldRelated(
+            model=Document, name='files__source_metadata__value'
         )
 
         ModelPermission.register(

@@ -176,6 +176,7 @@
   - Use `select2-templating` widget class for the foreign document data field.
   - Use `select` class for the inclusion and operator fields.
 
+- Make source metadata available for linking.
 
 4.8.3 (2024-10-04)
 ==================
