@@ -19,8 +19,10 @@ class ModelMixinAppConfig:
 
         return app_config.verbose_name
 
-    get_app_config.help_text = _(message='The app to which the view belongs.')
-    get_app_config.short_description = _(message='App')
+    get_app_config_verbose_name.help_text = _(
+        message='The app to which the view belongs.'
+    )
+    get_app_config_verbose_name.short_description = _(message='App')
 
 
 class ModelMixinUserConfirmViewBusinessLogic(ModelMixinAppConfig):

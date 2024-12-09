@@ -156,6 +156,8 @@
   `TempfileCheckTestCasekMixin` to the storage app.
 - Move the `psutil` dependency to the storage app.
 - Add help texts to the document comment model.
+- Improve columns of the user view modes by replacing the app config
+  representation with the app config verbose name.
 
 4.8.3 (2024-10-04)
 ==================

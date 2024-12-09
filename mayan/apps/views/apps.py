@@ -29,7 +29,7 @@ class ViewsApp(MayanAppConfig):
         User = get_user_model()
 
         SourceColumn(
-            attribute='get_app_config', include_label=True,
+            attribute='get_app_config_verbose_name', include_label=True,
             source=UserConfirmView
         )
         SourceColumn(
@@ -42,7 +42,7 @@ class ViewsApp(MayanAppConfig):
         )
 
         SourceColumn(
-            attribute='get_app_config', include_label=True,
+            attribute='get_app_config_verbose_name', include_label=True,
             source=UserViewMode
         )
         SourceColumn(
