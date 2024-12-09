@@ -1,12 +1,10 @@
-import logging
-
 from django.apps import apps
-from django.core.exceptions import ImproperlyConfigured
+from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.db import models
-from django.utils.encoding import force_str
+from django.db.models.constants import LOOKUP_SEP
 from django.utils.translation import gettext_lazy as _
 
-logger = logging.getLogger(name=__name__)
+from .utils import help_text_for_field_recursive
 
 
 class ModelAttribute:
@@ -18,21 +16,23 @@ class ModelAttribute:
         result = []
 
         for klass in cls._class_registry:
-            klass_choices = klass.get_choices_for(model=model)
-            if klass_choices:
+            klass_choice_list = klass.get_choices_for(model=model)
+            if klass_choice_list:
                 result.append(
-                    (klass.class_label, klass_choices)
+                    (klass.class_label, klass_choice_list)
                 )
 
         return result
 
     @classmethod
     def get_choices_for(cls, model):
+        klass_choice_list = cls.get_for(model=model)
+
         return sorted(
             (
                 (
                     entry.name, entry.get_display()
-                ) for entry in cls.get_for(model=model)
+                ) for entry in klass_choice_list
             ), key=lambda x: x[1]
         )
 
@@ -71,59 +71,62 @@ class ModelAttribute:
 
     def get_display(self, show_name=False):
         if self.description:
-            return '{} - {}'.format(
-                self.name if show_name else self.label, self.description
-            )
+            template = '{label} - {description}'
         else:
-            return force_str(s=self.name if show_name else self.label)
+            template = '{label}'
+
+        label = self.name if show_name else self.label
+
+        result = template.format(label=label, description=self.description)
+
+        return result
 
 
 class ModelField(ModelAttribute):
     class_label = _(message='Model fields')
     class_name = 'field'
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._final_model_verbose_name = None
-
-        if not self.label:
-            self.label = self.get_field_attribute(
-                attribute='verbose_name'
+    def __init__(self, **kwargs):
+        if 'label' in kwargs:
+            raise ImproperlyConfigured(
+                '`ModelField` and subclasses not longer accept `label` '
+                'argument. Ensure the `verbose_name` is set in the model '
+                'instead.'
             )
-            if self.label != self._final_model_verbose_name:
-                self.label = '{}, {}'.format(
-                    self._final_model_verbose_name, self.label
-                )
 
+        super().__init__(**kwargs)
+
+        self.do_description_set()
+        self.do_label_set()
+
+    def do_description_set(self):
         if not self.description:
-            self.description = self.get_field_attribute(
-                attribute='help_text'
+            self.description = help_text_for_field_recursive(
+                model=self.model, name=self.name
             )
 
-    def get_field_attribute(self, attribute, model=None, field_name=None):
-        if not model:
-            model = self.model
+    def do_label_set(self):
+        text_model_list = []
+        last_model = self.model
+        for part in self.name.split(LOOKUP_SEP):
+            try:
+                field = last_model._meta.get_field(field_name=part)
+            except FieldDoesNotExist:
+                break
+            else:
+                verbose_name = str(last_model._meta.verbose_name)
+                if last_model != self.model and verbose_name:
+                    text_model_list.append(
+                        '{}'.format(verbose_name)
+                    )
 
-        if not field_name:
-            field_name = self.name
+                last_model = field.related_model or field.model
 
-        parts = field_name.split('__')
-        if len(parts) > 1:
-            return self.get_field_attribute(
-                attribute=attribute,
-                field_name='__'.join(
-                    parts[1:]
-                ),
-                model=model._meta.get_field(
-                    field_name=parts[0]
-                ).related_model
-            )
-        else:
-            self._final_model_verbose_name = model._meta.verbose_name
-            return getattr(
-                model._meta.get_field(field_name=field_name),
-                attribute
-            )
+        text_model_list.append(
+            str(field.verbose_name)
+        )
+
+        self.label = ' > '.join(text_model_list)
 
 
 class ModelFieldRelated(ModelField):
@@ -149,17 +152,10 @@ class ModelReverseField(ModelField):
                 attribute='verbose_name_plural'
             )
 
-    def get_field_attribute(self, attribute, model=None, field_name=None):
-        if not model:
-            model = self.model
+    def get_field_attribute(self, attribute):
+        field = self.model._meta.get_field(field_name=self.name)
 
-        if not field_name:
-            field_name = self.name
-
-        return getattr(
-            model._meta.get_field(field_name=field_name).related_model._meta,
-            attribute
-        )
+        return getattr(field.related_model._meta, attribute)
 
 
 class ModelQueryFields:
