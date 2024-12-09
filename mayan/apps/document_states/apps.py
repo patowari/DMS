@@ -240,7 +240,8 @@ class DocumentStatesApp(MayanAppConfig):
         ModelProperty(
             model=Document,
             name='workflow.< workflow internal name >.get_current_state.completion',
-            label=_(message='Current state of a workflow'), description=_(
+            label=_(message='Current completion of a workflow'),
+            description=_(
                 message='Deprecated: Use `state_active.completion` instead. '
                 'Return the completion value of the current state of the '
                 'selected workflow.'
@@ -256,9 +257,10 @@ class DocumentStatesApp(MayanAppConfig):
         ModelProperty(
             model=Document,
             name='workflow.< workflow internal name >.state_active.completion',
-            label=_(message='Current state of a workflow'), description=_(
-                message='Return the completion value of the current state of '
-                'the selected workflow.'
+            label=_(message='Current completion of a workflow'),
+            description=_(
+                message='Return the completion value of the current state '
+                'of the selected workflow.'
             )
         )
 

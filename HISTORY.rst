@@ -166,6 +166,7 @@
   to the databases app and make it general purpose. Add
   `label_for_field_recursive` and `help_text_for_field_recursive` utility
   functions.
+- Fix workflow model completion model property typo.
 
 4.8.3 (2024-10-04)
 ==================
