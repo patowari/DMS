@@ -162,6 +162,10 @@
 - Add help texts to the user first name and last name fields.
 - Ensure the `select2` fields also apply the markup template to the selection
   as well as the result.
+- Move nested field label and help text extraction from the navigation app
+  to the databases app and make it general purpose. Add
+  `label_for_field_recursive` and `help_text_for_field_recursive` utility
+  functions.
 
 4.8.3 (2024-10-04)
 ==================

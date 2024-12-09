@@ -1,12 +1,13 @@
 import logging
 
-from django.contrib.admin.utils import help_text_for_field, label_for_field
 from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
-from django.db.models.constants import LOOKUP_SEP
 from django.template import Variable, VariableDoesNotExist
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.utils import get_related_field, resolve_attribute
+from mayan.apps.databases.utils import (
+    help_text_for_field_recursive, label_for_field_recursive
+)
 from mayan.apps.views.icons import icon_sort_down, icon_sort_up
 from mayan.apps.views.literals import (
     TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
@@ -20,26 +21,6 @@ logger = logging.getLogger(name=__name__)
 
 class SourceColumn(TemplateObjectMixin):
     _registry = {}
-
-    @staticmethod
-    def get_attribute_recursive(attribute, model):
-        """
-        Walk over the double underscore (__) separated path to the last
-        field. Returns the field name and the corresponding model class.
-        Used to introspect the label or short_description of a model's
-        attribute.
-        """
-        last_model = model
-        for part in attribute.split(LOOKUP_SEP):
-            last_model = model
-            try:
-                field = model._meta.get_field(field_name=part)
-            except FieldDoesNotExist:
-                break
-            else:
-                model = field.related_model or field.model
-
-        return (part, last_model)
 
     @staticmethod
     def sort(columns):
@@ -230,12 +211,9 @@ class SourceColumn(TemplateObjectMixin):
                     self._help_text = getattr(attribute, 'help_text')
                 except AttributeError:
                     try:
-                        name, model = SourceColumn.get_attribute_recursive(
-                            attribute=self.attribute,
-                            model=self.source._meta.model
-                        )
-                        self._help_text = help_text_for_field(
-                            model=model, name=name
+                        self._help_text = help_text_for_field_recursive(
+                            model=self.source._meta.model,
+                            name=self.attribute
                         )
                     except AttributeError:
                         self._help_text = None
@@ -252,12 +230,9 @@ class SourceColumn(TemplateObjectMixin):
                     self._label = getattr(attribute, 'short_description')
                 except AttributeError:
                     try:
-                        name, model = SourceColumn.get_attribute_recursive(
-                            attribute=self.attribute,
-                            model=self.source._meta.model
-                        )
-                        self._label = label_for_field(
-                            model=model, name=name
+                        self._label = label_for_field_recursive(
+                            model=self.source._meta.model,
+                            name=self.attribute
                         )
                     except AttributeError:
                         self._label = self.attribute
