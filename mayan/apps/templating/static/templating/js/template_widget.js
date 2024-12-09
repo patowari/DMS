@@ -72,7 +72,7 @@ jQuery(document).ready(function() {
 
     $syncScrollSelector.on('scroll', syncScroll);
 
-    const templatingEntryTemplate = function (object) {
+    const selectTemplatingEntryTemplate = function (object) {
         if (!object.id) {
             return object.text;
         }
@@ -81,14 +81,18 @@ jQuery(document).ready(function() {
         const name = entryParts[0];
         const description = entryParts.slice(1).join('-');
 
-        return $(
-            '<strong> ' + appearanceSanitizeHTML(name) + '</strong> - <span>' + appearanceSanitizeHTML(description) + '</span>'
-        );
+        let output = '<strong> ' + appearanceSanitizeHTML(name) + '</strong>';
+
+        if (description) {
+            output += ' - <span>' + appearanceSanitizeHTML(description) + '</span>';
+        }
+
+        return $(output);
     }
 
     $('.select2-templating').select2({
-        templateResult: templatingEntryTemplate,
-        templateSelection: templatingEntryTemplate,
+        templateResult: selectTemplatingEntryTemplate,
+        templateSelection: selectTemplatingEntryTemplate,
         width: '100%'
     });
 });

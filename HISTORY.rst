@@ -168,6 +168,8 @@
   functions.
 - Fix workflow model completion model property typo.
 - Make document comment fields available for linking.
+- Improve `.select2-templating` entry template to not assume all entries
+  have descriptions.
 
 4.8.3 (2024-10-04)
 ==================
