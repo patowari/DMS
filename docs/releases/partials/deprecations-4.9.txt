@@ -3,3 +3,11 @@
 - Setting `COMMON_COLLAPSE_LIST_MENU_LIST_FACET` will be removed in the
   next minor version.
 - The user theme feature will be removed in the next minor version.
+- Template model property
+  `workflow.< workflow internal name >.get_current_state' is deprecated.
+  Use `state_active` instead to return the current state of the selected
+  workflow.
+- Template model property
+  `workflow.< workflow internal name >.get_current_state.completion` is
+  deprecated. Use `state_active.completion` instead to return the completion
+  value of the current state of the selected workflow.
