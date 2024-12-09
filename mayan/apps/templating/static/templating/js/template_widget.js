@@ -88,6 +88,7 @@ jQuery(document).ready(function() {
 
     $('.select2-templating').select2({
         templateResult: templatingEntryTemplate,
+        templateSelection: templatingEntryTemplate,
         width: '100%'
     });
 });

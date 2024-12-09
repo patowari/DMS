@@ -160,6 +160,8 @@
   representation with the app config verbose name.
 - Remove overridden user model meta ordering value.
 - Add help texts to the user first name and last name fields.
+- Ensure the `select2` fields also apply the markup template to the selection
+  as well as the result.
 
 4.8.3 (2024-10-04)
 ==================
