@@ -170,6 +170,12 @@
 - Make document comment fields available for linking.
 - Improve `.select2-templating` entry template to not assume all entries
   have descriptions.
+- Smart link updates:
+
+  - Add field sets to the conditions form.
+  - Use `select2-templating` widget class for the foreign document data field.
+  - Use `select` class for the inclusion and operator fields.
+
 
 4.8.3 (2024-10-04)
 ==================
