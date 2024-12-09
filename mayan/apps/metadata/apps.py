@@ -147,13 +147,9 @@ class MetadataApp(MayanAppConfig):
         )
 
         ModelFieldRelated(
-            model=Document, name='metadata__metadata_type__name',
-            label=_(message='Metadata type name')
+            model=Document, name='metadata__metadata_type__name'
         )
-        ModelFieldRelated(
-            model=Document, name='metadata__value',
-            label=_(message='Metadata value')
-        )
+        ModelFieldRelated(model=Document, name='metadata__value')
 
         ModelEventType.register(
             model=Document, event_types=(

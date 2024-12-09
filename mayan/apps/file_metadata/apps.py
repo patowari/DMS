@@ -105,11 +105,11 @@ class FileMetadataApp(MayanAppConfig):
         )
 
         ModelFieldRelated(
-            label=_(message='File metadata internal name'), model=Document,
+            model=Document,
             name='files__file_metadata_drivers__entries__internal_name'
         )
         ModelFieldRelated(
-            label=_(message='File metadata value'), model=Document,
+            model=Document,
             name='files__file_metadata_drivers__entries__value'
         )
 

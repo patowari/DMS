@@ -315,7 +315,6 @@ class DocumentStatesApp(MayanAppConfig):
         ModelField(model=WorkflowInstance, name='document')
         ModelField(model=WorkflowInstance, name='state_active')
         ModelField(model=WorkflowInstance, name='workflow')
-        ModelReverseField(model=WorkflowInstance, name='log_entries')
 
         ModelProperty(
             description=_(
@@ -337,6 +336,13 @@ class DocumentStatesApp(MayanAppConfig):
                 message='Return the transition of the workflow instance.'
             ), label=_(message='Get last transition'), model=WorkflowInstance,
             name='get_last_transition'
+        )
+
+        ModelReverseField(
+            description=_(
+                message='A record of all state changes made to the '
+                'workflow instance over time.'
+            ), model=WorkflowInstance, name='log_entries'
         )
 
         # Workflow template

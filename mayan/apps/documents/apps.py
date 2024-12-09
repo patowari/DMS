@@ -274,14 +274,8 @@ class DocumentsApp(MayanAppConfig):
             )
         )
 
-        ModelField(
-            model=DocumentFilePage, label=_(message='Document file'),
-            name='document_file'
-        )
-        ModelField(
-            model=DocumentFilePage, label=_(message='Page number'),
-            name='page_number'
-        )
+        ModelField(model=DocumentFilePage, name='document_file')
+        ModelField(model=DocumentFilePage, name='page_number')
 
         ModelProperty(
             description=_(message='Return the document instance.'),
@@ -912,38 +906,24 @@ class DocumentsApp(MayanAppConfig):
                 event_document_trashed, event_trashed_document_restored
             )
         )
+
         ModelField(model=Document, name='description')
         ModelField(model=Document, name='datetime_created')
         ModelField(model=Document, name='trashed_date_time')
-        ModelField(
-            model=Document, name='document_type'
-        )
+        ModelField(model=Document, name='document_type')
         ModelField(model=Document, name='in_trash')
         ModelField(model=Document, name='is_stub')
         ModelField(model=Document, name='label')
         ModelField(model=Document, name='language')
         ModelField(model=Document, name='uuid')
+
         ModelFieldRelated(model=Document, name='document_type__label')
-        ModelFieldRelated(
-            model=Document,
-            name='files__checksum'
-        )
-        ModelFieldRelated(
-            model=Document, label=_(message='File comments'),
-            name='files__comment'
-        )
-        ModelFieldRelated(
-            model=Document, label=_(message='File encodings'),
-            name='files__encoding'
-        )
-        ModelFieldRelated(
-            model=Document, label=_(message='File MIME types'),
-            name='files__mimetype'
-        )
-        ModelFieldRelated(
-            model=Document, label=_(message='File timestamps'),
-            name='files__timestamp'
-        )
+        ModelFieldRelated(model=Document, name='files__checksum')
+        ModelFieldRelated(model=Document, name='files__comment')
+        ModelFieldRelated(model=Document, name='files__encoding')
+        ModelFieldRelated(model=Document, name='files__mimetype')
+        ModelFieldRelated(model=Document, name='files__timestamp')
+
         ModelProperty(
             description=_(message='Return the latest file of the document.'),
             model=Document, label=_(message='Latest file'),
