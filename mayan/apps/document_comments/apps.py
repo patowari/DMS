@@ -6,6 +6,7 @@ from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import (
     menu_list_facet, menu_object, menu_secondary
 )
+from mayan.apps.databases.classes import ModelFieldRelated
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
 from mayan.apps.navigation.source_columns import SourceColumn
 
@@ -54,6 +55,11 @@ class DocumentCommentsApp(MayanAppConfig):
                 event_document_comment_edited
             )
         )
+
+        ModelFieldRelated(model=Document, name='comments__text')
+        ModelFieldRelated(model=Document, name='comments__user__first_name')
+        ModelFieldRelated(model=Document, name='comments__user__last_name')
+        ModelFieldRelated(model=Document, name='comments__user__username')
 
         ModelPermission.register_inheritance(
             model=Comment, related='document',
