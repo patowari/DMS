@@ -71,12 +71,12 @@ class UserManagementApp(MayanAppConfig):
             serializer_class='mayan.apps.user_management.serializers.UserSerializer'
         )
 
-        Group._meta.ordering = ('name',)
-        Group._meta.verbose_name = _(message='Group')
-        Group._meta.verbose_name_plural = _(message='Groups')
         Group._meta.get_field(field_name='name').verbose_name = _(
             message='Name'
         )
+        Group._meta.ordering = ('name',)
+        Group._meta.verbose_name = _(message='Group')
+        Group._meta.verbose_name_plural = _(message='Groups')
 
         Group.add_to_class(
             name='__init__', value=get_method_group_init()
@@ -100,10 +100,9 @@ class UserManagementApp(MayanAppConfig):
             name='save', value=get_method_group_save()
         )
 
-        User._meta.ordering = ('pk',)
+        User._meta.ordering = ('last_name', 'first_name')
         User._meta.verbose_name = _(message='User')
         User._meta.verbose_name_plural = _(message='Users')
-        User._meta.ordering = ('last_name', 'first_name')
 
         User._meta.get_field(field_name='email').verbose_name = _(
             message='Email'
@@ -111,9 +110,21 @@ class UserManagementApp(MayanAppConfig):
         User._meta.get_field(
             field_name='first_name'
         ).verbose_name = _(message='First name')
+        User._meta.get_field(
+            field_name='first_name'
+        ).help_text = _(message='The given name of the user.')
         User._meta.get_field(field_name='groups').verbose_name = _(
             message='Groups'
         )
+        User._meta.get_field(
+            field_name='last_login'
+        ).verbose_name = _(message='Last login')
+        User._meta.get_field(
+            field_name='last_name'
+        ).help_text = _(message='The family name of the user.')
+        User._meta.get_field(
+            field_name='last_name'
+        ).verbose_name = _(message='Last name')
         User._meta.get_field(
             field_name='is_active'
         ).verbose_name = _(message='Is active?')
@@ -121,17 +132,11 @@ class UserManagementApp(MayanAppConfig):
             field_name='is_superuser'
         ).verbose_name = _(message='Is super user?')
         User._meta.get_field(
-            field_name='last_name'
-        ).verbose_name = _(message='Last name')
-        User._meta.get_field(
             field_name='password'
         ).verbose_name = _(message='Password')
         User._meta.get_field(
             field_name='username'
         ).verbose_name = _(message='Username')
-        User._meta.get_field(
-            field_name='last_login'
-        ).verbose_name = _(message='Last login')
 
         User.add_to_class(
             name='__init__', value=get_method_user_init()

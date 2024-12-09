@@ -158,6 +158,8 @@
 - Add help texts to the document comment model.
 - Improve columns of the user view modes by replacing the app config
   representation with the app config verbose name.
+- Remove overridden user model meta ordering value.
+- Add help texts to the user first name and last name fields.
 
 4.8.3 (2024-10-04)
 ==================
