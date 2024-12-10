@@ -37,8 +37,15 @@ class Tesseract(OCRBackendBase):
                 keyword_arguments['l'] = self.language
 
             environment = os.environ.copy()
-            environment.update(self.environment)
+            environment.update(self.command_environment)
             keyword_arguments['_env'] = environment
+
+            arguments.extend(self.tesseract_arguments_extra)
+
+            logger.debug(
+                'Calling Tesseract with arguments %s, %s', arguments,
+                keyword_arguments
+            )
 
             try:
                 output = self.command_tesseract(
@@ -107,8 +114,11 @@ class Tesseract(OCRBackendBase):
         self.command_timeout = self.kwargs.get(
             'timeout', DEFAULT_TESSERACT_TIMEOUT
         )
-        self.environment = self.kwargs.get(
+        self.command_environment = self.kwargs.get(
             'environment', {}
+        )
+        self.tesseract_arguments_extra = self.kwargs.get(
+            'tesseract_arguments_extra', {}
         )
         self.tesseract_binary_path = self.kwargs.get(
             'tesseract_path', DEFAULT_TESSERACT_BINARY_PATH
