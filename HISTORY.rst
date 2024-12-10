@@ -183,6 +183,7 @@
   `platform_gitlab`.
 - Reduce the SSH connections used by the GitLab CI deploy stage.
 - Improve the method to pass custom arguments to Tesseract OCR.
+- Unify the label of empty dropdown options.
 
 4.8.3 (2024-10-04)
 ==================
