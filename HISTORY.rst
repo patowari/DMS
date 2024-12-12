@@ -184,6 +184,12 @@
 - Reduce the SSH connections used by the GitLab CI deploy stage.
 - Improve the method to pass custom arguments to Tesseract OCR.
 - Unify the label of empty dropdown options.
+- Add support for event pruning via backends. Four backends are added:
+  `EventLogPruneBackendLatest`, `EventLogPruneBackendLatestPerObject`,
+  `EventLogPruneBackendLatestPerObjectEventType`,
+  `EventLogPruneBackendOlderThanDays`. Adds settings `EVENTS_PRUNE_BACKEND`,
+  `EVENTS_PRUNE_BACKEND_ARGUMENTS` and `EVENTS_PRUNE_TASK_INTERVAL` which
+  defaults to 30 days.
 
 4.8.3 (2024-10-04)
 ==================

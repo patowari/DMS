@@ -6,8 +6,10 @@ from mayan.apps.databases.classes import QuerysetParametersSerializer
 from mayan.celery import app
 
 from .classes import ActionExporter, EventType
+from .event_prune_backends import EventLogPruneBackend
 from .events import event_events_cleared
 from .permissions import permission_events_clear
+from .settings import setting_event_prune_backend
 
 
 @app.task(bind=True, ignore_result=True, retry_backoff=True)
@@ -54,6 +56,13 @@ def task_event_commit(
         )
     except OperationalError as exception:
         raise self.retry(exc=exception)
+
+
+@app.task(ignore_result=True)
+def task_event_prune():
+    if setting_event_prune_backend.value:
+        backend_instance = EventLogPruneBackend.get_backend_instance()
+        backend_instance.execute()
 
 
 @app.task(ignore_result=True)

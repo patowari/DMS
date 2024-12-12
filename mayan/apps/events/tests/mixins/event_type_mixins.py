@@ -1,4 +1,4 @@
-from ...classes import EventTypeNamespace, ModelEventType
+from ...classes import EventModelRegistry, EventTypeNamespace, ModelEventType
 
 from ..literals import (
     TEST_EVENT_TYPE_LABEL, TEST_EVENT_TYPE_NAME,
@@ -29,7 +29,7 @@ class EventTypeTestMixin:
 
         super().tearDown()
 
-    def _create_test_event_type(self):
+    def _create_test_event_type(self, register=False, model=None):
         total_test_event_type_count = len(
             self._test_event_type_namespace.event_type_list
         )
@@ -48,6 +48,15 @@ class EventTypeTestMixin:
         self._test_event_type.get_stored_event_type()
 
         self._test_event_type_list.append(self._test_event_type)
+
+        if register:
+            model = model or self._TestModel
+
+            EventModelRegistry.register(model=model)
+
+            ModelEventType.register(
+                event_types=(self._test_event_type,), model=model
+            )
 
 
 class EventTypeNamespaceAPITestMixin(EventTypeTestMixin):

@@ -1,4 +1,6 @@
+from django.db.models import F
 from django.test import tag
+from django.utils import timezone
 
 from actstream.models import Action
 
@@ -78,15 +80,26 @@ class EventTestMixin(EventTypeTestMixin, TestMixinObjectCreationTrack):
         super().setUp()
         self._test_event_list = []
 
-    def _create_test_event(self, action_object=None, actor=None, target=None):
+    def _create_test_event(
+        self, action_object=None, actor=None, event_type=None, target=None,
+        timedelta=None
+    ):
         self._test_object_track()
 
-        self._test_event_type.commit(
+        event_type = event_type or self._test_event_type
+
+        event_type.commit(
             action_object=action_object, actor=actor or self._test_case_user,
             target=target
         )
 
         self._test_object_set()
+
+        if timedelta:
+            queryset = Action.objects.filter(pk=self._test_event.pk)
+            queryset.update(
+                timestamp=F('timestamp') - timezone.timedelta(**timedelta)
+            )
 
         self._test_event_list.append(self._test_event)
 
