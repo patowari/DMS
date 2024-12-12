@@ -298,6 +298,8 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
             ) - model_list_previous - {model}
         )
 
+        self._TestModel = model
+
         self._test_model_list.append(model)
 
         ContentType.objects.clear_cache()
@@ -309,7 +311,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         instance_kwargs = instance_kwargs or {}
 
         if not getattr(self, '_TestModel', None):
-            self._TestModel = self._create_test_model()
+            self._create_test_model()
 
         self._test_object = self._TestModel.objects.create(**instance_kwargs)
         self._inject_test_object_content_type()
