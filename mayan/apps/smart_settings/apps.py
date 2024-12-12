@@ -7,7 +7,7 @@ from mayan.apps.common.menus import (
 from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.source_columns import SourceColumn
 
-from .classes import Setting, SettingCluster, SettingNamespace
+from .classes import Setting
 from .column_widgets import WidgetSettingValue
 from .links import (
     link_setting_cluster_configuration_save,
@@ -15,6 +15,8 @@ from .links import (
     link_setting_namespace_detail, link_setting_namespace_root_list,
     link_setting_revert
 )
+from .setting_clusters import SettingCluster
+from .setting_namespaces import SettingNamespace
 from .settings import setting_cluster
 from .widgets import setting_widget
 

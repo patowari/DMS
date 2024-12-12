@@ -190,6 +190,13 @@
   `EventLogPruneBackendOlderThanDays`. Adds settings `EVENTS_PRUNE_BACKEND`,
   `EVENTS_PRUNE_BACKEND_ARGUMENTS` and `EVENTS_PRUNE_TASK_INTERVAL` which
   defaults to 30 days.
+- Setting updates:
+
+  - Update the `Setting` and `SettingNamespace` classes to be singletons.
+    Calling the creation of a new setting in a namespace or a namespace in a
+    cluster with a duplicated identifier will no longer raise and error,
+    instead the previously created instance will be returned.
+  - Split the setting classes into separate modules.
 
 4.8.3 (2024-10-04)
 ==================

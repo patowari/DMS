@@ -1,7 +1,5 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.smart_settings.classes import SettingCluster
-
 from .literals import (
     DEFAULT_ALLOWED_HOSTS, DEFAULT_APPEND_SLASH,
     DEFAULT_AUTH_PASSWORD_VALIDATORS, DEFAULT_AUTHENTICATION_BACKENDS,
@@ -19,6 +17,7 @@ from .literals import (
     DEFAULT_TIME_ZONE, DEFAULT_USE_X_FORWARDED_HOST,
     DEFAULT_USE_X_FORWARDED_PORT, DEFAULT_WSGI_APPLICATION
 )
+from .setting_clusters import SettingCluster
 
 # Don't import anything on star imports, we just want to make it easy
 # for apps.py to activate the settings in this module.
