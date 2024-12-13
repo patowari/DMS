@@ -28,14 +28,14 @@ class DynamicFieldSerializerAPIViewTestCaseMixin:
     test_view_url = r'^test-view-url/(?P<test_object_id>\d+)/$'
 
     def _test_view_factory(self, test_object=None):
-        self._TestModelParent = self._create_test_model(
+        self._create_test_model(
             fields={
                 'test_field_1': models.CharField(blank=True, max_length=1),
                 'test_field_2': models.CharField(blank=True, max_length=1)
             }, model_name='TestModelParent'
         )
 
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -46,13 +46,13 @@ class DynamicFieldSerializerAPIViewTestCaseMixin:
             }, model_name='TestModelChild'
         )
 
-        self._test_object_parent = self._TestModelParent.objects.create()
-        self._test_object_child = self._TestModelChild.objects.create(
+        self._test_object_parent = self._test_model_dict['TestModelParent'].objects.create()
+        self._test_object_child = self._test_model_dict['TestModelChild'].objects.create(
             parent=self._test_object_parent
         )
 
-        TestModelParent = self._TestModelParent
-        TestModelChild = self._TestModelChild
+        TestModelParent = self._test_model_dict['TestModelParent']
+        TestModelChild = self._test_model_dict['TestModelChild']
 
         class TestModelParentSerializer(serializers.ModelSerializer):
             class Meta:

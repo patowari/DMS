@@ -151,17 +151,15 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
     def setUp(self):
         super().setUp()
 
-        self._TestModelAttribute = self._create_test_model(
+        self._create_test_model(
             fields={
                 'label': models.CharField(
                     max_length=64
                 )
             }, model_name='TestModelAttribute'
         )
-        self._TestModelGrandParent = self._create_test_model(
-            model_name='TestModelGrandParent'
-        )
-        self._TestModelParent = self._create_test_model(
+        self._create_test_model(model_name='TestModelGrandParent')
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -169,7 +167,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 )
             }, model_name='TestModelParent'
         )
-        self._TestModelGrandChild = self._create_test_model(
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -181,17 +179,19 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
             }, model_name='TestModelGrandChild'
         )
 
-        self._test_object_grandparent = self._TestModelGrandParent.objects.create()
-        self._test_object_parent = self._TestModelParent.objects.create(
+        self._test_object_grandparent = self._test_model_dict['TestModelGrandParent'].objects.create()
+        self._test_object_parent = self._test_model_dict['TestModelParent'].objects.create(
             parent=self._test_object_grandparent
         )
-        self._test_object_grandchild = self._TestModelGrandChild.objects.create(
+        self._test_object_grandchild = self._test_model_dict['TestModelGrandChild'].objects.create(
             parent=self._test_object_parent
         )
-        self._test_object_attribute = self._TestModelAttribute.objects.create(
+        self._test_object_attribute = self._test_model_dict['TestModelAttribute'].objects.create(
             label='test attribute object'
         )
-        self._test_object_grandchild.attributes.add(self._test_object_attribute)
+        self._test_object_grandchild.attributes.add(
+            self._test_object_attribute
+        )
 
     def test_many_to_many(self):
         result = ResolverPipelineModelAttribute.resolve(
@@ -223,7 +223,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 'exclude': {
                     'id': '{}'.format(self._test_object_attribute.pk)
                 },
-                'model': self._TestModelAttribute
+                'model': self._test_model_dict['TestModelAttribute']
             }
         )
 
@@ -304,7 +304,7 @@ class ResolverRelatedManagerTestCase(BaseTestCase):
                 'exclude': {
                     'id': '{}'.format(self._test_object_attribute.pk)
                 },
-                'model': self._TestModelAttribute
+                'model': self._test_model_dict['TestModelAttribute']
             }
         )
 

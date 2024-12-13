@@ -86,21 +86,21 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
     auto_test_search_objects_create = True
 
     def _create_test_models(self):
-        self._TestModelAttribute = self._create_test_model(
+        self._create_test_model(
             fields={
                 'label': models.CharField(
                     max_length=32
                 )
             }, model_name='TestModelAttribute'
         )
-        self._TestModelGrandParent = self._create_test_model(
+        self._create_test_model(
             fields={
                 'label': models.CharField(
                     max_length=32
                 )
             }, model_name='TestModelGrandParent'
         )
-        self._TestModelParent = self._create_test_model(
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -111,7 +111,7 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
                 )
             }, model_name='TestModelParent'
         )
-        self._TestModelGrandChild = self._create_test_model(
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
@@ -125,37 +125,35 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
                 )
             }, model_name='TestModelGrandChild'
         )
-        self._TestModelGrandChildProxy = self._create_test_model(
-            base_class=self._TestModelGrandChild,
+        self._create_test_model(
+            base_class=self._test_model_dict['TestModelGrandChild'],
             model_name='TestModelGrandChildProxy',
-            options={
-                'proxy': True
-            }
+            options={'proxy': True}
         )
 
     def _create_test_search_objects(self):
-        self._test_object_grandparent = self._TestModelGrandParent.objects.create(
+        self._test_object_grandparent = self._test_model_dict['TestModelGrandParent'].objects.create(
             label='grandparent'
         )
-        self._test_object_parent = self._TestModelParent.objects.create(
+        self._test_object_parent = self._test_model_dict['TestModelParent'].objects.create(
             parent=self._test_object_grandparent,
             label='parent'
         )
-        self._test_object_grandchild = self._TestModelGrandChild.objects.create(
+        self._test_object_grandchild = self._test_model_dict['TestModelGrandChild'].objects.create(
             parent=self._test_object_parent,
             label='grandchild_0'
         )
         self._test_object_grandchildren = [self._test_object_grandchild]
-        self._test_object_grandchild = self._TestModelGrandChild.objects.create(
+        self._test_object_grandchild = self._test_model_dict['TestModelGrandChild'].objects.create(
             parent=self._test_object_parent,
             label='grandchild_1'
         )
         self._test_object_grandchildren.append(self._test_object_grandchild)
-        self._test_object_grandchild_proxy = self._TestModelGrandChildProxy.objects.get(
+        self._test_object_grandchild_proxy = self._test_model_dict['TestModelGrandChildProxy'].objects.get(
             pk=self._test_object_grandchild.pk
         )
 
-        self._test_object_attribute = self._TestModelAttribute.objects.create(
+        self._test_object_attribute = self._test_model_dict['TestModelAttribute'].objects.create(
             label='attribute'
         )
         self._test_object_grandchild.attributes.add(
@@ -166,8 +164,8 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
 
     def _setup_test_model_search(self):
         self._test_search_grandparent = SearchModel(
-            app_label=self._TestModelGrandParent._meta.app_label,
-            model_name=self._TestModelGrandParent._meta.model_name
+            app_label=self._test_model_dict['TestModelGrandParent']._meta.app_label,
+            model_name=self._test_model_dict['TestModelGrandParent']._meta.model_name
         )
 
         self._test_search_grandparent.add_model_field(field='label')
@@ -182,8 +180,8 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
         )
 
         self._test_search_grandchild = SearchModel(
-            app_label=self._TestModelGrandChild._meta.app_label,
-            model_name=self._TestModelGrandChild._meta.model_name
+            app_label=self._test_model_dict['TestModelGrandChild']._meta.app_label,
+            model_name=self._test_model_dict['TestModelGrandChild']._meta.model_name
         )
         self._test_search_grandchild.add_model_field(
             field='label'
@@ -192,13 +190,13 @@ class TestSearchObjectHierarchyTestMixin(SearchTestMixin):
             field='attributes__label'
         )
         self._test_search_grandchild.add_proxy_model(
-            app_label=self._TestModelAttribute._meta.app_label,
+            app_label=self._test_model_dict['TestModelAttribute']._meta.app_label,
             model_name='TestModelGrandChildProxy'
         )
 
         self._test_search_attribute = SearchModel(
-            app_label=self._TestModelAttribute._meta.app_label,
-            model_name=self._TestModelAttribute._meta.model_name
+            app_label=self._test_model_dict['TestModelAttribute']._meta.app_label,
+            model_name=self._test_model_dict['TestModelAttribute']._meta.model_name
         )
         self._test_search_attribute.add_model_field(
             field='label'
@@ -216,7 +214,7 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
     auto_test_search_objects_create = True
 
     def _create_test_models(self):
-        self._TestModel = self._create_test_model(
+        self._create_test_model(
             fields={
                 'biginteger': models.BigIntegerField(blank=True, null=True),
                 'boolean': models.BooleanField(blank=True, null=True),
@@ -236,8 +234,7 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
                 ),
                 'text': models.TextField(blank=True, null=True),
                 'uuid': models.UUIDField(blank=True, null=True)
-            },
-            model_name='TestModel'
+            }
         )
 
     def _create_test_search_objects(self):
@@ -257,12 +254,12 @@ class TestSearchObjectSimpleTestMixin(SearchTestMixin):
         if self._test_object_integer_set:
             kwargs['integer'] = TEST_OBJECT_INTEGER_VALUE
 
-        self._test_object = self._TestModel.objects.create(**kwargs)
+        self._test_object = self._test_model_dict['_TestModel_0'].objects.create(**kwargs)
 
     def _setup_test_model_search(self):
         self._test_search_model = SearchModel(
-            app_label=self._TestModel._meta.app_label,
-            model_name=self._TestModel._meta.model_name
+            app_label=self._test_model_dict['_TestModel_0']._meta.app_label,
+            model_name=self._test_model_dict['_TestModel_0']._meta.model_name
         )
 
         self._test_search_model.add_model_field(field='biginteger')

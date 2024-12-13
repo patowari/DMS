@@ -213,6 +213,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
             TestModelTestCaseMixin._delete_test_model(model=model)
 
     def setUp(self):
+        self._test_model_dict = {}
         self._test_model_list = []
         self._test_model_list_extra = set()
         self._test_object_list = []
@@ -220,7 +221,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         super().setUp()
 
         if self.auto_create_test_object or self.auto_create_test_object_model:
-            self._TestModel = self._create_test_model(
+            self._create_test_model(
                 fields=self.auto_create_test_object_fields
             )
 
@@ -299,6 +300,7 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
         )
 
         self._TestModel = model
+        self._test_model_dict[self._test_model_name] = model
 
         self._test_model_list.append(model)
 

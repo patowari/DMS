@@ -27,8 +27,8 @@ class SearchTaskTestCase(SearchTaskTestMixin, BaseTestCase):
 
     def _setup_test_model_search(self):
         self._test_model_search = SearchModel(
-            app_label=self._TestModel._meta.app_label,
-            model_name=self._TestModel._meta.model_name,
+            app_label=self._test_model_dict['_TestModel_0']._meta.app_label,
+            model_name=self._test_model_dict['_TestModel_0']._meta.model_name,
         )
         self._test_model_search.add_model_field(field='test_field')
 

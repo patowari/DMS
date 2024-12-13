@@ -193,9 +193,11 @@ class MailObjectSendAPIViewTestMixin(MailingProfileTestMixin):
         super().setUp()
 
         if self.auto_create_test_object:
-            EventModelRegistry.register(model=self._TestModel)
+            EventModelRegistry.register(
+                model=self._test_model_dict['_TestModel_0']
+            )
 
-            self._TestModel.add_to_class(
+            self._test_model_dict['_TestModel_0'].add_to_class(
                 name='get_absolute_url', value=lambda self: None
             )
 
@@ -204,14 +206,14 @@ class MailObjectSendAPIViewTestMixin(MailingProfileTestMixin):
                     content_function_dotted_path=self._test_model_mailing_content_function_dotted_path,
                     manager_name='objects',
                     mime_type_function_dotted_path=self._test_model_mailing_mime_type_function_dotted_path,
-                    model=self._TestModel,
+                    model=self._test_model_dict['_TestModel_0'],
                     permission=self._test_model_mailing_permission_attachment
                 )
 
             if self._test_model_mailing_permission_link:
                 ModelMailingActionLink(
                     manager_name='objects',
-                    model=self._TestModel,
+                    model=self._test_model_dict['_TestModel_0'],
                     permission=self._test_model_mailing_permission_link
                 )
 

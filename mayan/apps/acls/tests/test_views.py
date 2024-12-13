@@ -87,8 +87,8 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_delete_view()
         self.assertNotContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=404
+            response=response, status_code=404,
+            text=force_str(s=self._test_object)
         )
 
         self.assertTrue(
@@ -128,8 +128,8 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_list_view()
         self.assertNotContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=404
+            response=response, status_code=404,
+            text=force_str(s=self._test_object)
         )
 
         events = self._get_test_events()
@@ -146,8 +146,8 @@ class AccessControlListViewTestCase(
 
         response = self._request_test_acl_list_view()
         self.assertContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=200
+            response=response, status_code=200,
+            text=force_str(s=self._test_object)
         )
 
         events = self._get_test_events()
@@ -169,8 +169,8 @@ class AccessControlListPermissionViewTestCase(
 
         response = self._request_test_acl_permission_list_get_view()
         self.assertNotContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=404
+            response=response, status_code=404,
+            text=force_str(s=self._test_object)
         )
 
         self.assertEqual(
@@ -191,8 +191,8 @@ class AccessControlListPermissionViewTestCase(
 
         response = self._request_test_acl_permission_list_get_view()
         self.assertContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=200
+            response=response, status_code=200,
+            text=force_str(s=self._test_object)
         )
 
         self.assertEqual(
@@ -270,8 +270,8 @@ class GlobalAccessControlListViewTestCase(
 
         response = self._request_test_global_acl_list_view()
         self.assertNotContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=200
+            response=response, status_code=200,
+            text=force_str(s=self._test_object)
         )
 
         events = self._get_test_events()
@@ -286,8 +286,8 @@ class GlobalAccessControlListViewTestCase(
 
         response = self._request_test_global_acl_list_view()
         self.assertContains(
-            response=response, text=force_str(s=self._test_object),
-            status_code=200
+            response=response, status_code=200,
+            text=force_str(s=self._test_object)
         )
 
         events = self._get_test_events()
@@ -303,7 +303,7 @@ class OrphanAccessControlListViewTestCase(
         Result: Should display a blank permissions list (no optgroup).
         """
         self._create_acl_test_object()
-        EventModelRegistry.register(model=self._TestModel)
+        EventModelRegistry.register(model=self._test_model_dict['_TestModel_0'])
 
         self.grant_permission(permission=permission_acl_edit)
 
@@ -316,7 +316,7 @@ class OrphanAccessControlListViewTestCase(
 
         response = self._request_test_acl_create_get_view()
         self.assertNotContains(
-            response=response, text='optgroup', status_code=200
+            response=response, status_code=200, text='optgroup'
         )
 
         self.assertEqual(

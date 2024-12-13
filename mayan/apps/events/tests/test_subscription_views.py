@@ -32,7 +32,7 @@ class UserObjectSubscriptionViewTestCase(
 
         self._create_test_object_event_subscription()
         ModelPermission.register(
-            model=self._TestModel, permissions=(
+            model=self._test_model_dict['_TestModel_0'], permissions=(
                 permission_events_view,
             )
         )

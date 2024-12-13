@@ -70,34 +70,32 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
 
     def _setup_child_parent_test_objects(self):
         self._create_test_permission()
-        self._TestModelParent = self._create_test_model(
-            model_name='TestModelParent'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelParent')
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
-                    to='TestModelParent',
+                    to='TestModelParent'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelParent, permissions=(
+            model=self._test_model_dict['TestModelParent'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='parent',
+            model=self._test_model_dict['TestModelChild'], related='parent'
         )
 
-        self._test_object_parent = self._TestModelParent.objects.create()
-        self._test_object_child = self._TestModelChild.objects.create(
+        self._test_object_parent = self._test_model_dict['TestModelParent'].objects.create()
+        self._test_object_child = self._test_model_dict['TestModelChild'].objects.create(
             parent=self._test_object_parent
         )
 
@@ -177,9 +175,9 @@ class PermissionTestCase(ACLTestMixin, BaseTestCase):
 
 class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
     def test_retrieve_inherited_role_permission_not_model_applicable(self):
-        self._TestModel = self._create_test_model()
-        EventModelRegistry.register(model=self._TestModel)
-        self._test_object = self._TestModel.objects.create()
+        self._create_test_model()
+        EventModelRegistry.register(model=self._test_model_dict['_TestModel_0'])
+        self._test_object = self._test_model_dict['_TestModel_0'].objects.create()
         self._create_test_acl()
         self._create_test_permission()
 
@@ -193,9 +191,9 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
         )
 
     def test_retrieve_inherited_role_permission_model_applicable(self):
-        self._TestModel = self._create_test_model()
-        EventModelRegistry.register(model=self._TestModel)
-        self._test_object = self._TestModel.objects.create()
+        self._create_test_model()
+        EventModelRegistry.register(model=self._test_model_dict['_TestModel_0'])
+        self._test_object = self._test_model_dict['_TestModel_0'].objects.create()
         self._create_test_acl()
         self._create_test_permission()
 
@@ -214,34 +212,32 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
     def test_retrieve_inherited_related_parent_child_permission(self):
         self._create_test_permission()
 
-        self._TestModelParent = self._create_test_model(
-            model_name='TestModelParent'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelParent')
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
-                    to='TestModelParent',
+                    to='TestModelParent'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelParent, permissions=(
+            model=self._test_model_dict['TestModelParent'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='parent',
+            model=self._test_model_dict['TestModelChild'], related='parent'
         )
 
-        parent = self._TestModelParent.objects.create()
-        child = self._TestModelChild.objects.create(parent=parent)
+        parent = self._test_model_dict['TestModelParent'].objects.create()
+        child = self._test_model_dict['TestModelChild'].objects.create(parent=parent)
 
         AccessControlList.objects.grant(
             obj=parent, permission=self._test_permission,
@@ -258,51 +254,49 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
     ):
         self._create_test_permission()
 
-        self._TestModelGrandParent = self._create_test_model(
-            model_name='TestModelGrandParent'
-        )
-        self._TestModelParent = self._create_test_model(
+        self._create_test_model(model_name='TestModelGrandParent')
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
-                    to='TestModelGrandParent',
+                    to='TestModelGrandParent'
                 )
             }, model_name='TestModelParent'
         )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
-                    to='TestModelParent',
+                    to='TestModelParent'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelGrandParent, permissions=(
+            model=self._test_model_dict['TestModelGrandParent'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelParent, permissions=(
+            model=self._test_model_dict['TestModelParent'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='parent',
+            model=self._test_model_dict['TestModelChild'], related='parent'
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelParent, related='parent',
+            model=self._test_model_dict['TestModelParent'], related='parent'
         )
 
-        grandparent = self._TestModelGrandParent.objects.create()
-        parent = self._TestModelParent.objects.create(parent=grandparent)
-        child = self._TestModelChild.objects.create(parent=parent)
+        grandparent = self._test_model_dict['TestModelGrandParent'].objects.create()
+        parent = self._test_model_dict['TestModelParent'].objects.create(parent=grandparent)
+        child = self._test_model_dict['TestModelChild'].objects.create(parent=parent)
 
         AccessControlList.objects.grant(
             obj=grandparent, permission=self._test_permission,
@@ -318,24 +312,22 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
     def test_sub_model_with_multiple_inheritance_parent_with_common_super_parent_paths(self):
         self._create_test_permission()
 
-        self._TestModelLevel1 = self._create_test_model(
-            model_name='TestModelLevel1'
-        )
-        self._TestModelLevel2 = self._create_test_model(
+        self._create_test_model(model_name='TestModelLevel1')
+        self._create_test_model(
             fields={
                 'level_1': models.ForeignKey(
                     on_delete=models.CASCADE, to='TestModelLevel1'
                 )
             }, model_name='TestModelLevel2'
         )
-        self._TestModelLevel3 = self._create_test_model(
+        self._create_test_model(
             fields={
                 'level_2': models.ForeignKey(
                     on_delete=models.CASCADE, to='TestModelLevel2'
                 )
             }, model_name='TestModelLevel3'
         )
-        self._TestModelLevel4 = self._create_test_model(
+        self._create_test_model(
             fields={
                 'level_3': models.ForeignKey(
                     on_delete=models.CASCADE, to='TestModelLevel3'
@@ -344,28 +336,32 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
         )
 
         ModelPermission.register(
-            model=self._TestModelLevel2, permissions=(
+            model=self._test_model_dict['TestModelLevel2'], permissions=(
                 self._test_permission,
             )
         )
 
         ModelPermission.register_inheritance(
-            model=self._TestModelLevel2, related='level_1',
+            model=self._test_model_dict['TestModelLevel2'],
+            related='level_1'
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelLevel3, related='level_2__level_1',
+            model=self._test_model_dict['TestModelLevel3'],
+            related='level_2__level_1'
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelLevel3, related='level_2',
+            model=self._test_model_dict['TestModelLevel3'],
+            related='level_2'
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelLevel4, related='level_3',
+            model=self._test_model_dict['TestModelLevel4'],
+            related='level_3'
         )
 
-        level_1 = self._TestModelLevel1.objects.create()
-        level_2 = self._TestModelLevel2.objects.create(level_1=level_1)
-        level_3 = self._TestModelLevel3.objects.create(level_2=level_2)
-        level_4 = self._TestModelLevel4.objects.create(level_3=level_3)
+        level_1 = self._test_model_dict['TestModelLevel1'].objects.create()
+        level_2 = self._test_model_dict['TestModelLevel2'].objects.create(level_1=level_1)
+        level_3 = self._test_model_dict['TestModelLevel3'].objects.create(level_2=level_2)
+        level_4 = self._test_model_dict['TestModelLevel4'].objects.create(level_3=level_3)
 
         self.grant_access(
             obj=level_2, permission=self._test_permission
@@ -373,7 +369,7 @@ class InheritedPermissionTestCase(ACLTestMixin, BaseTestCase):
 
         queryset = AccessControlList.objects.restrict_queryset(
             permission=self._test_permission,
-            queryset=self._TestModelLevel4.objects.all(),
+            queryset=self._test_model_dict['TestModelLevel4'].objects.all(),
             user=self._test_case_user
         )
 
@@ -386,10 +382,8 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
     def test_generic_foreign_key_model_with_alternate_ct_and_fk(self):
         self._create_test_permission()
 
-        self._TestModelExternal = self._create_test_model(
-            model_name='TestModelExternal'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelExternal')
+        self._create_test_model(
             fields={
                 'content_type_1': models.ForeignKey(
                     on_delete=models.CASCADE,
@@ -398,28 +392,29 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
                 ),
                 'object_id_1': models.PositiveIntegerField(),
                 'content_object_1': GenericForeignKey(
-                    ct_field='content_type_1', fk_field='object_id_1',
+                    ct_field='content_type_1', fk_field='object_id_1'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelExternal, permissions=(
+            model=self._test_model_dict['TestModelExternal'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
 
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='content_object_1'
+            model=self._test_model_dict['TestModelChild'],
+            related='content_object_1'
         )
 
-        test_external_object = self._TestModelExternal.objects.create()
-        test_object = self._TestModelChild.objects.create(
+        test_external_object = self._test_model_dict['TestModelExternal'].objects.create()
+        test_object = self._test_model_dict['TestModelChild'].objects.create(
             content_object_1=test_external_object
         )
 
@@ -428,7 +423,7 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
         )
 
         queryset = AccessControlList.objects.restrict_queryset(
-            queryset=self._TestModelChild.objects.all(),
+            queryset=self._test_model_dict['TestModelChild'].objects.all(),
             permission=self._test_permission, user=self._test_case_user
         )
 
@@ -437,10 +432,8 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
     def test_generic_foreign_key_model_with_multiple_alternate_ct_and_fk(self):
         self._create_test_permission()
 
-        self._TestModelExternal = self._create_test_model(
-            model_name='TestModelExternal'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelExternal')
+        self._create_test_model(
             fields={
                 'content_type_1': models.ForeignKey(
                     on_delete=models.CASCADE,
@@ -448,7 +441,7 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
                 ),
                 'object_id_1': models.PositiveIntegerField(),
                 'content_object_1': GenericForeignKey(
-                    ct_field='content_type_1', fk_field='object_id_1',
+                    ct_field='content_type_1', fk_field='object_id_1'
                 ),
                 'content_type_2': models.ForeignKey(
                     blank=True, null=True, on_delete=models.CASCADE,
@@ -459,31 +452,33 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
                     blank=True, null=True
                 ),
                 'content_object_2': GenericForeignKey(
-                    ct_field='content_type_2', fk_field='object_id_2',
+                    ct_field='content_type_2', fk_field='object_id_2'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelExternal, permissions=(
+            model=self._test_model_dict['TestModelExternal'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
 
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='content_object_1',
+            model=self._test_model_dict['TestModelChild'],
+            related='content_object_1'
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='content_object_2',
+            model=self._test_model_dict['TestModelChild'],
+            related='content_object_2'
         )
 
-        test_external_object = self._TestModelExternal.objects.create()
-        test_object = self._TestModelChild.objects.create(
+        test_external_object = self._test_model_dict['TestModelExternal'].objects.create()
+        test_object = self._test_model_dict['TestModelChild'].objects.create(
             content_object_1=test_external_object
         )
 
@@ -492,7 +487,7 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
         )
 
         queryset = AccessControlList.objects.restrict_queryset(
-            queryset=self._TestModelChild.objects.all(),
+            queryset=self._test_model_dict['TestModelChild'].objects.all(),
             permission=self._test_permission, user=self._test_case_user
         )
 
@@ -501,10 +496,8 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
     def test_generic_foreign_key_model_with_typecasting(self):
         self._create_test_permission()
 
-        self._TestModelExternal = self._create_test_model(
-            model_name='TestModelExternal'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelExternal')
+        self._create_test_model(
             fields={
                 'content_type': models.ForeignKey(
                     on_delete=models.CASCADE,
@@ -513,29 +506,29 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
                 ),
                 'object_id': models.CharField(max_length=255),
                 'content_object': GenericForeignKey(
-                    ct_field='content_type', fk_field='object_id',
+                    ct_field='content_type', fk_field='object_id'
                 )
             }, model_name='TestModelChild'
         )
 
         ModelPermission.register(
-            model=self._TestModelExternal, permissions=(
+            model=self._test_model_dict['TestModelExternal'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register(
-            model=self._TestModelChild, permissions=(
+            model=self._test_model_dict['TestModelChild'], permissions=(
                 self._test_permission,
             )
         )
 
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='content_object',
-            fk_field_cast=models.CharField
+            model=self._test_model_dict['TestModelChild'],
+            related='content_object', fk_field_cast=models.CharField
         )
 
-        test_external_object = self._TestModelExternal.objects.create()
-        test_object = self._TestModelChild.objects.create(
+        test_external_object = self._test_model_dict['TestModelExternal'].objects.create()
+        test_object = self._test_model_dict['TestModelChild'].objects.create(
             content_object=test_external_object
         )
 
@@ -544,7 +537,7 @@ class GenericForeignKeyFieldModelTestCase(ACLTestMixin, BaseTestCase):
         )
 
         queryset = AccessControlList.objects.restrict_queryset(
-            queryset=self._TestModelChild.objects.all(),
+            queryset=self._test_model_dict['TestModelChild'].objects.all(),
             permission=self._test_permission, user=self._test_case_user
         )
 
@@ -556,12 +549,14 @@ class ProxyModelPermissionTestCase(ACLTestMixin, BaseTestCase):
         self._create_acl_test_object_base()
         self._create_acl_test_object_proxy()
 
-        proxy_object = self._TestModelProxy.objects.get(pk=self._test_object.pk)
+        proxy_object = self._test_model_dict['TestModelProxy'].objects.get(
+            pk=self._test_object.pk
+        )
 
         self.assertFalse(
             proxy_object in AccessControlList.objects.restrict_queryset(
                 permission=self._test_permission,
-                queryset=self._TestModelProxy.objects.all(),
+                queryset=self._test_model_dict['TestModelProxy'].objects.all(),
                 user=self._test_case_user
             )
         )
@@ -574,12 +569,12 @@ class ProxyModelPermissionTestCase(ACLTestMixin, BaseTestCase):
             obj=self._test_object, permission=self._test_permission
         )
 
-        proxy_object = self._TestModelProxy.objects.get(pk=self._test_object.pk)
+        proxy_object = self._test_model_dict['TestModelProxy'].objects.get(pk=self._test_object.pk)
 
         self.assertTrue(
             proxy_object in AccessControlList.objects.restrict_queryset(
                 permission=self._test_permission,
-                queryset=self._TestModelProxy.objects.all(),
+                queryset=self._test_model_dict['TestModelProxy'].objects.all(),
                 user=self._test_case_user
             )
         )
@@ -587,46 +582,41 @@ class ProxyModelPermissionTestCase(ACLTestMixin, BaseTestCase):
     def test_proxy_model_inheritance_with_access(self):
         self._create_test_permission()
 
-        self._TestModelParent = self._create_test_model(
-            model_name='TestModelParent'
-        )
-        self._TestModelChild = self._create_test_model(
+        self._create_test_model(model_name='TestModelParent')
+        self._create_test_model(
             fields={
                 'parent': models.ForeignKey(
                     on_delete=models.CASCADE, related_name='children',
-                    to='TestModelParent',
+                    to='TestModelParent'
                 )
             }, model_name='TestModelChild'
         )
-        self._TestModelProxy = self._create_test_model(
-            base_class=self._TestModelChild, model_name='TestModelProxy',
-            options={
-                'proxy': True
-            }
+        self._create_test_model(
+            base_class=self._test_model_dict['TestModelChild'],
+            model_name='TestModelProxy',
+            options={'proxy': True}
         )
 
         ModelPermission.register(
-            model=self._TestModelParent, permissions=(
+            model=self._test_model_dict['TestModelParent'], permissions=(
                 self._test_permission,
             )
         )
         ModelPermission.register_inheritance(
-            model=self._TestModelChild, related='parent',
+            model=self._test_model_dict['TestModelChild'], related='parent'
         )
 
-        parent = self._TestModelParent.objects.create()
-        child = self._TestModelChild.objects.create(parent=parent)
+        parent = self._test_model_dict['TestModelParent'].objects.create()
+        child = self._test_model_dict['TestModelChild'].objects.create(parent=parent)
 
-        self.grant_access(
-            obj=parent, permission=self._test_permission
-        )
+        self.grant_access(obj=parent, permission=self._test_permission)
 
-        proxy_object = self._TestModelProxy.objects.get(pk=child.pk)
+        proxy_object = self._test_model_dict['TestModelProxy'].objects.get(pk=child.pk)
 
         self.assertTrue(
             proxy_object in AccessControlList.objects.restrict_queryset(
                 permission=self._test_permission,
-                queryset=self._TestModelProxy.objects.all(),
+                queryset=self._test_model_dict['TestModelProxy'].objects.all(),
                 user=self._test_case_user
             )
         )

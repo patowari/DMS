@@ -61,14 +61,14 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
 
         self._create_test_permission()
 
-        self._TestModel = self._create_test_model(
+        self._create_test_model(
             fields={
                 'label': models.CharField(max_length=32, unique=True)
             }
         )
 
         ModelPermission.register(
-            model=self._TestModel, permissions=(self._test_permission,)
+            model=self._test_model_dict['_TestModel_0'], permissions=(self._test_permission,)
         )
 
         self._create_test_object(
@@ -78,14 +78,14 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
         class TestModelSerializer(serializers.ModelSerializer):
             class Meta:
                 fields = ('id', 'label')
-                model = self._TestModel
+                model = self._test_model_dict['_TestModel_0']
 
         def _test_view_factory():
             class TestView(generics.ListCreateAPIView):
                 mayan_object_permission_map = {'GET': self._test_permission}
                 mayan_view_permission_map = {'POST': self._test_permission}
                 serializer_class = TestModelSerializer
-                source_queryset = self._TestModel.objects.all()
+                source_queryset = self._test_model_dict['_TestModel_0'].objects.all()
 
             return TestView.as_view()
 
@@ -96,7 +96,7 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
         self._test_model_list_api_view_name = self._test_view_name
 
         def _test_view_factory():
-            TestModel = self._TestModel
+            TestModel = self._test_model_dict['_TestModel_0']
 
             class TestView(generics.RetrieveUpdateDestroyAPIView):
                 lookup_url_kwarg = 'test_object_id'
@@ -142,7 +142,7 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
 
         self._test_object.delete()
 
-        test_model_count = self._TestModel.objects.count()
+        test_model_count = self._test_model_dict['_TestModel_0'].objects.count()
 
         self._clear_events()
 
@@ -160,7 +160,7 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
         )
 
         self.assertEqual(
-            self._TestModel.objects.count(), test_model_count + 1
+            self._test_model_dict['_TestModel_0'].objects.count(), test_model_count + 1
         )
 
         events = self._get_test_events()
@@ -183,7 +183,7 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
             }
         ]
 
-        test_model_count = self._TestModel.objects.count()
+        test_model_count = self._test_model_dict['_TestModel_0'].objects.count()
 
         self._clear_events()
 
@@ -201,7 +201,7 @@ class BatchAPIRequestViewTestCase(BaseAPITestCase):
         )
 
         self.assertEqual(
-            self._TestModel.objects.count(), test_model_count - 1
+            self._test_model_dict['_TestModel_0'].objects.count(), test_model_count - 1
         )
 
         events = self._get_test_events()
@@ -399,7 +399,7 @@ class DynamicFieldSerializerAPIViewTestCase(
         class TestView(generics.RetrieveAPIView):
             lookup_url_kwarg = 'test_object_id'
             serializer_class = local_serializer_class
-            source_queryset = self._TestModelChild.objects.all()
+            source_queryset = self._test_model_dict['TestModelChild'].objects.all()
 
         return TestView
 
@@ -561,11 +561,11 @@ class DynamicFieldSerializerWithMixinAPIViewTestCase(
         local_serializer_class = serializer_class
 
         class TestView(ExternalObjectAPIViewMixin, generics.RetrieveAPIView):
-            external_object_queryset = self._TestModelChild.objects.all()
+            external_object_queryset = self._test_model_dict['TestModelChild'].objects.all()
             external_object_pk_url_kwarg = 'test_object_id'
             lookup_url_kwarg = 'test_object_id'
             serializer_class = local_serializer_class
-            source_queryset = self._TestModelChild.objects.all()
+            source_queryset = self._test_model_dict['TestModelChild'].objects.all()
 
         return TestView
 

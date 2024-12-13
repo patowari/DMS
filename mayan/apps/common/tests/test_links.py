@@ -22,7 +22,7 @@ class ObjectCopyLinkTestCase(
 
     def setUp(self):
         super().setUp()
-        ModelCopy(model=self._TestModel, register_permission=True).add_fields(
+        ModelCopy(model=self._test_model_dict['_TestModel_0'], register_permission=True).add_fields(
             field_names=('label',)
         )
 
