@@ -57,7 +57,10 @@ class SearchModelAPIViewTestCase(
             for search_field in search_model.search_fields:
                 search_model_expected_value['search_fields'].append(
                     {
+                        'field_class_label': search_field.field_class_label,
+                        'get_help_text': search_field.get_help_text(),
                         'field_name': search_field.field_name,
+                        'get_search_field_class_label': search_field.get_search_field_class_label(),
                         'label': search_field.label
                     }
                 )

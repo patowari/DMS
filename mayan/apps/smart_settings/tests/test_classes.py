@@ -30,10 +30,11 @@ class SettingNamespaceTestCase(BaseTestCase):
     def test_namespace_add_duplicated(self):
         self._test_setting_namespace_create()
 
-        with self.assertRaises(expected_exception=SettingsException):
-            self._test_setting_namespace_create(
-                name=self._test_setting_namespace.name
-            )
+        # Updated in version 4.9.
+        # Duplicates no longer raises an exception.
+        self._test_setting_namespace_create(
+            name=self._test_setting_namespace.name
+        )
 
     def test_namespace_remove(self):
         self._test_setting_namespace_create()
