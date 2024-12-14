@@ -14,6 +14,7 @@ environment=
     MAYAN_GUNICORN_WORKER_CLASS={{ GUNICORN_WORKER_CLASS }},
     MAYAN_GUNICORN_WORKERS={{ GUNICORN_WORKERS }},
     MAYAN_SETTINGS_MODULE=mayan.settings.production,
+    MAYAN_SUPERVISOR_AUTORESTART={{ SUPERVISOR_AUTORESTART }},
     {% spaceless_plus %}
     {% for worker in workers %}
     MAYAN_{{ worker.name|upper }}_CONCURRENCY="{% if worker.concurrency %}--concurrency={{ worker.concurrency }}{% endif %}",

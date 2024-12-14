@@ -198,6 +198,11 @@
     instead the previously created instance will be returned.
   - Split the setting classes into separate modules.
 
+- Support setting the supervisor `autorestart` flag via the environment.
+  Add the environment variable `MAYAN_SUPERVISOR_AUTORESTART`.
+  Defaults to `true` for the Supervisod template, defaults to
+  `false` for the Docker Supervisord template.
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a

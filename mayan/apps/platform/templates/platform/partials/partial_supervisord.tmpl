@@ -1,7 +1,7 @@
 {% load templating_tags %}
 {% spaceless_plus %}
 [program:mayan-edms-gunicorn]
-autorestart = {{ autorestart }}
+autorestart = %(ENV_MAYAN_SUPERVISOR_AUTORESTART)s
 autostart = true
 command = %(ENV_MAYAN_GUNICORN_BIN)s --bind 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE=%(ENV_MAYAN_SETTINGS_MODULE)s --limit-request-line %(ENV_MAYAN_GUNICORN_LIMIT_REQUEST_LINE)s --max-requests %(ENV_MAYAN_GUNICORN_MAX_REQUESTS)s --max-requests-jitter %(ENV_MAYAN_GUNICORN_REQUESTS_JITTER)s %(ENV_MAYAN_GUNICORN_TEMPORARY_DIRECTORY)s --worker-class %(ENV_MAYAN_GUNICORN_WORKER_CLASS)s --timeout %(ENV_MAYAN_GUNICORN_TIMEOUT)s --workers %(ENV_MAYAN_GUNICORN_WORKERS)s mayan.wsgi
 environment =
@@ -16,7 +16,7 @@ user = {{ OS_USERNAME }}
 {% for worker in workers %}
 {% spaceless_plus %}
 [program:mayan-edms-{{ worker.name }}]
-autorestart = {{ autorestart }}
+autorestart = %(ENV_MAYAN_SUPERVISOR_AUTORESTART)s
 autostart = true
 command = nice -n {{ worker.nice_level }} %(ENV_COMMAND)s
 environment =
@@ -36,7 +36,7 @@ user = {{ OS_USERNAME }}
 {% endfor %}
 {% spaceless_plus %}
 [program:mayan-edms-celery-beat]
-autorestart = {{ autorestart }}
+autorestart = %(ENV_MAYAN_SUPERVISOR_AUTORESTART)s
 autostart = true
 command = nice -n 1 %(ENV_COMMAND)s
 environment =

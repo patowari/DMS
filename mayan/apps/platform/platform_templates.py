@@ -193,8 +193,7 @@ class PlatformTemplateSupervisord(PlatformTemplate):
         *_, user_settings_folder, media_root = self.variables
 
         return {
-            'autorestart': 'true',
-            'shell_path': '/bin/sh',
+            'SUPERVISOR_AUTORESTART': 'true',
             'user_settings_folder': Path(
                 media_root.get_value()
             ) / user_settings_folder.get_value(),

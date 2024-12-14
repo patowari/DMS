@@ -1,6 +1,8 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.platform.platform_templates import PlatformTemplate, Variable
+from mayan.apps.platform.platform_templates import (
+    PlatformTemplate, PlatformTemplateSupervisord, Variable
+)
 from mayan.apps.platform.utils import load_env_file
 from mayan.apps.task_manager.classes import Worker
 from mayan.settings.literals import (
@@ -32,6 +34,7 @@ class PlatformTemplateDockerEntrypoint(PlatformTemplate):
         context = load_env_file()
         context.update(
             {
+                'SUPERVISOR_AUTORESTART': 'false',
                 'workers': Worker.all()
             }
         )
@@ -208,16 +211,13 @@ class PlatformTemplateDockerComposefile(PlatformTemplate):
         )
 
 
-class PlatformTemplateDockerSupervisord(PlatformTemplate):
+class PlatformTemplateDockerSupervisord(PlatformTemplateSupervisord):
     label = _(message='Template for Supervisord inside a Docker image.')
     name = 'docker_supervisord'
     template_name = 'platform/docker/supervisord.tmpl'
 
     def get_context(self):
         return {
-            'OS_USERNAME': DEFAULT_OS_USERNAME,
-            'autorestart': 'false',
-            'shell_path': '/bin/sh',
             'stderr_logfile': '/dev/fd/2',
             'stderr_logfile_maxbytes': '0',
             'stdout_logfile': '/dev/fd/1',
