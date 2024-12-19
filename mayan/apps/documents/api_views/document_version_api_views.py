@@ -45,7 +45,8 @@ class APIDocumentVersionDetailView(
         return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
-        return self.get_document().versions.all()
+        document = self.get_document()
+        return document.versions.all()
 
 
 class APIDocumentVersionListView(
@@ -55,6 +56,9 @@ class APIDocumentVersionListView(
     get: Return a list of the selected document's versions.
     post: Create a new document version.
     """
+    mayan_object_permission_map = {
+        'GET': permission_document_version_view,
+    }
     serializer_class = DocumentVersionSerializer
 
     def get_instance_extra_data(self):
@@ -68,11 +72,8 @@ class APIDocumentVersionListView(
         }
 
     def get_source_queryset(self):
-        # This method is only called during GET, therefore filter only by
-        # the view permission.
-        return self.get_document(
-            permission=permission_document_version_view
-        ).versions.all()
+        document = self.get_document()
+        return document.versions.all()
 
 
 class APIDocumentVersionModificationView(
@@ -87,12 +88,15 @@ class APIDocumentVersionModificationView(
     serializer_class = DocumentVersionModificationExecuteSerializer
 
     def get_source_queryset(self):
-        return self.get_document().versions.all()
+        document = self.get_document()
+        return document.versions.all()
 
     def object_action(self, obj, request, serializer):
-        DocumentVersionModification.get(
+        document_version_modification = DocumentVersionModification.get(
             name=serializer.validated_data['backend_id']
-        ).execute(
+        )
+
+        document_version_modification.execute(
             document_version=obj, user=request.user
         )
 
@@ -137,7 +141,8 @@ class APIDocumentVersionPageDetailView(
         return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
-        return self.get_document_version().pages.all()
+        document_version = self.get_document_version()
+        return document_version.pages.all()
 
 
 class APIDocumentVersionPageImageView(
@@ -151,7 +156,8 @@ class APIDocumentVersionPageImageView(
     mayan_object_permission_map = {'GET': permission_document_version_view}
 
     def get_source_queryset(self):
-        return self.get_document_version().pages.all()
+        document_version = self.get_document_version()
+        return document_version.pages.all()
 
 
 class APIDocumentVersionPageListView(
@@ -177,6 +183,7 @@ class APIDocumentVersionPageListView(
     def get_source_queryset(self):
         # This method is only called during GET, therefore filter only by
         # the view permission.
-        return self.get_document_version(
+        document_version = self.get_document_version(
             permission=permission_document_version_view
-        ).pages.all()
+        )
+        return document_version.pages.all()

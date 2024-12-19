@@ -27,6 +27,9 @@ class APIDocumentFileListView(
     post: Create a new document file.
     """
     serializer_class = DocumentFileSerializer
+    mayan_object_permission_map = {
+        'GET': permission_document_file_view,
+    }
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -53,9 +56,8 @@ class APIDocumentFileListView(
         )
 
     def get_source_queryset(self):
-        return self.get_document(
-            permission=permission_document_file_view
-        ).files.all()
+        document = self.get_document()
+        return document.files.all()
 
 
 class APIDocumentFileDetailView(
@@ -88,7 +90,8 @@ class APIDocumentFileDetailView(
         return {'_event_actor': self.request.user}
 
     def get_source_queryset(self):
-        return self.get_document().files.all()
+        document = self.get_document()
+        return document.files.all()
 
 
 # Document file page
@@ -105,7 +108,8 @@ class APIDocumentFilePageDetailView(
     serializer_class = DocumentFilePageSerializer
 
     def get_source_queryset(self):
-        return self.get_document_file().pages.all()
+        document_file = self.get_document_file()
+        return document_file.pages.all()
 
 
 class APIDocumentFilePageImageView(
@@ -119,7 +123,8 @@ class APIDocumentFilePageImageView(
     mayan_object_permission_map = {'GET': permission_document_file_view}
 
     def get_source_queryset(self):
-        return self.get_document_file().pages.all()
+        document_file = self.get_document_file()
+        return document_file.pages.all()
 
 
 class APIDocumentFilePageListView(
@@ -128,6 +133,7 @@ class APIDocumentFilePageListView(
     serializer_class = DocumentFilePageSerializer
 
     def get_source_queryset(self):
-        return self.get_document_file(
+        document_file = self.get_document_file(
             permission=permission_document_file_view
-        ).pages.all()
+        )
+        return document_file.pages.all()

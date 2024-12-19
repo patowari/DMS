@@ -557,50 +557,6 @@ class DocumentVersionAPIViewTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
-    def test_document_version_list_api_view_no_permission(self):
-        self._clear_events()
-
-        response = self._request_test_document_version_list_api_view()
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_document_version_list_api_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_version_view
-        )
-
-        self._clear_events()
-
-        response = self._request_test_document_version_list_api_view()
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-        self.assertEqual(
-            response.data['results'][0]['id'],
-            self._test_document.version_active.id
-        )
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
-    def test_trashed_document_version_list_api_view_with_access(self):
-        self.grant_access(
-            obj=self._test_document,
-            permission=permission_document_version_view
-        )
-
-        self._test_document.delete()
-
-        self._clear_events()
-
-        response = self._request_test_document_version_list_api_view()
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-        events = self._get_test_events()
-        self.assertEqual(events.count(), 0)
-
 
 class DocumentVersionBusinessLogicAPIViewTestCase(
     DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin,
@@ -637,3 +593,87 @@ class DocumentVersionBusinessLogicAPIViewTestCase(
         self.assertEqual(events[0].actor, self._test_case_user)
         self.assertEqual(events[0].target, self._test_document_version)
         self.assertEqual(events[0].verb, event_document_version_edited.id)
+
+
+class DocumentVersionListAPIViewTestCase(
+    DocumentVersionAPIViewTestMixin, DocumentVersionTestMixin,
+    BaseAPITestCase
+):
+    def setUp(self):
+        super().setUp()
+
+        self._create_test_document_version()
+
+    def test_document_version_list_api_view_no_permission(self):
+        self._clear_events()
+
+        response = self._request_test_document_version_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['count'], 0
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_version_list_api_view_with_document_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_version_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['count'], 2
+        )
+        self.assertEqual(
+            response.data['results'][0]['id'],
+            self._test_document_version_list[0].id
+        )
+        self.assertEqual(
+            response.data['results'][1]['id'],
+            self._test_document_version_list[1].id
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_document_version_list_api_view_with_document_access(self):
+        self.grant_access(
+            obj=self._test_document,
+            permission=permission_document_version_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_document_version_list_api_view_with_document_version_access(self):
+        self.grant_access(
+            obj=self._test_document_version,
+            permission=permission_document_version_view
+        )
+
+        self._clear_events()
+
+        response = self._request_test_document_version_list_api_view()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.data['count'], 1
+        )
+        self.assertEqual(
+            response.data['results'][0]['id'],
+            self._test_document_version_list[1].id
+        )
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
