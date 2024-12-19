@@ -208,6 +208,7 @@
   execute in alphabetical order.
 - Override Django's `makemigrations` command to support ignoring third party
   apps.
+- Add task type information view.
 
 4.8.3 (2024-10-04)
 ==================

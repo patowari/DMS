@@ -56,7 +56,7 @@ class TaskManagerTestMixin:
         self._test_worker_list.append(self._test_worker)
 
 
-class TaskManagerViewTestMixin:
+class QueueViewTestMixin(TaskManagerTestMixin):
     def _request_queue_task_type_list(self):
         return self.get(
             viewname='task_manager:queue_task_type_list', kwargs={
@@ -64,6 +64,13 @@ class TaskManagerViewTestMixin:
             }
         )
 
+
+class TaskTypeTestViewMixin(TaskManagerTestMixin):
+    def _request_task_type_list(self):
+        return self.get(viewname='task_manager:task_type_list')
+
+
+class WorkerViewTestMixin(TaskManagerTestMixin):
     def _request_worker_list(self):
         return self.get(
             viewname='task_manager:worker_list'

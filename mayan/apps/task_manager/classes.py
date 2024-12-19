@@ -19,8 +19,17 @@ class TaskType:
     _registry = {}
 
     @classmethod
-    def all(cls):
-        return cls._registry.values()
+    def all(cls, sort_by=None):
+        values = list(
+            cls._registry.values()
+        )
+
+        if sort_by:
+            values.sort(
+                key=lambda entry: getattr(entry, sort_by)
+            )
+
+        return values
 
     @classmethod
     def get(cls, name):
@@ -31,11 +40,53 @@ class TaskType:
         self.label = label
         self.name = name or dotted_path.split('.')[-1]
         self.schedule = schedule
+        self.queue = None
         self.__class__._registry[name] = self
         self.validate()
 
     def __str__(self):
         return str(self.label)
+
+    def get_dotted_path(self):
+        return self.dotted_path
+
+    get_dotted_path.help_text = _(message='The Python path to the task code.')
+    get_dotted_path.short_description = _(message='Dotted path')
+
+    def get_label(self):
+        return self.label
+
+    get_label.help_text = _(
+        message='Human readable description of the task type.'
+    )
+    get_label.short_description = _(message='Label')
+
+    def get_name(self):
+
+        return self.name
+
+    get_name.help_text = _(message='Unique internal name of the task type.')
+    get_name.short_description = _(message='Name')
+
+    def get_queue(self):
+
+        return self.queue
+
+    get_queue.short_description = _(message='Queue')
+
+    def get_schedule(self):
+        return self.schedule
+
+    get_schedule.help_text = _(
+        message='Trigger interval if the task type is set for periodic '
+        'execution.'
+    )
+    get_schedule.short_description = _(message='Schedule')
+
+    def get_worker(self):
+        return self.queue.worker
+
+    get_worker.short_description = _(message='Worker')
 
     def validate(self):
         try:
@@ -148,6 +199,7 @@ class CeleryQueue(AppsModuleLoaderMixin):
         task_type = TaskType(*args, **kwargs)
         self.task_types.append(task_type)
         self.__class__._registry_task_types[task_type.dotted_path] = self
+        task_type.queue = self
         return task_type
 
     def remove(self):

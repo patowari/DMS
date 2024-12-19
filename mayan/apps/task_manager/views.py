@@ -3,27 +3,48 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.views.generics import SingleObjectListView
 
-from .classes import CeleryQueue, Worker
+from .classes import CeleryQueue, TaskType, Worker
 from .icons import (
-    icon_queue_task_type_list, icon_worker_list, icon_worker_queue_list
+    icon_task_type_list, icon_worker_list, icon_worker_queue_list
 )
 from .permissions import permission_task_view
 
 
-class QueueTaskTypeListView(SingleObjectListView):
-    view_icon = icon_queue_task_type_list
+class TaskTypeListView(SingleObjectListView):
+    view_icon = icon_task_type_list
     view_permission = permission_task_view
 
     def get_extra_context(self):
-        queue = self.get_queue()
-
         return {
             'hide_object': True,
-            'object': queue,
-            'worker': queue.worker,
-            'navigation_object_list': ('worker', 'object'),
-            'title': _(message='Task types for queue: %s') % queue
+            'title': _(message='Task types')
         }
+
+    def get_source_queryset(self):
+        return self.get_task_list()
+
+    def get_task_list(self):
+        return list(
+            TaskType.all(sort_by='dotted_path')
+        )
+
+
+class QueueTaskTypeListView(TaskTypeListView):
+    def get_extra_context(self):
+        context = super().get_extra_context()
+
+        queue = self.get_queue()
+
+        context.update(
+            {
+                'object': queue,
+                'worker': queue.worker,
+                'navigation_object_list': ('worker', 'object'),
+                'title': _(message='Task types for queue: %s') % queue
+            }
+        )
+
+        return context
 
     def get_queue(self):
         try:
@@ -35,8 +56,10 @@ class QueueTaskTypeListView(SingleObjectListView):
                 _(message='Queue: %s, not found') % self.kwargs['queue_name']
             )
 
-    def get_source_queryset(self):
-        return self.get_queue().task_types
+    def get_task_list(self):
+        queue = self.get_queue()
+
+        return queue.task_types
 
 
 class WorkerListView(SingleObjectListView):

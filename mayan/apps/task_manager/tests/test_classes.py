@@ -3,12 +3,10 @@ from mayan.celery import app as celery_app
 
 from ..classes import CeleryQueue
 
-from .mixins import TaskManagerTestMixin, TaskManagerViewTestMixin
+from .mixins import TaskManagerTestMixin
 
 
-class CeleryQueueTestCase(
-    TaskManagerTestMixin, TaskManagerViewTestMixin, BaseTestCase
-):
+class CeleryQueueTestCase(TaskManagerTestMixin, BaseTestCase):
     def setUp(self):
         super().setUp()
         self._create_test_worker()

@@ -16,7 +16,8 @@ from mayan.celery import app as celery_app
 from .classes import CeleryQueue, TaskType, Task, Worker
 from .handlers import handler_perform_upgrade
 from .links import (
-    link_queue_task_type_list, link_worker_list, link_worker_queue_list
+    link_queue_task_type_list, link_task_type_list, link_worker_list,
+    link_worker_queue_list
 )
 from .literals import TEST_CELERY_RESULT_KEY, TEST_CELERY_RESULT_VALUE
 from .methods import factory_method_periodic_task_save
@@ -99,7 +100,9 @@ class TaskManagerApp(MayanAppConfig):
             self.check_results_backend_connectivity()
         except Exception as exception:
             print(
-                'Error checking Celery result backend connectivity: {}'.format(exception)
+                'Error checking Celery result backend connectivity: {}'.format(
+                    exception
+                )
             )
             exit(1)
 
@@ -111,6 +114,8 @@ class TaskManagerApp(MayanAppConfig):
                     super_save=PeriodicTask.save
                 )
             )
+
+        # CeleryQueue
 
         SourceColumn(
             attribute='label', is_identifier=True, label=_(message='Label'),
@@ -137,20 +142,23 @@ class TaskManagerApp(MayanAppConfig):
             attribute='get_task_type_count', source=CeleryQueue
         )
 
+        # Task type
+
+        SourceColumn(attribute='get_label', source=TaskType)
         SourceColumn(
-            attribute='label', label=_(message='Label'), source=TaskType
+            attribute='get_dotted_path', include_label=True, is_identifier=True, source=TaskType
         )
         SourceColumn(
-            attribute='name', label=_(message='Name'), source=TaskType
+            attribute='get_schedule', include_label=True, source=TaskType
         )
         SourceColumn(
-            attribute='dotted_path', label=_(message='Dotted path'),
-            source=TaskType
+            attribute='get_queue', include_label=True, source=TaskType
         )
         SourceColumn(
-            attribute='schedule', label=_(message='Schedule'),
-            source=TaskType
+            attribute='get_worker', include_label=True, source=TaskType
         )
+
+        # Task
 
         SourceColumn(
             attribute='task_type', include_label=True, label=_(
@@ -179,6 +187,8 @@ class TaskManagerApp(MayanAppConfig):
             include_label=True, label=_(message='Worker process ID'),
             source=Task
         )
+
+        # Worker
 
         SourceColumn(
             attribute='label', is_identifier=True, label=_(message='Label'),
@@ -225,7 +235,7 @@ class TaskManagerApp(MayanAppConfig):
             sources=(Worker, 'task_manager:worker_list')
         )
         menu_tools.bind_links(
-            links=(link_worker_list,)
+            links=(link_task_type_list, link_worker_list,)
         )
 
         signal_perform_upgrade.connect(

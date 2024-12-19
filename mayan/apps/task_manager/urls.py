@@ -1,11 +1,21 @@
 from django.urls import re_path
 
-from .views import QueueTaskTypeListView, WorkerListView, WorkerQueueListView
+from .views import (
+    QueueTaskTypeListView, TaskTypeListView, WorkerListView,
+    WorkerQueueListView
+)
 
 urlpatterns_queues = [
     re_path(
         route=r'^queues/(?P<queue_name>\w+)/task_types/$',
         view=QueueTaskTypeListView.as_view(), name='queue_task_type_list'
+    )
+]
+
+urlpatterns_tasks = [
+    re_path(
+        route=r'^task_types/$', view=TaskTypeListView.as_view(),
+        name='task_type_list'
     )
 ]
 
@@ -20,6 +30,8 @@ urlpatterns_workers = [
     )
 ]
 
+
 urlpatterns = []
 urlpatterns.extend(urlpatterns_queues)
+urlpatterns.extend(urlpatterns_tasks)
 urlpatterns.extend(urlpatterns_workers)
