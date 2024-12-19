@@ -4,13 +4,13 @@ from mayan.apps.common.tests.literals import (
     TEST_ARCHIVE_EML_SAMPLE_PATH, TEST_ARCHIVE_MSG_STRANGE_DATE_PATH,
     TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH,
     TEST_ARCHIVE_ZIP_SPECIAL_CHARACTERS_FILENAME_MEMBER_PATH,
-    TEST_TAR_BZ2_FILE_PATH, TEST_TAR_FILE_PATH, TEST_TAR_GZ_FILE_PATH,
-    TEST_ZIP_FILE_PATH
+    TEST_PDF_WITH_ATTACHMENT_PATH, TEST_TAR_BZ2_FILE_PATH,
+    TEST_TAR_FILE_PATH, TEST_TAR_GZ_FILE_PATH, TEST_ZIP_FILE_PATH
 )
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..compressed_files import (
-    Archive, EMLArchive, MsgArchive, TarArchive, ZipArchive
+    Archive, EMLArchive, MsgArchive, PDFArchive, TarArchive, ZipArchive
 )
 
 from .mixins import ArchiveClassTestCaseMixin
@@ -94,6 +94,41 @@ Zealand. '''.replace('\n', '\r\n')
                 file_object.read().startswith(
                     force_bytes(s=self.member_contents_partial)
                 )
+            )
+
+
+class PDFArchiveClassTestCase(ArchiveClassTestCaseMixin, BaseTestCase):
+    archive_path = TEST_PDF_WITH_ATTACHMENT_PATH
+    cls = PDFArchive
+    member_name = '0-image.png'
+    members_list = ['0-image.png']
+
+    def test_add_file(self):
+        '''Skip this test for the class.'''
+
+    def test_member_contents(self):
+        '''Override to avoid having to include the attachment file.'''
+
+        with open(file=self.archive_path, mode='rb') as file_object:
+            archive = Archive.open(file_object=file_object)
+            member_content = archive.member_contents(
+                filename=self.member_name
+            )
+
+            content_collapsed = list(member_content)
+            self.assertEqual(
+                len(content_collapsed), 6669
+            )
+
+    def test_open_member(self):
+        '''Override to avoid having to include the attachment file.'''
+
+        with open(file=self.archive_path, mode='rb') as file_object:
+            archive = Archive.open(file_object=file_object)
+            file_object = archive.open_member(filename=self.member_name)
+
+            self.assertEqual(
+                file_object.size, 6669
             )
 
 

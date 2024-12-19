@@ -22,6 +22,7 @@ TEST_FILENAME2 = 'test_file2.txt'
 TEST_FILENAME3 = 'test_file3.txt'
 TEST_FILE_CONTENTS_1 = b'TEST FILE 1\n'
 TEST_FILE_CONTENTS_2 = 'TEST FILE 2\n'
+TEST_PDF_WITH_ATTACHMENT_FILENAME = 'with-attachment.pdf'
 TEST_TAR_BZ2_FILE = 'test_file.tar.bz2'
 TEST_TAR_FILE = 'test_file.tar'
 TEST_TAR_GZ_FILE = 'test_file.tar.gz'
@@ -47,6 +48,10 @@ TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH = os.path.join(
 )
 TEST_FILE3_PATH = os.path.join(
     settings.BASE_DIR, 'apps', 'common', 'tests', 'contrib', TEST_FILENAME3
+)
+TEST_PDF_WITH_ATTACHMENT_PATH  = os.path.join(
+    settings.BASE_DIR, 'apps', 'common', 'tests', 'contrib',
+    TEST_PDF_WITH_ATTACHMENT_FILENAME
 )
 TEST_TAR_BZ2_FILE_PATH = os.path.join(
     settings.BASE_DIR, 'apps', 'common', 'tests', 'contrib', TEST_TAR_BZ2_FILE

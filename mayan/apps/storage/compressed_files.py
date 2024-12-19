@@ -4,6 +4,7 @@ import tarfile
 import zipfile
 
 import extract_msg
+from pypdf import PdfReader
 
 try:
     import zlib  # NOQA
@@ -192,6 +193,38 @@ class MsgArchive(Archive):
                 )
 
 
+class PDFArchive(Archive):
+    def _get_member_and_content_list(self):
+        for name, content_list in self._archive.attachments.items():
+            for index, content in enumerate(iterable=content_list):
+                member_filename = '{index}-{name}'.format(
+                    index=index, name=name
+                )
+                yield member_filename, content
+
+    def _open(self, file_object):
+        self._archive = PdfReader(stream=file_object)
+
+    def member_contents(self, filename):
+        for member_filename, content in self._get_member_and_content_list():
+            if filename == member_filename:
+                yield from content
+
+    def members(self):
+        result = [
+            member_filename for member_filename, content in self._get_member_and_content_list()
+        ]
+
+        return result
+
+    def open_member(self, filename):
+        for member_filename, content in self._get_member_and_content_list():
+            if filename == member_filename:
+                initial_bytes = force_bytes(s=content)
+                buffer = BytesIO(initial_bytes=initial_bytes)
+                return File(file=buffer, name=filename)
+
+
 class TarArchive(Archive):
     def _open(self, file_object):
         self._archive = tarfile.open(fileobj=file_object)
@@ -295,6 +328,9 @@ Archive.register(
 )
 Archive.register(
     archive_classes=(MsgArchive,), mime_types=MSG_MIME_TYPES
+)
+Archive.register(
+    archive_classes=(PDFArchive,), mime_types=('application/pdf',)
 )
 Archive.register(
     archive_classes=(TarArchive,), mime_types=('application/x-tar',)
