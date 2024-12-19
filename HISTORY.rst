@@ -202,6 +202,7 @@
   Add the environment variable `MAYAN_SUPERVISOR_AUTORESTART`.
   Defaults to `true` for the Supervisod template, defaults to
   `false` for the Docker Supervisord template.
+- Add a PDF file metadata driver using PyPDF.
 
 4.8.3 (2024-10-04)
 ==================

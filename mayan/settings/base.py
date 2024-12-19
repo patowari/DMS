@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'mayan.apps.file_metadata_exif.apps.FileMetadataEXIFApp',
     'mayan.apps.file_metadata_msg.apps.FileMetadataMSGApp',
     'mayan.apps.file_metadata_ollama.apps.FileMetadataOllamaApp',
+    'mayan.apps.file_metadata_pypdf.apps.FileMetadataPyPDFApp',
     'mayan.apps.linking.apps.LinkingApp',
     'mayan.apps.mailer.apps.MailerApp',
     'mayan.apps.mayan_statistics.apps.StatisticsApp',
