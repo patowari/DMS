@@ -204,6 +204,8 @@
   `false` for the Docker Supervisord template.
 - Add a PDF file metadata driver using PyPDF.
 - Support opening PDF as archives.
+- Add help text to workflow state actions informing that they will be
+  execute in alphabetical order.
 
 4.8.3 (2024-10-04)
 ==================

@@ -42,8 +42,10 @@ class WorkflowStateAction(
         verbose_name=_(message='Workflow state')
     )
     label = models.CharField(
-        max_length=255, help_text=_(message='A short text describing the action.'),
-        verbose_name=_(message='Label')
+        max_length=255, help_text=_(
+            message='A short text describing the action. Actions are '
+            'execute by alphabetical order.'
+        ), verbose_name=_(message='Label')
     )
     enabled = models.BooleanField(
         default=True, verbose_name=_(message='Enabled')
