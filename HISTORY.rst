@@ -206,6 +206,8 @@
 - Support opening PDF as archives.
 - Add help text to workflow state actions informing that they will be
   execute in alphabetical order.
+- Override Django's `makemigrations` command to support ignoring third party
+  apps.
 
 4.8.3 (2024-10-04)
 ==================
