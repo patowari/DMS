@@ -5,7 +5,7 @@ from mayan.apps.dependencies.environments import (
 
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='Sphinx', version_string='==7.3.7'
+    name='Sphinx', version_string='==8.1.3'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
@@ -13,11 +13,11 @@ PythonDependency(
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinx_rtd_theme', version_string='==2.0.0'
+    name='sphinx_rtd_theme', version_string='==3.0.2'
 )
 PythonDependency(
     environment=environment_documentation, module=__name__,
-    name='sphinxcontrib-spelling', version_string='==8.0.0'
+    name='sphinxcontrib-spelling', version_string='==8.0.1'
 )
 PythonDependency(
     environment=environment_documentation_override, module=__name__,

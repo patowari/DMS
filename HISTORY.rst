@@ -25,10 +25,13 @@
   - pypdf from 4.2.0 to 5.1.0
   - qrcode from 7.4.2 to 8.0
   - redis from 5.0.7 to 5.2.0
+  - Sphinx from 7.3.7 to 8.1.3.
   - safety from 3.2.4 to 3.2.11
   - sentry-sdk from 2.15.0 to 2.19.0
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
+  - sphinx_rtd_theme from 2.0.0 to 3.0.2
+  - sphinxcontrib-spelling from 8.0.0 to 8.0.1
   - wheel from 0.44.0 to 0.45.1
   - whitenoise from 6.7.0 to 6.8.2
 
