@@ -45,11 +45,12 @@
 
   - Debian from 12.7-slim to 12.8-slim
   - Docker in Docker from docker:27.0.3-dind-alpine3.20 to
-    docker:27.3.1-dind-alpine3.20
-  - PostgreSQL from 14.13-alpine3.20 to 14.15-alpine3.20
-  - RabbitMQ from 3.13.7-management-alpine to 4.0.4-management-alpine
+    docker:27.4.1-dind-alpine3.21
+  - ElasticSearch from 7.17.24 to 7.17.26
+  - PostgreSQL from 14.13-alpine3.20 to 14.15-alpine3.21
+  - RabbitMQ from 3.13.7-management-alpine to 4.0.5-management-alpine
   - Redis from 7.2.5-alpine3.20 to 7.4.1-alpine3.20
-  - Traefik from v2.5.7 to v2.11.14
+  - Traefik from v2.5.7 to v2.11.16
 
 - Decrease the Celery workers maximum tasks per child from 500 to 250.
 - Remove the MIME type detection backend based on Python Magic.
