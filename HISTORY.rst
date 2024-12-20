@@ -214,6 +214,7 @@
   `math_square_root`, `math_substract`. This change deprecates the math
   filters provided by the `django-mathfilters` libray which will be removed
   in the next minor version.
+- Update the version check code to use the new version of the PyPI API.
 
 4.8.3 (2024-10-04)
 ==================
