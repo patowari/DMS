@@ -94,6 +94,7 @@ INSTALLED_APPS = (
     'mayan.apps.databases.apps.DatabasesApp',
     'mayan.apps.dependencies.apps.DependenciesApp',
     'mayan.apps.django_gpg.apps.DjangoGPGApp',
+    'mayan.apps.documentation.apps.DocumentationApp',
     'mayan.apps.dynamic_search.apps.DynamicSearchApp',
     'mayan.apps.file_caching.apps.FileCachingAppConfig',
     'mayan.apps.forms.apps.FormsApp',
