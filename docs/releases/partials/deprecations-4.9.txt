@@ -11,3 +11,7 @@
   `workflow.< workflow internal name >.get_current_state.completion` is
   deprecated. Use `state_active.completion` instead to return the completion
   value of the current state of the selected workflow.
+- The math filters provided by the `django-mathfilters` libray will be removed
+  in the next minor version. These are replaced by Mayan EDMS native filters:
+  `math_add`, `math_absolute`, `math_divide`, `math_floor_divide`,
+  `math_modulo`, `math_multiply`, `math_substract`.

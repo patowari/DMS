@@ -209,6 +209,11 @@
 - Override Django's `makemigrations` command to support ignoring third party
   apps.
 - Add task type information view.
+- Add math template filters `math_add`, `math_absolute`, `math_divide`,
+  `math_exponentiate`, `math_floor_divide`, `math_modulo`, `math_multiply`,
+  `math_square_root`, `math_substract`. This change deprecates the math
+  filters provided by the `django-mathfilters` libray which will be removed
+  in the next minor version.
 
 4.8.3 (2024-10-04)
 ==================
