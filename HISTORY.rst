@@ -5,33 +5,39 @@
 
   - amqp from 5.2.0 to 5.3.1
   - bleach from 6.1.0 to 6.2.0
-  - boto3 from 1.34.122 to 1.35.68
+  - boto3 from 1.34.122 to 1.35.85
+  - coverage rom 7.5.4 to 7.6.9
+  - Django from 4.2.16 to 4.2.17
   - django-auth-ldap from 4.8.0 to 5.1.0
   - django-celery-beat from 2.6.0 to 2.7.0
   - django-cors-headers from 4.4.0 to 4.6.0
+  - django-debug-toolbar from 4.4.5 to 4.4.6
   - django-model-utils from 4.5.1 to 5.0.0
+  - django-silk from 5.2.0 to 5.3.2
   - django-solo from 2.3.0 to 2.4.0
+  - drf-yasg from 1.21.7 to 1.21.8
   - extract-msg from 0.48.7 to 0.52.0
   - gevent 24.2.1 to 24.11.1
-  - google-cloud-storage from 2.17.0 to 2.18.2
+  - google-cloud-storage from 2.17.0 to 2.19.0
   - greenlet from 3.0.3 to 3.1.1
   - importlib-metadata from 8.0.0 to 8.5.0
-  - ipython from 8.26.0 to 8.29.0
-  - ollama from 0.2.1 to 0.4.1
+  - ipython from 8.26.0 to 8.31.0
+  - ollama from 0.2.1 to 0.4.4
   - packaging from 24.1 to 24.2
   - Pillow from 10.4.0 to 11.0.0
   - PIP from 24.2 to 24.3.1
   - pycryptodome from 3.20.0 to 3.21.0
   - pypdf from 4.2.0 to 5.1.0
   - qrcode from 7.4.2 to 8.0
-  - redis from 5.0.7 to 5.2.0
+  - redis from 5.0.7 to 5.2.1
   - Sphinx from 7.3.7 to 8.1.3.
-  - safety from 3.2.4 to 3.2.11
-  - sentry-sdk from 2.15.0 to 2.19.0
+  - safety from 3.2.4 to 3.2.13
+  - sentry-sdk from 2.15.0 to 2.19.2
   - setuptools from 70.3.0 to 75.6.0
   - sh from 2.0.7 to 2.1.0
   - sphinx_rtd_theme from 2.0.0 to 3.0.2
   - sphinxcontrib-spelling from 8.0.0 to 8.0.1
+  - twine from 5.1.1 to 6.0.1
   - wheel from 0.44.0 to 0.45.1
   - whitenoise from 6.7.0 to 6.8.2
 
