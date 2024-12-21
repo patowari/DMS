@@ -22,7 +22,7 @@ job_docker_build:
     - apk update
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
     - apk update
-    - apk add --cache-dir ${APK_CACHE_DIR} cairo gcc libffi-dev libjpeg-turbo-dev libmagic make musl-dev python3 python3-dev zlib-dev
+    - apk add --cache-dir ${APK_CACHE_DIR} cairo gcc libffi-dev libjpeg-turbo-dev libmagic make musl-dev zlib-dev python3 python3-dev py3-packaging
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
@@ -64,7 +64,7 @@ job_docker_push_major:
     - set -a && . ./config.env && set +a
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
-    - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
+    - apk add --cache-dir ${APK_CACHE_DIR} python3 python3-dev py3-packaging
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.9
@@ -101,7 +101,7 @@ job_docker_push_minor:
     - set -a && . ./config.env && set +a
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
-    - apk add --cache-dir ${APK_CACHE_DIR} python3 py3-packaging
+    - apk add --cache-dir ${APK_CACHE_DIR} python3 python3-dev py3-packaging
     - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.9
@@ -163,7 +163,7 @@ job_documentation_build:
     - printf "dir::state::lists    ${APT_STATE_LISTS};\ndir::cache::archives    ${APT_CACHE_ARCHIVES};\n" > /etc/apt/apt.conf.d/99gitlab-ci-cache
     - if [ "${APT_PROXY}" ]; then echo "Acquire::http { Proxy \"http://${APT_PROXY}\"; };" > /etc/apt/apt.conf.d/01proxy; fi
     - apt-get update
-    - apt-get install --yes --no-install-recommends enchant-2 gcc make libcairo2-dev libffi-dev libjpeg-dev libldap2-dev libpng-dev libsasl2-dev python3-venv python3-dev zlib1g-dev
+    - apt-get install --yes --no-install-recommends enchant-2 g++ gcc libffi-dev libjpeg-dev libldap2-dev libpng-dev libsasl2-dev libssl-dev libtiff-dev make zlib1g-dev make python3-dev python3-venv
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
@@ -242,7 +242,7 @@ job_python_build:
     - if [ "${APT_PROXY}" ]; then echo "Acquire::http { Proxy \"http://${APT_PROXY}\"; };" > /etc/apt/apt.conf.d/01proxy; fi
     - apt-get update
     - apt-get update
-    - apt-get install --yes --no-install-recommends make python3-venv python3-dev
+    - apt-get install --yes --no-install-recommends make python3-dev python3-venv
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
@@ -287,7 +287,7 @@ job_python_push_pypi:
     - if [ "${APT_PROXY}" ]; then echo "Acquire::http { Proxy \"http://${APT_PROXY}\"; };" > /etc/apt/apt.conf.d/01proxy; fi
     - apt-get update
     - apt-get update
-    - apt-get install --yes --no-install-recommends make python3-venv python3-dev
+    - apt-get install --yes --no-install-recommends make python3-dev python3-venv
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
@@ -325,7 +325,7 @@ job_python_push_pypi:
     - printf "dir::state::lists    ${APT_STATE_LISTS};\ndir::cache::archives    ${APT_CACHE_ARCHIVES};\n" > /etc/apt/apt.conf.d/99gitlab-ci-cache
     - if [ "${APT_PROXY}" ]; then echo "Acquire::http { Proxy \"http://${APT_PROXY}\"; };" > /etc/apt/apt.conf.d/01proxy; fi
     - apt-get update
-    - apt-get install --yes --no-install-recommends curl exiftool file gcc ghostscript gnupg1 graphviz libfuse2 libldap2-dev libjpeg-dev libmagic1 libpng-dev libreoffice-calc-nogui libreoffice-draw-nogui libreoffice-impress-nogui libreoffice-math-nogui libreoffice-writer-nogui libsasl2-dev libtiff-dev make poppler-utils python3-venv python3-dev sane-utils tesseract-ocr tesseract-ocr-deu
+    - apt-get install --yes --no-install-recommends ca-certificates clamav file ghostscript git gnupg1 graphviz libarchive-zip-perl libfile-mimeinfo-perl libfuse2 libimage-exiftool-perl libmariadb3 libpq5 libreoffice-calc-nogui libreoffice-draw-nogui libreoffice-impress-nogui libreoffice-math-nogui libreoffice-writer-nogui poppler-utils sane-utils sudo supervisor tesseract-ocr g++ gcc libffi-dev libjpeg-dev libldap2-dev libpng-dev libsasl2-dev libssl-dev libtiff-dev make zlib1g-dev make python3-dev python3-venv tesseract-ocr-deu
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
