@@ -227,6 +227,7 @@
 - Update the version check code to use the new version of the PyPI API.
 - Add new documentation app and move the Sphinx dependencies to it.
 - Persist success icon when a file upload finishes.
+- Remove dropzone hard coded icons.
 
 4.8.3 (2024-10-04)
 ==================
