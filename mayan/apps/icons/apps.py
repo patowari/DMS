@@ -21,7 +21,6 @@ class IconsApp(MayanAppConfig):
     app_namespace = 'icons'
     app_url = 'icons'
     has_static_media = True
-    has_tests = True
     name = 'mayan.apps.icons'
     static_media_ignore_patterns = (
         'icons/node_modules/@fortawesome/fontawesome-free/less/*',
