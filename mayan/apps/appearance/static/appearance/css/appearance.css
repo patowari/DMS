@@ -617,15 +617,17 @@ Input search clearable
  */
 
 .appearance-icon {
+    margin-left: -4px;
     width: auto;
 }
 
 .appearance-icon-padding-none {
+    margin-right: -4px;
     padding-right: 0px;
  }
 
 .appearance-fa-dual-symbol {
-    margin-right: 2px;
+    margin-right: 14px;
 }
 
 .appearance-fa-layers {
