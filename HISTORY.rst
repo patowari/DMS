@@ -230,6 +230,7 @@
 - Remove dropzone hard coded icons.
 - Tweak icon spacing.
 - Use font awesome fixed width icons style.
+- Move all icon related code and assets to a new icons app.
 
 4.8.3 (2024-10-04)
 ==================

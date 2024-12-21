@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_credential_backend_selection = Icon(
     driver_name='fontawesome-dual', primary_symbol='id-card',

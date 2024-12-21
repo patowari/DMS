@@ -1,5 +1,5 @@
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.documents.icons import icon_document_type
+from mayan.apps.icons.icons import Icon
 
 icon_web_link = Icon(driver_name='fontawesome', symbol='external-link-alt')
 icon_document_type_web_links = icon_web_link

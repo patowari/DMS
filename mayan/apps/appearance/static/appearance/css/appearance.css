@@ -613,34 +613,6 @@ Input search clearable
 }
 
 /*
- * Icons
- */
-
-.appearance-icon {
-    margin-left: -4px;
-    width: auto;
-}
-
-.appearance-icon-padding-none {
-    margin-right: -4px;
-    padding-right: 0px;
- }
-
-.appearance-fa-dual-symbol {
-    margin-right: 14px;
-}
-
-.appearance-fa-layers {
-    margin-right: 2px;
-    width: 1em;
-}
-
-.appearance-fa-stack {
-    margin-left: -11px;
-    margin-right: -5px;
-}
-
-/*
  * Collapse object menu
  */
 

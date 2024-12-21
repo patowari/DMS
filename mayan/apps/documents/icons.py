@@ -1,5 +1,5 @@
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.converter.icons import icon_transformations
+from mayan.apps.icons.icons import Icon
 
 # App
 

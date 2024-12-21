@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_add_all = Icon(
     driver_name='fontawesome-layers', data=[

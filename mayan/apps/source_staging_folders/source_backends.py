@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 from mayan.apps.source_compressed.source_backends.mixins import (
     SourceBackendMixinCompressed
 )

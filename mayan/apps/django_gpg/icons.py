@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_key_delete = Icon(driver_name='fontawesome', symbol='times')
 icon_key_detail = Icon(driver_name='fontawesome', symbol='key')

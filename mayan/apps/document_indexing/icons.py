@@ -1,5 +1,5 @@
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.documents.icons import icon_document_type
+from mayan.apps.icons.icons import Icon
 
 icon_index = Icon(driver_name='fontawesome', symbol='list-ul')
 icon_document_index_instance_list = Icon(

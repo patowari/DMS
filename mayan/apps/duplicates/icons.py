@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_document_duplicates_list = Icon(
     driver_name='fontawesome', symbol='clone'

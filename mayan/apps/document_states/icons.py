@@ -1,5 +1,5 @@
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.documents.icons import icon_document, icon_document_type
+from mayan.apps.icons.icons import Icon
 
 icon_workflow = Icon(driver_name='fontawesome', symbol='sitemap')
 

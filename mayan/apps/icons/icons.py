@@ -28,7 +28,7 @@ class IconDriver:
 
 class FontAwesomeDriver(IconDriver):
     name = 'fontawesome'
-    template_name = 'appearance/icons/font_awesome/symbol.html'
+    template_name = 'icons/font_awesome/symbol.html'
 
     def __init__(self, symbol):
         self.symbol = symbol
@@ -39,7 +39,7 @@ class FontAwesomeDriver(IconDriver):
 
 class FontAwesomeDualDriver(IconDriver):
     name = 'fontawesome-dual'
-    template_name = 'appearance/icons/font_awesome/layers.html'
+    template_name = 'icons/font_awesome/layers.html'
 
     def __init__(self, primary_symbol, secondary_symbol):
         self.primary_symbol = primary_symbol
@@ -47,7 +47,7 @@ class FontAwesomeDualDriver(IconDriver):
 
     def get_context(self):
         return {
-            'css_classes': 'appearance-fa-dual-symbol',
+            'css_classes': 'mayan-icon-fa-dual-symbol',
             'data': (
                 {
                     'class': 'fas fa-circle',
@@ -68,7 +68,7 @@ class FontAwesomeDualDriver(IconDriver):
 
 class FontAwesomeCSSDriver(IconDriver):
     name = 'fontawesome-css'
-    template_name = 'appearance/icons/font_awesome/css.html'
+    template_name = 'icons/font_awesome/css.html'
 
     def __init__(self, css_classes):
         self.css_classes = css_classes
@@ -79,7 +79,7 @@ class FontAwesomeCSSDriver(IconDriver):
 
 class FontAwesomeMasksDriver(IconDriver):
     name = 'fontawesome-masks'
-    template_name = 'appearance/icons/font_awesome/masks.html'
+    template_name = 'icons/font_awesome/masks.html'
 
     def __init__(self, data):
         self.data = data
@@ -90,13 +90,13 @@ class FontAwesomeMasksDriver(IconDriver):
 
 class FontAwesomeLayersDriver(IconDriver):
     name = 'fontawesome-layers'
-    template_name = 'appearance/icons/font_awesome/layers.html'
+    template_name = 'icons/font_awesome/layers.html'
 
     def __init__(self, data):
         self.data = data
 
     def get_context(self):
-        return {'css_classes': 'appearance-fa-layers', 'data': self.data}
+        return {'css_classes': 'mayan-icon-fa-layers', 'data': self.data}
 
 
 class Icon:

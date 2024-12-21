@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_api = Icon(driver_name='fontawesome', symbol='plug')
 icon_api_documentation = Icon(driver_name='fontawesome', symbol='book')

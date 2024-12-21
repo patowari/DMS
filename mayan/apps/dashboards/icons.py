@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_dashboard_detail = Icon(
     driver_name='fontawesome', symbol='tachometer-alt'

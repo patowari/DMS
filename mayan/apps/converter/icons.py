@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_asset_create = Icon(driver_name='fontawesome', symbol='save')
 icon_asset_delete_multiple = Icon(driver_name='fontawesome', symbol='times')

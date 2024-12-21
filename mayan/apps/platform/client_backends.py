@@ -9,8 +9,8 @@ from django.urls import re_path
 from django.utils.translation import gettext_lazy as _
 
 import mayan
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.common.utils import any_to_bool
+from mayan.apps.icons.icons import Icon
 from mayan.apps.navigation.links import Link
 
 from .classes import ClientBackend

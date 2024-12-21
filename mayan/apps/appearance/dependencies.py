@@ -9,10 +9,6 @@ JavaScriptDependency(
     version_string='=3.2.5'
 )
 JavaScriptDependency(
-    label=_(message='FontAwesome'), module=__name__,
-    name='@fortawesome/fontawesome-free', version_string='=6.7.1'
-)
-JavaScriptDependency(
     label=_(message='jQuery'), module=__name__, name='jquery',
     version_string='=3.7.1'
 )

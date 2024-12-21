@@ -1,5 +1,5 @@
-from mayan.apps.appearance.classes import Icon
 from mayan.apps.documents.icons import icon_document_list
+from mayan.apps.icons.icons import Icon
 
 icon_menu_tags = Icon(driver_name='fontawesome', symbol='tags')
 

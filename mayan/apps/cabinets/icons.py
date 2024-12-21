@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 
 icon_cabinet = Icon(driver_name='fontawesome', symbol='columns')
 icon_cabinet_add = Icon(driver_name='fontawesome', symbol='plus')

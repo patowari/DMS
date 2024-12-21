@@ -1,4 +1,4 @@
-from mayan.apps.appearance.classes import Icon
+from mayan.apps.icons.icons import Icon
 from mayan.apps.permissions.icons import icon_permission
 
 icon_acl_create = Icon(
