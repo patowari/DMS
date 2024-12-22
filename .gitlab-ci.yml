@@ -329,6 +329,7 @@ job_python_push_pypi:
     - python3 -m venv venv
     - . venv/bin/activate
     - pip install pip==${PYTHON_PIP_VERSION}
+    - pip install wheel==${PYTHON_WHEEL_VERSION}
     - pip install --requirement requirements.txt --requirement requirements/testing-base.txt --requirement requirements/build.txt
   cache:
     - key: apt-cache-4.9
