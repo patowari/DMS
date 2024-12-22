@@ -101,6 +101,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
 DEBIAN_FRONTEND=noninteractive \
 apt-get install --no-install-recommends --yes \
     {{ LINUX_PACKAGES_DEBIAN_BUILD }} \
+    {{ LINUX_PACKAGES_DEBIAN_PYTHON }} \
 && mkdir --parents "${PROJECT_INSTALL_DIR}" \
 && chown --recursive mayan:mayan "${PROJECT_INSTALL_DIR}" \
 && chown --recursive mayan:mayan /src
