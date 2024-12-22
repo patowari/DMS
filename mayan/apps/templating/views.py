@@ -1,20 +1,20 @@
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.template import TemplateSyntaxError
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from mayan.apps.documents.models.document_models import Document
 from mayan.apps.views.generics import FormView
 from mayan.apps.views.http import URL
 from mayan.apps.views.view_mixins import (
     ContentTypeViewMixin, ExternalObjectViewMixin
 )
 
-from .classes import Template
+from .classes import ModelTemplating
 from .forms import TemplateSandboxForm
 from .icons import icon_template_sandbox
 from .permissions import permission_template_sandbox
+from .template_backends import Template
 
 
 class ObjectTemplateSandboxView(
@@ -62,9 +62,16 @@ class ObjectTemplateSandboxView(
         }
 
     def get_form_extra_kwargs(self):
-        return {'model': Document, 'model_variable': 'document'}
+        model_templating = self.get_model_templating()
+
+        return {
+            'model': model_templating.model,
+            'model_variable': model_templating.variable_name
+        }
 
     def get_initial(self):
+        model_templating = self.get_model_templating()
+
         if settings.DEBUG:
             exception_list = (TemplateSyntaxError,)
         else:
@@ -74,7 +81,9 @@ class ObjectTemplateSandboxView(
         try:
             template = Template(template_string=template_string)
             result = template.render(
-                context={'document': self.external_object}
+                context={
+                    model_templating.variable_name: self.external_object
+                }
             )
         except exception_list as exception:
             result = ''
@@ -85,3 +94,17 @@ class ObjectTemplateSandboxView(
             result = error_message
 
         return {'result': result, 'template': template_string}
+
+    def get_model_templating(self):
+        content_type = self.get_content_type()
+        model = content_type.model_class()
+        try:
+            model_templating = ModelTemplating.get_for_model(model=model)
+        except KeyError:
+            raise Http404(
+                _(
+                    message='Model `%s` is not available for template sandbox.'
+                ) % model._meta.verbose_name
+            )
+
+        return model_templating

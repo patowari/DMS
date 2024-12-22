@@ -7,7 +7,7 @@ from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.document_states.models.workflow_instance_models import (
     WorkflowInstance
 )
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .models import ObjectLayer
 from .transformations import BaseTransformation

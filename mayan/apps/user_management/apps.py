@@ -19,7 +19,7 @@ from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog
 from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.templating.classes import TemplateContextEntry
+from mayan.apps.templating.template_backends import TemplateContextEntry
 
 from .dashboard_widgets import (
     DashboardWidgetGroupTotal, DashboardWidgetUserTotal

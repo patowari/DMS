@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.documents.models.document_models import Document
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .events import event_smart_link_edited
 from .literals import INCLUSION_AND, INCLUSION_OR

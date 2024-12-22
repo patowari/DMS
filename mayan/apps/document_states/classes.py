@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.backends.classes import DynamicFormModelBackend
 from mayan.apps.common.classes import PropertyHelper
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .exceptions import WorkflowStateActionError
 

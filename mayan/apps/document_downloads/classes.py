@@ -8,7 +8,7 @@ from django.utils.html import strip_tags
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.locales.utils import to_language
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 
 class DocumentFileCompressor:

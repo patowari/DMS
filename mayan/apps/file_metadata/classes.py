@@ -10,7 +10,7 @@ from mayan.apps.common.utils import (
     convert_to_internal_name, deduplicate_dictionary_values,
     get_class_full_name
 )
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .exceptions import FileMetadataError
 from .settings import setting_auto_process, setting_drivers_arguments

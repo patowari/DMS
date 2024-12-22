@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 from mayan.apps.databases.classes import ModelAttribute
 from mayan.apps.forms import form_widgets
 
-from .classes import Template
+from .template_backends import Template
 
 
 class FormWidgetCode(form_widgets.Textarea):

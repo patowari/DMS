@@ -16,7 +16,7 @@ from django.utils.encoding import force_bytes, force_str
 from mayan.apps.organizations.settings import (
     setting_organization_url_base_path
 )
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .literals import API_VERSION
 

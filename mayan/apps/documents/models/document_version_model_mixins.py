@@ -14,7 +14,7 @@ from mayan.apps.converter.exceptions import AppImageError
 from mayan.apps.databases.classes import ModelQueryFields
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerMethodAfter
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from ..events import (
     event_document_version_page_created, event_document_version_edited

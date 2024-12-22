@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.common.serialization import yaml_load
 from mayan.apps.common.utils import comma_splitter
 from mayan.apps.forms.literals import EMPTY_LABEL
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from ..literals import FIELD_TYPE_MAPPING, WIDGET_CLASS_MAPPING
 

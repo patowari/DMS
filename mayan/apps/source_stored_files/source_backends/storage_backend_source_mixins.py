@@ -10,7 +10,7 @@ from mayan.apps.common.serialization import yaml_load
 from mayan.apps.credentials.class_mixins import (
     BackendMixinCredentialsOptional
 )
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from ..classes import SourceStoredFile
 

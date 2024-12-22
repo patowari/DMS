@@ -7,7 +7,7 @@ from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 
 import mayan
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .events import event_email_sent
 from .literals import ERROR_LOG_DOMAIN_NAME

@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 import mayan
 from mayan.apps.forms import form_fields
 
-from .classes import TemplateContextEntry
+from .template_backends import TemplateContextEntry
 from .widgets import ModelTemplateWidget, TemplateWidget
 
 

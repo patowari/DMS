@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.decorators import method_event
 from mayan.apps.events.event_managers import EventManagerSave
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .events import event_saved_resultset_created
 from .managers import SavedResultsetEntryManager, SavedResultsetManager

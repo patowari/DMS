@@ -12,7 +12,7 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.file_caching.models import Cache, CachePartitionFile
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .literals import STORAGE_NAME_SIGNATURE_CAPTURES_CACHE
 

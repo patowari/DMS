@@ -31,7 +31,7 @@ from mayan.apps.forms import column_widgets
 from mayan.apps.logging.classes import ErrorLog, ErrorLogDomain
 from mayan.apps.navigation.source_columns import SourceColumn
 from mayan.apps.rest_api.fields import DynamicSerializerField
-from mayan.apps.templating.classes import AJAXTemplate
+from mayan.apps.templating.classes import AJAXTemplate, ModelTemplating
 from mayan.apps.user_management.dashboards import dashboard_user
 
 from .classes import DocumentFileAction, DocumentVersionModification
@@ -308,6 +308,8 @@ class DocumentsApp(MayanAppConfig):
         ModelPermission.register_inheritance(
             model=DocumentFilePage, related='document_file'
         )
+
+        ModelTemplating(model=DocumentFile, variable_name='document_file')
 
         model_query_fields_document_file = ModelQueryFields(
             model=DocumentFile
@@ -723,6 +725,10 @@ class DocumentsApp(MayanAppConfig):
             )
         )
 
+        ModelTemplating(
+            model=DocumentVersion, variable_name='document_version'
+        )
+
         # DocumentVersion
 
         ModelPermission.register_inheritance(
@@ -951,6 +957,8 @@ class DocumentsApp(MayanAppConfig):
         ModelPermission.register_inheritance(
             model=Document, related='document_type'
         )
+
+        ModelTemplating(model=Document, variable_name='document')
 
         model_query_fields_document = ModelQueryFields(model=Document)
         model_query_fields_document.add_prefetch_related_field(

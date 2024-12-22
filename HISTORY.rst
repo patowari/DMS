@@ -232,6 +232,8 @@
 - Use font awesome fixed width icons style.
 - Move all icon related code and assets to a new icons app.
 - Remove hardcoded CD/CI and Docker package names.
+- Generalize the document sandbox to work with other models.
+- Enable template sandbox for document files and document versions.
 
 4.8.3 (2024-10-04)
 ==================

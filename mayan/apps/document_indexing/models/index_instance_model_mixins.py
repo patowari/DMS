@@ -8,7 +8,7 @@ from mayan.apps.documents.models.document_models import Document
 from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.lock_manager.backends.base import LockingBackend
 from mayan.apps.lock_manager.exceptions import LockError
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 logger = logging.getLogger(name=__name__)
 

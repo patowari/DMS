@@ -5,7 +5,7 @@ import os
 import yaml
 
 from mayan.apps.common.serialization import yaml_load
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .literals import CONFIGURATION_FILENAME, CONFIGURATION_FILENAME_LAST_GOOD
 

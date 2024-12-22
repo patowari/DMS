@@ -1,5 +1,5 @@
 from mayan.apps.common.utils import comma_splitter
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 
 class MetadataTypeBusinessLogicMixin:

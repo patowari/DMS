@@ -5,7 +5,7 @@ from mayan.apps.document_states.classes import WorkflowAction
 from mayan.apps.documents.models.document_version_page_models import (
     DocumentVersionPage
 )
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .models import DocumentVersionPageOCRContent
 

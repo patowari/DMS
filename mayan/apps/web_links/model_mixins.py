@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 
-from mayan.apps.templating.classes import Template
+from mayan.apps.templating.template_backends import Template
 
 from .events import event_web_link_edited, event_web_link_navigated
 
