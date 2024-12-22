@@ -49,7 +49,7 @@ TEST_ARCHIVE_ZIP_CP437_MEMBER_PATH = os.path.join(
 TEST_FILE3_PATH = os.path.join(
     settings.BASE_DIR, 'apps', 'common', 'tests', 'contrib', TEST_FILENAME3
 )
-TEST_PDF_WITH_ATTACHMENT_PATH  = os.path.join(
+TEST_PDF_WITH_ATTACHMENT_PATH = os.path.join(
     settings.BASE_DIR, 'apps', 'common', 'tests', 'contrib',
     TEST_PDF_WITH_ATTACHMENT_FILENAME
 )

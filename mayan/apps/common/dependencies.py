@@ -2,8 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.dependencies.classes import PythonDependency
 from mayan.apps.dependencies.environments import (
-    environment_build, environment_development, environment_documentation,
-    environment_documentation_override
+    environment_build, environment_development, environment_documentation
 )
 from mayan.settings.literals import PYTHON_WHEEL_VERSION
 

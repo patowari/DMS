@@ -8,8 +8,9 @@ from mayan.apps.documents.tests.mixins.document_mixins import (
     DocumentTestMixin
 )
 
-from .literals import TEST_SEARCH_OBJECT_TERM
-from .mixins.base import TestSearchObjectSimpleTestMixin
+from ..literals import TEST_SEARCH_OBJECT_TERM
+
+from .base import TestSearchObjectSimpleTestMixin
 
 
 class SearchBackendLimitTestMixin(

@@ -11,7 +11,6 @@ from mayan.apps.storage.utils import fs_cleanup
 from mayan.apps.testing.tests.base import BaseTestCase
 from mayan.apps.views.settings import setting_paginate_by
 
-from ..exceptions import SettingsException
 from ..settings import setting_cluster
 
 from .literals import (
