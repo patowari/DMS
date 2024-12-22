@@ -34,7 +34,8 @@ def load_env_file(filename='config.env', skip_local_config=False):
     result = {}
     with open(file=filename) as file_object:
         for line in file_object:
-            if not line.startswith('#'):
+            # Skip empty lines and comments.
+            if len(line) > 1 and not line.startswith('#'):
                 key, value = line.strip().split('=')
 
                 result[key] = value

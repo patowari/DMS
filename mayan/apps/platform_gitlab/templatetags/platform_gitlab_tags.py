@@ -3,6 +3,7 @@ from django.template import Library
 import mayan
 from mayan.apps.dependencies.versions import Version
 from mayan.apps.platform.utils import yaml_dump
+from mayan.settings.literals import LINUX_PACKAGES_DEBIAN_PUSH
 
 register = Library()
 
@@ -90,7 +91,9 @@ def platform_gitlab_ci_cache_variables(
 
 @register.simple_tag
 def platform_gitlab_ci_config_env_before_script(indent):
-    data = ['set -a && . ./config.env && set +a']
+    data = [
+        r'set -a && sed -E "s/=(.*)/\=\"\1\"/g" config.env > /tmp/config.env && . /tmp/config.env && rm /tmp/config.env && set +a'
+    ]
 
     return yaml_dump(data=data, indent=indent)
 
@@ -102,7 +105,7 @@ def platform_gitlab_ci_ssh_before_script(indent, hostname, private_key):
         'chmod 700 ~/.ssh',
         'echo "{}" > ~/.ssh/known_hosts'.format(hostname),
         'chmod 644 ~/.ssh/known_hosts',
-        '\'which ssh-agent || ( apt-get update --yes && apt-get install --yes --no-install-recommends openssh-client rsync )\'',
+        '\'which ssh-agent || ( apt-get update --yes && apt-get install --yes --no-install-recommends {debian_packages} )\''.format(debian_packages=LINUX_PACKAGES_DEBIAN_PUSH),
         'eval $(ssh-agent -s)',
         'echo "{}" | tr -d \'\\r\' | ssh-add - > /dev/null'.format(private_key)
     ]
