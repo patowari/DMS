@@ -1,6 +1,7 @@
 import hashlib
 
 from django.template.response import TemplateResponse
+from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 
 from mayan.apps.acls.classes import ModelPermission
@@ -8,6 +9,7 @@ from mayan.apps.common.menus import menu_list_facet
 
 from .links import link_object_template_sandbox
 from .permissions import permission_template_sandbox
+from .template_backends import Template
 
 
 class AJAXTemplate:
@@ -57,8 +59,31 @@ class ModelTemplating:
     _registry = {}
 
     @classmethod
+    def do_render(cls, obj, template_string):
+        model = obj._meta.model
+
+        model_templating = cls.get_for_model(model=model)
+
+        template = Template(template_string=template_string)
+        result = template.render(
+            context={
+                model_templating.variable_name: obj
+            }
+        )
+
+        return result
+
+    @classmethod
     def get_for_model(cls, model):
-        return cls._registry[model]
+        try:
+            return cls._registry[model]
+        except KeyError:
+            raise KeyError(
+                _(
+                    message='Model `%s` is not available for template '
+                    'sandbox.'
+                ) % model._meta.verbose_name
+            )
 
     def __init__(self, model, variable_name):
         self.model = model

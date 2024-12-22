@@ -17,3 +17,12 @@ class AJAXTemplateSerializer(serializers.Serializer):
         label=_(message='URL'), lookup_field='name', lookup_url_kwarg='name',
         view_name='rest_api:template-detail'
     )
+
+
+class ObjectTemplateSandboxSerializer(serializers.Serializer):
+    result = serializers.CharField(
+        label=_(message='Result'), read_only=True
+    )
+    template = serializers.CharField(
+        label=_(message='Template'), write_only=True
+    )

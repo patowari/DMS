@@ -14,7 +14,6 @@ from .classes import ModelTemplating
 from .forms import TemplateSandboxForm
 from .icons import icon_template_sandbox
 from .permissions import permission_template_sandbox
-from .template_backends import Template
 
 
 class ObjectTemplateSandboxView(
@@ -70,20 +69,16 @@ class ObjectTemplateSandboxView(
         }
 
     def get_initial(self):
-        model_templating = self.get_model_templating()
-
         if settings.DEBUG:
             exception_list = (TemplateSyntaxError,)
         else:
             exception_list = (Exception, TemplateSyntaxError,)
 
         template_string = self.request.GET.get('template', '')
+
         try:
-            template = Template(template_string=template_string)
-            result = template.render(
-                context={
-                    model_templating.variable_name: self.external_object
-                }
+            result = ModelTemplating.do_render(
+                obj=self.external_object, template_string=template_string
             )
         except exception_list as exception:
             result = ''
@@ -92,19 +87,16 @@ class ObjectTemplateSandboxView(
             ) % {'exception': exception}
 
             result = error_message
+        except KeyError as exception:
+            raise Http404(exception)
 
         return {'result': result, 'template': template_string}
 
     def get_model_templating(self):
-        content_type = self.get_content_type()
-        model = content_type.model_class()
+        model = self.external_object._meta.model
         try:
             model_templating = ModelTemplating.get_for_model(model=model)
-        except KeyError:
-            raise Http404(
-                _(
-                    message='Model `%s` is not available for template sandbox.'
-                ) % model._meta.verbose_name
-            )
+        except KeyError as exception:
+            raise Http404(exception)
 
         return model_templating

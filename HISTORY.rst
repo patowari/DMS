@@ -234,6 +234,7 @@
 - Remove hardcoded CD/CI and Docker package names.
 - Generalize the document sandbox to work with other models.
 - Enable template sandbox for document files and document versions.
+- Add template sandbox API view.
 
 4.8.3 (2024-10-04)
 ==================
