@@ -91,7 +91,9 @@ def platform_gitlab_ci_cache_variables(
 
 @register.simple_tag
 def platform_gitlab_ci_config_env_before_script(indent):
-    data = ['set -a && . ./config.env && set +a']
+    data = [
+        r'set -a && sed -E "s/=(.*)/\=\"\1\"/g" config.env > /tmp/config.env && . ./config.env && rm /tmp/config.env && set +a'
+    ]
 
     return yaml_dump(data=data, indent=indent)
 
