@@ -7,25 +7,36 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.documents.models.document_models import Document
 from mayan.apps.views.generics import FormView
 from mayan.apps.views.http import URL
-from mayan.apps.views.view_mixins import ExternalObjectViewMixin
+from mayan.apps.views.view_mixins import (
+    ContentTypeViewMixin, ExternalObjectViewMixin
+)
 
 from .classes import Template
-from .forms import DocumentTemplateSandboxForm
+from .forms import TemplateSandboxForm
 from .icons import icon_template_sandbox
 from .permissions import permission_template_sandbox
 
 
-class DocumentTemplateSandboxView(ExternalObjectViewMixin, FormView):
-    external_object_class = Document
+class ObjectTemplateSandboxView(
+    ContentTypeViewMixin, ExternalObjectViewMixin, FormView
+):
+    content_type_url_kw_args = {
+        'app_label': 'app_label',
+        'model_name': 'model_name'
+    }
     external_object_permission = permission_template_sandbox
-    external_object_pk_url_kwarg = 'document_id'
-    form_class = DocumentTemplateSandboxForm
+    external_object_pk_url_kwarg = 'object_id'
+    form_class = TemplateSandboxForm
     view_icon = icon_template_sandbox
 
     def form_valid(self, form):
+        content_type = self.get_content_type()
         path = reverse(
-            kwargs={'document_id': self.external_object.pk},
-            viewname='templating:document_template_sandbox'
+            kwargs={
+                'app_label': content_type.app_label,
+                'model_name': content_type.model,
+                'object_id': self.external_object.pk
+            }, viewname='templating:object_template_sandbox'
         )
         url = URL(
             path=path, query={
@@ -36,6 +47,11 @@ class DocumentTemplateSandboxView(ExternalObjectViewMixin, FormView):
         return HttpResponseRedirect(
             redirect_to=url.to_string()
         )
+
+    def get_external_object_queryset(self):
+        # Here we get a queryset the object model for which an ACL will be
+        # created.
+        return self.get_content_type().get_all_objects_for_this_type()
 
     def get_extra_context(self):
         return {

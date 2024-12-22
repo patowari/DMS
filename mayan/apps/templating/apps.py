@@ -7,7 +7,7 @@ from mayan.apps.app_manager.apps import MayanAppConfig
 from mayan.apps.common.menus import menu_list_facet
 
 from .classes import TemplateContextEntry
-from .links import link_document_template_sandbox
+from .links import link_object_template_sandbox
 from .permissions import permission_template_sandbox
 
 
@@ -31,7 +31,7 @@ class TemplatingApp(MayanAppConfig):
         )
 
         menu_list_facet.bind_links(
-            links=(link_document_template_sandbox,), sources=(Document,)
+            links=(link_object_template_sandbox,), sources=(Document,)
         )
 
         TemplateContextEntry(

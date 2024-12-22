@@ -1,21 +1,22 @@
+from mayan.apps.databases.tests.mixins import ContentTypeTestCaseMixin
+
 from ..classes import Template
 
 from .literals import TEST_TEMPLATE
 
 
-class DocumentTemplateSandboxViewTestMixin:
-    def _request_document_template_sandbox_get_view(self):
+class ObjectTemplateSandboxViewTestMixin(ContentTypeTestCaseMixin):
+    def _request_object_template_sandbox_get_view(self):
         return self.get(
-            viewname='templating:document_template_sandbox', kwargs={
-                'document_id': self._test_document.pk
-            }
+            kwargs=self._test_object_view_kwargs,
+            viewname='templating:object_template_sandbox'
         )
 
-    def _request_document_template_sandbox_post_view(self):
+    def _request_object_template_sandbox_post_view(self):
         return self.post(
-            viewname='templating:document_template_sandbox', kwargs={
-                'document_id': self._test_document.pk
-            }, data={'template_template': TEST_TEMPLATE}
+            data={'template_template': TEST_TEMPLATE},
+            kwargs=self._test_object_view_kwargs,
+            viewname='templating:object_template_sandbox'
         )
 
 

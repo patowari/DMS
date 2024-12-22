@@ -5,7 +5,7 @@ from mayan.apps.forms import form_fields, form_widgets, forms
 from .fields import ModelTemplateField
 
 
-class DocumentTemplateSandboxForm(forms.Form):
+class TemplateSandboxForm(forms.Form):
     result = form_fields.CharField(
         help_text=_(message='Resulting text from the evaluated template.'),
         label=_(message='Result'), required=False, widget=form_widgets.Textarea(
