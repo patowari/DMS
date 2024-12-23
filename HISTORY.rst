@@ -236,6 +236,8 @@
 - Enable template sandbox for document files and document versions.
 - Add template sandbox API view.
 - Add model property information tool view.
+- Use the best possible model label when composing the search form fieldset
+  labels.
 
 4.8.3 (2024-10-04)
 ==================

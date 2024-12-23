@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.forms import form_fields, form_widgets, forms
 
 from .literals import MATCH_ALL_FIELD_CHOICES, MATCH_ALL_FIELD_NAME
+from .search_models import SearchModel
 from .settings import setting_store_results_default_value
 
 
@@ -52,7 +53,11 @@ class AdvancedSearchForm(SearchFormBase):
                 # Build the fieldset dictionary.
                 model = search_field.field_name_model_list[0]
 
-                model_verbose_name_plural = model._meta.verbose_name_plural
+                try:
+                    search_model = SearchModel.get_for_model(instance=model)
+                    model_verbose_name_plural = search_model.label
+                except KeyError:
+                    model_verbose_name_plural = model._meta.verbose_name_plural
 
                 fieldsets_dict.setdefault(
                     model_verbose_name_plural, {
