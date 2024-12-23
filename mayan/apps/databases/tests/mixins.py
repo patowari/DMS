@@ -56,6 +56,19 @@ class ModelTestCaseMixin:
         ).values()[0]
 
 
+class PropertyModelTestViewMixin:
+    def _request_model_property_list_view(self):
+        return self.get(
+            kwargs={
+                'app_label': self._TestModel._meta.app_label,
+                'model_name': self._TestModel._meta.model_name
+            }, viewname='databases:model_property_list'
+        )
+
+    def _request_property_model_list_view(self):
+        return self.get(viewname='databases:property_model_list')
+
+
 class RandomPrimaryKeyModelMonkeyPatchMixin:
     random_primary_key_enable = True
     random_primary_key_maximum_attempts = 100

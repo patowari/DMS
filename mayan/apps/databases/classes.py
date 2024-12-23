@@ -81,6 +81,22 @@ class ModelAttribute:
 
         return result
 
+    def get_description(self):
+        return self.description
+
+    get_description.short_description = _('Description')
+
+    def get_label(self):
+        return self.label
+
+    get_label.short_description = _('Label')
+
+    def get_name(self):
+        return self.name
+
+    get_name.help_text = _('Example usage of the property.')
+    get_name.short_description = _('Name')
+
 
 class ModelField(ModelAttribute):
     class_label = _(message='Model fields')
@@ -212,6 +228,58 @@ class ModelQueryFields:
             )
 
         return queryset
+
+
+class ModelWrapper:
+    @classmethod
+    def all(cls):
+        class_registry = ModelProperty._model_registry[
+            ModelProperty.class_name
+        ]
+
+        result = []
+
+        for entry in class_registry.keys():
+            instance = cls(model=entry)
+            result.append(instance)
+
+        result.sort(
+            key=lambda entry: entry.get_name_full()
+        )
+
+        return result
+
+    def __init__(self, model):
+        self.model = model
+
+        meta = self.model._meta
+
+        self.app_config = meta.app_config
+        self.model_name = meta.model_name
+        self.verbose_name = meta.verbose_name
+
+    def get_app_label(self):
+        return self.app_config.verbose_name
+
+    get_app_label.help_text = _('Name of the app where the model is defined.')
+    get_app_label.short_description = _('App')
+
+    def get_name_full(self):
+        return '{}.{}'.format(self.app_config.label, self.model_name)
+
+    get_name_full.help_text = _('Complete unique name of the model.')
+    get_name_full.short_description = _('Full name')
+
+    def get_label(self):
+        return self.verbose_name
+
+    get_label.help_text = _('Human readable name of the model.')
+    get_label.short_description = _('Label')
+
+    def get_name(self):
+        return self.model_name
+
+    get_name.short_description = _('Name')
 
 
 class QuerysetParametersSerializer:
