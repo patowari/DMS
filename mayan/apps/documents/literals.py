@@ -5,8 +5,10 @@ from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.common.literals import TIME_DELTA_UNIT_DAYS
 
-CHECK_DELETE_PERIOD_INTERVAL = 60
-CHECK_TRASH_PERIOD_INTERVAL = 60
+# Tasks
+DEFAULT_DOCUMENTS_STUBS_DELETE_TASK_INTERVAL = 60 * 10  # 10 minutes
+DEFAULT_DOCUMENTS_TRASHED_DELETE_PERIODS_CHECK_TASK_INTERVAL = 60
+DEFAULT_DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL = 60
 
 DEFAULT_DELETE_PERIOD = 30
 DEFAULT_DELETE_TIME_UNIT = TIME_DELTA_UNIT_DAYS
@@ -84,8 +86,6 @@ IMAGE_ERROR_DOCUMENT_FILE_PAGE_TRANSFORMATION_ERROR = 'document_file_page_transf
 IMAGE_ERROR_DOCUMENT_VERSION_ACTIVE_MISSING = 'document_no_active_version'
 IMAGE_ERROR_DOCUMENT_VERSION_HAS_NO_PAGES = 'document_no_version_pages'
 IMAGE_ERROR_DOCUMENT_VERSION_PAGE_TRANSFORMATION_ERROR = 'document_version_page_transformation_error'
-
-INTERVAL_TASK_STUBS_DELETION = 60 * 10  # 10 minutes
 
 MONTH_NAMES = (
     _(message='January'), _(message='February'), _(message='March'), _(message='April'), _(message='May'),

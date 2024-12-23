@@ -15,7 +15,10 @@ from .literals import (
     DEFAULT_DOCUMENTS_PRINT_HEIGHT, DEFAULT_DOCUMENTS_PRINT_WIDTH,
     DEFAULT_DOCUMENTS_RECENTLY_ACCESSED_COUNT,
     DEFAULT_DOCUMENTS_RECENTLY_CREATED_COUNT, DEFAULT_DOCUMENTS_ROTATION_STEP,
+    DEFAULT_DOCUMENTS_STUBS_DELETE_TASK_INTERVAL,
     DEFAULT_DOCUMENTS_THUMBNAIL_HEIGHT, DEFAULT_DOCUMENTS_THUMBNAIL_WIDTH,
+    DEFAULT_DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL,
+    DEFAULT_DOCUMENTS_TRASHED_DELETE_PERIODS_CHECK_TASK_INTERVAL,
     DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_MAXIMUM_SIZE,
     DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND,
     DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS,
@@ -157,6 +160,30 @@ setting_rotation_step = setting_namespace.do_setting_add(
     default=DEFAULT_DOCUMENTS_ROTATION_STEP,
     global_name='DOCUMENTS_ROTATION_STEP', help_text=_(
         message='Amount in degrees to rotate a document page per user interaction.'
+    )
+)
+setting_task_document_type_document_trash_periods_check_interval = setting_namespace.do_setting_add(
+    default=DEFAULT_DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL,
+    global_name='DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL',
+    help_text=_(
+        'Time interval in seconds, at which the document trashing task will '
+        'execute.'
+    )
+)
+setting_task_document_type_document_stubs_delete_interval = setting_namespace.do_setting_add(
+    default=DEFAULT_DOCUMENTS_STUBS_DELETE_TASK_INTERVAL,
+    global_name='DOCUMENTS_STUBS_DELETE_TASK_INTERVAL',
+    help_text=_(
+        'Time interval in seconds, at which the document stub prune task '
+        'will execute.'
+    )
+)
+setting_task_trashed_document_delete_periods_check_interval = setting_namespace.do_setting_add(
+    default=DEFAULT_DOCUMENTS_TRASHED_DELETE_PERIODS_CHECK_TASK_INTERVAL,
+    global_name='DOCUMENTS_TRASHED_DOCUMENT_DELETE_PERIODS_CHECK_TASK_INTERVAL',
+    help_text=_(
+        'Time interval in seconds, at which the trashed document deletion '
+        'task will execute.'
     )
 )
 setting_thumbnail_height = setting_namespace.do_setting_add(

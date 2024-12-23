@@ -5,9 +5,10 @@ from django.utils.translation import gettext_lazy as _
 from mayan.apps.task_manager.classes import CeleryQueue
 from mayan.apps.task_manager.workers import worker_b, worker_c
 
-from .literals import (
-    CHECK_DELETE_PERIOD_INTERVAL, CHECK_TRASH_PERIOD_INTERVAL,
-    INTERVAL_TASK_STUBS_DELETION
+from .settings import (
+    setting_task_document_type_document_stubs_delete_interval,
+    setting_task_document_type_document_trash_periods_check_interval,
+    setting_task_trashed_document_delete_periods_check_interval
 )
 
 queue_documents_fast = CeleryQueue(
@@ -83,20 +84,24 @@ queue_documents_periodic.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_type_tasks.task_document_type_document_trash_periods_check',
     label=_(message='Check document type trash periods'),
     name='task_document_type_document_trash_periods_check',
-    schedule=timedelta(seconds=CHECK_TRASH_PERIOD_INTERVAL),
+    schedule=timedelta(
+        seconds=setting_task_document_type_document_trash_periods_check_interval.value
+    )
 )
 queue_documents_periodic.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_type_tasks.task_document_type_document_stubs_delete',
     label=_(message='Delete document stubs'),
     name='task_document_type_document_stubs_delete',
-    schedule=timedelta(seconds=INTERVAL_TASK_STUBS_DELETION),
+    schedule=timedelta(
+        seconds=setting_task_document_type_document_stubs_delete_interval.value
+    )
 )
 queue_documents_periodic.add_task_type(
     dotted_path='mayan.apps.documents.tasks.document_type_tasks.task_document_type_trashed_document_delete_periods_check',
     label=_(message='Check document type delete periods'),
     name='task_document_type_trashed_document_delete_periods_check',
     schedule=timedelta(
-        seconds=CHECK_DELETE_PERIOD_INTERVAL
+        seconds=setting_task_trashed_document_delete_periods_check_interval.value
     )
 )
 

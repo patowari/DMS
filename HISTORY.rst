@@ -238,6 +238,12 @@
 - Add model property information tool view.
 - Use the best possible model label when composing the search form fieldset
   labels.
+- Make the intervals of tasks `task_document_type_document_stubs_delete`,
+  `task_document_type_document_trash_periods_check`,
+  `task_document_type_trashed_document_delete_periods_check` configurable
+  via the new settings `DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL`,
+  `DOCUMENTS_STUBS_DELETE_TASK_INTERVAL`,
+  `DOCUMENTS_TRASHED_DOCUMENT_DELETE_PERIODS_CHECK_TASK_INTERVAL`.
 
 4.8.3 (2024-10-04)
 ==================
