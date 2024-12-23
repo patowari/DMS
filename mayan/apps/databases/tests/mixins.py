@@ -304,6 +304,11 @@ class TestModelTestCaseMixin(ContentTypeTestCaseMixin, PermissionTestMixin):
 
         self._test_model_list.append(model)
 
+        ContentType.objects.create(
+            app_label=self._TestModel._meta.app_label,
+            model=self._test_model_name.lower()
+        )
+
         ContentType.objects.clear_cache()
         apps.clear_cache()
 
