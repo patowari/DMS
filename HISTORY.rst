@@ -244,6 +244,8 @@
   via the new settings `DOCUMENTS_TRASH_PERIOD_CHECK_TASK_INTERVAL`,
   `DOCUMENTS_STUBS_DELETE_TASK_INTERVAL`,
   `DOCUMENTS_TRASHED_DOCUMENT_DELETE_PERIODS_CHECK_TASK_INTERVAL`.
+- Increase the document trash, trashed document deletion, and document stub
+  pruning tasks default intervals to 30 minutes.
 
 4.8.3 (2024-10-04)
 ==================
