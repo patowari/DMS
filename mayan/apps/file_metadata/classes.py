@@ -1,6 +1,7 @@
 import logging
 
 from django.apps import apps
+from django.conf import settings
 from django.db.utils import IntegrityError, OperationalError, ProgrammingError
 from django.utils.functional import classproperty
 from django.utils.translation import gettext_lazy as _
@@ -13,6 +14,7 @@ from mayan.apps.common.utils import (
 from mayan.apps.templating.template_backends import Template
 
 from .exceptions import FileMetadataError
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .settings import setting_auto_process, setting_drivers_arguments
 
 logger = logging.getLogger(name=__name__)
@@ -298,48 +300,62 @@ class FileMetadataDriver(
                     driver.do_model_instance_populate()
 
     def process(self, document_file):
-        logger.info('Starting processing document file: %s', document_file)
+        try:
+            logger.info('Starting processing document file: %s', document_file)
 
-        FileMetadataEntry = apps.get_model(
-            app_label='file_metadata', model_name='FileMetadataEntry'
-        )
-
-        file_metadata_dictionary = self._process(document_file=document_file)
-
-        file_metadata_dictionary = file_metadata_dictionary or {}
-
-        internal_name_dictionary = {}
-        for key in file_metadata_dictionary.keys():
-            internal_name_dictionary[key] = convert_to_internal_name(
-                value=key
+            FileMetadataEntry = apps.get_model(
+                app_label='file_metadata', model_name='FileMetadataEntry'
             )
 
-        internal_name_dictionary_deduplicated = deduplicate_dictionary_values(
-            dictionary=internal_name_dictionary
-        )
+            file_metadata_dictionary = self._process(document_file=document_file)
 
-        queryset_document_file_metadata = self.model_instance.driver_entries.filter(
-            document_file=document_file
-        )
-        queryset_document_file_metadata.delete()
+            file_metadata_dictionary = file_metadata_dictionary or {}
 
-        document_file_driver_entry = self.model_instance.driver_entries.create(
-            document_file=document_file
-        )
+            internal_name_dictionary = {}
+            for key in file_metadata_dictionary.keys():
+                internal_name_dictionary[key] = convert_to_internal_name(
+                    value=key
+                )
 
-        coroutine = FileMetadataEntry.objects.create_bulk()
-        next(coroutine)
-
-        for key, value in file_metadata_dictionary.items():
-            internal_name = internal_name_dictionary_deduplicated[key]
-            coroutine.send(
-                {
-                    'document_file_driver_entry': document_file_driver_entry,
-                    'internal_name': internal_name, 'key': key, 'value': value
-                }
+            internal_name_dictionary_deduplicated = deduplicate_dictionary_values(
+                dictionary=internal_name_dictionary
             )
 
-        coroutine.close()
+            queryset_document_file_metadata = self.model_instance.driver_entries.filter(
+                document_file=document_file
+            )
+            queryset_document_file_metadata.delete()
+
+            document_file_driver_entry = self.model_instance.driver_entries.create(
+                document_file=document_file
+            )
+
+            coroutine = FileMetadataEntry.objects.create_bulk()
+            next(coroutine)
+
+            for key, value in file_metadata_dictionary.items():
+                internal_name = internal_name_dictionary_deduplicated[key]
+                coroutine.send(
+                    {
+                        'document_file_driver_entry': document_file_driver_entry,
+                        'internal_name': internal_name, 'key': key, 'value': value
+                    }
+                )
+
+            coroutine.close()
+        except Exception as exception:
+            if settings.DEBUG and 0:
+                raise
+            else:
+                error_log_text = '''
+                Cannot process driver `{driver}` for document file `{document_file}`; {exception}
+                '''.format(
+                    document_file=document_file, driver=self.label,
+                    exception=exception
+                )
+                document_file.error_log.create(
+                    domain_name=ERROR_LOG_DOMAIN_NAME, text=error_log_text
+                )
 
     def _process(self, document_file):
         raise NotImplementedError(

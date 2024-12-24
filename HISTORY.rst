@@ -248,6 +248,7 @@
   pruning tasks default intervals to 30 minutes.
 - Support height change persistence for the template string, preview and
   result fields.
+- Add error logging to the file metadata drivers.
 
 4.8.3 (2024-10-04)
 ==================

@@ -11,6 +11,7 @@ from mayan.apps.databases.classes import ModelFieldRelated, ModelProperty
 from mayan.apps.documents.signals import signal_post_document_file_upload
 from mayan.apps.events.classes import ModelEventType
 from mayan.apps.forms import column_widgets
+from mayan.apps.logging.classes import ErrorLogDomain
 from mayan.apps.navigation.source_columns import SourceColumn
 
 from .classes import FileMetadataDriver
@@ -31,6 +32,7 @@ from .links import (
     link_document_type_file_metadata_driver_configuration_list,
     link_document_type_file_metadata_submit, link_file_metadata_driver_list
 )
+from .literals import ERROR_LOG_DOMAIN_NAME
 from .methods import (
     method_document_file_metadata_submit,
     method_document_file_metadata_submit_single,
@@ -92,6 +94,10 @@ class FileMetadataApp(MayanAppConfig):
         DocumentFile.add_to_class(
             name='submit_for_file_metadata_processing',
             value=method_document_file_metadata_submit_single
+        )
+
+        ErrorLogDomain(
+            label=_(message='File metadata'), name=ERROR_LOG_DOMAIN_NAME
         )
 
         FileMetadataDriver.load_modules()
