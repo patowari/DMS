@@ -130,12 +130,12 @@ class PartialNavigation {
         if (this.currentAjaxRequest) {
             // Store and repaint the content area to avoid a '0' status
             // server error message.
-            const htmlContent = $('#ajax-content').html();
+            const htmlContent = $('#ajax-content').trigger('prechange').html();
 
             this.currentAjaxRequest.abort();
             $('body').css('cursor', 'progress');
 
-            $('#ajax-content').html(htmlContent);
+            $('#ajax-content').trigger('prechange').html(htmlContent);
         }
 
         this.currentAjaxRequest = $.ajax({
@@ -156,7 +156,7 @@ class PartialNavigation {
                     if (response.getResponseHeader('Content-Disposition')) {
                         window.location = this.url;
                     } else {
-                        $('#ajax-content').html(data).change();
+                        $('#ajax-content').trigger('prechange').html(data).change();
                         $('body').css('cursor', 'default');
                     }
                 }
@@ -238,7 +238,7 @@ class PartialNavigation {
                 errorMessage = 'Server communication error.';
             }
 
-            $('#ajax-content').html(
+            $('#ajax-content').trigger('prechange').html(
                 ' \
                     <div class="row">\
                         <div class="col-xs-12">\
@@ -267,9 +267,9 @@ class PartialNavigation {
                 }
             } else {
                 if ([403, 404, 500].indexOf(jqXHR.status !== -1)) {
-                    $('#ajax-content').html(jqXHR.responseText);
+                    $('#ajax-content').trigger('prechange').html(jqXHR.responseText);
                 } else {
-                    $('#ajax-content').html(jqXHR.statusText);
+                    $('#ajax-content').trigger('prechange').html(jqXHR.statusText);
                 }
             }
         }
@@ -365,7 +365,7 @@ class PartialNavigation {
                     let urlCurrent = new URL(window.location.origin);
                     urlCurrent.hash = lastAjaxFormData.url.pathname + lastAjaxFormData.url.search;
                     history.pushState({}, '', urlCurrent);
-                    $('#ajax-content').html(data).change();
+                    $('#ajax-content').trigger('prechange').html(data).change();
                 }
             }
         });

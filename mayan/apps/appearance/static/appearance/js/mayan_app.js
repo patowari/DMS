@@ -169,7 +169,7 @@ class MayanApp {
                 options['timeOut'] = 0;
             }
             if (value.tags === 'warning') {
-                // Error messages persist.
+                // Warning messages stays 10 seconds.
                 options['timeOut'] = 10000;
             }
 
@@ -194,6 +194,7 @@ class MayanApp {
             app.doRefreshAJAXMenu(value);
         });
         this.setupPanelSelection();
+        this.setupResizePersist();
         partialNavigation.initialize();
     }
 
@@ -427,6 +428,64 @@ class MayanApp {
                     app.lastChecked = $checkbox;
                     window.getSelection().removeAllRanges();
                 }
+            }
+        });
+    }
+
+    async setupResizePersist () {
+        const selectorMarker = 'appearance-resize-persist';
+        const selectorClass = `.${selectorMarker}`;
+        const selectorKey = `${selectorMarker}-`;
+        const selectorKeyLength = selectorKey.length;
+
+        const resizeObserver = new ResizeObserver(function (entries) {
+            for (const entry of entries) {
+                const $this = $(entry.target);
+                const storageKey = selectorKey + entry.target.id;
+                const height = $this.height();
+
+                if (height > 0) {
+                    localStorage.setItem(selectorKey + entry.target.id, height);
+                }
+            }
+        });
+
+        $('#ajax-content').on('prechange', function (event) {
+            const $selector = $(selectorClass);
+
+            for (const element of $selector) {
+                resizeObserver.unobserve(element);
+            }
+        });
+
+        $('#ajax-content').on('change', function (event) {
+            const $selector = $(selectorClass);
+
+            for (const key in localStorage) {
+                if (key.startsWith(selectorKey)) {
+                    const elementId = key.substring(selectorKeyLength);
+                    const height = localStorage.getItem(key);
+                    const $this = $('#' + elementId);
+
+                    if ($this.length) {
+                        $this.height(height);
+                    }
+                }
+            }
+
+            $selector.on('dblclick', function (event) {
+                const $this = $(this);
+                const heightOriginal = $this.data('height-original');
+
+                if (heightOriginal) {
+                    $this.css('height', heightOriginal);
+                } else {
+                    $this.css('height', '');
+                };
+            });
+
+            for (const element of $selector) {
+                resizeObserver.observe(element);
             }
         });
     }

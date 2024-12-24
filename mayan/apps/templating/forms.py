@@ -10,8 +10,8 @@ class TemplateSandboxForm(forms.Form):
         help_text=_(message='Resulting text from the evaluated template.'),
         label=_(message='Result'), required=False, widget=form_widgets.Textarea(
             attrs={
-                'class': 'appearance-overscroll-contain resize-vertical',
-                'readonly': 'readonly', 'rows': 5
+                'class': 'appearance-overscroll-contain appearance-resize-vertical appearance-resize-persist',
+                'readonly': 'readonly', 'rows': 3
             }
         )
     )

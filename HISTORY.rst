@@ -246,6 +246,8 @@
   `DOCUMENTS_TRASHED_DOCUMENT_DELETE_PERIODS_CHECK_TASK_INTERVAL`.
 - Increase the document trash, trashed document deletion, and document stub
   pruning tasks default intervals to 30 minutes.
+- Support height change persistence for the template string, preview and
+  result fields.
 
 4.8.3 (2024-10-04)
 ==================
