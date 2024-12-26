@@ -1,3 +1,5 @@
+import html
+
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from .literals import TEST_TEMPLATE_TAG_RESULT
@@ -20,6 +22,23 @@ class TemplateFilterDictGetTestCase(TemplateTestMixin, BaseTestCase):
             }
         )
         self.assertEqual(result, '')
+
+
+class TemplateFilterDictionaryFlattenTestCase(TemplateTestMixin, BaseTestCase):
+    def test_template_filter(self):
+        test_dictionary_source = {'a': 1, 'b': 2, 'c': {'d': 3}}
+        test_dictionary_result = {'a': 1, 'b': 2, 'c__d': 3}
+
+        result = self._render_test_template(
+            template_string='{{ dict|dictionary_flatten }}', context={
+                'dict': test_dictionary_source
+            }
+        )
+        self.assertEqual(
+            result, html.escape(
+                str(test_dictionary_result)
+            )
+        )
 
 
 class TemplateFilterSplitTestCase(TemplateTestMixin, BaseTestCase):

@@ -250,6 +250,7 @@
   result fields.
 - Add error logging to the file metadata drivers.
 - Fix `flatten_map` not using the `separator` argument.
+- Add the `dictionary_flatten` template filter.
 
 4.8.3 (2024-10-04)
 ==================

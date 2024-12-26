@@ -3,6 +3,8 @@ import base64
 from django.template import Library, Node, TemplateSyntaxError
 from django.utils.html import strip_spaces_between_tags
 
+from mayan.apps.common.utils import flatten_map
+
 register = Library()
 
 
@@ -12,6 +14,18 @@ def dict_get(dictionary, key):
     Return the value for the given key or '' if not found.
     """
     return dictionary.get(key, '')
+
+
+@register.filter
+def dictionary_flatten(dictionary):
+    """
+    Return a flat version of a nested dictionary.
+    """
+    result = {}
+
+    flatten_map(dictionary=dictionary, result=result, separator='__')
+
+    return result
 
 
 @register.simple_tag
