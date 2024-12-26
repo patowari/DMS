@@ -20,7 +20,7 @@ job_docker_build:
     - set -a && sed -E "s/=(.*)/\=\"\1\"/g" config.env > /tmp/config.env && . /tmp/config.env && rm /tmp/config.env && set +a
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_PUSH_USER} --password ${CI_REGISTRY_PUSH_PASSWORD} ${CI_REGISTRY}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} cairo gcc libffi-dev libjpeg-turbo-dev libmagic make musl-dev zlib-dev python3 python3-dev py3-packaging
     - python3 -m venv venv
@@ -65,7 +65,7 @@ job_docker_push_major:
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} python3 python3-dev py3-packaging
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_PUSH_USER} --password ${CI_REGISTRY_PUSH_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.9
       paths:
@@ -102,7 +102,7 @@ job_docker_push_minor:
     - mkdir --parents ${APK_CACHE_DIR}
     - apk update
     - apk add --cache-dir ${APK_CACHE_DIR} python3 python3-dev py3-packaging
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_PUSH_USER} --password ${CI_REGISTRY_PUSH_PASSWORD} ${CI_REGISTRY}
   cache:
     - key: apk-cache-4.9
       paths:
@@ -131,7 +131,7 @@ job_docker_push_minor:
 job_docker_nightly:
   before_script:
     - set -a && sed -E "s/=(.*)/\=\"\1\"/g" config.env > /tmp/config.env && . /tmp/config.env && rm /tmp/config.env && set +a
-    - docker login --username ${CI_REGISTRY_USER} --password ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker login --username ${CI_REGISTRY_PUSH_USER} --password ${CI_REGISTRY_PUSH_PASSWORD} ${CI_REGISTRY}
   image: docker:27.4.1-dind-alpine3.21
   needs:
     - job_docker_build
@@ -412,9 +412,7 @@ job_demo_deploy:
     - releases/nightly
     - releases/staging
   script:
-    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "docker compose down --remove-orphans --volumes || true"
-    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "curl --remote-name-all https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/{.env,docker-compose.yml} --show-error --silent"
-    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "docker compose pull && docker compose up --detach"
+    - ssh ${DEMO_USERNAME}@${DEMO_IP_ADDRESS} "curl --remote-name-all https://gitlab.com/mayan-edms/mayan-edms/-/raw/master/docker/{.env,docker-compose.yml} --show-error --silent && docker compose pull && docker compose down --remove-orphans --volumes || true && docker compose up --detach"
   stage: stage_deploy
   when: manual
   variables:
@@ -456,7 +454,7 @@ job_staging_deploy:
     - scp docker/.env docker/docker-compose.yml ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME}:~
     - DOCKER_VERSION=`cat docker/rootfs/version`;
     - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "echo \"\" >> .env && echo \"# GitLab CI\" >> .env && echo \"MAYAN_DOCKER_IMAGE_NAME=${CI_REGISTRY_IMAGE}\" >> .env && echo \"MAYAN_DOCKER_IMAGE_TAG=${DOCKER_VERSION}\" >> .env"
-    - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "docker login --username '${CI_REGISTRY_USER}' --password '${CI_REGISTRY_PASSWORD}' ${CI_REGISTRY} && docker compose pull && docker compose up --detach"
+    - ssh ${STAGING_SSH_USERNAME}@${STAGING_HOSTNAME} "docker login --username '${CI_REGISTRY_DEPLOY_USER}' --password '${CI_REGISTRY_DEPLOY_PASSWORD}' ${CI_REGISTRY} && docker compose pull && docker compose up --detach"
   stage: stage_deploy
   when: manual
   variables:

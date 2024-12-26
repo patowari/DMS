@@ -258,6 +258,9 @@
 - Centralize the AJAX content update logic.
 - Rename the AJAX content events for clarity.
 - Cover the height reset and copy button HTML into a JavaScript template.
+- Support separate GitLab CI registry push and deploy credentials.
+- Reduce the demo stage SSH connections.
+- Reduce the demo stage downtime.
 
 4.8.3 (2024-10-04)
 ==================
