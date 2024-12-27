@@ -450,6 +450,16 @@ class MayanApp {
             }
         });
 
+        const resizePersistReset = function ($selector) {
+            const heightOriginal = $selector.data('height-original');
+
+            if (heightOriginal) {
+                $selector.css('height', heightOriginal);
+            } else {
+                $selector.css('height', '');
+            };
+        }
+
         $('#ajax-content').on('prechange', function (event) {
             const $selector = $(selectorClass);
 
@@ -460,6 +470,32 @@ class MayanApp {
 
         $('#ajax-content').on('change', function (event) {
             const $selector = $(selectorClass);
+            const html = '<div class="appearance-form-label-suffix"><button type="button" class="btn btn-default btn-xs btn-outline appearance-btn-form-label-suffix appearance-btn-resize-reset" data-original-title="Reset input size height">Reset</button></div>';
+
+            $selector.siblings('label').after(html);
+
+
+            $('.appearance-btn-form-label-suffix').tooltip({animation: true, delay: 100, trigger: 'hover'});
+
+            $('#ajax-content').on('click', '.appearance-btn-resize-reset', function (event) {
+                const $this = $(this);
+
+                $this.attr('title', 'Done!');
+                $this.tooltip('fixTitle');
+                $this.tooltip('show');
+                $this.attr('title', $this.data('original-title'));
+                $this.tooltip('fixTitle');
+
+                const $selector = $this.parent().siblings('.appearance-resize-persist').first();
+
+                resizePersistReset($selector)
+
+                const data_linked_id = $selector.data('linked-id');
+                if (data_linked_id) {
+                    const $data_linked = $(`#${data_linked_id}`);
+                    resizePersistReset($data_linked);
+                }
+            });
 
             for (const key in localStorage) {
                 if (key.startsWith(selectorKey)) {
@@ -472,17 +508,6 @@ class MayanApp {
                     }
                 }
             }
-
-            $selector.on('dblclick', function (event) {
-                const $this = $(this);
-                const heightOriginal = $this.data('height-original');
-
-                if (heightOriginal) {
-                    $this.css('height', heightOriginal);
-                } else {
-                    $this.css('height', '');
-                };
-            });
 
             for (const element of $selector) {
                 resizeObserver.observe(element);

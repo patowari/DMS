@@ -252,6 +252,7 @@
 - Fix `flatten_map` not using the `separator` argument.
 - Add the `dictionary_flatten` template filter.
 - Add the `object_flatten` template filter.
+- Add a reset button to height change persistence elements.
 
 4.8.3 (2024-10-04)
 ==================

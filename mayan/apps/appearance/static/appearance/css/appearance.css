@@ -697,3 +697,13 @@ Input search clearable
 .appearance-resize-vertical {
     resize: vertical;
 }
+
+/* Form labe suffix  */
+
+.appearance-form-label-suffix {
+    float: right;
+}
+
+.appearance-btn-form-label-suffix {
+    font-size: .65em;
+}
