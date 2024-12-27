@@ -65,13 +65,13 @@ def find_packages(directory):
 
 
 install_requires = """
-django==4.2.16
+django==4.2.17
 CairoSVG==2.7.1
 Pillow==11.0.0
 PyYAML==6.0.2
 Whoosh==2.7.4
 bleach==6.2.0
-boto3==1.35.68
+boto3==1.35.85
 celery==5.4.0
 dateparser==1.2.0
 django-activity-stream==2.0.0
@@ -89,7 +89,7 @@ django-stronghold==0.4.0
 django-widget-tweaks==1.5.0
 djangorestframework==3.15.2
 djangorestframework-recursive==0.1.2
-drf-yasg==1.21.7
+drf-yasg==1.21.8
 elasticsearch==7.17.12
 elasticsearch-dsl==7.4.1
 extract-msg==0.52.0
@@ -97,7 +97,7 @@ flex==6.14.1
 furl==2.1.3
 fusepy==3.0.1
 gevent==24.11.1
-google-cloud-storage==2.18.2
+google-cloud-storage==2.19.0
 graphviz==0.20.3
 greenlet==3.1.1
 gunicorn==23.0.0
@@ -105,7 +105,7 @@ importlib-metadata==8.5.0
 jsonschema==4.23.0
 mozilla-django-oidc==4.0.1
 node-semver==0.9.0
-ollama==0.4.1
+ollama==0.4.4
 pycountry==24.6.1
 pycryptodome==3.21.0
 pyotp==2.9.0
@@ -115,7 +115,7 @@ python_gnupg==0.5.3
 pytz==2024.2
 qrcode==8.0
 requests==2.32.3
-sentry-sdk==2.19.0
+sentry-sdk==2.19.2
 setuptools==75.6.0
 sh==2.1.0
 swagger-spec-validator==3.0.4
