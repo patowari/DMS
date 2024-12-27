@@ -3,7 +3,7 @@ import base64
 from django.template import Library, Node, TemplateSyntaxError
 from django.utils.html import strip_spaces_between_tags
 
-from mayan.apps.common.utils import flatten_map
+from mayan.apps.common.utils import flatten_map, flatten_object
 
 register = Library()
 
@@ -39,6 +39,19 @@ def method(obj, method, *args, **kwargs):
         raise TemplateSyntaxError(
             'Error calling object method; {}'.format(exception)
         )
+
+
+@register.filter
+def object_flatten(value):
+    """
+    Return a flat version of a nested object of multiple types.
+    """
+
+    result = dict(
+        flatten_object(obj=value, separator='__')
+    )
+
+    return result
 
 
 @register.simple_tag

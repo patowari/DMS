@@ -281,9 +281,41 @@ def flatten_map(dictionary, result, prefix=None, separator='_'):
         prefix_string = '{}{}'.format(prefix_base, key)
 
         if isinstance(value, dict):
-            flatten_map(dictionary=value, prefix=prefix_string, result=result, separator=separator)
+            flatten_map(
+                dictionary=value, prefix=prefix_string, result=result,
+                separator=separator
+            )
         else:
             result[prefix_string] = value
+
+
+def flatten_object(obj, prefix=None, separator='_'):
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            if prefix is None:
+                prefix_local = key
+            else:
+                prefix_local = '{prefix}{separator}{key}'.format(
+                    key=key, prefix=prefix, separator=separator
+                )
+
+            yield from flatten_object(
+                obj=value, prefix=prefix_local, separator=separator
+            )
+    elif isinstance(obj, list):
+        for index, item in enumerate(obj):
+            if prefix is None:
+                prefix_local = index
+            else:
+                prefix_local = '{prefix}{separator}{index}'.format(
+                    index=index, prefix=prefix, separator=separator
+                )
+
+            yield from flatten_object(
+                obj=item, prefix=prefix_local, separator=separator
+            )
+    else:
+        yield (prefix, obj)
 
 
 def get_class_full_name(klass):

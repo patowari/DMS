@@ -41,6 +41,82 @@ class TemplateFilterDictionaryFlattenTestCase(TemplateTestMixin, BaseTestCase):
         )
 
 
+class TemplateFilterObjectFlattenTestCase(TemplateTestMixin, BaseTestCase):
+    def test_template_dictionary(self):
+        test_obj = {
+            'a': {
+                'b': [1, 2, {'c': 3}],
+                'd': 4
+            },
+            'e': 5,
+            'f': [
+                {'g': 6},
+                {'h': {'i': 7}}
+            ],
+            'j': {'k': {'l': 8, 'm': 9}}
+        }
+        test_result = {
+            'a__b__0': 1,
+            'a__b__1': 2,
+            'a__b__2__c': 3,
+            'a__d': 4,
+            'e': 5,
+            'f__0__g': 6,
+            'f__1__h__i': 7,
+            'j__k__l': 8,
+            'j__k__m': 9
+        }
+
+        result = self._render_test_template(
+            template_string='{{ obj|object_flatten }}', context={
+                'obj': test_obj
+            }
+        )
+        self.assertEqual(
+            result, html.escape(
+                str(test_result)
+            )
+        )
+
+    def test_template_list(self):
+        test_obj = [
+            {
+                'a': {
+                    'b': [1, 2, {'c': 3}],
+                    'd': 4
+                },
+                'e': 5,
+                'f': [
+                    {'g': 6},
+                    {'h': {'i': 7}}
+                ],
+                'j': {'k': {'l': 8, 'm': 9}}
+            }
+        ]
+        test_result = {
+            '0__a__b__0': 1,
+            '0__a__b__1': 2,
+            '0__a__b__2__c': 3,
+            '0__a__d': 4,
+            '0__e': 5,
+            '0__f__0__g': 6,
+            '0__f__1__h__i': 7,
+            '0__j__k__l': 8,
+            '0__j__k__m': 9
+        }
+
+        result = self._render_test_template(
+            template_string='{{ obj|object_flatten }}', context={
+                'obj': test_obj
+            }
+        )
+        self.assertEqual(
+            result, html.escape(
+                str(test_result)
+            )
+        )
+
+
 class TemplateFilterSplitTestCase(TemplateTestMixin, BaseTestCase):
     def test_filter_split_valid(self):
         result = self._render_test_template(

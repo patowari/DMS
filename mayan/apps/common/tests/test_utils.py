@@ -3,8 +3,8 @@ from django.db import models
 from mayan.apps.testing.tests.base import BaseTestCase
 
 from ..utils import (
-    ResolverPipelineModelAttribute, flatten_list, flatten_map, group_iterator,
-    parse_range
+    ResolverPipelineModelAttribute, flatten_list, flatten_map, flatten_object,
+    group_iterator, parse_range
 )
 
 
@@ -83,6 +83,72 @@ class FlattenMapTestCase(BaseTestCase):
         )
 
         self.assertEqual(result, test_dictionary_result)
+
+
+class FlattenObjectTestCase(BaseTestCase):
+    def test_root_dictionary(self):
+        test_obj = {
+            'a': {
+                'b': [1, 2, {'c': 3}],
+                'd': 4
+            },
+            'e': 5,
+            'f': [
+                {'g': 6},
+                {'h': {'i': 7}}
+            ],
+            'j': {'k': {'l': 8, 'm': 9}}
+        }
+        test_result = {
+            'a_b_0': 1,
+            'a_b_1': 2,
+            'a_b_2_c': 3,
+            'a_d': 4,
+            'e': 5,
+            'f_0_g': 6,
+            'f_1_h_i': 7,
+            'j_k_l': 8,
+            'j_k_m': 9
+        }
+
+        result = dict(
+            flatten_object(obj=test_obj)
+        )
+
+        self.assertEqual(result, test_result)
+
+    def test_root_list(self):
+        test_obj = [
+            {
+                'a': {
+                    'b': [1, 2, {'c': 3}],
+                    'd': 4
+                },
+                'e': 5,
+                'f': [
+                    {'g': 6},
+                    {'h': {'i': 7}}
+                ],
+                'j': {'k': {'l': 8, 'm': 9}}
+            }
+        ]
+        test_result = {
+            '0_a_b_0': 1,
+            '0_a_b_1': 2,
+            '0_a_b_2_c': 3,
+            '0_a_d': 4,
+            '0_e': 5,
+            '0_f_0_g': 6,
+            '0_f_1_h_i': 7,
+            '0_j_k_l': 8,
+            '0_j_k_m': 9
+        }
+
+        result = dict(
+            flatten_object(obj=test_obj)
+        )
+
+        self.assertEqual(result, test_result)
 
 
 class GroupIteratorTestCase(BaseTestCase):
