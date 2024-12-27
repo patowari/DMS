@@ -180,8 +180,12 @@ class MayanApp {
     async initialize () {
         const self = this;
 
+        this.partialNavigationApp = partialNavigation;
+        partialNavigation.initialize();
+
         this.setupAJAXSpinner();
         MayanApp.setupDropdownDirectionChange();
+        this.setupFormElementContentCopy();
         this.setupFormHotkeys();
         this.setupFullHeightResizing();
         this.setupItemsSelector();
@@ -195,7 +199,6 @@ class MayanApp {
         });
         this.setupPanelSelection();
         this.setupResizePersist();
-        partialNavigation.initialize();
     }
 
     setupAJAXSpinner () {
@@ -214,6 +217,38 @@ class MayanApp {
             $(document).ajaxStop(function() {
                 $(self.ajaxSpinnerSeletor).fadeOut();
                 self.ajaxExecuting = false;
+            });
+        });
+    }
+
+    async setupFormElementContentCopy () {
+        const app = this;
+        const selectorClass = '.appearance-form-control-copy';
+
+        const updateTooltip = function ($this, text) {
+            $this.attr('title', text);
+            $this.tooltip('fixTitle');
+            $this.tooltip('show');
+            $this.attr('title', $this.data('original-title'));
+            $this.tooltip('fixTitle');
+        }
+
+        app.partialNavigationApp.$ajaxContent.on('updated', function (event) {
+            const $selector = $(selectorClass);
+            const html = $('#template-appearance-form-element-content-copy').html();
+
+            $selector.siblings('label').after(html);
+
+            $('.appearance-btn-copy').tooltip({animation: true, delay: 100, trigger: 'hover'});
+
+            app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-copy', function (event) {
+                const $this = $(this);
+
+                navigator.clipboard.writeText($selector.val()).then(function () {
+                    updateTooltip($this, gettext('Copied!'));
+                }, function () {
+                    updateTooltip($this, gettext('Failed. Check clipboard permissions.'));
+                });
             });
         });
     }
@@ -433,6 +468,7 @@ class MayanApp {
     }
 
     async setupResizePersist () {
+        const app = this;
         const selectorMarker = 'appearance-resize-persist';
         const selectorClass = `.${selectorMarker}`;
         const selectorKey = `${selectorMarker}-`;
@@ -460,7 +496,7 @@ class MayanApp {
             };
         }
 
-        $('#ajax-content').on('prechange', function (event) {
+        app.partialNavigationApp.$ajaxContent.on('preupdate', function (event) {
             const $selector = $(selectorClass);
 
             for (const element of $selector) {
@@ -468,19 +504,18 @@ class MayanApp {
             }
         });
 
-        $('#ajax-content').on('change', function (event) {
+        app.partialNavigationApp.$ajaxContent.on('updated', function (event) {
             const $selector = $(selectorClass);
-            const html = '<div class="appearance-form-label-suffix"><button type="button" class="btn btn-default btn-xs btn-outline appearance-btn-form-label-suffix appearance-btn-resize-reset" data-original-title="Reset input size height">Reset</button></div>';
+            const html = $('#template-appearance-form-element-height-reset').html();
 
             $selector.siblings('label').after(html);
 
-
             $('.appearance-btn-form-label-suffix').tooltip({animation: true, delay: 100, trigger: 'hover'});
 
-            $('#ajax-content').on('click', '.appearance-btn-resize-reset', function (event) {
+            app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-resize-reset', function (event) {
                 const $this = $(this);
 
-                $this.attr('title', 'Done!');
+                $this.attr('title', gettext('Done!'));
                 $this.tooltip('fixTitle');
                 $this.tooltip('show');
                 $this.attr('title', $this.data('original-title'));

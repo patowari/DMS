@@ -253,6 +253,11 @@
 - Add the `dictionary_flatten` template filter.
 - Add the `object_flatten` template filter.
 - Add a reset button to height change persistence elements.
+- Add a button to copy template code to the clipboard.
+- Cache the AJAX content element selector.
+- Centralize the AJAX content update logic.
+- Rename the AJAX content events for clarity.
+- Cover the height reset and copy button HTML into a JavaScript template.
 
 4.8.3 (2024-10-04)
 ==================

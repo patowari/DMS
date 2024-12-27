@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-12-27 19:12+0000\n"
 "PO-Revision-Date: 2020-04-08 04:06+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr ""
 
@@ -27,26 +27,22 @@ msgid "Fancybox"
 msgstr ""
 
 #: dependencies.py:12
-msgid "FontAwesome"
-msgstr ""
-
-#: dependencies.py:16
 msgid "jQuery"
 msgstr ""
 
-#: dependencies.py:20
+#: dependencies.py:16
 msgid "JQuery Form"
 msgstr ""
 
-#: dependencies.py:24
+#: dependencies.py:20
 msgid "JQuery Match Height"
 msgstr ""
 
-#: dependencies.py:28
+#: dependencies.py:24
 msgid "Select 2"
 msgstr ""
 
-#: dependencies.py:32
+#: dependencies.py:28
 msgid "Toastr"
 msgstr ""
 
@@ -166,6 +162,22 @@ msgstr ""
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
+msgstr ""
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy content to clipboard"
+msgstr ""
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset input size height"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset"
 msgstr ""
 
 #: templatetags/appearance_tags.py:77

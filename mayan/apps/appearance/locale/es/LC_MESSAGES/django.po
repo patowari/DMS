@@ -1,26 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-12-27 19:12+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/rosarior/teams/13584/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -29,26 +30,22 @@ msgid "Fancybox"
 msgstr "Fancybox"
 
 #: dependencies.py:12
-msgid "FontAwesome"
-msgstr "FontAwesome"
-
-#: dependencies.py:16
 msgid "jQuery"
 msgstr "jQuery"
 
-#: dependencies.py:20
+#: dependencies.py:16
 msgid "JQuery Form"
 msgstr "JQuery Form"
 
-#: dependencies.py:24
+#: dependencies.py:20
 msgid "JQuery Match Height"
 msgstr "JQuery Match Height"
 
-#: dependencies.py:28
+#: dependencies.py:24
 msgid "Select 2"
 msgstr "Select 2"
 
-#: dependencies.py:32
+#: dependencies.py:28
 msgid "Toastr"
 msgstr "Toastr"
 
@@ -105,8 +102,8 @@ msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
 msgstr ""
-"La hoja de estilo CSS para cambiar la apariencia de los diferentes elementos"
-" de la interfaz de usuario."
+"La hoja de estilo CSS para cambiar la apariencia de los diferentes elementos "
+"de la interfaz de usuario."
 
 #: models.py:27
 msgid "Stylesheet"
@@ -178,6 +175,22 @@ msgid ""
 msgstr ""
 "Tiempo en milisegundos después del cual se borrará una solicitud limitada, "
 "lo que permitirá que se realice una solicitud adicional."
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy content to clipboard"
+msgstr ""
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset input size height"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset"
+msgstr ""
 
 #: templatetags/appearance_tags.py:77
 msgid "None"

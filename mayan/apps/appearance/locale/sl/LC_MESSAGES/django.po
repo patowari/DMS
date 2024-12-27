@@ -1,27 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Translators:
 # Jože Detečnik <joze.detecnik@3tav.si>, 2024
 # Roberto Rosario, 2024
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2024-12-27 19:12+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0000\n"
 "Last-Translator: Roberto Rosario, 2024\n"
-"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
+"Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/"
+"sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 
-#: apps.py:58 events.py:6 permissions.py:6 settings.py:12
+#: apps.py:57 events.py:6 permissions.py:6 settings.py:12
 msgid "Appearance"
 msgstr "Videz"
 
@@ -30,26 +32,22 @@ msgid "Fancybox"
 msgstr ""
 
 #: dependencies.py:12
-msgid "FontAwesome"
-msgstr ""
-
-#: dependencies.py:16
 msgid "jQuery"
 msgstr ""
 
-#: dependencies.py:20
+#: dependencies.py:16
 msgid "JQuery Form"
 msgstr ""
 
-#: dependencies.py:24
+#: dependencies.py:20
 msgid "JQuery Match Height"
 msgstr ""
 
-#: dependencies.py:28
+#: dependencies.py:24
 msgid "Select 2"
 msgstr ""
 
-#: dependencies.py:32
+#: dependencies.py:28
 msgid "Toastr"
 msgstr ""
 
@@ -169,6 +167,22 @@ msgstr ""
 msgid ""
 "Time in milliseconds after which a throttled request will clear allowing an "
 "additional request to be performed."
+msgstr ""
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy content to clipboard"
+msgstr ""
+
+#: templates/appearance/app/foot.html:21
+msgid "Copy"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset input size height"
+msgstr ""
+
+#: templates/appearance/app/foot.html:27
+msgid "Reset"
 msgstr ""
 
 #: templatetags/appearance_tags.py:77

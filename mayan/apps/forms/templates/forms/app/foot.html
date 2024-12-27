@@ -28,7 +28,7 @@
 
     Dropzone.autoDiscover = false;
 
-    $('#ajax-content').on('change', function (event) {
+    $('#ajax-content').on('updated', function (event) {
         const $dropzone = $('.dropzone');
         const $dropzoneForm = $dropzone.parents('form')[0];
         const $fileField = $('#id_' + paramName);

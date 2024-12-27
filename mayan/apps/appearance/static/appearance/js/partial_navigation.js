@@ -57,7 +57,9 @@ class PartialNavigation {
         // AJAX Refresh button.
         this.ajaxRefreshButtonAnimationSpeed = 1000;
         this.ajaxRefreshButtonEnabled = true;
-        this.ajaxRefreshButtonTimer = setTimeout(null);;
+        this.ajaxRefreshButtonTimer = setTimeout(null);
+
+        this.$ajaxContent = null;
     }
 
     initialize () {
@@ -65,6 +67,17 @@ class PartialNavigation {
         this.setupAjaxNavigation();
         this.setupAjaxForm();
         this.setupAjaxRefreshButton();
+    }
+
+    ajaxContentSet (content) {
+        const app = this;
+        const htmlContent = app.$ajaxContent.html();
+
+        app.$ajaxContent.trigger('preupdate');
+        app.$ajaxContent.html(content);
+        app.$ajaxContent.trigger('updated');
+
+        return htmlContent;
     }
 
     filterLocation (newLocation) {
@@ -130,12 +143,12 @@ class PartialNavigation {
         if (this.currentAjaxRequest) {
             // Store and repaint the content area to avoid a '0' status
             // server error message.
-            const htmlContent = $('#ajax-content').trigger('prechange').html();
+            const htmlContent = app.ajaxContentSet();
 
             this.currentAjaxRequest.abort();
             $('body').css('cursor', 'progress');
 
-            $('#ajax-content').trigger('prechange').html(htmlContent);
+            app.ajaxContentSet(htmlContent);
         }
 
         this.currentAjaxRequest = $.ajax({
@@ -156,7 +169,7 @@ class PartialNavigation {
                     if (response.getResponseHeader('Content-Disposition')) {
                         window.location = this.url;
                     } else {
-                        $('#ajax-content').trigger('prechange').html(data).change();
+                        app.ajaxContentSet(data);
                         $('body').css('cursor', 'default');
                     }
                 }
@@ -229,6 +242,8 @@ class PartialNavigation {
          * Method to process an AJAX request and make it presentable to the
          * user.
          */
+        const app = this;
+
         if (djangoDEBUG) {
             let errorMessage = null;
 
@@ -238,7 +253,7 @@ class PartialNavigation {
                 errorMessage = 'Server communication error.';
             }
 
-            $('#ajax-content').trigger('prechange').html(
+            app.ajaxContentSet(
                 ' \
                     <div class="row">\
                         <div class="col-xs-12">\
@@ -267,9 +282,9 @@ class PartialNavigation {
                 }
             } else {
                 if ([403, 404, 500].indexOf(jqXHR.status !== -1)) {
-                    $('#ajax-content').trigger('prechange').html(jqXHR.responseText);
+                    app.ajaxContentSet(jqXHR.responseText);
                 } else {
-                    $('#ajax-content').trigger('prechange').html(jqXHR.statusText);
+                    app.ajaxContentSet(jqXHR.statusText);
                 }
             }
         }
@@ -298,7 +313,7 @@ class PartialNavigation {
         this.loadAjaxContent(newLocation);
     }
 
-    setupAjaxAnchors () {
+    async setupAjaxAnchors () {
         /*
          * Setup the new click event handler.
          */
@@ -308,7 +323,7 @@ class PartialNavigation {
         });
     }
 
-    setupAjaxForm () {
+    async setupAjaxForm () {
         /*
          * Method to setup the handling of form in an AJAX way.
          */
@@ -365,13 +380,14 @@ class PartialNavigation {
                     let urlCurrent = new URL(window.location.origin);
                     urlCurrent.hash = lastAjaxFormData.url.pathname + lastAjaxFormData.url.search;
                     history.pushState({}, '', urlCurrent);
-                    $('#ajax-content').trigger('prechange').html(data).change();
+                    app.ajaxContentSet(data);
+
                 }
             }
         });
     }
 
-    setupAjaxRefreshButton () {
+    async setupAjaxRefreshButton () {
         const app = this;
 
         $('body').on('click', 'a.appearance-link-ajax-refresh', function (event) {
@@ -400,7 +416,7 @@ class PartialNavigation {
         });
     }
 
-    setupAjaxNavigation () {
+    async setupAjaxNavigation () {
         /*
          * Setup the navigation method using the hash of the location.
          * Also handles the back button event and loads via AJAX any
@@ -409,6 +425,7 @@ class PartialNavigation {
          * code will still work without change.
          */
         const app = this;
+        this.$ajaxContent = $('#ajax-content');
 
         // Load ajax content when the hash changes.
         if (window.history && window.history.pushState) {
