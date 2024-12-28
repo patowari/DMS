@@ -263,6 +263,7 @@
 - Reduce the demo stage downtime.
 - Trigger the AJAX content `updated` event only when the content is ready
   for manipulation.
+- Convert `.select2-templating` elements only once per load.
 
 4.8.3 (2024-10-04)
 ==================

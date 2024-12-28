@@ -90,9 +90,13 @@ jQuery(document).ready(function() {
         return $(output);
     }
 
-    $('.select2-templating').select2({
+    const cssClassSelect2Templating = 'select2-templating';
+    const cssClassSelect2TemplatingAttached = `${cssClassSelect2Templating}-attached`;
+    const $selector = $(`.${cssClassSelect2Templating}`).not(`.${cssClassSelect2TemplatingAttached}`);
+
+    $selector.select2({
         templateResult: selectTemplatingEntryTemplate,
         templateSelection: selectTemplatingEntryTemplate,
         width: '100%'
-    });
+    }).addClass(cssClassSelect2TemplatingAttached);
 });
