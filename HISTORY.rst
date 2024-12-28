@@ -261,6 +261,8 @@
 - Support separate GitLab CI registry push and deploy credentials.
 - Reduce the demo stage SSH connections.
 - Reduce the demo stage downtime.
+- Trigger the AJAX content `updated` event only when the content is ready
+  for manipulation.
 
 4.8.3 (2024-10-04)
 ==================

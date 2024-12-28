@@ -74,8 +74,9 @@ class PartialNavigation {
         const htmlContent = app.$ajaxContent.html();
 
         app.$ajaxContent.trigger('preupdate');
-        app.$ajaxContent.html(content);
-        app.$ajaxContent.trigger('updated');
+        app.$ajaxContent.html(content).ready(function () {
+            app.$ajaxContent.trigger('updated');
+        });
 
         return htmlContent;
     }
