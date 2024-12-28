@@ -223,7 +223,8 @@ class MayanApp {
 
     async setupFormElementContentCopy () {
         const app = this;
-        const selectorClass = '.appearance-form-control-copy';
+        const cssClassSelector = 'appearance-form-control-copy';
+        const cssClassSelectorAttached = `${cssClassSelector}-attached`;
 
         const updateTooltip = function ($this, text) {
             $this.attr('title', text);
@@ -234,21 +235,25 @@ class MayanApp {
         }
 
         app.partialNavigationApp.$ajaxContent.on('updated', function (event) {
-            const $selector = $(selectorClass);
-            const html = $('#template-appearance-form-element-content-copy').html();
+            const $selector = $(`.${cssClassSelector}`).not(`.${cssClassSelectorAttached}`);
 
-            $selector.siblings('label').after(html);
+            if ($selector.length) {
+                const html = $('#template-appearance-form-element-content-copy').html();
 
-            $('.appearance-btn-copy').tooltip({animation: true, delay: 100, trigger: 'hover'});
+                $selector.siblings('label').after(html);
 
-            app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-copy', function (event) {
-                const $this = $(this);
+                $selector.addClass(cssClassSelectorAttached);
+            }
+        });
 
-                navigator.clipboard.writeText($selector.val()).then(function () {
-                    updateTooltip($this, gettext('Copied!'));
-                }, function () {
-                    updateTooltip($this, gettext('Failed. Check clipboard permissions.'));
-                });
+        app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-copy', function (event) {
+            const $this = $(this);
+            const $source = $this.parent().parent().children(`.${cssClassSelectorAttached}`)
+
+            navigator.clipboard.writeText($source.val()).then(function () {
+                updateTooltip($this, gettext('Copied!'));
+            }, function () {
+                updateTooltip($this, gettext('Failed. Check clipboard permissions.'));
             });
         });
     }
@@ -469,19 +474,20 @@ class MayanApp {
 
     async setupResizePersist () {
         const app = this;
-        const selectorMarker = 'appearance-resize-persist';
-        const selectorClass = `.${selectorMarker}`;
-        const selectorKey = `${selectorMarker}-`;
-        const selectorKeyLength = selectorKey.length;
+        const cssClassResizePersist = 'appearance-resize-persist';
+        const selectorClass = `.${cssClassResizePersist}`;
+        const keySelector = `${cssClassResizePersist}-`;
+        const keySelectorLength = keySelector.length;
+        const cssClassResizePersistAttached = `${cssClassResizePersist}-attached`;
 
         const resizeObserver = new ResizeObserver(function (entries) {
             for (const entry of entries) {
                 const $this = $(entry.target);
-                const storageKey = selectorKey + entry.target.id;
+                const storageKey = keySelector + entry.target.id;
                 const height = $this.height();
 
                 if (height > 0) {
-                    localStorage.setItem(selectorKey + entry.target.id, height);
+                    localStorage.setItem(keySelector + entry.target.id, height);
                 }
             }
         });
@@ -505,48 +511,50 @@ class MayanApp {
         });
 
         app.partialNavigationApp.$ajaxContent.on('updated', function (event) {
-            const $selector = $(selectorClass);
-            const html = $('#template-appearance-form-element-height-reset').html();
+            const $selector = $(selectorClass).not(`.${cssClassResizePersistAttached}`);
 
-            $selector.siblings('label').after(html);
+            if ($selector.length) {
+                const html = $('#template-appearance-form-element-height-reset').html();
 
-            $('.appearance-btn-form-label-suffix').tooltip({animation: true, delay: 100, trigger: 'hover'});
+                $selector.siblings('label').after(html);
+                $selector.addClass(cssClassResizePersistAttached);
 
-            app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-resize-reset', function (event) {
-                const $this = $(this);
+                for (const key in localStorage) {
+                    if (key.startsWith(keySelector)) {
+                        const elementId = key.substring(keySelectorLength);
+                        const height = localStorage.getItem(key);
+                        const $this = $('#' + elementId);
 
-                $this.attr('title', gettext('Done!'));
-                $this.tooltip('fixTitle');
-                $this.tooltip('show');
-                $this.attr('title', $this.data('original-title'));
-                $this.tooltip('fixTitle');
-
-                const $selector = $this.parent().siblings('.appearance-resize-persist').first();
-
-                resizePersistReset($selector)
-
-                const data_linked_id = $selector.data('linked-id');
-                if (data_linked_id) {
-                    const $data_linked = $(`#${data_linked_id}`);
-                    resizePersistReset($data_linked);
-                }
-            });
-
-            for (const key in localStorage) {
-                if (key.startsWith(selectorKey)) {
-                    const elementId = key.substring(selectorKeyLength);
-                    const height = localStorage.getItem(key);
-                    const $this = $('#' + elementId);
-
-                    if ($this.length) {
-                        $this.height(height);
+                        if ($this.length) {
+                            $this.height(height);
+                        }
                     }
                 }
+
+                for (const element of $selector) {
+                    resizeObserver.observe(element);
+                }
+            }
+        });
+
+        app.partialNavigationApp.$ajaxContent.on('click', '.appearance-btn-resize-reset', function (event) {
+            const $this = $(this);
+            const $source = $this.parent().siblings('.appearance-resize-persist').first();
+
+            resizePersistReset($source)
+
+            const data_linked_id = $source.data('linked-id');
+
+            if (data_linked_id) {
+                const $linked = $(`#${data_linked_id}`);
+                resizePersistReset($linked);
             }
 
-            for (const element of $selector) {
-                resizeObserver.observe(element);
-            }
+            $this.attr('title', gettext('Done!'));
+            $this.tooltip('fixTitle');
+            $this.tooltip('show');
+            $this.attr('title', $this.data('original-title'));
+            $this.tooltip('fixTitle');
         });
     }
 
