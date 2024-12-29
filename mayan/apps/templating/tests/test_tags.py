@@ -24,6 +24,24 @@ class TemplateFilterDictGetTestCase(TemplateTestMixin, BaseTestCase):
         self.assertEqual(result, '')
 
 
+class TemplateFilterDictionaryGetTestCase(TemplateTestMixin, BaseTestCase):
+    def test_filter_dict_get_valid(self):
+        result = self._render_test_template(
+            template_string='{{ dict|dictionary_get:1 }}', context={
+                'dict': {1: 'a'}
+            }
+        )
+        self.assertEqual(result, 'a')
+
+    def test_filter_dict_get_invalid(self):
+        result = self._render_test_template(
+            template_string='{{ dict|dictionary_get:2 }}', context={
+                'dict': {1: 'a'}
+            }
+        )
+        self.assertEqual(result, '')
+
+
 class TemplateFilterDictionaryFlattenTestCase(TemplateTestMixin, BaseTestCase):
     def test_template_filter(self):
         test_dictionary_source = {'a': 1, 'b': 2, 'c': {'d': 3}}

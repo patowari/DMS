@@ -20,6 +20,15 @@ def _range(*args):
 def dict_get(dictionary, key):
     """
     Return the value for the given key or '' if not found.
+    Deprecated in favor or `dictionary_get`.
+    """
+    return dictionary.get(key, '')
+
+
+@register.filter
+def dictionary_get(dictionary, key):
+    """
+    Return the value for the given key or '' if not found.
     """
     return dictionary.get(key, '')
 

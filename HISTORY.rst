@@ -281,6 +281,8 @@
 - Improve the worker, queue, and task type list views to include more
   information, memory size formatting, view inter-linking.
 - Support searching document by language.
+- Add template filter `dictionary_get`. This deprecates the existing filter
+  `dict_get`. Both operate exactly the same differing only by name.
 
 4.8.3 (2024-10-04)
 ==================
