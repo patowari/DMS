@@ -153,6 +153,49 @@ class DocumentFieldsSearchTestCase(
         events = self._get_test_events()
         self.assertEqual(events.count(), 0)
 
+    def test_search_model_document_by_language_no_permission(self):
+        self._clear_events()
+
+        saved_resultset, queryset = self._do_test_search(
+            query={'language': self._test_document.language}
+        )
+        self.assertFalse(self._test_document in queryset)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_search_model_document_by_language_with_access(self):
+        self.grant_access(
+            obj=self._test_document, permission=permission_document_view
+        )
+
+        self._clear_events()
+
+        saved_resultset, queryset = self._do_test_search(
+            query={'language': self._test_document.language}
+        )
+        self.assertTrue(self._test_document in queryset)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
+    def test_trashed_search_model_document_by_language_with_access(self):
+        self.grant_access(
+            obj=self._test_document, permission=permission_document_view
+        )
+
+        self._test_document.delete()
+
+        self._clear_events()
+
+        saved_resultset, queryset = self._do_test_search(
+            query={'language': self._test_document.language}
+        )
+        self.assertTrue(self._test_document not in queryset)
+
+        events = self._get_test_events()
+        self.assertEqual(events.count(), 0)
+
     def test_search_model_document_by_uuid_no_permission(self):
         self._clear_events()
 

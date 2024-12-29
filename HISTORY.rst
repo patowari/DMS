@@ -280,6 +280,7 @@
 - Update `ObjectLinkWidget` to work with objects other than models.
 - Improve the worker, queue, and task type list views to include more
   information, memory size formatting, view inter-linking.
+- Support searching document by language.
 
 4.8.3 (2024-10-04)
 ==================

@@ -37,6 +37,7 @@ search_model_document.add_model_field(
 search_model_document.add_model_field(field='datetime_created')
 search_model_document.add_model_field(field='label')
 search_model_document.add_model_field(field='description')
+search_model_document.add_model_field(field='language')
 search_model_document.add_model_field(field='uuid')
 search_model_document.add_model_field(
     field='files__checksum', label=('Document file checksum')
