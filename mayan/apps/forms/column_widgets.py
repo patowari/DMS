@@ -27,7 +27,11 @@ class ObjectLinkWidget(SourceColumnWidget):
 
         if self.value:
             label = str(self.value)
-            object_type = '{}: '.format(self.value._meta.verbose_name)
+            try:
+                object_type = '{}: '.format(self.value._meta.verbose_name)
+            except AttributeError:
+                object_type = ''
+
             try:
                 url = self.value.get_absolute_url()
             except AttributeError:
