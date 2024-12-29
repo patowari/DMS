@@ -2,6 +2,7 @@
 {% load static %}
 
 {% load smart_settings_tags %}
+{% load views_tags %}
 
 <script src="{% static 'appearance/node_modules/jquery/dist/jquery.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'appearance/packages/jquery.scrollview.js' %}" type="text/javascript"></script>
@@ -109,6 +110,19 @@
             $inputSearch.val('').trigger('keyup').focus();
             if ($inputSearch.data('submit-on-clear')) {
                 $(this).parents('form').submit();
+            }
+        });
+
+        {% views_get_paging_query_string page_number='' as paging_query_string %}
+
+        $('#ajax-content').on('change', '.appearance-pagination-page-select', function () {
+            const $this = $(this);
+            const pageNumber = parseInt($this.val());
+
+            if (Number.isInteger(pageNumber) && pageNumber > 0) {
+                partialNavigation.setLocation(`{{ paging_query_string }}${ pageNumber }`);
+            } else {
+                toastr['warning']('{% trans "Page number must be a positive integer." %}', '');
             }
         });
     });

@@ -133,6 +133,26 @@ class TemplateTagLoadingTestCase(TemplateTestMixin, BaseTestCase):
         self.assertEqual(result, TEST_TEMPLATE_TAG_RESULT)
 
 
+class TemplateTagRangeTestCase(TemplateTestMixin, BaseTestCase):
+    def test_user_template_tag_range_start(self):
+        result = self._render_test_template(
+            template_string='{% range 1 10 %}'
+        )
+        self.assertEqual(result, 'range(1, 10)')
+
+    def test_user_template_tag_range_step(self):
+        result = self._render_test_template(
+            template_string='{% range 1 10 2 %}'
+        )
+        self.assertEqual(result, 'range(1, 10, 2)')
+
+    def test_user_template_tag_range_stop(self):
+        result = self._render_test_template(
+            template_string='{% range 10 %}'
+        )
+        self.assertEqual(result, 'range(0, 10)')
+
+
 class TemplateTagSetTestCase(TemplateTestMixin, BaseTestCase):
     def test_tag_set_string(self):
         result = self._render_test_template(

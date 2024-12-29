@@ -8,6 +8,14 @@ from mayan.apps.common.utils import flatten_map, flatten_object
 register = Library()
 
 
+@register.simple_tag(name='range')
+def _range(*args):
+    """
+    Return an object that produces a sequence of integers
+    """
+    return range(*args)
+
+
 @register.filter
 def dict_get(dictionary, key):
     """

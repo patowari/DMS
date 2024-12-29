@@ -249,6 +249,18 @@
 - Support height change persistence for the template string, preview and
   result fields.
 - Add error logging to the file metadata drivers.
+- Support jump to any user specified page. Add setting
+  `APPEARANCE_PAGINATION_INPUT_ENABLE`.
+- Add the `range` template tag.
+- Add a dropdown based page selector. Add settings
+  `APPEARANCE_PAGINATION_DROPDOWN_RANGE` and
+  `APPEARANCE_PAGINATION_DROPDOWN_ENABLE`.
+- Add settings to configure the elided pager. Add settings
+  `APPEARANCE_ELIDED_PAGER_ON_EACH_SIDE` and
+  `APPEARANCE_ELIDED_PAGER_ON_ENDS`.
+- Support separate GitLab CI registry push and deploy credentials.
+- Reduce the demo stage SSH connections.
+- Reduce the demo stage downtime.
 - Fix `flatten_map` not using the `separator` argument.
 - Add the `dictionary_flatten` template filter.
 - Add the `object_flatten` template filter.
