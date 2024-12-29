@@ -283,6 +283,7 @@
 - Support searching document by language.
 - Add template filter `dictionary_get`. This deprecates the existing filter
   `dict_get`. Both operate exactly the same differing only by name.
+- Add sharded directory filesystem storage backend.
 - Rebalance Celery tasks per child values.
 
 4.8.3 (2024-10-04)
