@@ -7,7 +7,9 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 from mayan.apps.app_manager.apps import MayanAppConfig
-from mayan.apps.common.menus import menu_list_facet, menu_tools, menu_return
+from mayan.apps.common.menus import (
+    menu_list_facet, menu_tools, menu_related, menu_return
+)
 from mayan.apps.common.signals import signal_perform_upgrade
 from mayan.apps.forms import column_widgets
 from mayan.apps.navigation.source_columns import SourceColumn
@@ -139,23 +141,27 @@ class TaskManagerApp(MayanAppConfig):
             source=CeleryQueue, widget=column_widgets.TwoStateWidget
         )
         SourceColumn(
-            attribute='get_task_type_count', source=CeleryQueue
+            attribute='get_task_type_count', include_label=True,
+            source=CeleryQueue
         )
 
         # Task type
 
         SourceColumn(attribute='get_label', source=TaskType)
         SourceColumn(
-            attribute='get_dotted_path', include_label=True, is_identifier=True, source=TaskType
+            attribute='get_dotted_path', include_label=True,
+            is_identifier=True, source=TaskType
         )
         SourceColumn(
             attribute='get_schedule', include_label=True, source=TaskType
         )
         SourceColumn(
-            attribute='get_queue', include_label=True, source=TaskType
+            attribute='get_queue', include_label=True,
+            source=TaskType, widget=column_widgets.ObjectLinkWidget
         )
         SourceColumn(
-            attribute='get_worker', include_label=True, source=TaskType
+            attribute='get_worker', include_label=True,
+            source=TaskType, widget=column_widgets.ObjectLinkWidget
         )
 
         # Task
@@ -195,34 +201,42 @@ class TaskManagerApp(MayanAppConfig):
             source=Worker
         )
         SourceColumn(
-            attribute='name', label=_(message='Name'), source=Worker
+            attribute='name', include_label=True, label=_(message='Name'),
+            source=Worker
         )
         SourceColumn(
-            attribute='maximum_memory_per_child', help_text=_(
-                message='Maximum amount of resident memory a worker can execute '
-                'before it\'s replaced by a new process.'
-            ), label=_(message='Maximum memory per child'), source=Worker
+            attribute='get_maximum_memory_per_child', include_label=True,
+            source=Worker
         )
         SourceColumn(
             attribute='maximum_tasks_per_child', help_text=_(
                 message='Maximum number of tasks a worker can execute before it\'s '
                 'replaced by a new process.'
-            ), label=_(message='Maximum tasks per child'), source=Worker
+            ), include_label=True, label=_(message='Maximum tasks per child'),
+            source=Worker
         )
         SourceColumn(
             attribute='concurrency', help_text=_(
                 message='The number of worker processes/threads to launch. '
                 'Defaults to the number of CPUs available on the machine.'
-            ), label=_(message='Concurrency'), source=Worker
+            ), include_label=True, label=_(message='Concurrency'),
+            source=Worker
         )
         SourceColumn(
             attribute='nice_level', help_text=_(
                 message='The nice value determines the priority of the process. '
                 'A higher value lowers the priority. The default '
                 'value is 0.'
-            ), label=_(message='Nice level'), source=Worker
+            ), include_label=True, label=_(message='Nice level'),
+            source=Worker
         )
-        SourceColumn(attribute='get_queue_count', source=Worker)
+        SourceColumn(
+            attribute='get_queue_count', include_label=True, source=Worker
+        )
+        SourceColumn(
+            attribute='get_task_type_count', include_label=True,
+            source=Worker
+        )
 
         menu_list_facet.bind_links(
             links=(link_queue_task_type_list,), sources=(CeleryQueue,)
@@ -230,10 +244,21 @@ class TaskManagerApp(MayanAppConfig):
         menu_list_facet.bind_links(
             links=(link_worker_queue_list,), sources=(Worker,)
         )
+
+        menu_related.bind_links(
+            links=(link_task_type_list,),
+            sources=('task_manager:worker_list',)
+        )
+        menu_related.bind_links(
+            links=(link_worker_list,),
+            sources=('task_manager:task_type_list',)
+        )
+
         menu_return.bind_links(
             links=(link_worker_list,),
             sources=(Worker, 'task_manager:worker_list')
         )
+
         menu_tools.bind_links(
             links=(link_task_type_list, link_worker_list,)
         )

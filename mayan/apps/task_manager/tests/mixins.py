@@ -67,7 +67,9 @@ class QueueViewTestMixin(TaskManagerTestMixin):
 
 class TaskTypeTestViewMixin(TaskManagerTestMixin):
     def _request_task_type_list(self):
-        return self.get(viewname='task_manager:task_type_list')
+        return self.get(
+            viewname='task_manager:task_type_list', query={'page': 3}
+        )
 
 
 class WorkerViewTestMixin(TaskManagerTestMixin):

@@ -3,6 +3,8 @@ import logging
 from kombu import Exchange, Queue
 
 from django.core.exceptions import ImproperlyConfigured
+from django.template.defaultfilters import filesizeformat
+from django.urls import reverse
 from django.utils.module_loading import import_string
 from django.utils.translation import gettext_lazy as _
 
@@ -41,7 +43,7 @@ class TaskType:
         self.name = name or dotted_path.split('.')[-1]
         self.schedule = schedule
         self.queue = None
-        self.__class__._registry[name] = self
+        self.__class__._registry[self.dotted_path] = self
         self.validate()
 
     def __str__(self):
@@ -195,12 +197,26 @@ class CeleryQueue(AppsModuleLoaderMixin):
                     }
                 )
 
+    def get_absolute_url(self):
+        return reverse(
+            kwargs={'queue_name': self.name},
+            viewname='task_manager:queue_task_type_list'
+        )
+
     def add_task_type(self, *args, **kwargs):
         task_type = TaskType(*args, **kwargs)
         self.task_types.append(task_type)
         self.__class__._registry_task_types[task_type.dotted_path] = self
         task_type.queue = self
         return task_type
+
+    def get_task_type_count(self):
+        return len(self.task_types)
+
+    get_task_type_count.help_text = _(
+        message='Number of task types managed by the queue.'
+    )
+    get_task_type_count.short_description = _(message='Task type count')
 
     def remove(self):
         kwargs = {
@@ -230,10 +246,9 @@ class CeleryQueue(AppsModuleLoaderMixin):
 
         del self
 
-    def get_task_type_count(self):
-        return len(self.task_types)
-
-    get_task_type_count.short_description = _(message='Task type count')
+    @property
+    def verbose_name(self):
+        return _(message='Queue')
 
 
 class Worker:
@@ -264,6 +279,43 @@ class Worker:
         self._queues = []
         self.__class__._registry[name] = self
 
+    def __str__(self):
+        return self.label
+
+    def get_absolute_url(self):
+        return reverse(
+            kwargs={'worker_name': self.name},
+            viewname='task_manager:worker_queue_list'
+        )
+
+    def get_maximum_memory_per_child(self):
+        return filesizeformat(bytes_=self.maximum_memory_per_child)
+
+    get_maximum_memory_per_child.help_text = _(
+        message='Maximum amount of resident memory a worker can execute '
+        'before it\'s replaced by a new process.'
+    )
+    get_maximum_memory_per_child.short_description = _(
+        message='Maximum memory per child'
+    )
+
+    def get_queue_count(self):
+        return len(self.queues)
+
+    get_queue_count.short_description = _(message='Queue count')
+
+    def get_task_type_count(self):
+        result = 0
+        for queue in self._queues:
+            result += queue.get_task_type_count()
+
+        return result
+
+    get_task_type_count.help_text = _(
+        message='Number of task types managed by the worker.'
+    )
+    get_task_type_count.short_description = _(message='Task type count')
+
     @property
     def label(self):
         return self._label or self.name
@@ -272,10 +324,6 @@ class Worker:
     def queues(self):
         return sorted(self._queues, key=lambda queue: queue.name)
 
-    def get_queue_count(self):
-        return len(self.queues)
-
-    get_queue_count.short_description = _(message='Queue count')
-
-    def __str__(self):
-        return self.label
+    @property
+    def verbose_name(self):
+        return _(message='Worker')

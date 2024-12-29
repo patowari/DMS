@@ -278,6 +278,8 @@
 - Convert `.select2-templating` elements only once per load.
 - Optimize the `MayanApp` JavaScript class.
 - Update `ObjectLinkWidget` to work with objects other than models.
+- Improve the worker, queue, and task type list views to include more
+  information, memory size formatting, view inter-linking.
 
 4.8.3 (2024-10-04)
 ==================
