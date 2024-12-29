@@ -276,6 +276,7 @@
 - Trigger the AJAX content `updated` event only when the content is ready
   for manipulation.
 - Convert `.select2-templating` elements only once per load.
+- Optimize the `MayanApp` JavaScript class.
 
 4.8.3 (2024-10-04)
 ==================

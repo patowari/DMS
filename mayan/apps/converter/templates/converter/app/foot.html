@@ -3,12 +3,7 @@
 <script src="{% static 'converter/js/mayan_image.js' %}" type="text/javascript"></script>
 
 <script>
-    MayanImage.setup();
-
-    app.addAfterBaseLoadCallback(
-        {
-            func: MayanImage.initialize,
-            self: MayanImage,
-        }
-    );
+    jQuery(document).ready(function() {
+        MayanImage.setup(app);
+    });
 </script>
