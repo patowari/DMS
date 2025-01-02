@@ -3,11 +3,10 @@
 $.fn.hasAnyClass = function() {
     /*
      *  Return true is an element has any of the passed classes
-     *  The classes are bassed as an array
+     *  The classes are passed as an array.
      */
-    const length = arguments[0].length;
-    for (let i = 0; i < length; i++) {
-        if (this.hasClass(arguments[0][i])) {
+    for (const cssClass of arguments[0]) {
+        if (this.hasClass(cssClass)) {
             return true;
         }
     }
@@ -31,9 +30,6 @@ class PartialNavigation {
         // excludeAnchorClasses - Anchors with any of these classes will not be
         // processes as AJAX anchors
         this.excludeAnchorClasses = parameters.excludeAnchorClasses || [];
-
-        // formBeforeSerializeCallbacks - Callbacks to execute before submitting an ajaxForm
-        this.formBeforeSerializeCallbacks = parameters.formBeforeSerializeCallbacks || [];
 
         this.redirectionCode = parameters.redirectionCode;
 
@@ -59,7 +55,7 @@ class PartialNavigation {
         this.ajaxRefreshButtonEnabled = true;
         this.ajaxRefreshButtonTimer = setTimeout(null);
 
-        this.$ajaxContent = null;
+        this.$ajaxContent = $('#ajax-content');
     }
 
     initialize () {
@@ -333,12 +329,6 @@ class PartialNavigation {
 
         $('form').ajaxForm({
             async: true,
-            beforeSerialize: function($form, options) {
-                // Manage any callback registered to preprocess the form.
-                $.each(app.formBeforeSerializeCallbacks, function (index, value) {
-                   value($form, options);
-                });
-            },
             beforeSubmit: function(arr, $form, options) {
                 const urlDefault = new URL(
                     window.location.hash.substring(1), window.location
@@ -426,9 +416,8 @@ class PartialNavigation {
          * code will still work without change.
          */
         const app = this;
-        this.$ajaxContent = $('#ajax-content');
 
-        // Load ajax content when the hash changes.
+        // Load AJAX content when the hash changes.
         if (window.history && window.history.pushState) {
             $(window).on('popstate', function() {
                 app.setLocation(window.location.hash.substring(1), false);

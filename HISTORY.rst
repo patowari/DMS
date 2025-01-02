@@ -285,6 +285,12 @@
   `dict_get`. Both operate exactly the same differing only by name.
 - Add sharded directory filesystem storage backend.
 - Rebalance Celery tasks per child values.
+- JavaScript app updates:
+
+  - Replace `$.each` with `for...of`.
+  - Initialize AJAX menus asynchronously.
+  - Rename usage of `self` to `app` for consistency.
+  - Remove unused `formBeforeSerializeCallbacks`.
 
 4.8.3 (2024-10-04)
 ==================

@@ -161,28 +161,26 @@ class MayanApp {
             'hideMethod': 'fadeOut'
         }
 
-        $.each(context.djangoMessages, function (index, value) {
+        for (const message of context.djangoMessages) {
             let options = {};
 
-            if (value.tags === 'error') {
+            if (message.tags === 'error') {
                 // Error messages persist.
                 options['timeOut'] = 0;
             }
-            if (value.tags === 'warning') {
+            if (message.tags === 'warning') {
                 // Warning messages stays 10 seconds.
                 options['timeOut'] = 10000;
             }
 
-            toastr[value.tags](value.message, '', options);
-        });
+            toastr[message.tags](message.message, '', options);
+        }
     }
 
     async initialize () {
-        const self = this;
-
         this.partialNavigationApp = partialNavigation;
-        partialNavigation.initialize();
 
+        this.setupAJAXMenus();
         this.setupAJAXSpinner();
         MayanApp.setupDropdownDirectionChange();
         this.setupFormElementContentCopy();
@@ -193,30 +191,38 @@ class MayanApp {
         this.setupNavbarCollapse();
         MayanApp.setupNavBarState();
         this.setupNewWindowAnchor();
-        $.each(this.ajaxMenusOptions, function(index, value) {
-            value.app = self;
-            app.doRefreshAJAXMenu(value);
-        });
         this.setupPanelSelection();
         this.setupResizePersist();
+
+        partialNavigation.initialize();
     }
 
-    setupAJAXSpinner () {
-        const self = this;
+    async setupAJAXMenus() {
+        const app = this;
+
+        for (const menuOptions of this.ajaxMenusOptions) {
+            menuOptions.app = app;
+            app.doRefreshAJAXMenu(menuOptions);
+            console.log(menuOptions);
+        }
+    }
+
+    async setupAJAXSpinner () {
+        const app = this;
 
         $(document).ajaxStart(function() {
-            self.ajaxExecuting = true;
+            app.ajaxExecuting = true;
             setTimeout(
                 function () {
-                    self.callbackAJAXSpinnerUpdate();
+                    app.callbackAJAXSpinnerUpdate();
                 }, 450
             );
         });
 
         $(document).ready(function() {
             $(document).ajaxStop(function() {
-                $(self.ajaxSpinnerSeletor).fadeOut();
-                self.ajaxExecuting = false;
+                $(app.ajaxSpinnerSeletor).fadeOut();
+                app.ajaxExecuting = false;
             });
         });
     }
@@ -272,12 +278,12 @@ class MayanApp {
     }
 
     async setupFullHeightResizing () {
-        const self = this;
+        const app = this;
 
         this.resizeFullHeight();
 
         this.window.resize(function() {
-            self.resizeFullHeight();
+            app.resizeFullHeight();
         });
     }
 
