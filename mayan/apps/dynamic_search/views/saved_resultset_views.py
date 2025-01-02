@@ -30,7 +30,7 @@ class SavedResultsetDeleteView(
         message='Error deleting saved resultset "%(instance)s"; %(exception)s'
     )
     model = SavedResultset
-    optional_object_permission = permission_saved_resultset_delete
+    object_optional_permission = permission_saved_resultset_delete
     pk_url_kwarg = 'saved_resultset_id'
     post_action_redirect = reverse_lazy(
         viewname='search:saved_resultset_list'
@@ -56,7 +56,7 @@ class SavedResultsetListView(
     ViewMixinOwnerPlusFilteredQueryset, SingleObjectListView
 ):
     model = SavedResultset
-    optional_object_permission = permission_saved_resultset_view
+    object_optional_permission = permission_saved_resultset_view
     view_icon = icon_saved_resultset_list
 
     def get_extra_context(self):

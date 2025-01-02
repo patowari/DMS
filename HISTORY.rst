@@ -295,6 +295,8 @@
 - Remove hardcoded `id_list` from views and JavaScript.
 - Compose the URL query string using the `URI` API.
 - Replace string concatenation with template literals.
+- Rename `ViewMixinOwnerPlusFilteredQueryset.optional_object_permission` to
+  `object_optional_permission` for consistency.
 
 4.8.3 (2024-10-04)
 ==================

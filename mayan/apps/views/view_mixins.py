@@ -771,9 +771,9 @@ class ViewMixinOwnerPlusFilteredQueryset:
         queryset = super().get_source_queryset()
         queryset_user = queryset.filter(user=self.request.user)
 
-        if self.optional_object_permission:
+        if self.object_optional_permission:
             queryset = queryset_user | AccessControlList.objects.restrict_queryset(
-                permission=self.optional_object_permission, queryset=queryset,
+                permission=self.object_optional_permission, queryset=queryset,
                 user=self.request.user
             )
         else:
