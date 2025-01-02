@@ -60,16 +60,17 @@
             },
         ],
         messagePosition: '{% smart_setting "APPEARANCE_MESSAGE_POSITION" %}',
+        multiItemActionsPrimaryKey: 'id_list'
     });
 
     const partialNavigation = new PartialNavigation({
+        ajaxRequestTimeout: {{ appearance_throttling_timeout }},
+        ajaxThrottlingMessage: gettext('Too many pending requests. Additional requests will be blocked until a pending one is completed or after the cooling off period ends.'),
         initialURL: '{% url common_home_view %}',
         disabledAnchorClasses: ['disabled', 'pagination-disabled'],
         excludeAnchorClasses: ['fancybox', 'new_window', 'non-ajax'],
         redirectionCode: {{ appearance_ajax_redirection_code }},
-        maximumAjaxRequests: {{ appearance_throttling_maximum_requests }},
-        ajaxRequestTimeout: {{ appearance_throttling_timeout }},
-        ajaxThrottlingMessage: gettext('Too many pending requests. Additional requests will be blocked until a pending one is completed or after the cooling off period ends.')
+        maximumAjaxRequests: {{ appearance_throttling_maximum_requests }}
     });
 
     app.addAfterBaseLoadCallback({func: app.doToastrMessages, self: app});

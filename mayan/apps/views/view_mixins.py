@@ -18,9 +18,10 @@ from mayan.apps.permissions.classes import Permission
 
 from .exceptions import ActionError
 from .literals import (
-    PK_LIST_SEPARATOR, LIST_MODE_CHOICE_ITEM, LIST_MODE_CHOICE_LIST,
-    TEXT_LIST_AS_ITEMS_PARAMETER, TEXT_LIST_AS_ITEMS_VARIABLE_NAME,
-    TEXT_SORT_FIELD_PARAMETER, TEXT_SORT_FIELD_VARIABLE_NAME
+    PK_LIST_KEY, PK_LIST_SEPARATOR, LIST_MODE_CHOICE_ITEM,
+    LIST_MODE_CHOICE_LIST, TEXT_LIST_AS_ITEMS_PARAMETER,
+    TEXT_LIST_AS_ITEMS_VARIABLE_NAME, TEXT_SORT_FIELD_PARAMETER,
+    TEXT_SORT_FIELD_VARIABLE_NAME
 )
 from .models import UserConfirmView, UserViewMode
 from .utils import is_url_query_positive
@@ -302,7 +303,7 @@ class MultipleObjectViewMixin(SingleObjectMixin):
     The pk, slug, and ID list parameter name can be changed using the
     attributes: pk_url_kwargs, slug_url_kwarg, and pk_list_key.
     """
-    pk_list_key = 'id_list'
+    pk_list_key = PK_LIST_KEY
     pk_list_separator = PK_LIST_SEPARATOR
 
     def dispatch(self, request, *args, **kwargs):

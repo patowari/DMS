@@ -18,7 +18,7 @@ class MayanImage {
             ],
             idleTime: false,
             infobar: true,
-            selector: 'a.fancybox',
+            selector: 'a.fancybox'
         });
 
         this.eventHandlerImageError = function (event) {
@@ -44,7 +44,7 @@ class MayanImage {
                 // Need to set mimeType only when run from local file.
                 mimeType: 'text/html; charset=utf-8',
                 type: 'GET',
-                url: $this.attr('src'),
+                url: $this.attr('src')
             });
         }
 

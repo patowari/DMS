@@ -11,6 +11,7 @@ LIST_MODE_CHOICES = (
     (LIST_MODE_CHOICE_LIST, _(message='List'))
 )
 
+PK_LIST_KEY = 'id_list'
 PK_LIST_SEPARATOR = ','
 
 TEST_SERVER_HOST = 'testserver'

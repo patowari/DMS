@@ -292,6 +292,10 @@
   - Rename usage of `self` to `app` for consistency.
   - Remove unused `formBeforeSerializeCallbacks`.
 
+- Remove hardcoded `id_list` from views and JavaScript.
+- Compose the URL query string using the `URI` API.
+- Replace string concatenation with template literals.
+
 4.8.3 (2024-10-04)
 ==================
 - Fix multi part email source metadata inheritance. Ensure all parts of a

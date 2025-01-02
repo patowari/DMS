@@ -50,23 +50,31 @@ class MayanApp {
         });
     }
 
-    static async setupMultiItemActions () {
+    async setupMultiItemActions () {
+        const app = this;
+
         $('body').on('change', '.check-all-slave', function () {
             MayanApp.countChecked();
         });
 
         $('body').on('click', '#multi-item-actions .navigation-btn-dropdown', function (event) {
             const $this = $(this);
-            let id_list = [];
+            const href = $this.attr('href');
+            let idList = [];
 
             $('.check-all-slave:checked').each(function (index, value) {
                 // Split the name (ie:"pk_200") and extract only the ID.
-                id_list.push(
+                idList.push(
                     value.name.split('_')[1]
                 );
             });
-            let url = $this.attr('href') + '?id_list=' + id_list.join(',');
-            $this.attr('href', url);
+
+            const urlSearchParameters = new URLSearchParams({[
+                app.options.multiItemActionsPrimaryKey]:idList
+            });
+            const newURL = `${href}?${urlSearchParameters}`;
+
+            $this.attr('href', newURL);
         });
     }
 
@@ -148,7 +156,7 @@ class MayanApp {
             'closeButton': true,
             'debug': false,
             'newestOnTop': true,
-            'positionClass': 'toast-' + this.options.messagePosition,
+            'positionClass': `toast-${this.options.messagePosition}`,
             'preventDuplicates': false,
             'onclick': null,
             'showDuration': '300',
@@ -187,7 +195,7 @@ class MayanApp {
         this.setupFormHotkeys();
         this.setupFullHeightResizing();
         this.setupItemsSelector();
-        MayanApp.setupMultiItemActions();
+        this.setupMultiItemActions();
         this.setupNavbarCollapse();
         MayanApp.setupNavBarState();
         this.setupNewWindowAnchor();
@@ -203,7 +211,6 @@ class MayanApp {
         for (const menuOptions of this.ajaxMenusOptions) {
             menuOptions.app = app;
             app.doRefreshAJAXMenu(menuOptions);
-            console.log(menuOptions);
         }
     }
 
@@ -489,11 +496,11 @@ class MayanApp {
         const resizeObserver = new ResizeObserver(function (entries) {
             for (const entry of entries) {
                 const $this = $(entry.target);
-                const storageKey = keySelector + entry.target.id;
+                const storageKey = `${keySelector}${entry.target.id}`;
                 const height = $this.height();
 
                 if (height > 0) {
-                    localStorage.setItem(keySelector + entry.target.id, height);
+                    localStorage.setItem(storageKey, height);
                 }
             }
         });
@@ -529,7 +536,7 @@ class MayanApp {
                     if (key.startsWith(keySelector)) {
                         const elementId = key.substring(keySelectorLength);
                         const height = localStorage.getItem(key);
-                        const $this = $('#' + elementId);
+                        const $this = $(`#${elementId}`);
 
                         if ($this.length) {
                             $this.height(height);
