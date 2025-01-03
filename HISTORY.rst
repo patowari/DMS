@@ -297,6 +297,9 @@
 - Replace string concatenation with template literals.
 - Rename `ViewMixinOwnerPlusFilteredQueryset.optional_object_permission` to
   `object_optional_permission` for consistency.
+- Build documentation features part dynamically from apps.
+- Fix inter document documentation references.
+- Update `.gitignore` to not include final app documentations builds.
 
 4.8.3 (2024-10-04)
 ==================
