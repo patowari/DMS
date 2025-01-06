@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from dateutil.parser import ParserError, parse
+from dateutil.parser import ParserError, isoparse, parse
 
 from django.template import Library, TemplateSyntaxError
 
@@ -14,6 +14,22 @@ def date_parse(date_string):
     """
 
     return parse(timestr=date_string)
+
+
+@register.filter(name='date_parse_iso')
+def filter_date_parse_iso(date_string):
+    """
+    Takes an ISO-8601 string and converts it into a datetime object.
+    """
+
+    try:
+        result = isoparse(str_in=date_string)
+    except ValueError as exception:
+        raise TemplateSyntaxError(
+            str(exception)
+        ) from exception
+    else:
+        return result
 
 
 @register.simple_tag(name='date_parse')

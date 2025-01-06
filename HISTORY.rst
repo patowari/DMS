@@ -302,6 +302,7 @@
 - Update `.gitignore` to not include final app documentations builds.
 - Add tag version of `date_parse` to allow passing arguments. This deprecates
   the filter version and will be removed in a future minor version.
+- Add filter `date_parse_iso` to parse ISO 8601 dates.
 
 4.8.3 (2024-10-04)
 ==================

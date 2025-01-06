@@ -8,6 +8,22 @@ from mayan.apps.testing.tests.base import BaseTestCase
 from .mixins import TemplateTestMixin
 
 
+class TemplateFilterDateParseISOTestCase(TemplateTestMixin, BaseTestCase):
+    def test_correct_format(self):
+        result = self._render_test_template(
+            template_string='{{ "1990-01-01T00:00"|date_parse_iso }}'
+        )
+        self.assertEqual(
+            result, 'Jan. 1, 1990, midnight'
+        )
+
+    def test_incorrect_format(self):
+        with self.assertRaises(expected_exception=TemplateSyntaxError):
+            self._render_test_template(
+                template_string='{{ "90-01-01T00:00"|date_parse_iso }}'
+            )
+
+
 class TemplateFilterDateParseTestCase(TemplateTestMixin, BaseTestCase):
     def test_basic_functionality(self):
         now = datetime.now()
