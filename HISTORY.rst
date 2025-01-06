@@ -300,6 +300,8 @@
 - Build documentation features part dynamically from apps.
 - Fix inter document documentation references.
 - Update `.gitignore` to not include final app documentations builds.
+- Add tag version of `date_parse` to allow passing arguments. This deprecates
+  the filter version and will be removed in a future minor version.
 
 4.8.3 (2024-10-04)
 ==================

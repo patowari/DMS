@@ -17,3 +17,6 @@
   `math_modulo`, `math_multiply`, `math_substract`.
 - The template filter `dict_get` is deprecated in favor of the new
   `dictionary_get`. Both operate exactly the same differing only by name.
+- The `date_parse` filter (`{{ |date_parse }}`) is deprecated in favor of
+  the tag version (`{% date_parse %}`) of the same function which allows
+  more control via arguments.
