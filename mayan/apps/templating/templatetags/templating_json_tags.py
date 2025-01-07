@@ -5,8 +5,8 @@ from django.template import Library
 register = Library()
 
 
-@register.filter
-def json_load(value):
+@register.filter(name='json_load')
+def filter_json_load(value):
     """
     Deserialize string to a Python object.
     """

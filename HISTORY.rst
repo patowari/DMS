@@ -303,6 +303,8 @@
 - Add tag version of `date_parse` to allow passing arguments. This deprecates
   the filter version and will be removed in a future minor version.
 - Add filter `date_parse_iso` to parse ISO 8601 dates.
+- Prefix the templating app tags and filter functions to avoid name or
+  reserved word clashes.
 
 4.8.3 (2024-10-04)
 ==================

@@ -7,15 +7,6 @@ from django.template import Library, TemplateSyntaxError
 register = Library()
 
 
-@register.filter
-def date_parse(date_string):
-    """
-    Takes a string and converts it into a datetime object.
-    """
-
-    return parse(timestr=date_string)
-
-
 @register.filter(name='date_parse_iso')
 def filter_date_parse_iso(date_string):
     """
@@ -30,6 +21,15 @@ def filter_date_parse_iso(date_string):
         ) from exception
     else:
         return result
+
+
+@register.filter(name='date_parse')
+def filter_date_parse(date_string):
+    """
+    Takes a string and converts it into a datetime object.
+    """
+
+    return parse(timestr=date_string)
 
 
 @register.simple_tag(name='date_parse')

@@ -15,8 +15,8 @@ def _process_value(value):
     return value
 
 
-@register.filter
-def math_add(value, argument):
+@register.filter(name='math_add')
+def filter_math_add(value, argument):
     """
     Mathematical addition.
     """
@@ -26,8 +26,8 @@ def math_add(value, argument):
     return result
 
 
-@register.filter
-def math_absolute(value):
+@register.filter(name='math_absolute')
+def filter_math_absolute(value):
     """
     Mathematical absolute.
     """
@@ -37,8 +37,8 @@ def math_absolute(value):
     return result
 
 
-@register.filter
-def math_divide(value, argument):
+@register.filter(name='math_divide')
+def filter_math_divide(value, argument):
     """
     Mathematical division.
     """
@@ -49,8 +49,8 @@ def math_divide(value, argument):
     return quotient
 
 
-@register.filter
-def math_exponentiate(value, argument):
+@register.filter(name='math_exponentiate')
+def fitler_math_exponentiate(value, argument):
     """
     Mathematical exponentiation.
     """
@@ -61,8 +61,8 @@ def math_exponentiate(value, argument):
     return power
 
 
-@register.filter
-def math_floor_divide(value, argument):
+@register.filter(name='math_floor_divide')
+def filter_math_floor_divide(value, argument):
     """
     Mathematical floor division.
     """
@@ -73,8 +73,8 @@ def math_floor_divide(value, argument):
     return quotient
 
 
-@register.filter
-def math_modulo(value, argument):
+@register.filter(name='math_modulo')
+def filter_math_modulo(value, argument):
     """
     Mathematical modulo.
     """
@@ -85,8 +85,8 @@ def math_modulo(value, argument):
     return modulus
 
 
-@register.filter
-def math_multiply(value, argument):
+@register.filter(name='math_multiply')
+def filter_math_multiply(value, argument):
     """
     Mathematical multiplication.
     """
@@ -97,8 +97,8 @@ def math_multiply(value, argument):
     return product
 
 
-@register.filter
-def math_square_root(value):
+@register.filter(name='math_square_root')
+def filter_math_square_root(value):
     """
     Mathematical square root.
     """
@@ -108,8 +108,8 @@ def math_square_root(value):
     return square_root
 
 
-@register.filter
-def math_substract(value, argument):
+@register.filter(name='math_substract')
+def filter_math_substract(value, argument):
     """
     Mathematical subtraction.
     """

@@ -8,16 +8,11 @@ from mayan.apps.common.utils import flatten_map, flatten_object
 register = Library()
 
 
-@register.simple_tag(name='range')
-def _range(*args):
-    """
-    Return an object that produces a sequence of integers
-    """
-    return range(*args)
+# Filters
 
 
-@register.filter
-def dict_get(dictionary, key):
+@register.filter(name='dict_get')
+def filter_dict_get(dictionary, key):
     """
     Return the value for the given key or '' if not found.
     Deprecated in favor or `dictionary_get`.
@@ -25,16 +20,8 @@ def dict_get(dictionary, key):
     return dictionary.get(key, '')
 
 
-@register.filter
-def dictionary_get(dictionary, key):
-    """
-    Return the value for the given key or '' if not found.
-    """
-    return dictionary.get(key, '')
-
-
-@register.filter
-def dictionary_flatten(dictionary):
+@register.filter(name='dictionary_flatten')
+def filter_dictionary_flatten(dictionary):
     """
     Return a flat version of a nested dictionary.
     """
@@ -45,21 +32,16 @@ def dictionary_flatten(dictionary):
     return result
 
 
-@register.simple_tag
-def method(obj, method, *args, **kwargs):
+@register.filter(name='dictionary_get')
+def filter_dictionary_get(dictionary, key):
     """
-    Call an object method. {% method object method **kwargs %}
+    Return the value for the given key or '' if not found.
     """
-    try:
-        return getattr(obj, method)(*args, **kwargs)
-    except Exception as exception:
-        raise TemplateSyntaxError(
-            'Error calling object method; {}'.format(exception)
-        )
+    return dictionary.get(key, '')
 
 
-@register.filter
-def object_flatten(value):
+@register.filter(name='object_flatten')
+def filter_object_flatten(value):
     """
     Return a flat version of a nested object of multiple types.
     """
@@ -71,21 +53,26 @@ def object_flatten(value):
     return result
 
 
-@register.simple_tag
-def set(value):
-    """
-    Set a context variable to a specific value.
-    """
-    return value
-
-
-@register.filter
-def split(obj, separator):
+@register.filter(name='split')
+def filter_split(obj, separator):
     """
     Return a list of the words in the string, using sep as the delimiter
     string.
     """
     return obj.split(separator)
+
+
+@register.filter(name='to_base64')
+def filter_to_base64(value, altchars=None):
+    """
+    Convert a value to base64 encoding. Accepts optional `altchars` argument.
+    """
+    if altchars:
+        altchars = bytes(encoding='utf-8', source=altchars)
+    return base64.b64encode(s=value, altchars=altchars).decode('utf-8')
+
+
+# Tags
 
 
 class SpacelessPlusNode(Node):
@@ -104,8 +91,37 @@ class SpacelessPlusNode(Node):
         )
 
 
-@register.tag
-def spaceless_plus(parser, token):
+@register.simple_tag(name='method')
+def tag_method(obj, method, *args, **kwargs):
+    """
+    Call an object method. {% method object method **kwargs %}
+    """
+    try:
+        return getattr(obj, method)(*args, **kwargs)
+    except Exception as exception:
+        raise TemplateSyntaxError(
+            'Error calling object method; {}'.format(exception)
+        )
+
+
+@register.simple_tag(name='range')
+def tag_range(*args):
+    """
+    Return an object that produces a sequence of integers
+    """
+    return range(*args)
+
+
+@register.simple_tag(name='set')
+def tag_set(value):
+    """
+    Set a context variable to a specific value.
+    """
+    return value
+
+
+@register.tag(name='spaceless_plus')
+def tag_spaceless_plus(parser, token):
     """
     Removes empty lines between the tag nodes.
     """
@@ -114,13 +130,3 @@ def spaceless_plus(parser, token):
     )
     parser.delete_first_token()
     return SpacelessPlusNode(nodelist=nodelist)
-
-
-@register.filter
-def to_base64(value, altchars=None):
-    """
-    Convert a value to base64 encoding. Accepts optional `altchars` argument.
-    """
-    if altchars:
-        altchars = bytes(encoding='utf-8', source=altchars)
-    return base64.b64encode(s=value, altchars=altchars).decode('utf-8')
