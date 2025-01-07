@@ -78,12 +78,10 @@ class TemplateTagDateParseTestCase(TemplateTestMixin, BaseTestCase):
         )
 
     def test_fuzzy_with_tokens_false(self):
-        result = self._render_test_template(
-            template_string='{% date_parse "Today is 01/02/03 00:00:00+1" fuzzy_with_tokens=False as output %}{{ output.0 }}{{ output.1 }}'
-        )
-        self.assertEqual(
-            result, 'Unknown string format: Today is 01/02/03 00:00:00+1'
-        )
+        with self.assertRaises(expected_exception=TemplateSyntaxError):
+            result = self._render_test_template(
+                template_string='{% date_parse "Today is 01/02/03 00:00:00+1" fuzzy_with_tokens=False as output %}{{ output.0 }}{{ output.1 }}'
+            )
 
     def test_fuzzy_with_tokens_true(self):
         result = self._render_test_template(
