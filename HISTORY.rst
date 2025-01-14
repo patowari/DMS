@@ -305,6 +305,7 @@
 - Add filter `date_parse_iso` to parse ISO 8601 dates.
 - Prefix the templating app tags and filter functions to avoid name or
   reserved word clashes.
+- Cap the default concurrency of the Celery workers.
 
 4.8.3 (2024-10-04)
 ==================
