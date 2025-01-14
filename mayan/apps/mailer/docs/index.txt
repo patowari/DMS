@@ -18,8 +18,8 @@ the type of email being sent. These are:
 - administrative emails like password reset emails
 - application emails to allow users to send documents and messages
 
-To configure administrative email for things like password reset check the
-:ref:`Authentication app documentation<apps-authentication>`.
+To configure administrative email for things like password resets use the
+authentication app.
 
 Application emails
 ------------------

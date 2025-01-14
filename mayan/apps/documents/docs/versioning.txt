@@ -39,7 +39,7 @@ as the active version.
 Transformations
 ===============
 
-:ref:`Transformations<apps-converter>` can be applied to document version
+Transformations can be applied to document version
 pages as they can be applied to document file pages. However, since
 document file pages are the source for the document version pages,
 transformations applied to a document file page will be reflected on any

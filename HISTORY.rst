@@ -1,4 +1,4 @@
-4.9 (XXXX-XX-XX)
+4.9 (2025-01-XX)
 ================
 - Fix management command `settings_show` internal interface usage.
 - Update Python dependency versions:
@@ -52,7 +52,7 @@
   - Redis from 7.2.5-alpine3.20 to 7.4.1-alpine3.20
   - Traefik from v2.5.7 to v2.11.16
 
-- Decrease the Celery workers maximum tasks per child from 500 to 250.
+- Rebalance the Celery workers maximum tasks per child.
 - Remove the MIME type detection backend based on Python Magic.
 - Support passing a custom consumer timeout value to RabbitMQ via
   the new environment variable `MAYAN_RABBITMQ_CONSUMER_TIMEOUT`, which
@@ -270,9 +270,6 @@
 - Centralize the AJAX content update logic.
 - Rename the AJAX content events for clarity.
 - Cover the height reset and copy button HTML into a JavaScript template.
-- Support separate GitLab CI registry push and deploy credentials.
-- Reduce the demo stage SSH connections.
-- Reduce the demo stage downtime.
 - Trigger the AJAX content `updated` event only when the content is ready
   for manipulation.
 - Convert `.select2-templating` elements only once per load.
