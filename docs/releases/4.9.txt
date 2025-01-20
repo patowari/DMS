@@ -1,7 +1,7 @@
 Version 4.9
 ===========
 
-Released: January XX, 2025
+Released: January 20, 2025
 
 
 Changes

@@ -1,4 +1,4 @@
-4.9 (2025-01-XX)
+4.9 (2025-01-20)
 ================
 - Fix management command `settings_show` internal interface usage.
 - Update Python dependency versions:
