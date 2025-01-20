@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
-# Berny <berny@bernhard-marx.de>, 2024
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2024
-# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Roberto Rosario, 2025
+# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2025
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2025
+# Mathias Behrle <mathiasb@m9s.biz>, 2025
+# Berny <berny@bernhard-marx.de>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Berny <berny@bernhard-marx.de>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,20 +29,20 @@ msgstr ""
 msgid "OCR"
 msgstr "OCR-Schrifterkennung"
 
-#: apps.py:121
+#: apps.py:122
 msgid "The OCR content."
 msgstr "Der OCR-Inhalt."
 
-#: apps.py:126
+#: apps.py:127 apps.py:134
 msgid "A generator returning the document's version pages OCR content."
 msgstr ""
 "Ein Generator, der den OCR-Inhalt von Dokumentenversionsseiten zurückgibt."
 
-#: apps.py:128
+#: apps.py:129 apps.py:136
 msgid "OCR content"
 msgstr "OCR Inhalt"
 
-#: backends/tesseract.py:82
+#: backends/tesseract.py:89
 msgid "Tesseract OCR not found."
 msgstr "Tesseract OCR nicht gefunden."
 

@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Leon Chu, 2024
-# bo feng <87289884@qq.com>, 2024
-# xisafe <root@xisafe.com>, 2024
-# Roberto Rosario, 2024
+# Leon Chu, 2025
+# bo feng <87289884@qq.com>, 2025
+# xisafe <root@xisafe.com>, 2025
+# Roberto Rosario, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:33+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Roberto Rosario, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/rosarior/teams/13584/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +23,17 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: apps.py:21 permissions.py:6 settings.py:94
+#: apps.py:16 permissions.py:6 settings.py:94
 msgid "Templating"
 msgstr "模板化"
 
-#: apps.py:39
+#: apps.py:23
 msgid "Current date and time"
+msgstr ""
+
+#: classes.py:83
+#, python-format
+msgid "Model `%s` is not available for template sandbox."
 msgstr ""
 
 #: fields.py:28
@@ -44,7 +49,7 @@ msgstr ""
 msgid "Resulting text from the evaluated template."
 msgstr "来自评估模板的结果文本。"
 
-#: forms.py:11
+#: forms.py:11 serializers.py:24
 msgid "Result"
 msgstr "结果"
 
@@ -52,11 +57,11 @@ msgstr "结果"
 msgid "The template string to be evaluated."
 msgstr "要评估的模板字符串。"
 
-#: forms.py:26
+#: forms.py:26 serializers.py:27
 msgid "Template"
 msgstr "範本"
 
-#: links.py:10
+#: links.py:12
 msgid "Sandbox"
 msgstr "沙箱"
 
@@ -86,12 +91,12 @@ msgid ""
 " template preview."
 msgstr ""
 
-#: views.py:44
+#: views.py:59
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr "沙箱模板%s"
 
-#: views.py:66
+#: views.py:86
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr "模板错误%(exception)s"

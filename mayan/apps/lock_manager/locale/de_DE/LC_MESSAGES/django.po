@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Translators:
-# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
-# Ingo Buchholz <ingo.buchholz@takwa.de>, 2024
-# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2025
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2025
+# Mathias Behrle <mathiasb@m9s.biz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-02 18:58+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

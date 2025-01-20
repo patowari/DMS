@@ -4,26 +4,26 @@
 # 
 # Translators:
 # Translators:
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Rodrigo Sottomaior Macedo <sottomaiormacedotec@sottomaiormacedo.tech>, 2024
-# Márcia Ferreira, 2024
-# Renata Oliveira <renatabels@gmail.com>, 2024
-# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2024
-# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2024
-# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Daniel Flores <dfloresbr@gmail.com>, 2024
+# Daniel Flores <dfloresbr@gmail.com>, 2025
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2025
+# Renata Oliveira <renatabels@gmail.com>, 2025
+# Rodrigo Sottomaior Macedo <sottomaiormacedotec@sottomaiormacedo.tech>, 2025
+# Aline Freitas <aline@alinefreitas.com.br>, 2025
+# José Samuel Facundo da Silva <samuel.facundo@ufca.edu.br>, 2025
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2025
+# Emerson Soares <on.emersonsoares@gmail.com>, 2025
+# Roberto Rosario, 2025
+# Márcia Ferreira, 2025
+# Roberto Vasconcelos Novaes <rvnovaes@gmail.com>, 2025
+# Jadson Ribeiro <jadsonbr@outlook.com.br>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Daniel Flores <dfloresbr@gmail.com>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Jadson Ribeiro <jadsonbr@outlook.com.br>, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/rosarior/teams/13584/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: apps.py:74 apps.py:215 apps.py:221 apps.py:225 apps.py:230 apps.py:234
+#: apps.py:74 apps.py:211 apps.py:217 apps.py:221 apps.py:226 apps.py:230
 #: events.py:6 links.py:53 permissions.py:6 queues.py:7
 #: workflow_actions.py:162
 msgid "Metadata"
@@ -45,19 +45,11 @@ msgstr "Retorna o valor de um metadado específico do documento."
 msgid "Metadata value of"
 msgstr "Valor de metadados de"
 
-#: apps.py:151
-msgid "Metadata type name"
-msgstr "Nome de tipos de metadado"
-
-#: apps.py:155 search.py:15
-msgid "Metadata value"
-msgstr "Valor de metadados"
-
-#: apps.py:253
+#: apps.py:249
 msgid "Document link"
 msgstr ""
 
-#: apps.py:259
+#: apps.py:255
 msgid "Document thumbnail"
 msgstr ""
 
@@ -85,76 +77,76 @@ msgstr "Tipo de metadado editado"
 msgid "Metadata type relationship updated"
 msgstr "Relacionamento de tipo de metadado atualizado"
 
-#: forms.py:13
+#: forms.py:14
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:16 models/metadata_type_models.py:35
+#: forms.py:17 models/metadata_type_models.py:35
 msgid "Name"
 msgstr "Nome"
 
-#: forms.py:24 models/metadata_instance_models.py:43 workflow_actions.py:112
+#: forms.py:25 models/metadata_instance_models.py:43 workflow_actions.py:112
 msgid "Value"
 msgstr "Valor"
 
-#: forms.py:29
+#: forms.py:30
 msgid "Update"
 msgstr "Atualizar"
 
-#: forms.py:49 forms.py:232 models/document_type_metadata_type_models.py:31
+#: forms.py:50 forms.py:233 models/document_type_metadata_type_models.py:31
 msgid "Required"
 msgstr "Obrigatório"
 
-#: forms.py:81
+#: forms.py:82
 #, python-format
 msgid "Lookup value error: %s"
 msgstr "Erro de valor de busca: %s"
 
-#: forms.py:94
+#: forms.py:95
 #, python-format
 msgid "Default value error: %s"
 msgstr "Erro de valor padrão: %s"
 
-#: forms.py:115 models/metadata_type_models.py:120
+#: forms.py:116 models/metadata_type_models.py:120
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "\"%s\" é obrigatório para este tipo de documento."
 
-#: forms.py:136
+#: forms.py:137
 msgid "Metadata types to be added to the selected documents."
 msgstr "Tipos de metadados a serem adicionados aos documentos selecionados."
 
-#: forms.py:137 models/document_type_metadata_type_models.py:28
+#: forms.py:138 models/document_type_metadata_type_models.py:28
 #: models/metadata_type_models.py:83 search.py:12 serializers.py:52
 #: serializers.py:114 workflow_actions.py:148
 msgid "Metadata type"
 msgstr "Tipo de metadados"
 
-#: forms.py:162
+#: forms.py:163
 msgid "Remove"
 msgstr "Remover"
 
-#: forms.py:181
+#: forms.py:182
 msgid "Basic"
 msgstr ""
 
-#: forms.py:185
+#: forms.py:186
 msgid "Values"
 msgstr ""
 
-#: forms.py:189
+#: forms.py:190
 msgid "Validation"
 msgstr ""
 
-#: forms.py:193
+#: forms.py:194
 msgid "Parsing"
 msgstr "Análise"
 
-#: forms.py:230
+#: forms.py:231
 msgid "None"
 msgstr "Nenhum"
 
-#: forms.py:231
+#: forms.py:232
 msgid "Optional"
 msgstr "Opcional"
 
@@ -184,7 +176,7 @@ msgstr "Tipos de documentos"
 msgid "Create new"
 msgstr "Criar novo"
 
-#: links.py:82 links.py:87
+#: links.py:81 links.py:86
 msgid "Delete"
 msgstr "Excluir"
 
@@ -396,6 +388,10 @@ msgstr "Remover tipo de metadados"
 #: queues.py:15
 msgid "Add required metadata type"
 msgstr "Adicionar tipo de metadado obrigatório"
+
+#: search.py:15
+msgid "Metadata value"
+msgstr "Valor de metadados"
 
 #: search.py:33
 msgid "Document type ID"

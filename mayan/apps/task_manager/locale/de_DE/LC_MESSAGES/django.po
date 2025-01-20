@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Berny <berny@bernhard-marx.de>, 2024
-# Marvin Haschker <marvin@haschker.me>, 2024
-# Roberto Rosario, 2024
-# Felix <felix.com@gmx.com>, 2024
-# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2024
-# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Bjoern Kowarsch <bjoern.kowarsch@gmail.com>, 2025
+# Berny <berny@bernhard-marx.de>, 2025
+# Marvin Haschker <marvin@haschker.me>, 2025
+# Roberto Rosario, 2025
+# Mathias Behrle <mathiasb@m9s.biz>, 2025
+# Felix <felix.com@gmx.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:33+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Felix <felix.com@gmx.com>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,23 +25,23 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 permissions.py:6
+#: apps.py:35 permissions.py:6
 msgid "Task manager"
 msgstr "Task-Manager"
 
-#: apps.py:116 apps.py:141 apps.py:184
+#: apps.py:123 apps.py:200 classes.py:64
 msgid "Label"
 msgstr "Bezeichner"
 
-#: apps.py:120 apps.py:144 apps.py:188
+#: apps.py:127 apps.py:204 classes.py:71
 msgid "Name"
 msgstr "Name"
 
-#: apps.py:125
+#: apps.py:132
 msgid "Default queue?"
 msgstr "Standardwarteschlange?"
 
-#: apps.py:130
+#: apps.py:137
 msgid ""
 "Transient queues are not persistent. Tasks in a transient queue are lost if "
 "the broker is restarted. Transient queues use less resources and managed non"
@@ -52,55 +52,35 @@ msgstr ""
 "Warteschlangen benötigen weniger Ressourcen und werden für unkritische Tasks"
 " verwendet."
 
-#: apps.py:133
+#: apps.py:140
 msgid "Is transient?"
 msgstr "Flüchtig?"
 
-#: apps.py:147
-msgid "Dotted path"
-msgstr "Punktierter Pfad"
-
-#: apps.py:151
-msgid "Schedule"
-msgstr "Plan"
-
-#: apps.py:157
+#: apps.py:171
 msgid "Type"
 msgstr "Typ"
 
-#: apps.py:162
+#: apps.py:176
 msgid "Start time"
 msgstr "Startzeit"
 
-#: apps.py:166
+#: apps.py:180
 msgid "Host"
 msgstr "Host"
 
-#: apps.py:170
+#: apps.py:184
 msgid "Arguments"
 msgstr "Argumente"
 
-#: apps.py:174
+#: apps.py:188
 msgid "Keyword arguments"
 msgstr "Schlüsselwortargumente"
 
-#: apps.py:179
+#: apps.py:193
 msgid "Worker process ID"
 msgstr "Worker Prozess-ID"
 
-#: apps.py:192
-msgid ""
-"Maximum amount of resident memory a worker can execute before it's replaced "
-"by a new process."
-msgstr ""
-"Maximaler residenter Speicher, den ein Worker ausführen kann, bevor er durch"
-" einen neuen Prozess ersetzt wird."
-
-#: apps.py:194
-msgid "Maximum memory per child"
-msgstr "Maximaler Speicher pro Kindprozess"
-
-#: apps.py:198
+#: apps.py:213
 msgid ""
 "Maximum number of tasks a worker can execute before it's replaced by a new "
 "process."
@@ -108,11 +88,11 @@ msgstr ""
 "Maximale Anzahl an Tasks, die ein Worker ausführen kann, bevor er durch "
 "einen neuen Prozess ersetzt wird."
 
-#: apps.py:200
+#: apps.py:215
 msgid "Maximum tasks per child"
 msgstr "Maximale Tasks pro Kindprozess"
 
-#: apps.py:204
+#: apps.py:220
 msgid ""
 "The number of worker processes/threads to launch. Defaults to the number of "
 "CPUs available on the machine."
@@ -120,11 +100,11 @@ msgstr ""
 "Die Anzahl an Workerprozessen/-threads. Standard ist die Anzahl an "
 "verfügbaren CPUs."
 
-#: apps.py:206
+#: apps.py:222
 msgid "Concurrency"
 msgstr "Nebenläufigkeit"
 
-#: apps.py:210
+#: apps.py:227
 msgid ""
 "The nice value determines the priority of the process. A higher value lowers"
 " the priority. The default value is 0."
@@ -132,27 +112,79 @@ msgstr ""
 "Der Nice Wert bestimmt die Priorität eines Prozesses. Ein höherer Wert setzt"
 " die Priorität herunter. Standard ist 0."
 
-#: apps.py:213
+#: apps.py:230
 msgid "Nice level"
 msgstr "Nice Level"
 
-#: classes.py:184
+#: classes.py:55
+msgid "The Python path to the task code."
+msgstr ""
+
+#: classes.py:56
+msgid "Dotted path"
+msgstr "Punktierter Pfad"
+
+#: classes.py:62
+msgid "Human readable description of the task type."
+msgstr ""
+
+#: classes.py:70
+msgid "Unique internal name of the task type."
+msgstr ""
+
+#: classes.py:77 classes.py:251
+msgid "Queue"
+msgstr "In die Warteschlange einreihen"
+
+#: classes.py:83
+msgid "Trigger interval if the task type is set for periodic execution."
+msgstr ""
+
+#: classes.py:86
+msgid "Schedule"
+msgstr "Plan"
+
+#: classes.py:91 classes.py:329
+msgid "Worker"
+msgstr ""
+
+#: classes.py:217
+msgid "Number of task types managed by the queue."
+msgstr ""
+
+#: classes.py:219 classes.py:317
 msgid "Task type count"
 msgstr "Anzahl Tasktyp"
 
-#: classes.py:226
+#: classes.py:295
+msgid ""
+"Maximum amount of resident memory a worker can execute before it's replaced "
+"by a new process."
+msgstr ""
+"Maximaler residenter Speicher, den ein Worker ausführen kann, bevor er durch"
+" einen neuen Prozess ersetzt wird."
+
+#: classes.py:299
+msgid "Maximum memory per child"
+msgstr "Maximaler Speicher pro Kindprozess"
+
+#: classes.py:305
 msgid "Queue count"
 msgstr "Warteschlangenzahl"
 
-#: links.py:13
+#: classes.py:315
+msgid "Number of task types managed by the worker."
+msgstr ""
+
+#: links.py:13 links.py:18
 msgid "Task type list"
 msgstr "Liste Tasktyp"
 
-#: links.py:18
+#: links.py:22
 msgid "Worker list"
 msgstr "Workerliste"
 
-#: links.py:23
+#: links.py:27
 msgid "Queue list"
 msgstr "Warteschlangenliste"
 
@@ -205,26 +237,30 @@ msgstr ""
 msgid "Test queue"
 msgstr "Warteschlange testen"
 
-#: views.py:25
+#: views.py:20
+msgid "Task types"
+msgstr ""
+
+#: views.py:43
 #, python-format
 msgid "Task types for queue: %s"
 msgstr "Tasktypen für Warteschlange %s"
 
-#: views.py:35
+#: views.py:56
 #, python-format
 msgid "Queue: %s, not found"
 msgstr "Warteschlange: %s, nicht gefunden"
 
-#: views.py:45
+#: views.py:68
 msgid "Background task workers"
 msgstr "Worker für Hintergrundtasks"
 
-#: views.py:62
+#: views.py:85
 #, python-format
 msgid "Queues for worker: %s"
 msgstr "Warteschlangen für Worker %s"
 
-#: views.py:72
+#: views.py:95
 #, python-format
 msgid "Worker: %s, not found"
 msgstr "Worker: %s, nicht gefunden"

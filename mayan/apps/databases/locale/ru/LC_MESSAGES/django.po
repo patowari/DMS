@@ -4,18 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Oleg Sizov <olegsm35@gmail.com>, 2024
-# Ilya Pavlov <spirkaa@gmail.com>, 2024
-# lilo.panic, 2024
-# mizhgan <i@mizhgan.ru>, 2024
+# Oleg Sizov <olegsm35@gmail.com>, 2025
+# mizhgan <i@mizhgan.ru>, 2025
+# Sergey Glita <gsv70@mail.ru>, 2025
+# Ilya Pavlov <spirkaa@gmail.com>, 2025
+# lilo.panic, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:28+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: mizhgan <i@mizhgan.ru>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: lilo.panic, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:16
+#: apps.py:22
 msgid "Databases"
 msgstr ""
 
@@ -35,23 +36,67 @@ msgstr ""
 msgid "Has a condition?"
 msgstr "Есть условие?"
 
-#: classes.py:82
+#: classes.py:87
+msgid "Description"
+msgstr "Описание"
+
+#: classes.py:92 classes.py:277
+msgid "Label"
+msgstr "Заголовок"
+
+#: classes.py:97
+msgid "Example usage of the property."
+msgstr ""
+
+#: classes.py:98 classes.py:282
+msgid "Name"
+msgstr "Имя"
+
+#: classes.py:102
 msgid "Model fields"
 msgstr "Поля модели"
 
-#: classes.py:130
+#: classes.py:149
 msgid "Model related fields"
 msgstr "Связанные поля модели"
 
-#: classes.py:135
+#: classes.py:154
 msgid "Model properties"
 msgstr "Свойства модели"
 
-#: classes.py:140
+#: classes.py:159
 msgid "Model reverse fields"
 msgstr "Обратные поля модели"
 
-#: literals.py:12
+#: classes.py:264
+msgid "Name of the app where the model is defined."
+msgstr ""
+
+#: classes.py:265
+msgid "App"
+msgstr "Приложение"
+
+#: classes.py:270
+msgid "Complete unique name of the model."
+msgstr ""
+
+#: classes.py:271
+msgid "Full name"
+msgstr "Полное имя"
+
+#: classes.py:276
+msgid "Human readable name of the model."
+msgstr ""
+
+#: links.py:12
+msgid "Properties"
+msgstr "Свойства"
+
+#: links.py:15
+msgid "Property models"
+msgstr ""
+
+#: literals.py:16
 msgid ""
 "Your database backend is set to use SQLite. SQLite should only be used for "
 "development and testing, not for production."
@@ -74,3 +119,16 @@ msgstr "Условие"
 #: templates/databases/app/viewport.html:11
 msgid "Warning"
 msgstr "Предупреждение"
+
+#: views.py:27
+msgid "No properties available"
+msgstr ""
+
+#: views.py:29
+#, python-format
+msgid "Properties for model: %s"
+msgstr ""
+
+#: views.py:49
+msgid "Models with registered properties"
+msgstr ""

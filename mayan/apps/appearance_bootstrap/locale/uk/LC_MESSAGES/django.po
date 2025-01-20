@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
-# Leo Lado, 2024
+# Leo Lado, 2025
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Leo Lado, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -198,6 +198,10 @@ msgstr "Так"
 msgid "No"
 msgstr "Ні"
 
+#: templates/appearance/confirm.html:52
+msgid "Do not ask me again."
+msgstr ""
+
 #: templates/appearance/home.html:27
 msgid "Getting started"
 msgstr "Розпочати"
@@ -208,7 +212,7 @@ msgstr ""
 "Перед тим як ви зможете повністю використовувати Mayan EDMS вам потрібно "
 "зробити наступне:"
 
-#: templates/appearance/menus/topbar.html:11
+#: templates/appearance/menus/topbar.html:12
 msgid "Toggle navigation"
 msgstr "Переключити навігацію"
 
@@ -263,15 +267,23 @@ msgstr "Всього: %(total)s"
 msgid "No results"
 msgstr "Без результату"
 
-#: templates/appearance/partials/list/pagination.html:12
-#: templates/appearance/partials/list/pagination.html:14
+#: templates/appearance/partials/list/pagination.html:21
+#: templates/appearance/partials/list/pagination.html:23
 msgid "Previous page"
 msgstr "Попередня сторінка"
 
-#: templates/appearance/partials/list/pagination.html:30
-#: templates/appearance/partials/list/pagination.html:32
+#: templates/appearance/partials/list/pagination.html:39
+#: templates/appearance/partials/list/pagination.html:41
 msgid "Next page"
 msgstr "Наступна сторінка"
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Page"
+msgstr ""
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Jump to page"
+msgstr ""
 
 #: templates/appearance/partials/list/table/head/row_cell_identifier.html:6
 msgid "Identifier"

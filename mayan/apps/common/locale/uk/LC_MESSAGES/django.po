@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2024
-# Leo Lado, 2024
+# Kostiantyn Tyshkovets <shukach_13@ukr.net>, 2025
+# Leo Lado, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Leo Lado, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Leo Lado, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/rosarior/teams/13584/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Common"
 msgstr "Загальне"
 
-#: dependencies.py:189
+#: dependencies.py:188
 msgid "Command line environment with autocompletion."
 msgstr "Середовище командного рядка з автозавершенням."
 
-#: dependencies.py:194
+#: dependencies.py:193
 msgid "Checks proper formatting of the README file."
 msgstr "Перевіряє правильність форматування файлу README."
 
@@ -89,20 +89,20 @@ msgstr ""
 msgid "Tools"
 msgstr "Інструменти"
 
-#: literals.py:23
+#: literals.py:21
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr "Ця функція застаріла та буде видалена в наступній версії."
 
-#: literals.py:32
+#: literals.py:30
 msgid "Days"
 msgstr "Дні"
 
-#: literals.py:33
+#: literals.py:31
 msgid "Hours"
 msgstr "Години"
 
-#: literals.py:34
+#: literals.py:32
 msgid "Minutes"
 msgstr "Хвилини"
 

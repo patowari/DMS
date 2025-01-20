@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jože Detečnik <joze.detecnik@3tav.si>, 2024
-# Roberto Rosario, 2024
+# Jože Detečnik <joze.detecnik@3tav.si>, 2025
+# Roberto Rosario, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Roberto Rosario, 2025\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,15 +21,15 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: apps.py:38 events.py:6 permissions.py:6
+#: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr ""
 
-#: apps.py:60
+#: apps.py:61
 msgid "None"
 msgstr "Nobenega"
 
-#: apps.py:66
+#: apps.py:67
 msgid "Sender"
 msgstr ""
 
@@ -57,16 +57,16 @@ msgstr "Izbriši"
 msgid "Messages"
 msgstr ""
 
-#: links.py:70 links.py:81
+#: links.py:69
+msgid "Mark all as read"
+msgstr ""
+
+#: links.py:73 links.py:78
 msgid "Mark as read"
 msgstr ""
 
-#: links.py:76 links.py:85
+#: links.py:83 links.py:88
 msgid "Mark as unread"
-msgstr ""
-
-#: links.py:89
-msgid "Mark all as read"
 msgstr ""
 
 #: model_mixins.py:16

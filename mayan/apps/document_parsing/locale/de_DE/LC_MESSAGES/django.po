@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2024
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
-# Berny <berny@bernhard-marx.de>, 2024
-# Robin Schubert <robin.schubert@gmx.de>, 2024
-# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2025
+# Berny <berny@bernhard-marx.de>, 2025
+# Roberto Rosario, 2025
+# Robin Schubert <robin.schubert@gmx.de>, 2025
+# Mathias Behrle <mathiasb@m9s.biz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 04:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2025\n"
 "Language-Team: German (Germany) (https://app.transifex.com/rosarior/teams/13584/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +32,7 @@ msgstr "Dokument parsen"
 msgid "A generator returning the document file's pages parsed content."
 msgstr "Ein Generator, der den Inhalt der Dokumentendateiseiten zurückgibt."
 
-#: apps.py:114 links.py:26 links.py:49 models.py:27 search.py:18
+#: apps.py:114 links.py:26 links.py:65 models.py:27 search.py:18
 msgid "Content"
 msgstr "Inhalt"
 
@@ -65,7 +65,7 @@ msgstr "Seite %(page_number)d"
 msgid "Contents"
 msgstr "Inhalte"
 
-#: links.py:32 links.py:37
+#: links.py:31 links.py:37
 msgid "Delete parsed content"
 msgstr "Geparsten Inhalt löschen"
 
@@ -73,15 +73,15 @@ msgstr "Geparsten Inhalt löschen"
 msgid "Download content"
 msgstr "Inhalt herunterladen"
 
-#: links.py:54 links.py:61
+#: links.py:48 links.py:55
 msgid "Submit for parsing"
 msgstr "Zum Parsen einreichen"
 
-#: links.py:71
+#: links.py:75
 msgid "Setup parsing"
 msgstr "Parsing einrichten"
 
-#: links.py:80
+#: links.py:84
 msgid "Parse documents per type"
 msgstr "Dokumente nach Typ parsen"
 

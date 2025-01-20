@@ -4,21 +4,22 @@
 # 
 # Translators:
 # Translators:
-# Aline Freitas <aline@alinefreitas.com.br>, 2024
-# Rogerio Falcone <rogerio@falconeit.com.br>, 2024
-# Emerson Soares <on.emersonsoares@gmail.com>, 2024
-# Vítor Figueiró <vfigueiro@gmail.com>, 2024
-# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2024
-# Márcia Ferreira, 2024
-# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024
+# Vítor Figueiró <vfigueiro@gmail.com>, 2025
+# Aline Freitas <aline@alinefreitas.com.br>, 2025
+# Rogerio Falcone <rogerio@falconeit.com.br>, 2025
+# Roberto Rosario, 2025
+# Márcia Ferreira, 2025
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2025
+# Emerson Soares <on.emersonsoares@gmail.com>, 2025
+# Bruno Martins <bruno.martins@bewgpt.com.pt>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Bruno Martins <bruno.martins@bewgpt.com.pt>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Bruno Martins <bruno.martins@bewgpt.com.pt>, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/rosarior/teams/13584/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -201,6 +202,10 @@ msgstr "Sim"
 msgid "No"
 msgstr "Não"
 
+#: templates/appearance/confirm.html:52
+msgid "Do not ask me again."
+msgstr ""
+
 #: templates/appearance/home.html:27
 msgid "Getting started"
 msgstr "Começar"
@@ -209,7 +214,7 @@ msgstr "Começar"
 msgid "Before you can fully use Mayan EDMS you need the following:"
 msgstr "Para conseguir utilizar o Mayan EDMS no total precisa do seguinte:"
 
-#: templates/appearance/menus/topbar.html:11
+#: templates/appearance/menus/topbar.html:12
 msgid "Toggle navigation"
 msgstr "Alternar navegação"
 
@@ -264,15 +269,23 @@ msgstr "Total: %(total)s"
 msgid "No results"
 msgstr "Sem resultados"
 
-#: templates/appearance/partials/list/pagination.html:12
-#: templates/appearance/partials/list/pagination.html:14
+#: templates/appearance/partials/list/pagination.html:21
+#: templates/appearance/partials/list/pagination.html:23
 msgid "Previous page"
 msgstr "Página anterior"
 
-#: templates/appearance/partials/list/pagination.html:30
-#: templates/appearance/partials/list/pagination.html:32
+#: templates/appearance/partials/list/pagination.html:39
+#: templates/appearance/partials/list/pagination.html:41
 msgid "Next page"
 msgstr "Próxima pagina"
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Page"
+msgstr "Página"
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Jump to page"
+msgstr ""
 
 #: templates/appearance/partials/list/table/head/row_cell_identifier.html:6
 msgid "Identifier"

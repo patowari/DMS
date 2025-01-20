@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jiri Fait <fait@orkasolutions.cz>, 2024
-# Jiří Podhorecký <jirka.p@volny.cz>, 2024
-# Michal Švábík <snadno@lehce.cz>, 2024
+# Jiri Fait <fait@orkasolutions.cz>, 2025
+# Jiří Podhorecký <jirka.p@volny.cz>, 2025
+# Michal Švábík <snadno@lehce.cz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Michal Švábík <snadno@lehce.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/rosarior/teams/13584/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,15 +22,15 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: apps.py:38 events.py:6 permissions.py:6
+#: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr "Zprávy"
 
-#: apps.py:60
+#: apps.py:61
 msgid "None"
 msgstr "Žádný"
 
-#: apps.py:66
+#: apps.py:67
 msgid "Sender"
 msgstr "Odesílatel"
 
@@ -58,17 +58,17 @@ msgstr "Odstranit"
 msgid "Messages"
 msgstr "Zprávy"
 
-#: links.py:70 links.py:81
+#: links.py:69
+msgid "Mark all as read"
+msgstr "Označit vše jako přečtené"
+
+#: links.py:73 links.py:78
 msgid "Mark as read"
 msgstr "Označit jako přečtené"
 
-#: links.py:76 links.py:85
+#: links.py:83 links.py:88
 msgid "Mark as unread"
 msgstr "Označit jako nepřečtené"
-
-#: links.py:89
-msgid "Mark all as read"
-msgstr "Označit vše jako přečtené"
 
 #: model_mixins.py:16
 msgid "Label"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
 "PO-Revision-Date: 2019-05-17 05:50+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:32 events.py:6
+#: apps.py:33 events.py:6
 msgid "Document comments"
 msgstr ""
 
@@ -46,11 +46,11 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: links.py:31 models.py:48 permissions.py:6 search.py:8
+#: links.py:31 models.py:51 permissions.py:6 search.py:8
 msgid "Comments"
 msgstr ""
 
-#: model_mixins.py:10 models.py:34
+#: model_mixins.py:10 models.py:36
 msgid "User"
 msgstr ""
 
@@ -58,15 +58,23 @@ msgstr ""
 msgid "Document"
 msgstr ""
 
-#: models.py:37
+#: models.py:34
+msgid "The user account that made the comment."
+msgstr ""
+
+#: models.py:39
+msgid "Actual text content of the comment."
+msgstr ""
+
+#: models.py:40
 msgid "Text"
 msgstr ""
 
-#: models.py:41
+#: models.py:44
 msgid "Date time submitted"
 msgstr ""
 
-#: models.py:47
+#: models.py:50
 msgid "Comment"
 msgstr ""
 

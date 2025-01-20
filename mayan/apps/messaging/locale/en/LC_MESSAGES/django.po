@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:38 events.py:6 permissions.py:6
+#: apps.py:39 events.py:6 permissions.py:6
 msgid "Messaging"
 msgstr ""
 
-#: apps.py:60
+#: apps.py:61
 msgid "None"
 msgstr ""
 
-#: apps.py:66
+#: apps.py:67
 msgid "Sender"
 msgstr ""
 
@@ -53,16 +53,16 @@ msgstr ""
 msgid "Messages"
 msgstr ""
 
-#: links.py:70 links.py:81
+#: links.py:69
+msgid "Mark all as read"
+msgstr ""
+
+#: links.py:73 links.py:78
 msgid "Mark as read"
 msgstr ""
 
-#: links.py:76 links.py:85
+#: links.py:83 links.py:88
 msgid "Mark as unread"
-msgstr ""
-
-#: links.py:89
-msgid "Mark all as read"
 msgstr ""
 
 #: model_mixins.py:16

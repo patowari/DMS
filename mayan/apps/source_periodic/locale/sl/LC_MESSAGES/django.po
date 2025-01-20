@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Jože Detečnik <joze.detecnik@3tav.si>, 2024
+# Jože Detečnik <joze.detecnik@3tav.si>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-07 07:29+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2024\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Jože Detečnik <joze.detecnik@3tav.si>, 2025\n"
 "Language-Team: Slovenian (https://app.transifex.com/rosarior/teams/13584/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

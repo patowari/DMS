@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# xisafe <root@xisafe.com>, 2024
-# Ford Guo <agile.guo@gmail.com>, 2024
-# Leon Chu, 2024
+# xisafe <root@xisafe.com>, 2025
+# Leon Chu, 2025
+# Ford Guo <agile.guo@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Leon Chu, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Ford Guo <agile.guo@gmail.com>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/rosarior/teams/13584/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Navigation"
 msgstr "导航"
 
-#: source_columns.py:265
+#: source_columns.py:242
 msgid "Unnamed function"
 msgstr ""
 

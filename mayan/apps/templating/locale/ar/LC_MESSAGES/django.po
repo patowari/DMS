@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Roberto Rosario, 2024
-# Marwan Rahhal <Marwanr@sssit.net>, 2024
+# Marwan Rahhal <Marwanr@sssit.net>, 2025
+# Roberto Rosario, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Marwan Rahhal <Marwanr@sssit.net>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:33+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Roberto Rosario, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/rosarior/teams/13584/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +21,17 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: apps.py:21 permissions.py:6 settings.py:94
+#: apps.py:16 permissions.py:6 settings.py:94
 msgid "Templating"
 msgstr "القوالب"
 
-#: apps.py:39
+#: apps.py:23
 msgid "Current date and time"
+msgstr ""
+
+#: classes.py:83
+#, python-format
+msgid "Model `%s` is not available for template sandbox."
 msgstr ""
 
 #: fields.py:28
@@ -42,7 +47,7 @@ msgstr ""
 msgid "Resulting text from the evaluated template."
 msgstr "نتائج تقيم القالب"
 
-#: forms.py:11
+#: forms.py:11 serializers.py:24
 msgid "Result"
 msgstr "النتيجة"
 
@@ -50,11 +55,11 @@ msgstr "النتيجة"
 msgid "The template string to be evaluated."
 msgstr "القوالب المراد تقيمها"
 
-#: forms.py:26
+#: forms.py:26 serializers.py:27
 msgid "Template"
 msgstr "القالب"
 
-#: links.py:10
+#: links.py:12
 msgid "Sandbox"
 msgstr "وضع الحماية"
 
@@ -84,12 +89,12 @@ msgid ""
 " template preview."
 msgstr ""
 
-#: views.py:44
+#: views.py:59
 #, python-format
 msgid "Template sandbox for: %s"
 msgstr "وضع قالب الحماية : %s"
 
-#: views.py:66
+#: views.py:86
 #, python-format
 msgid "Template error; %(exception)s"
 msgstr "خطأ في النموذج ; %(exception)s"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
 "PO-Revision-Date: 2020-04-08 04:06+0000\n"
 "Last-Translator: Roberto Rosario\n"
 "Language-Team: English (http://www.transifex.com/rosarior/mayan-edms/"
@@ -190,6 +190,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: templates/appearance/confirm.html:52
+msgid "Do not ask me again."
+msgstr ""
+
 #: templates/appearance/home.html:27
 msgid "Getting started"
 msgstr ""
@@ -198,7 +202,7 @@ msgstr ""
 msgid "Before you can fully use Mayan EDMS you need the following:"
 msgstr ""
 
-#: templates/appearance/menus/topbar.html:11
+#: templates/appearance/menus/topbar.html:12
 msgid "Toggle navigation"
 msgstr ""
 
@@ -251,14 +255,22 @@ msgstr ""
 msgid "No results"
 msgstr ""
 
-#: templates/appearance/partials/list/pagination.html:12
-#: templates/appearance/partials/list/pagination.html:14
+#: templates/appearance/partials/list/pagination.html:21
+#: templates/appearance/partials/list/pagination.html:23
 msgid "Previous page"
 msgstr ""
 
-#: templates/appearance/partials/list/pagination.html:30
-#: templates/appearance/partials/list/pagination.html:32
+#: templates/appearance/partials/list/pagination.html:39
+#: templates/appearance/partials/list/pagination.html:41
 msgid "Next page"
+msgstr ""
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Page"
+msgstr ""
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Jump to page"
 msgstr ""
 
 #: templates/appearance/partials/list/table/head/row_cell_identifier.html:6

@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Translators:
-# Hmayag Antonian <hmayag@freemail.gr>, 2024
-# pyrotech <anastasios@tutamail.com>, 2024
+# pyrotech <anastasios@tutamail.com>, 2025
+# Hmayag Antonian <hmayag@freemail.gr>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: pyrotech <anastasios@tutamail.com>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:33+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Hmayag Antonian <hmayag@freemail.gr>, 2025\n"
 "Language-Team: Greek (https://app.transifex.com/rosarior/teams/13584/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +64,7 @@ msgstr "Αφαίρεση ετικετών"
 msgid "Create new tag"
 msgstr "Δημιουργία νέας ετικέτας"
 
-#: links.py:48 links.py:51
+#: links.py:46 links.py:52
 msgid "Delete"
 msgstr "Διαγραφή"
 

@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Translators:
-# edasmax <edasmax@gmail.com>, 2024
-# Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2024
-# tomkolp, 2024
-# mic <winterfall24@gmail.com>, 2024
-# Roberto Rosario, 2024
-# Tomasz Szymanowicz <alakdae@gmail.com>, 2024
-# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024
+# edasmax <edasmax@gmail.com>, 2025
+# Daniel Winiarski <daniel.winiarski.dw@gmail.com>, 2025
+# mic <winterfall24@gmail.com>, 2025
+# Tomasz Szymanowicz <alakdae@gmail.com>, 2025
+# Roberto Rosario, 2025
+# Wojciech Warczakowski <w.warczakowski@gmail.com>, 2025
+# tomkolp, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 07:29+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Wojciech Warczakowski <w.warczakowski@gmail.com>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: tomkolp, 2025\n"
 "Language-Team: Polish (https://app.transifex.com/rosarior/teams/13584/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,15 +107,15 @@ msgstr "Sterownik używany podczas wysyłania wiadomości e-mail."
 msgid "Backend"
 msgstr "Backend"
 
-#: links.py:33 links.py:38
+#: links.py:32 links.py:38
 msgid "Email document link"
 msgstr "Link dokumentu e-mailem"
 
-#: links.py:48 links.py:53
+#: links.py:46 links.py:53
 msgid "Email document file"
 msgstr ""
 
-#: links.py:59 links.py:64
+#: links.py:58 links.py:64
 msgid "Email document file link"
 msgstr ""
 
@@ -143,12 +143,11 @@ msgstr "Usuń"
 msgid "Edit"
 msgstr "Edytuj"
 
-#: links.py:113 links.py:121 links.py:127 models.py:50
-#: views/mailing_profile_views.py:134
+#: links.py:113 links.py:121 models.py:50 views/mailing_profile_views.py:134
 msgid "Mailing profiles"
 msgstr "Profile mailingowe"
 
-#: links.py:131 views/mailing_profile_views.py:162
+#: links.py:126 views/mailing_profile_views.py:162
 msgid "Test"
 msgstr "Test"
 

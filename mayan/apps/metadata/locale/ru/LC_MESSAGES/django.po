@@ -4,19 +4,19 @@
 # 
 # Translators:
 # Translators:
-# Sergey Glita <gsv70@mail.ru>, 2024
-# Panasoft, 2024
-# Roberto Rosario, 2024
-# lilo.panic, 2024
-# Ilya Pavlov <spirkaa@gmail.com>, 2024
+# Panasoft, 2025
+# Roberto Rosario, 2025
+# lilo.panic, 2025
+# Sergey Glita <gsv70@mail.ru>, 2025
+# Ilya Pavlov <spirkaa@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Ilya Pavlov <spirkaa@gmail.com>, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/rosarior/teams/13584/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: apps.py:74 apps.py:215 apps.py:221 apps.py:225 apps.py:230 apps.py:234
+#: apps.py:74 apps.py:211 apps.py:217 apps.py:221 apps.py:226 apps.py:230
 #: events.py:6 links.py:53 permissions.py:6 queues.py:7
 #: workflow_actions.py:162
 msgid "Metadata"
@@ -38,19 +38,11 @@ msgstr "Возвращает значение определенных мета�
 msgid "Metadata value of"
 msgstr "Значение метаданных"
 
-#: apps.py:151
-msgid "Metadata type name"
-msgstr "Название типа метаданных"
-
-#: apps.py:155 search.py:15
-msgid "Metadata value"
-msgstr "Значение метаданных"
-
-#: apps.py:253
+#: apps.py:249
 msgid "Document link"
 msgstr ""
 
-#: apps.py:259
+#: apps.py:255
 msgid "Document thumbnail"
 msgstr ""
 
@@ -78,76 +70,76 @@ msgstr "Тип метаданных изменен"
 msgid "Metadata type relationship updated"
 msgstr "Отношение типа метаданных обновлено"
 
-#: forms.py:13
+#: forms.py:14
 msgid "ID"
 msgstr "ID"
 
-#: forms.py:16 models/metadata_type_models.py:35
+#: forms.py:17 models/metadata_type_models.py:35
 msgid "Name"
 msgstr "Имя"
 
-#: forms.py:24 models/metadata_instance_models.py:43 workflow_actions.py:112
+#: forms.py:25 models/metadata_instance_models.py:43 workflow_actions.py:112
 msgid "Value"
 msgstr "Значение"
 
-#: forms.py:29
+#: forms.py:30
 msgid "Update"
 msgstr "Обновить"
 
-#: forms.py:49 forms.py:232 models/document_type_metadata_type_models.py:31
+#: forms.py:50 forms.py:233 models/document_type_metadata_type_models.py:31
 msgid "Required"
 msgstr "Требуемый"
 
-#: forms.py:81
+#: forms.py:82
 #, python-format
 msgid "Lookup value error: %s"
 msgstr "Ошибка значения поиска: %s"
 
-#: forms.py:94
+#: forms.py:95
 #, python-format
 msgid "Default value error: %s"
 msgstr "Ошибка значения по умолчанию: %s"
 
-#: forms.py:115 models/metadata_type_models.py:120
+#: forms.py:116 models/metadata_type_models.py:120
 #, python-format
 msgid "\"%s\" is required for this document type."
 msgstr "\"%s\" требуется для этого типа документа."
 
-#: forms.py:136
+#: forms.py:137
 msgid "Metadata types to be added to the selected documents."
 msgstr "Типы метаданных, которые будут добавлены к выбранным документам."
 
-#: forms.py:137 models/document_type_metadata_type_models.py:28
+#: forms.py:138 models/document_type_metadata_type_models.py:28
 #: models/metadata_type_models.py:83 search.py:12 serializers.py:52
 #: serializers.py:114 workflow_actions.py:148
 msgid "Metadata type"
 msgstr "Тип метаданных"
 
-#: forms.py:162
+#: forms.py:163
 msgid "Remove"
 msgstr "Удалить"
 
-#: forms.py:181
+#: forms.py:182
 msgid "Basic"
 msgstr ""
 
-#: forms.py:185
+#: forms.py:186
 msgid "Values"
 msgstr ""
 
-#: forms.py:189
+#: forms.py:190
 msgid "Validation"
 msgstr ""
 
-#: forms.py:193
+#: forms.py:194
 msgid "Parsing"
 msgstr "Анализ"
 
-#: forms.py:230
+#: forms.py:231
 msgid "None"
 msgstr "Нет"
 
-#: forms.py:231
+#: forms.py:232
 msgid "Optional"
 msgstr "Необязательный"
 
@@ -177,7 +169,7 @@ msgstr "Типы документов"
 msgid "Create new"
 msgstr "Создать тип метаданных"
 
-#: links.py:82 links.py:87
+#: links.py:81 links.py:86
 msgid "Delete"
 msgstr "Удалить"
 
@@ -389,6 +381,10 @@ msgstr "Удалить тип метаданных"
 #: queues.py:15
 msgid "Add required metadata type"
 msgstr "Добавить требуемый тип метаданных"
+
+#: search.py:15
+msgid "Metadata value"
+msgstr "Значение метаданных"
 
 #: search.py:33
 msgid "Document type ID"

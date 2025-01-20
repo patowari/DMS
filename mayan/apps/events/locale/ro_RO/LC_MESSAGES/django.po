@@ -4,18 +4,18 @@
 # 
 # Translators:
 # Translators:
-# Stefaniu Criste <gupi@hangar.ro>, 2024
-# Roberto Rosario, 2024
-# Badea Gabriel <gcbadea@gmail.com>, 2024
-# Harald Ersch, 2024
+# Stefaniu Criste <gupi@hangar.ro>, 2025
+# Badea Gabriel <gcbadea@gmail.com>, 2025
+# Roberto Rosario, 2025
+# Harald Ersch, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Harald Ersch, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Harald Ersch, 2025\n"
 "Language-Team: Romanian (Romania) (https://app.transifex.com/rosarior/teams/13584/ro_RO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: apps.py:33 events.py:11 links.py:53 links.py:102 permissions.py:6
-#: settings.py:8 views/event_views.py:29
+#: settings.py:12 views/event_views.py:29
 msgid "Events"
 msgstr "Evenimente"
 
@@ -70,15 +70,15 @@ msgstr "Obiect"
 msgid "Event type"
 msgstr "Tip eveniment"
 
-#: classes.py:90
+#: classes.py:93
 msgid "Event list export to CSV"
 msgstr "Exportați lista de evenimente în CSV"
 
-#: classes.py:119
+#: classes.py:122
 msgid "Events exported."
 msgstr "Evenimente exportate."
 
-#: classes.py:121
+#: classes.py:124
 #, python-format
 msgid ""
 "The event list has been exported and is available for download using the "
@@ -120,11 +120,11 @@ msgstr "Ștergere evenimente"
 msgid "Export events"
 msgstr "Exportați evenimente"
 
-#: links.py:66 models.py:55 views/subscription_views.py:54
+#: links.py:66 models.py:55 views/subscription_views.py:50
 msgid "Event subscriptions"
 msgstr "Abonări la eveniment"
 
-#: links.py:72 models.py:117 views/subscription_views.py:169
+#: links.py:72 models.py:117 views/subscription_views.py:161
 msgid "Object event subscriptions"
 msgstr "Abonări la eveniment de obiect"
 
@@ -148,7 +148,7 @@ msgstr "Marcați toate drept văzute"
 msgid "Subscriptions"
 msgstr "Abonamente"
 
-#: literals.py:14
+#: literals.py:18
 #, python-format
 msgid "Unknown or obsolete event type: %s"
 msgstr "Tipul evenimentului necunoscut sau învechit: %s"
@@ -203,23 +203,27 @@ msgstr "Exportați evenimentele unui obiect"
 msgid "View the events of an object"
 msgstr "Vizualizați evenimentele unui obiect"
 
-#: queues.py:7
+#: queues.py:11
 msgid "Events fast"
 msgstr "Evenimente rapid"
 
-#: queues.py:10
+#: queues.py:14
 msgid "Events slow"
 msgstr "Evenimente lent"
 
-#: queues.py:16
+#: queues.py:20
 msgid "Commit an event"
 msgstr "Angajați un eveniment"
 
-#: queues.py:21
+#: queues.py:25
+msgid "Launch the event prune backend"
+msgstr ""
+
+#: queues.py:31
 msgid "Clear event querysets"
 msgstr "Ștergeți seturile de interogări de evenimente"
 
-#: queues.py:26
+#: queues.py:36
 msgid "Export event querysets"
 msgstr "Exportați seturi de interogări de evenimente"
 
@@ -248,7 +252,7 @@ msgstr "Adresa URL a spațiului de nume tip eveniment"
 msgid "ID"
 msgstr "ID-ul"
 
-#: settings.py:15
+#: settings.py:19
 msgid ""
 "Disables asynchronous events mode. All events will be committed in the same "
 "process that triggers them. This was the behavior prior to version 4.5."
@@ -256,6 +260,20 @@ msgstr ""
 "Dezactivează modul evenimente asincrone. Toate evenimentele vor fi comise în"
 " același proces care le declanșează. Acesta a fost comportamentul anterior "
 "versiunii 4.5."
+
+#: settings.py:27
+msgid ""
+"Path to the event pruning subclass that will be called periodically to clear"
+" the event log."
+msgstr ""
+
+#: settings.py:34
+msgid "Arguments to pass to `EVENTS_PRUNE_BACKEND`."
+msgstr ""
+
+#: settings.py:40
+msgid "Time interval in seconds, at which the event prune task will execute."
+msgstr ""
 
 #: views/clear_views.py:27
 msgid ""
@@ -390,31 +408,31 @@ msgstr "Marcați toate notificările ca fiind citite?"
 msgid "All notifications marked as read."
 msgstr "Toate notificările au fost marcate ca fiind citite."
 
-#: views/subscription_views.py:38
+#: views/subscription_views.py:34
 #, python-format
 msgid "Error updating event subscription; %s"
 msgstr "Eroare la actualizarea abonamentului la eveniment; %s"
 
-#: views/subscription_views.py:43
+#: views/subscription_views.py:39
 msgid "Event subscriptions updated successfully"
 msgstr "Abonamentele pentru evenimente au fost actualizate cu succes"
 
-#: views/subscription_views.py:117
+#: views/subscription_views.py:109
 #, python-format
 msgid "Error updating object event subscription; %s"
 msgstr "Eroare la actualizarea abonamentului eveniment obiect; %s"
 
-#: views/subscription_views.py:123
+#: views/subscription_views.py:115
 msgid "Object event subscriptions updated successfully"
 msgstr ""
 "Obținerea abonamentelor evenimentului obiect a fost actualizată cu succes"
 
-#: views/subscription_views.py:134
+#: views/subscription_views.py:126
 #, python-format
 msgid "Event subscriptions for: %s"
 msgstr "Abonamente la eveniment pentru: %s"
 
-#: views/subscription_views.py:164
+#: views/subscription_views.py:156
 msgid ""
 "Subscribe to the events of an object to receive notifications when those "
 "events occur."
@@ -422,6 +440,6 @@ msgstr ""
 "Abonați-vă la evenimentele unui obiect pentru a primi notificări când au loc"
 " acele evenimente."
 
-#: views/subscription_views.py:167
+#: views/subscription_views.py:159
 msgid "There are no object event subscriptions"
 msgstr "Nu există abonamente la evenimente obiect"

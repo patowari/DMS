@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Ford Guo <agile.guo@gmail.com>, 2024
-# Leon Chu, 2024
-# malijie <tonymlj2008@126.com>, 2024
-# Roberto Rosario, 2024
+# malijie <tonymlj2008@126.com>, 2025
+# Ford Guo <agile.guo@gmail.com>, 2025
+# Leon Chu, 2025
+# Roberto Rosario, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 04:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Roberto Rosario, 2025\n"
 "Language-Team: Chinese Simplified (https://app.transifex.com/rosarior/teams/13584/zh-Hans/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr "文档解析"
 msgid "A generator returning the document file's pages parsed content."
 msgstr ""
 
-#: apps.py:114 links.py:26 links.py:49 models.py:27 search.py:18
+#: apps.py:114 links.py:26 links.py:65 models.py:27 search.py:18
 msgid "Content"
 msgstr "内容"
 
@@ -62,7 +62,7 @@ msgstr "第%(page_number)d页"
 msgid "Contents"
 msgstr "内容"
 
-#: links.py:32 links.py:37
+#: links.py:31 links.py:37
 msgid "Delete parsed content"
 msgstr "刪除已解析內容"
 
@@ -70,15 +70,15 @@ msgstr "刪除已解析內容"
 msgid "Download content"
 msgstr "下载内容"
 
-#: links.py:54 links.py:61
+#: links.py:48 links.py:55
 msgid "Submit for parsing"
 msgstr "提交解析"
 
-#: links.py:71
+#: links.py:75
 msgid "Setup parsing"
 msgstr "设置解析"
 
-#: links.py:80
+#: links.py:84
 msgid "Parse documents per type"
 msgstr "解析每种类型的文档"
 

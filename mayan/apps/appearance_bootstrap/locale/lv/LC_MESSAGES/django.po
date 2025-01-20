@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Māris Teivāns <maris.teivans@gmail.com>, 2024
+# Māris Teivāns <maris.teivans@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Māris Teivāns <maris.teivans@gmail.com>, 2025\n"
 "Language-Team: Latvian (https://app.transifex.com/rosarior/teams/13584/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,6 +197,10 @@ msgstr "Jā"
 msgid "No"
 msgstr "Nē"
 
+#: templates/appearance/confirm.html:52
+msgid "Do not ask me again."
+msgstr ""
+
 #: templates/appearance/home.html:27
 msgid "Getting started"
 msgstr "Darba sākšana"
@@ -205,7 +209,7 @@ msgstr "Darba sākšana"
 msgid "Before you can fully use Mayan EDMS you need the following:"
 msgstr "Pirms jūs varat pilnībā izmantot Mayan EDMS, jums ir nepieciešams:"
 
-#: templates/appearance/menus/topbar.html:11
+#: templates/appearance/menus/topbar.html:12
 msgid "Toggle navigation"
 msgstr "Pārslēgt navigāciju"
 
@@ -260,14 +264,22 @@ msgstr "Kopā: %(total)s"
 msgid "No results"
 msgstr "Nav rezultātu"
 
-#: templates/appearance/partials/list/pagination.html:12
-#: templates/appearance/partials/list/pagination.html:14
+#: templates/appearance/partials/list/pagination.html:21
+#: templates/appearance/partials/list/pagination.html:23
 msgid "Previous page"
 msgstr ""
 
-#: templates/appearance/partials/list/pagination.html:30
-#: templates/appearance/partials/list/pagination.html:32
+#: templates/appearance/partials/list/pagination.html:39
+#: templates/appearance/partials/list/pagination.html:41
 msgid "Next page"
+msgstr ""
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Page"
+msgstr ""
+
+#: templates/appearance/partials/list/pagination.html:46
+msgid "Jump to page"
 msgstr ""
 
 #: templates/appearance/partials/list/table/head/row_cell_identifier.html:6

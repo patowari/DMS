@@ -289,6 +289,13 @@ source_lang   = en
 resource_name = v4.9 File metadata PyPDF
 type          = PO
 
+[o:rosarior:p:mayan-edms:r:fundraisers-4-9]
+file_filter   = mayan/apps/fundraisers/locale/<lang>/LC_MESSAGES/django.po
+source_file   = mayan/apps/fundraisers/locale/en/LC_MESSAGES/django.po
+source_lang   = en
+resource_name = v4.9 Fundraisers
+type          = PO
+
 [o:rosarior:p:mayan-edms:r:icons-4-9]
 file_filter   = mayan/apps/icons/locale/<lang>/LC_MESSAGES/django.po
 source_file   = mayan/apps/icons/locale/en/LC_MESSAGES/django.po

@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Translators:
-# Roberto Rosario, 2024
+# Roberto Rosario, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Roberto Rosario, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:31+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Roberto Rosario, 2025\n"
 "Language-Team: Bosnian (https://app.transifex.com/rosarior/teams/13584/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Common"
 msgstr "Zajednicki"
 
-#: dependencies.py:189
+#: dependencies.py:188
 msgid "Command line environment with autocompletion."
 msgstr ""
 
-#: dependencies.py:194
+#: dependencies.py:193
 msgid "Checks proper formatting of the README file."
 msgstr ""
 
@@ -88,20 +88,20 @@ msgstr "Podrška"
 msgid "Tools"
 msgstr "Alati"
 
-#: literals.py:23
+#: literals.py:21
 msgid ""
 "This feature has been deprecated and will be removed in a future version."
 msgstr ""
 
-#: literals.py:32
+#: literals.py:30
 msgid "Days"
 msgstr "Dana"
 
-#: literals.py:33
+#: literals.py:31
 msgid "Hours"
 msgstr "Sati"
 
-#: literals.py:34
+#: literals.py:32
 msgid "Minutes"
 msgstr "Minuta"
 

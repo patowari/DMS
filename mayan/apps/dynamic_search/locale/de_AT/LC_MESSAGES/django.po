@@ -4,21 +4,22 @@
 # 
 # Translators:
 # Translators:
-# Marvin Haschker <marvin@haschker.me>, 2024
-# Jesaja Everling <jeverling@gmail.com>, 2024
-# Berny <berny@bernhard-marx.de>, 2024
-# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2024
-# 847f3f05406324d125c568a4b098bddb, 2024
-# Roberto Rosario, 2024
-# Mathias Behrle <mathiasb@m9s.biz>, 2024
+# 847f3f05406324d125c568a4b098bddb, 2025
+# Jesaja Everling <jeverling@gmail.com>, 2025
+# Dennis M. Pöpperl <free-software@dm-poepperl.de>, 2025
+# Ingo Buchholz <ingo.buchholz@takwa.de>, 2025
+# Berny <berny@bernhard-marx.de>, 2025
+# Roberto Rosario, 2025
+# Marvin Haschker <marvin@haschker.me>, 2025
+# Mathias Behrle <mathiasb@m9s.biz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 10:33+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0000\n"
-"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2024\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
+"PO-Revision-Date: 2025-01-20 12:34+0000\n"
+"Last-Translator: Mathias Behrle <mathiasb@m9s.biz>, 2025\n"
 "Language-Team: German (Austria) (https://app.transifex.com/rosarior/teams/13584/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,14 +27,48 @@ msgstr ""
 "Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:36
+#: apps.py:38
 msgid "Dynamic search"
 msgstr "Dynamische Suche"
 
-#: events.py:6 permissions.py:6 queues.py:11 settings.py:19
+#: apps.py:87
+msgid "The underlying database model whose content is indexed for search."
+msgstr ""
+
+#: apps.py:89
+msgid "Model"
+msgstr ""
+
+#: apps.py:94
+msgid "The unique name used to reference the search model."
+msgstr ""
+
+#: apps.py:102
+msgid "The underlying database field whose content is indexed for search."
+msgstr ""
+
+#: apps.py:105
+msgid "Field"
+msgstr ""
+
+#: apps.py:116
+msgid ""
+"The underlying database field type. This determines the kind of data that is"
+" stored in the database."
+msgstr ""
+
+#: apps.py:119 serializers.py:61
+msgid "Field class"
+msgstr ""
+
+#: apps.py:123 serializers.py:67
+msgid "Description"
+msgstr "Beschreibung"
+
+#: events.py:6 permissions.py:6 queues.py:11 settings.py:20
 #: templates/dynamic_search/search_box.html:47
 #: templates/dynamic_search/search_box_toolbar.html:30
-#: views/search_views.py:110
+#: views/search_views.py:106
 msgid "Search"
 msgstr "Suche"
 
@@ -41,73 +76,81 @@ msgstr "Suche"
 msgid "Resultset created"
 msgstr ""
 
-#: forms.py:12
+#: forms.py:13
 msgid "Store the search results to speed up paging and for later browsing."
 msgstr ""
 
-#: forms.py:15
+#: forms.py:16
 msgid "Save results"
 msgstr ""
 
-#: forms.py:21
+#: forms.py:22
 msgid "Persistency"
 msgstr ""
 
-#: forms.py:37
+#: forms.py:38
 msgid "Match all"
 msgstr "Alle Felder"
 
-#: forms.py:38
+#: forms.py:39
 msgid "Return only results that match all fields."
 msgstr "Nur Resultate zurückgeben für die alle Felder zutreffen."
 
-#: forms.py:71
+#: forms.py:76
 msgid "Search logic"
 msgstr "Suchlogik"
 
-#: forms.py:99 templates/dynamic_search/search_box.html:43
+#: forms.py:104 templates/dynamic_search/search_box.html:43
 #: templates/dynamic_search/search_box_toolbar.html:25
 msgid "Search terms"
 msgstr "Suchbegriffe"
 
-#: forms.py:110
+#: forms.py:115
 msgid "Criteria"
 msgstr ""
 
-#: links.py:20 models.py:61 views/saved_resultset_views.py:72
+#: links.py:21 models.py:61 views/saved_resultset_views.py:72
 msgid "Saved resultsets"
 msgstr ""
 
-#: links.py:25
+#: links.py:26
 msgid "Delete"
 msgstr "Löschen"
 
-#: links.py:30
+#: links.py:31
 msgid "Results"
 msgstr "Ergebnisse"
 
-#: links.py:35
+#: links.py:36
 msgid "Basic search"
 msgstr "Basissuche"
 
-#: links.py:39 templates/dynamic_search/search_box.html:49
+#: links.py:40 templates/dynamic_search/search_box.html:49
 #: templates/dynamic_search/search_box_toolbar.html:33
 msgid "Advanced search"
 msgstr "Erweiterte Suche"
 
-#: links.py:43
+#: links.py:44
 msgid "Search again"
 msgstr "Suche wiederholen"
 
-#: links.py:48 views/search_views.py:65
+#: links.py:49 views/search_views.py:61
 msgid "Reindex search backend"
 msgstr "Such-Backend neu indizieren"
 
-#: literals.py:26
+#: links.py:57
+msgid "Fields"
+msgstr "Felder"
+
+#: links.py:60 views/tool_views.py:15
+msgid "Search models"
+msgstr ""
+
+#: literals.py:27
 msgid "Yes"
 msgstr "Ja"
 
-#: literals.py:27
+#: literals.py:28
 msgid "No"
 msgstr "Nein"
 
@@ -133,11 +176,11 @@ msgstr "Zeitstempel"
 msgid "Epoch"
 msgstr ""
 
-#: models.py:37 serializers.py:70
+#: models.py:37 serializers.py:79
 msgid "App label"
 msgstr "App-Label"
 
-#: models.py:40 serializers.py:73
+#: models.py:40 serializers.py:82
 msgid "Model name"
 msgstr "Modellname"
 
@@ -238,18 +281,56 @@ msgstr ""
 "Fehler im Suchbackend. Überprüfen Sie, ob das Suchbackend verfügbar ist und "
 "die Suchsyntax gültig für das aktuelle Suchbackend ist; %s"
 
-#: search_fields.py:312
+#: search_fields.py:100
+msgid "Uniquely identifies the search field."
+msgstr ""
+
+#: search_fields.py:101 serializers.py:64
+msgid "Field name"
+msgstr "Feldname"
+
+#: search_fields.py:179
+msgid ""
+"The type of search field. This determines how the information will be "
+"handled for search indexing."
+msgstr ""
+
+#: search_fields.py:183 serializers.py:70
+msgid "Search field class"
+msgstr ""
+
+#: search_fields.py:223
+msgid "Concrete"
+msgstr ""
+
+#: search_fields.py:245
+msgid "Direct"
+msgstr ""
+
+#: search_fields.py:267
+msgid "Related"
+msgstr "Verwandt"
+
+#: search_fields.py:325
+msgid "Virtual"
+msgstr ""
+
+#: search_fields.py:340
 msgid "Any"
 msgstr "Beliebig"
 
-#: search_models.py:44
+#: search_models.py:49
 #, python-format
 msgid "Unknown search model `%s`."
 msgstr "Unbekanntes Suchmodell `%s`."
 
-#: search_models.py:114
+#: search_models.py:145
 msgid "All content"
 msgstr "Gesamter Inhalt"
+
+#: search_models.py:199
+msgid "Full name"
+msgstr "Kompletter Name"
 
 #: search_query_types.py:171
 msgid "Exact"
@@ -295,7 +376,7 @@ msgstr "Regulärer Ausdruck"
 msgid "Results URL"
 msgstr ""
 
-#: serializers.py:30 serializers.py:82
+#: serializers.py:30 serializers.py:91
 msgid "URL"
 msgstr "URL"
 
@@ -303,27 +384,23 @@ msgstr "URL"
 msgid "User must be authenticated."
 msgstr ""
 
-#: serializers.py:61
-msgid "Field name"
-msgstr "Feldname"
-
-#: serializers.py:64
+#: serializers.py:73
 msgid "Label"
 msgstr "Bezeichner"
 
-#: serializers.py:76
+#: serializers.py:85
 msgid "Primary key"
 msgstr "Primärschlüssel"
 
-#: serializers.py:79
+#: serializers.py:88
 msgid "Search fields"
 msgstr "Suchfelder"
 
-#: settings.py:24
+#: settings.py:25
 msgid "Full path to the backend to be used to handle the search."
 msgstr "Vollständiger Pfad zum Backend, der für die Suche verantwortlich ist."
 
-#: settings.py:30
+#: settings.py:31
 msgid ""
 "Arguments to pass to the search backend. For example values to change the "
 "behavior, host names, or authentication arguments."
@@ -331,55 +408,63 @@ msgstr ""
 "Argumente für das Suchbackend. Beispielsweise Werte um das Verhalten, "
 "Hostnamen oder Authentifizierungsargumente zu ändern."
 
-#: settings.py:38
+#: settings.py:39
 msgid "The search operator to use when none is specified."
 msgstr "Der Suchoperator, der bei none benutzt werden soll."
 
-#: settings.py:45
+#: settings.py:46
 msgid ""
 "Disables the single term bar search leaving only the advanced search button."
 msgstr ""
 "Deaktiviert die Suche in der Einzelbegriffsleiste, nur die Schaltfläche für "
 "die erweiterte Suche wird angezeigt."
 
-#: settings.py:52
+#: settings.py:53
 msgid "Amount of objects to process when performing bulk indexing."
 msgstr ""
 "Anzahl der Objekte, die bei der Massenindizierung verarbeite.t werden sollen"
 
-#: settings.py:58
+#: settings.py:59
 msgid "Sets the default state of the \"Match all\" checkbox."
 msgstr "Setzt den Vorgabewert für die \"Alle Felder\" Checkbox."
 
-#: settings.py:64
+#: settings.py:65
 msgid ""
 "Maximum number of search results to fetch and display per search query unit."
 msgstr ""
 "Maximale Anzahl von Suchergebnissen, die pro Suchanfrage geholt und "
 "angezeigt werden sollen."
 
-#: settings.py:71
+#: settings.py:72
 msgid "Maximum number of search results to fetch and display."
 msgstr ""
 "Maximale Anzahl von Suchergebnissen, die geholt und angezeigt werden sollen."
 
-#: settings.py:77
+#: settings.py:78
 msgid "Maximum number of saved resultsets to keep per user."
 msgstr ""
 
-#: settings.py:83
+#: settings.py:84
 msgid "Maximum number of results to store per resultset."
 msgstr ""
 
-#: settings.py:89
+#: settings.py:90
 msgid "Time to keep the resultset in seconds."
 msgstr ""
 
-#: settings.py:95
+#: settings.py:96
 msgid "Amount to increase the time to live on each access of the resultset."
 msgstr ""
 
-#: settings.py:102
+#: settings.py:103
+msgid ""
+"Specifies the fields from which search model are to be disabled. The format "
+"is a dictionary of lists. The search model name is the dictionary key and "
+"the value is a list of the full search field name. Disabled fields will "
+"neither be available for search nor be indexed by the search backend."
+msgstr ""
+
+#: settings.py:113
 msgid "Sets the default state of the \"Store results\" checkbox."
 msgstr ""
 
@@ -481,11 +566,11 @@ msgstr ""
 msgid "No saved resultsets available"
 msgstr ""
 
-#: views/search_views.py:62
+#: views/search_views.py:58
 msgid "This tool erases and populates the search backend's internal index."
 msgstr "Dieses Tool löscht und befüllt den internen Index des Suchbackends."
 
-#: views/search_views.py:72
+#: views/search_views.py:68
 msgid ""
 "This tool is required only for some search backends. Search results will be "
 "affected while the backend is being reindexed."
@@ -493,7 +578,7 @@ msgstr ""
 "Dieses Tool ist nur für einige Suchbackends erforderlich. Suchergebnisse "
 "werden während der Reindizierung beeinflusst."
 
-#: views/search_views.py:78
+#: views/search_views.py:74
 msgid ""
 "The currently selected search backend does not support or requires "
 "reindexing."
@@ -501,34 +586,44 @@ msgstr ""
 "Das gegenwärtig ausgewählte Suchbackend unterstützt oder benötigt keine "
 "Reindizierung."
 
-#: views/search_views.py:91
+#: views/search_views.py:87
 msgid "Search backend reindexing queued."
 msgstr "Suchbackendindizierung eingereicht."
 
-#: views/search_views.py:112
+#: views/search_views.py:108
 #, python-format
 msgid "Search for: %s"
 msgstr "Suche nach: %s"
 
-#: views/search_views.py:139
+#: views/search_views.py:135
 #, python-format
 msgid "Advanced search for: %s"
 msgstr "Erweiterte Suche für %s"
 
-#: views/search_views.py:195
+#: views/search_views.py:191
 msgid "Try again using different terms. "
 msgstr "Bitte erneut mit anderen Suchbegriffen versuchen."
 
-#: views/search_views.py:197
+#: views/search_views.py:193
 msgid "No search results"
 msgstr "Keine Suchergebnisse"
 
-#: views/search_views.py:200
+#: views/search_views.py:196
 #, python-format
 msgid "Search query: %s"
 msgstr "Suchanfrage %s"
 
-#: views/search_views.py:203
+#: views/search_views.py:199
 #, python-format
 msgid "Search results for: %s"
 msgstr "Suchergebnisse für: %s"
+
+#: views/tool_views.py:34
+#, python-format
+msgid "Fields for search model: %s"
+msgstr ""
+
+#: views/tool_views.py:45
+#, python-format
+msgid "Search model: %s, not found"
+msgstr ""

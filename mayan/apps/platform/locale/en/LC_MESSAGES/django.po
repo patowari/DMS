@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-11 12:51+0000\n"
+"POT-Creation-Date: 2025-01-20 12:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,11 @@ msgstr ""
 msgid "Trigger tests"
 msgstr ""
 
-#: platform_templates.py:148
-msgid "Template that generates a GitLab CI config file."
-msgstr ""
-
-#: platform_templates.py:297
+#: platform_templates.py:132
 msgid "Template for Supervisord."
 msgstr ""
 
-#: platform_templates.py:371
+#: platform_templates.py:205
 msgid "Template showing the queues of a worker."
 msgstr ""
 
