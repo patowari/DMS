@@ -336,7 +336,7 @@ class CompressedSourceBackendActionEMLDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 2613)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 8)
+        self.assertEqual(events.count(), 9)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -385,10 +385,23 @@ class CompressedSourceBackendActionEMLDocumentUploadTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[7].action_object, self._test_document)
-        self.assertEqual(events[7].actor, self._test_document.version_active)
-        self.assertEqual(events[7].target, self._test_document.version_active)
-        self.assertEqual(events[7].verb, event_document_version_edited.id)
+        self.assertEqual(
+            events[7].action_object, self._test_document.version_active
+        )
+        self.assertEqual(
+            events[7].actor, self._test_document.version_active.pages.last()
+        )
+        self.assertEqual(
+            events[7].target, self._test_document.version_active.pages.last()
+        )
+        self.assertEqual(
+            events[7].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[8].action_object, self._test_document)
+        self.assertEqual(events[8].actor, self._test_document.version_active)
+        self.assertEqual(events[8].target, self._test_document.version_active)
+        self.assertEqual(events[8].verb, event_document_version_edited.id)
 
     def test_compressed_ask_true(self):
         self._silence_logger(name='mayan.apps.converter.backends')
@@ -698,7 +711,7 @@ class CompressedSourceBackendActionEMLDocumentUploadTestCase(
         self.assertEqual(self._test_document.file_latest.size, 2613)
 
         events = self._get_test_events()
-        self.assertEqual(events.count(), 8)
+        self.assertEqual(events.count(), 9)
 
         self.assertEqual(events[0].action_object, self._test_document_type)
         self.assertEqual(events[0].actor, self._test_document)
@@ -747,10 +760,23 @@ class CompressedSourceBackendActionEMLDocumentUploadTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
-        self.assertEqual(events[7].action_object, self._test_document)
-        self.assertEqual(events[7].actor, self._test_document.version_active)
-        self.assertEqual(events[7].target, self._test_document.version_active)
-        self.assertEqual(events[7].verb, event_document_version_edited.id)
+       self.assertEqual(
+            events[7].action_object, self._test_document.version_active
+        )
+        self.assertEqual(
+            events[7].actor, self._test_document.version_active.pages.last()
+        )
+        self.assertEqual(
+            events[7].target, self._test_document.version_active.pages.last()
+        )
+        self.assertEqual(
+            events[7].verb, event_document_version_page_created.id
+        )
+
+        self.assertEqual(events[8].action_object, self._test_document)
+        self.assertEqual(events[8].actor, self._test_document.version_active)
+        self.assertEqual(events[8].target, self._test_document.version_active)
+        self.assertEqual(events[8].verb, event_document_version_edited.id)
 
 
 class CompressedSourceBackendActionMSGDocumentUploadTestCase(
