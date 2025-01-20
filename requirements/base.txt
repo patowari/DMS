@@ -36,6 +36,7 @@ gunicorn==23.0.0
 importlib-metadata==8.5.0
 jsonschema==4.23.0
 mozilla-django-oidc==4.0.1
+nh3==0.2.18
 node-semver==0.9.0
 ollama==0.4.4
 pycountry==24.6.1
