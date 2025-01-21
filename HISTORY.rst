@@ -9,6 +9,8 @@
   instance with the corresponding workflow template label, workflow template
   ID, and document ID so users can fix and relaunch the invalid workflow
   templates.
+- Fix migration test case `WorkflowTemplateTransitionTriggerMigrationTestCase`
+  asserting `True` values instead of value equality.
 
 4.9 (2025-01-20)
 ================

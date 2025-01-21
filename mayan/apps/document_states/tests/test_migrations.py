@@ -109,7 +109,7 @@ class WorkflowTemplateTransitionTriggerMigrationTestCase(
             event_type=test_stored_event_type,
             transition_id=test_workflow_template_transition.pk
         )
-        self.assertTrue(
+        self.assertEqual(
             WorkflowTransitionTriggerEvent.objects.count(), 2
         )
 
@@ -119,6 +119,6 @@ class WorkflowTemplateTransitionTriggerMigrationTestCase(
             model_name='WorkflowTransitionTriggerEvent'
         )
 
-        self.assertTrue(
+        self.assertEqual(
             WorkflowTransitionTriggerEvent.objects.count(), 1
         )
