@@ -1,3 +1,15 @@
+4.9.1 (2025-01-22)
+==================
+- Fix workflow migration 0037 for the edge case where there are existing
+  workflows without an initial state and without an initial transition.
+  Version 4.9 does not allow workflow instances without an initial state
+  being specified therefore these existing workflow instances are invalid.
+  The migration will now detect and delete these invalid workflow instances.
+  The migration will emit an error log in the console for each invalid
+  instance with the corresponding workflow template label, workflow template
+  ID, and document ID so users can fix and relaunch the invalid workflow
+  templates.
+
 4.9 (2025-01-20)
 ================
 - Fix management command `settings_show` internal interface usage.

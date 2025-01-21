@@ -1,4 +1,8 @@
+import logging
+
 from django.db import migrations
+
+logger = logging.getLogger(name=__name__)
 
 
 def code_populate_state_active(apps, schema_editor):
@@ -13,7 +17,7 @@ def code_populate_state_active(apps, schema_editor):
         if last_transition:
             return last_transition.destination_state
         else:
-            return self.workflow.get_state_initial()
+            return self.get_workflow_template_initial_state()
 
     def get_last_log_entry(self):
         return self.log_entries.order_by('datetime').last()
@@ -23,13 +27,34 @@ def code_populate_state_active(apps, schema_editor):
         if last_log_entry:
             return last_log_entry.transition
 
+    def get_workflow_template_initial_state(self):
+        try:
+            return self.workflow.states.get(initial=True)
+        except self.workflow.states.model.DoesNotExist:
+            return None
+
     WorkflowInstance.get_current_state = get_current_state
     WorkflowInstance.get_last_log_entry = get_last_log_entry
     WorkflowInstance.get_last_transition = get_last_transition
+    WorkflowInstance.get_workflow_template_initial_state = get_workflow_template_initial_state
 
     for workflow_instance in WorkflowInstance.objects.all():
-        workflow_instance.state_active = workflow_instance.get_current_state()
-        workflow_instance.save()
+        state_active = workflow_instance.get_current_state()
+
+        if state_active:
+            workflow_instance.state_active = state_active
+            workflow_instance.save()
+        else:
+            logger.error(
+                'Cannot migrate workflow instance. The workflow template '
+                '`%s (ID %d)` does not have an initial state. The invalid '
+                'workflow instance will be deleted. Relaunch the workflow '
+                'for document ID `%d`.',
+                str(workflow_instance.workflow.label),
+                workflow_instance.workflow.pk, workflow_instance.document_id
+            )
+
+            workflow_instance.delete()
 
 
 class Migration(migrations.Migration):
