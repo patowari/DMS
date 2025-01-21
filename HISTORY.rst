@@ -11,6 +11,8 @@
   templates.
 - Fix migration test case `WorkflowTemplateTransitionTriggerMigrationTestCase`
   asserting `True` values instead of value equality.
+- Update the target used to build the documentation.
+- Fix documentation file references.
 
 4.9 (2025-01-20)
 ================
