@@ -186,8 +186,7 @@ job_documentation_build:
     - pip install --requirement requirements/base.txt
     - pip install --requirement requirements/documentation.txt
     - pip install --requirement requirements/documentation_override.txt
-    - cd docs
-    - make html
+    - make docs-html
   stage: stage_build_documentation
   variables:
     APT_CACHE_DIR: ${CI_PROJECT_DIR}/.cache/apt
