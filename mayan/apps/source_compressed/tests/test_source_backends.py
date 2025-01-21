@@ -760,7 +760,7 @@ class CompressedSourceBackendActionEMLDocumentUploadTestCase(
             events[6].verb, event_document_version_page_created.id
         )
 
-       self.assertEqual(
+        self.assertEqual(
             events[7].action_object, self._test_document.version_active
         )
         self.assertEqual(
