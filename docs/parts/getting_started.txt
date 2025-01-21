@@ -6,7 +6,7 @@ These are the basic concepts you need to understand to start using Mayan EDMS.
 
 The absolute minimum setup to start using Mayan EDMS is:
 
-#. :ref:`A document type<apps-documents>`
+#. A document type
 #. A document source to add new documents
 
 that's it!
