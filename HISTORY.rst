@@ -14,6 +14,8 @@
 - Update the target used to build the documentation.
 - Fix documentation file references.
 - Update Django from version 4.2.17 to 4.2.18 due to CVE-2024-56374.
+- Add missing includes to add the removals, deprecations and backward
+  incompatible sections.
 
 4.9 (2025-01-20)
 ================

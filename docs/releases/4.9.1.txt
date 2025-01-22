@@ -14,6 +14,13 @@ Depdendencies
 Updated Django from version 4.2.17 to 4.2.18 due to CVE-2024-56374.
 
 
+Documentation
+^^^^^^^^^^^^^
+
+Add missing includes to add the removals, deprecations and backward
+incompatible sections.
+
+
 Workflows
 ^^^^^^^^^
 

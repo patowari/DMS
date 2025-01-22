@@ -537,3 +537,21 @@ This is due to help text changes that Mayan EDMS adds to Django
 models at runtime. These changes do not alter the database schema are a just
 to workaround the help text that Django itself is missing from the user
 model.
+
+
+Removals
+--------
+
+.. include:: partials/removals-4.9.txt
+
+
+Backward incompatible changes
+-----------------------------
+
+.. include:: partials/backward-incompatible-4.9.txt
+
+
+Deprecations
+------------
+
+.. include:: partials/deprecations-4.9.txt
