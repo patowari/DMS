@@ -65,7 +65,7 @@ def find_packages(directory):
 
 
 install_requires = """
-django==4.2.17
+django==4.2.18
 CairoSVG==2.7.1
 Markdown==3.7
 Pillow==11.0.0

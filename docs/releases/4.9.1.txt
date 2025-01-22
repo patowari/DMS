@@ -8,6 +8,12 @@ Changes
 -------
 
 
+Depdendencies
+^^^^^^^^^^^^^
+
+Updated Django from version 4.2.17 to 4.2.18 due to CVE-2024-56374.
+
+
 Workflows
 ^^^^^^^^^
 
