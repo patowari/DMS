@@ -120,7 +120,7 @@ msgstr "签出到期时间"
 
 #: models.py:34 serializers.py:19
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: models.py:37
 msgid "Check out date and time"

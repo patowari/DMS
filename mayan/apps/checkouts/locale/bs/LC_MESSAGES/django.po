@@ -118,7 +118,7 @@ msgstr "Potvrda istrage"
 
 #: models.py:34 serializers.py:19
 msgid "Document"
-msgstr ""
+msgstr "Dokument"
 
 #: models.py:37
 msgid "Check out date and time"

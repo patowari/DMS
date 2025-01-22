@@ -118,7 +118,7 @@ msgstr "Izraksta derīguma termiņš"
 
 #: models.py:34 serializers.py:19
 msgid "Document"
-msgstr ""
+msgstr "Dokuments"
 
 #: models.py:37
 msgid "Check out date and time"

@@ -124,7 +124,7 @@ msgstr "Expiração de requisição"
 
 #: models.py:34 serializers.py:19
 msgid "Document"
-msgstr ""
+msgstr "Documento"
 
 #: models.py:37
 msgid "Check out date and time"

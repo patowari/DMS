@@ -119,7 +119,7 @@ msgstr "Expirarea consemnării ca ieșit"
 
 #: models.py:34 serializers.py:19
 msgid "Document"
-msgstr ""
+msgstr "Document"
 
 #: models.py:37
 msgid "Check out date and time"
