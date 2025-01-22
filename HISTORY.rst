@@ -1,3 +1,7 @@
+4.9.2 (20XX-XX-XX)
+==================
+- Increase the GitLab CI artifact expiration from 4 hours to 24 hours.
+
 4.9.1 (2025-01-22)
 ==================
 - Fix workflow migration 0037 for the edge case where there are existing
