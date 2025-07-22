@@ -1,6 +1,13 @@
 4.9.2 (20XX-XX-XX)
 ==================
 - Increase the GitLab CI artifact expiration from 4 hours to 24 hours.
+- Update dependency versions:
+
+  - Django from 4.2.18 to 4.2.23
+  - requests from 2.32.3 to 2.32.4
+  - python_gnupg from 0.5.3 to 0.5.4
+  - ollama from 0.4.4 to 0.4.5
+  - furl from 2.1.3 to 2.1.4
 
 4.9.1 (2025-01-22)
 ==================
