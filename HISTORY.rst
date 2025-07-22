@@ -8,6 +8,15 @@
   - python_gnupg from 0.5.3 to 0.5.4
   - ollama from 0.4.4 to 0.4.5
   - furl from 2.1.3 to 2.1.4
+  - psycopg from 3.2.3 to 3.2.9
+
+- Update Docker image tags:
+
+  - Elasticsearch from 7.17.26 to 7.16.28
+  - Debian from 12.8-slim to 12.11-slim
+  - RabbitMQ from 4.0.5-management-alpine to 4.0.9-management-alpine
+  - Redis from 7.4.1-alpine3.20 to 7.4.5-alpine3.21
+  - Traefik from v2.11.16 to v2.11.27
 
 4.9.1 (2025-01-22)
 ==================
