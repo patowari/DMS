@@ -18,6 +18,9 @@
   - Redis from 7.4.1-alpine3.20 to 7.4.5-alpine3.21
   - Traefik from v2.11.16 to v2.11.27
 
+- Reinforce the Ollama document file metadata client to handle undocumented
+  backward incompatible changes made in Ollama.
+
 4.9.1 (2025-01-22)
 ==================
 - Fix workflow migration 0037 for the edge case where there are existing
