@@ -20,6 +20,7 @@
 
 - Reinforce the Ollama document file metadata client to handle undocumented
   backward incompatible changes made in Ollama.
+- Fix toolbar render issue on recent Chromium based browsers.
 
 4.9.1 (2025-01-22)
 ==================
