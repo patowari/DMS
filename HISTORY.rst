@@ -23,6 +23,7 @@
 - Fix toolbar render issue on recent Chromium based browsers.
 - Update copyright year.
 - Add Ollama integration feature document.
+- Improve documentation navigation.
 
 4.9.1 (2025-01-22)
 ==================
