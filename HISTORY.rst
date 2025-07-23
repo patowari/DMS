@@ -24,6 +24,7 @@
 - Update copyright year.
 - Add Ollama integration feature document.
 - Improve documentation navigation.
+- Update translation files.
 
 4.9.1 (2025-01-22)
 ==================
