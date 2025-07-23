@@ -1,4 +1,4 @@
-4.9.2 (20XX-XX-XX)
+4.9.2 (2025-07-23)
 ==================
 - Increase the GitLab CI artifact expiration from 4 hours to 24 hours.
 - Update dependency versions:
