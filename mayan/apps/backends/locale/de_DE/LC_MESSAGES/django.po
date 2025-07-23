@@ -5,7 +5,6 @@
 # 
 # Translators:
 # Marvin Haschker <marvin@haschker.me>, 2025
-# Thomas Lauterbach <lauterbachthomas@googlemail.com>, 2025
 # Mathias Behrle <mathiasb@m9s.biz>, 2025
 # 
 msgid ""
@@ -28,7 +27,7 @@ msgstr "Backends"
 
 #: model_mixins.py:22
 msgid "The dotted Python path to the backend class."
-msgstr "Der punktierte Pythonpfad zur Backendklasse."
+msgstr "Der punktierte Pythonpfad zur Backend-Klasse."
 
 #: model_mixins.py:23
 msgid "Backend path"
@@ -36,7 +35,7 @@ msgstr "Backendpfad"
 
 #: model_mixins.py:27
 msgid "JSON encoded data for the backend class."
-msgstr "JSON kodierte Daten für die Backend Klasse."
+msgstr "JSON kodierte Daten für die Backend-Klasse."
 
 #: model_mixins.py:28
 msgid "Backend data"

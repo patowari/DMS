@@ -6,7 +6,6 @@
 # Translators:
 # Mathias Behrle <mathiasb@m9s.biz>, 2025
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -23,8 +22,8 @@ msgstr ""
 
 #: apps.py:10
 msgid "Platform GitLab"
-msgstr ""
+msgstr "Platform GitLab"
 
 #: platform_templates.py:28
 msgid "Template that generates a GitLab CI config file."
-msgstr "Vorlage zur Generierung einer GitLab CI Konfigurations-Datei."
+msgstr "Vorlage zur Generierung einer GitLab CI Konfigurationsdatei."

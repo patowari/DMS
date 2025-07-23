@@ -191,11 +191,11 @@ msgstr "MIME-Typ der Dokumentendatei"
 
 #: search.py:50
 msgid "The database ID of the cabinet."
-msgstr ""
+msgstr "Die Datenbank-ID des Aktenschranks."
 
 #: search.py:51
 msgid "Cabinet ID"
-msgstr ""
+msgstr "Aktenschrank-ID"
 
 #: serializers.py:18
 msgid "List of children cabinets."
