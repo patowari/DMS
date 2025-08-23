@@ -66,3 +66,6 @@ Click the image or visit: https://forum.mayan-edms.com/s/prod_Ogq3lYaoROC02Q
 - [Translations](https://www.transifex.com/rosarior/mayan-edms/)
 - [Videos](https://www.youtube.com/channel/UCJOOXHP1MJ9lVA7d8ZTlHPw)
 
+
+Good to go
+
