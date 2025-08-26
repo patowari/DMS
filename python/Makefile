@@ -10,11 +10,11 @@ python-setup-generate: requirements-generate
 	@./contrib/scripts/generate_setup.py
 	@echo "Complete."
 
-python-release: ## Package (sdist and wheel) and upload a release.
+python-release: 
 python-release: clean python-wheel-production
 	twine upload dist/* -r pypi
 
-python-sdist-production: ## Build the production source distribution package.
+python-sdist-production: 
 python-sdist-production: clean
 	cp MANIFEST-PRODUCTION.in MANIFEST.in
 	python setup.py sdist
